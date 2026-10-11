@@ -1,5 +1,12 @@
 # Compute plan: Floquet calibration to multimodal recurrent models
 
+Current status, 2026-10-11 16:19 UTC: all four periodicity jobs below have
+completed with exit `0:0`. Worker statuses agree and report passing numerical
+checks; independent raw-array reduction remains pending. The last job ended
+at 16:14:24 UTC. The batch used 608 allocated GPU-device-seconds (0.16889
+device-hours; H100 MIG counts as one allocated device). No new job or retry
+was submitted. See [completion evidence](periodicity-analysis-status.json).
+
 Latest launch update, 2026-10-11 14:50 UTC: the owner's new periodicity launch
 instruction was executed through native cluv 0.1.5 from the held Tamia controller.
 Narval **5254858/5254871** and Rorqual **22984956/22984963** are pending, with

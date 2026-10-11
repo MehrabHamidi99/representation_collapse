@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "phase_id": "periodicity-analysis-v1",
+  "checked_at_utc": "2026-10-11T16:19:36.630953+00:00",
+  "analysis_source_commit": "458bc9cfce474b8e11e433e33bf132faf5032387",
+  "scheduler_and_worker_completion_confirmed": true,
+  "dense_windows_total": 64,
+  "step_jacobian_evaluations_total": 1536,
+  "allocated_gpu_device_seconds": 608,
+  "resource_scope": "One H100 MIG slice counted as one allocated device; not full-GPU equivalents.",
+  "raw_arrays_independently_reduced": false,
+  "scientific_acceptance": false,
+  "native_competence_established": false,
+  "cells": [
+    {
+      "cluster": "narval",
+      "job_id": 5254858,
+      "model": "gru",
+      "task": "categorical",
+      "scheduler_state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:04:23",
+      "start_utc": "2026-10-11T15:50:28",
+      "end_utc": "2026-10-11T15:54:51",
+      "worker_state": "completed",
+      "reported_numerical_checks_passed": true,
+      "dense_windows": 16,
+      "step_jacobian_evaluations": 384,
+      "checkpoint_sha256": "f1db79385be4de085c457f88355242d0e6e62ceefbe79de4963ab725eca2bcd3"
+    },
+    {
+      "cluster": "narval",
+      "job_id": 5254871,
+      "model": "gru",
+      "task": "continuous",
+      "scheduler_state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:03:51",
+      "start_utc": "2026-10-11T16:10:33",
+      "end_utc": "2026-10-11T16:14:24",
+      "worker_state": "completed",
+      "reported_numerical_checks_passed": true,
+      "dense_windows": 16,
+      "step_jacobian_evaluations": 384,
+      "checkpoint_sha256": "e35502d2958c78c465ae4a46639965f3e841fc5e6ad4ff490daf1fc4fb74d4f5"
+    },
+    {
+      "cluster": "rorqual",
+      "job_id": 22984956,
+      "model": "lstm",
+      "task": "categorical",
+      "scheduler_state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:01:02",
+      "start_utc": "2026-10-11T15:09:59",
+      "end_utc": "2026-10-11T15:11:01",
+      "worker_state": "completed",
+      "reported_numerical_checks_passed": true,
+      "dense_windows": 16,
+      "step_jacobian_evaluations": 384,
+      "checkpoint_sha256": "8752a480b2f5a9d674ef624a7cfb8780b67ceb43b51b4bcf3cadb9ecbd298673"
+    },
+    {
+      "cluster": "rorqual",
+      "job_id": 22984963,
+      "model": "lstm",
+      "task": "continuous",
+      "scheduler_state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:52",
+      "start_utc": "2026-10-11T15:11:04",
+      "end_utc": "2026-10-11T15:11:56",
+      "worker_state": "completed",
+      "reported_numerical_checks_passed": true,
+      "dense_windows": 16,
+      "step_jacobian_evaluations": 384,
+      "checkpoint_sha256": "ec63862dbd27657e99c7becdbdd1301d8813d4525426a9a1545768658561c660"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "runs/ops/periodicity-v1-status-20261011T1619.json",
+      "sha256": "6e53d9edca85a8bd8cd07c362f20932d6576034a6bafc8517f2b430a0e5c293b"
+    },
+    {
+      "path": "runs/ops/periodicity-v1-server-integrity-20261011T1619.json",
+      "sha256": "b4f97858db03b8217f5f16ae4f01585d2c037056879a878997f8a7cc75b30eeb"
+    },
+    {
+      "path": "runs/ops/periodicity-v1-completion-review-20261011T1619.json",
+      "sha256": "ac61f81938d8d42363872c5ad5b59f26624d92f8ecf375aff1f0aeed23df75d0"
+    },
+    {
+      "path": "runs/ops/periodicity-v1-qwen-completion-consumption-20261011T1624.json",
+      "sha256": "dd4e46ef586cad08a9e96cd15f331d357f3c9ddbf439b2a51983d224c8a05eff"
+    }
+  ],
+  "qwen_monitoring": {
+    "pid": 2812601,
+    "cluster": "mila",
+    "pid_alive": true,
+    "heartbeat_at_utc": "2026-10-11T16:23:17.868290+00:00",
+    "schema_verified_reviews": 14,
+    "consecutive_provider_errors": 0,
+    "reported_tokens": 76635,
+    "role": "Bounded project-evidence watcher and proposal-only reviewer. Coordinator polls Alliance via native cluv.",
+    "max_call_attempts": 22,
+    "max_hours": 24,
+    "completion_packet_consumed": true,
+    "completion_review_call": "call-0014",
+    "completion_review_scientific_acceptance": false
+  },
+  "server_artifact_hashes_verified": true,
+  "manifest_artifacts_verified": 28,
+  "artifact_bytes": 359996711
+}

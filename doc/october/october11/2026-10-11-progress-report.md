@@ -589,3 +589,66 @@ rejection, preview, syntax and controller-preservation checks pass. Helper
 SHA256 is `34790a2273954f364d8d970ae8f50c142be7ee5d010808b4700b27e8ac01d510`.
 This later operations correction does not alter the already frozen analysis
 module, tests, protocol, configuration or execution source 458bc9c.
+
+### Completion and monitoring verification — 16:19 UTC
+
+The owner requested confirmation that jobs and agent monitoring were progressing.
+Fresh native cluv polling of the exact journaled IDs confirms all four jobs
+already completed `0:0`, with no project job remaining queued/running:
+
+- Rorqual LSTM categorical **22984956**: 15:09:59–15:11:01 UTC, 62 seconds.
+- Rorqual LSTM continuous **22984963**: 15:11:04–15:11:56 UTC, 52 seconds.
+- Narval GRU categorical **5254858**: 15:50:28–15:54:51 UTC, 263 seconds.
+- Narval GRU continuous **5254871**: 16:10:33–16:14:24 UTC, 231 seconds.
+
+Each worker's artifact status is completed and reports passing numerical checks,
+no numerical failures/quarantine, 16 dense tangent windows and 384 step-Jacobian
+evaluations. The batch totals are **64 windows and 1,536 Jacobians**. Source is
+clean 458bc9c and recorded checkpoint hashes match the frozen roster. Native
+requests/allocations agree with the launch envelope; actual total is 608
+allocated device-seconds (MIG counted as one device, not a full-GPU equivalent).
+Independent summary reconciliation confirms 128 assays, 256 adapter passes,
+64 product checks, 32 FP64 JVP windows and 96 directional finite-difference
+epsilon checks. Closure failures remain valid finite-time diagnostics rather
+than execution failures. No exact-orbit, harmful-collapse or causal-memory
+claim is accepted, and no new job, retry or provider fallback was launched.
+
+Runtime scheduler/worker packet is
+`runs/ops/periodicity-v1-status-20261011T1619.json`, SHA256
+`6e53d9edca85a8bd8cd07c362f20932d6576034a6bafc8517f2b430a0e5c293b`.
+The independent reconciliation receipt is
+`runs/ops/periodicity-v1-completion-review-20261011T1619.json`.
+[Compact current status](../../auto/periodicity-analysis-status.json) preserves
+the distinction between completed execution and independent raw-array reduction.
+
+Mila PID **2812601** remains alive; heartbeat at 16:19:12 UTC reports 13
+schema-valid reviews, zero consecutive provider errors and 70,364 reported
+tokens. Actual call0013 has the exact approved Qwen model identity and consumed
+the four launch IDs/source. Its existing 24-hour/22-attempt contract is unchanged.
+The monitoring roles are explicit: the coordinator polls Alliance through
+native cluv; the Qwen leaf watches supplied project files and proposes analyses.
+It does not independently poll Alliance queues or submit jobs. A new compact
+completion packet was placed in its existing watched project log root:
+`logs/cluv/periodicity-v1-completion-20261011T1619/status.json` on Mila. This
+uses its normal evidence-change trigger, without restarting it or manually
+calling a model service. Numerical reductions from raw arrays and scientific
+review are the next research steps.
+
+Follow-up server integrity checks finish at 16:23:08 UTC: every manifest-listed
+artifact hash verifies across all four jobs (28 files, 359,996,711 bytes), the
+four original checkpoints are unchanged, effective configs match the frozen
+source and all source/module provenance hashes agree. Receipt SHA256 is
+`b4f97858db03b8217f5f16ae4f01585d2c037056879a878997f8a7cc75b30eeb`.
+The read-only check used one native cluv attempt per cluster, downloaded no
+raw arrays and changed no cluster source/environment/queue. Hash integrity
+does not establish independent numerical reduction.
+
+The Qwen watcher consumed the completion packet through its normal evidence
+trigger in **call0014**, producing a schema-valid proposal with exact returned
+model `Qwen/Qwen3.8-Flash-Next-FP8`. Heartbeat at 16:23:17 UTC reports 14
+verified reviews, zero consecutive errors and 76,635 tokens. Completion
+consumption is verified against the actual request's unique
+`periodicity_completion` packet identifier, avoiding a false positive from
+older initial-phase `COMPLETED` text. Its proposal remains pending coordinator
+scientific review, with zero actions executed. No restart, extra model-service
+budget or manual provider call was introduced.

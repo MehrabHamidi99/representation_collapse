@@ -290,7 +290,7 @@
         "initial_synthetic_engineering_phase",
         "compute_plan"
       ],
-      "status": "submitted",
+      "status": "completed-awaiting-verification",
       "scientific_decision": "diagnostic-only-prior-competence-failed",
       "protocol": "configs/experiments/periodicity-analysis-v1.json",
       "deliverable": "Four source/checkpoint-pinned server analyses of state closure, paired cue separation, finite-time full-state tangent spectra and fixed-weight precision replay.",
@@ -302,7 +302,8 @@
       "verified_artifacts": [],
       "source_revision": "458bc9cfce474b8e11e433e33bf132faf5032387",
       "launch_evidence": "doc/auto/periodicity-analysis-launch.json",
-      "note": "Four jobs accepted by native cluv/Slurm; outputs pending independent numerical verification. Prior competence failures remain."
+      "note": "Four jobs completed0:0; worker numerical checks pass. Independent raw-array reduction and scientific review remain pending.",
+      "completion_evidence": "doc/auto/periodicity-analysis-status.json"
     }
   ],
   "current_handoff": "doc/october/october11/2026-10-11-progress-report.md",

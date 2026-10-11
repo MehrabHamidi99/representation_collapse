@@ -3,21 +3,26 @@
 Updated 2026-10-11. See the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json).
 
-- **Periodicity diagnostics — four cluv jobs submitted, 14:49 UTC.** Frozen
+- **Periodicity diagnostics — all four jobs completed, verified scheduler at 16:19 UTC.** Frozen
   analysis source `458bc9cfce474b8e11e433e33bf132faf5032387` runs existing seed-0
   checkpoints: Narval GRU categorical **5254858**, continuous **5254871**;
-  Rorqual LSTM categorical **22984956**, continuous **22984963**. At 14:50 UTC
-  all are pending: categorical jobs await priority, continuous jobs have
-  same-cluster predecessor dependencies. Each requests one GPU, four CPUs,
+  Rorqual LSTM categorical **22984956**, continuous **22984963**. All four
+  finish `COMPLETED/0:0` and write completed artifact statuses. The last ends
+  at 16:14:24 UTC. Worker summaries report all numerical checks passing,
+  64 dense tangent windows and 1,536 step-Jacobian evaluations across the batch.
+  Independent server checks verify all 28 manifest-listed artifact hashes and
+  unchanged original checkpoints. Independent raw-array reduction remains
+  pending. Each requests one GPU, four CPUs,
   16 GiB and fifteen minutes; four submissions exhaust this separate diagnostic
   batch's one requested GPU-hour cap, with at most two simultaneous jobs.
   No retraining. [Frozen protocol](auto/periodicity-analysis-v1.md) covers
   periodic versus matched varying inputs, full-state cycle closure, paired cue
   separation, finite-time tangent spectra and FP32/FP64 replay. All 34 local
-  tests and independent prelaunch reviews pass; scheduler acceptance does not
-  verify numerical outputs. Every checkpoint previously failed competence;
+  tests and independent prelaunch reviews pass; completed workers do not
+  replace independent numerical verification. Every checkpoint previously failed competence;
   this batch cannot establish harmful collapse or certified Floquet dynamics.
-  [Launch evidence](auto/periodicity-analysis-launch.json).
+  [Launch evidence](auto/periodicity-analysis-launch.json) and
+  [current completion evidence](auto/periodicity-analysis-status.json).
 - **Initial engineering phase — completed and independently verified.** Narval
   calibration job **5234514** passes 10 + 36 checks. All four full 1,500-step,
   seed-0 GPU pilots finish `COMPLETED/0:0`: GRU categorical **5234860**, GRU
@@ -101,6 +106,13 @@ and [dependency plan](../configs/research-plan.json).
   remain required. Independent synthetic work may proceed alongside recovery;
   valid negative outcomes advance the plan.
 - **Automatic research — actual Qwen worker running on Mila.**
+  Heartbeat at 16:23:17 UTC verifies 14 schema-valid reviews, zero consecutive
+  provider errors and 76,635 reported tokens; PID **2812601** was separately
+  verified alive at 16:19 UTC. Actual call0014 received the four-job completion
+  packet and verified the exact Qwen model identity. Native cluv polling is
+  performed by the coordinator; the Qwen leaf
+  watches supplied project files and proposes analyses. It does not continuously
+  query Alliance queues. Completion evidence is supplied through that watcher.
   Mila PID **2812601** produced a verified actual Qwen proposal at 08:15:24 UTC.
   Worker uses bounded evidence,
   schema-checked proposals and exact model identity; 24 hours/22 remaining attempts
@@ -111,8 +123,8 @@ and [dependency plan](../configs/research-plan.json).
   proposal requires revision: its 10 CPU-hour request exceeds the envelope and
   its significance-only stopping rule is insufficient. No proposal was submitted.
 
-Next bounded actions: reconcile the four periodicity jobs and independently verify
-their raw arrays, implement the competence-recovery diagnostic contract locally,
+Next bounded actions: independently reduce the completed periodicity raw arrays,
+implement the competence-recovery diagnostic contract locally,
 review bounded Qwen drafts against verified failures, and recover graph assets.
 Preserve the held cluv controller for authorized operations. No broad sweep or
 additional GPU training follows automatically.
