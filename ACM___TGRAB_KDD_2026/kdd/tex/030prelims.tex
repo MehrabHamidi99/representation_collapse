@@ -1,0 +1,10 @@
+\section{Temporal Graph Preliminaries}
+
+\begin{definition}[Discrete Time Dynamic Graphs] 
+A \emph{Discrete Time Dynamic Graph} $\mathcal{G}$ is a sequence of graph snapshots sampled at regularly-spaced time intervals~\cite{kazemi2020representation}:
+$ \mathcal G = G_1,G_2,G_3,\cdots,G_T.$
+Each $G_t = (V_t, E_t, \mat X_t)$ is the graph at snapshot $t=1,\cdots, T$, where ${V}_t$, ${E}_t$ are the set of nodes and edges in ${G}_t$, respectively, and $\mat X_t\in \mathbb R^{|V_t| \times d}$ is the matrix of node features at time $t$.
+\end{definition}
+
+In this work, we focus on tasks designed for Discrete Time Dynamic Graphs~(DTDGs). As Continuous Time Dynamic Graph (CTDG) methods can be applied on DTDGs as well~\cite{huangutg}, we benchmark the performance of both types of methods for comprehensive evaluation.
+In our tasks, the set of vertices is the same at all time steps, i.e., $V_1=V_2=\cdots =V_t = \cdots$. Node features are also constant through time and consists of one-hot encoding of the $N$ nodes~(i.e., $d=N$ and $\mat X_t = \mat I$ is the identity matrix for all $t$). While dynamic graphs sometimes have edge features, we do not use any in T-GRAB. We follow the methodology outlined in~\cite{huangutg} to evaluate CTDG methods on discrete time graphs by translating all edges in each graph snapshot $G_t$ into a batch of edges $\{(u,v,t) \mid (u,v)\in E_t\}$. 

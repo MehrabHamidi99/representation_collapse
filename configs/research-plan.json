@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "plan_id": "representation-collapse-bootstrap-v1",
+  "created_on": "2026-10-11",
+  "purpose": "Calibrate and reproduce graph temporal representation dimension measurements, then test recurrence and modality generality.",
+  "execution_mode": "active-session-only",
+  "persistent_controller_installed": false,
+  "status": "planned",
+  "approval": {
+    "cluster_submission": "pending",
+    "approval_record": null,
+    "approved_clusters": [],
+    "approved_accounts": {},
+    "approved_command_or_plan_hash": null,
+    "expires_at": null,
+    "note": "The user is willing to approve Compute Canada work. No specific allocation or racing plan has been approved."
+  },
+  "resource_envelope": {
+    "max_pending_and_running_jobs": null,
+    "max_gpus_per_job": null,
+    "max_gpu_hours": null,
+    "max_cpu_hours": null,
+    "max_memory_gb": null,
+    "max_walltime_hours": null,
+    "max_storage_gb": null,
+    "max_external_spend": null,
+    "max_scheduled_model_calls": null,
+    "allowed_racing_clusters": [],
+    "remote_submission_enabled": false,
+    "unset_limits_block_remote_allocation": true
+  },
+  "operating_contract": {
+    "artifact_contract": "skills/experiment-loop/references/workflow.md",
+    "agent_handoff": "doc/auto/agent-protocol.md",
+    "monitoring": "deterministic-on-demand",
+    "mechanical_repair_retries": 1,
+    "scientific_decision_distinct_from_verification": true,
+    "release_dependents_on": "verified",
+    "negative_results_release_dependents": true,
+    "new_experiments_require_plan_revision": true
+  },
+  "nodes": [
+    {
+      "node_id": "graph_source_audit",
+      "depends_on": [],
+      "status": "verified",
+      "scientific_decision": "scope-and-measurement-contract-reviewed; inherited empirical claims unverified",
+      "role": "source-and-method-audit",
+      "inputs": [
+        "floquet_analysis/main.tex",
+        "ACM___TGRAB_KDD_2026/kdd/main.tex"
+      ],
+      "deliverable": "Source-located claim ledger distinguishing preliminary graph findings, mathematical assumptions, measurement definitions, and unsupported interpretations.",
+      "acceptance": [
+        "Every claim has a source path/location and an evidence level.",
+        "Discrete period-map analysis is separated from continuous-time embedding claims.",
+        "State completeness, reference orbit closure, forcing, numerical tolerances, and rank estimands are specified or explicitly unresolved.",
+        "Missing executable code, raw measurements, checkpoints, and data are recorded."
+      ],
+      "verified_artifacts": [
+        {
+          "path": "doc/auto/source-inventory.md",
+          "sha256": "42f9fbf09589cc0ad5702397abfa77e899a088b0a0b1b7407626730e05cf7eaf"
+        },
+        {
+          "path": "doc/auto/research-program.md",
+          "sha256": "91b0ea0f8f6fb7cd458f0db170f9c27bcfe858f9b6d12fbb6ffab86b151d1a6a"
+        },
+        {
+          "path": "doc/auto/graph-reproduction.md",
+          "sha256": "09a18995444879973c0e04465a4a42c77f5ee2d1c615240f8912de96912751e0"
+        }
+      ]
+    },
+    {
+      "node_id": "measurement_calibration",
+      "depends_on": [
+        "graph_source_audit"
+      ],
+      "status": "planned",
+      "scientific_decision": "pending",
+      "role": "deterministic-cpu-calibration",
+      "inputs": [
+        "src/representation_collapse/calibrate.py"
+      ],
+      "local_smoke_argv": [
+        "uv",
+        "run",
+        "python",
+        "-m",
+        "representation_collapse.calibrate",
+        "--output",
+        "runs/calibration/local"
+      ],
+      "note": "Local synthetic infrastructure passed nine tests and ten calibration checks; graph adapter/JVP/chronology and frozen graph-pilot measurement contract remain required for this milestone. Synthetic checks are not graph reproduction.",
+      "deliverable": "CPU fixtures and a reviewed measurement contract covering trajectory dimension, periodic Jacobian products, numerical validity, and estimator limitations.",
+      "acceptance": [
+        "Known-rank and degenerate covariance fixtures expose centering and finite-sample behavior.",
+        "Known diagonal and noncommuting period maps validate product order and spectrum.",
+        "Non-normal transient behavior is distinguished from asymptotic eigenvalue stability.",
+        "Saved arrays reproduce reported metrics and all verification checks pass.",
+        "Measurement thresholds, state definition, and uncertainty unit are frozen for the graph pilot."
+      ],
+      "verified_artifacts": [],
+      "infrastructure_evidence": "runs/calibration/setup-2026-10-11-v4/"
+    },
+    {
+      "node_id": "graph_assets",
+      "depends_on": [
+        "graph_source_audit"
+      ],
+      "status": "blocked",
+      "scientific_decision": "pending",
+      "blockers": [
+        "Executable graph training/analysis code, source-linked checkpoints, and raw datasets have not been recovered in this repository."
+      ],
+      "role": "asset-and-provenance-recovery",
+      "inputs": [
+        "floquet_analysis/",
+        "ACM___TGRAB_KDD_2026/"
+      ],
+      "deliverable": "Hash-pinned inventory of graph code, dataset generator/splits, trained model configuration, checkpoint and analysis outputs; document reconstruction deviations.",
+      "acceptance": [
+        "Code repository/commit and environment are identified or absence is recorded.",
+        "Graph generator, train/validation/test identities, seeds, task period, state layout, and checkpoint provenance are known.",
+        "A forward pass and complete-state extraction can be demonstrated on authorized local inputs.",
+        "No figure is presented as a newly reproduced result."
+      ],
+      "verified_artifacts": [],
+      "recovery_leads": [
+        "https://github.com/alirezadizaji/T-GRAB",
+        "https://huggingface.co/datasets/Gilestel/T-GRAB"
+      ]
+    },
+    {
+      "node_id": "compute_plan",
+      "depends_on": [],
+      "status": "planned",
+      "scientific_decision": "pending",
+      "role": "cluv-resource-preparation",
+      "inputs": [
+        "https://mila-iqia.github.io/cluv/guides/submit/racing-clusters/"
+      ],
+      "deliverable": "Version-verified Cluv submission/racing plan for configured Mila/Tamia/other Compute Canada targets, with commands, resource limits and artifact retrieval ready for user approval.",
+      "acceptance": [
+        "Installed Cluv version and supported flags are checked against official sources and the actual CLI.",
+        "Cluster/account availability and project paths are verified without assuming entitlement.",
+        "Concrete commands/configs and total race/concurrency limits are reviewable.",
+        "No GPU jobs or externally allocated resources are launched before applicable approval."
+      ],
+      "verified_artifacts": []
+    },
+    {
+      "node_id": "graph_reproduction",
+      "depends_on": [
+        "measurement_calibration",
+        "graph_assets"
+      ],
+      "conditional_dependencies": [
+        {
+          "node_id": "compute_plan",
+          "when": "execution_requires_cluster_allocation"
+        }
+      ],
+      "status": "blocked",
+      "scientific_decision": "pending",
+      "blockers": [
+        "Measurements and assets must be verified.",
+        "Cluster execution additionally requires a concrete approved resource envelope."
+      ],
+      "role": "graph-temporal-reproduction",
+      "deliverable": "Source-matched graph pilot with saved complete recurrent trajectories, period maps, dimension estimates, forcing/control conditions, task performance, and seed-level results.",
+      "acceptance": [
+        "Protocol, tolerances, discovery/selection rules and seeds are fixed before held-out evaluation.",
+        "Orbit closure and input/Jacobian periodicity are tested; failures retain finite-window labels.",
+        "Low rank and contraction are reported as separate estimands with performance and forcing controls.",
+        "Artifacts satisfy provenance/schema/checksum contracts, and missing/failed replications remain visible."
+      ],
+      "verified_artifacts": []
+    },
+    {
+      "node_id": "graph_interpretation_review",
+      "depends_on": [
+        "graph_reproduction"
+      ],
+      "status": "planned",
+      "scientific_decision": "pending",
+      "role": "independent-scientific-review",
+      "deliverable": "Evidence-based supported, unsupported or inconclusive decision for a precisely scoped graph dimension-collapse claim, plus bounded next protocol.",
+      "acceptance": [
+        "Task/state/seed population and uncertainty limitations are explicit.",
+        "Periodic forcing, sampling rank ceilings, state scaling, and non-normal transients are considered.",
+        "Negative results are retained; scientific rejection does not trigger repeat-until-positive runs."
+      ],
+      "verified_artifacts": []
+    },
+    {
+      "node_id": "cross_modal_pilots",
+      "depends_on": [
+        "graph_interpretation_review"
+      ],
+      "status": "planned",
+      "scientific_decision": "pending",
+      "role": "cross-modal-protocol-design",
+      "candidate_modalities": [
+        "synthetic sequences",
+        "audio",
+        "vision"
+      ],
+      "deliverable": "Small falsifiable cross-modal pilot protocols sharing calibrated estimands and appropriate modality-specific state/task controls; execution is a new bounded plan revision.",
+      "acceptance": [
+        "Pilot selection follows verified graph evidence, including negative findings.",
+        "State completeness, task performance, horizon and complexity matching are explicit.",
+        "Data sources/licenses, model provenance, expected costs and approval needs are documented.",
+        "Generalization claims distinguish modalities, tasks, models, and independent training seeds."
+      ],
+      "verified_artifacts": []
+    }
+  ],
+  "current_handoff": "doc/october/october11/2026-10-11-progress-report.md"
+}

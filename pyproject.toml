@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling>=1.26,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "representation-collapse"
+version = "0.1.0"
+description = "Floquet and finite-time analysis of dimension collapse in recurrent models"
+readme = "README.md"
+requires-python = ">=3.11,<3.15"
+dependencies = ["numpy>=2.2,<3"]
+
+[dependency-groups]
+ops = ["cluster-uv==0.1.5", "uv==0.9.18", "pyyaml>=6,<7"]
+
+[project.scripts]
+collapse-calibrate = "representation_collapse.calibrate:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/representation_collapse"]
+
+# CPU calibration defaults only. Submission remains pending approval;
+# additional Alliance cluster profiles are in configs/cluv.example.toml.
+[tool.cluv]
+project_dir = "$SCRATCH/representation-collapse/source"
+results_path = "$SCRATCH/representation-collapse/logs/cluv"
+results_symlink = "logs"
+job_script_path = "code/ops/calibration_job.sh"
+
+[tool.cluv.env]
+UV_CACHE_DIR = "$SCRATCH/representation-collapse/cache/uv"
+UV_OFFLINE = "1"
+WANDB_MODE = "offline"
+
+[tool.cluv.local.env]
+SCRATCH = "$HOME/.cache/representation-collapse/scratch"
+
+[tool.cluv.sbatch_args]
+nodes = 1
+ntasks = 1
+cpus-per-task = 1
+mem = "2G"
+time = "00:10:00"
+job-name = "rc-calibration"
+
+[tool.cluv.clusters.mila]
+
+[tool.cluv.clusters.tamia.sbatch_args]
+account = "aip-ioannism"
+qos = "normal"
+partition = "cpubase_bycore_b1"

@@ -1,0 +1,46 @@
+# Native cluv schema, verified against cluster-uv==0.1.5 on 2026-10-11.
+# Mila/Tamia mirror root [tool.cluv]; other profiles are optional candidates.
+# cluv does NOT load this file automatically. This grants no allocation.
+[tool.cluv]
+project_dir = "$SCRATCH/representation-collapse/source"
+results_path = "$SCRATCH/representation-collapse/logs/cluv"
+results_symlink = "logs"
+job_script_path = "code/ops/calibration_job.sh"
+
+[tool.cluv.env]
+UV_CACHE_DIR = "$SCRATCH/representation-collapse/cache/uv"
+UV_OFFLINE = "1"
+WANDB_MODE = "offline"
+
+[tool.cluv.local.env]
+SCRATCH = "$HOME/.cache/representation-collapse/scratch"
+
+[tool.cluv.sbatch_args]
+nodes = 1
+ntasks = 1
+cpus-per-task = 1
+mem = "2G"
+time = "00:10:00"
+job-name = "rc-calibration"
+
+[tool.cluv.clusters.mila]
+# CPU partition selected only after checking current policy/availability.
+
+[tool.cluv.clusters.tamia.sbatch_args]
+# Read-only association/partition verification: 2026-10-11, via Mila.
+account = "aip-ioannism"
+qos = "normal"
+partition = "cpubase_bycore_b1"
+
+[tool.cluv.clusters.narval]
+[tool.cluv.clusters.rorqual]
+[tool.cluv.clusters.fir]
+[tool.cluv.clusters.nibi]
+[tool.cluv.clusters.trillium]
+[tool.cluv.clusters.trillium-gpu]
+[tool.cluv.clusters.killarney]
+[tool.cluv.clusters.vulcan]
+# These are current cluv candidates, not verified project entitlements.
+# Add a live-verified account/partition before enabling a submission.
+# Avoid a list of sbatch_args until every entry has been costed and approved:
+# even `cluv submit tamia` races every configuration listed for Tamia.

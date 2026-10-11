@@ -1,0 +1,354 @@
+%%
+
+%% This is file `sample-sigconf-authordraft.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `all,proceedings,bibtex,authordraft')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-sigconf-authordraft.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%%
+%% Commands for TeXCount
+%TC:macro \cite [option:text,text]
+%TC:macro \citep [option:text,text]
+%TC:macro \citet [option:text,text]
+%TC:envir table 0 1
+%TC:envir table* 0 1
+%TC:envir tabular [ignore] word
+%TC:envir displaymath 0 word
+%TC:envir math 0 word
+%TC:envir comment 0 0
+%%
+%% The first command in your LaTeX source must be the \documentclass
+%% command.
+%%
+%% For submission and review of your manuscript please change the
+%% command to \documentclass[manuscript, screen, review]{acmart}.
+%%
+%% When submitting camera ready or to TAPS, please change the command
+%% to \documentclass[sigconf]{acmart} or whichever template is required
+%% for your publication.
+%%
+%%
+% \documentclass[sigconf,authordraft]{acmart}
+
+%\documentclass[sigconf,review]{acmart}
+
+\documentclass[acmengage]{acmart}
+% \documentclass[sigconf]{acmart}
+% \documentclass[sigconf,review]{acmart}
+
+% \usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{subcaption}
+\usepackage{cleveref}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsthm}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\RestyleAlgo{ruled}
+\usepackage{float}
+\newtheorem{observation}{Observation}
+
+
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+% \setcopyright{acmlicensed}
+% \copyrightyear{2025}
+% \acmYear{2025}
+% \acmDOI{XXXXXXX.XXXXXXX}
+
+% %% These commands are for a PROCEEDINGS abstract or paper.
+% \acmConference[KDD 2025 MLoG-GenAI Workshop]{Machine Learning on Graphs in the Era of Generative Artificial Intelligence}{August 06,
+%   2025}{Toronto, ON}
+% \setcopyright{acmlicensed}
+% \copyrightyear{2018}
+% \acmYear{2018}
+% \acmDOI{XXXXXXX.XXXXXXX}
+% %% These commands are for a PROCEEDINGS abstract or paper.
+% \acmConference[Conference acronym 'XX]{Make sure to enter the correct
+%   conference title from your rights confirmation email}{June 03--05,
+%   2018}{Woodstock, NY}
+
+
+\copyrightyear{2026}
+\acmYear{2026}
+\setcopyright{cc}
+\setcctype{by-nc-nd}
+\acmConference[KDD '26]{Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.1}{August 09--13, 2026}{Jeju Island, Republic of Korea}
+\acmBooktitle{Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.1 (KDD '26), August 09--13, 2026, Jeju Island, Republic of Korea}
+\acmDOI{10.1145/3770854.3785699}
+\acmISBN{979-8-4007-2258-5/2026/08}
+%
+%%  Uncomment \acmBooktitle if the title of the proceedings is different
+%%  from ``Proceedings of ...''!
+%%
+%%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+%%  June 03--05, 2018, Woodstock, NY}
+% \acmISBN{978-1-4503-XXXX-X/2018/06}
+
+
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% For managing citations, it is recommended to use bibliography
+%% files in BibTeX format.
+%%
+%% You can then either use BibTeX with the ACM-Reference-Format style,
+%% or BibLaTeX with the acmnumeric or acmauthoryear sytles, that include
+%% support for advanced citation of software artefact from the
+%% biblatex-software package, also separately available on CTAN.
+%%
+%% Look at the sample-*-biblatex.tex files for templates showcasing
+%% the biblatex styles.
+%%
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+
+%%
+%% end of the preamble, start of the body of the document source.
+
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{T-GRAB: A Synthetic Diagnostic Benchmark for Learning on Temporal Graphs}
+
+% %%
+% %% The "author" command and its associated commands are used to define
+% %% the authors and their affiliations.
+% %% Of note is the shared affiliation of the first two authors, and the
+% %% "authornote" and "authornotemark" commands
+% %% used to denote shared contribution to the research.
+\author{Alireza Dizaji}
+\email{alireza.dizaji@mila.quebec}
+\orcid{0009-0005-1442-2807}
+\affiliation{%
+  \institution{Mila - Quebec AI Institute}
+  \institution{University of Montreal}
+  % \city{Montreal}
+  % \state{Quebec}
+  \country{Canada}
+}
+
+
+% \affiliation{%
+%   \institution{MILA - Québec Artificial Intelligence Institute}
+%   \institution{DIRO - University of Montreal}
+%   % \city{Montreal}
+%   % \state{Quebec}
+%   % \country{Canada}
+% }
+
+\author{Benedict Aaron Tjandra}
+\email{aaron.tjandra@mila.quebec}
+\affiliation{%
+  \institution{Mila - Quebec AI Institute}
+  \institution{University of Oxford}
+  % \city{Montreal}
+  % \state{Quebec}
+  \country{United Kingdom}
+}
+
+% \affiliation{%
+%   \institution{MILA - Québec Artificial Intelligence Institute}
+%   \institution{University of Oxford}
+%   % \city{Montreal}
+%   % \state{Quebec}
+%   % \country{Canada}
+% }
+
+\author{Mehrab Hamidi}
+\email{mehrab.hamidi@mila.quebec}
+\affiliation{%
+  \institution{Mila - Quebec AI Institute}
+  \institution{University of Montreal}
+  % \city{Montreal}
+  % \state{Quebec}
+  \country{Canada}
+}
+
+% \affiliation{%
+%   \institution{MILA - Québec Artificial Intelligence Institute}
+%   \institution{DIRO - University of Montreal}
+%   % \city{Montreal}
+%   % \state{Quebec}
+%   % \country{Canada}
+% }
+
+\author{Shenyang Huang}
+\email{shenyang.huang@mail.mcgill.ca}
+\affiliation{%
+  \institution{Mila - Quebec AI Institute}
+  \institution{McGill University}
+  \institution{University of Oxford}
+  % \city{Montreal}
+  % \state{Quebec}
+  \country{Canada}
+}
+
+\author{Guillaume Rabusseau}
+\email{rabussgu@mila.quebec}
+\affiliation{%
+  \institution{Mila - Quebec AI Institute}
+  \institution{DIRO - University of Montreal}
+  \institution{CIFAR AI Chair}
+  % \city{Montreal}
+  % \state{Quebec}
+  \country{Canada}
+}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+%\renewcommand{\shortauthors}{Trovato et al.}
+
+\input{kdd/macros}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\newcommand{\benchmarkname}{T-GRAB~}
+
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+% \begin{CCSXML}
+% <ccs2012>
+%  <concept>
+%   <concept_id>00000000.0000000.0000000</concept_id>
+%   <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
+%   <concept_significance>500</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>00000000.00000000.00000000</concept_id>
+%   <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
+%   <concept_significance>300</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>00000000.00000000.00000000</concept_id>
+%   <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
+%   <concept_significance>100</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>00000000.00000000.00000000</concept_id>
+%   <concept_desc>Do Not Use This Code, Generate the Correct Terms for Your Paper</concept_desc>
+%   <concept_significance>100</concept_significance>
+%  </concept>
+% </ccs2012>
+% \end{CCSXML}
+% \ccsdesc[500]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+% \ccsdesc[300]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+% \ccsdesc{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+% \ccsdesc[100]{Do Not Use This Code~Generate the Correct Terms for Your Paper}
+
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10010147.10010257.10010293.10010319</concept_id>
+<concept_desc>Computing methodologies~Learning latent representations</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Computing methodologies~Learning latent representations}
+
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{Temporal Graph Learning, Temporal Graph Neural Networks, Graph Datasets, Benchmark Evaluation, Temporal Reasoning}
+%% A "teaser" image appears between the author and affiliation
+%% information and the body of the document, and typically spans the
+%% page.
+% \begin{teaserfigure}
+%   \includegraphics[width=\textwidth]{sampleteaser}
+%   \caption{Seattle Mariners at Spring Training, 2010.}
+%   \Description{Enjoying the baseball game from the third-base
+%   seats. Ichiro Suzuki preparing to bat.}
+%   \label{fig:teaser}
+% \end{teaserfigure}
+
+% \received{20 February 2007}
+% \received[revised]{12 March 2009}
+% \received[accepted]{5 June 2009}
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\input{kdd/tex/000abstract}
+
+\maketitle
+
+\input{kdd/tex/010intro}
+% \input{content} % to use the old version
+\input{kdd/tex/020related}
+\input{kdd/tex/030prelims}
+% \input{kdd/tex/040method}
+\input{kdd/tex/040method_ai}
+% \input{tex/050periodic}
+\input{kdd/tex/050periodic_ai}
+% \input{tex/060cause}
+\input{kdd/tex/060cause_ai}
+\input{kdd/tex/070long_ai}
+% \input{kdd/tex/080discussion}
+\input{kdd/tex/080discussion_ai}
+\input{kdd/tex/085conclusion}
+
+% \input{kdd/tex/100ack}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{kdd/ref}
+\clearpage
+\newpage
+\appendix
+\input{kdd/tex/100appendix}
+\end{document}

@@ -1,0 +1,42 @@
+\section{Temporal Graph Reasoning Benchmark: 
+\benchmarkname}\label{sec:tgrab}
+
+ % {\includegraphics[height=1.5mm]{kdd/figs/logo.pdf}
+ % }
+
+\looseness-1 In this section, we introduce the Temporal Graph Reasoning Benchmark~(\benchmarkname), the first synthetic benchmark designed to systematically evaluate the temporal reasoning capabilities of TGNNs in a controlled environment. \benchmarkname comprises three categories of dynamic link prediction tasks, each probing distinct aspects of temporal reasoning: 1) \emph{periodicity} tasks, which assess counting and memorization capabilities; 2) \emph{cause-and-effect} tasks, which evaluate the ability to identify causal relationships across time delays; and 3) \emph{long-range spatio-temporal} tasks, which measure how effectively models capture dependencies spanning both spatial and temporal dimensions. These task families are examined in detail in Sections~\ref{synth-benchmark:periodicity}, ~\ref{synth-benchmark:cause}, and ~\ref{synth-benchmark:long}, respectively. As summarized in \Cref{tab:data}, \benchmarkname encompasses a diverse spectrum of graph characteristics and temporal patterns, providing a comprehensive framework to rigorously test the fundamental reasoning capabilities of TGNNs.
+
+\begin{table*}[t]
+\caption{\benchmarkname dataset statistics and characteristics. } \label{tab:data} 
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{ l | cccccc}
+  \toprule
+  Dataset & \# Nodes & \# Edges
+  & \# Timestamp & Counting & Memorizing & \begin{tabular}{cc}
+       Spatial  \\ Understanding
+  \end{tabular}  \\ 
+  \midrule
+  Periodicity &  100 & 10,560 - 9,144,440 & 96 - 12,288 & \cmark & \cmark & \xmark\\ 
+  Cause-and-Effect &  101 & 164,856 - 174,470 & 4,001 - 4,256 & \xmark & \cmark & \xmark\\ 
+  Long-Range Spatio-Temporal &  102 & 48,006 - 411,072 & 4,001 - 4,032 & \xmark & \cmark & \cmark\\ 
+  \bottomrule
+  \end{tabular}
+  }
+\end{table*}
+
+% Table~\ref{tab:data} provides an overview of the statistics and characteristics of the datasets introduced in \benchmarkname. Table~\ref{tab:data} shows that \benchmarkname covers a diverse range of dataset statistics and associated tasks to test the limit of TGNNs.
+
+\looseness-1 \textbf{Methods in Comparison.} We conduct a comprehensive evaluation of diverse Temporal Graph Learning (TGL) approaches on \benchmarkname tasks 
+%(experimental details in \Cref{appendix:experimental-details})
+. Our analysis encompasses four continuous-time (CTDG) architectures (DyGFormer~\cite{dygformer}, CTAN~\cite{ctan}, TGN~\cite{tgn}, and TGAT~\cite{tgat}), three discrete-time (DTDG) frameworks (EvolveGCN \cite{evolvegcn}, T-GCN~\cite{tgcn}, and GC-LSTM~\cite{gclstm}), two static graph methods (GCN~\citep{gcn} and GAT~\citep{gat}), for which we use their DTDG implementations provided by UTG~\citep{huangutg}, and two established baselines (the \textit{persistence} heuristic, which predicts edges from the previous timestep, and $\text{Edgebank}_{\infty}$~\citep{poursafaei2022betterevaluationdynamiclink}). This selection represents the state-of-the-art across different temporal graph learning paradigms, enabling a rigorous assessment of their fundamental reasoning capabilities. 
+
+% \ah{we need to add some details of how we apply CTDG methods on DTDG datasets. We can discuss here if we have space or put it in experiment details.}
+% \gr{There is one or two small sentences at the end of Sec 3 about this, we can add more details in appendix indeed.  }
+
+
+
+\textbf{Evaluation Protocols.}
+Prior research has demonstrated that evaluation results for dynamic link prediction can vary substantially depending on negative sampling strategies~\cite{poursafaei2022betterevaluationdynamiclink}. To ensure methodological rigor and reproducibility, we implement a comprehensive evaluation framework that calculates the average $F_1$ score across all possible node pairs at each test time step. This approach eliminates sampling bias and provides a more reliable performance assessment. For periodicity tasks, our evaluation incorporates all test edges in the $F_1$ calculation to capture the full spectrum of temporal patterns. In contrast, for cause-and-effect and long-range spatio-temporal tasks, we restrict the evaluation to edges involving the memory/target node, as they are the only predictable connections within the otherwise stochastically generated graph. This targeted evaluation ensures that model performance reflects genuine temporal reasoning capabilities rather than chance correlations in random edge formations.
+
+
+% Since the dynamic graphs we consider are relatively small, we do not have to rely on negative sampling for our evaluation, which has many drawbacks~\cite{poursafaei2022betterevaluationdynamiclink}, and instead evaluate the models by reporting the average $F_1$ score over all possible edges across all time steps in the test set.  For the periodicity tasks, all edges in the test set are included in the $F_1$ computation. For the  cause and effect and long range tasks, not all edges are included in the $F_1$ computation since only the edges involving the memory node can be predicted. Indeed, all the other edges are generated completely at random. Hence, for these tasks the $F_1$ is averaged only over the edges of the test set involving the memory node. 
