@@ -475,3 +475,28 @@ existing 24-hour/22-attempt contract, proposal-only and unable to submit jobs.
 The final tracker/results will be supplied through its existing evidence
 watcher without a manual extra model call. The next training study remains a
 separately frozen competence-recovery protocol and concrete allocation.
+
+### Publication and Qwen evidence handoff — 13:52 UTC
+
+Commit `9b430a14f7623dd09669556705ab390346c9c243` publishes the completed
+phase, bound compact results, independent critique, next protocol and reviewed
+operations helpers. GitHub main is updated; the previously clean Mila source
+checkout advanced with `git pull --ff-only`. Training checkouts and immutable
+job source remain 9004a0c. All 58 archived files across Narval/Rorqual are
+hash-verified; full replicas on Mila/Tamia include the four cluster checkpoints.
+
+The existing Qwen watcher consumed the final tracker in actual call **0009**,
+verified exact provider/model identity and returned schema-valid JSON. Heartbeat
+13:51:26 UTC reports nine verified reviews, no consecutive errors and 45,079
+tokens. A compact accepted-phase status packet is also in its existing artifact
+root; no worker restart, manual provider call or additional training occurred.
+Safe operational proofs remain under `runs/ops/phase1-qwen-*.json`.
+
+Coordinator scientific review rejects call0009's overreach: zero native contrast
+at failed acquisition does not establish absent memory/collapse; continuous
+contrasts are tiny but nonzero. Casting saved float32 states to float64 cannot
+test higher-precision dynamics. Arbitrary injected states and a chance readout
+do not prove model incapacity, and a functional readout need not produce an arm
+difference. Its proposed diagnostic needs revision against the frozen
+competence-recovery contract. Schema validity remains distinct from scientific
+acceptance; no Qwen proposal was submitted.
