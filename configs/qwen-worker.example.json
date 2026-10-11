@@ -23,6 +23,14 @@
   ],
   "credential_delivery": "coordinator supplies environment through secure stdin; never write values to this file",
   "actions": "read project evidence and project job state; call Qwen; write proposals only",
+  "request_policy": {
+    "chat_template_kwargs": {"enable_thinking": false},
+    "reasoning_effort": "low",
+    "max_tokens": 2048,
+    "requested_final_answer_token_target": 900,
+    "accept_reasoning_as_final_answer": false,
+    "reject_finish_reason_length": true
+  },
   "scientific_acceptance": "pending independent coordinator review",
   "stop_conditions": [
     "runtime cap",

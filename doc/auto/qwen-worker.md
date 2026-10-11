@@ -53,6 +53,16 @@ The worker neither submits nor cancels scheduler jobs.
 Each request has at most 18,000 message-content characters and 2,048 requested
 output tokens. The worker sends the actual model identifier from the environment,
 requests JSON output, and uses the key only for the HTTP authorization header.
+It requests direct answers with `chat_template_kwargs.enable_thinking=false`
+and `reasoning_effort=low`, and asks for concise JSON under 900 answer tokens.
+These settings follow the official [Qwen3.8 model card's API and non-thinking
+examples](https://huggingface.co/Qwen/Qwen3.8-Flash-Next#instruct-or-non-thinking-mode);
+the answer target is a prompt instruction, while 2,048 is the request's hard
+output-token cap. Backend compatibility must be checked through a successful
+actual worker call before deployment. A missing final answer or
+`finish_reason=length` fails the attempt with an explicit error; reasoning text
+is never parsed as final JSON. Call status records finish reason and reasoning
+character count, and usage includes consumed tokens even on such failures.
 It does not execute response text or shell instructions. The five-field review
 schema is:
 
@@ -93,3 +103,14 @@ after launch before claiming the Qwen subagent is running. A PID alone does not
 prove model participation. Preserve launch provenance, output location and
 resource usage separately, and stop only this worker's recorded process when
 requested or when its bounds are exhausted.
+
+On 2026-10-11, the direct-answer configuration passed one actual local worker
+call to the authorized backend. Requested and returned identity both matched
+`Qwen/Qwen3.8-Flash-Next-FP8`; the reply finished with `stop`, contained zero
+reasoning characters, and produced one schema-verified proposal. Usage was
+5,509 prompt tokens and 464 completion tokens, totaling 5,973. Evidence is
+retained locally under `runs/qwen/direct-json-verification-20261011T081305Z/`.
+This verification process exited at its one-call cap; it did not start a daemon
+or establish continuing deployment. The previously failed deployment attempt
+and this verification consume two of the phase's 24 attempts, leaving 22 for
+the replacement daemon. The proposal remains pending scientific review.

@@ -143,3 +143,155 @@ result retrieval, manifest verification and numerical check acceptance. A
 failed infrastructure smoke returns evidence for a smaller repair; it does
 not trigger an unapproved resubmission. The later GPU pilot needs its own
 scientific inputs and approved envelope.
+
+## 06:59 UTC — Periodicity research plan saved
+
+Purpose: persist the theoretical and experimental plan developed with the owner
+in the documentation directory.
+
+Added `doc/auto/periodicity-research-plan.md` and linked it from `doc/README.md`
+and `doc/TRACKER.md`. The plan records fixed-weight inference as the primary
+setting, linked continuous/categorical memory studies, matched periodic and
+nonperiodic driver controls, the recurrent architecture registry, separate
+state-carried and persistent-access depth loops, numerical/scientific acceptance,
+confirmation, native validation, and bounded cluv compute stages.
+
+The plan proposes 351 controlled pilot checkpoints before tuning, confirmation,
+native models, or targeted ablations. This is planned coverage, not an approved
+allocation or a completed experiment. Legacy graph recovery and independent
+synthetic work may proceed in parallel under the new research path; the current
+bootstrap execution DAG and operational skills have not yet been revised.
+
+Validation for this documentation change: whitespace checks and repository-local
+Markdown link resolution. No training, cluster submission, or source-snapshot
+modification was performed. Next: translate the documented plan into frozen
+task/adapter configurations, acceptance fixtures, and bounded execution nodes.
+
+## 07:28 UTC — Literature library and adversarial novelty audit completed
+
+Purpose: assess the project's novelty against close existing work, assemble a
+scoped bibliography, retrieve available public papers, and identify defensible
+open questions before committing to the broad experimental screen.
+
+Added `doc/literature/novelty-review.md` (about 3,800 words), a search log,
+reading guide, annotated bibliography, importable BibTeX, canonical reference
+JSON, four source registries/reviews, retrieval manifest, hash-bound manual
+identity checks and a validation record. Three bounded subagents independently
+reviewed theory, memory/experiments and architectures; the coordinator reviewed
+graph/measurement antecedents and integrated a second scientific and metadata
+check. The 98 source records merge to 90 distinct works. Evidence depth: 26
+substantive selected-section readings, 60 abstract records, four metadata-only
+records. These labels do not mean complete proof or implementation verification.
+
+All 90 works have public PDF copies under ignored `literature/papers/`
+(197,085,607 bytes; approximately 188 MiB; 2,267 pages including appendices).
+Extracted text and PDF renders are also ignored. Several publisher or obsolete
+links failed; legitimate author/institutional/publisher alternatives resolved
+all entries. The ledger preserves attempted URLs and errors. Reviewed arXiv
+versions were pinned where version drift was detected. Bengio and Dahmen copies
+are manuscripts, explicitly distinguished from typeset published versions.
+Jaeger and Bengio text extraction is imperfect; their identity/title pages were
+rendered and visually checked against the recorded hashes.
+
+The integrated verdict rejects generic novelty for periodic Floquet memory,
+recurrent/graph/transformer collapse, noise-maintained geometry, and contracting
+loops with input reinjection. Close antecedents include public T-GRAB, Pals,
+Ashwin–Ceni, Arroyo, Ganguli, Sharma, Fokam, MeSH, Labovich and Viakhirev.
+Recent preprint conclusions are treated as conditional claims, not reproduced
+facts. The report specifies five candidate open questions around required
+history loss, its mechanism, causal prediction, native transfer and bounded
+mitigation, each with decisive tests and falsifiers.
+
+Key corrections to carry into implementation: the equal-horizon affine and
+commuting-product cue-channel nulls; complete-state conditioning; common joint
+noise-law assumptions; continuous versus categorical memory; readout offsets;
+finite cue-sample rank ceilings; Gaussian-channel assumptions; and individual
+horizon arm gaps alongside the primary difference-in-differences. A positive
+interaction alone need not imply periodic harm. Broad architecture coverage
+should follow a small mechanism study and independent confirmation. The plan
+now links this reassessment; executable DAG/configurations are still pending.
+
+Commands used include:
+
+```bash
+uv run --no-project --with pypdf --with fonttools code/literature/build_library.py --download --workers 3
+python3 code/literature/build_library.py
+git diff --check
+```
+
+Targeted retrievals used `--only` and `--refresh`. An ephemeral validation script
+used `pypdf` and `bibtexparser==1.4.3`; rendered exceptions used `pymupdf`.
+The initially resolved BibTeX parser exposed a different API, so validation was
+rerun with the explicit compatible version. No project dependency or lockfile
+was changed. Validation passed: 90 parsed BibTeX entries with matching IDs;
+90 unique PDF signatures/hashes/byte counts/page counts; local text presence;
+zero unresolved identity flags; 155 local Markdown paths; reading-list anchors;
+helper syntax; and whitespace checks. See `doc/literature/validation.json`.
+Minor PDF object-offset warnings did not prevent page parsing; this is not an
+all-pages rendering audit.
+
+No training, cluster jobs, source-snapshot edits, commits or pushes were
+performed for this literature task. Remaining work: expand citation chains
+before submission, audit uninspected proofs and selected preprint code, recover
+legacy graph assets, and translate the revised scientific gates into frozen
+vector pilot configurations. No absence-of-prior-work guarantee is claimed.
+
+
+## Authorized initial execution and node-local Alliance access
+
+The owner explicitly instructed cluv synchronization, initial submissions,
+prioritization of other Alliance clusters, and an actual continuously working
+Qwen cluster researcher. This supersedes the earlier pending-allocation state.
+The bounded initial envelope is in ignored `configs/approval.local.json`:
+maximum four CPU smokes (1 CPU/2 GiB/10 minutes each), four seed-0 GRU/LSTM
+categorical/continuous GPU pilots (1 GPU/4 CPU/16 GiB/1 hour each; at most two
+running), scratch staging up to 20 GiB per live-verified host, no race or paid
+fallback. This is an initial engineering phase, not the broad scientific sweep.
+
+Mila and Tamia scratch source/Python/locked NumPy environments were staged.
+Native cluv synchronized laptop->Mila and Mila->Tamia. Cluv API submissions
+recorded exact CPU source `7ca2be4c7827d0644b0216cb86bec1dbb855f5a4`:
+
+- Tamia **536757**: COMPLETED, exit **0:0**, elapsed three seconds. Calibration
+  JSON/NPZ/provenance artifacts were retrieved from Tamia to Mila using cluv.
+- Mila **11190579**: FAILED, exit **2:0**, elapsed one second. It stopped at
+  the prepared-Python check. `uv python find --no-project` selected the inherited
+  controller virtual environment. Adding `--system` selects the exact prepared
+  scratch-managed interpreter; verified on Mila. No unrecorded retry occurred.
+
+The new immutable source adds seven mechanism calibration families (36 checks),
+paired vector-memory tasks, complete-state GRU/LSTM training/evaluation,
+held-out cue probes, effect contrasts and provenance. Full local suite passed
+29 tests in 1.587 seconds after scheduler identities were added to status
+artifacts. Jobs export `CLUV_CLUSTER_NAME`; Qwen only imports status job IDs for
+its own controller cluster, avoiding cross-cluster ID collisions. CUDA remains
+unverified locally. Publication commits: `bb81ee4` experiment implementation,
+`1fb4402` literature/research plan, `7996fc9` cluster-scoped monitoring; all pushed
+and synchronized to Mila/Tamia. Source snapshots remain untouched.
+
+Owner's supplied cluv transcript authenticated from **tamia1** to Narval,
+Rorqual, Fir, Nibi, Trillium, Trillium-GPU, Killarney and Vulcan without reported
+errors; Mila failed public-key authentication from that route. Coordinator's
+existing SSH master lands on **tamia2**. Pinned cluv API checks there verified
+zero of eight reusable Alliance remote masters. UNIX control sockets are
+login-node-local even when filenames appear in shared home. Strict BatchMode
+routes to tamia1 require Duo. Two additional interactive attempts timed out or
+closed before approval; no host-key bypass or SSH configuration change occurred.
+The passive `code/ops/verify_cluv_access.py` is prepared for the existing owner
+shell, with no interactive auth, remote mutations or scheduling. Other-cluster
+accounts/one-GPU profiles remain unverified; their pilot launches are pending.
+
+An actual Qwen service was verified from Mila with exact model identity
+`Qwen/Qwen3.8-Flash-Next-FP8`. The first persistent leaf worker (Mila PID2808708,
+08:10:33 UTC) consumed its 2,048-token response cap entirely in reasoning and
+returned no final answer; one request used 5,923 total tokens. The coordinator
+stopped that exact PID before its retry. The direct-JSON repair uses official
+Qwen chat-template controls, rejects truncated/empty final content, and retains
+raw failures and usage. One actual local worker verification then passed exact
+model identity and review schema: 5,509 prompt/464 completion/5,973 total tokens.
+Two phase research attempts are accounted; restarted daemon gets at most 22
+additional attempts over 24 hours, polls evidence each minute and proposes hourly.
+Credentials travel only via secure stdin to process environment; no values are
+persisted. Qwen drafts falsifiable next-step proposals; scientific acceptance,
+code changes and submissions remain with the coordinator. Restart/liveness
+verification and new-cluster authentication are the next operations.

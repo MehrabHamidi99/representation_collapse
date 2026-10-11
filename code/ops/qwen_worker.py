@@ -158,6 +158,10 @@ next_experiment: object with exactly question, design, resources, stopping_rule
 (all nonempty strings; make required approval explicit for proposed allocations);
 acceptance_checks: nonempty array of nonempty strings;
 limitations: nonempty array of nonempty strings.
+Write final JSON directly without thinking text, markdown or explanations outside
+the JSON. Keep the whole answer under 900 tokens: assessment at most 70 words,
+one or two evidence citations, each experiment field at most 65 words, at most
+three acceptance checks and two limitations. Use concise complete strings.
 Never return shell actions. Every scientific conclusion remains a proposal pending
 independent coordinator review. No paid fallback is authorized."""
 
@@ -168,7 +172,18 @@ def request_body(model, items, trigger):
     if sum(len(m["content"]) for m in messages) > CONTEXT_CHARACTERS:
         raise ValueError("request exceeds compact-context character budget")
     return {"model": model, "messages": messages, "temperature": 0.0,
-            "max_tokens": MAX_TOKENS, "stream": False, "response_format": {"type": "json_object"}}
+            "max_tokens": MAX_TOKENS, "stream": False, "response_format": {"type": "json_object"},
+            "chat_template_kwargs": {"enable_thinking": False}, "reasoning_effort": "low"}
+
+
+def final_content(choice):
+    """Reasoning is never a fallback answer, including token-exhausted replies."""
+    if choice.get("finish_reason") == "length":
+        raise ValueError("provider exhausted output-token budget (finish_reason=length); final JSON rejected")
+    content = choice.get("message", {}).get("content")
+    if not isinstance(content, str) or not content.strip():
+        raise ValueError("provider returned no final answer content; reasoning content cannot substitute for final JSON")
+    return content
 
 
 def parse_review(content, identifiers):
@@ -256,6 +271,8 @@ def main():
         "interval_seconds": args.interval, "research_interval_seconds": args.research_interval,
         "http_timeout_seconds": args.http_timeout,
         "max_tokens": MAX_TOKENS, "context_character_budget": CONTEXT_CHARACTERS,
+        "response_policy": {"enable_thinking": False, "reasoning_effort": "low",
+            "requested_final_answer_token_target": 900, "reject_truncated_final_answers": True},
         "controller_cluster": args.cluster,
         "artifact_roots": [str(p) for p in roots], "configured_local_job_ids": args.job_id,
         "environment_variables_required": ["QWEN_BASE_URL", "QWEN_MODEL", "CAIRN_API_KEY"],
@@ -302,7 +319,7 @@ def main():
             atomic_json(attempt / "status.json", {"state": "calling", "started_at": now(),
                 "requested_model": model, "scientific_decision": "pending"})
             heartbeat()
-            usage, returned_model = None, None
+            usage, returned_model, finish_reason, reasoning_characters = None, None, None, None
             try:
                 raw = provider_call(base_url, key, body, min(args.http_timeout, remaining))
                 (attempt / "raw-reply.json").write_text(scrub(raw, key))
@@ -311,7 +328,11 @@ def main():
                 returned_model = envelope.get("model")
                 if returned_model != model:
                     raise ValueError("provider model identity absent or different from requested model")
-                content = envelope["choices"][0]["message"]["content"]
+                choice = envelope["choices"][0]
+                finish_reason = choice.get("finish_reason")
+                reasoning = choice.get("message", {}).get("reasoning_content")
+                reasoning_characters = len(reasoning) if isinstance(reasoning, str) else 0
+                content = final_content(choice)
                 review = parse_review(scrub(content, key), items)
                 atomic_json(attempt / "review.json", {"schema_verified": True, "scientific_decision": "pending",
                     "review": review, "evidence_sha256": evidence_hash})
@@ -319,6 +340,7 @@ def main():
                 successful += 1
                 atomic_json(attempt / "status.json", {"state": "proposal_ready", "finished_at": now(),
                     "requested_model": model, "returned_model": returned_model, "model_identity_verified": True,
+                    "finish_reason": finish_reason, "reasoning_characters": reasoning_characters,
                     "scientific_decision": "pending", "actions_executed": 0})
             except Exception as error:
                 consecutive_errors += 1
@@ -327,6 +349,7 @@ def main():
                 atomic_json(attempt / "status.json", {"state": "failed", "finished_at": now(),
                     "requested_model": model, "returned_model": scrub(str(returned_model), key) if returned_model is not None else None,
                     "model_identity_verified": returned_model == model,
+                    "finish_reason": finish_reason, "reasoning_characters": reasoning_characters,
                     "error": scrub(f"{type(error).__name__}: {error}", key), "scientific_decision": "pending"})
             add_usage(totals, usage)
             reported_usage = None
