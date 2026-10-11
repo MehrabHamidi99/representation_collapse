@@ -1,0 +1,67 @@
+% Canonical source: doc/auto/initial-phase-report.md; doc/auto/initial-phase-scientific-review.md;
+% doc/auto/initial-phase-results.json; doc/auto/periodicity-analysis-launch.json;
+% doc/auto/periodicity-analysis-status.json; doc/auto/periodicity-analysis-v1.md;
+% configs/experiments/vector-pilot-v1.json; doc/october/october11/2026-10-11-progress-report.md.
+\section{Reproducibility}
+\label{sec:reproducibility}
+
+\paragraph{Source and environment.}
+Training and v1 evaluation ran clean source commit \hash{9004a0c114a8b7c5335dca3d5247449fd10b5ffa} with the frozen configurations \path{initial-phase-v1.json} and \path{vector-pilot-v1.json} under \path{configs/experiments/}. The locked offline environment is Python 3.11.13, PyTorch 2.6.0+cu124 and NumPy 2.4.6, pinned by \texttt{uv.lock}; submissions used native cluv 0.1.5. The checkpoint-only periodicity analysis ran source commit \hash{458bc9cfce474b8e11e433e33bf132faf5032387} with frozen configuration \texttt{configs/experiments/periodicity-analysis-v1.json} (SHA-256 \hash{ab74585e37dfd06058ed0aec1904b7aaa6d43d5daf70eb3a16ceea2689f97fa0}; analysis module \hash{5ff03bcddc5b0c3810eec8c02b4efbbd86da370567e876eaa150dd446bcc25e8}; focused tests \hash{81212f2509b4a4f209e9c2e009e67f5f5faa4905d9eb084b08da48b6cef2a70c}). The local regression suite has 34 tests. Postprocessing helpers are committed after the frozen training source; the verifier is \hash{5f092ee5b87c5e407b5271eee97d5a59c66264570d2862df3cc672de0cb8d22b} and the metrics module \hash{41a4790b639fb2d37c1169771c08760e7df1ab0a1b7fa75ee2553828c21ebf1e}. The raw-output verification record has SHA-256 \hash{4a71636fa22baba0cc4b20c1b0b8ff0ca339278e159854fe7966b5159e01a4a0}.
+
+\paragraph{Scheduler jobs.}
+\Cref{tab:jobs} lists every job behind the reported evidence. All completed with exit \texttt{0:0}. GPU jobs allocated one device, four CPUs and 16\,GiB; Narval used A100-SXM4-40GB and Rorqual an H100 MIG \texttt{3g.40gb} slice (the LSTM training jobs were amended on the same IDs from one hour and a full H100 to fifteen minutes and one MIG slice before start; no resubmission). Training allocation totalled 555 device-seconds and the periodicity batch 608 device-seconds, counting a MIG slice as one device. Peak concurrency was one in training and at most two in the periodicity batch; no retry, race or requeue occurred.
+
+\begin{table}[t]
+\centering
+\caption{Scheduler jobs. Cal.: calibration (10 measurement + 36 mechanism checks). Per.: checkpoint-only periodicity analysis. Times are UTC on 2026-10-11.}
+\label{tab:jobs}
+\small
+\begin{tabular}{llllll}
+\toprule
+Purpose & Cluster & Job & Cell & Device & Elapsed \\
+\midrule
+Cal.      & Narval  & 5234514  & CPU                & 1 CPU, 2\,GiB & 32\,s \\
+Training  & Narval  & 5234860  & GRU categorical    & A100 & 243\,s \\
+Training  & Narval  & 5235508  & GRU continuous     & A100 & 228\,s \\
+Training  & Rorqual & 22980985 & LSTM categorical   & H100 MIG 3g.40gb & 52\,s \\
+Training  & Rorqual & 22980998 & LSTM continuous    & H100 MIG 3g.40gb & 32\,s \\
+Per.      & Narval  & 5254858  & GRU categorical    & A100 & 263\,s \\
+Per.      & Narval  & 5254871  & GRU continuous     & A100 & 231\,s \\
+Per.      & Rorqual & 22984956 & LSTM categorical   & H100 MIG 3g.40gb & 62\,s \\
+Per.      & Rorqual & 22984963 & LSTM continuous    & H100 MIG 3g.40gb & 52\,s \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Checkpoints.}
+Seed 0 in every cell. Selected steps: GRU categorical 300, LSTM categorical 300, GRU continuous 400, LSTM continuous 200. Checkpoint SHA-256: GRU categorical \hash{f1db79385be4de085c457f88355242d0e6e62ceefbe79de4963ab725eca2bcd3}; GRU continuous \hash{e35502d2958c78c465ae4a46639965f3e841fc5e6ad4ff490daf1fc4fb74d4f5}; LSTM categorical \hash{8752a480b2f5a9d674ef624a7cfb8780b67ceb43b51b4bcf3cadb9ecbd298673}; LSTM continuous \hash{ec63862dbd27657e99c7becdbdd1301d8813d4525426a9a1545768658561c660}.
+
+\paragraph{Artifact locations.}
+\begin{itemize}[leftmargin=2em,itemsep=1pt]
+  \item Original run folders on each execution cluster:\\ \path{$SCRATCH/representation-collapse/logs/cluv/<cluster>_<job>/} \\ (\texttt{pilot/} for training, \texttt{periodicity/} for the diagnostic batch).
+  \item Hash-verified full copies on Tamia and Mila scratch; private durable archives on each execution cluster under\\ \path{/project/def-ioannism/mehrab/representation-collapse/evidence/initial-phase-v1-9004a0c/}.
+  \item The periodicity batch has 28 manifest-listed artifacts (359,996,711 bytes), all hash-verified on the servers.
+  \item Compact committed records: \path{doc/auto/initial-phase-results.json}, \path{doc/auto/periodicity-analysis-launch.json}, \path{doc/auto/periodicity-analysis-status.json}. Detailed runtime receipts are ignored files under \path{runs/ops/}.
+  \item No checkpoint or dataset was copied to a laptop.
+\end{itemize}
+
+\paragraph{Task and training settings (v1).}
+Hidden size 128; encoder 64 features (affine + tanh on 38 input channels); AdamW, learning rate $10^{-3}$, weight decay $0.01$, gradient clipping $1.0$; batch size 32 (16 paired prefix/query examples); 1,500 steps; validation every 100 steps on 32 pairs per horizon; training horizons $\{1,2,4,8,16\}$ with balanced arms; evaluation horizons $\{1,2,16\}$ with 256 pairs each; two driver pairs per horizon; 512 cloud cues and 256 probe test cues; ridge $0.01$; one CPU thread for data generation.
+
+\paragraph{State shapes.}
+GRU complete state: 128 hidden coordinates. LSTM complete state: $[h,c]$ with 128 + 128 = 256 coordinates, flattened in the saved manifest order. Encoder features and the QUERY selector are inputs, not state. The planned GC-LSTM adapter has state $2NH$ with the node ordering recorded.
+
+\paragraph{Numerical settings.}
+Native float32 recurrence; centering and eigendecomposition in float64; variance comparisons at zero absolute and $10^{-5}$ relative tolerance; covariance eigenvalue absolute tolerance $10^{-12}$ times the recomputed cloud trace. Periodicity protocol: CUDA matmul and cuDNN TF32 disabled; FP64 replay casts fixed weights and all inputs and runs WRITE and body from the zero state; closure tolerances FP32 $(10^{-7},10^{-5})$ and FP64 $(10^{-10},10^{-8})$ for states, FP32 $(10^{-6},10^{-5})$ and FP64 $(10^{-10},10^{-8})$ for Jacobian arrays; adapter/native equivalence FP32 $(10^{-6},10^{-5})$ and FP64 $(10^{-12},10^{-10})$; ordered-product/direct-map agreement FP32 $(10^{-5},10^{-4})$ and FP64 $(10^{-10},10^{-8})$; central finite differences at $\epsilon\in\{10^{-4},10^{-5},10^{-6}\}$ with absolute $10^{-8}$ and relative $10^{-4}$ bounds; relative denominators floored at $10^{-12}$.
+
+\paragraph{Determinism and reduced-precision flags (v1 training).}
+The v1 training code (\texttt{pilot.py}) neither set nor recorded the CUDA matmul and cuDNN TF32 flags or \texttt{float32\_matmul\_precision}; with PyTorch's default \texttt{cudnn.allow\_tf32=True} the A100 and H100 pilots may have used TF32 inside cuDNN RNN kernels, which cannot be checked from the saved artifacts (implementation audit, sections 4--5). The provenance field \texttt{deterministic\_algorithms: True} written by the pilot is a constant in the source, not a measured property of the run. The audit verified that two identical CPU repeat runs produce bitwise-identical checkpoints and identical $\delta_2$ and $\delta_{16}$ (only \texttt{runtime\_seconds} differs); CUDA repeat-run determinism is unverified, as no GPU repeat run exists. The TF32-disabled setting stated above applies to the checkpoint-only periodicity protocol only. Design v2 records both TF32 flags and the matmul precision in provenance. \evidence{executed-verified}
+
+\paragraph{Local verification.}
+\begin{verbatim}
+uv sync --locked --group ops
+uv run --locked python -m unittest discover -s tests -v
+uv run --locked python -m representation_collapse.calibrate \
+    --output runs/calibration/<id>
+\end{verbatim}
+\todo{Add the mechanism-calibration and periodicity reduction commands once the reduction script is accepted; add the Gate B configuration names and seeds.}

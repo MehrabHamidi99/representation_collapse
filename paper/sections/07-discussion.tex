@@ -1,0 +1,40 @@
+% Canonical source: doc/auto/research-charter.md §3, §11; doc/auto/periodicity-research-plan.md §4
+% (interpretation list); doc/literature/novelty-review.md §5–§6.
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Interpretation matrix}
+The outcomes of Gate B are read jointly across the three estimands, after the competence prerequisite. \Cref{tab:matrix} fixes the vocabulary in advance so that no outcome is renamed after inspection.
+
+\begin{table}[t]
+\centering
+\caption{Preregistered interpretation of joint outcomes in competent models. ``Geometry'' is cue-conditioned covariance with absolute variance; ``behavior'' is the horizon-specific arm contrast $\delta_R$ with its interval; ``intervention'' is a direction-specific corruption/rescue effect exceeding equal-energy shams.}
+\label{tab:matrix}
+\small
+\begin{tabular}{p{0.46\linewidth}p{0.46\linewidth}}
+\toprule
+Observed pattern & Interpretation \\
+\midrule
+Lower dimension in the periodic arm, no excess error, probes intact & Useful compression (H2); not harm \\
+Lower absolute variance, stable normalized dimension, no excess error & Attenuation; report with the noise floor; not harm \\
+Excess periodic-arm error without geometric loss & Forgetting or access failure without demonstrated dimensional concentration; test readout offset and query mechanisms \\
+Excess error, task-relevant geometric loss, and intervention effect above shams & Supported harmful-collapse mechanism (H1) in the tested models, tasks, horizons and dwell \\
+Both arms forget equally at $R=16$ & Ordinary horizon-limited memory; no periodicity-specific claim \\
+Contracting local spectra, verified closure, cue separation persists, labels decodable & Stable categorical attractor memory; boundary result against a local-spectrum explanation (P11) \\
+Arm difference disappears under an offset-compensated decoder & Readout-offset effect (\cref{cor:offset}); legitimate outcome, not erasure \\
+Effect explained by covariance or predictability baselines, interventions add nothing & Descriptive predictor; causal mechanism unproven \\
+Effect vanishes under FP64 replay or matched sampling & Measurement artifact (H4) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Alternatives that must be carried through the analysis}
+\emph{Readout offset.} By \cref{prop:affine}, an arm-dependent deterministic shift of the operating point is the only effect ordinary affine stability can produce; a nonlinear head can translate it into a raw error difference. The offset-compensated decoder and the body-informed probe decide whether an observed $\delta_R$ is an offset. \emph{Stable categorical attractor memory.} The phase-locked memory of \citet{pals2024-phase-locked-memory} and the construction of \cref{prop:basins} show that a cue can select a basin that survives forcing while every local multiplier is below one; finite inter-cue separations, basin membership and perturbation radii must therefore be measured alongside Jacobians, and a transition between basins must be distinguished from contraction inside one. \emph{Training-correlation effects.} Temporal correlations shape learned memory \citep{fokam2026-temporal-correlations}; frozen checkpoints and balanced arms during training keep the inference-time ordering intervention separate from this effect, but a checkpoint trained on one arm only would not. \emph{Access failure.} A recoverable cue with failing native readout supports an access mechanism rather than erased storage \citep{ravichander2021-probe-relevance}; the v1 probe results at $R=2$ (\cref{tab:probes}) are a reminder that this dissociation is live. \emph{Input synchronization.} A unique forced response that forgets its initial condition while carrying the current input \citep{manjunath2013} is H3; it predicts closure and contraction, and it is refuted as the explanation of a written-cue loss only when cue separation and conditioned recoverability are measured.
+
+\subsection{What each outcome would mean}
+A confirmed excess loss at a named horizon with a mechanism that also predicts where loss does not occur would support a mechanism paper and justify Gate C and Gate D. An interval excluding the smallest effect of interest in both directions, in competent models with matched bodies, would support a null and counterexample paper: it would not establish general harmlessness, but it would systematically disprove the inferences catalogued in \cref{app:inherited} and establish predictive boundaries. An inconclusive interval returns a bounded result and a power-justified confirmation request rather than a wider screen. Failed competence, which is the present state, returns to the competence ladder and publishes nothing about collapse.
+
+\todo{Discussion of the accepted Gate B outcome against this matrix, written only after independent review; include the periodicity-diagnostic reduction once accepted.} \evidence{conditional}
+
+\subsection{Relation to the broader collapse literature}
+The cross-architecture collapse narrative \citep{all_routes_collapse,mesh,huginn} and the graph oversmoothing literature \citep{arroyo2025bridging,chehreghani2026noise} measure token, node or iterate clouds, not required information in a cued memory task. Our contribution, if the gates are passed, is narrower: a specified ordering intervention in fixed-weight models, with nulls that say what stability alone can explain and interventions that say what the state is used for. We do not claim modality generality from isomorphic renderers; a frozen prediction must transfer to at least one native task (Gate D) where retaining earlier information is actually necessary.

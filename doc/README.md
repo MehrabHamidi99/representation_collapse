@@ -1,22 +1,48 @@
-# Lab notebook
+# Documentation map and lab notebook
 
-Adapted from the Skill Inference project's month/day convention. The canonical
-current state is [TRACKER.md](TRACKER.md); reusable protocols are under `auto/`.
+The canonical current state is [TRACKER.md](TRACKER.md); reusable protocols,
+reviews and evidence records are under `auto/`; the literature library is under
+`literature/`; dated reports are under `<month>/<month><day>/`.
 
-The [periodicity research plan](auto/periodicity-research-plan.md) records the
-theoretical and experimental path across recurrent architectures and modalities,
-including temporal/depth recurrence, matched repetition controls, confirmation,
-and compute milestones.
+## Canonical documents (read in this order)
 
-The [literature library](literature/README.md) contains the scoped bibliography,
-local paper index and [critical novelty review](literature/novelty-review.md).
-Read the novelty review before freezing experiment scope: it identifies close
-prior work and recommends analytic controls and a small mechanism study before
-the broad architecture sweep.
+1. [Research charter](auto/research-charter.md): question, sub-questions mapped
+   to Gates A–D, hypotheses with falsifiers, estimands, primary contrast,
+   claims and non-claims, antecedent deltas, publication threshold.
+2. [Theory propositions](auto/theory-propositions.md): P1–P12 with assumptions,
+   proofs, fixtures, limits and predictions; corrections to the inherited draft.
+3. [Experimental design v2](auto/experimental-design-v2.md): task and
+   intervention checked against the code, staged gates, measurement battery,
+   interpretation matrix, statistics, evidence ledger, implementation gaps.
+4. [Implementation audit](auto/implementation-audit.md): what the code enforces,
+   what the tests cover, numerical risks, backlog for Gate B.
+5. [Novelty review](literature/novelty-review.md) and the
+   [literature library](literature/README.md).
+
+Supporting protocols: [measurement contract](auto/research-program.md),
+[competence-recovery ladder](auto/competence-recovery-plan.md),
+[checkpoint periodicity protocol v1](auto/periodicity-analysis-v1.md),
+[graph reproduction](auto/graph-reproduction.md),
+[source inventory](auto/source-inventory.md). The
+[periodicity research plan](auto/periodicity-research-plan.md) records the
+theoretical and experimental path developed with the owner; its broad
+351-checkpoint screen is deferred coverage under the v2 gate order.
+
+Evidence records: [initial-phase report](auto/initial-phase-report.md),
+[independent scientific review](auto/initial-phase-scientific-review.md),
+[compact results](auto/initial-phase-results.json),
+[periodicity launch](auto/periodicity-analysis-launch.json) and
+[status](auto/periodicity-analysis-status.json).
+
+Operations: [compute plan](auto/compute-plan.md),
+[cluster access](auto/cluster-access.md), [agent protocol](auto/agent-protocol.md),
+[Qwen worker](auto/qwen-worker.md).
+
+## Notebook convention
 
 Write one report per workday:
 `doc/<lowercase-month>/<month><day>/YYYY-MM-DD-progress-report.md`.
-For example, `doc/october/october11/2026-10-11-progress-report.md`.
+For example, `doc/october/october12/2026-10-12-progress-report.md`.
 Append timestamped sections when continuing the same day. Reports retain
 history; the tracker is edited to reflect current state.
 

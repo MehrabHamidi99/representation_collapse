@@ -1,0 +1,43 @@
+% Canonical source: doc/auto/research-program.md (exact discrete dynamics, Floquet applicability,
+% dimension contract); doc/auto/periodicity-analysis-v1.md (closure contract); charter §4.
+\section{Setting: complete state, discrete dynamics and estimands}
+\label{sec:setting}
+
+\subsection{Notation and complete state}
+A recurrent model with fixed parameters $\theta$ has complete persistent state $s_t\in\R^n$ and update
+\begin{equation}
+  s_{t+1} = F_\theta(s_t, x_t),\qquad
+  J_t = \partial_s F_\theta(s_t, x_t)\in\R^{n\times n},\qquad
+  P_{t,L} = J_{t+L-1}\cdots J_{t+1}J_t .
+  \label{eq:update}
+\end{equation}
+Derivatives are taken at fixed external inputs and parameters. The complete state includes every quantity carried across time: for a GRU of width $H$, $s_t=h_t\in\R^{H}$; for an LSTM, $s_t=[h_t,c_t]\in\R^{2H}$; for a one-layer node-wise graph LSTM on $N$ nodes, $s_t\in\R^{2NH}$ together with the node ordering and flattening manifest, because graph convolution couples nodes and a per-node block is not the transition Jacobian. Persistent buffers, convolution histories, matrix memories and caches, where present, are part of $s_t$ or are declared fixed. We record whether inputs are teacher-forced or generated in closed loop; in a closed loop, derivatives through generated inputs belong in $J_t$.
+
+An episode is a WRITE prefix, a body and a terminal QUERY. The WRITE prefix carries a cue $u\in\mathcal U$ (required coordinates) and nuisance values $v$; the body $h=(x_0,\dots,x_{H-1})$ carries no memory values; the query reveals the selector $q$ only at the final step. Write $s_H(u,v,h)$ for the complete state immediately before the query. Two bodies $h,h'$ are \emph{matched} when they have equal length and the matching statistics of \cref{sec:design}. The periodic arm repeats one motif $R$ times; the horizon is $R$.
+
+\subsection{Discrete framework; no continuous embedding}
+All analysis is of the discrete map \eqref{eq:update}. Writing $F(s,x)-s$ as a vector field defines an Euler surrogate at step one; the exact flow of that ODE is not in general $F$, and no continuous-time embedding is needed for a period-map analysis. The inherited draft's conversion to a continuous-time limit (\cref{app:inherited}) is therefore not used.
+
+\subsection{When Floquet terminology applies}
+\begin{definition}[Verified periodic orbit]
+\label{def:verified-orbit}
+Fix a period $T$. The input is $T$-periodic on the analysed window if $x_{t+T}=x_t$ realized vector by vector. The complete-state trajectory is closed at tolerance $(\varepsilon_{\mathrm{abs}},\varepsilon_{\mathrm{rel}})$ if, after a declared burn-in, consecutive phase-matched blocks of $T{+}1$ states satisfy $\norm{s_{t+T:t+2T}-s_{t:t+T}}\le\varepsilon_{\mathrm{abs}}$ and the same difference is at most $\varepsilon_{\mathrm{rel}}$ times the larger block norm (floored at $10^{-12}$). The orbit period is the observed one, which may be a multiple of the input period.
+\end{definition}
+For an exactly closed orbit, $J_{t+T}=J_t$ follows from \eqref{eq:update}, and
+\begin{equation}
+  M_t = J_{t+T-1}\cdots J_t
+\end{equation}
+is the one-period tangent map whose eigenvalues $\mu_i$ are discrete Floquet multipliers. Under approximate closure, Jacobian periodicity is a separate numerical check with its own residual; the v1 periodicity protocol reports it but does not certify it, so every product there retains the finite-time label. The following statements are direct for these maps: $|\mu|<1$ denotes per-cycle modal contraction at the verified orbit, not monotone contraction within the cycle (P8); $|\mu|=1$ alone does not prove an oscillatory clock, since defective unit-modulus blocks grow polynomially and a multiplier $+1$ need not oscillate; a forced discrete orbit has no automatic neutral phase multiplier; repeating an input does not make the Jacobian constant, because the state can differ between repeats; and a one-step rotation at frequency $m/T$ raised to the power $T$ has one-period multiplier $1$, so a block pattern such as AABB does not predict fourth-root-of-unity multipliers of its one-period map. Under an input-specific echo-state condition the driven response has a period dividing the input period \citep{manjunath2013}; without such a condition a longer period, several coexisting responses, or no periodic response are admissible outcomes.
+
+\subsection{Finite-time propagators}
+When closure is not verified, or inputs are fresh stochastic draws, we report for any window the singular values $\sigma_i(P_{t,L})$, the largest gain $\norm{P_{t,L}}_2$, and finite-time rates $\ell_i(t,L)=\log\sigma_i(P_{t,L})/L$ in units of inverse update. These are conditional on the realized forcing; input-perturbation sensitivity is a different measurement. Eigenvalue modulus and singular value answer different questions: a nonnormal product can have spectral radius below one and finite-window gain above one. Long products are formed by JVP/VJP with scaled QR or SVD and are checked against dense products and central finite differences on small cases; zero singular values are reported as rank deficiency at the stated precision, never replaced by a floor. A leading partial spectrum supports only a partial claim.
+
+\subsection{Three estimands}
+\paragraph{Covariance geometry.}
+For a cue-conditioned cloud $\{s_H(u_j,v,h)\}_{j=1}^{N_{\mathrm{cue}}}$ at fixed $v$, $h$, phase and horizon, let $C$ be the centered sample covariance with eigenvalues $\lambda_i\ge0$ and $p_i=\lambda_i/\sum_k\lambda_k$. We report the participation ratio $\PR(C)=(\sum_i\lambda_i)^2/\sum_i\lambda_i^2$, the covariance entropy dimension $D_{\mathrm{ent}}=\exp(-\sum_i p_i\log p_i)$, the smallest ranks $D_{90},D_{95}$ explaining 90\% and 95\% of variance, the absolute variance $\tr C$, the spectrum, the numerical rank at declared tolerance, the sample count and the centering and normalization used. For LSTM we report $h$, $c$ and $[h,c]$; for graphs, node-wise, whole-graph and pooled representations separately. Normalized dimension is undefined for an all-zero cloud. Sampling ceilings apply: time-only covariance of an exact period-$P$ orbit has rank at most $P-1$, and a cloud of $N_{\mathrm{cue}}$ cues has rank at most $N_{\mathrm{cue}}-1$ (P6). Pooling body histories measures driver diversity and is rejected by the implementation as a conditioned measurement.
+
+\paragraph{Tangent propagation.}
+Finite-time propagators and, where \cref{def:verified-orbit} holds, Floquet multipliers, as above; with absolute amplification alongside any normalized tangent dimension.
+
+\paragraph{Behavior and information.}
+Native task error (categorical accuracy; continuous normalized MSE defined as $\mathrm{MSE}/(1/3)$ against the fixed population variance of $\mathrm{Uniform}[-1,1]$); held-out ridge probes fit on training cues with train-only standardization and shuffled-label controls; counterfactual cue separation $\norm{s_H(u,v,h)-s_H(u',v,h)}$ as a finite difference rather than a derivative; and causal interventions: complete-state swaps between matched histories, same-phase transplants, and direction-specific corruption and rescue against equal-energy random and nuisance shams. Probe success is not native use; probe failure is not information absence; a full-state transplant establishes causal relevance of state, not mediation by a dimension change.

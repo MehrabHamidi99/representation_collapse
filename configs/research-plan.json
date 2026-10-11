@@ -1,7 +1,9 @@
 {
   "schema_version": 1,
-  "plan_id": "representation-collapse-bootstrap-v1",
+  "plan_id": "representation-collapse-v2",
   "created_on": "2026-10-11",
+  "revised_on": "2026-10-12",
+  "revision_note": "v2 reorders execution around the novelty-audit gates: Gate A analytic/measurement falsification, Gate B minimal trained mechanism study (competence-first GRU/LSTM vector study with preregistered within-support R2 versus R16 contrasts), Gate C theory adding a prediction beyond the affine and commuting nulls, Gate D graph and native transfer. The 351-checkpoint screen of doc/auto/periodicity-research-plan.md section 3E becomes deferred coverage. Existing nodes, statuses, decisions, verified artifacts, approval and resource envelope are unchanged; six nodes are added. The integrated design is doc/auto/experimental-design-v2.md. This revision authorizes no compute.",
   "purpose": "Calibrate and reproduce graph temporal representation dimension measurements, then test recurrence and modality generality.",
   "execution_mode": "active-session-only",
   "persistent_controller_installed": false,
@@ -304,9 +306,165 @@
       "launch_evidence": "doc/auto/periodicity-analysis-launch.json",
       "note": "Four jobs completed0:0; worker numerical checks pass. Independent raw-array reduction and scientific review remain pending.",
       "completion_evidence": "doc/auto/periodicity-analysis-status.json"
+    },
+    {
+      "node_id": "periodicity_independent_reduction",
+      "depends_on": [
+        "periodicity_checkpoint_diagnostics"
+      ],
+      "status": "planned",
+      "scientific_decision": "pending",
+      "role": "independent-raw-array-reduction-and-scientific-review",
+      "protocol": "doc/auto/periodicity-analysis-v1.md",
+      "design": "doc/auto/experimental-design-v2.md",
+      "inputs": [
+        "doc/auto/periodicity-analysis-status.json",
+        "doc/auto/periodicity-analysis-launch.json",
+        "configs/experiments/periodicity-analysis-v1.json"
+      ],
+      "deliverable": "Independent raw-array reduction and scientific review of the four completed checkpoint-only periodicity diagnostics (Narval 5254858/5254871, Rorqual 22984956/22984963; analysis source 458bc9cfce474b8e11e433e33bf132faf5032387; training source 9004a0c114a8b7c5335dca3d5247449fd10b5ffa).",
+      "acceptance": [
+        "All 28 manifest-listed artifact hashes and the four original checkpoint hashes are rechecked before any array is interpreted.",
+        "Closure residuals, paired cue separations, ordered products, singular values and finite-time spectra are recomputed from the saved arrays and compared with worker metrics at the frozen tolerances.",
+        "Every spectrum retains the finite-time label; no Floquet multiplier, harmful-collapse or competent-memory claim is issued for these failed-competence checkpoints.",
+        "A supported/unsupported/inconclusive decision for each of the four frozen diagnostic interpretations is recorded in the dated notebook with discrepancies preserved."
+      ],
+      "verified_artifacts": [],
+      "note": "Read-only reduction of existing artifacts; no cluster submission is required for the review itself."
+    },
+    {
+      "node_id": "competence_recovery_discovery",
+      "depends_on": [
+        "initial_synthetic_engineering_phase"
+      ],
+      "status": "planned",
+      "scientific_decision": "pending",
+      "role": "competence-first-training-discovery",
+      "protocol": "doc/auto/competence-recovery-plan.md",
+      "design": "doc/auto/experimental-design-v2.md",
+      "deliverable": "Frozen diagnostic-ladder implementation (streaming register oracle, single-WRITE constructor, R0 support, coordinate-wise gates, gate-conditioned staged curriculum) and a seed-0 discovery grid of at most twelve fits over learning rates [0.0005, 0.001, 0.003] for GRU/LSTM x categorical/continuous, followed by feasibility seeds 1 and 2 at the frozen setting.",
+      "acceptance": [
+        "Local CPU fixtures pass for the streaming oracle with corruption controls, the single-WRITE constructor, the zero-body renderer, coordinate-wise gates and staged transitions before any submission.",
+        "Learning rate and checkpoint are selected by balanced validation task loss only; eligibility requires coordinate-wise accuracy >= 0.95 or normalized MSE <= 0.05 at R0/R1/R2 in both arms.",
+        "Every fit, including non-qualifying fits and numerical failures, is reported; no relaxed thresholds or extra updates after a failure.",
+        "Artifacts satisfy the provenance/manifest contract and are independently verified from saved arrays."
+      ],
+      "verified_artifacts": [],
+      "execution_requires": "A new recorded approval envelope; the compute estimate is in doc/auto/experimental-design-v2.md section 8.",
+      "note": "No compute is authorized by this node or by the design document; all GPU submissions in both prior envelopes are consumed."
+    },
+    {
+      "node_id": "mechanism_study_gate_b",
+      "depends_on": [
+        "competence_recovery_discovery",
+        "measurement_calibration"
+      ],
+      "status": "planned",
+      "scientific_decision": "pending",
+      "role": "minimal-trained-mechanism-study",
+      "protocol": "doc/auto/experimental-design-v2.md",
+      "deliverable": "Preregistered within-support R2 versus R16 contrast (delta2, delta16, DID) on competent frozen GRU/LSTM checkpoints with three-phase complete-state capture, cue-conditioned fixed-driver geometry, train-fit probes with shuffled-label controls, finite-time tangent windows with closure tests, causal interventions with equal-norm random and sham controls, FP64 fixed-weight replay and noise-robustness assays; three discovery seeds, then ten fresh confirmation seeds on untouched test manifests.",
+      "acceptance": [
+        "Smallest effect of interest, confidence-interval method, Holm family and selection rules are frozen and hashed before any confirmation-seed held-out result is inspected.",
+        "The replication unit is the training seed; paired seed-level effects with confidence intervals are reported for every cell, including null and opposite effects.",
+        "Covariance geometry, tangent propagation and behavior/information are reported as separate estimands; a Floquet label requires verified input periodicity and complete-state closure at declared tolerances.",
+        "Causal interventions include equal-norm random and sham controls; LSTM interventions act on h and c jointly with separate component reports."
+      ],
+      "verified_artifacts": [],
+      "execution_requires": "A new recorded approval envelope; see doc/auto/experimental-design-v2.md section 8.",
+      "note": "Releases Gate C prediction tests and Gate D transfer only on verified artifacts; null or opposite effects release dependents."
+    },
+    {
+      "node_id": "theory_gate_c",
+      "depends_on": [
+        "graph_source_audit"
+      ],
+      "status": "drafted",
+      "scientific_decision": "documents-only; no empirical claim",
+      "role": "theory-with-testable-prediction",
+      "deliverable": "doc/auto/theory-propositions.md",
+      "drafted_artifacts": [
+        "doc/auto/theory-propositions.md"
+      ],
+      "acceptance": [
+        "Each proposition states its assumptions, a proof or derivation, a numerical fixture, a counterexample showing its limits and an empirical prediction that differs from the affine ordering null and the commuting switched-affine null.",
+        "Standard results (periodic affine stability, input-specific echo states, continuous-attractor neutrality, Fisher memory) are labelled as foundations, not contributions.",
+        "Predictions to be tested in Gate B are frozen before confirmation seeds are inspected."
+      ],
+      "verified_artifacts": [],
+      "note": "Drafted by another worker in the 2026-10-12 session (P1-P12, corrections table, scratch checks). Document artifact only; predictions become frozen Gate B inputs, not accepted claims."
+    },
+    {
+      "node_id": "research_charter_and_paper_skeleton",
+      "depends_on": [
+        "graph_source_audit"
+      ],
+      "status": "drafted",
+      "scientific_decision": "documents-only; no empirical claim",
+      "role": "charter-and-manuscript-scaffold",
+      "deliverable": "doc/auto/research-charter.md and paper/ skeleton",
+      "deliverables": [
+        "doc/auto/research-charter.md",
+        "paper/"
+      ],
+      "drafted_artifacts": [
+        "doc/auto/research-charter.md",
+        "paper/"
+      ],
+      "acceptance": [
+        "Framing, research question and non-claims match doc/auto/experimental-design-v2.md section 0 and doc/literature/novelty-review.md section 7.",
+        "No manuscript placeholder states a result that the evidence ledger does not list as accepted.",
+        "Inherited manuscripts under floquet_analysis/ and ACM___TGRAB*/ remain unchanged source snapshots."
+      ],
+      "verified_artifacts": [],
+      "note": "Drafted by another worker in the 2026-10-12 session; paper/ builds cleanly with named todo placeholders. Document artifacts only."
+    },
+    {
+      "node_id": "implementation_audit",
+      "depends_on": [
+        "measurement_calibration"
+      ],
+      "status": "drafted",
+      "scientific_decision": "documents-only; no empirical claim",
+      "role": "read-only-code-audit",
+      "deliverable": "doc/auto/implementation-audit.md",
+      "drafted_artifacts": [
+        "doc/auto/implementation-audit.md"
+      ],
+      "acceptance": [
+        "The test suite and both calibration CLIs are rerun and their manifest hashes recomputed and compared with the recorded values.",
+        "An invariant coverage table maps each scientific invariant to the code and tests that enforce it or records the gap.",
+        "A prioritized backlog with acceptance tests and a before-new-compute flag is provided; doc/auto/experimental-design-v2.md section 7 points to it rather than duplicating it."
+      ],
+      "verified_artifacts": [],
+      "note": "Drafted by another worker in the 2026-10-12 session. Read-only audit of src/ and tests/; no code changes. Numerical caveats (probe feature-scale floor, FP32 closure tolerance below the float32 ULP floor, unrecorded TF32/cuDNN flags) are integrated into experimental-design-v2.md Gate A, Gate B and the evidence ledger."
+    },
+    {
+      "node_id": "native_transfer_gate_d",
+      "depends_on": [
+        "mechanism_study_gate_b",
+        "graph_reproduction"
+      ],
+      "status": "planned",
+      "scientific_decision": "pending",
+      "role": "graph-and-cross-modal-confirmation",
+      "protocol": "doc/auto/experimental-design-v2.md",
+      "related_protocols": [
+        "doc/auto/graph-reproduction.md"
+      ],
+      "deliverable": "Transfer of a frozen Gate B/C prediction to a pinned full-state GC-LSTM (state 2NH) on a reproduced T-GRAB setting with AB versus AABB notation resolved, then one native non-graph sequence task with encoder and external-memory audits.",
+      "acceptance": [
+        "T-GRAB code commit and dataset revision/checksums are pinned; prediction performance and change-point metrics are reproduced against persistence/EdgeBank baselines before any dynamics are interpreted.",
+        "The complete graph state (nodes x hidden and cell with a node-ordering manifest) is used for closure, tangent and covariance measurements.",
+        "The native task requires retention of earlier information; encoder signal-to-noise, state budget and external memory access are audited.",
+        "Effects confined to one renderer, to a faulty adapter or to unused prefix information fail the transfer claim and are reported as such."
+      ],
+      "verified_artifacts": [],
+      "execution_requires": "A new recorded approval envelope.",
+      "note": "Depends on verified Gate B artifacts and graph reproduction; negative transfer is an admissible completed outcome."
     }
   ],
-  "current_handoff": "doc/october/october11/2026-10-11-progress-report.md",
+  "current_handoff": "doc/october/october12/2026-10-12-progress-report.md",
   "active_allocation": {
     "phase": "periodicity-analysis-v1",
     "authorization_source": "Owner: go on and launch periodicity analysis on servers.",

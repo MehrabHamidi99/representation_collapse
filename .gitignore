@@ -32,6 +32,9 @@ __pycache__/
 *.out
 *.synctex.gz
 /configs/approval.local.json
+# Manuscript build outputs
+/paper/build/
+/paper/*.pdf
 # Downloaded research papers and extracted full text; provenance is tracked.
 /literature/papers/
 /literature/text/

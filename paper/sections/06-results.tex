@@ -1,0 +1,95 @@
+% STRICT: only the verified evidence state as of 2026-10-12.
+% Canonical sources: doc/auto/initial-phase-report.md; doc/auto/initial-phase-scientific-review.md;
+% doc/auto/initial-phase-results.json (all table values); doc/auto/periodicity-analysis-status.json;
+% doc/auto/periodicity-analysis-launch.json; doc/auto/source-inventory.md; doc/auto/graph-reproduction.md.
+\section{Results}
+\label{sec:results}
+
+This section reports only what has been executed and independently verified from raw arrays. No accepted scientific claim about trained models exists at the time of writing. Calibration results (ten measurement checks and thirty-six mechanism checks, passing locally and on Narval CPU job 5234514) are infrastructure evidence and are summarized in \cref{sec:theory,app:protocol}. \evidence{infrastructure}
+
+\subsection{Seed-0 vector pilots: all four cells fail the competence prerequisite}
+\label{sec:results-pilots}
+Four pilots were trained from source commit \hash{9004a0c114a8b7c5335dca3d5247449fd10b5ffa} for 1,500 optimization steps each, one training seed per cell (GRU and LSTM $\times$ categorical and continuous), with checkpoint selection by balanced validation loss. Native behavior uses 256 matched prefix/query pairs per horizon. \Cref{tab:native} gives the native errors; the categorical cells are at chance at every reported horizon, and the continuous cells are within $0.23\%$ to $1.81\%$ of the zero-predictor MSE computed from the saved targets (native-to-zero ratios $0.9977$--$1.0181$). All four cells fail even the weaker v1 engineering gates (accuracy $0.25$ or raw MSE $0.25$ at $R=1,2$), and therefore fail the coordinate-wise research gate of \cref{sec:design}. The paired contrasts are $\delta_2=\delta_{16}=\DID=0$ for both categorical cells; for GRU continuous $\delta_2=1.19\times10^{-7}$, $\delta_{16}=1.92\times10^{-8}$, $\DID=-9.99\times10^{-8}$; for LSTM continuous $\delta_2=7.26\times10^{-8}$, $\delta_{16}=1.34\times10^{-8}$, $\DID=-5.91\times10^{-8}$. Near-zero contrasts at failed acquisition are not an equivalence test and do not falsify harmful repetition in a competent model; they establish failed native acquisition under this protocol and budget without localizing it to writing, encoding, storage or query. The harmful-collapse decision is \textbf{inconclusive}. \evidence{executed-verified}\ \evidence{inconclusive}
+
+\begin{table}[t]
+\centering
+\caption{Native behavior of the four seed-0 v1 pilots at the evaluated horizons. Categorical cells report accuracy (identical in both arms); continuous cells report MSE per arm. Reference rows: chance accuracy for sixteen levels and the zero-predictor MSE computed from the saved evaluation targets. One training seed per cell; no population inference. Source: \texttt{doc/auto/initial-phase-results.json}.}
+\label{tab:native}
+\small
+\begin{tabular}{lllccc}
+\toprule
+Cell & Arm & Step & $R=1$ & $R=2$ & $R=16$ \\
+\midrule
+GRU categorical (accuracy)   & both & 300 & 5.469\% & 6.250\% & 5.078\% \\
+LSTM categorical (accuracy)  & both & 300 & 5.469\% & 6.250\% & 5.078\% \\
+Chance accuracy              & --   & --  & 6.25\%  & 6.25\%  & 6.25\%  \\
+\midrule
+GRU continuous (MSE)         & periodic & 400 & 0.35293357 & 0.36422871 & 0.33352217 \\
+                             & control  &     & 0.35293357 & 0.36422859 & 0.33352215 \\
+LSTM continuous (MSE)        & periodic & 200 & 0.35247289 & 0.36560507 & 0.33494743 \\
+                             & control  &     & 0.35247289 & 0.36560500 & 0.33494742 \\
+Zero-predictor MSE (saved targets) & -- & -- & 0.35329986 & 0.35910623 & 0.33411188 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Held-out probes retain cue information at \texorpdfstring{$R=2$}{R=2} but not at \texorpdfstring{$R=16$}{R=16}}
+Each cue-conditioned cloud holds the complete driver and nuisance history fixed and varies the required cues; arm-matched clouds share cue samples. Clouds have 512 training cues and 256 held-out test cues; ridge probes use train-only means and scales with a $10^{-8}$ feature-scale floor and are fit separately per fixed driver and arm, with shuffled-label controls. \Cref{tab:probes} reports ranges over the two driver panels and both arms. At $R=2$ the real-label probes outperform their shuffled controls in every cloud of every cell; at $R=16$ they have no consistent advantage. These are conditional traces recovered by a driver-specific decoder that can compensate offsets and amplify; they are not native memory, and failure of a linear probe does not certify information absence. They do show that neither chance-level native behavior nor tiny cloud variance establishes that all cue information is gone at $R=2$. \evidence{executed-verified}
+One numerical qualification applies to the $R=2$ versus $R=16$ comparison. The probe's $10^{-8}$ feature-scale floor (\texttt{pilot.py:128}) is active at the observed state amplitudes: the cloud variances of \cref{tab:geometry} ($\sim10^{-16}$ over 128--256 coordinates) correspond to per-feature standard deviations near $10^{-9}$, and the implementation audit (\texttt{doc/auto/implementation-audit.md}, sections 4--5) shows that an exactly linear, noise-free memory at per-feature standard deviation $10^{-9}$ puts every feature at the floor, so the fixed ridge penalty is roughly a hundred times stronger relative to feature variance at $R=16$ than at $R=2$. The $R=2$ advantage over shuffled labels stands, but the $R=2$-versus-$R=16$ probe comparison carries a horizon-dependent effective ridge strength and is confounded until the clouds are re-reduced with the saved \texttt{probe\_feature\_scale} arrays (floor-hit counts and an unstandardized-probe sensitivity analysis). \evidence{executed-verified}
+
+\begin{table}[t]
+\centering
+\caption{Held-out ridge-probe performance on pre-query complete-state clouds at $R=2$ and $R=16$; ranges over two driver panels and both arms. Categorical: accuracy (chance 6.25\%). Continuous: MSE (zero-predictor population MSE $1/3$). Source: \texttt{doc/auto/initial-phase-results.json}.}
+\label{tab:probes}
+\small
+\begin{tabular}{llcccc}
+\toprule
+ & & \multicolumn{2}{c}{$R=2$} & \multicolumn{2}{c}{$R=16$} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+Cell & Metric & real labels & shuffled & real labels & shuffled \\
+\midrule
+GRU categorical  & accuracy & 20.95--22.75\% & 6.05--7.13\% & 5.81--7.13\% & 5.13--6.05\% \\
+LSTM categorical & accuracy & 14.75--15.53\% & 6.01--6.79\% & 5.71--6.74\% & 4.98--7.08\% \\
+GRU continuous   & MSE      & 0.2342--0.2409 & 0.3705--0.3807 & 0.3343--0.3655 & 0.3318--0.3617 \\
+LSTM continuous  & MSE      & 0.3030--0.3180 & 0.3575--0.3803 & 0.3398--0.3644 & 0.3388--0.3635 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Participation ratio is not monotone in horizon; absolute variance is at float32 scale}
+\Cref{tab:geometry} gives the absolute variance and participation ratio of the same clouds. In both GRU cells and in the continuous LSTM cell the normalized participation ratio is \emph{larger} at $R=16$ than at $R=2$ while the total variance is one to two orders of magnitude smaller; the categorical LSTM ranges overlap across horizons. There is no universal monotone dimensional-collapse sequence in these windows. The stored states are float32 and the post hoc audit places centered-state RMS at $2.0$--$2.6$ float32 ULP at GRU $R=2$ and below one ULP ($0.25$--$0.47$) elsewhere; every cloud has 512 distinct stored rows except the two categorical-LSTM $R=16$ control clouds with 511. This is stored-resolution evidence, not a measurement of trajectory error or robust retention; no FP64 dynamical replay was part of this phase. Normalized dimension is defined for all clouds (all variances are nonzero), but direct GRU/LSTM participation-ratio comparisons confound state size (128 versus 256 coordinates) and the relative scale of $h$ and $c$. \evidence{executed-verified}
+
+\begin{table}[t]
+\centering
+\caption{Cue-conditioned complete-state geometry at $R=2$ and $R=16$: total variance $\tr C$ and participation ratio, ranges over two driver panels and both arms; 512 states per cloud; GRU state 128 coordinates, LSTM state $[h,c]$ 256 coordinates. Source: \texttt{doc/auto/initial-phase-results.json}.}
+\label{tab:geometry}
+\small
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{$R=2$} & \multicolumn{2}{c}{$R=16$} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Cell & $\tr C$ & PR & $\tr C$ & PR \\
+\midrule
+GRU categorical  & $5.45$--$5.94\times10^{-15}$ & 2.45--2.54   & $1.09$--$1.38\times10^{-16}$ & 29.50--33.58 \\
+GRU continuous   & $7.30$--$7.60\times10^{-15}$ & 1.098--1.107 & $7.86\times10^{-17}$--$1.40\times10^{-16}$ & 20.74--26.09 \\
+LSTM categorical & $3.09$--$4.80\times10^{-16}$ & 18.23--24.27 & $1.86$--$2.76\times10^{-16}$ & 11.43--27.26 \\
+LSTM continuous  & $5.18$--$6.28\times10^{-16}$ & 6.63--7.03   & $1.78$--$2.43\times10^{-16}$ & 18.99--22.33 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Checkpoint-only periodicity diagnostics: executed, reduction pending}
+\label{sec:results-periodicity}
+A frozen checkpoint-only protocol (analysis source \hash{458bc9cfce474b8e11e433e33bf132faf5032387}, distinct from the training source) was run on the four checkpoints above: Narval jobs 5254858 (GRU categorical) and 5254871 (GRU continuous), Rorqual jobs 22984956 (LSTM categorical) and 22984963 (LSTM continuous), all \texttt{COMPLETED} with exit \texttt{0:0}. Each cell replays two driver panels with two cue histories, periodic and matched varying bodies, horizons $R\in\{1,2,16,32\}$, native float32 and fixed-weight float64 dynamics from the zero state, phase-matched closure residuals over the last two twelve-step cycles, paired cue separation, and sixteen dense twelve-step tangent windows at $R\in\{2,16\}$ with direct-map, JVP and finite-difference checks (64 windows and 1,536 step-Jacobian evaluations in total). Worker summaries report all numerical checks passing; 28 manifest-listed artifact hashes and the four unchanged checkpoints were verified on the servers. Independent raw-array reduction and scientific review have not been performed, so \textbf{no closure residual, separation, singular value, multiplier or precision comparison is reported here}. Every tangent product in this protocol retains the finite-time label regardless of any closure flag, and the prior failed competence means the batch cannot establish harmful collapse or certified Floquet dynamics. The protocol's FP32 state-closure tolerance (absolute $10^{-7}$) lies below the float32 half-ULP $L_2$ floor of a $13\times128$ state block ($\approx2.4\times10^{-6}$ at unit scale), so an FP32 closure pass in these artifacts effectively certifies a bitwise-repeated cycle, and the pending reduction will reinterpret closure in ULP units at the measured state scale with the FP64 replay as reference (implementation audit, section 5). \evidence{executed-unreduced}
+
+\begin{itemize}[leftmargin=2em,itemsep=1pt]
+  \item \todo{Closure residuals (absolute, relative, phase-wise) per cell, panel, arm, precision and horizon, from independent reduction of raw arrays.}
+  \item \todo{Paired cue separation norms (GRU full state; LSTM h, c and joint) across horizons and precisions.}
+  \item \todo{Final-cycle singular values, largest gains, finite-time rates and eigenvalue moduli at R2 and R16, labelled finite-time.}
+  \item \todo{FP32 versus FP64 agreement of residuals and separations; adapter-versus-native agreement margins.}
+  \item \todo{Independent reviewer decision on which of the four frozen diagnostic interpretations (synchronization, precision sensitivity, periodicity specificity, tangent/behavior dissociation) the reduced arrays support.}
+\end{itemize}
+
+\subsection{Legacy graph observations are unverified attributed observations}
+\label{sec:results-legacy}
+The inherited May 2025 draft reports, for a GC-LSTM trained on the periodic graph task, six leading one-period eigenvalues with $|\lambda_j|\approx0.41$--$0.44$ and small normalized frequencies, together with a monotone envelope decrease, small linearization errors, a low-frequency PSD hump and a zig-zag PCA trajectory (\cref{app:inherited}). No checkpoint identity, raw trajectory, analysis source, seed, configuration or job provenance for these figures has been recovered; the AB versus AABB task identity is unresolved; and the draft's $2H$ state shorthand does not match the complete graph state. These are attributed observations, not verified evidence. Even an exact reproduction would establish only local per-cycle contraction of the six measured modes, not a lost clock, lost memory or representation collapse. Graph reproduction follows the protocol in \cref{app:protocol} and is blocked on asset recovery and full-state adapter validation. \evidence{attributed-unverified}
