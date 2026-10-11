@@ -58,6 +58,9 @@ class VectorMemoryModel(nn.Module):
 
 
 def atomic_json(path: Path, value) -> None:
+    if path.name == "status.json":
+        value = {"slurm_job_id": os.environ.get("SLURM_JOB_ID"),
+                 "cluster": os.environ.get("CLUV_CLUSTER_NAME"), **value}
     temporary = path.with_name(path.name + ".tmp")
     with temporary.open("w") as stream:
         json.dump(value, stream, indent=2, allow_nan=False)

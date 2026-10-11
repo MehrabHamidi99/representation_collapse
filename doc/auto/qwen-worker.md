@@ -8,7 +8,8 @@ contain no endpoint values or credentials. Creating these files does not launch
 a process or make a model call.
 
 Invoke it with `python3 code/ops/qwen_worker.py --project PROJECT --output NEWDIR
---max-hours 24 --max-calls 24 --interval 60 --research-interval 3600`.
+--cluster LOCAL_CONTROLLER_CLUSTER --max-hours 24 --max-calls 24 --interval 60
+--research-interval 3600`.
 Set `QWEN_BASE_URL`, `QWEN_MODEL`, and `CAIRN_API_KEY` in the worker environment.
 The coordinator delivers credentials through secure stdin into the launching
 process's environment; never put the key in argv, shell history, a job script,
@@ -35,9 +36,16 @@ is bounded, does not descend directory symlinks, and excludes the worker's own
 output so its heartbeat cannot trigger self-generated requests. Excerpts can
 omit information; every review must acknowledge this limitation.
 
-Repeat `--job-id` for coordinator-known project Slurm IDs. Additional IDs can be
-obtained from the selected project status artifacts' numeric `slurm_job_id`,
-`scheduler_job_id`, or `job_id` fields. Without known IDs there is no scheduler
+`--cluster` is required and records the exact identity of the local Slurm
+controller queried by `squeue`. Repeat `--job-id` only for coordinator-known
+project Slurm IDs on that controller. Additional IDs can be obtained from the
+selected project status artifacts' numeric `slurm_job_id`, `scheduler_job_id`,
+or `job_id` fields only when the artifact's `cluster` exactly equals the worker's
+controller cluster. Missing or different cluster identities contribute no IDs.
+This prevents synced Alliance artifacts with coincident IDs from matching
+unrelated Mila jobs. Artifact excerpts from other clusters remain research
+evidence but never identify jobs for the local scheduler query.
+Without known IDs there is no scheduler
 query. Otherwise the only scheduler command is `squeue --me --noheader
 --format=%A|%T|%j`; other jobs are discarded before persistence or Qwen input.
 The worker neither submits nor cancels scheduler jobs.

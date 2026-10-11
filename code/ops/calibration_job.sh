@@ -38,6 +38,7 @@ cd "$snapshot"
 # Export here explicitly: cluv 0.1.5 does not export every newly defined
 # environment variable in its submission shell. SHA arrives as a script arg.
 export GIT_COMMIT="$source_commit"
+export CLUV_CLUSTER_NAME="$cluster"
 export UV_CACHE_DIR="$scratch_root/cache/uv"
 export UV_PYTHON_INSTALL_DIR="$scratch_root/cache/python"
 export UV_PROJECT_ENVIRONMENT="$scratch_root/venvs/job-$SLURM_JOB_ID"

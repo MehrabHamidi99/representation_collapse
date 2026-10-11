@@ -37,7 +37,7 @@ snapshot="${SLURM_TMPDIR:-$job_root}/rc-source-$SLURM_JOB_ID"
 git clone --quiet --no-hardlinks --no-checkout "$checkout" "$snapshot"
 git -C "$snapshot" checkout --quiet --detach "$source_commit"
 cd "$snapshot"
-export GIT_COMMIT="$source_commit" UV_OFFLINE=1 WANDB_MODE=offline
+export GIT_COMMIT="$source_commit" CLUV_CLUSTER_NAME="$cluster" UV_OFFLINE=1 WANDB_MODE=offline
 export UV_CACHE_DIR="$project_root/cache/uv" UV_PYTHON_INSTALL_DIR="$project_root/cache/python"
 export UV_PROJECT_ENVIRONMENT="$project_root/venvs/job-$SLURM_JOB_ID"
 export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1

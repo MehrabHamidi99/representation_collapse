@@ -11,6 +11,7 @@ import argparse
 from datetime import datetime, timezone
 import hashlib
 import json
+import os
 from pathlib import Path
 import platform
 import subprocess
@@ -328,6 +329,9 @@ def calibration(seed: int = 0) -> tuple[dict, dict, dict]:
 
 
 def _write_json(path: Path, value: dict) -> None:
+    if path.name == "status.json":
+        value = {"slurm_job_id": os.environ.get("SLURM_JOB_ID"),
+                 "cluster": os.environ.get("CLUV_CLUSTER_NAME"), **value}
     temporary = path.with_suffix(path.suffix + ".tmp")
     temporary.write_text(json.dumps(value, indent=2, allow_nan=False) + "\n")
     temporary.replace(path)

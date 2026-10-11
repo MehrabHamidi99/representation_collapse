@@ -77,14 +77,14 @@ def artifact_files(roots, excluded):
     return sorted(set(found), key=lambda p: (-p.stat().st_mtime, str(p)))[:12]
 
 
-def job_ids_from_status(path):
+def job_ids_from_status(path, cluster):
     try:
         if path.stat().st_size > 65536:
             return set()
         value = json.loads(path.read_text())
     except (OSError, ValueError):
         return set()
-    if not isinstance(value, dict):
+    if not isinstance(value, dict) or value.get("cluster") != cluster:
         return set()
     result = set()
     for field in ("slurm_job_id", "scheduler_job_id", "job_id"):
@@ -110,7 +110,7 @@ def scheduler(known_ids):
     return {"state": "queried", "jobs": jobs}
 
 
-def evidence(project, roots, output, configured_ids, key):
+def evidence(project, roots, output, configured_ids, key, cluster):
     items = {}
     fixed = [("doc/TRACKER.md", 2600), ("configs/research-plan.json", 2400),
              ("doc/literature/novelty-review.md", 3000)]
@@ -125,7 +125,7 @@ def evidence(project, roots, output, configured_ids, key):
     known_ids = set(configured_ids)
     for path in artifact_files(roots, output):
         if path.name == "status.json":
-            known_ids.update(job_ids_from_status(path))
+            known_ids.update(job_ids_from_status(path, cluster))
         try:
             identifier = str(path.relative_to(project))
         except ValueError:
@@ -133,7 +133,9 @@ def evidence(project, roots, output, configured_ids, key):
         text = read_excerpt(path, 650, key)
         if text is not None:
             items[identifier] = text
-    items["scheduler:known-project-jobs"] = json.dumps(scheduler(known_ids), sort_keys=True)
+    local_scheduler = scheduler(known_ids)
+    local_scheduler["controller_cluster"] = cluster
+    items["scheduler:known-project-jobs"] = json.dumps(local_scheduler, sort_keys=True)
     # Keep the serialized evidence plus instructions below the request budget.
     while len(json.dumps(items, sort_keys=True)) > 15000:
         largest = max(items, key=lambda name: len(items[name]))
@@ -219,6 +221,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--cluster", required=True,
+                        help="Exact cluster identity for the local squeue controller; required")
     parser.add_argument("--max-hours", type=float, default=24)
     parser.add_argument("--max-calls", type=int, default=24)
     parser.add_argument("--interval", type=float, default=60)
@@ -232,6 +236,8 @@ def main():
         parser.error("positive finite runtime, call count and intervals required")
     if not all(re.fullmatch(r"[0-9]+(?:_[0-9]+)?", identifier) for identifier in args.job_id):
         parser.error("job IDs must be numeric Slurm identifiers")
+    if not re.fullmatch(r"[A-Za-z0-9_-]+", args.cluster):
+        parser.error("cluster identity must be an explicit alphanumeric cluster name")
     base_url, model, key = (os.environ.get(n, "") for n in ("QWEN_BASE_URL", "QWEN_MODEL", "CAIRN_API_KEY"))
     if not all((base_url, model, key)):
         parser.error("QWEN_BASE_URL, QWEN_MODEL and CAIRN_API_KEY must be supplied in the environment")
@@ -250,7 +256,8 @@ def main():
         "interval_seconds": args.interval, "research_interval_seconds": args.research_interval,
         "http_timeout_seconds": args.http_timeout,
         "max_tokens": MAX_TOKENS, "context_character_budget": CONTEXT_CHARACTERS,
-        "artifact_roots": [str(p) for p in roots], "configured_job_ids": args.job_id,
+        "controller_cluster": args.cluster,
+        "artifact_roots": [str(p) for p in roots], "configured_local_job_ids": args.job_id,
         "environment_variables_required": ["QWEN_BASE_URL", "QWEN_MODEL", "CAIRN_API_KEY"],
         "worker_source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "scientific_acceptance": "coordinator_only", "autonomous_actions": "structured_proposals_only"})
@@ -279,7 +286,7 @@ def main():
         if calls >= args.max_calls:
             stop_reason = "call_cap"
             break
-        items, known_ids = evidence(project, roots, output, args.job_id, key)
+        items, known_ids = evidence(project, roots, output, args.job_id, key, args.cluster)
         evidence_hash = digest(json.dumps(items, sort_keys=True))
         changed = evidence_hash != last_hash
         due = time.monotonic() - last_research >= args.research_interval

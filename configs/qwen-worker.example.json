@@ -5,6 +5,7 @@
   "arguments": {
     "--project": "PROJECT_SOURCE_DIRECTORY",
     "--output": "NEW_PROJECT_SCRATCH_OUTPUT_DIRECTORY",
+    "--cluster": "EXACT_LOCAL_SLURM_CONTROLLER_CLUSTER_NAME",
     "--max-hours": 24,
     "--max-calls": 24,
     "--interval": 60,
@@ -13,7 +14,7 @@
   },
   "optional_repeated_arguments": {
     "--artifact-root": "EXPLICIT_PROJECT_ARTIFACT_DIRECTORY",
-    "--job-id": "KNOWN_PROJECT_SLURM_JOB_ID"
+    "--job-id": "KNOWN_PROJECT_JOB_ID_ON_THIS_LOCAL_CONTROLLER_CLUSTER"
   },
   "required_environment_variable_names": [
     "QWEN_BASE_URL",
