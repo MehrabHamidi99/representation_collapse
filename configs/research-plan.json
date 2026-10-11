@@ -283,7 +283,41 @@
         }
       ],
       "next_protocol": "doc/auto/competence-recovery-plan.md"
+    },
+    {
+      "node_id": "periodicity_checkpoint_diagnostics",
+      "depends_on": [
+        "initial_synthetic_engineering_phase",
+        "compute_plan"
+      ],
+      "status": "prepared",
+      "scientific_decision": "diagnostic-only-prior-competence-failed",
+      "protocol": "configs/experiments/periodicity-analysis-v1.json",
+      "deliverable": "Four source/checkpoint-pinned server analyses of state closure, paired cue separation, finite-time full-state tangent spectra and fixed-weight precision replay.",
+      "acceptance": [
+        "Native replay and complete LSTM h+c chronology retained with manual-adapter arithmetic explicitly separated.",
+        "Step ordering, JVP, finite differences, checkpoint/source/array hashes and exact scheduler IDs independently verified.",
+        "All finite-time labels and prior competence failures retained; no certified Floquet or harmful-collapse claim."
+      ],
+      "verified_artifacts": []
     }
   ],
-  "current_handoff": "doc/october/october11/2026-10-11-progress-report.md"
+  "current_handoff": "doc/october/october11/2026-10-11-progress-report.md",
+  "active_allocation": {
+    "phase": "periodicity-analysis-v1",
+    "authorization_source": "Owner: go on and launch periodicity analysis on servers.",
+    "approval_record": "configs/approval.local.json",
+    "max_submissions": 4,
+    "submissions_used": 0,
+    "gpus_per_job": 1,
+    "cpus_per_job": 4,
+    "memory_gib": 16,
+    "walltime_minutes": 15,
+    "max_requested_gpu_hours": 1,
+    "max_concurrent_gpu_jobs": 2,
+    "training": false,
+    "race": false,
+    "automatic_retries": false,
+    "note": "New user-directed checkpoint-only diagnostic batch. Prior initial-training envelope remains exhausted; no transfer of training budget."
+  }
 }

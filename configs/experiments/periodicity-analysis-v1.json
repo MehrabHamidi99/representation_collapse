@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "kind": "checkpoint_periodicity_diagnostic",
+  "phase_id": "periodicity-analysis-v1",
+  "training_source_commit": "9004a0c114a8b7c5335dca3d5247449fd10b5ffa",
+  "scientific_acceptance": false,
+  "retraining": false,
+  "hidden_size": 128,
+  "input_bottleneck": 64,
+  "horizons": [
+    1,
+    2,
+    16,
+    32
+  ],
+  "derivative_horizons": [
+    2,
+    16
+  ],
+  "cue_histories": 2,
+  "driver_panels": 2,
+  "derivative_cues": 1,
+  "dwell": 1,
+  "cpu_threads": 1,
+  "precisions": [
+    "float32",
+    "float64"
+  ],
+  "tolerances": {
+    "float32": {
+      "state_absolute": 1e-07,
+      "state_relative": 1e-05,
+      "jacobian_absolute": 1e-06,
+      "jacobian_relative": 1e-05,
+      "adapter_absolute": 1e-06,
+      "adapter_relative": 1e-05,
+      "product_absolute": 1e-05,
+      "product_relative": 0.0001,
+      "scale_floor": 1e-12
+    },
+    "float64": {
+      "state_absolute": 1e-10,
+      "state_relative": 1e-08,
+      "jacobian_absolute": 1e-10,
+      "jacobian_relative": 1e-08,
+      "adapter_absolute": 1e-12,
+      "adapter_relative": 1e-10,
+      "product_absolute": 1e-10,
+      "product_relative": 1e-08,
+      "scale_floor": 1e-12
+    }
+  },
+  "cells": [
+    {
+      "cell": 0,
+      "model": "gru",
+      "task": "categorical",
+      "seed": 0,
+      "cluster": "narval",
+      "training_job_id": 5234860,
+      "checkpoint": "/scratch/mehrab/representation-collapse/logs/cluv/narval_5234860/pilot/checkpoint.pt",
+      "checkpoint_sha256": "f1db79385be4de085c457f88355242d0e6e62ceefbe79de4963ab725eca2bcd3",
+      "baseline_competence_passed": false
+    },
+    {
+      "cell": 1,
+      "model": "lstm",
+      "task": "categorical",
+      "seed": 0,
+      "cluster": "rorqual",
+      "training_job_id": 22980985,
+      "checkpoint": "/scratch/mehrab/representation-collapse/logs/cluv/rorqual_22980985/pilot/checkpoint.pt",
+      "checkpoint_sha256": "8752a480b2f5a9d674ef624a7cfb8780b67ceb43b51b4bcf3cadb9ecbd298673",
+      "baseline_competence_passed": false
+    },
+    {
+      "cell": 2,
+      "model": "gru",
+      "task": "continuous",
+      "seed": 0,
+      "cluster": "narval",
+      "training_job_id": 5235508,
+      "checkpoint": "/scratch/mehrab/representation-collapse/logs/cluv/narval_5235508/pilot/checkpoint.pt",
+      "checkpoint_sha256": "e35502d2958c78c465ae4a46639965f3e841fc5e6ad4ff490daf1fc4fb74d4f5",
+      "baseline_competence_passed": false
+    },
+    {
+      "cell": 3,
+      "model": "lstm",
+      "task": "continuous",
+      "seed": 0,
+      "cluster": "rorqual",
+      "training_job_id": 22980998,
+      "checkpoint": "/scratch/mehrab/representation-collapse/logs/cluv/rorqual_22980998/pilot/checkpoint.pt",
+      "checkpoint_sha256": "ec63862dbd27657e99c7becdbdd1301d8813d4525426a9a1545768658561c660",
+      "baseline_competence_passed": false
+    }
+  ],
+  "cluster_resources": {
+    "account": "def-ioannism_gpu",
+    "qos": "normal",
+    "partition": "gpubase_bygpu_b1",
+    "nodes": 1,
+    "tasks": 1,
+    "gpus_per_job": 1,
+    "cpus_per_job": 4,
+    "memory_gib": 16,
+    "walltime_minutes": 15,
+    "typed_gres": {
+      "narval": "gpu:a100:1",
+      "rorqual": "gpu:nvidia_h100_80gb_hbm3_3g.40gb:1"
+    }
+  },
+  "resource_envelope": {
+    "max_submissions": 4,
+    "max_requested_gpu_hours": 1,
+    "max_concurrent_gpu_jobs": 2,
+    "race": false,
+    "automatic_retries": false
+  },
+  "interpretation": {
+    "spectrum_label": "finite-time tangent map",
+    "numerical_closure": "approximate periodic-orbit candidate only; every spectrum retains finite-time label",
+    "cue_measure": "paired separation only; two histories cannot establish covariance dimension",
+    "precision": "FP64 replay of fixed cast weights from zero through WRITE/body/QUERY, separate from nativeFP32",
+    "scientific_gate": "prior baseline competence failed in every checkpoint; no harmful-collapse or certifiedFloquet claims"
+  },
+  "completion": [
+    "All four cells reconcile exact scheduler IDs without duplicate submission.",
+    "Accepted outputs require checkpoint/source/config/array hashes and native adapter/derivative checks.",
+    "Retain blocked, failed, numerically unresolved and negative diagnostics; no automatic training."
+  ]
+}
