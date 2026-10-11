@@ -392,3 +392,86 @@ Acceptance assertions were independently applied to the saved JSON:
 proof is `runs/ops/cluv-killarney-vulcan-environment-20261011.json`.
 Future cluv sync/submission still needs explicit scratch/Slurm environment
 initialization; the socket adapter does not itself modify remote profiles.
+
+### Initial phase completion — 13:49 UTC
+
+The owner's latest instruction was to continue experiments and complete the
+initial phase. The existing bounded envelope authorized these launches without
+another approval question. The engineering completion contract is now met;
+the harmful-collapse scientific decision is **inconclusive**, because all four
+native competence gates fail. The [final report](../../auto/initial-phase-report.md),
+[independent critique](../../auto/initial-phase-scientific-review.md),
+[compact results](../../auto/initial-phase-results.json), and
+[competence-first next protocol](../../auto/competence-recovery-plan.md)
+record the evidence and its limits.
+
+All five jobs used clean immutable source
+`9004a0c114a8b7c5335dca3d5247449fd10b5ffa`, published before execution:
+
+- Narval CPU **5234514**, 12:59:01–12:59:33 UTC: `COMPLETED/0:0`, 10
+  measurement plus 36 mechanism checks; one CPU, 2 GiB, ten-minute limit.
+- Narval GRU categorical **5234860**, 13:01:18–13:05:21 UTC: `COMPLETED/0:0`.
+- Narval GRU continuous **5235508**, 13:08:53–13:12:41 UTC: `COMPLETED/0:0`.
+- Rorqual LSTM categorical **22980985**, 13:20:23–13:21:15 UTC: `COMPLETED/0:0`.
+- Rorqual LSTM continuous **22980998**, 13:21:16–13:21:48 UTC: `COMPLETED/0:0`.
+
+GPU jobs used four CPUs, 16 GiB and one GPU device. Narval used A100-SXM4-40GB;
+Rorqual used H100 MIG `3g.40gb`. Native cluv submitted each cell exactly once.
+At 13:15/13:18 UTC, the same pending Rorqual job IDs were reduced to fifteen
+minutes and a 40 GiB MIG slice following scheduler eligibility checks. This
+allocation deviation is separate from the original journal and does not change
+seed, task, checkpoint selection, 1,500 training steps or dependencies.
+No race, requeue, GPU retry, cancellation or additional submission occurred.
+Four GPU submissions are consumed; actual allocation is 555 device-seconds
+(0.15417 allocated-device-hours, not full-GPU equivalents), peak concurrency
+one. Both successor jobs started after their predecessors ended.
+
+All four pilots have full training histories and validation-only checkpoint
+selection. The independent NumPy verifier passes six artifact directories,
+including both calibration suites, from saved raw arrays on Tamia. SHA256:
+`4a71636fa22baba0cc4b20c1b0b8ff0ca339278e159854fe7966b5159e01a4a0`.
+Verifier source SHA256:
+`5f092ee5b87c5e407b5271eee97d5a59c66264570d2862df3cc672de0cb8d22b`.
+Native UTC Slurm accounting separately reconciles exact jobs, accounts/QOS,
+resources, device identity, dependencies and outcomes. These postprocessing
+helpers are new after frozen training source; their hashes distinguish them.
+
+Both categorical cells are near 6.25% chance at every reported horizon.
+Continuous errors are near zero-predictor MSE on the exact saved targets.
+Small contrasts and tiny conditional variance cannot establish harmful collapse
+in models that fail acquisition. R2 standardized probes outperform shuffled
+labels in every cell, preserving conditional-memory counterevidence despite
+poor native readout. R16 probes have no consistent advantage. Participation
+ratio is not uniformly decreasing; native float32 precision/robustness remains
+unresolved. There is one seed per cell and no tangent, orbit closure, graph,
+native-modality or causal-intervention evidence.
+
+Independent subagent review found and resolved a stale-summary acceptance bug:
+the scheduler reducer now requires each of exactly six artifact records to be
+verified, unblocked and have nonempty all-passing checks. The actual packet
+accepts; seven meaningful corrupted/blocked packets reject with exit 1.
+Final engineering review binds all four helper hashes in
+`runs/ops/phase1-final-engineering-review.json`. Existing 29 source tests pass
+using `PYTHONPATH="$PWD/src" .venv/bin/python -m unittest discover -s tests -v`;
+all helper syntax checks pass. Scale-sensitive reduction uses zero absolute
+tolerance for variance rather than accepting tiny quantities under a generic
+`1e-7` absolute floor.
+
+Complete original files and checkpoints were fetched with native cluv into
+Tamia and Mila scratch; all inventories and manifests match. Private durable
+archives retain the execution folders under each execution cluster's
+`/project/def-ioannism/mehrab/representation-collapse/evidence/initial-phase-v1-9004a0c/`.
+Canonical Narval prefix is `/lustre06/project/6044649/mehrab`; canonical Rorqual
+prefix is `/lustre09/project/6044649/mehrab`. No account alias was replaced,
+no existing directory overwritten and no checkpoint downloaded to the Mac.
+Detailed receipts remain ignored runtime evidence. The broader graph DAG is
+still blocked on reproducible assets/adapter validation; this independent
+synthetic branch is verified and does not release graph-dependent modalities.
+
+Safe Qwen inspection at 13:47 UTC confirms Mila PID2812601 alive, heartbeat
+13:47:22 UTC, eight schema-verified proposals, zero consecutive errors, and
+38,762 tokens (34,859 prompt +3,903 completion). It remains bounded by its
+existing 24-hour/22-attempt contract, proposal-only and unable to submit jobs.
+The final tracker/results will be supplied through its existing evidence
+watcher without a manual extra model call. The next training study remains a
+separately frozen competence-recovery protocol and concrete allocation.

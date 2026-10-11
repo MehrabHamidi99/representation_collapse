@@ -1,0 +1,1685 @@
+{
+  "schema_version": 1,
+  "phase_id": "initial-calibration-and-vector-pilot-v1",
+  "source_commit": "9004a0c114a8b7c5335dca3d5247449fd10b5ffa",
+  "engineering_phase_complete": true,
+  "scientific_acceptance": false,
+  "scientific_decision": "mechanism_inconclusive_baseline_failed_all_four_cells",
+  "calibration_checks": {
+    "measurement": 10,
+    "mechanisms": 36
+  },
+  "artifact_directories_verified": 6,
+  "gpu_submission_cap_used": 4,
+  "gpu_device_hours": 0.15416666666666667,
+  "gpu_device_hour_definition": "one allocated device, including a MIG slice, times elapsed allocation; not full-GPU equivalents",
+  "verification_time_utc": "2026-10-11T13:33:28.734460+00:00",
+  "verifier": {
+    "path": "/scratch/m/mehrab/representation-collapse/source/code/ops/verify_initial_phase.py",
+    "sha256": "5f092ee5b87c5e407b5271eee97d5a59c66264570d2862df3cc672de0cb8d22b",
+    "metrics_sha256": "41a4790b639fb2d37c1169771c08760e7df1ab0a1b7fa75ee2553828c21ebf1e",
+    "python": "3.11.13",
+    "numpy": "2.4.6"
+  },
+  "numeric_tolerance": {
+    "absolute": 1e-07,
+    "relative": 1e-05,
+    "total_variance_absolute": 0.0,
+    "covariance_eigenvalues_absolute": "1e-12 times recomputed cloud total variance"
+  },
+  "scheduler_jobs": [
+    {
+      "cell": "1",
+      "cluster": "narval",
+      "job_id": 5234860,
+      "model": "gru",
+      "task": "categorical",
+      "start_utc": "2026-10-11T13:01:18+00:00",
+      "end_utc": "2026-10-11T13:05:21+00:00",
+      "elapsed_seconds": 243,
+      "alloc_tres": {
+        "billing": "4000",
+        "cpu": "4",
+        "gres/gpu:a100": "1",
+        "gres/gpu": "1",
+        "mem": "16G",
+        "node": "1"
+      },
+      "accelerator": {
+        "index": 0,
+        "name": "NVIDIA A100-SXM4-40GB",
+        "total_memory_bytes": 42404806656,
+        "compute_capability": [
+          8,
+          0
+        ],
+        "cuda_runtime": "12.4",
+        "cudnn_version": 90100
+      },
+      "max_step_rss": [
+        "229536K",
+        "1241936K"
+      ]
+    },
+    {
+      "cell": "2",
+      "cluster": "rorqual",
+      "job_id": 22980985,
+      "model": "lstm",
+      "task": "categorical",
+      "start_utc": "2026-10-11T13:20:23+00:00",
+      "end_utc": "2026-10-11T13:21:15+00:00",
+      "elapsed_seconds": 52,
+      "alloc_tres": {
+        "billing": "5228",
+        "cpu": "4",
+        "gres/gpu:nvidia_h100_80gb_hbm3_3g.40gb": "1",
+        "gres/gpu": "1",
+        "mem": "16G",
+        "node": "1"
+      },
+      "accelerator": {
+        "index": 0,
+        "name": "NVIDIA H100 80GB HBM3 MIG 3g.40gb",
+        "total_memory_bytes": 42412802048,
+        "compute_capability": [
+          9,
+          0
+        ],
+        "cuda_runtime": "12.4",
+        "cudnn_version": 90100
+      },
+      "max_step_rss": [
+        "234972K",
+        "1288108K"
+      ]
+    },
+    {
+      "cell": "3",
+      "cluster": "narval",
+      "job_id": 5235508,
+      "model": "gru",
+      "task": "continuous",
+      "start_utc": "2026-10-11T13:08:53+00:00",
+      "end_utc": "2026-10-11T13:12:41+00:00",
+      "elapsed_seconds": 228,
+      "alloc_tres": {
+        "billing": "4000",
+        "cpu": "4",
+        "gres/gpu:a100": "1",
+        "gres/gpu": "1",
+        "mem": "16G",
+        "node": "1"
+      },
+      "accelerator": {
+        "index": 0,
+        "name": "NVIDIA A100-SXM4-40GB",
+        "total_memory_bytes": 42404806656,
+        "compute_capability": [
+          8,
+          0
+        ],
+        "cuda_runtime": "12.4",
+        "cudnn_version": 90100
+      },
+      "max_step_rss": [
+        "228528K",
+        "1310484K"
+      ]
+    },
+    {
+      "cell": "4",
+      "cluster": "rorqual",
+      "job_id": 22980998,
+      "model": "lstm",
+      "task": "continuous",
+      "start_utc": "2026-10-11T13:21:16+00:00",
+      "end_utc": "2026-10-11T13:21:48+00:00",
+      "elapsed_seconds": 32,
+      "alloc_tres": {
+        "billing": "5228",
+        "cpu": "4",
+        "gres/gpu:nvidia_h100_80gb_hbm3_3g.40gb": "1",
+        "gres/gpu": "1",
+        "mem": "16G",
+        "node": "1"
+      },
+      "accelerator": {
+        "index": 0,
+        "name": "NVIDIA H100 80GB HBM3 MIG 3g.40gb",
+        "total_memory_bytes": 42412802048,
+        "compute_capability": [
+          9,
+          0
+        ],
+        "cuda_runtime": "12.4",
+        "cudnn_version": 90100
+      },
+      "max_step_rss": [
+        "122964K",
+        "1003500K"
+      ]
+    }
+  ],
+  "pilots": [
+    {
+      "model": "gru",
+      "task": "categorical",
+      "seed": 0,
+      "selected_step": 300,
+      "behavior": {
+        "1": {
+          "periodic_error": 0.9453125,
+          "control_error": 0.9453125,
+          "delta": 0.0,
+          "uniform_classifier_expected_error": 0.9375
+        },
+        "2": {
+          "periodic_error": 0.9375,
+          "control_error": 0.9375,
+          "delta": 0.0,
+          "uniform_classifier_expected_error": 0.9375
+        },
+        "16": {
+          "periodic_error": 0.94921875,
+          "control_error": 0.94921875,
+          "delta": 0.0,
+          "uniform_classifier_expected_error": 0.9375
+        }
+      },
+      "delta2": 0.0,
+      "delta16": 0.0,
+      "DID": 0.0,
+      "baseline_competence_passed": false,
+      "scientific_state": "mechanism_inconclusive_baseline_failed",
+      "clouds": {
+        "R2_panel0_periodic": {
+          "participation_ratio": 2.5342718450480453,
+          "total_variance": 5.9261161129806826e-15,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 128,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.22509765625
+            },
+            "label_control": {
+              "mean_accuracy": 0.06201171875
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.0370239195426646,
+            "centered_state_rms": 6.7975993392471835e-09,
+            "stored_FP32_ulp_rms": 3.1689293550184878e-09,
+            "variation_to_ulp_rms_ratio": 2.145077588581184,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 128,
+            "coordinate_distinct_value_count_min": 4,
+            "coordinate_distinct_value_count_median": 18.0,
+            "coordinate_distinct_value_count_max": 418,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R2_panel0_control": {
+          "participation_ratio": 2.4455177881448686,
+          "total_variance": 5.944212506655001e-15,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 128,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.20947265625
+            },
+            "label_control": {
+              "mean_accuracy": 0.0634765625
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.037024106947820615,
+            "centered_state_rms": 6.807970235206709e-09,
+            "stored_FP32_ulp_rms": 3.1689293550184878e-09,
+            "variation_to_ulp_rms_ratio": 2.148350269918526,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 128,
+            "coordinate_distinct_value_count_min": 4,
+            "coordinate_distinct_value_count_median": 18.0,
+            "coordinate_distinct_value_count_max": 399,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R2_panel1_periodic": {
+          "participation_ratio": 2.5301750991320815,
+          "total_variance": 5.479320300564164e-15,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 128,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.2275390625
+            },
+            "label_control": {
+              "mean_accuracy": 0.060546875
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03835466777289665,
+            "centered_state_rms": 6.5363278723978756e-09,
+            "stored_FP32_ulp_rms": 3.2439443632064853e-09,
+            "variation_to_ulp_rms_ratio": 2.014932175327762,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 128,
+            "coordinate_distinct_value_count_min": 4,
+            "coordinate_distinct_value_count_median": 18.0,
+            "coordinate_distinct_value_count_max": 262,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R2_panel1_control": {
+          "participation_ratio": 2.5364112317485947,
+          "total_variance": 5.454178026045253e-15,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 128,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.21728515625
+            },
+            "label_control": {
+              "mean_accuracy": 0.0712890625
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.038353976474467616,
+            "centered_state_rms": 6.521314413250584e-09,
+            "stored_FP32_ulp_rms": 3.2439435982297e-09,
+            "variation_to_ulp_rms_ratio": 2.010304499994829,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 128,
+            "coordinate_distinct_value_count_min": 4,
+            "coordinate_distinct_value_count_median": 18.0,
+            "coordinate_distinct_value_count_max": 271,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel0_periodic": {
+          "participation_ratio": 31.26677884164803,
+          "total_variance": 1.3769032353445807e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 115,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.06201171875
+            },
+            "label_control": {
+              "mean_accuracy": 0.0576171875
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.037023922208711084,
+            "centered_state_rms": 1.0361489588906578e-09,
+            "stored_FP32_ulp_rms": 3.1689293550184878e-09,
+            "variation_to_ulp_rms_ratio": 0.32697130254726453,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 115,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 29,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel0_control": {
+          "participation_ratio": 29.496197264899273,
+          "total_variance": 1.2134888660853338e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 114,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.05810546875
+            },
+            "label_control": {
+              "mean_accuracy": 0.05615234375
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03702417429735134,
+            "centered_state_rms": 9.727212034110487e-10,
+            "stored_FP32_ulp_rms": 3.1689293550184878e-09,
+            "variation_to_ulp_rms_ratio": 0.30695578677719493,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 114,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 31,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel1_periodic": {
+          "participation_ratio": 33.58489514980525,
+          "total_variance": 1.1341961373188501e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 118,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.0712890625
+            },
+            "label_control": {
+              "mean_accuracy": 0.05126953125
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.037287966768618855,
+            "centered_state_rms": 9.404042143242801e-10,
+            "stored_FP32_ulp_rms": 3.1844847530369022e-09,
+            "variation_to_ulp_rms_ratio": 0.29530812274339147,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 118,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 23,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel1_control": {
+          "participation_ratio": 30.683419451748566,
+          "total_variance": 1.0860865523398522e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 115,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.05908203125
+            },
+            "label_control": {
+              "mean_accuracy": 0.060546875
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03728781178876312,
+            "centered_state_rms": 9.202433821848068e-10,
+            "stored_FP32_ulp_rms": 3.1844847530369022e-09,
+            "variation_to_ulp_rms_ratio": 0.2889771669678152,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 116,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 21,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        }
+      },
+      "independent_training_replicates": 1,
+      "scientific_acceptance": false
+    },
+    {
+      "model": "gru",
+      "task": "continuous",
+      "seed": 0,
+      "selected_step": 400,
+      "behavior": {
+        "1": {
+          "periodic_error": 0.3529335672016803,
+          "control_error": 0.3529335672016803,
+          "delta": 0.0,
+          "zero_predictor_mse_from_saved_targets": 0.3532998603291295,
+          "native_to_zero_mse_ratio": {
+            "periodic": 0.9989632231184354,
+            "control": 0.9989632231184354
+          }
+        },
+        "2": {
+          "periodic_error": 0.3642287131987094,
+          "control_error": 0.36422859414038145,
+          "delta": 1.1905832796802861e-07,
+          "zero_predictor_mse_from_saved_targets": 0.3591062312690395,
+          "native_to_zero_mse_ratio": {
+            "periodic": 1.014264530892621,
+            "control": 1.0142641993519301
+          }
+        },
+        "16": {
+          "periodic_error": 0.3335221724344092,
+          "control_error": 0.3335221532523337,
+          "delta": 1.9182075502543854e-08,
+          "zero_predictor_mse_from_saved_targets": 0.3341118808800937,
+          "native_to_zero_mse_ratio": {
+            "periodic": 0.9982349970790289,
+            "control": 0.9982349396668967
+          }
+        }
+      },
+      "delta2": 1.1905832796802861e-07,
+      "delta16": 1.9182075502543854e-08,
+      "DID": -9.987625246548476e-08,
+      "baseline_competence_passed": false,
+      "scientific_state": "mechanism_inconclusive_baseline_failed",
+      "clouds": {
+        "R2_panel0_periodic": {
+          "participation_ratio": 1.1034040364323539,
+          "total_variance": 7.347094474235993e-15,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 128,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_mse": 0.23420339923035025
+            },
+            "label_control": {
+              "mean_mse": 0.38067464126983075
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.036796302236945654,
+            "centered_state_rms": 7.568822089015176e-09,
+            "stored_FP32_ulp_rms": 2.9712926044868915e-09,
+            "variation_to_ulp_rms_ratio": 2.547316301863251,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 128,
+            "coordinate_distinct_value_count_min": 2,
+            "coordinate_distinct_value_count_median": 20.5,
+            "coordinate_distinct_value_count_max": 136,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R2_panel0_control": {
+          "participation_ratio": 1.1069167584141941,
+          "total_variance": 7.297954930989366e-15,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 128,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_mse": 0.23457872581115907
+            },
+            "label_control": {
+              "mean_mse": 0.3725389158610461
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.036795290552901455,
+            "centered_state_rms": 7.543468362992904e-09,
+            "stored_FP32_ulp_rms": 2.9712926044868915e-09,
+            "variation_to_ulp_rms_ratio": 2.538783407464367,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 128,
+            "coordinate_distinct_value_count_min": 2,
+            "coordinate_distinct_value_count_median": 20.5,
+            "coordinate_distinct_value_count_max": 138,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R2_panel1_periodic": {
+          "participation_ratio": 1.1046918859240955,
+          "total_variance": 7.35021359269014e-15,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 128,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_mse": 0.24085600137622618
+            },
+            "label_control": {
+              "mean_mse": 0.37147186333730225
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.036564389790710576,
+            "centered_state_rms": 7.57042854362397e-09,
+            "stored_FP32_ulp_rms": 3.0951936732383008e-09,
+            "variation_to_ulp_rms_ratio": 2.4458658626371257,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 128,
+            "coordinate_distinct_value_count_min": 2,
+            "coordinate_distinct_value_count_median": 24.0,
+            "coordinate_distinct_value_count_max": 294,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R2_panel1_control": {
+          "participation_ratio": 1.0980023963203527,
+          "total_variance": 7.601134434931456e-15,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 128,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_mse": 0.24036744649646116
+            },
+            "label_control": {
+              "mean_mse": 0.370487852471076
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.036564073006956445,
+            "centered_state_rms": 7.698563415723979e-09,
+            "stored_FP32_ulp_rms": 3.0951936732383008e-09,
+            "variation_to_ulp_rms_ratio": 2.4872638769868867,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 128,
+            "coordinate_distinct_value_count_min": 2,
+            "coordinate_distinct_value_count_median": 26.0,
+            "coordinate_distinct_value_count_max": 298,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel0_periodic": {
+          "participation_ratio": 24.846866262590517,
+          "total_variance": 1.1088391162282888e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 124,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_mse": 0.36547987238373275
+            },
+            "label_control": {
+              "mean_mse": 0.3572021112894125
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03679607388015445,
+            "centered_state_rms": 9.298325684420142e-10,
+            "stored_FP32_ulp_rms": 2.9712926044868915e-09,
+            "variation_to_ulp_rms_ratio": 0.3129387415557431,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 124,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 20,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel0_control": {
+          "participation_ratio": 22.87644304329422,
+          "total_variance": 1.3509701996772557e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 124,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_mse": 0.3596593673219072
+            },
+            "label_control": {
+              "mean_mse": 0.36166249966166286
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.036796073938290784,
+            "centered_state_rms": 1.0263449963668142e-09,
+            "stored_FP32_ulp_rms": 2.9712926044868915e-09,
+            "variation_to_ulp_rms_ratio": 0.34542037186675945,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 124,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 4.0,
+            "coordinate_distinct_value_count_max": 18,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel1_periodic": {
+          "participation_ratio": 26.09278787655432,
+          "total_variance": 7.863911014670208e-17,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 117,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_mse": 0.3342901860919777
+            },
+            "label_control": {
+              "mean_mse": 0.3362430611919677
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03659898088356399,
+            "centered_state_rms": 7.830505158847154e-10,
+            "stored_FP32_ulp_rms": 3.0765489658172573e-09,
+            "variation_to_ulp_rms_ratio": 0.25452236404653,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 117,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 35,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel1_control": {
+          "participation_ratio": 20.737434559512124,
+          "total_variance": 1.3992898328286734e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 122,
+          "samples": 512,
+          "state_dimension": 128,
+          "probes": {
+            "real": {
+              "mean_mse": 0.338741649361955
+            },
+            "label_control": {
+              "mean_mse": 0.3317787077555773
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03659918589947571,
+            "centered_state_rms": 1.0445381922446675e-09,
+            "stored_FP32_ulp_rms": 3.0765489658172573e-09,
+            "variation_to_ulp_rms_ratio": 0.33951619293249097,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 122,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 30,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        }
+      },
+      "independent_training_replicates": 1,
+      "scientific_acceptance": false
+    },
+    {
+      "model": "lstm",
+      "task": "categorical",
+      "seed": 0,
+      "selected_step": 300,
+      "behavior": {
+        "1": {
+          "periodic_error": 0.9453125,
+          "control_error": 0.9453125,
+          "delta": 0.0,
+          "uniform_classifier_expected_error": 0.9375
+        },
+        "2": {
+          "periodic_error": 0.9375,
+          "control_error": 0.9375,
+          "delta": 0.0,
+          "uniform_classifier_expected_error": 0.9375
+        },
+        "16": {
+          "periodic_error": 0.94921875,
+          "control_error": 0.94921875,
+          "delta": 0.0,
+          "uniform_classifier_expected_error": 0.9375
+        }
+      },
+      "delta2": 0.0,
+      "delta16": 0.0,
+      "DID": 0.0,
+      "baseline_competence_passed": false,
+      "scientific_state": "mechanism_inconclusive_baseline_failed",
+      "clouds": {
+        "R2_panel0_periodic": {
+          "participation_ratio": 24.07741903070513,
+          "total_variance": 3.086234023538282e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 150,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.15087890625
+            },
+            "label_control": {
+              "mean_accuracy": 0.060546875
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.034605774037833055,
+            "centered_state_rms": 1.0969072685266093e-09,
+            "stored_FP32_ulp_rms": 2.9818192630514845e-09,
+            "variation_to_ulp_rms_ratio": 0.3678651091025801,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 241,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 4.0,
+            "coordinate_distinct_value_count_max": 38,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R2_panel0_control": {
+          "participation_ratio": 24.27363389740739,
+          "total_variance": 4.535027707494895e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 154,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.1474609375
+            },
+            "label_control": {
+              "mean_accuracy": 0.0673828125
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.034605832317888614,
+            "centered_state_rms": 1.3296748650257062e-09,
+            "stored_FP32_ulp_rms": 2.9818192630514845e-09,
+            "variation_to_ulp_rms_ratio": 0.44592738450048297,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 247,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 4.0,
+            "coordinate_distinct_value_count_max": 45,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R2_panel1_periodic": {
+          "participation_ratio": 18.231664744406373,
+          "total_variance": 4.2884522785639866e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 150,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.154296875
+            },
+            "label_control": {
+              "mean_accuracy": 0.06005859375
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03475588881663878,
+            "centered_state_rms": 1.2930215937399877e-09,
+            "stored_FP32_ulp_rms": 3.117631429203238e-09,
+            "variation_to_ulp_rms_ratio": 0.4147448545803379,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 249,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 28,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R2_panel1_control": {
+          "participation_ratio": 19.8956720023064,
+          "total_variance": 4.798351856345127e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 152,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.1552734375
+            },
+            "label_control": {
+              "mean_accuracy": 0.06787109375
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03475575321255796,
+            "centered_state_rms": 1.3677336516820932e-09,
+            "stored_FP32_ulp_rms": 3.117631429203238e-09,
+            "variation_to_ulp_rms_ratio": 0.4387092197205749,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 244,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 4.0,
+            "coordinate_distinct_value_count_max": 40,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel0_periodic": {
+          "participation_ratio": 11.428583884375843,
+          "total_variance": 2.7649822166110597e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 131,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.05712890625
+            },
+            "label_control": {
+              "mean_accuracy": 0.0498046875
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.034605775317638254,
+            "centered_state_rms": 1.0382493266761378e-09,
+            "stored_FP32_ulp_rms": 2.9818192630514845e-09,
+            "variation_to_ulp_rms_ratio": 0.3481932454932334,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 220,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 30,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel0_control": {
+          "participation_ratio": 27.259881417017873,
+          "total_variance": 2.5368110341436045e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 141,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.0673828125
+            },
+            "label_control": {
+              "mean_accuracy": 0.05517578125
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03460586229131244,
+            "centered_state_rms": 9.944879974083519e-10,
+            "stored_FP32_ulp_rms": 2.9818192630514845e-09,
+            "variation_to_ulp_rms_ratio": 0.33351719526777396,
+            "distinct_state_rows": 511,
+            "varying_coordinates": 233,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 30,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel1_periodic": {
+          "participation_ratio": 24.249119011332272,
+          "total_variance": 2.304694263939042e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 133,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.06201171875
+            },
+            "label_control": {
+              "mean_accuracy": 0.05908203125
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03459790068396728,
+            "centered_state_rms": 9.478991795912887e-10,
+            "stored_FP32_ulp_rms": 2.98209169996885e-09,
+            "variation_to_ulp_rms_ratio": 0.31786386032367486,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 219,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 14,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel1_control": {
+          "participation_ratio": 25.59025730674138,
+          "total_variance": 1.8623436369614498e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 130,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_accuracy": 0.05908203125
+            },
+            "label_control": {
+              "mean_accuracy": 0.07080078125
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03459784487277734,
+            "centered_state_rms": 8.520898589656799e-10,
+            "stored_FP32_ulp_rms": 2.98209169996885e-09,
+            "variation_to_ulp_rms_ratio": 0.2857356328024992,
+            "distinct_state_rows": 511,
+            "varying_coordinates": 226,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 12,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        }
+      },
+      "independent_training_replicates": 1,
+      "scientific_acceptance": false
+    },
+    {
+      "model": "lstm",
+      "task": "continuous",
+      "seed": 0,
+      "selected_step": 200,
+      "behavior": {
+        "1": {
+          "periodic_error": 0.35247289149843686,
+          "control_error": 0.35247289149843686,
+          "delta": 0.0,
+          "zero_predictor_mse_from_saved_targets": 0.3532998603291295,
+          "native_to_zero_mse_ratio": {
+            "periodic": 0.9976593004313042,
+            "control": 0.9976593004313042
+          }
+        },
+        "2": {
+          "periodic_error": 0.365605069162691,
+          "control_error": 0.36560499660699297,
+          "delta": 7.255569799678209e-08,
+          "zero_predictor_mse_from_saved_targets": 0.3591062312690395,
+          "native_to_zero_mse_ratio": {
+            "periodic": 1.0180972573789246,
+            "control": 1.0180970553337032
+          }
+        },
+        "16": {
+          "periodic_error": 0.3349474319293795,
+          "control_error": 0.33494741848702336,
+          "delta": 1.3442356130283478e-08,
+          "zero_predictor_mse_from_saved_targets": 0.3341118808800937,
+          "native_to_zero_mse_ratio": {
+            "periodic": 1.0025008121443777,
+            "control": 1.0025007719112795
+          }
+        }
+      },
+      "delta2": 7.255569799678209e-08,
+      "delta16": 1.3442356130283478e-08,
+      "DID": -5.911334186649861e-08,
+      "baseline_competence_passed": false,
+      "scientific_state": "mechanism_inconclusive_baseline_failed",
+      "clouds": {
+        "R2_panel0_periodic": {
+          "participation_ratio": 6.640105449435261,
+          "total_variance": 5.656763587914733e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 172,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_mse": 0.31798686050386116
+            },
+            "label_control": {
+              "mean_mse": 0.3781335812328529
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03835658816890858,
+            "centered_state_rms": 1.4850446149563894e-09,
+            "stored_FP32_ulp_rms": 3.34867640255374e-09,
+            "variation_to_ulp_rms_ratio": 0.44347211746822623,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 249,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 5.0,
+            "coordinate_distinct_value_count_max": 190,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R2_panel0_control": {
+          "participation_ratio": 7.0281458098856175,
+          "total_variance": 6.283951006221078e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 172,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_mse": 0.3163166889308193
+            },
+            "label_control": {
+              "mean_mse": 0.3802465115229854
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03835630610580388,
+            "centered_state_rms": 1.5652073625117404e-09,
+            "stored_FP32_ulp_rms": 3.34867640255374e-09,
+            "variation_to_ulp_rms_ratio": 0.46741075408722527,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 250,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 6.0,
+            "coordinate_distinct_value_count_max": 146,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R2_panel1_periodic": {
+          "participation_ratio": 6.628211278218676,
+          "total_variance": 5.180235050390708e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 167,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_mse": 0.3100449373581776
+            },
+            "label_control": {
+              "mean_mse": 0.3585088185786104
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.038510964385901236,
+            "centered_state_rms": 1.4211182606885562e-09,
+            "stored_FP32_ulp_rms": 3.324608836929353e-09,
+            "variation_to_ulp_rms_ratio": 0.42745427519260204,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 253,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 5.0,
+            "coordinate_distinct_value_count_max": 98,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R2_panel1_control": {
+          "participation_ratio": 6.769856406994709,
+          "total_variance": 5.991349861529184e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 164,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_mse": 0.30302320637194413
+            },
+            "label_control": {
+              "mean_mse": 0.35749171878778274
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.038510880921247666,
+            "centered_state_rms": 1.5283324253816646e-09,
+            "stored_FP32_ulp_rms": 3.324608836929353e-09,
+            "variation_to_ulp_rms_ratio": 0.459702930583933,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 242,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 5.0,
+            "coordinate_distinct_value_count_max": 105,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel0_periodic": {
+          "participation_ratio": 22.329336622230457,
+          "total_variance": 1.9353946195115501e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 144,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_mse": 0.36340862026131276
+            },
+            "label_control": {
+              "mean_mse": 0.36351881122405394
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.0383565851281817,
+            "centered_state_rms": 8.686408546310194e-10,
+            "stored_FP32_ulp_rms": 3.34867640255374e-09,
+            "variation_to_ulp_rms_ratio": 0.25939826672072097,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 220,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 30,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel0_control": {
+          "participation_ratio": 19.777121451462055,
+          "total_variance": 1.9996273641546838e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 144,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_mse": 0.3644247484340418
+            },
+            "label_control": {
+              "mean_mse": 0.36331969820593324
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.03835658511212001,
+            "centered_state_rms": 8.829376220975414e-10,
+            "stored_FP32_ulp_rms": 3.34867640255374e-09,
+            "variation_to_ulp_rms_ratio": 0.26366764534913045,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 224,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 23,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel1_periodic": {
+          "participation_ratio": 18.9870926921572,
+          "total_variance": 2.4292653911703515e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 150,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_mse": 0.34285920804579983
+            },
+            "label_control": {
+              "mean_mse": 0.3457371783624893
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.038623791244779264,
+            "centered_state_rms": 9.731795368876616e-10,
+            "stored_FP32_ulp_rms": 3.324250454748227e-09,
+            "variation_to_ulp_rms_ratio": 0.2927515691537654,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 229,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 27,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        },
+        "R16_panel1_control": {
+          "participation_ratio": 20.48739754199526,
+          "total_variance": 1.7785411256926053e-16,
+          "normalized_dimension_defined": true,
+          "numerical_rank": 137,
+          "samples": 512,
+          "state_dimension": 256,
+          "probes": {
+            "real": {
+              "mean_mse": 0.3397763695725769
+            },
+            "label_control": {
+              "mean_mse": 0.33883361981136784
+            }
+          },
+          "precision_audit": {
+            "state_rms": 0.0386238367063051,
+            "centered_state_rms": 8.326978491805281e-10,
+            "stored_FP32_ulp_rms": 3.324250454748227e-09,
+            "variation_to_ulp_rms_ratio": 0.25049191103851265,
+            "distinct_state_rows": 512,
+            "varying_coordinates": 219,
+            "coordinate_distinct_value_count_min": 1,
+            "coordinate_distinct_value_count_median": 3.0,
+            "coordinate_distinct_value_count_max": 46,
+            "scope": "post hoc stored-state resolution; not FP64 dynamics or robust memory validation"
+          }
+        }
+      },
+      "independent_training_replicates": 1,
+      "scientific_acceptance": false
+    }
+  ],
+  "evidence": [
+    {
+      "path": "runs/ops/phase1-final-verification-20261011.json",
+      "sha256": "4a71636fa22baba0cc4b20c1b0b8ff0ca339278e159854fe7966b5159e01a4a0"
+    },
+    {
+      "path": "runs/ops/phase1-status-20261011.json",
+      "sha256": "93aaf5941d3b64e96c8856ee80c87ddd0c2a51adf22d62de03e3bdd0d2efcaf2"
+    },
+    {
+      "path": "runs/ops/phase1-scheduler-reconciliation-20261011.json",
+      "sha256": "7fd58e8877b2d9d5f4ac53e662be1d3bfb53f66d03b9e2b3e6585477bdd9a411"
+    },
+    {
+      "path": "runs/ops/phase1-launches-20261011.json",
+      "sha256": "ad626ffc922596f2445f3882d6ffe4e46ccfa415b01b7e3ebd8e8c83eab0596a"
+    },
+    {
+      "path": "runs/ops/phase1-execution-amendments-20261011.json",
+      "sha256": "0d54a355d65325a6aa9c2f1b602a1a1db5b570d255974bba5d315add61f00ec4"
+    },
+    {
+      "path": "runs/ops/phase1-scientific-results-review.json",
+      "sha256": "74c6ca240c916b84928e072c852b70b246ffe7a56a3a91ce4aa2e6889005531d"
+    },
+    {
+      "path": "runs/ops/phase1-final-engineering-review.json",
+      "sha256": "748576c5f51d1533a7afcc9b6ce832355a55cb217c921c27885e3648ce2493fb"
+    },
+    {
+      "path": "runs/ops/phase1-durable-archive-narval-20261011.json",
+      "sha256": "39d42159b70b1faa055bcfe13e4e596cc660f6c078125dc1d05c3fad77592f04"
+    },
+    {
+      "path": "runs/ops/phase1-durable-archive-rorqual-20261011.json",
+      "sha256": "78e2e8feaef7153a3eb5175dc163c73e8a710348322ae79ae6838522d61d2779"
+    },
+    {
+      "path": "runs/ops/phase1-backup-mila-20261011.json",
+      "sha256": "ccab8807752d1e611255bab7fff976f24366485e76c3831736cc79a06f38f76d"
+    },
+    {
+      "path": "runs/ops/phase1-backup-mila-lstm-20261011.json",
+      "sha256": "35fa2af0fbce222b0178c9cdc75fccc24742dff5b2d98bb53335e7d4679abd25"
+    }
+  ],
+  "limitations": [
+    "One trained seed per model/task; no population uncertainty inference.",
+    "Synthetic encodings; no graph/native-modality evidence.",
+    "GRU128 and LSTM256 complete-state dimensions; hardware confounds architecture.",
+    "No tangent, orbit closure, precision replay or causal intervention.",
+    "Failed acquisition precludes harmful-collapse acceptance; R2 probes preserve cue counterevidence."
+  ],
+  "next_protocol": "doc/auto/competence-recovery-plan.md",
+  "helper_sha256": {
+    "code/ops/submit_initial_phase.py": "6da1053c05b2274f81f0e72112ce5f3bae32391a012ece14a7213247d70220d7",
+    "code/ops/verify_initial_phase.py": "5f092ee5b87c5e407b5271eee97d5a59c66264570d2862df3cc672de0cb8d22b",
+    "code/ops/monitor_initial_phase.py": "157eec10db90b5285b561aed7dee9019737a38f85200ef3368b9854330a5c453",
+    "code/ops/reconcile_initial_phase.py": "83b698c6a4ca72bdcb984ea37d7a91ea5a54ef3f0596ea354ed65893b9ffc867"
+  },
+  "durable_archives": [
+    {
+      "source_cluster": "narval",
+      "canonical_archive": "/lustre06/project/6044649/mehrab/representation-collapse/evidence/initial-phase-v1-9004a0c",
+      "requested_archive": "/project/def-ioannism/mehrab/representation-collapse/evidence/initial-phase-v1-9004a0c",
+      "success": true,
+      "finished_utc": "2026-10-11T13:40:57.199246+00:00",
+      "published_inventory": {
+        "narval_5234514": {
+          "files": {
+            "calibration/arrays.npz": {
+              "bytes": 21629,
+              "sha256": "37582c55f9f0c9a82345a0642555a66e3ae118760b0e28a499a1aa6ba494c5a0"
+            },
+            "calibration/config.json": {
+              "bytes": 698,
+              "sha256": "416512d350920e752254653e6a895a9e36e8f969326e46fa28442b0d27265011"
+            },
+            "calibration/manifest.json": {
+              "bytes": 485,
+              "sha256": "c5ae927a97f20ddd8fb22fe743182fe5b6467980704c4f0aa856b1e0ca73514c"
+            },
+            "calibration/metrics.json": {
+              "bytes": 2406,
+              "sha256": "6e2f1a79f8408182a681fcaa6162b887f4ef599fb479d61b5a23c7192ceac976"
+            },
+            "calibration/status.json": {
+              "bytes": 153,
+              "sha256": "d9ae470256fb7a8e980571844b10d5e0ea21000c8c270f03f7de8223a6f33e69"
+            },
+            "calibration/verification.json": {
+              "bytes": 439,
+              "sha256": "60bd51e8f0f334c6456b5d1e6d0661bcba2d016cda6a8c645403a3c2d2d5cd10"
+            },
+            "mechanisms/arrays.npz": {
+              "bytes": 9347899,
+              "sha256": "46c426d3fb0e08b6f56629c40d5b84a1cc51ba13a9b4a8a3ffeaf738c319c629"
+            },
+            "mechanisms/config.json": {
+              "bytes": 1278,
+              "sha256": "1da3742418ed7daea631f24a7ddb5dc696e6080ef14752c272f1b95ee3263e1e"
+            },
+            "mechanisms/manifest.json": {
+              "bytes": 510,
+              "sha256": "520db85b5324452197ab0f21f31adc2e2cf75fdddae987cce9bcd60ebe577329"
+            },
+            "mechanisms/metrics.json": {
+              "bytes": 10601,
+              "sha256": "6219859b18cb1b8a68a839f0a87bafe87018cf9ca419adbd9592d751dd2708c0"
+            },
+            "mechanisms/status.json": {
+              "bytes": 207,
+              "sha256": "788e4b17e7554697370098d81561f93e45cc778bbeb575600209d783e4b1a625"
+            },
+            "mechanisms/verification.json": {
+              "bytes": 7128,
+              "sha256": "a1b28c8aa360448fb8b770a07e36a4f191631e6b0ed77cb23fc4c234b1a20e73"
+            },
+            "provenance.txt": {
+              "bytes": 223,
+              "sha256": "85c7692464286879f97d607e2a9189a92813a32c1627fb046f004781f8a9ba20"
+            },
+            "slurm-5234514.out": {
+              "bytes": 936,
+              "sha256": "b62abc906da485ee757ac0aa7f681f5d7d742844b946646b33de88def9e6190d"
+            }
+          },
+          "bytes": 9394592,
+          "manifest_checks": {
+            "calibration/manifest.json": {
+              "calibration/arrays.npz": true,
+              "calibration/config.json": true,
+              "calibration/metrics.json": true,
+              "calibration/status.json": true,
+              "calibration/verification.json": true
+            },
+            "mechanisms/manifest.json": {
+              "mechanisms/arrays.npz": true,
+              "mechanisms/config.json": true,
+              "mechanisms/metrics.json": true,
+              "mechanisms/status.json": true,
+              "mechanisms/verification.json": true
+            }
+          },
+          "status_metadata": {
+            "calibration/status.json": {
+              "slurm_job_id": "5234514",
+              "cluster": "narval",
+              "schema_version": 1,
+              "state": "verified",
+              "updated_at": "2026-10-11T12:59:26.507589+00:00"
+            },
+            "mechanisms/status.json": {
+              "slurm_job_id": "5234514",
+              "cluster": "narval",
+              "schema_version": 1,
+              "state": "verified",
+              "exit_code": 0,
+              "scientific_decision": "pending",
+              "updated_at": "2026-10-11T12:59:32.563953+00:00"
+            }
+          }
+        },
+        "narval_5234860": {
+          "files": {
+            "pilot/checkpoint.pt": {
+              "bytes": 321416,
+              "sha256": "f1db79385be4de085c457f88355242d0e6e62ceefbe79de4963ab725eca2bcd3"
+            },
+            "pilot/config.json": {
+              "bytes": 2091,
+              "sha256": "e45546879834b2eece0cf215ea99c1f8f10c2e7fd5fd951a8620ddfbcceaff61"
+            },
+            "pilot/cue_clouds.npz": {
+              "bytes": 2742708,
+              "sha256": "681cef4cc3fc86117b7c9bd48bd782eca65df12e617e3bbf89a49f96fca6199b"
+            },
+            "pilot/history.json": {
+              "bytes": 205175,
+              "sha256": "e39cfb70a7b2bb48a0b3a047b5cf4f4b8bb243423246eedc0bb0e42475fc6a9c"
+            },
+            "pilot/manifest.json": {
+              "bytes": 757,
+              "sha256": "54d87010a82d5fe059ccd76da8a45416ab8aa882151a61aadb4d04ddc517178c"
+            },
+            "pilot/metrics.json": {
+              "bytes": 48687,
+              "sha256": "87bd13a533033bead7656fb276a8a106870c4e5addb4219903d419a5a317a5bd"
+            },
+            "pilot/paired_errors.npz": {
+              "bytes": 22761,
+              "sha256": "cd53488bc706fbae21b3e9903a08d11121d0bf4d35964fa4836ceb27ea68fd5a"
+            },
+            "pilot/provenance.json": {
+              "bytes": 1916,
+              "sha256": "ae2f904f72a6d5726fbef2b4d383da3cd8013b295c90edf616d69bc5988d0ae0"
+            },
+            "pilot/status.json": {
+              "bytes": 189,
+              "sha256": "1df67563cd38460947a2fed06671e51e9bd6fa57ff2ba823b32eb2473a7b3d57"
+            },
+            "provenance.txt": {
+              "bytes": 224,
+              "sha256": "25662c5165ec58524a374303c7eeae6b38bdad053d977181672987d4e754016d"
+            },
+            "slurm-5234860.out": {
+              "bytes": 2629,
+              "sha256": "ffdba3b04804041ab42e123a228e2ebc3af94c4a7a3cc52aaf6d067f0e9ab8bf"
+            }
+          },
+          "bytes": 3348553,
+          "manifest_checks": {
+            "pilot/manifest.json": {
+              "pilot/checkpoint.pt": true,
+              "pilot/config.json": true,
+              "pilot/cue_clouds.npz": true,
+              "pilot/history.json": true,
+              "pilot/metrics.json": true,
+              "pilot/paired_errors.npz": true,
+              "pilot/provenance.json": true,
+              "pilot/status.json": true
+            }
+          },
+          "status_metadata": {
+            "pilot/status.json": {
+              "slurm_job_id": "5234860",
+              "cluster": "narval",
+              "state": "completed",
+              "scientific_acceptance": false,
+              "selected_step": 300,
+              "updated_at": "2026-10-11T13:05:14.620723+00:00"
+            }
+          }
+        },
+        "narval_5235508": {
+          "files": {
+            "pilot/checkpoint.pt": {
+              "bytes": 313672,
+              "sha256": "e35502d2958c78c465ae4a46639965f3e841fc5e6ad4ff490daf1fc4fb74d4f5"
+            },
+            "pilot/config.json": {
+              "bytes": 2090,
+              "sha256": "1815b4b4fd903eaf9750e2c87d016f2e7e31d3c4cf93fe146b95ebba95520787"
+            },
+            "pilot/cue_clouds.npz": {
+              "bytes": 1278567,
+              "sha256": "bb0ef4802370f14892735f877eecf82e3bcf53a3fbbffb8a0071c6ce24b9670c"
+            },
+            "pilot/history.json": {
+              "bytes": 206702,
+              "sha256": "bd0ae69a7e7d14059187058e0a53dd948a2cdb43741259f4032f5fb8a965600c"
+            },
+            "pilot/manifest.json": {
+              "bytes": 757,
+              "sha256": "4212fc1826bcefb958d5fae692d7659128e700564d1d59f6fed9352a42e11f43"
+            },
+            "pilot/metrics.json": {
+              "bytes": 51508,
+              "sha256": "5672110a4bae674bdba37598927b119442b362721a012243ecb2f94b51ec2bbc"
+            },
+            "pilot/paired_errors.npz": {
+              "bytes": 69178,
+              "sha256": "be47b7a96d649654f4e24e5785577a3426f01dd0ec70eaa1ad4f3d384f1d8968"
+            },
+            "pilot/provenance.json": {
+              "bytes": 1916,
+              "sha256": "bcb988d60c645c34768a16e82e485d6a388fbbf1bf6b89e22abce166cf313a85"
+            },
+            "pilot/status.json": {
+              "bytes": 189,
+              "sha256": "1583f7ce85b827b7157b33e1c13d42acc47cf4418a25d265e9f3dcbb9c5203e6"
+            },
+            "provenance.txt": {
+              "bytes": 223,
+              "sha256": "0e083d7a075790be0f20d1b6daacaaac58cbc38342c7b86941fbc0f5b0e3eb27"
+            },
+            "slurm-5235508.out": {
+              "bytes": 2659,
+              "sha256": "083cab0b61aab96372424781362d6ed0340aff4411b30fa70194c0cc06de5ba7"
+            }
+          },
+          "bytes": 1927461,
+          "manifest_checks": {
+            "pilot/manifest.json": {
+              "pilot/checkpoint.pt": true,
+              "pilot/config.json": true,
+              "pilot/cue_clouds.npz": true,
+              "pilot/history.json": true,
+              "pilot/metrics.json": true,
+              "pilot/paired_errors.npz": true,
+              "pilot/provenance.json": true,
+              "pilot/status.json": true
+            }
+          },
+          "status_metadata": {
+            "pilot/status.json": {
+              "slurm_job_id": "5235508",
+              "cluster": "narval",
+              "state": "completed",
+              "scientific_acceptance": false,
+              "selected_step": 400,
+              "updated_at": "2026-10-11T13:12:31.757685+00:00"
+            }
+          }
+        }
+      }
+    },
+    {
+      "source_cluster": "rorqual",
+      "canonical_archive": "/lustre09/project/6044649/mehrab/representation-collapse/evidence/initial-phase-v1-9004a0c",
+      "requested_archive": "/project/def-ioannism/mehrab/representation-collapse/evidence/initial-phase-v1-9004a0c",
+      "success": true,
+      "finished_utc": "2026-10-11T13:49:17.933942+00:00",
+      "published_inventory": {
+        "rorqual_22980985": {
+          "files": {
+            "pilot/checkpoint.pt": {
+              "bytes": 420744,
+              "sha256": "8752a480b2f5a9d674ef624a7cfb8780b67ceb43b51b4bcf3cadb9ecbd298673"
+            },
+            "pilot/config.json": {
+              "bytes": 2092,
+              "sha256": "abaf182d604652cf58a2f87cfa87217fdb35d6cc921fce3ce1adaf41edfddc5a"
+            },
+            "pilot/cue_clouds.npz": {
+              "bytes": 4607511,
+              "sha256": "a5442e65dc211b29dd75efd3a8ce3cb91bb486cfd2d3af925c0ada66bb3059e8"
+            },
+            "pilot/history.json": {
+              "bytes": 205314,
+              "sha256": "05c524eb1697cf667d7ae1abaafa8ee70cc9ea4cae10ff7003f8e42656d46e1e"
+            },
+            "pilot/manifest.json": {
+              "bytes": 757,
+              "sha256": "367a60055ef7d8c9b6e73aeddec2f4f2102de16dff02b319cb9e156843c090e8"
+            },
+            "pilot/metrics.json": {
+              "bytes": 82996,
+              "sha256": "776f17d99313368e64cef6f14951705c12f93bc0062a9106f5ac0821193c683f"
+            },
+            "pilot/paired_errors.npz": {
+              "bytes": 22761,
+              "sha256": "cd53488bc706fbae21b3e9903a08d11121d0bf4d35964fa4836ceb27ea68fd5a"
+            },
+            "pilot/provenance.json": {
+              "bytes": 1977,
+              "sha256": "c0ad11863dae9b8747f853d9af2102a961b2572ea4be296026664b9aeb7a90aa"
+            },
+            "pilot/status.json": {
+              "bytes": 191,
+              "sha256": "437468e073867c6069310efb359b1a907f08dcedd244c4e1c481516944ec87c2"
+            },
+            "provenance.txt": {
+              "bytes": 227,
+              "sha256": "08ccd8bc9abda475f9840aa4bd1a655d9b8a87f9e30f436851c458069cc7415d"
+            },
+            "slurm-22980985.out": {
+              "bytes": 2639,
+              "sha256": "a16afeba3835a580cc045b3e0b47adf616d85814a9191055bdfa996d4390c8d8"
+            }
+          },
+          "bytes": 5347209,
+          "manifest_checks": {
+            "pilot/manifest.json": {
+              "pilot/checkpoint.pt": true,
+              "pilot/config.json": true,
+              "pilot/cue_clouds.npz": true,
+              "pilot/history.json": true,
+              "pilot/metrics.json": true,
+              "pilot/paired_errors.npz": true,
+              "pilot/provenance.json": true,
+              "pilot/status.json": true
+            }
+          },
+          "status_metadata": {
+            "pilot/status.json": {
+              "slurm_job_id": "22980985",
+              "cluster": "rorqual",
+              "state": "completed",
+              "scientific_acceptance": false,
+              "selected_step": 300,
+              "updated_at": "2026-10-11T13:21:13.918014+00:00"
+            }
+          }
+        },
+        "rorqual_22980998": {
+          "files": {
+            "pilot/checkpoint.pt": {
+              "bytes": 413000,
+              "sha256": "ec63862dbd27657e99c7becdbdd1301d8813d4525426a9a1545768658561c660"
+            },
+            "pilot/config.json": {
+              "bytes": 2091,
+              "sha256": "8734fb03eab60abe5f4949ffe6083f1d5594eae8ead44eed71424e51418c804d"
+            },
+            "pilot/cue_clouds.npz": {
+              "bytes": 1641898,
+              "sha256": "3a20d13906ff869520b586c34839d2d50754c85e491b7f0d336154b72e525e41"
+            },
+            "pilot/history.json": {
+              "bytes": 206895,
+              "sha256": "87053a2dc509f3c6ba7810711ff7864915baacaf97ee50c007a13655b47d5653"
+            },
+            "pilot/manifest.json": {
+              "bytes": 757,
+              "sha256": "34a8aac335afc1ace3edced8c1f3e71d9af708fe36e03fd62cef688e64f44872"
+            },
+            "pilot/metrics.json": {
+              "bytes": 85686,
+              "sha256": "9493f1a59dbbbbd7618dc9d050a87e55688f550e056d00a6bc8a1871b7e1423d"
+            },
+            "pilot/paired_errors.npz": {
+              "bytes": 69285,
+              "sha256": "423e63d477f5d865cc24b906838a4f9b62fd8c6c0f246da4f925f561956ab977"
+            },
+            "pilot/provenance.json": {
+              "bytes": 1977,
+              "sha256": "6eee7348568e5b1edadbc1966cf9b6276453f6878fd9cb25c00ee7a5eb624c77"
+            },
+            "pilot/status.json": {
+              "bytes": 191,
+              "sha256": "f6cb542f6ccf5a6a9dd91996f17e5154d30b315ee4ad4a56aa76963d4dd51827"
+            },
+            "provenance.txt": {
+              "bytes": 226,
+              "sha256": "dfebee4ae61d1c2b4d37d4258accab75f3b66a9cab73ac5b3c49f84c2acf3418"
+            },
+            "slurm-22980998.out": {
+              "bytes": 2670,
+              "sha256": "739d1c38a540979fad72c02e0722522b0a3051ca4aaae466648f3ffb9b858a3f"
+            }
+          },
+          "bytes": 2424676,
+          "manifest_checks": {
+            "pilot/manifest.json": {
+              "pilot/checkpoint.pt": true,
+              "pilot/config.json": true,
+              "pilot/cue_clouds.npz": true,
+              "pilot/history.json": true,
+              "pilot/metrics.json": true,
+              "pilot/paired_errors.npz": true,
+              "pilot/provenance.json": true,
+              "pilot/status.json": true
+            }
+          },
+          "status_metadata": {
+            "pilot/status.json": {
+              "slurm_job_id": "22980998",
+              "cluster": "rorqual",
+              "state": "completed",
+              "scientific_acceptance": false,
+              "selected_step": 200,
+              "updated_at": "2026-10-11T13:21:46.741439+00:00"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

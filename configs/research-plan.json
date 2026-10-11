@@ -5,29 +5,48 @@
   "purpose": "Calibrate and reproduce graph temporal representation dimension measurements, then test recurrence and modality generality.",
   "execution_mode": "active-session-only",
   "persistent_controller_installed": false,
-  "status": "planned",
+  "status": "running",
   "approval": {
-    "cluster_submission": "pending",
-    "approval_record": null,
-    "approved_clusters": [],
+    "cluster_submission": "authorized-bounded-initial-phase",
+    "approval_record": "configs/approval.local.json",
+    "approved_clusters": [
+      "mila",
+      "tamia",
+      "narval",
+      "rorqual",
+      "fir",
+      "nibi",
+      "trillium",
+      "trillium-gpu",
+      "killarney",
+      "vulcan"
+    ],
     "approved_accounts": {},
     "approved_command_or_plan_hash": null,
     "expires_at": null,
-    "note": "The user is willing to approve Compute Canada work. No specific allocation or racing plan has been approved."
+    "note": "Owner authorized bounded scratch staging, four CPU jobs, four one-GPU seed-0 pilots and a bounded proposal-only Qwen worker. Exact ignored approval record governs; this declaration grants no further allocation. Racing and GPU retries excluded."
   },
   "resource_envelope": {
-    "max_pending_and_running_jobs": null,
-    "max_gpus_per_job": null,
-    "max_gpu_hours": null,
-    "max_cpu_hours": null,
-    "max_memory_gb": null,
-    "max_walltime_hours": null,
-    "max_storage_gb": null,
+    "max_pending_and_running_jobs": 4,
+    "max_gpus_per_job": 1,
+    "max_gpu_hours": 4,
+    "max_cpu_hours": 0.6666666666666666,
+    "max_memory_gb": 16,
+    "max_walltime_hours": 1,
+    "max_storage_gb": 20,
     "max_external_spend": null,
-    "max_scheduled_model_calls": null,
+    "max_scheduled_model_calls": 22,
     "allowed_racing_clusters": [],
-    "remote_submission_enabled": false,
-    "unset_limits_block_remote_allocation": true
+    "remote_submission_enabled": true,
+    "unset_limits_block_remote_allocation": true,
+    "max_concurrent_gpu_jobs": 2,
+    "note": "Initial-phase envelope only; four GPU submissions have been used. Storage cap is GiB per cluster. CPU jobs: 1 CPU/2 GiB/10 min. Qwen worker: 24 hours, at most 22 remaining attempts after two recorded attempts; no paid fallback. Subsequent studies need a new concrete envelope.",
+    "gpu_submissions_used": 4,
+    "gpu_submissions_remaining": 0,
+    "cpu_submissions_used": 3,
+    "cpu_submissions_remaining": 1,
+    "actual_initial_gpu_device_hours": 0.15416666666666667,
+    "cpu_hour_scope": "CPU-only calibration submissions; GPU pilots separately allocate four CPU cores each."
   },
   "operating_contract": {
     "artifact_contract": "skills/experiment-loop/references/workflow.md",
@@ -92,7 +111,7 @@
         "--output",
         "runs/calibration/local"
       ],
-      "note": "Local synthetic infrastructure passed nine tests and ten calibration checks; graph adapter/JVP/chronology and frozen graph-pilot measurement contract remain required for this milestone. Synthetic checks are not graph reproduction.",
+      "note": "Numerical infrastructure passes 10 measurement and 36 analytic mechanism checks locally and on Narval job5234514. Full existing suite passes29tests. Graph adapter/JVP/chronology and frozen graph-pilot contract remain required for this broader milestone.",
       "deliverable": "CPU fixtures and a reviewed measurement contract covering trajectory dimension, periodic Jacobian products, numerical validity, and estimator limitations.",
       "acceptance": [
         "Known-rank and degenerate covariance fixtures expose centering and finite-sample behavior.",
@@ -135,8 +154,8 @@
     {
       "node_id": "compute_plan",
       "depends_on": [],
-      "status": "planned",
-      "scientific_decision": "pending",
+      "status": "verified",
+      "scientific_decision": "operations-only",
       "role": "cluv-resource-preparation",
       "inputs": [
         "https://mila-iqia.github.io/cluv/guides/submit/racing-clusters/"
@@ -148,7 +167,20 @@
         "Concrete commands/configs and total race/concurrency limits are reviewable.",
         "No GPU jobs or externally allocated resources are launched before applicable approval."
       ],
-      "verified_artifacts": []
+      "verified_artifacts": [
+        {
+          "path": "doc/auto/cluster-access.md"
+        },
+        {
+          "path": "configs/experiments/initial-phase-v1.json"
+        },
+        {
+          "path": "runs/ops/phase1-stage-narval-rorqual-20261011.json"
+        },
+        {
+          "path": "runs/ops/phase1-launches-20261011.json"
+        }
+      ]
     },
     {
       "node_id": "graph_reproduction",
@@ -165,8 +197,8 @@
       "status": "blocked",
       "scientific_decision": "pending",
       "blockers": [
-        "Measurements and assets must be verified.",
-        "Cluster execution additionally requires a concrete approved resource envelope."
+        "Graph measurements and assets must be verified.",
+        "The bounded initial synthetic allocation does not authorize a graph reproduction allocation."
       ],
       "role": "graph-temporal-reproduction",
       "deliverable": "Source-matched graph pilot with saved complete recurrent trajectories, period maps, dimension estimates, forcing/control conditions, task performance, and seed-level results.",
@@ -215,6 +247,42 @@
         "Generalization claims distinguish modalities, tasks, models, and independent training seeds."
       ],
       "verified_artifacts": []
+    },
+    {
+      "node_id": "initial_synthetic_engineering_phase",
+      "depends_on": [
+        "graph_source_audit",
+        "compute_plan"
+      ],
+      "status": "verified",
+      "scientific_decision": "inconclusive-baseline-competence-failed-all-four-cells",
+      "role": "explicitly-authorized-independent-synthetic-engineering",
+      "protocol": "configs/experiments/initial-phase-v1.json",
+      "source_revision": "9004a0c114a8b7c5335dca3d5247449fd10b5ffa",
+      "note": "Independent synthetic engineering work proceeds alongside graph asset recovery; it does not release the graph-dependent cross-modal node.",
+      "acceptance": [
+        "10+36 calibration checks with source and manifest verification.",
+        "Four full1500-step seed0 pilots terminal COMPLETED/exit0 and independently verified from raw arrays.",
+        "Report every competence failure, hardware, actual resources and independent scientific critique."
+      ],
+      "verified_artifacts": [
+        {
+          "path": "doc/auto/initial-phase-report.md"
+        },
+        {
+          "path": "doc/auto/initial-phase-results.json"
+        },
+        {
+          "path": "doc/auto/initial-phase-scientific-review.md"
+        },
+        {
+          "path": "runs/ops/phase1-final-verification-20261011.json"
+        },
+        {
+          "path": "runs/ops/phase1-scheduler-reconciliation-20261011.json"
+        }
+      ],
+      "next_protocol": "doc/auto/competence-recovery-plan.md"
     }
   ],
   "current_handoff": "doc/october/october11/2026-10-11-progress-report.md"

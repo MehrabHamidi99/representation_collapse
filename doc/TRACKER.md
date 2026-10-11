@@ -3,6 +3,29 @@
 Updated 2026-10-11. See the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json).
 
+- **Initial engineering phase — completed and independently verified.** Narval
+  calibration job **5234514** passes 10 + 36 checks. All four full 1,500-step,
+  seed-0 GPU pilots finish `COMPLETED/0:0`: GRU categorical **5234860**, GRU
+  continuous **5235508**, LSTM categorical **22980985**, LSTM continuous
+  **22980998**. Six artifact directories pass raw-output/source/hash checks and
+  separate native scheduler reconciliation. All four models fail short-horizon
+  native memory competence; categorical accuracy is near 6.25% chance and
+  continuous error is near the exact zero-predictor baseline. **Harmful collapse
+  remains inconclusive.** R2 conditional probes retain cue counterevidence;
+  float32 resolution and native readout require diagnosis. See the
+  [final report](auto/initial-phase-report.md), [scientific critique](auto/initial-phase-scientific-review.md),
+  [committed results](auto/initial-phase-results.json), and
+  [competence-recovery protocol](auto/competence-recovery-plan.md).
+  Execution source is `9004a0c114a8b7c5335dca3d5247449fd10b5ffa`; Narval uses
+  A100 and Rorqual uses amended H100 MIG `3g.40gb`/15-minute allocations.
+  All four GPU submissions are consumed; no retry or new training is authorized
+  by this result. Verified full copies are on Tamia/Mila scratch, with private
+  project-volume archives on the execution clusters. No Mac checkpoints.
+- **Next experiment — competence diagnosis first.** Preserve v1 failures.
+  Separate immediate WRITE/query, full-prefix acquisition, short retention and
+  native QUERY readout before long-horizon geometry or Floquet interpretation.
+  A new frozen training protocol and allocation are required. Graph reproduction
+  remains blocked on assets and complete-state adapter validation.
 - **Repository and operating skills — implemented.** Git main initialized,
   requested origin configured, locked Python environment, four canonical skills
   with `.agents/skills/` discovery links. Publication status is in the notebook.
@@ -32,19 +55,20 @@ and [dependency plan](../configs/research-plan.json).
 - **Legacy graph assets — blocked on recovery.** Missing checkpoint identity,
   raw trajectories and analysis source. Pin upstream training code and dataset
   revision; resolve AB/AABB mismatch. [Reproduction protocol](auto/graph-reproduction.md).
-- **Compute execution — authorized; initial CPU smoke completed on Tamia.**
+- **Compute bootstrap — completed, with failed attempt retained.**
   Owner explicitly requested cluv synchronization and initial launches. Tamia
   job **536757** completed with exit 0; Mila job **11190579** failed before
   calibration because uv selected the inherited controller environment. The
   corrected wrappers use `uv python find --system`. Cluv 0.1.5 synchronized
   both scratch checkouts; actual submission and resource bounds are recorded
-  in ignored operations journals. No trained-model result is accepted.
+  in ignored operations journals. Trained outputs now pass engineering acceptance;
+  no harmful-collapse scientific claim is accepted.
 - **Analytic mechanism controls — implemented and tested locally.** Seven
   families include affine/commuting nulls, noncommuting positive construction,
   amplitude versus normalized dimension, finite categorical basins, neutral
   continuous memory, and fresh-noise geometry without retained history.
   Local calibration passes 36 checks. Full source suite passes 29 tests.
-- **Vector pilots — implemented; GPU launch pending access verification.**
+- **Vector pilots — executed; all four competence gates failed.**
   Complete-state GRU/LSTM categorical/continuous memory pilots record paired
   errors, individual horizon effects, DID, absolute variance, covariance
   dimension, and held-out ridge probes. Initial launches use seed 0 only;
@@ -72,7 +96,7 @@ and [dependency plan](../configs/research-plan.json).
   proposal requires revision: its 10 CPU-hour request exceeds the envelope and
   its significance-only stopping rule is insufficient. No proposal was submitted.
 
-Next bounded actions: preserve required login environments for cluv operations; validate exact
-one-GPU requests on Narval/Rorqual; stage locked Torch caches on login nodes;
-launch bounded seed-0 pilots; retrieve and verify manifests and review Qwen drafts.
-Recover graph assets in parallel. No broad sweep follows automatically.
+Next bounded actions: implement the competence-recovery diagnostic contract locally,
+review bounded Qwen drafts against verified failures, and recover graph assets.
+Preserve the held cluv controller for authorized operations. No broad sweep or
+additional GPU training follows automatically.

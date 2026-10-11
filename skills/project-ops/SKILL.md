@@ -17,8 +17,9 @@ Do not treat an available cluster account as an approved allocation. Before
 the first cluster mutation or submission, prepare the exact source SHA,
 command, candidates, resource envelope, output path and acceptance criterion.
 The owner's offer to approve Compute Canada work does not grant an unstated
-budget. Obtain approval for the concrete pending CPU smoke in the compute
-plan; follow any later recorded envelope without asking again within it.
+budget. The initial envelope is now recorded and its four GPU submissions are
+consumed; follow existing authorization within its limits without asking again.
+Prepare a new concrete envelope for subsequent training allocations.
 
 Use the project's pinned `cluster-uv==0.1.5` via `uv run --group ops cluv`.
 The same group pins uv 0.9.18, matching the remote CLIs and preventing cluv
@@ -31,12 +32,19 @@ add `--cluster tamia --run-id ID` for an exact single CPU smoke preview.
 
 ## Hosts and storage
 
-Tamia is the proposed CPU-smoke target, reached through the existing Mila hop.
+The initial allocation is now authorized within the ignored approval record and
+frozen initial-phase protocol. Tamia CPU job 536757 and Narval calibration job
+5234514 completed; a prior Mila CPU attempt failed before calibration. Four
+seed-0 GPU pilots on Narval/Rorqual consume the initial GPU submission cap.
+Do not infer an additional budget from successful execution.
+
+Tamia was the proposed CPU-smoke target, reached through the existing Mila hop.
 Read-only probes on 2026-10-11 verified `/scratch/m/mehrab`, account
 `aip-ioannism`, QOS `normal`, and `cpubase_bycore_b1`. Mila direct SSH works;
 scratch is `/network/scratch/m/mehrab.hamidi`. Tamia direct laptop SSH timed
 out; do not repeatedly trigger interactive authentication. See the compute
-plan for current Alliance candidates and unverified entitlements.
+plan and cluster-access report for current Alliance candidates and verified
+entitlements; access is not an additional compute budget.
 
 Keep code replicas, environments, cache, Python installs, data, runs and logs
 under `$SCRATCH/representation-collapse`. Cluv's remote source directory is
@@ -71,8 +79,9 @@ more. Cost and approve the pessimistic whole race, inspect active connections
 and disabled state, record job IDs, and cancel only jobs created by this
 project's race. Racing is excluded from the initial smoke.
 
-The prepared smoke requests one CPU, 2 GiB, ten minutes, zero GPUs. Its maximum
-request is 1/6 CPU-hour; this is pending approval, not a recurring allowance.
+The original smoke requests one CPU, 2 GiB, ten minutes, zero GPUs. Its maximum
+request is 1/6 CPU-hour; the bootstrap CPU cap is four submissions, of which
+three were used including the failed Mila attempt. This is not a recurring allowance.
 Future GPU count, walltime, model/data scope and concurrency follow measured
 pilot needs and the approved research plan. Never import the template's
 four-H100 allocation policy or other projects' remaining budgets.

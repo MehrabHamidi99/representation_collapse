@@ -29,11 +29,14 @@ period multipliers as proof of representation dimension collapse. Match the
 complete recurrent state, input forcing, period, and reference trajectory.
 
 Scheduler polling, hashes, manifest checks, dependency readiness, and extraction
-of existing metrics use deterministic tools first. This setup defines operating
-contracts; it does not install a daemon, schedule paid model calls, or authorize
-cluster submission. Compute approval and resource limits remain unset. Prepare
-concrete Cluv plans for Mila, Tamia, or another configured Compute Canada site;
-apply an explicitly recorded approval before remote allocations or job races.
+of existing metrics use deterministic tools first. The skill itself defines
+operating contracts and grants no allocation or model-call budget. The owner
+subsequently authorized the bounded initial phase and an actual proposal-only
+Qwen worker on 2026-10-11. Read the ignored `configs/approval.local.json`, tracker
+and frozen `configs/experiments/initial-phase-v1.json` for the applicable envelope
+and consumed submissions. Existing authorization persists within its limits;
+obtain a new concrete envelope for additional allocations, races or
+model-service fallback.
 
 The user requested subagent research management. For bounded parallel tasks,
 follow [the agent protocol](../../doc/auto/agent-protocol.md) and use
