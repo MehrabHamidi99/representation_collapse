@@ -113,3 +113,33 @@ origin and uses a separate HTTPS push URL for local publication.
 
 No cluster job was submitted. A committed-source Tamia preview and publication
 verification follow this integration record.
+
+## Publication and concrete next allocation
+
+Bootstrap source commit `52025761004f04723daca3a543a2ff39715606ea` was pushed
+to GitHub main through the configured HTTPS push URL; the requested SSH
+origin remains available for cluster cloning. The working tree was clean.
+Original snapshots are tracked unchanged; their inherited whitespace was
+preserved, and new infrastructure passes the whitespace check.
+
+Committed-source preflight passed for Tamia. Negative checks reject nonexistent
+source commits, `first` racing, and alternative-config cluster previews.
+Review artifact: `runs/calibration/tamia-cpu-smoke-preview.json` (ignored local
+runtime artifact). Exact approved-next-step candidate:
+
+```bash
+uv run --group ops cluv submit tamia code/ops/calibration_job.sh --no-sync-datasets -- --source-commit 52025761004f04723daca3a543a2ff39715606ea --run-id cpu-smoke-001 --cluster tamia
+```
+
+Execute from the scratch controller on Mila after bounded source/environment
+staging on Mila and Tamia, followed by explicit Tamia-only cluv sync. Request:
+account `aip-ioannism`, QOS `normal`, partition `cpubase_bycore_b1`, one CPU,
+2 GB, ten minutes, zero GPUs, one submission, no race/retry. The approval
+question was presented to the owner; no approval has been received at this
+handoff and no cluster job or staging command has been executed.
+
+Successful submission is followed by scheduler reconciliation, explicit cluv
+result retrieval, manifest verification and numerical check acceptance. A
+failed infrastructure smoke returns evidence for a smaller repair; it does
+not trigger an unapproved resubmission. The later GPU pilot needs its own
+scientific inputs and approved envelope.
