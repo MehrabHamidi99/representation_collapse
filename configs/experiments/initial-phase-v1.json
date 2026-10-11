@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "phase_id": "initial-calibration-and-vector-pilot-v1",
+  "authorization_record": "configs/approval.local.json",
+  "pilot_config": "configs/experiments/vector-pilot-v1.json",
+  "scope": "Engineering calibration and trained seed-0 pilots; no scientific acceptance or graph reproduction",
+  "calibration": {
+    "preferred_cluster": "narval",
+    "account": "def-ioannism_cpu",
+    "partition": "cpubase_bycore_b1",
+    "qos": "normal",
+    "cpus": 1,
+    "memory_gib": 2,
+    "walltime_minutes": 10,
+    "expected_measurement_checks": 10,
+    "expected_mechanism_checks": 36
+  },
+  "pilots": [
+    {"model": "gru", "task": "categorical", "seed": 0, "preferred_cluster": "narval"},
+    {"model": "lstm", "task": "categorical", "seed": 0, "preferred_cluster": "rorqual"},
+    {"model": "gru", "task": "continuous", "seed": 0, "preferred_cluster": "narval"},
+    {"model": "lstm", "task": "continuous", "seed": 0, "preferred_cluster": "rorqual"}
+  ],
+  "gpu_resources": {
+    "account": "def-ioannism_gpu",
+    "partition": "gpubase_bygpu_b1",
+    "qos": "normal",
+    "nodes": 1,
+    "tasks": 1,
+    "gpus_per_job": 1,
+    "cpus_per_job": 4,
+    "memory_gib": 16,
+    "walltime_minutes": 60,
+    "typed_gres": {"narval": "gpu:a100:1", "rorqual": "gpu:h100:1"}
+  },
+  "remaining_gpu_submission_cap": 4,
+  "max_concurrent_gpu_jobs": 2,
+  "max_requested_gpu_hours": 4,
+  "race": false,
+  "automatic_gpu_retries": false,
+  "scheduling": "Two initial jobs; each continuous-task successor waits for the categorical job on its own cluster to terminate. Reconcile every job ID before any additional submission.",
+  "source_freeze": "Resolve one full committed SHA before submission and supply it explicitly to every job; preserve separate attempt paths.",
+  "completion": [
+    "Measurement and mechanism calibration complete with 10 and 36 verified checks and matching source/manifest hashes.",
+    "All four pilot cells reach a terminal scheduler state; complete cells have source-pinned artifacts independently verified from saved arrays.",
+    "Four successful verified cells complete the engineering phase; any missing, failed or quarantined cell leaves execution incomplete and is reported without automatic retry.",
+    "Report all competence failures and negative outcomes; one seed and two synthetic task encodings do not support across-seed, cross-modal or causal-collapse claims.",
+    "Record hardware, actual resource use, deviations, scientific review and the next bounded experiment in doc."
+  ],
+  "limitations": [
+    "Architecture is confounded with preferred cluster/hardware in this engineering allocation.",
+    "The frozen weak competence threshold is a smoke gate, not the research program's full competence requirement.",
+    "No tangent spectra, orbit-closure tests, causal intervention or native-modality transfer are measured in this phase."
+  ]
+}

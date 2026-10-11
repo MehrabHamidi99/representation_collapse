@@ -182,11 +182,25 @@ def provenance(config_path: Path | None, device: str) -> dict:
         dirty = bool(subprocess.check_output(["git", "status", "--porcelain"], cwd=root, text=True).strip())
     except (subprocess.CalledProcessError, FileNotFoundError):
         revision, dirty = None, True
+    accelerator = None
+    if device == "cuda":
+        index = torch.cuda.current_device()
+        properties = torch.cuda.get_device_properties(index)
+        accelerator = {"index": index, "name": properties.name,
+                       "total_memory_bytes": properties.total_memory,
+                       "compute_capability": [properties.major, properties.minor],
+                       "cuda_runtime": torch.version.cuda,
+                       "cudnn_version": torch.backends.cudnn.version()}
     return {
         "schema_version": 1, "git_revision": revision, "dirty_checkout": dirty,
         "source_sha256": {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in files if p.exists()},
         "python": platform.python_version(), "torch": str(torch.__version__), "numpy": np.__version__,
         "device": device, "platform": platform.platform(), "hostname": platform.node(),
+        "accelerator": accelerator,
+        "allocation": {name: os.environ.get(name) for name in (
+            "SLURM_CPUS_PER_TASK", "SLURM_MEM_PER_NODE", "SLURM_JOB_GPUS",
+            "CUDA_VISIBLE_DEVICES", "CLUV_CLUSTER_NAME")},
+        "cublas_workspace_config": os.environ.get("CUBLAS_WORKSPACE_CONFIG"),
         "slurm_job_id": os.environ.get("SLURM_JOB_ID"), "started_at": _now(),
         "deterministic_algorithms": True, "precision": "float32 model/state; float64 covariance/probes",
     }
