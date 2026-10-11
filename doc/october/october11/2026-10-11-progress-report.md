@@ -333,3 +333,62 @@ This reads controller identity and saved masters without requesting new Duo.
 GPU jobs and other-cluster staging remain pending that usable connection and
 scheduler-account evidence; the initial phase already includes the completed
 Tamia calibration and active Qwen researcher.
+
+### Fresh Alliance authentication and reusable access — 12:27 UTC
+
+The owner requested another authentication round and then said "try again".
+Fresh native cluv logins from Tamia2 completed Duo on all eight remote aliases.
+The first round's sockets were absent after the controller command ended.
+No surviving private SSH masters were found; effective logind
+`KillUserProcesses=false` was verified, so that proposed explanation is not
+supported. The actual disappearance cause remains unresolved. Independently,
+cluv's synchronous `ssh -G` resolution cost roughly 1.2–1.4 seconds per host,
+which can consume simultaneous ten-second verifier deadlines. The verifier now
+checks hosts sequentially with a separate 15-second acquisition deadline and
+25-second probe deadline; scheduler failures are recorded separately from
+authenticated identity.
+
+A project adapter retains native cluv 0.1.5 and uses UID/project-specific
+owner-only sockets on `/tmp`, with strict known-host checks. It changes no shared
+SSH settings. A second controller holds its native login event loop and terminal
+for a bounded eight hours. Narval first passed an independent passive check at
+12:23:02 UTC; then Rorqual, Fir, Nibi, Trillium, Trillium-GPU, Killarney and Vulcan
+completed sequential Duo and identity checks. Tool session 83529 remains open;
+no Duo request remains pending. A different passive process at 12:27:34 UTC
+verified all nine Alliance identities, eight reusable remote masters and local
+Tamia. Seven initial shells exposed both scratch and scheduler associations;
+Killarney exposed neither, and Vulcan's scratch variable was unset despite
+successful scheduler queries. Additional read-only shell probes investigate
+those two environments. Reuse after closing the held controller remains
+unproven; the current workaround requires it to remain open.
+
+Raw proof: ignored `runs/ops/cluv-alliance-access-20261011.json` and
+`runs/ops/cluv-access-probe-debug.json`. Current routes, accounts and commands:
+[cluster access](../../auto/cluster-access.md). Code review corrected SSH option
+precedence so passive BatchMode safety wins, captured base callables to avoid
+recursive wrappers after reloading, retained local stderr, and bounded passive
+post-login identity checks. Both files pass syntax checks and `git diff --check`;
+actual native cluv probes provide the acceptance evidence. No scheduler jobs
+were submitted during this audit, and no other project was modified.
+
+Mila separately passed its native cluv identity/scratch/account/partition probe
+from the Mac at 12:24:00 UTC. Exact Qwen PID2812601 remained alive on login-4;
+heartbeat at 12:23:59 UTC reported five schema-verified reviews, zero consecutive
+provider errors, and 21,920 cumulative tokens (19,551 prompt +2,369 completion).
+Safe evidence is in `runs/ops/cluv-mila-access-20261011.json`; no credentials,
+service endpoint or process arguments were printed. These remain proposals,
+not accepted scientific findings or authorization for additional allocations.
+
+Follow-up resolution: Killarney and Vulcan both expose writable
+`/scratch/mehrab`, account `aip-ioannism`, QOS `interac,normal` under `bash -lc`.
+Killarney initializes Slurm from `/cm/shared/apps/slurm/current/bin` and exposes
+only GPU partitions, including H100/L40S; Vulcan exposes CPU and L40S GPU
+partitions. No module loads or profile edits were required. The passive verifier
+now invokes remote probes in a login shell. A complete rerun at **12:31:07 UTC**
+passed **9/9** identity, scratch-directory, partition and account checks,
+with exit code zero for every probe and **8/8** reusable remote masters.
+Acceptance assertions were independently applied to the saved JSON:
+`runs/ops/cluv-alliance-login-environment-20261011.json`. Detailed environment
+proof is `runs/ops/cluv-killarney-vulcan-environment-20261011.json`.
+Future cluv sync/submission still needs explicit scratch/Slurm environment
+initialization; the socket adapter does not itself modify remote profiles.

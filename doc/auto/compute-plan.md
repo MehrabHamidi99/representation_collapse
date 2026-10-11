@@ -1,5 +1,14 @@
 # Compute plan: Floquet calibration to multimodal recurrent models
 
+Current access update, 2026-10-11 12:31 UTC: all nine configured Alliance
+targets authenticated and passed identity checks through native cluv. Eight
+remote masters were reusable from the held Tamia2 controller; Mila separately
+verified from the Mac. See [cluster access](cluster-access.md) for current
+accounts, storage, adapter commands and the resolved Killarney/Vulcan login-shell
+requirements. The preparation text below describes the original proposed allocation;
+subsequent owner authorization and executed jobs are recorded in the tracker
+and dated notebook.
+
 Prepared 2026-10-11. No job was submitted and no remote checkout, environment,
 SSH configuration, dataset, or queue entry was changed during preparation.
 The owner's statement that Compute Canada work can be approved establishes

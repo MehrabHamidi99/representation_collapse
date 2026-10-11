@@ -49,11 +49,15 @@ and [dependency plan](../configs/research-plan.json).
   errors, individual horizon effects, DID, absolute variance, covariance
   dimension, and held-out ridge probes. Initial launches use seed 0 only;
   fixed learning rate and jointly trained encoder are engineering limitations.
-- **Other Alliance clusters — Duo completed by owner on tamia1; reuse pending.**
-  Eight aliases are configured. Coordinator on tamia2 verified zero reusable
-  remote masters; node-local sockets explain the mismatch. Two fresh tamia1
-  controller login attempts closed before Duo approval. Access and scheduler entitlements require actual
-  node-local probes before staging or submission.
+- **Alliance access — all nine configured targets verified at 12:31 UTC.**
+  Fresh native cluv logins from a held Tamia2 controller established eight
+  reusable remote masters. Separate passive checks verified all nine identities;
+  seven expose scratch and scheduler associations directly. Follow-up login-shell
+  probes verified scratch and scheduler associations on Killarney and Vulcan too;
+  remote verification now initializes that shell environment.
+  Mila separately verified from the Mac. Keep the project controller open and
+  use its socket adapter; reuse after controller closure remains unproven.
+  [Routes, accounts and evidence](auto/cluster-access.md).
 - **Graph replication — not run.** Graph evidence review and asset recovery
   remain required. Independent synthetic work may proceed alongside recovery;
   valid negative outcomes advance the plan.
@@ -68,7 +72,7 @@ and [dependency plan](../configs/research-plan.json).
   proposal requires revision: its 10 CPU-hour request exceeds the envelope and
   its significance-only stopping rule is insufficient. No proposal was submitted.
 
-Next bounded actions: finish tamia1 node-local cluv access verification; inspect
-accounts and one-GPU partitions; stage locked Torch caches on login nodes;
+Next bounded actions: preserve required login environments for cluv operations; validate exact
+one-GPU requests on Narval/Rorqual; stage locked Torch caches on login nodes;
 launch bounded seed-0 pilots; retrieve and verify manifests and review Qwen drafts.
 Recover graph assets in parallel. No broad sweep follows automatically.
