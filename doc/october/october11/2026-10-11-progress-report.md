@@ -295,3 +295,41 @@ Credentials travel only via secure stdin to process environment; no values are
 persisted. Qwen drafts falsifiable next-step proposals; scientific acceptance,
 code changes and submissions remain with the coordinator. Restart/liveness
 verification and new-cluster authentication are the next operations.
+
+
+### Persistent worker and passive verifier completion
+
+Replacement Qwen worker is running on Mila as **PID2812601**, started
+2026-10-11 08:15:21 UTC from source
+`61e2598ae0a086ce908f72b9253d872bc6dd3d91`. Output:
+`/network/scratch/m/mehrab.hamidi/representation-collapse/runs/qwen-worker-phase1-v2-20261011T081521Z`.
+First actual request completed 08:15:24 UTC with proposal_ready, exact model
+identity, schema verification, no reasoning output and no provider errors;
+3,911 prompt +468 completion =4,379 total tokens. Process and heartbeat were
+independently checked. Maximum 22 remaining attempts/24 hours, hourly proposals
+and minute evidence polls; no paid fallback or autonomous scheduling.
+
+Coordinator reviewed that first draft and requires revision before allocation:
+10 CPU-hours exceed the envelope; train-with-fixed-weights is ambiguous;
+p>0.05 is not an equivalence or absence-of-effect criterion. The existing frozen
+engineering pilot remains the next executable path after account verification.
+Review saved in ignored `runs/ops/qwen-first-proposal-review.json`; no scientific
+claim or submission was accepted from the response.
+
+The passive verifier was exercised against Mila from the laptop: active cluv
+master, remote identity, scratch, partition and account/QOS queries succeeded.
+Default target parsing initially exposed argparse's empty-list/choices behavior;
+fixed and rerun successfully. Source fix `5b51a38` was published and synced to
+Tamia through native cluv. A fresh Tamia2 passive check at 08:16:12 UTC verified
+local Tamia resources; eight cross-node control checks hit their ten-second
+bounds. They remain unverified from the owner's tamia1 controller. This probe
+sent no Duo requests and changed no remote scheduler/SSH state. The two earlier
+extra Tamia1 Duo attempts are closed, with no authentication pending.
+
+The owner can run the prepared verifier directly in the existing tamia1 shell:
+`cd "$SCRATCH/representation-collapse/source"` then
+`uv run --locked --group ops python code/ops/verify_cluv_access.py`.
+This reads controller identity and saved masters without requesting new Duo.
+GPU jobs and other-cluster staging remain pending that usable connection and
+scheduler-account evidence; the initial phase already includes the completed
+Tamia calibration and active Qwen researcher.

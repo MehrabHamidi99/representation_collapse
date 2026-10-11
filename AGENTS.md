@@ -42,8 +42,11 @@ integration and scientific acceptance. Prefer deterministic tools for polling,
 hashing, and schema checks; inherit the session model unless a routing policy
 and actual tool availability justify an override.
 
-This setup is a workflow scaffold, not an installed unattended controller.
-No background research schedule or paid model-service budget has been approved.
+The owner subsequently authorized initial cluv launches and an actual bounded
+Qwen cluster research worker on 2026-10-11. Current execution evidence and
+resource limits are in the tracker, dated notebook and ignored approval record.
+The Qwen leaf worker writes proposals; it cannot submit work or accept scientific
+claims. No paid model-service fallback is approved.
 Do not import authorization, provider credentials, or GPU-hour limits from
 Skill Inference or another project. Carry out local development, literature
 research, read-only cluster inspection, and preparation autonomously.

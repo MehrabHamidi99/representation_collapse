@@ -51,20 +51,24 @@ and [dependency plan](../configs/research-plan.json).
   fixed learning rate and jointly trained encoder are engineering limitations.
 - **Other Alliance clusters — Duo completed by owner on tamia1; reuse pending.**
   Eight aliases are configured. Coordinator on tamia2 verified zero reusable
-  remote masters; node-local sockets explain the mismatch. A fresh tamia1
-  controller login awaits Duo. Access and scheduler entitlements require actual
+  remote masters; node-local sockets explain the mismatch. Two fresh tamia1
+  controller login attempts closed before Duo approval. Access and scheduler entitlements require actual
   node-local probes before staging or submission.
 - **Graph replication — not run.** Graph evidence review and asset recovery
   remain required. Independent synthetic work may proceed alongside recovery;
   valid negative outcomes advance the plan.
-- **Automatic research — actual Qwen worker implemented; launch pending.**
-  The existing Qwen endpoint is verified from Mila. Worker uses bounded evidence,
-  schema-checked proposals and exact model identity; 24 hours/24 attempts,
+- **Automatic research — actual Qwen worker running on Mila.**
+  Mila PID **2812601** produced a verified actual Qwen proposal at 08:15:24 UTC.
+  Worker uses bounded evidence,
+  schema-checked proposals and exact model identity; 24 hours/22 remaining attempts
+  after two recorded research attempts,
   at most 2,048 output tokens per call, no paid fallback. It cannot submit jobs
   or accept scientific claims. Mock tests pass model identity, cluster-scoped
-  monitoring, heartbeat, caps, unknown usage and three-error stopping.
+  monitoring, heartbeat, caps, unknown usage and three-error stopping. The first
+  proposal requires revision: its 10 CPU-hour request exceeds the envelope and
+  its significance-only stopping rule is insufficient. No proposal was submitted.
 
 Next bounded actions: finish tamia1 node-local cluv access verification; inspect
 accounts and one-GPU partitions; stage locked Torch caches on login nodes;
-launch bounded seed-0 pilots and the Qwen worker; retrieve and verify manifests.
+launch bounded seed-0 pilots; retrieve and verify manifests and review Qwen drafts.
 Recover graph assets in parallel. No broad sweep follows automatically.
