@@ -76,8 +76,10 @@ async def check(cluster, local):
 
 async def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("clusters", nargs="*", choices=(*ALLIANCE, "mila"))
+    parser.add_argument("clusters", nargs="*", metavar="CLUSTER")
     args = parser.parse_args()
+    if any(cluster not in (*ALLIANCE, "mila") for cluster in args.clusters):
+        parser.error("clusters must be configured Alliance aliases or mila")
     installed = version("cluster-uv")
     if installed != "0.1.5":
         parser.error("use uv run --locked --group ops to select cluster-uv 0.1.5")
