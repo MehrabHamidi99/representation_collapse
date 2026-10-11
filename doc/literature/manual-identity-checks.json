@@ -1,0 +1,14 @@
+[
+  {
+    "id": "jaeger2002",
+    "sha256": "441da98b9e1c6e9b9f67f86bd74df63f2ed8c00f258f24a469812bd1d0880feb",
+    "checked_at": "2026-10-11",
+    "note": "Rendered and visually inspected PDF page 1: Short term memory in echo state networks, Herbert Jaeger, May 28 2002; footnote GMD Report 152, publication March 28 2002. Text extraction has font-encoding errors; use rendered pages for close reading."
+  },
+  {
+    "id": "bengio1994-long-term-dependencies",
+    "sha256": "bab3b7f441358173e55a307ed3c7471d9f6c9344d14afed0ca651cf153a6968b",
+    "checked_at": "2026-10-11",
+    "note": "Rendered and visually inspected PDF page 1: matching title and authors Yoshua Bengio, Patrice Simard, Paolo Frasconi. Institutional author manuscript says to appear in IEEE Transactions on Neural Networks; 35 manuscript pages. Fragmented font/text extraction caused title heuristic failure."
+  }
+]

@@ -3,6 +3,17 @@
 Adapted from the Skill Inference project's month/day convention. The canonical
 current state is [TRACKER.md](TRACKER.md); reusable protocols are under `auto/`.
 
+The [periodicity research plan](auto/periodicity-research-plan.md) records the
+theoretical and experimental path across recurrent architectures and modalities,
+including temporal/depth recurrence, matched repetition controls, confirmation,
+and compute milestones.
+
+The [literature library](literature/README.md) contains the scoped bibliography,
+local paper index and [critical novelty review](literature/novelty-review.md).
+Read the novelty review before freezing experiment scope: it identifies close
+prior work and recommends analytic controls and a small mechanism study before
+the broad architecture sweep.
+
 Write one report per workday:
 `doc/<lowercase-month>/<month><day>/YYYY-MM-DD-progress-report.md`.
 For example, `doc/october/october11/2026-10-11-progress-report.md`.

@@ -1,0 +1,35 @@
+{
+  "validated_at": "2026-10-11T07:27:45.763955+00:00",
+  "distinct_references": 90,
+  "input_reference_records": 98,
+  "bibtex_entries": 90,
+  "pdf_files": 90,
+  "unique_pdf_hashes": 90,
+  "pdf_pages": 2267,
+  "pdf_bytes": 197085607,
+  "evidence_levels": {
+    "metadata": 4,
+    "abstract": 60,
+    "full_text": 26
+  },
+  "manual_identity_checks": 2,
+  "unresolved_identity_flags": 0,
+  "local_markdown_paths_checked": 155,
+  "broken_local_links": [],
+  "checks": [
+    "reference IDs/schema and deduplication",
+    "BibTeX parse and ID agreement (bibtexparser 1.4.3)",
+    "all PDF signatures, sizes, page counts and SHA-256 hashes",
+    "unique PDF hashes and expected file count",
+    "text-cache presence",
+    "title-screen exceptions matched to rendered-page checks by hash",
+    "local Markdown paths and bibliography reading-list anchors",
+    "retrieval-helper Python syntax"
+  ],
+  "limitations": [
+    "Title matching is a heuristic, not independent content verification of every page.",
+    "No empirical results or entire theorem proofs reproduced.",
+    "No exhaustive absence-of-prior-work claim.",
+    "Jaeger and Bengio extraction is imperfect; use rendered pages."
+  ]
+}

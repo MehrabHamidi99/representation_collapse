@@ -1,0 +1,833 @@
+[
+  {
+    "id": "pure_attention_rank",
+    "title": "Attention is Not All You Need: Pure Attention Loses Rank Doubly Exponentially with Depth",
+    "authors": [
+      "Yihe Dong",
+      "Jean-Baptiste Cordonnier",
+      "Andreas Loukas"
+    ],
+    "year": 2021,
+    "venue": "ICML 2021",
+    "doi": null,
+    "arxiv_id": "2103.03404",
+    "url": "https://arxiv.org/abs/2103.03404",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2103.03404"
+    ],
+    "themes": [
+      "attention",
+      "rank"
+    ],
+    "relevance": "Pure-attention depth-collapse theorem is foundational overlap.",
+    "novelty_threat": "High for a generic repeated-attention collapse claim.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract",
+    "limitations": "Pure attention omits residual and MLP mechanisms; token rank is not retained-history dimension.",
+    "source_urls": [
+      "https://arxiv.org/abs/2103.03404",
+      "https://proceedings.mlr.press/v139/dong21a.html"
+    ]
+  },
+  {
+    "id": "transformer_signal_rank",
+    "title": "Signal Propagation in Transformers: Theoretical Perspectives and the Role of Rank Collapse",
+    "authors": [
+      "Lorenzo Noci",
+      "Sotiris Anagnostidis",
+      "Luca Biggio",
+      "Antonio Orvieto",
+      "Sidak Pal Singh",
+      "Aurelien Lucchi"
+    ],
+    "year": 2022,
+    "venue": "NeurIPS 2022",
+    "doi": "10.52202/068431-1972",
+    "arxiv_id": "2206.03126",
+    "url": "https://arxiv.org/abs/2206.03126",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2206.03126"
+    ],
+    "themes": [
+      "attention",
+      "rank",
+      "initialization"
+    ],
+    "relevance": "Rank collapse and gradient propagation connect spectra to transformer design.",
+    "novelty_threat": "Medium: spectral diagnosis is established.",
+    "evidence_level": "abstract",
+    "evidence_locator": "NeurIPS abstract",
+    "limitations": "Initialization and training signal propagation differ from fixed-weight periodic inference.",
+    "source_urls": [
+      "https://arxiv.org/abs/2206.03126",
+      "https://papers.nips.cc/paper_files/paper/2022/hash/ae0cba715b60c4052359b3d52a2cff7f-Abstract-Conference.html"
+    ]
+  },
+  {
+    "id": "transformer_oversmoothing_record",
+    "title": "Setting the Record Straight on Transformer Oversmoothing",
+    "authors": [
+      "Gbètondji J-S Dovonon",
+      "Michael M. Bronstein",
+      "Matt J. Kusner"
+    ],
+    "year": 2024,
+    "venue": "arXiv preprint; conference status not verified",
+    "doi": null,
+    "arxiv_id": "2401.04301",
+    "url": "https://arxiv.org/abs/2401.04301",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2401.04301"
+    ],
+    "themes": [
+      "attention",
+      "oversmoothing",
+      "spectrum"
+    ],
+    "relevance": "Value/projection spectra distinguish smoothing from sharpening.",
+    "novelty_threat": "High against universal transformer smoothing.",
+    "evidence_level": "full_text",
+    "evidence_locator": "arXiv v2 Secs.2–4, Assumption3.1, Theorems3.3–3.4",
+    "limitations": "Sec.3 analyzes fixed attention and weight matrices; dynamic attention and task-memory loss require separate tests.",
+    "source_urls": [
+      "https://arxiv.org/abs/2401.04301",
+      "https://arxiv.org/html/2401.04301v2"
+    ]
+  },
+  {
+    "id": "deep_equilibrium",
+    "title": "Deep Equilibrium Models",
+    "authors": [
+      "Shaojie Bai",
+      "J. Zico Kolter",
+      "Vladlen Koltun"
+    ],
+    "year": 2019,
+    "venue": "Advances in Neural Information Processing Systems 32 (NeurIPS 2019)",
+    "doi": null,
+    "arxiv_id": "1909.01377",
+    "url": "https://arxiv.org/abs/1909.01377",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1909.01377"
+    ],
+    "themes": [
+      "equilibrium",
+      "depth_recurrence"
+    ],
+    "relevance": "Input-conditioned equilibrium models establish useful convergent tied-depth computation.",
+    "novelty_threat": "High against contraction necessarily erasing input.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract",
+    "limitations": "Root-finding and implicit differentiation are not temporal periodic forcing; full implementation was not audited.",
+    "source_urls": [
+      "https://arxiv.org/abs/1909.01377",
+      "https://papers.nips.cc/paper_files/paper/2019/hash/01386bd6d8e091c2ab4c7c7de644d37b-Abstract.html"
+    ]
+  },
+  {
+    "id": "universal_transformer",
+    "title": "Universal Transformers",
+    "authors": [
+      "Mostafa Dehghani",
+      "Stephan Gouws",
+      "Oriol Vinyals",
+      "Jakob Uszkoreit",
+      "Łukasz Kaiser"
+    ],
+    "year": 2018,
+    "venue": "arXiv preprint; conference venue not reverified",
+    "doi": null,
+    "arxiv_id": "1807.03819",
+    "url": "https://arxiv.org/abs/1807.03819",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1807.03819"
+    ],
+    "themes": [
+      "depth_recurrence",
+      "expressivity"
+    ],
+    "relevance": "Recurrent attention and adaptive per-position halting predate current looped models.",
+    "novelty_threat": "Low for periodic memory; high for novelty of depth recurrence.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract",
+    "limitations": "Step encoding and halting can make the effective iteration nonautonomous.",
+    "source_urls": [
+      "https://arxiv.org/abs/1807.03819"
+    ]
+  },
+  {
+    "id": "albert",
+    "title": "ALBERT: A Lite BERT for Self-supervised Learning of Language Representations",
+    "authors": [
+      "Zhenzhong Lan",
+      "Mingda Chen",
+      "Sebastian Goodman",
+      "Kevin Gimpel",
+      "Piyush Sharma",
+      "Radu Soricut"
+    ],
+    "year": 2019,
+    "venue": "arXiv preprint; conference venue not reverified",
+    "doi": null,
+    "arxiv_id": "1909.11942",
+    "url": "https://arxiv.org/abs/1909.11942",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1909.11942"
+    ],
+    "themes": [
+      "weight_sharing"
+    ],
+    "relevance": "Parameter sharing is architectural context for tied-depth controls.",
+    "novelty_threat": "Low: architecture context.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract",
+    "limitations": "Sharing alone does not establish arbitrary test-time looping or periodic memory dynamics.",
+    "source_urls": [
+      "https://arxiv.org/abs/1909.11942"
+    ]
+  },
+  {
+    "id": "block_recurrent_transformer",
+    "title": "Block-Recurrent Transformers",
+    "authors": [
+      "DeLesley Hutchins",
+      "Imanol Schlag",
+      "Yuhuai Wu",
+      "Ethan Dyer",
+      "Behnam Neyshabur"
+    ],
+    "year": 2022,
+    "venue": "arXiv preprint; conference venue not reverified",
+    "doi": null,
+    "arxiv_id": "2203.07852",
+    "url": "https://arxiv.org/abs/2203.07852",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2203.07852"
+    ],
+    "themes": [
+      "temporal_recurrence",
+      "attention",
+      "memory"
+    ],
+    "relevance": "Block-wise temporal attention recurrence provides the bounded-state comparator.",
+    "novelty_threat": "Medium for architecture scope.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract",
+    "limitations": "Persistent vectors and any local cache must both count as state; blocks determine the recurrence clock.",
+    "source_urls": [
+      "https://arxiv.org/abs/2203.07852"
+    ]
+  },
+  {
+    "id": "looped_programmable",
+    "title": "Looped Transformers as Programmable Computers",
+    "authors": [
+      "Angeliki Giannou",
+      "Shashank Rajput",
+      "Jy-yong Sohn",
+      "Kangwook Lee",
+      "Jason D. Lee",
+      "Dimitris Papailiopoulos"
+    ],
+    "year": 2023,
+    "venue": "arXiv preprint; conference venue not reverified",
+    "doi": null,
+    "arxiv_id": "2301.13196",
+    "url": "https://arxiv.org/abs/2301.13196",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2301.13196"
+    ],
+    "themes": [
+      "depth_recurrence",
+      "expressivity"
+    ],
+    "relevance": "Constructed looped transformers execute programs and iterative algorithms.",
+    "novelty_threat": "High against inevitable failure of all repeated blocks.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract",
+    "limitations": "Hand-programmed expressivity is not a prediction of trained models or finite-precision memory.",
+    "source_urls": [
+      "https://arxiv.org/abs/2301.13196"
+    ]
+  },
+  {
+    "id": "looped_expressive_timestep",
+    "title": "On Expressive Power of Looped Transformers: Theoretical Analysis and Enhancement via Timestep Encoding",
+    "authors": [
+      "Kevin Xu",
+      "Issei Sato"
+    ],
+    "year": 2025,
+    "venue": "ICML 2025",
+    "doi": null,
+    "arxiv_id": "2410.01405",
+    "url": "https://arxiv.org/abs/2410.01405",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2410.01405"
+    ],
+    "themes": [
+      "depth_recurrence",
+      "expressivity",
+      "step_encoding"
+    ],
+    "relevance": "Approximation analysis motivates loop-dependent scaling through timestep encoding.",
+    "novelty_threat": "Medium for interpreting loop-count effects.",
+    "evidence_level": "abstract",
+    "evidence_locator": "ICML proceedings abstract",
+    "limitations": "Loop-index conditioning changes the map; approximation power does not prove memory preservation.",
+    "source_urls": [
+      "https://arxiv.org/abs/2410.01405",
+      "https://proceedings.mlr.press/v267/xu25x.html"
+    ]
+  },
+  {
+    "id": "huginn",
+    "title": "Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach",
+    "authors": [
+      "Jonas Geiping",
+      "Sean McLeish",
+      "Neel Jain",
+      "John Kirchenbauer",
+      "Siddharth Singh",
+      "Brian R. Bartoldson",
+      "Bhavya Kailkhura",
+      "Abhinav Bhatele",
+      "Tom Goldstein"
+    ],
+    "year": 2025,
+    "venue": "arXiv preprint; final venue not reverified",
+    "doi": null,
+    "arxiv_id": "2502.05171",
+    "url": "https://arxiv.org/abs/2502.05171",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2502.05171v1",
+      "https://arxiv.org/pdf/2502.05171"
+    ],
+    "themes": [
+      "depth_recurrence",
+      "collapse",
+      "reinjection",
+      "cache"
+    ],
+    "relevance": "Huginn documents recurrence-induced token collapse and state-ignoring training failures.",
+    "novelty_threat": "High for generic recurrent-transformer collapse diagnosis.",
+    "evidence_level": "full_text",
+    "evidence_locator": "arXiv v1 Secs.3.1–3.3,4.3,6.3–7; Fig.5",
+    "limitations": "Failure evidence concerns training/initialization; per-loop cache policy and repeated input change state and sensitivity.",
+    "source_urls": [
+      "https://arxiv.org/abs/2502.05171",
+      "https://arxiv.org/html/2502.05171v1"
+    ],
+    "reviewed_arxiv_version": "2502.05171v1",
+    "version_note": "Inspected/downloaded arXiv v1 is pinned; its PDF title page agrees with the canonical title. Current unversioned arXiv URLs resolve to v2."
+  },
+  {
+    "id": "think_shallow_solve_deep",
+    "title": "Think Shallow, Solve Deep: Controlling Recurrent Dynamics for Reliable Test-Time Depth",
+    "authors": [
+      "Ivan Viakhirev",
+      "Kirill Borodin",
+      "Amirah Almutairi",
+      "Serguei Barannikov",
+      "Maxim Abramov",
+      "Grach Mkrtchian"
+    ],
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "doi": null,
+    "arxiv_id": "2608.18222",
+    "url": "https://arxiv.org/abs/2608.18222",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2608.18222"
+    ],
+    "themes": [
+      "depth_recurrence",
+      "lyapunov",
+      "dimension",
+      "non_normality"
+    ],
+    "relevance": "Controlled recurrent reasoners relate finite-time dynamics and task extrapolation.",
+    "novelty_threat": "Very high for spectra-plus-task generality.",
+    "evidence_level": "full_text",
+    "evidence_locator": "arXiv v1 Secs.3.4–3.5,4,6; Appendices E,G,N",
+    "limitations": "Top-eight exponents and projected non-normality are partial estimates; input remains available each step.",
+    "source_urls": [
+      "https://arxiv.org/abs/2608.18222",
+      "https://arxiv.org/html/2608.18222v1"
+    ]
+  },
+  {
+    "id": "loopus",
+    "title": "LoopUS: Recasting Pretrained LLMs into Looped Latent Refinement Models",
+    "authors": [
+      "Taekhyun Park",
+      "Yongjae Lee",
+      "Dohee Kim",
+      "Hyerim Bae"
+    ],
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "doi": null,
+    "arxiv_id": "2605.11011",
+    "url": "https://arxiv.org/abs/2605.11011",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2605.11011"
+    ],
+    "themes": [
+      "depth_recurrence",
+      "collapse",
+      "gating"
+    ],
+    "relevance": "Retrofitted latent loops use gating, detached supervision and adaptive stopping.",
+    "novelty_threat": "High for gated loop stabilization.",
+    "evidence_level": "full_text",
+    "evidence_locator": "arXiv v1 Secs.3.1,4.5–4.6; Eqs.3–8",
+    "limitations": "Convex interpolation does not prove contraction; inference cache semantics need implementation verification.",
+    "source_urls": [
+      "https://arxiv.org/abs/2605.11011",
+      "https://arxiv.org/html/2605.11011v1"
+    ]
+  },
+  {
+    "id": "s4",
+    "title": "Efficiently Modeling Long Sequences with Structured State Spaces",
+    "authors": [
+      "Albert Gu",
+      "Karan Goel",
+      "Christopher Ré"
+    ],
+    "year": 2021,
+    "venue": "arXiv preprint; conference venue not reverified",
+    "doi": null,
+    "arxiv_id": "2111.00396",
+    "url": "https://arxiv.org/abs/2111.00396",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2111.00396"
+    ],
+    "themes": [
+      "ssm",
+      "memory",
+      "cross_modal"
+    ],
+    "relevance": "Structured linear state spaces supply cross-modal long-memory baselines.",
+    "novelty_threat": "Low for periodic novelty; important analytical control.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract",
+    "limitations": "Linear transition submodule differs from a stacked nonlinear model; frozen full-state tests are needed.",
+    "source_urls": [
+      "https://arxiv.org/abs/2111.00396"
+    ]
+  },
+  {
+    "id": "mamba",
+    "title": "Mamba: Linear-Time Sequence Modeling with Selective State Spaces",
+    "authors": [
+      "Albert Gu",
+      "Tri Dao"
+    ],
+    "year": 2023,
+    "venue": "arXiv preprint; conference venue not reverified",
+    "doi": null,
+    "arxiv_id": "2312.00752",
+    "url": "https://arxiv.org/abs/2312.00752",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2312.00752"
+    ],
+    "themes": [
+      "ssm",
+      "selectivity",
+      "cross_modal"
+    ],
+    "relevance": "Input-dependent selection explicitly regulates retention and forgetting.",
+    "novelty_threat": "Medium for a general cross-modal recurrence claim.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract",
+    "limitations": "Token-conditioned coefficients and convolution history are part of complete dynamics.",
+    "source_urls": [
+      "https://arxiv.org/abs/2312.00752"
+    ]
+  },
+  {
+    "id": "mamba2_ssd",
+    "title": "Transformers are SSMs: Generalized Models and Efficient Algorithms Through Structured State Space Duality",
+    "authors": [
+      "Tri Dao",
+      "Albert Gu"
+    ],
+    "year": 2024,
+    "venue": "arXiv preprint; conference venue not reverified",
+    "doi": null,
+    "arxiv_id": "2405.21060",
+    "url": "https://arxiv.org/abs/2405.21060",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2405.21060"
+    ],
+    "themes": [
+      "ssm",
+      "attention",
+      "duality"
+    ],
+    "relevance": "Structured state-space duality connects attention-like operators and Mamba-2.",
+    "novelty_threat": "Medium: attention-versus-SSM separation is already qualified.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract",
+    "limitations": "Operator equivalence does not make all architectures share the same nonlinear full-state Jacobian.",
+    "source_urls": [
+      "https://arxiv.org/abs/2405.21060"
+    ]
+  },
+  {
+    "id": "rwkv7",
+    "title": "RWKV-7 \"Goose\" with Expressive Dynamic State Evolution",
+    "authors": [
+      "Bo Peng",
+      "Ruichong Zhang",
+      "Daniel Goldstein",
+      "Eric Alcaide",
+      "Xingjian Du",
+      "Haowen Hou",
+      "Jiaju Lin",
+      "Jiaxing Liu",
+      "Janna Lu",
+      "William Merrill",
+      "Guangyu Song",
+      "Kaifeng Tan",
+      "Saiteja Utpala",
+      "Nathan Wilce",
+      "Johan S. Wind",
+      "Tianyi Wu",
+      "Daniel Wuttke",
+      "Christian Zhou-Zheng"
+    ],
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "doi": null,
+    "arxiv_id": "2503.14456",
+    "url": "https://arxiv.org/abs/2503.14456",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2503.14456"
+    ],
+    "themes": [
+      "recurrence",
+      "matrix_memory",
+      "state_tracking"
+    ],
+    "relevance": "Dynamic delta-rule state evolution is relevant to persistent categorical memory.",
+    "novelty_threat": "Medium against blanket recurrent incapacity.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract",
+    "limitations": "RWKV-7 differs from RWKV-4 used in routing-collapse work; implementation and state accounting need separate review.",
+    "source_urls": [
+      "https://arxiv.org/abs/2503.14456"
+    ]
+  },
+  {
+    "id": "xlstm",
+    "title": "xLSTM: Extended Long Short-Term Memory",
+    "authors": [
+      "Maximilian Beck",
+      "Korbinian Pöppel",
+      "Markus Spanring",
+      "Andreas Auer",
+      "Oleksandra Prudnikova",
+      "Michael Kopp",
+      "Günter Klambauer",
+      "Johannes Brandstetter",
+      "Sepp Hochreiter"
+    ],
+    "year": 2024,
+    "venue": "arXiv preprint; conference venue not reverified",
+    "doi": null,
+    "arxiv_id": "2405.04517",
+    "url": "https://arxiv.org/abs/2405.04517",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2405.04517"
+    ],
+    "themes": [
+      "recurrence",
+      "gating",
+      "matrix_memory"
+    ],
+    "relevance": "Scalar and matrix memories provide contrasting gated memory mechanisms.",
+    "novelty_threat": "Medium for recurrence-wide claims.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract",
+    "limitations": "Cell, hidden, normalizer and stabilization states cannot be reduced to output activations.",
+    "source_urls": [
+      "https://arxiv.org/abs/2405.04517"
+    ]
+  },
+  {
+    "id": "gated_delta",
+    "title": "Gated Delta Networks: Improving Mamba2 with Delta Rule",
+    "authors": [
+      "Songlin Yang",
+      "Jan Kautz",
+      "Ali Hatamizadeh"
+    ],
+    "year": 2025,
+    "venue": "ICLR 2025",
+    "doi": null,
+    "arxiv_id": "2412.06464",
+    "url": "https://arxiv.org/abs/2412.06464",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2412.06464"
+    ],
+    "themes": [
+      "recurrence",
+      "gating",
+      "matrix_memory",
+      "length"
+    ],
+    "relevance": "Combines adaptive erasure and targeted delta updates, with retrieval and extrapolation tests.",
+    "novelty_threat": "Medium for memory loss mechanisms.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract; author publication page",
+    "limitations": "Gated DeltaNet, hybrid variants and ungated DeltaNet must not be conflated.",
+    "source_urls": [
+      "https://arxiv.org/abs/2412.06464",
+      "https://sustcsonglin.github.io/"
+    ]
+  },
+  {
+    "id": "repeat_after_me",
+    "title": "Repeat After Me: Transformers are Better than State Space Models at Copying",
+    "authors": [
+      "Samy Jelassi",
+      "David Brandfonbrener",
+      "Sham M. Kakade",
+      "Eran Malach"
+    ],
+    "year": 2024,
+    "venue": "arXiv preprint; conference venue not reverified",
+    "doi": null,
+    "arxiv_id": "2402.01032",
+    "url": "https://arxiv.org/abs/2402.01032",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2402.01032"
+    ],
+    "themes": [
+      "memory",
+      "capacity",
+      "copying",
+      "length"
+    ],
+    "relevance": "Copying lower bounds separate fixed-state capacity from context access.",
+    "novelty_threat": "High competing explanation for long-horizon failure.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract",
+    "limitations": "Arbitrary string copying exceeds the proposed fixed-number-of-tags task; precision and cache resources matter.",
+    "source_urls": [
+      "https://arxiv.org/abs/2402.01032"
+    ]
+  },
+  {
+    "id": "mamba_token_dynamics",
+    "title": "Demystifying the Token Dynamics of Deep Selective State Space Models",
+    "authors": [
+      "Thieu N. Vo",
+      "Duy-Tung Pham",
+      "Xin T. Tong",
+      "Tan Minh Nguyen"
+    ],
+    "year": 2025,
+    "venue": "ICLR 2025",
+    "doi": null,
+    "arxiv_id": "2410.03292",
+    "url": "https://arxiv.org/abs/2410.03292",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2410.03292",
+      "https://proceedings.iclr.cc/paper_files/paper/2025/file/756dfc9113ae4f310847530403fcb212-Paper-Conference.pdf"
+    ],
+    "themes": [
+      "ssm",
+      "depth_dynamics",
+      "collapse"
+    ],
+    "relevance": "Analyzes deep selective-state-space token convergence and performance interventions.",
+    "novelty_threat": "High for new SSM token-dynamics claims.",
+    "evidence_level": "full_text",
+    "evidence_locator": "arXiv v2 Secs.3–5, Theorems4.1/4.3/4.4; ICLR paper",
+    "limitations": "Main theory is a scalar S6 depth-continuum surrogate; not exact full-state temporal periodic recurrence. Primary sources use author-name variants.",
+    "source_urls": [
+      "https://arxiv.org/abs/2410.03292",
+      "https://arxiv.org/html/2410.03292v2",
+      "https://proceedings.iclr.cc/paper_files/paper/2025/hash/756dfc9113ae4f310847530403fcb212-Abstract-Conference.html"
+    ],
+    "author_aliases": {
+      "Duy-Tung Pham": "Tung D. Pham (arXiv metadata)"
+    }
+  },
+  {
+    "id": "all_routes_collapse",
+    "title": "All Routes Lead to Collapse",
+    "authors": [
+      "K. R. Balasubramanian"
+    ],
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "doi": null,
+    "arxiv_id": "2606.22325",
+    "url": "https://arxiv.org/abs/2606.22325",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2606.22325"
+    ],
+    "themes": [
+      "attention",
+      "ssm",
+      "recurrence",
+      "graph",
+      "collapse"
+    ],
+    "relevance": "Claims shared low-rank routing signature with Mamba/RWKV interventions.",
+    "novelty_threat": "Very high for architecture-general collapse.",
+    "evidence_level": "full_text",
+    "evidence_locator": "arXiv v1 Secs.3–7; Appendices B.2–B.5,C",
+    "limitations": "Key-cloud rank is not task memory. Appendix B.4 token-permutation null is spectrum-invariant as written; code unverified. Source author given only as K. R. Balasubramanian.",
+    "source_urls": [
+      "https://arxiv.org/abs/2606.22325",
+      "https://arxiv.org/html/2606.22325v1"
+    ]
+  },
+  {
+    "id": "looped_stability_recall",
+    "title": "Stability and Generalization in Looped Transformers",
+    "authors": [
+      "Asher Labovich"
+    ],
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "doi": null,
+    "arxiv_id": "2604.15259",
+    "url": "https://arxiv.org/abs/2604.15259",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2604.15259v1",
+      "https://arxiv.org/pdf/2604.15259"
+    ],
+    "themes": [
+      "depth_recurrence",
+      "fixed_points",
+      "reinjection"
+    ],
+    "relevance": "Autonomous versus recall analysis includes fixed-point input sensitivity.",
+    "novelty_threat": "Very high for proposed continuous-memory or reinjection theory.",
+    "evidence_level": "full_text",
+    "evidence_locator": "arXiv v1 Secs.3–5, Props.1–5; Appendices A.3,A.6–A.8",
+    "limitations": "Smooth transversality assumptions exclude designed neutral manifolds; isolated fixed points can retain categorical labels by basin.",
+    "source_urls": [
+      "https://arxiv.org/abs/2604.15259",
+      "https://arxiv.org/html/2604.15259v1"
+    ],
+    "reviewed_arxiv_version": "2604.15259v1"
+  },
+  {
+    "id": "fixed_point_reasoners",
+    "title": "Fixed-Point Reasoners: Stable and Adaptive Deep Looped Transformers",
+    "authors": [
+      "Sajad Movahedi",
+      "Vera Milovanović",
+      "Shlomo Libo Feigin",
+      "Alexander Theus",
+      "Thomas Hofmann",
+      "Valentina Boeva",
+      "T. Konstantin Rusch",
+      "Antonio Orvieto"
+    ],
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "doi": null,
+    "arxiv_id": "2606.18206",
+    "url": "https://arxiv.org/abs/2606.18206",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2606.18206"
+    ],
+    "themes": [
+      "depth_recurrence",
+      "equilibrium",
+      "normalization"
+    ],
+    "relevance": "Convergence-based adaptive halting and residual scaling give competing successful dynamics.",
+    "novelty_threat": "High against useful computation requiring nonconvergence.",
+    "evidence_level": "full_text",
+    "evidence_locator": "arXiv v1 Introduction and Secs.2–3",
+    "limitations": "Input-conditioned puzzle reasoning is not delayed streaming recall; main design sections only, not full theorem audit.",
+    "source_urls": [
+      "https://arxiv.org/abs/2606.18206",
+      "https://arxiv.org/html/2606.18206v1"
+    ]
+  },
+  {
+    "id": "mesh",
+    "title": "MeSH: Memory-as-State-Highways for Recursive Transformers",
+    "authors": [
+      "Chengting Yu",
+      "Xiaobo Shu",
+      "Yadao Wang",
+      "Yizhen Zhang",
+      "Haoyi Wu",
+      "Jiaang Li",
+      "Rujiao Long",
+      "Ziheng Chen",
+      "Yuchi Xu",
+      "Wenbo Su",
+      "Bo Zheng"
+    ],
+    "year": 2026,
+    "venue": "ICLR 2026",
+    "doi": null,
+    "arxiv_id": "2510.07739",
+    "url": "https://arxiv.org/abs/2510.07739",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2510.07739v1",
+      "https://arxiv.org/pdf/2510.07739",
+      "https://openreview.net/attachment?id=IhTrFvY7p3&name=pdf"
+    ],
+    "themes": [
+      "depth_recurrence",
+      "memory",
+      "collapse",
+      "step_routers"
+    ],
+    "relevance": "Direct recursive hidden-state singular-spectrum collapse diagnosis and explicit-memory mitigation.",
+    "novelty_threat": "Very high; closest architecture-specific dimensional-collapse prior.",
+    "evidence_level": "full_text",
+    "evidence_locator": "arXiv v1 Secs.2,3.2,4.1; Figs.1,5. Acceptance verified by arXiv v2 comment; v2 Sec.3.2/Figs.1,5 also checked.",
+    "limitations": "Top-50 normalized token singular values omit full-state history geometry; step-specific routers change the map and buffer changes state budget.",
+    "source_urls": [
+      "https://arxiv.org/abs/2510.07739",
+      "https://arxiv.org/html/2510.07739v1",
+      "https://github.com/LivingFutureLab/MeSH",
+      "https://arxiv.org/abs/2510.07739v2"
+    ],
+    "reviewed_arxiv_version": "2510.07739v1"
+  },
+  {
+    "id": "collapse_symmetry_rank",
+    "title": "Rank, Head-Channel Non-Identifiability, and Symmetry Breaking: A Precise Analysis of Representational Collapse in Transformers",
+    "authors": [
+      "Giansalvo Cirrincione"
+    ],
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "doi": null,
+    "arxiv_id": "2604.23681",
+    "url": "https://arxiv.org/abs/2604.23681",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2604.23681"
+    ],
+    "themes": [
+      "attention",
+      "rank",
+      "residual",
+      "normalization"
+    ],
+    "relevance": "Recent preprint distinguishes algebraic rank, residual effects and head identifiability.",
+    "novelty_threat": "Medium: challenges loose collapse definitions.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract and introduction",
+    "limitations": "Abstract/intro claims only checked; exact-rank and LayerNorm assertions require proof audit and must not be treated as effective-rank guarantees.",
+    "source_urls": [
+      "https://arxiv.org/abs/2604.23681"
+    ]
+  }
+]

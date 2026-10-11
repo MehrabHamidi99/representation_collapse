@@ -32,3 +32,7 @@ __pycache__/
 *.out
 *.synctex.gz
 /configs/approval.local.json
+# Downloaded research papers and extracted full text; provenance is tracked.
+/literature/papers/
+/literature/text/
+/literature/cache/

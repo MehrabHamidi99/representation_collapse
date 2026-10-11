@@ -1,0 +1,737 @@
+[
+  {
+    "id": "pals2024",
+    "title": "Trained recurrent neural networks develop phase-locked limit cycles in a working memory task",
+    "authors": [
+      "Matthijs Pals",
+      "Jakob H. Macke",
+      "Omri Barak"
+    ],
+    "year": 2024,
+    "venue": "PLOS Computational Biology 20(2): e1011852",
+    "doi": "10.1371/journal.pcbi.1011852",
+    "arxiv_id": null,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10868787/",
+    "pdf_urls": [],
+    "themes": [
+      "periodic forcing",
+      "Floquet",
+      "low-rank dynamics",
+      "categorical memory"
+    ],
+    "relevance": "Periodic input supports distinct, locally stable phase-coded memory cycles in trained rank-two rate RNNs. Poincare maps and Floquet multipliers diagnose memory-dependent cycle stability.",
+    "novelty_threat": "Direct anticipation of periodic recurrent working-memory analysis; a counterexample to universal forgetting under contraction.",
+    "evidence_level": "full_text",
+    "evidence_locator": "Results: Phase-coded memories reside in stable limit cycles; Fig. 3A-C. Methods: Dimensionality and dynamics of low-rank RNNs with periodic input; Poincare maps and linear stability analysis, Eq. (9) and variational equation.",
+    "limitations": "Two categorical memories; continuous-time low-rank tanh model, specialized oscillatory output. Not a matched higher-order repetition comparison.",
+    "source_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10868787/"
+    ]
+  },
+  {
+    "id": "ashwin2023",
+    "title": "Transitions in echo index and dependence on input repetitions",
+    "authors": [
+      "Peter Ashwin",
+      "Andrea Ceni"
+    ],
+    "year": 2023,
+    "venue": "arXiv preprint",
+    "doi": null,
+    "arxiv_id": "2309.04728",
+    "url": "https://arxiv.org/abs/2309.04728",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2309.04728v1",
+      "https://arxiv.org/pdf/2309.04728"
+    ],
+    "themes": [
+      "input repetitions",
+      "echo index",
+      "multistability"
+    ],
+    "relevance": "Theorems connect minimum symbol-block repetition lengths to attractor multiplicity; long blocks can produce a unique response under a uniform single-attractor assumption.",
+    "novelty_threat": "Direct theoretical anticipation of repetition-dependent loss or preservation of initial-state distinctions.",
+    "evidence_level": "full_text",
+    "evidence_locator": "Assumption 2.1; Lemma 2.2; Theorems 2.3 and 2.4, printed p. 9; Section 2.3/Fig. 3 obstruction example; Sections 3.1-3.3 leaky-tanh examples.",
+    "limitations": "Compact-state switched maps and hyperbolic-attractor assumptions; symbol run length differs from the plan's whole-motif repetition with matched run lengths. Journal DOI not verified.",
+    "source_urls": [
+      "https://arxiv.org/abs/2309.04728"
+    ],
+    "reviewed_arxiv_version": "2309.04728v1"
+  },
+  {
+    "id": "ceni2020",
+    "title": "The Echo Index and multistability in input-driven recurrent neural networks",
+    "authors": [
+      "Andrea Ceni",
+      "Peter Ashwin",
+      "Lorenzo Livi",
+      "Claire Postlethwaite"
+    ],
+    "year": 2020,
+    "venue": "Physica D: Nonlinear Phenomena",
+    "doi": "10.1016/j.physd.2020.132609",
+    "arxiv_id": "2001.07694",
+    "url": "https://arxiv.org/abs/2001.07694",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2001.07694"
+    ],
+    "themes": [
+      "echo index",
+      "multistability",
+      "input-driven dynamics"
+    ],
+    "relevance": "Defines input-dependent multiplicity of stable recurrent responses and explains reliable computation beyond global echo-state uniqueness.",
+    "novelty_threat": "Multiple retained memories under a common driver are an established phenomenon, not a new exception discovered by this project.",
+    "evidence_level": "abstract",
+    "evidence_locator": "arXiv abstract and related DOI metadata, version 2.",
+    "limitations": "Full theorem assumptions and numerical protocols not audited here.",
+    "source_urls": [
+      "https://arxiv.org/abs/2001.07694"
+    ]
+  },
+  {
+    "id": "manjunath2013",
+    "title": "Echo State Property Linked to an Input: Exploring a Fundamental Characteristic of Recurrent Neural Networks",
+    "authors": [
+      "Gandhi Manjunath",
+      "Herbert Jaeger"
+    ],
+    "year": 2013,
+    "venue": "Neural Computation 25(3): 671-696",
+    "doi": "10.1162/NECO_a_00411",
+    "arxiv_id": null,
+    "url": "https://www.ai.rug.nl/minds/uploads/ESP_NC.pdf",
+    "pdf_urls": [
+      "https://www.ai.rug.nl/minds/uploads/ESP_NC.pdf"
+    ],
+    "themes": [
+      "input-specific synchronization",
+      "periodic response",
+      "echo state"
+    ],
+    "relevance": "Input-specific ESP distinguishes dependence on input history from arbitrary initial conditions. Uniform shrinking bounds imply uniqueness; a periodic driver with ESP has a response whose period divides the input period.",
+    "novelty_threat": "The proposed unique forced response and history-washout foundations are standard input-dependent synchronization theory.",
+    "evidence_level": "full_text",
+    "evidence_locator": "Definition 2.2, author-PDF p. 5; Lemma 2.2, pp. 7-8; Proposition 2.3 and proof, p. 9; Section 2.1 cautions on folklore.",
+    "limitations": "Compact state space and entire-solution definitions. Contraction bound is sufficient; negative local exponents alone do not establish global uniqueness. First name expanded using university author record.",
+    "source_urls": [
+      "https://www.ai.rug.nl/minds/uploads/ESP_NC.pdf",
+      "https://repository.up.ac.za/handle/2263/84771"
+    ]
+  },
+  {
+    "id": "jaeger2001",
+    "title": "The echo state approach to analysing and training recurrent neural networks - with an Erratum note",
+    "authors": [
+      "Herbert Jaeger"
+    ],
+    "year": 2001,
+    "venue": "GMD Report 148; corrected author version dated 2010",
+    "doi": null,
+    "arxiv_id": null,
+    "url": "https://www.ai.rug.nl/minds/uploads/EchoStatesTechRep.pdf",
+    "pdf_urls": [
+      "https://www.ai.rug.nl/minds/uploads/EchoStatesTechRep.pdf"
+    ],
+    "themes": [
+      "echo state",
+      "initial-state forgetting",
+      "periodic generation"
+    ],
+    "relevance": "Introduces echo states as functions of left-infinite input history and readout training; includes periodic generators and multiple-switch examples.",
+    "novelty_threat": "Initial-state forgetting while retaining input-history information is foundational, so these must not be conflated.",
+    "evidence_level": "metadata",
+    "evidence_locator": "Corrected PDF title page/erratum notice; Introduction and Definition 1, pp. 3-5.",
+    "limitations": "2010 author version corrects a flaw in Definition 3 and Proposition 1 of the 2001 report. Original theorem equivalences were not independently audited.",
+    "source_urls": [
+      "https://www.ai.rug.nl/minds/uploads/EchoStatesTechRep.pdf"
+    ]
+  },
+  {
+    "id": "jaeger2002",
+    "title": "Short term memory in echo state networks",
+    "authors": [
+      "Herbert Jaeger"
+    ],
+    "year": 2002,
+    "venue": "GMD Report 152",
+    "doi": null,
+    "arxiv_id": null,
+    "url": "https://www.ai.rug.nl/minds/pubs/",
+    "pdf_urls": [
+      "https://www.ai.rug.nl/minds/uploads/STMEchoStatesTechRep.pdf",
+      "https://www.researchgate.net/profile/Herbert-Jaeger-2/publication/247514367_Short_Term_Memory_in_Echo_State_Networks/links/566a003308ae1a797e3788ba/Short-Term-Memory-in-Echo-State-Networks.pdf"
+    ],
+    "themes": [
+      "linear readout",
+      "memory capacity"
+    ],
+    "relevance": "Foundational short-term-memory capacity reference for reconstruction of past inputs from recurrent states.",
+    "novelty_threat": "A memory-capacity versus state-dimension statement needs this antecedent and its task/readout assumptions.",
+    "evidence_level": "metadata",
+    "evidence_locator": "Author-uploaded report title page: May 28, 2002; footnote: GMD Report 152, publication March 28, 2002. Author publication index labels the item 2001.",
+    "limitations": "Year conflict in author index retained explicitly; 2002 follows report title-page publication note. Capacity theorem not read in this audit; Fraunhofer PDF endpoint timed out.",
+    "source_urls": [
+      "https://www.ai.rug.nl/minds/pubs/",
+      "https://www.researchgate.net/profile/Herbert-Jaeger-2/publication/247514367_Short_Term_Memory_in_Echo_State_Networks/links/566a003308ae1a797e3788ba/Short-Term-Memory-in-Echo-State-Networks.pdf",
+      "https://www.ai.rug.nl/minds/uploads/STMEchoStatesTechRep.pdf"
+    ]
+  },
+  {
+    "id": "rajan2010",
+    "title": "Stimulus-dependent suppression of chaos in recurrent neural networks",
+    "authors": [
+      "Kanaka Rajan",
+      "Larry F. Abbott",
+      "Haim Sompolinsky"
+    ],
+    "year": 2010,
+    "venue": "Physical Review E 82: 011903",
+    "doi": "10.1103/PhysRevE.82.011903",
+    "arxiv_id": null,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10683875/",
+    "pdf_urls": [
+      "https://columbia.edu/cu/neurotheory/Larry/RajanPRE10.pdf"
+    ],
+    "themes": [
+      "periodic forcing",
+      "chaos suppression",
+      "frequency response"
+    ],
+    "relevance": "Mean-field theory links oscillatory drive amplitude and frequency to suppression of chaotic fluctuations and phase locking.",
+    "novelty_threat": "Input-induced stabilization and frequency-selective chaos suppression precede a generic Floquet-collapse claim.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Abstract; bibliographic header; Eq. (1)-(3) and Fig. 1 inspected to verify model/driver definition.",
+    "limitations": "Random continuous-time rate circuits; no required-history recall endpoint. Deep mean-field derivation not reviewed. Abbott's expanded first name verified from Columbia.",
+    "source_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10683875/",
+      "https://ctn.zuckermaninstitute.columbia.edu/people",
+      "https://columbia.edu/cu/neurotheory/Larry/RajanPRE10.pdf"
+    ]
+  },
+  {
+    "id": "white2004",
+    "title": "Short-Term Memory in Orthogonal Neural Networks",
+    "authors": [
+      "Olivia L. White",
+      "Daniel D. Lee",
+      "Haim Sompolinsky"
+    ],
+    "year": 2004,
+    "venue": "Physical Review Letters 92: 148102",
+    "doi": "10.1103/PhysRevLett.92.148102",
+    "arxiv_id": "cond-mat/0402452",
+    "url": "https://arxiv.org/abs/cond-mat/0402452",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/cond-mat/0402452"
+    ],
+    "themes": [
+      "orthogonal recurrence",
+      "sequence memory",
+      "capacity"
+    ],
+    "relevance": "Studies retrieval of temporal sequences from the instantaneous state in linear discrete networks; orthogonal and distributed shift-register capacity scales with size.",
+    "novelty_threat": "Preservation controls and claims connecting effective dimension to memory must compare established orthogonal-memory results.",
+    "evidence_level": "abstract",
+    "evidence_locator": "arXiv abstract, journal-reference and DOI fields.",
+    "limitations": "Specific linear/noise/capacity normalization assumptions not audited from full text.",
+    "source_urls": [
+      "https://arxiv.org/abs/cond-mat/0402452"
+    ]
+  },
+  {
+    "id": "ganguli2008",
+    "title": "Memory traces in dynamical systems",
+    "authors": [
+      "Surya Ganguli",
+      "Dongsung Huh",
+      "Haim Sompolinsky"
+    ],
+    "year": 2008,
+    "venue": "Proceedings of the National Academy of Sciences 105(48): 18970-18975",
+    "doi": "10.1073/pnas.0804451105",
+    "arxiv_id": null,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2596211/",
+    "pdf_urls": [
+      "https://ganguli-gang.stanford.edu/pdf/08.Memory.pdf"
+    ],
+    "themes": [
+      "Fisher memory",
+      "noise",
+      "nonnormal dynamics"
+    ],
+    "relevance": "Defines Fisher-memory matrices for past-input sensitivity and derives noise-whitened linear expressions. Normal versus nonnormal dynamics have different retention capabilities.",
+    "novelty_threat": "The noise-resolved task-channel/Fisher sensitivity framework is established; a renamed CPG metric is not itself a theoretical contribution.",
+    "evidence_level": "full_text",
+    "evidence_locator": "Author PDF pp. 18970-18971: Fisher Memory Matrix, Eq. (1)-(5); normal-network memory curve and sum rule.",
+    "limitations": "Local input sensitivity and explicitly specified dynamical noise; bounds depend on input/noise/weight normalization. Does not equate covariance rank with nonlinear global memory.",
+    "source_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC2596211/",
+      "https://ganguli-gang.stanford.edu/pdf/08.Memory.pdf"
+    ]
+  },
+  {
+    "id": "dambre2012",
+    "title": "Information Processing Capacity of Dynamical Systems",
+    "authors": [
+      "Joni Dambre",
+      "David Verstraeten",
+      "Benjamin Schrauwen",
+      "Serge Massar"
+    ],
+    "year": 2012,
+    "venue": "Scientific Reports 2: 514",
+    "doi": "10.1038/srep00514",
+    "arxiv_id": null,
+    "url": "https://www.nature.com/articles/srep00514",
+    "pdf_urls": [],
+    "themes": [
+      "information processing capacity",
+      "orthogonal tasks",
+      "linear readout"
+    ],
+    "relevance": "Capacity framework decomposes reconstructable input functions with readouts of dynamical observations.",
+    "novelty_threat": "Generic rank-limited reconstruction-capacity claims have direct antecedents; target basis and readout class must be specified.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Publisher/search abstract and article metadata; primary full-text access attempts recorded in theory-review.md.",
+    "limitations": "No theorem promoted from search snippets. Nature redirect and Europe PMC access failed; full theorem hypotheses need a later verified reading.",
+    "source_urls": [
+      "https://www.nature.com/articles/srep00514",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC3400147/"
+    ]
+  },
+  {
+    "id": "mastrogiuseppe2018",
+    "title": "Linking connectivity, dynamics and computations in low-rank recurrent neural networks",
+    "authors": [
+      "Francesca Mastrogiuseppe",
+      "Srdjan Ostojic"
+    ],
+    "year": 2018,
+    "venue": "Neuron",
+    "doi": "10.1016/j.neuron.2018.07.003",
+    "arxiv_id": "1711.09672",
+    "url": "https://arxiv.org/abs/1711.09672",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1711.09672"
+    ],
+    "themes": [
+      "low-rank connectivity",
+      "useful low-dimensional dynamics"
+    ],
+    "relevance": "Relates structured low-rank connectivity to low-dimensional computations in recurrent networks.",
+    "novelty_threat": "Low dimension is often a computational solution; the project must show loss of required information rather than treating low rank as damage.",
+    "evidence_level": "abstract",
+    "evidence_locator": "arXiv abstract and journal metadata.",
+    "limitations": "Connectivity rank, activity dimensionality and task-channel rank are different quantities; full derivations not audited.",
+    "source_urls": [
+      "https://arxiv.org/abs/1711.09672"
+    ]
+  },
+  {
+    "id": "schuessler2020",
+    "title": "Dynamics of random recurrent networks with correlated low-rank structure",
+    "authors": [
+      "Friedrich Schuessler",
+      "Alexis Dubreuil",
+      "Francesca Mastrogiuseppe",
+      "Srdjan Ostojic",
+      "Omri Barak"
+    ],
+    "year": 2020,
+    "venue": "Physical Review Research 2: 013111",
+    "doi": "10.1103/PhysRevResearch.2.013111",
+    "arxiv_id": "1909.04358",
+    "url": "https://arxiv.org/abs/1909.04358",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1909.04358",
+      "https://discovery.ucl.ac.uk/id/eprint/10092718/1/PhysRevResearch.2.013111.pdf"
+    ],
+    "themes": [
+      "low-rank structure",
+      "spectral outliers",
+      "stability"
+    ],
+    "relevance": "Connects correlations between random and low-rank connectivity to dynamical regimes and spectral outliers.",
+    "novelty_threat": "Structured low-dimensional dynamical mechanisms have mature analytic antecedents.",
+    "evidence_level": "abstract",
+    "evidence_locator": "arXiv abstract; published author-PDF title/DOI metadata.",
+    "limitations": "Autonomous/random structured networks are not equivalent to trained periodic full-state Jacobian products.",
+    "source_urls": [
+      "https://arxiv.org/abs/1909.04358"
+    ]
+  },
+  {
+    "id": "engelken2023",
+    "title": "Lyapunov spectra of chaotic recurrent neural networks",
+    "authors": [
+      "Rainer Engelken",
+      "Fred Wolf",
+      "Larry F. Abbott"
+    ],
+    "year": 2023,
+    "venue": "Physical Review Research 5: 043044",
+    "doi": "10.1103/PhysRevResearch.5.043044",
+    "arxiv_id": "2006.02427",
+    "url": "https://arxiv.org/abs/2006.02427",
+    "pdf_urls": [
+      "https://pure.mpg.de/rest/items/item_3550231_1/component/file_3552362/content",
+      "https://arxiv.org/pdf/2006.02427"
+    ],
+    "themes": [
+      "Lyapunov spectra",
+      "attractor dimension",
+      "input suppression"
+    ],
+    "relevance": "Analyzes full Lyapunov spectra of recurrent dynamics and effects of input fluctuations on chaotic entropy and attractor dimension.",
+    "novelty_threat": "Reduced dynamical dimension with forcing is established; connecting it to required-task memory must add evidence.",
+    "evidence_level": "abstract",
+    "evidence_locator": "arXiv abstract, journal reference, DOI; MPI publication metadata.",
+    "limitations": "2020 preprint versus 2023 journal year distinguished. Attractor dimension is not covariance PR or target decodability.",
+    "source_urls": [
+      "https://arxiv.org/abs/2006.02427",
+      "https://ctn.zuckermaninstitute.columbia.edu/people"
+    ]
+  },
+  {
+    "id": "vogt2020",
+    "title": "On Lyapunov Exponents for RNNs: Understanding Information Propagation Using Dynamical Systems Tools",
+    "authors": [
+      "Ryan Vogt",
+      "Maximilian Puelma Touzel",
+      "Eli Shlizerman",
+      "Guillaume Lajoie"
+    ],
+    "year": 2020,
+    "venue": "arXiv preprint",
+    "doi": null,
+    "arxiv_id": "2006.14123",
+    "url": "https://arxiv.org/abs/2006.14123",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2006.14123"
+    ],
+    "themes": [
+      "RNN Lyapunov analysis",
+      "information propagation"
+    ],
+    "relevance": "Uses Lyapunov analysis to study propagation and performance in recurrent networks.",
+    "novelty_threat": "Applying conditional exponents to learned RNNs is established methodology rather than sufficient novelty.",
+    "evidence_level": "abstract",
+    "evidence_locator": "arXiv abstract and author metadata.",
+    "limitations": "No claim that exponent sign proves global history forgetting; journal/workshop venue and DOI not verified here.",
+    "source_urls": [
+      "https://arxiv.org/abs/2006.14123"
+    ]
+  },
+  {
+    "id": "hu2022",
+    "title": "The spectrum of covariance matrices of randomly connected recurrent neuronal networks with linear dynamics",
+    "authors": [
+      "Yu Hu",
+      "Haim Sompolinsky"
+    ],
+    "year": 2022,
+    "venue": "PLOS Computational Biology 18(7): e1010327",
+    "doi": "10.1371/journal.pcbi.1010327",
+    "arxiv_id": null,
+    "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010327",
+    "pdf_urls": [
+      "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1010327&type=printable"
+    ],
+    "themes": [
+      "covariance spectrum",
+      "linear recurrent dynamics",
+      "participation ratio"
+    ],
+    "relevance": "Analyzes recurrent connectivity and covariance spectral structure in linear networks.",
+    "novelty_threat": "A covariance-concentration mechanism needs comparison to established random-network spectra, not just visualization.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Publisher abstract, authors and citation header.",
+    "limitations": "The covariance/noise model differs from finite required-history clouds; current audit does not reproduce equations.",
+    "source_urls": [
+      "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010327",
+      "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1010327&type=printable"
+    ]
+  },
+  {
+    "id": "seung1996",
+    "title": "How the brain keeps the eyes still",
+    "authors": [
+      "H. Sebastian Seung"
+    ],
+    "year": 1996,
+    "venue": "Proceedings of the National Academy of Sciences 93(23): 13339-13344",
+    "doi": "10.1073/pnas.93.23.13339",
+    "arxiv_id": null,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC24094/",
+    "pdf_urls": [
+      "https://neurophysics.ucsd.edu/courses/physics_171/seung_pnas_line.pdf"
+    ],
+    "themes": [
+      "continuous memory",
+      "line attractor",
+      "neutral direction"
+    ],
+    "relevance": "Treats analog persistent memory as an attracting line of equilibria, explains tuned feedback and slow drift, and contrasts discrete noise-resistant point attractors.",
+    "novelty_threat": "Continuous-memory neutral directions and the categorical/continuous distinction are classical foundations, not candidate novelty.",
+    "evidence_level": "full_text",
+    "evidence_locator": "Author-paper scan, pp. 13342-13343: Eq. (4)-(5), linear tuning/eigenvalue discussion, nonlinear approximation, and explicit line-versus-point-attractor contrast.",
+    "limitations": "Exact manifold neutrality does not guarantee robustness to noise or mistuning. Expanded author name retains published H. initial; no unverified expansion.",
+    "source_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC24094/",
+      "https://neurophysics.ucsd.edu/courses/physics_171/seung_pnas_line.pdf"
+    ]
+  },
+  {
+    "id": "burak2012",
+    "title": "Fundamental limits on persistent activity in networks of noisy neurons",
+    "authors": [
+      "Yoram Burak",
+      "Ila R. Fiete"
+    ],
+    "year": 2012,
+    "venue": "Proceedings of the National Academy of Sciences 109(43): 17645-17650",
+    "doi": "10.1073/pnas.1117386109",
+    "arxiv_id": null,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3491496/",
+    "pdf_urls": [
+      "https://fietelab.mit.edu/wp-content/uploads/2018/12/infodiff_PNAS.pdf"
+    ],
+    "themes": [
+      "continuous attractor",
+      "noise diffusion",
+      "Fisher information"
+    ],
+    "relevance": "Bounds noise-induced diffusion of continuously stored memory using an information-diffusion relation.",
+    "novelty_threat": "Neutral tangent directions alone cannot support claims of robust memory; continuous-attractor noise limits are prior theory.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Abstract; Results model assumptions and Diffusive Drift due to Ongoing Neural Noise inspected.",
+    "limitations": "Poisson spiking/weak-fluctuation approximation and tuned-away systematic drift; supporting derivations not deeply audited.",
+    "source_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC3491496/"
+    ]
+  },
+  {
+    "id": "proca2025",
+    "title": "Learning dynamics in linear recurrent neural networks",
+    "authors": [
+      "Alexandra Maria Proca",
+      "Clémentine Carla Juliette Dominé",
+      "Murray Shanahan",
+      "Pedro A. M. Mediano"
+    ],
+    "year": 2025,
+    "venue": "International Conference on Machine Learning; PMLR 267: 49860-49902",
+    "doi": null,
+    "arxiv_id": null,
+    "url": "https://proceedings.mlr.press/v267/proca25a.html",
+    "pdf_urls": [
+      "https://raw.githubusercontent.com/mlresearch/v267/main/assets/proca25a/proca25a.pdf"
+    ],
+    "themes": [
+      "learning dynamics",
+      "recency bias",
+      "memory regularization"
+    ],
+    "relevance": "Derives task-dependent linear-RNN learning dynamics, stability/extrapolation effects, and a recurrent/feedforward regularization tradeoff.",
+    "novelty_threat": "Training-induced memory tradeoffs and temporal precedence have close recent theoretical antecedents.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Official PMLR abstract and BibTeX; full author names from proceedings.",
+    "limitations": "Restricted linear learning theory; frozen-weight repetition interventions could extend it. DOI and arXiv identifier not verified.",
+    "source_urls": [
+      "https://proceedings.mlr.press/v267/proca25a.html"
+    ]
+  },
+  {
+    "id": "sharma2026",
+    "title": "Temporal superposition and feature geometry of RNNs under memory demands",
+    "authors": [
+      "Pratyaksh Sharma",
+      "Alexandra Maria Proca",
+      "Lucas Prieto",
+      "Pedro A. M. Mediano"
+    ],
+    "year": 2026,
+    "venue": "International Conference on Learning Representations",
+    "doi": null,
+    "arxiv_id": null,
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/bfcb583d225b1db8d3ca2331f6785774-Abstract-Conference.html",
+    "pdf_urls": [
+      "https://proceedings.iclr.cc/paper_files/paper/2026/file/bfcb583d225b1db8d3ca2331f6785774-Paper-Conference.pdf"
+    ],
+    "themes": [
+      "memory geometry",
+      "temporal superposition",
+      "interference",
+      "forgetting"
+    ],
+    "relevance": "Derives delayed-recall loss terms and links temporal feature geometry, interference and memory demand; nonlinear recurrence enables selective forgetting.",
+    "novelty_threat": "Direct anticipation of mechanistic geometry-memory analysis, including spectral-radius changes and geometric transitions.",
+    "evidence_level": "full_text",
+    "evidence_locator": "Sections 3.1-3.4, pp. 3-5; Section 4.1 Eq. (5), p. 5; Sections 4.2-4.4, pp. 6-8; Appendices A-B and D.1-D.3, pp. 18-24.",
+    "limitations": "Linear/ReLU models, independent sparse inputs and delayed recall; no matched periodic-versus-nonperiodic test. Appendix D.1 generic spectral claim has degenerate unobserved-mode exceptions; do not copy as universal ESP theorem. DOI/arXiv ID unverified.",
+    "source_urls": [
+      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/bfcb583d225b1db8d3ca2331f6785774-Abstract-Conference.html",
+      "https://aproca.github.io/publications/"
+    ]
+  },
+  {
+    "id": "fokam2026",
+    "title": "How Temporal Correlations Shape Memory in Linear Recurrent Neural Networks",
+    "authors": [
+      "Arnol Manuel Fokam",
+      "Fasseu Sieyondji Akpevwoghene",
+      "Edem Fiifi Dawson"
+    ],
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "doi": null,
+    "arxiv_id": "2609.00420",
+    "url": "https://arxiv.org/abs/2609.00420",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2609.00420v1",
+      "https://arxiv.org/pdf/2609.00420"
+    ],
+    "themes": [
+      "correlated inputs",
+      "learning dynamics",
+      "memory transition",
+      "periodicity"
+    ],
+    "relevance": "Under aligned linear learning assumptions, temporal covariance changes the effective cost of memory. A newest-pair ratio gives the local release boundary; strong periodicity can change the global crossing.",
+    "novelty_threat": "Very close to correlation/repetition-dependent memory transitions; a new fixed-weight higher-order forcing result must separate local release from global transition.",
+    "evidence_level": "full_text",
+    "evidence_locator": "Mathematical Setup, Assumptions 1-4; Lemmas 1-2, Eq. (8)-(9); Appendix C; Appendix E, Scope condition and Table S4.",
+    "limitations": "Fixed singular-vector/aligned-initialization and covariance restrictions. Lemma 2 local boundary is not universally the global optimum transition; periodicity examples explicitly qualify it.",
+    "source_urls": [
+      "https://arxiv.org/abs/2609.00420"
+    ],
+    "reviewed_arxiv_version": "2609.00420v1"
+  },
+  {
+    "id": "koyluoglu2017",
+    "title": "Fundamental bound on the persistence and capacity of short-term memory stored as graded persistent activity",
+    "authors": [
+      "Onur Ozan Koyluoglu",
+      "Yoni Pertzov",
+      "Sanjay Manohar",
+      "Masud Husain",
+      "Ila R. Fiete"
+    ],
+    "year": 2017,
+    "venue": "eLife 6: e22225",
+    "doi": "10.7554/eLife.22225",
+    "arxiv_id": null,
+    "url": "https://elifesciences.org/articles/22225",
+    "pdf_urls": [
+      "https://cdn.elifesciences.org/articles/22225/elife-22225-v2.pdf",
+      "https://elifesciences.org/articles/22225.pdf"
+    ],
+    "themes": [
+      "graded memory",
+      "noisy channels",
+      "coding bounds"
+    ],
+    "relevance": "Derives recall-precision limits for continuous persistent-memory channels and considers protective encoding.",
+    "novelty_threat": "Noise-aware graded-memory bounds must be positioned against this prior channel-based framework.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Publisher abstract and article citation.",
+    "limitations": "Model-dependent graded activity/noise assumptions; does not bound arbitrary nonlinear finite-category codes.",
+    "source_urls": [
+      "https://elifesciences.org/articles/22225",
+      "https://cdn.elifesciences.org/articles/22225/elife-22225-v2.pdf"
+    ]
+  },
+  {
+    "id": "schuecker2018",
+    "title": "Optimal sequence memory in driven random networks",
+    "authors": [
+      "Jannis Schuecker",
+      "Sven Goedeke",
+      "Moritz Helias"
+    ],
+    "year": 2018,
+    "venue": "Physical Review X 8: 041029",
+    "doi": "10.1103/PhysRevX.8.041029",
+    "arxiv_id": "1603.01880",
+    "url": "https://arxiv.org/abs/1603.01880",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1603.01880"
+    ],
+    "themes": [
+      "driven chaos",
+      "Lyapunov stability",
+      "memory capacity"
+    ],
+    "relevance": "Dynamic mean-field theory connects input, Lyapunov stability and sequence memory; locally expansive but nonchaotic dynamics can improve memory.",
+    "novelty_threat": "A single exponent threshold or edge-of-chaos narrative cannot replace task-specific retention measurements.",
+    "evidence_level": "abstract",
+    "evidence_locator": "arXiv abstract; publisher journal reference and DOI.",
+    "limitations": "Random-network mean-field regime, not a general gated-model theorem; local expansion and asymptotic stability must be distinguished.",
+    "source_urls": [
+      "https://arxiv.org/abs/1603.01880"
+    ]
+  },
+  {
+    "id": "bordelon2025",
+    "title": "Dynamics of learning to integrate in linear recurrent neural networks",
+    "authors": [
+      "Blake Bordelon",
+      "Jordan Cotler",
+      "Cengiz Pehlevan",
+      "Jacob A. Zavatone-Veth"
+    ],
+    "year": 2025,
+    "venue": "arXiv preprint; version 2 revised June 2026",
+    "doi": null,
+    "arxiv_id": "2503.18754",
+    "url": "https://arxiv.org/abs/2503.18754",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2503.18754"
+    ],
+    "themes": [
+      "learning slow modes",
+      "integrators",
+      "oscillatory filters"
+    ],
+    "relevance": "Analyzes learning of long integration timescales through recurrent spectral outliers and extends to damped oscillatory filters.",
+    "novelty_threat": "Learning neutral/slow or oscillatory memory modes has recent analytic treatment; the project should add inference-specific causal evidence.",
+    "evidence_level": "abstract",
+    "evidence_locator": "arXiv abstract and version history (24 March 2025; 8 June 2026).",
+    "limitations": "Analytically restricted linear networks; DOI/journal venue not verified. Full derivations not reviewed.",
+    "source_urls": [
+      "https://arxiv.org/abs/2503.18754"
+    ]
+  },
+  {
+    "id": "bai2019",
+    "title": "Deep Equilibrium Models",
+    "authors": [
+      "Shaojie Bai",
+      "J. Zico Kolter",
+      "Vladlen Koltun"
+    ],
+    "year": 2019,
+    "venue": "Advances in Neural Information Processing Systems",
+    "doi": null,
+    "arxiv_id": "1909.01377",
+    "url": "https://arxiv.org/abs/1909.01377",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1909.01377"
+    ],
+    "themes": [
+      "depth recurrence",
+      "input reinjection",
+      "equilibrium inference"
+    ],
+    "relevance": "Computes input-conditioned equilibrium representations through repeated shared updates and implicit differentiation.",
+    "novelty_threat": "Convergence of depth loops can be useful computation while input sensitivity remains; it is not automatically memory collapse.",
+    "evidence_level": "abstract",
+    "evidence_locator": "arXiv abstract and author/venue metadata.",
+    "limitations": "Finite-depth looped transformers with depth/position schedules and caches need separate complete-state definitions; DOI not verified.",
+    "source_urls": [
+      "https://arxiv.org/abs/1909.01377"
+    ]
+  }
+]

@@ -1,0 +1,925 @@
+[
+  {
+    "id": "dizaji2025tgrab",
+    "title": "T-GRAB: A Synthetic Diagnostic Benchmark for Learning on Temporal Graphs",
+    "authors": [
+      "Dizaji, Alireza",
+      "Tjandra, Benedict Aaron",
+      "Hamidi, Mehrab",
+      "Huang, Shenyang",
+      "Rabusseau, Guillaume"
+    ],
+    "year": 2025,
+    "venue": "MLoG-GenAI Workshop at KDD 2025; arXiv v2",
+    "doi": null,
+    "arxiv_id": "2507.10183",
+    "url": "https://arxiv.org/abs/2507.10183",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2507.10183v2"
+    ],
+    "themes": [
+      "graph benchmark"
+    ],
+    "relevance": "Direct project predecessor: periodic counting, delayed causal and long-range graph tasks.",
+    "novelty_threat": "A new periodic graph benchmark or GC-LSTM periodicity observation is already covered.",
+    "evidence_level": "full_text",
+    "evidence_locator": "Sections 3.1–3.3; Figures 3–7; Appendix E",
+    "limitations": "Next-graph performance does not establish independently cued memory loss.",
+    "source_urls": [
+      "https://arxiv.org/abs/2507.10183"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2025/07/14"
+  },
+  {
+    "id": "arroyo2025bridging",
+    "title": "On Vanishing Gradients, Over-Smoothing, and Over-Squashing in GNNs: Bridging Recurrent and Graph Learning",
+    "authors": [
+      "Arroyo, Álvaro",
+      "Gravina, Alessio",
+      "Gutteridge, Benjamin",
+      "Barbero, Federico",
+      "Gallicchio, Claudio",
+      "Dong, Xiaowen",
+      "Bronstein, Michael",
+      "Vandergheynst, Pierre"
+    ],
+    "year": 2025,
+    "venue": "arXiv preprint, v2",
+    "doi": null,
+    "arxiv_id": "2502.10818",
+    "url": "https://arxiv.org/abs/2502.10818",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2502.10818v2"
+    ],
+    "themes": [
+      "graph collapse"
+    ],
+    "relevance": "Connects graph propagation, recurrent models, Jacobian contraction and feature collapse.",
+    "novelty_threat": "A general Jacobian explanation of graph collapse is already explicit prior work.",
+    "evidence_level": "full_text",
+    "evidence_locator": "Sections 3–4; Lemma 3.1; Propositions 4.3–4.4; Appendix E",
+    "limitations": "Depth, common-zero-map and contraction assumptions differ from input-forced temporal memory.",
+    "source_urls": [
+      "https://arxiv.org/abs/2502.10818"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2025/02/15"
+  },
+  {
+    "id": "chehreghani2026noise",
+    "title": "Persistent Gaussian Perturbations Prevent Oversmoothing in Recurrent Graph Neural Networks",
+    "authors": [
+      "Chehreghani, Mostafa Haghir"
+    ],
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "doi": null,
+    "arxiv_id": "2607.28185",
+    "url": "https://arxiv.org/abs/2607.28185",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2607.28185v1"
+    ],
+    "themes": [
+      "graph collapse"
+    ],
+    "relevance": "Persistent additive Gaussian perturbations sustain nonzero stationary graph Dirichlet energy.",
+    "novelty_threat": "Noise-maintained geometric diversity under contraction is not a new theorem direction.",
+    "evidence_level": "full_text",
+    "evidence_locator": "Definitions 3.2–3.3; Sections 4–7",
+    "limitations": "The stated guarantee is geometric; it explicitly does not establish downstream memory or accuracy.",
+    "source_urls": [
+      "https://arxiv.org/abs/2607.28185"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2026/07/30"
+  },
+  {
+    "id": "oono2020exponential",
+    "title": "Graph Neural Networks Exponentially Lose Expressive Power for Node Classification",
+    "authors": [
+      "Oono, Kenta",
+      "Suzuki, Taiji"
+    ],
+    "year": 2020,
+    "venue": "ICLR 2020",
+    "doi": null,
+    "arxiv_id": "1905.10947",
+    "url": "https://arxiv.org/abs/1905.10947",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1905.10947v5"
+    ],
+    "themes": [
+      "graph collapse"
+    ],
+    "relevance": "Spectral sufficient conditions yield asymptotic information loss in deep GCNs.",
+    "novelty_threat": "Dynamical explanations of repeated graph propagation are established.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract; ICLR proceedings PDF located",
+    "limitations": "Static graph depth and norm conditions; not a blanket theorem about trained temporal models.",
+    "source_urls": [
+      "https://arxiv.org/abs/1905.10947"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2019/05/27"
+  },
+  {
+    "id": "wu2023attention",
+    "title": "Demystifying Oversmoothing in Attention-Based Graph Neural Networks",
+    "authors": [
+      "Wu, Xinyi",
+      "Ajorlou, Amir",
+      "Wu, Zihui",
+      "Jadbabaie, Ali"
+    ],
+    "year": 2023,
+    "venue": "NeurIPS 2023",
+    "doi": null,
+    "arxiv_id": "2305.16102",
+    "url": "https://arxiv.org/abs/2305.16102",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2305.16102v4"
+    ],
+    "themes": [
+      "graph collapse"
+    ],
+    "relevance": "Time-varying nonlinear graph attention is analysed with matrix products and joint spectral radius.",
+    "novelty_threat": "Time-varying attention propagation and exponential oversmoothing already have theory.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract and proceedings record",
+    "limitations": "Requires paper-specific mixing and boundedness assumptions; state axis differs from cue-conditioned memory.",
+    "source_urls": [
+      "https://arxiv.org/abs/2305.16102"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2023/05/25"
+  },
+  {
+    "id": "roth2024rank",
+    "title": "Rank Collapse Causes Over-Smoothing and Over-Correlation in Graph Neural Networks",
+    "authors": [
+      "Roth, Andreas",
+      "Liebig, Thomas"
+    ],
+    "year": 2024,
+    "venue": "Proceedings of the Second Learning on Graphs Conference, PMLR 231",
+    "doi": null,
+    "arxiv_id": "2308.16800",
+    "url": "https://arxiv.org/abs/2308.16800",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2308.16800v3"
+    ],
+    "themes": [
+      "graph collapse"
+    ],
+    "relevance": "Rank collapse unifies graph oversmoothing and feature over-correlation.",
+    "novelty_threat": "Using rank instead of node similarity alone is established.",
+    "evidence_level": "abstract",
+    "evidence_locator": "PMLR abstract and bibliographic record",
+    "limitations": "Results concern graph propagation operators, not arbitrary nonlinear recurrent states.",
+    "source_urls": [
+      "https://arxiv.org/abs/2308.16800"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2023/08/31"
+  },
+  {
+    "id": "roth2024splitting",
+    "title": "Preventing Representational Rank Collapse in MPNNs by Splitting the Computational Graph",
+    "authors": [
+      "Roth, Andreas",
+      "Bause, Franka",
+      "Kriege, Nils M.",
+      "Liebig, Thomas"
+    ],
+    "year": 2024,
+    "venue": "Learning on Graphs 2024",
+    "doi": null,
+    "arxiv_id": "2409.11504",
+    "url": "https://arxiv.org/abs/2409.11504",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2409.11504v2"
+    ],
+    "themes": [
+      "graph collapse"
+    ],
+    "relevance": "Multi-relational message passing is designed to preserve independent representation directions.",
+    "novelty_threat": "Anti-collapse graph architectural interventions already exist.",
+    "evidence_level": "abstract",
+    "evidence_locator": "arXiv abstract; publication comment",
+    "limitations": "An architecture intervention does not isolate temporal periodic forcing.",
+    "source_urls": [
+      "https://arxiv.org/abs/2409.11504"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2024/09/17"
+  },
+  {
+    "id": "rusch2022graphcon",
+    "title": "Graph-Coupled Oscillator Networks",
+    "authors": [
+      "Rusch, T. Konstantin",
+      "Chamberlain, Benjamin P.",
+      "Rowbottom, James",
+      "Mishra, Siddhartha",
+      "Bronstein, Michael M."
+    ],
+    "year": 2022,
+    "venue": "ICML 2022",
+    "doi": null,
+    "arxiv_id": "2202.02296",
+    "url": "https://arxiv.org/abs/2202.02296",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2202.02296v2"
+    ],
+    "themes": [
+      "graph dynamics"
+    ],
+    "relevance": "Oscillator-based graph propagation links oversmoothing to stability of homogeneous states.",
+    "novelty_threat": "Oscillatory dynamics as an anti-oversmoothing mechanism are prior art.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract",
+    "limitations": "Continuous-depth oscillator mechanism is distinct from forced periodic memory.",
+    "source_urls": [
+      "https://arxiv.org/abs/2202.02296"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2022/02/04"
+  },
+  {
+    "id": "yi2025tgbseq",
+    "title": "TGB-Seq Benchmark: Challenging Temporal GNNs with Complex Sequential Dynamics",
+    "authors": [
+      "Yi, Lu",
+      "Peng, Jie",
+      "Zheng, Yanping",
+      "Mo, Fengran",
+      "Wei, Zhewei",
+      "Ye, Yuhang",
+      "Zixuan, Yue",
+      "Huang, Zengfeng"
+    ],
+    "year": 2025,
+    "venue": "arXiv preprint; publication venue not independently checked",
+    "doi": null,
+    "arxiv_id": "2502.02975",
+    "url": "https://arxiv.org/abs/2502.02975",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2502.02975v3"
+    ],
+    "themes": [
+      "graph benchmark"
+    ],
+    "relevance": "Sequential temporal graph benchmark reduces easy edge-repeatability shortcuts.",
+    "novelty_threat": "Long-history evaluation and repetition confounds have benchmark precedents.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract",
+    "limitations": "Natural sequential prediction differs from controlled cue retention.",
+    "source_urls": [
+      "https://arxiv.org/abs/2502.02975"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2025/02/05"
+  },
+  {
+    "id": "gravina2024ctan",
+    "title": "Long Range Propagation on Continuous-Time Dynamic Graphs",
+    "authors": [
+      "Gravina, Alessio",
+      "Lovisotto, Giulio",
+      "Gallicchio, Claudio",
+      "Bacciu, Davide",
+      "Grohnfeldt, Claas"
+    ],
+    "year": 2024,
+    "venue": "ICML 2024",
+    "doi": null,
+    "arxiv_id": "2406.02740",
+    "url": "https://arxiv.org/abs/2406.02740",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2406.02740v1"
+    ],
+    "themes": [
+      "graph architecture"
+    ],
+    "relevance": "Continuous-time dynamic graph models seek long-range propagation.",
+    "novelty_threat": "Long-term temporal graph memory is an established architectural objective.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract",
+    "limitations": "Architectural context; no verified anticipation of the exact matched-body experiment.",
+    "source_urls": [
+      "https://arxiv.org/abs/2406.02740"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2024/06/04"
+  },
+  {
+    "id": "chen2022gclstm",
+    "title": "GC-LSTM: Graph Convolution Embedded LSTM for Dynamic Link Prediction",
+    "authors": [
+      "Chen, Jinyin",
+      "Wang, Xueke",
+      "Xu, Xuanheng"
+    ],
+    "year": 2022,
+    "venue": "Applied Intelligence; preprint first posted 2018",
+    "doi": null,
+    "arxiv_id": "1812.04206",
+    "url": "https://arxiv.org/abs/1812.04206",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1812.04206v2"
+    ],
+    "themes": [
+      "graph architecture"
+    ],
+    "relevance": "Graph-convolution embedded LSTM used in the inherited preliminary experiments.",
+    "novelty_threat": "Baseline architecture, not a new contribution of this project.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract and journal reference",
+    "limitations": "Publication year is journal year; analyse all node hidden and cell state.",
+    "source_urls": [
+      "https://arxiv.org/abs/1812.04206"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2018/12/11"
+  },
+  {
+    "id": "zhao2020tgcn",
+    "title": "T-GCN: A Temporal Graph Convolutional Network for Traffic Prediction",
+    "authors": [
+      "Zhao, Ling",
+      "Song, Yujiao",
+      "Zhang, Chao",
+      "Liu, Yu",
+      "Wang, Pu",
+      "Lin, Tao",
+      "Deng, Min",
+      "Li, Haifeng"
+    ],
+    "year": 2020,
+    "venue": "IEEE Transactions on Intelligent Transportation Systems",
+    "doi": "10.1109/TITS.2019.2935152",
+    "arxiv_id": "1811.05320",
+    "url": "https://arxiv.org/abs/1811.05320",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1811.05320v3"
+    ],
+    "themes": [
+      "graph architecture"
+    ],
+    "relevance": "Temporal graph convolution combined with gated recurrence for traffic prediction.",
+    "novelty_threat": "Established modality-native recurrent baseline.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract",
+    "limitations": "Need actual implementation state contract before dynamical comparison.",
+    "source_urls": [
+      "https://arxiv.org/abs/1811.05320"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2018/11/12"
+  },
+  {
+    "id": "pareja2020evolvegcn",
+    "title": "EvolveGCN: Evolving Graph Convolutional Networks for Dynamic Graphs",
+    "authors": [
+      "Pareja, Aldo",
+      "Domeniconi, Giacomo",
+      "Chen, Jie",
+      "Ma, Tengfei",
+      "Suzumura, Toyotaro",
+      "Kanezashi, Hiroki",
+      "Kaler, Tim",
+      "Schardl, Tao B.",
+      "Leiserson, Charles E."
+    ],
+    "year": 2020,
+    "venue": "AAAI 2020",
+    "doi": null,
+    "arxiv_id": "1902.10191",
+    "url": "https://arxiv.org/abs/1902.10191",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1902.10191v3"
+    ],
+    "themes": [
+      "graph architecture"
+    ],
+    "relevance": "Recurrent evolution of graph convolution parameters.",
+    "novelty_threat": "Established model family; evolving weights belong in the persistent state.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract",
+    "limitations": "State is not interchangeable with node-level hidden activations.",
+    "source_urls": [
+      "https://arxiv.org/abs/1902.10191"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2019/02/26"
+  },
+  {
+    "id": "li2018dcrnn",
+    "title": "Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting",
+    "authors": [
+      "Li, Yaguang",
+      "Yu, Rose",
+      "Shahabi, Cyrus",
+      "Liu, Yan"
+    ],
+    "year": 2018,
+    "venue": "ICLR 2018",
+    "doi": null,
+    "arxiv_id": "1707.01926",
+    "url": "https://arxiv.org/abs/1707.01926",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1707.01926v3"
+    ],
+    "themes": [
+      "graph architecture"
+    ],
+    "relevance": "Diffusion graph convolution and recurrent forecasting for road sensors.",
+    "novelty_threat": "Native traffic recurrence baseline and METR-LA provenance.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract",
+    "limitations": "Forecasting success does not certify arbitrary-cue retention.",
+    "source_urls": [
+      "https://arxiv.org/abs/1707.01926"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2017/07/06"
+  },
+  {
+    "id": "rossi2020tgn",
+    "title": "Temporal Graph Networks for Deep Learning on Dynamic Graphs",
+    "authors": [
+      "Rossi, Emanuele",
+      "Chamberlain, Ben",
+      "Frasca, Fabrizio",
+      "Eynard, Davide",
+      "Monti, Federico",
+      "Bronstein, Michael"
+    ],
+    "year": 2020,
+    "venue": "arXiv preprint",
+    "doi": null,
+    "arxiv_id": "2006.10637",
+    "url": "https://arxiv.org/abs/2006.10637",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2006.10637v3"
+    ],
+    "themes": [
+      "graph architecture"
+    ],
+    "relevance": "Event-based temporal graph memory and message updates.",
+    "novelty_threat": "Explicit graph memory is longstanding; relevant comparison to snapshot recurrence.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract",
+    "limitations": "Event timestamps, stored messages and update chronology affect state completeness.",
+    "source_urls": [
+      "https://arxiv.org/abs/2006.10637"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2020/06/18"
+  },
+  {
+    "id": "shi2015convlstm",
+    "title": "Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting",
+    "authors": [
+      "Shi, Xingjian",
+      "Chen, Zhourong",
+      "Wang, Hao",
+      "Yeung, Dit-Yan",
+      "Wong, Wai-kin",
+      "Woo, Wang-chun"
+    ],
+    "year": 2015,
+    "venue": "NeurIPS 2015",
+    "doi": null,
+    "arxiv_id": "1506.04214",
+    "url": "https://arxiv.org/abs/1506.04214",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1506.04214v2"
+    ],
+    "themes": [
+      "vision architecture"
+    ],
+    "relevance": "Convolutional input and recurrent transitions support spatiotemporal forecasting.",
+    "novelty_threat": "Established modality-native recurrent baseline.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract",
+    "limitations": "Baseline reference; no claim of demonstrated repetition-induced collapse.",
+    "source_urls": [
+      "https://arxiv.org/abs/1506.04214"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2015/06/13"
+  },
+  {
+    "id": "ballas2016convgru",
+    "title": "Delving Deeper into Convolutional Networks for Learning Video Representations",
+    "authors": [
+      "Ballas, Nicolas",
+      "Yao, Li",
+      "Pal, Chris",
+      "Courville, Aaron"
+    ],
+    "year": 2016,
+    "venue": "ICLR 2016",
+    "doi": null,
+    "arxiv_id": "1511.06432",
+    "url": "https://arxiv.org/abs/1511.06432",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/1511.06432v4"
+    ],
+    "themes": [
+      "vision architecture"
+    ],
+    "relevance": "Convolutional GRU feature processing for video representations.",
+    "novelty_threat": "Established convolutional gated recurrence.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract",
+    "limitations": "Visual encoder and spatial state create additional comparison factors.",
+    "source_urls": [
+      "https://arxiv.org/abs/1511.06432"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2015/11/19"
+  },
+  {
+    "id": "papyan2020neuralcollapse",
+    "title": "Prevalence of Neural Collapse during the terminal phase of deep learning training",
+    "authors": [
+      "Papyan, Vardan",
+      "Han, X. Y.",
+      "Donoho, David L."
+    ],
+    "year": 2020,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "doi": "10.1073/pnas.2015509117",
+    "arxiv_id": "2008.08186",
+    "url": "https://arxiv.org/abs/2008.08186",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2008.08186v2"
+    ],
+    "themes": [
+      "collapse terminology"
+    ],
+    "relevance": "Terminal training exhibits class-conditioned neural-collapse geometry.",
+    "novelty_threat": "The phrase neural collapse has a precise existing supervised-learning meaning.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary abstract and PMC article record",
+    "limitations": "Training-phase class geometry is not fixed-weight repetition-induced forgetting.",
+    "source_urls": [
+      "https://arxiv.org/abs/2008.08186"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2020/08/18"
+  },
+  {
+    "id": "jing2022dimensional",
+    "title": "Understanding Dimensional Collapse in Contrastive Self-supervised Learning",
+    "authors": [
+      "Jing, Li",
+      "Vincent, Pascal",
+      "LeCun, Yann",
+      "Tian, Yuandong"
+    ],
+    "year": 2022,
+    "venue": "ICLR 2022",
+    "doi": null,
+    "arxiv_id": "2110.09348",
+    "url": "https://arxiv.org/abs/2110.09348",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2110.09348v3"
+    ],
+    "themes": [
+      "collapse terminology"
+    ],
+    "relevance": "Dimensional collapse in contrastive self-supervised learning.",
+    "novelty_threat": "Dimension collapse is established terminology and objective-dependent phenomenon.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract",
+    "limitations": "Training objectives and data augmentations differ from inference dynamics.",
+    "source_urls": [
+      "https://arxiv.org/abs/2110.09348"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2021/10/18"
+  },
+  {
+    "id": "halko2011randomized",
+    "title": "Finding structure with randomness: Probabilistic algorithms for constructing approximate matrix decompositions",
+    "authors": [
+      "Halko, Nathan",
+      "Martinsson, Per-Gunnar",
+      "Tropp, Joel A."
+    ],
+    "year": 2011,
+    "venue": "SIAM Review",
+    "doi": null,
+    "arxiv_id": "0909.4061",
+    "url": "https://arxiv.org/abs/0909.4061",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/0909.4061v2"
+    ],
+    "themes": [
+      "numerical methods"
+    ],
+    "relevance": "Randomized methods approximate dominant matrix decompositions.",
+    "novelty_threat": "Matrix-free spectral estimation is an implementation tool, not scientific novelty here.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract and Caltech publication record",
+    "limitations": "Partial decompositions require residual and tail checks.",
+    "source_urls": [
+      "https://arxiv.org/abs/0909.4061"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2009/09/22"
+  },
+  {
+    "id": "meyer2021hutchpp",
+    "title": "Hutch++: Optimal Stochastic Trace Estimation",
+    "authors": [
+      "Meyer, Raphael A.",
+      "Musco, Cameron",
+      "Musco, Christopher",
+      "Woodruff, David P."
+    ],
+    "year": 2021,
+    "venue": "Symposium on Simplicity in Algorithms",
+    "doi": null,
+    "arxiv_id": "2010.09649",
+    "url": "https://arxiv.org/abs/2010.09649",
+    "pdf_urls": [
+      "https://arxiv.org/pdf/2010.09649v5"
+    ],
+    "themes": [
+      "numerical methods"
+    ],
+    "relevance": "Variance-reduced stochastic trace estimation for PSD operators.",
+    "novelty_threat": "Scalable trace-based effective dimensions build on established estimators.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Primary arXiv abstract and PMC publication record",
+    "limitations": "Ratios of estimated traces need uncertainty analysis.",
+    "source_urls": [
+      "https://arxiv.org/abs/2010.09649"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "preprint_date": "2020/10/19"
+  },
+  {
+    "id": "floquet1883",
+    "title": "Sur les équations différentielles linéaires à coefficients périodiques",
+    "authors": [
+      "Gaston Floquet"
+    ],
+    "year": 1883,
+    "venue": "Annales scientifiques de l’École Normale Supérieure",
+    "doi": "10.24033/asens.220",
+    "arxiv_id": null,
+    "url": "https://www.numdam.org/item/?id=ASENS_1883_2_12__47_0",
+    "pdf_urls": [
+      "https://www.numdam.org/article/ASENS_1883_2_12__47_0.pdf"
+    ],
+    "themes": [
+      "Floquet",
+      "foundations"
+    ],
+    "relevance": "Original continuous-time periodic linear-system foundation.",
+    "novelty_threat": "Floquet analysis itself is classical; applying a period map needs a distinct scientific question.",
+    "evidence_level": "metadata",
+    "evidence_locator": "Numdam bibliographic record.",
+    "limitations": "Historical source; the project uses discrete updates, and no claim is made to have audited this French proof.",
+    "source_urls": [
+      "https://www.numdam.org/item/?id=ASENS_1883_2_12__47_0",
+      "https://doi.org/10.24033/asens.220"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "bib_type": "article",
+    "volume": "12",
+    "pages": "47--88"
+  },
+  {
+    "id": "roy2007effective",
+    "title": "The Effective Rank: a Measure of Effective Dimensionality",
+    "authors": [
+      "Olivier Roy",
+      "Martin Vetterli"
+    ],
+    "year": 2007,
+    "venue": "15th European Signal Processing Conference (EUSIPCO)",
+    "doi": "10.5281/zenodo.40328",
+    "arxiv_id": null,
+    "url": "https://zenodo.org/records/40328",
+    "pdf_urls": [
+      "https://zenodo.org/records/40328/files/a5p-h05.pdf?download=1",
+      "https://infoscience.epfl.ch/bitstreams/2907ab8a-23f5-481d-bb07-1d56a3f3511f/download"
+    ],
+    "themes": [
+      "measurement",
+      "effective rank"
+    ],
+    "relevance": "Entropy-based effective rank provides a historical measurement reference.",
+    "novelty_threat": "Normalized spectral dimension is an established diagnostic, not an information-retention theorem.",
+    "evidence_level": "metadata",
+    "evidence_locator": "Zenodo proceedings record.",
+    "limitations": "Repository DOI; distinguish normalized singular-value entropy from covariance-eigenvalue entropy.",
+    "source_urls": [
+      "https://zenodo.org/records/40328",
+      "https://doi.org/10.5281/zenodo.40328"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "bib_type": "inproceedings",
+    "pages": "606--610"
+  },
+  {
+    "id": "gao2017dimensionality",
+    "title": "A theory of multineuronal dimensionality, dynamics and measurement",
+    "authors": [
+      "Peiran Gao",
+      "Eric Trautmann",
+      "Byron Yu",
+      "Gopal Santhanam",
+      "Stephen Ryu",
+      "Krishna Shenoy",
+      "Surya Ganguli"
+    ],
+    "year": 2017,
+    "venue": "bioRxiv preprint",
+    "doi": "10.1101/214262",
+    "arxiv_id": null,
+    "url": "https://doi.org/10.1101/214262",
+    "pdf_urls": [
+      "https://ganguli-gang.stanford.edu/pdf/17.theory.measurement.pdf"
+    ],
+    "themes": [
+      "neuroscience",
+      "measurement",
+      "task complexity"
+    ],
+    "relevance": "Task complexity and trajectory smoothness constrain observed neural dimension.",
+    "novelty_threat": "Dimension changing with task or temporal sampling is not by itself a novel recurrent-memory result.",
+    "evidence_level": "full_text",
+    "evidence_locator": "Main introduction and theory overview; Supplement II.II participation-ratio definition.",
+    "limitations": "Selected sections only; trial-averaged neural activity and sampling theory differ from conditioned cue retention.",
+    "source_urls": [
+      "https://doi.org/10.1101/214262",
+      "https://doi.org/10.1101/214262"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "bib_type": "misc"
+  },
+  {
+    "id": "recanatesi2019dimensionality",
+    "title": "Dimensionality in recurrent spiking networks: Global trends in activity and local origins in connectivity",
+    "authors": [
+      "Stefano Recanatesi",
+      "Gabriel Koch Ocker",
+      "Michael A. Buice",
+      "Eric Shea-Brown"
+    ],
+    "year": 2019,
+    "venue": "PLOS Computational Biology",
+    "doi": "10.1371/journal.pcbi.1006446",
+    "arxiv_id": null,
+    "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006446",
+    "pdf_urls": [
+      "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006446&type=printable"
+    ],
+    "themes": [
+      "neuroscience",
+      "covariance",
+      "recurrent dynamics"
+    ],
+    "relevance": "Relates recurrent connectivity and external input to covariance dimensionality.",
+    "novelty_threat": "Generic recurrence-to-dimension mechanisms have substantial neuroscience antecedents.",
+    "evidence_level": "full_text",
+    "evidence_locator": "Introduction and Results dimensionality definitions/connectivity expansion.",
+    "limitations": "Selected sections; spiking/Hawkes and linearized population models do not directly prove useful-history loss in trained gated networks.",
+    "source_urls": [
+      "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006446",
+      "https://doi.org/10.1371/journal.pcbi.1006446"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "bib_type": "article",
+    "volume": "15",
+    "number": "7",
+    "pages": "e1006446"
+  },
+  {
+    "id": "dahmen2026dimensionality",
+    "title": "Strong and localized recurrence controls the dimensionality of neural activity across brain areas",
+    "authors": [
+      "David Dahmen",
+      "Stefano Recanatesi",
+      "Xiaoxuan Jia",
+      "Gabriel K. Ocker",
+      "Nilufar Lahiji",
+      "Simon Musall",
+      "Luke Campagnola",
+      "Stephanie Seeman",
+      "Tim Jarsky",
+      "Moritz Helias",
+      "Eric Shea-Brown"
+    ],
+    "year": 2026,
+    "venue": "Nature Neuroscience",
+    "doi": "10.1038/s41593-026-02395-w",
+    "arxiv_id": null,
+    "url": "https://www.nature.com/articles/s41593-026-02395-w",
+    "pdf_urls": [
+      "https://jiaxx.github.io/assets/img/2026%20Strong%20and%20localized%20recurrence%20controls%20the%20dimensionality%20of%20neural%20activity%20across%20brain%20areas.pdf",
+      "https://www.nature.com/articles/s41593-026-02395-w.pdf"
+    ],
+    "themes": [
+      "neuroscience",
+      "recurrence",
+      "dimensionality"
+    ],
+    "relevance": "Recent biological recurrence-dimensionality comparison across brain areas.",
+    "novelty_threat": "Broad recurrence controls dimension framing is already active and needs acknowledgment.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Publisher/PubMed abstract and Crossref metadata; online 2026-08-19.",
+    "limitations": "No audited proof or trained-AI memory result; publisher access can be restricted.",
+    "source_urls": [
+      "https://www.nature.com/articles/s41593-026-02395-w",
+      "https://doi.org/10.1038/s41593-026-02395-w",
+      "https://jiaxx.github.io/pubs/",
+      "https://jiaxx.github.io/assets/img/2026%20Strong%20and%20localized%20recurrence%20controls%20the%20dimensionality%20of%20neural%20activity%20across%20brain%20areas.pdf"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "bib_type": "article",
+    "volume": "29",
+    "pages": "2578--2587",
+    "version_note": "Author-hosted 34-page manuscript dated 2026-08-13, labelled Nature Neuroscience submission; metadata refers to published article 2026-08-19. Not the publisher typeset PDF."
+  },
+  {
+    "id": "scarselli2009gnn",
+    "title": "The Graph Neural Network Model",
+    "authors": [
+      "Franco Scarselli",
+      "Marco Gori",
+      "Ah Chung Tsoi",
+      "Markus Hagenbuchner",
+      "Gabriele Monfardini"
+    ],
+    "year": 2009,
+    "venue": "IEEE Transactions on Neural Networks",
+    "doi": "10.1109/TNN.2008.2005605",
+    "arxiv_id": null,
+    "url": "https://doi.org/10.1109/TNN.2008.2005605",
+    "pdf_urls": [
+      "https://papers.baulab.info/papers/Scarselli-2009.pdf"
+    ],
+    "themes": [
+      "graph",
+      "contraction",
+      "foundations"
+    ],
+    "relevance": "Early graph-state recurrence and contraction-based computation.",
+    "novelty_threat": "Treating GNN computation as recurrent state dynamics is foundational prior art.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Publisher-indexed abstract and Crossref metadata.",
+    "limitations": "Historical graph-state architecture, not a periodic temporal-graph cue-retention experiment.",
+    "source_urls": [
+      "https://doi.org/10.1109/TNN.2008.2005605",
+      "https://doi.org/10.1109/TNN.2008.2005605"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "bib_type": "article",
+    "volume": "20",
+    "number": "1",
+    "pages": "61--80"
+  },
+  {
+    "id": "wang2017predrnn",
+    "title": "PredRNN: Recurrent Neural Networks for Predictive Learning using Spatiotemporal LSTMs",
+    "authors": [
+      "Yunbo Wang",
+      "Mingsheng Long",
+      "Jianmin Wang",
+      "Zhifeng Gao",
+      "Philip S. Yu"
+    ],
+    "year": 2017,
+    "venue": "Advances in Neural Information Processing Systems 30",
+    "doi": null,
+    "arxiv_id": null,
+    "url": "https://papers.nips.cc/paper_files/paper/2017/hash/e5f6ad6ce374177eef023bf5d0c018b6-Abstract.html",
+    "pdf_urls": [
+      "https://papers.nips.cc/paper/2017/file/e5f6ad6ce374177eef023bf5d0c018b6-Paper.pdf"
+    ],
+    "themes": [
+      "vision",
+      "architecture",
+      "spatiotemporal memory"
+    ],
+    "relevance": "Native video-prediction baseline with temporal and spatial memory paths.",
+    "novelty_threat": "Architecture coverage is replication scope; adapter must include both memories.",
+    "evidence_level": "abstract",
+    "evidence_locator": "Official NeurIPS abstract and author list.",
+    "limitations": "No claim about periodicity-specific collapse in this source.",
+    "source_urls": [
+      "https://papers.nips.cc/paper_files/paper/2017/hash/e5f6ad6ce374177eef023bf5d0c018b6-Abstract.html"
+    ],
+    "metadata_verified_at": "2026-10-11",
+    "bib_type": "inproceedings"
+  }
+]
