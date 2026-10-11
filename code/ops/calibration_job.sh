@@ -50,7 +50,7 @@ uv --version >> "$job_root/provenance.txt"
 cp "$job_root/provenance.txt" "$results_root/provenance.txt"
 # Dependencies must have been cached on a login node before this allocation.
 # Compute nodes are never used to fetch dependencies or train in this smoke.
-python_path="$(uv python find --offline --no-project --managed-python "$(cat .python-version)")"
+python_path="$(uv python find --offline --no-project --system --managed-python "$(cat .python-version)")"
 [[ "$python_path" == "$scratch_root/cache/python"/* ]] || fail 'prepared scratch Python is absent'
 uv sync --locked --offline --no-dev --python "$python_path"
 srun --ntasks=1 --cpus-per-task=1 uv run --locked --offline --no-sync \

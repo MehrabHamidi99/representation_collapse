@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "kind": "qwen_research_leaf_worker_launch_recipe",
+  "script": "code/ops/qwen_worker.py",
+  "arguments": {
+    "--project": "PROJECT_SOURCE_DIRECTORY",
+    "--output": "NEW_PROJECT_SCRATCH_OUTPUT_DIRECTORY",
+    "--max-hours": 24,
+    "--max-calls": 24,
+    "--interval": 60,
+    "--research-interval": 3600,
+    "--http-timeout": 180
+  },
+  "optional_repeated_arguments": {
+    "--artifact-root": "EXPLICIT_PROJECT_ARTIFACT_DIRECTORY",
+    "--job-id": "KNOWN_PROJECT_SLURM_JOB_ID"
+  },
+  "required_environment_variable_names": [
+    "QWEN_BASE_URL",
+    "QWEN_MODEL",
+    "CAIRN_API_KEY"
+  ],
+  "credential_delivery": "coordinator supplies environment through secure stdin; never write values to this file",
+  "actions": "read project evidence and project job state; call Qwen; write proposals only",
+  "scientific_acceptance": "pending independent coordinator review",
+  "stop_conditions": [
+    "runtime cap",
+    "provider call-attempt cap",
+    "three consecutive provider or schema errors",
+    "termination signal"
+  ],
+  "note": "This is a launch recipe, not an automatically loaded worker configuration. Convert arguments to argv explicitly."
+}
