@@ -500,3 +500,92 @@ do not prove model incapacity, and a functional readout need not produce an arm
 difference. Its proposed diagnostic needs revision against the frozen
 competence-recovery contract. Schema validity remains distinct from scientific
 acceptance; no Qwen proposal was submitted.
+
+### User-directed checkpoint periodicity launch — 14:49–14:50 UTC
+
+The owner's instruction, “go on and launch peridicty analysis on servers,”
+authorizes a new bounded diagnostic batch on the four existing checkpoints.
+The separate envelope is four submissions, one GPU/four CPUs/16 GiB/fifteen
+minutes each, at most two concurrent GPU jobs and one requested GPU-device-hour
+total. There is no retraining, seed expansion, race, requeue or automatic retry.
+The earlier initial-training allocation remains exhausted. The ignored approval
+record and research plan distinguish these allocations.
+
+Committed analysis source **458bc9cfce474b8e11e433e33bf132faf5032387** was
+published before launch. [Frozen protocol](../../auto/periodicity-analysis-v1.md)
+and configuration define two driver panels, two cue histories, horizons
+1/2/16/32, periodic and matched varying inputs, native and manual complete-state
+replay, and genuine FP64 dynamics using fixed cast weights from zero. GRU state
+has 128 coordinates; LSTM state includes h and c, totaling 256. Final twelve-step
+tangent windows at R2/R16 retain direct/autodiff ordered Jacobians, spectra,
+finite-difference/JVP checks and previous-cycle comparisons. All spectra retain
+finite-time labels even when numerical closure is compatible. Two histories
+support paired separation, not a dimension estimate. The original failed
+competence gates are retained; this batch cannot certify Floquet dynamics,
+harmful collapse or causal memory loss.
+
+All **34 local tests** pass, including native GRU/LSTM replay in both precisions,
+cell-state derivatives, noncommuting order, JVP/finite differences and
+checkpoint-only artifact/error contracts. Independent scientific and engineering
+prelaunch reviews bind the frozen source/config. Their receipt SHA256s are
+`83895b8d6b3e326e7e477865e122b6eb22aa5a4e86244501c3a550179f4c2120`
+and `72054d42a104b71e77878f21b3bf103fcda98caf7cd4b204b362a2c91cdf5ff0`.
+
+Source-only synchronization used native `cluv.cli.sync.clone_project` from an
+isolated scratch clone, the original held controller's private SSH masters,
+and project-private bundle mirrors. The incremental bundle SHA256 is
+`16f192ccba06cc8bfc1c2f0edad2a23b3caa9b9cd14b83cc7c1acd6a74c79ce8`.
+Cluv 0.1.5's detached-source path failed by shell-quoting an empty PR ref into
+a truthy literal. The failed receipt was retained. Read-only partial-state
+reconciliation preceded a source-only resume: isolated main fast-forward,
+native main sync and process-local `pull.ff=only`. Both clean execution
+checkouts reached 458bc9c at 14:42 UTC, preserving all four checkpoint hashes,
+dependency/environment fingerprints and the original controller checkout.
+Resume receipt SHA256:
+`36d0cb953162c765320c104e47dd1210e1217d59f888c2342d72b37851c4360f`.
+No job was submitted during staging. The controller subsequently received one
+explicitly owned untracked wrapper whose bytes match the frozen source.
+
+Four sequential native cluv submissions were journaled exactly once:
+
+- Narval GRU categorical **5254858**, accepted 14:49:14 UTC, A100.
+- Rorqual LSTM categorical **22984956**, accepted 14:49:22 UTC, H100 MIG 3g.40gb.
+- Narval GRU continuous **5254871**, accepted 14:49:28 UTC,
+  `afterany:5254858`, A100.
+- Rorqual LSTM continuous **22984963**, accepted 14:49:35 UTC,
+  `afterany:22984956`, H100 MIG 3g.40gb.
+
+Account is `def-ioannism_gpu`, partition `gpubase_bygpu_b1`, QOS `normal`.
+Native Slurm accounting and queue inspection at 14:50:09 UTC confirm all four
+IDs pending with the expected requests. Categorical jobs await priority;
+continuous jobs await their same-cluster predecessor. There are no numerical
+outputs yet. The submit helper writes an atomic prepared record before remote
+submission and rejects existing prepared/submitted cells, protecting against
+duplicate launches after ambiguous transport outcomes.
+
+[Compact launch evidence](../../auto/periodicity-analysis-launch.json) binds
+the exact IDs, source, checkpoint hashes, requests and runtime receipts. Raw
+journal/status proofs stay in ignored `runs/ops/` and Tamia scratch. Outputs
+will appear under each execution cluster's
+`/scratch/mehrab/representation-collapse/logs/cluv/<cluster>_<job>/periodicity`.
+Next acceptance requires independent raw-array/hash/numerical reduction and
+exact scheduler reconciliation; queued jobs are not verified experiments.
+No checkpoint or dataset was copied to the Mac.
+
+The existing Mila Qwen worker PID2812601 was alive at 14:49:42 UTC, with ten
+schema-valid reviews, zero consecutive provider errors and 51,350 reported
+tokens. Its existing 24-hour/22-attempt contract remains unchanged. Updated
+tracked evidence is supplied through its current watcher, without a restart
+or manual provider call. It continues to propose only; the coordinator owns
+scientific acceptance and no Qwen proposal was submitted.
+
+Independent launch review passes 70 checks against the frozen source,
+checkpoint roster, journal and scheduler snapshot. Journal SHA256:
+`7ac4aaebdeb5b2648e55c67b1af0dddcfb2a3f70c77dea1e92d52c63048cbc6d`.
+The future staging helper now selects a clean main-branch clone followed by
+fast-forward-only source synchronization, avoiding the detached-ref bug.
+Local base-to-frozen-source replay, native cluv path simulation, nonancestor
+rejection, preview, syntax and controller-preservation checks pass. Helper
+SHA256 is `34790a2273954f364d8d970ae8f50c142be7ee5d010808b4700b27e8ac01d510`.
+This later operations correction does not alter the already frozen analysis
+module, tests, protocol, configuration or execution source 458bc9c.

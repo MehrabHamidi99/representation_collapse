@@ -3,6 +3,21 @@
 Updated 2026-10-11. See the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json).
 
+- **Periodicity diagnostics — four cluv jobs submitted, 14:49 UTC.** Frozen
+  analysis source `458bc9cfce474b8e11e433e33bf132faf5032387` runs existing seed-0
+  checkpoints: Narval GRU categorical **5254858**, continuous **5254871**;
+  Rorqual LSTM categorical **22984956**, continuous **22984963**. At 14:50 UTC
+  all are pending: categorical jobs await priority, continuous jobs have
+  same-cluster predecessor dependencies. Each requests one GPU, four CPUs,
+  16 GiB and fifteen minutes; four submissions exhaust this separate diagnostic
+  batch's one requested GPU-hour cap, with at most two simultaneous jobs.
+  No retraining. [Frozen protocol](auto/periodicity-analysis-v1.md) covers
+  periodic versus matched varying inputs, full-state cycle closure, paired cue
+  separation, finite-time tangent spectra and FP32/FP64 replay. All 34 local
+  tests and independent prelaunch reviews pass; scheduler acceptance does not
+  verify numerical outputs. Every checkpoint previously failed competence;
+  this batch cannot establish harmful collapse or certified Floquet dynamics.
+  [Launch evidence](auto/periodicity-analysis-launch.json).
 - **Initial engineering phase — completed and independently verified.** Narval
   calibration job **5234514** passes 10 + 36 checks. All four full 1,500-step,
   seed-0 GPU pilots finish `COMPLETED/0:0`: GRU categorical **5234860**, GRU
@@ -96,7 +111,8 @@ and [dependency plan](../configs/research-plan.json).
   proposal requires revision: its 10 CPU-hour request exceeds the envelope and
   its significance-only stopping rule is insufficient. No proposal was submitted.
 
-Next bounded actions: implement the competence-recovery diagnostic contract locally,
+Next bounded actions: reconcile the four periodicity jobs and independently verify
+their raw arrays, implement the competence-recovery diagnostic contract locally,
 review bounded Qwen drafts against verified failures, and recover graph assets.
 Preserve the held cluv controller for authorized operations. No broad sweep or
 additional GPU training follows automatically.

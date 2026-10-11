@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "phase_id": "periodicity-analysis-v1",
+  "analysis_source_commit": "458bc9cfce474b8e11e433e33bf132faf5032387",
+  "training_source_commit": "9004a0c114a8b7c5335dca3d5247449fd10b5ffa",
+  "checked_at_utc": "2026-10-11T14:50:09.653178+00:00",
+  "launch_acceptance": "verified",
+  "numerical_outputs_verified": false,
+  "scientific_acceptance": false,
+  "prior_competence_passed": false,
+  "training": false,
+  "local_tests_passed": 34,
+  "requested_gpu_device_hours": 1,
+  "max_concurrent_gpu_jobs": 2,
+  "submissions_used": 4,
+  "submissions_remaining": 0,
+  "automatic_retries": false,
+  "race": false,
+  "cells": [
+    {
+      "cell": 0,
+      "cluster": "narval",
+      "model": "gru",
+      "task": "categorical",
+      "seed": 0,
+      "job_id": 5254858,
+      "training_job_id": 5234860,
+      "checkpoint": "/scratch/mehrab/representation-collapse/logs/cluv/narval_5234860/pilot/checkpoint.pt",
+      "checkpoint_sha256": "f1db79385be4de085c457f88355242d0e6e62ceefbe79de4963ab725eca2bcd3",
+      "run_id": "per-v1-20261011-gru-categorical-s0",
+      "resources": {
+        "nodes": "1",
+        "cpus-per-task": "4",
+        "time": "00:15:00",
+        "account": "def-ioannism_gpu",
+        "partition": "gpubase_bygpu_b1",
+        "qos": "normal",
+        "ntasks": "1",
+        "mem": "16G",
+        "gres": "gpu:a100:1",
+        "no-requeue": true,
+        "job-name": "cluv-rc-per-v1-gru-categorical",
+        "output": "$SCRATCH/representation-collapse/logs/cluv/narval_%j/slurm-%j.out",
+        "chdir": "$SCRATCH/representation-collapse/source",
+        "export": "ALL"
+      },
+      "observed_submitted_at_utc": "2026-10-11T14:49:14.826832+00:00",
+      "scheduler_observation": {
+        "state": "PENDING",
+        "reason": "(Priority)",
+        "expected_start": "N/A"
+      },
+      "output": "/scratch/mehrab/representation-collapse/logs/cluv/narval_5254858/periodicity"
+    },
+    {
+      "cell": 1,
+      "cluster": "rorqual",
+      "model": "lstm",
+      "task": "categorical",
+      "seed": 0,
+      "job_id": 22984956,
+      "training_job_id": 22980985,
+      "checkpoint": "/scratch/mehrab/representation-collapse/logs/cluv/rorqual_22980985/pilot/checkpoint.pt",
+      "checkpoint_sha256": "8752a480b2f5a9d674ef624a7cfb8780b67ceb43b51b4bcf3cadb9ecbd298673",
+      "run_id": "per-v1-20261011-lstm-categorical-s0",
+      "resources": {
+        "nodes": "1",
+        "cpus-per-task": "4",
+        "time": "00:15:00",
+        "account": "def-ioannism_gpu",
+        "partition": "gpubase_bygpu_b1",
+        "qos": "normal",
+        "ntasks": "1",
+        "mem": "16G",
+        "gres": "gpu:nvidia_h100_80gb_hbm3_3g.40gb:1",
+        "no-requeue": true,
+        "job-name": "cluv-rc-per-v1-lstm-categorical",
+        "output": "$SCRATCH/representation-collapse/logs/cluv/rorqual_%j/slurm-%j.out",
+        "chdir": "$SCRATCH/representation-collapse/source",
+        "export": "ALL"
+      },
+      "observed_submitted_at_utc": "2026-10-11T14:49:22.079784+00:00",
+      "scheduler_observation": {
+        "state": "PENDING",
+        "reason": "(Priority)",
+        "expected_start": "N/A"
+      },
+      "output": "/scratch/mehrab/representation-collapse/logs/cluv/rorqual_22984956/periodicity"
+    },
+    {
+      "cell": 2,
+      "cluster": "narval",
+      "model": "gru",
+      "task": "continuous",
+      "seed": 0,
+      "job_id": 5254871,
+      "training_job_id": 5235508,
+      "checkpoint": "/scratch/mehrab/representation-collapse/logs/cluv/narval_5235508/pilot/checkpoint.pt",
+      "checkpoint_sha256": "e35502d2958c78c465ae4a46639965f3e841fc5e6ad4ff490daf1fc4fb74d4f5",
+      "run_id": "per-v1-20261011-gru-continuous-s0",
+      "resources": {
+        "nodes": "1",
+        "cpus-per-task": "4",
+        "time": "00:15:00",
+        "account": "def-ioannism_gpu",
+        "partition": "gpubase_bygpu_b1",
+        "qos": "normal",
+        "ntasks": "1",
+        "mem": "16G",
+        "gres": "gpu:a100:1",
+        "no-requeue": true,
+        "job-name": "cluv-rc-per-v1-gru-continuous",
+        "dependency": "afterany:5254858",
+        "output": "$SCRATCH/representation-collapse/logs/cluv/narval_%j/slurm-%j.out",
+        "chdir": "$SCRATCH/representation-collapse/source",
+        "export": "ALL"
+      },
+      "observed_submitted_at_utc": "2026-10-11T14:49:28.924301+00:00",
+      "scheduler_observation": {
+        "state": "PENDING",
+        "reason": "(Dependency)",
+        "expected_start": "N/A"
+      },
+      "output": "/scratch/mehrab/representation-collapse/logs/cluv/narval_5254871/periodicity"
+    },
+    {
+      "cell": 3,
+      "cluster": "rorqual",
+      "model": "lstm",
+      "task": "continuous",
+      "seed": 0,
+      "job_id": 22984963,
+      "training_job_id": 22980998,
+      "checkpoint": "/scratch/mehrab/representation-collapse/logs/cluv/rorqual_22980998/pilot/checkpoint.pt",
+      "checkpoint_sha256": "ec63862dbd27657e99c7becdbdd1301d8813d4525426a9a1545768658561c660",
+      "run_id": "per-v1-20261011-lstm-continuous-s0",
+      "resources": {
+        "nodes": "1",
+        "cpus-per-task": "4",
+        "time": "00:15:00",
+        "account": "def-ioannism_gpu",
+        "partition": "gpubase_bygpu_b1",
+        "qos": "normal",
+        "ntasks": "1",
+        "mem": "16G",
+        "gres": "gpu:nvidia_h100_80gb_hbm3_3g.40gb:1",
+        "no-requeue": true,
+        "job-name": "cluv-rc-per-v1-lstm-continuous",
+        "dependency": "afterany:22984956",
+        "output": "$SCRATCH/representation-collapse/logs/cluv/rorqual_%j/slurm-%j.out",
+        "chdir": "$SCRATCH/representation-collapse/source",
+        "export": "ALL"
+      },
+      "observed_submitted_at_utc": "2026-10-11T14:49:35.015106+00:00",
+      "scheduler_observation": {
+        "state": "PENDING",
+        "reason": "(Dependency)",
+        "expected_start": "N/A"
+      },
+      "output": "/scratch/mehrab/representation-collapse/logs/cluv/rorqual_22984963/periodicity"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "runs/ops/periodicity-v1-launches-20261011.json",
+      "sha256": "7ac4aaebdeb5b2648e55c67b1af0dddcfb2a3f70c77dea1e92d52c63048cbc6d"
+    },
+    {
+      "path": "runs/ops/periodicity-v1-status-20261011.json",
+      "sha256": "ebf5813f70d341b63db115bcf630b4c93e2d83f3cc687520331ad03d895d17c5"
+    },
+    {
+      "path": "runs/ops/periodicity-v1-stage-20261011.json",
+      "sha256": "35ac1cc760397caa7af03321a3daa53e6c4fe0915d6c29fba9b49bfafbabb8f2"
+    },
+    {
+      "path": "runs/ops/periodicity-v1-stage-resume-20261011.json",
+      "sha256": "36d0cb953162c765320c104e47dd1210e1217d59f888c2342d72b37851c4360f"
+    },
+    {
+      "path": "runs/ops/periodicity-v1-source-freeze-20261011.json",
+      "sha256": "e69d902611a75dbe496206aa6147eb54d8a0509fbe3868590f41eaa723f9508a"
+    },
+    {
+      "path": "runs/ops/periodicity-v1-scientific-prelaunch-review-20261011.json",
+      "sha256": "83895b8d6b3e326e7e477865e122b6eb22aa5a4e86244501c3a550179f4c2120"
+    },
+    {
+      "path": "runs/ops/periodicity-v1-engineering-prelaunch-review-20261011.json",
+      "sha256": "72054d42a104b71e77878f21b3bf103fcda98caf7cd4b204b362a2c91cdf5ff0"
+    },
+    {
+      "path": "runs/ops/periodicity-v1-launch-review-20261011.json",
+      "sha256": "84b47ccb394b64cf3062c922389cc2a564069af738ab3f98182ce234c474f03f"
+    }
+  ],
+  "controller_journal": "/scratch/m/mehrab/representation-collapse/runs/ops/periodicity-v1-launches-20261011.json",
+  "interpretation": {
+    "spectrum_label": "finite-time tangent map",
+    "numerical_closure": "approximate periodic-orbit candidate only; every spectrum retains finite-time label",
+    "cue_measure": "paired separation only; two histories cannot establish covariance dimension",
+    "precision": "FP64 replay of fixed cast weights from zero through WRITE/body/QUERY, separate from nativeFP32",
+    "scientific_gate": "prior baseline competence failed in every checkpoint; no harmful-collapse or certifiedFloquet claims"
+  }
+}

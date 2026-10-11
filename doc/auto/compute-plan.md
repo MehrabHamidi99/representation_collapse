@@ -1,5 +1,16 @@
 # Compute plan: Floquet calibration to multimodal recurrent models
 
+Latest launch update, 2026-10-11 14:50 UTC: the owner's new periodicity launch
+instruction was executed through native cluv 0.1.5 from the held Tamia controller.
+Narval **5254858/5254871** and Rorqual **22984956/22984963** are pending, with
+one predecessor chain per cluster. These four checkpoint-only diagnostics use
+frozen source `458bc9cfce474b8e11e433e33bf132faf5032387`, one GPU/four CPUs/16 GiB/
+fifteen minutes each, at most two concurrent jobs and one requested GPU-hour
+total. This separate bounded batch is exhausted; the previous training budget
+remains exhausted. See [protocol](periodicity-analysis-v1.md) and
+[exact launch evidence](periodicity-analysis-launch.json). Numerical results
+await verification. No retraining or scientific acceptance follows from submission.
+
 Latest execution update, 2026-10-11: the initial phase is **engineering complete**.
 Narval CPU calibration **5234514** passes 10 + 36 checks; GPU jobs **5234860**,
 **5235508**, **22980985**, **22980998** all complete `0:0`, with full training

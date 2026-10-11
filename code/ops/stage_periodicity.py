@@ -51,6 +51,25 @@ def blob(revision, path):
     return subprocess.check_output(["git", "show", f"{revision}:{path}"], cwd=CONTROLLER)
 
 
+def prepare_isolated_source(stage, source_commit):
+    """Use cluv's main-branch path; its 0.1.5 detached path rejects an empty PR ref."""
+    git("clone", "--shared", "--no-checkout", "--branch", "main", CONTROLLER, stage,
+        cwd=CONTROLLER)
+    if git("rev-parse", "refs/heads/main", cwd=stage) != BASE:
+        raise RuntimeError("isolated main branch is not at the approved base")
+    git("checkout", "main", cwd=stage)
+    if git("rev-parse", "HEAD", cwd=stage) != BASE or git("status", "--porcelain", cwd=stage):
+        raise RuntimeError("isolated base checkout is not clean")
+    git("merge", "--ff-only", source_commit, cwd=stage)
+    git("config", "remote.origin.url", ORIGIN, cwd=stage)
+    git("config", "branch.main.remote", "origin", cwd=stage)
+    git("config", "branch.main.merge", "refs/heads/main", cwd=stage)
+    if (git("rev-parse", "HEAD", cwd=stage) != source_commit
+            or git("rev-parse", "--abbrev-ref", "HEAD", cwd=stage) != "main"
+            or git("status", "--porcelain", cwd=stage)):
+        raise RuntimeError("isolated source must be clean, pinned, and on main")
+
+
 def atomic_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(path.name + ".tmp")
@@ -71,8 +90,11 @@ for path in [root,source,root/'bootstrap',root/'bootstrap/source.git']:
  assert path.exists() and not path.is_symlink() and path.stat().st_uid==os.getuid(), 'unsafe project path '+str(path)
 assert git('rev-parse','HEAD')==EXPECTED, 'unexpected source HEAD'
 assert not git('status','--porcelain'), 'dirty target checkout'
+assert git('rev-parse','--abbrev-ref','HEAD')=='main', 'target must be on main'
 assert git('remote').splitlines()==['origin'], 'unexpected target remotes'
 assert git('config','--get','remote.origin.url')==ORIGIN, 'unexpected source origin'
+assert git('config','--get','branch.main.remote')=='origin', 'unexpected main tracking remote'
+assert git('config','--get','branch.main.merge')=='refs/heads/main', 'unexpected main tracking ref'
 mirror=root/'bootstrap/source.git'
 assert subprocess.check_output(['git','-C',str(mirror),'rev-parse','--is-bare-repository'],text=True).strip()=='true'
 mirror_head=subprocess.check_output(['git','-C',str(mirror),'rev-parse','refs/heads/main'],text=True).strip()
@@ -147,26 +169,25 @@ async def execute(args, report):
         git("cat-file", "-e", f"{args.source_commit}:{path}")
     stage_parent = Path(tempfile.mkdtemp(prefix="periodicity-stage-" + args.source_commit[:12] + "-", dir=CONTROLLER.parent / "bootstrap"))
     stage = stage_parent / "source"
-    git("clone", "--shared", "--no-checkout", CONTROLLER, stage)
-    git("checkout", "--detach", args.source_commit, cwd=stage)
-    git("config", "remote.origin.url", ORIGIN, cwd=stage)
+    prepare_isolated_source(stage, args.source_commit)
     report["isolated_controller_source"] = str(stage)
+    report["isolated_controller_branch"] = "main"
 
     # Strict transport and URL mapping exist only in this process's Remote.run.
     native_run = remote_module.Remote.run
     async def mirror_run(remote, command, **kwargs):
         env = dict(kwargs.pop("env", None) or {})
-        env.update({"GIT_CONFIG_COUNT": "1",
+        env.update({"GIT_CONFIG_COUNT": "2",
                     "GIT_CONFIG_KEY_0": "url.file://" + ROOT + "/bootstrap/source.git.insteadOf",
-                    "GIT_CONFIG_VALUE_0": ORIGIN, "GIT_TERMINAL_PROMPT": "0",
+                    "GIT_CONFIG_VALUE_0": ORIGIN,
+                    "GIT_CONFIG_KEY_1": "pull.ff", "GIT_CONFIG_VALUE_1": "only",
+                    "GIT_TERMINAL_PROMPT": "0",
                     "GIT_SSH_COMMAND": "ssh -oBatchMode=yes -oConnectTimeout=8 -oStrictHostKeyChecking=yes"})
         return await native_run(remote, command, env=env, **kwargs)
     remote_module.Remote.run = mirror_run
     sync_module = importlib.import_module("cluv.cli.sync")
     try:
         os.chdir(stage)
-        os.environ.pop("GITHUB_HEAD_REF", None)
-        os.environ.pop("GITHUB_REF", None)
         for remote in remotes:
             host = remote.hostname
             remote_bundle = ROOT + "/bootstrap/source-" + args.source_commit + ".bundle"
@@ -221,7 +242,8 @@ def main():
         print(json.dumps({"preview": True, "source_commit": args.source_commit,
             "expected_clean_target_base": BASE, "bundle": str(args.bundle),
             "targets": list(CHECKPOINTS), "native_api": "cluv.cli.sync.clone_project",
-            "strategy": "private bundle mirrors + isolated detached controller clone; source-only sync",
+            "strategy": "private bundle mirrors + clean main-branch controller clone fast-forwarded from base; source-only sync",
+            "remote_pull": "process-local pull.ff=only",
             "preserved": ["controller checkout", "checkpoints", "uv.lock", ".python-version", "existing .venv"],
             "submissions": 0}, indent=2))
         return
