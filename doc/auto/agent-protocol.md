@@ -2,10 +2,14 @@
 
 This project studies dimension collapse in recurrent models, beginning with
 the graph temporal preliminary material. The user requested a senior research
-coordinator with subagents. The current setup supports bounded work in active
-sessions; unattended daemons, scheduled model calls, and remote job submissions
-are not enabled. The user's willingness to approve Compute Canada work is a
-pending approval, not a standing resource envelope.
+coordinator with subagents. The setup supports bounded work in active sessions.
+The owner also authorized initial cluv jobs and a proposal-only Qwen cluster
+worker on 2026-10-11. That worker actually ran for about 15.2 hours and produced
+22 reviews, then stopped at its call cap; both GPU batches also completed.
+The 2026-10-12 07:52 UTC live check confirms no active Qwen worker. These
+consumed envelopes do not authorize a recurring dispatcher, additional model
+calls or further allocations. Current evidence and limits are in the tracker,
+dated notebook and ignored approval record.
 
 ## Coordinator responsibilities
 

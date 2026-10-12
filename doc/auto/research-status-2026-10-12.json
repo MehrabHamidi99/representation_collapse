@@ -1,21 +1,22 @@
 {
   "schema_version": 1,
-  "checked_at_utc": "2026-10-12T01:54:08.060089+00:00",
-  "head": "dc5e020a3b7489b8b1abf2191937476a33469f67",
+  "checked_at_utc": "2026-10-12T07:57:42.449596+00:00",
   "reviewed_document_commit": "eb12ea1c86cbcfb56dbf8ccad95290cdd059b76c",
   "stopped_pass_commit": "dc5e020a3b7489b8b1abf2191937476a33469f67",
   "cluster_uv_version": "0.1.5",
   "live_probe": {
-    "checked_at_utc": "2026-10-12T01:50:35.908869+00:00",
+    "checked_at_utc": "2026-10-12T07:52:56.288357+00:00",
     "exit_code": 0,
     "hostname": "login-4.server.mila.quebec",
-    "network_access": "approved SSH outside local sandbox",
+    "network_access": "approved read-only SSH",
     "current_worker_state": "stopped",
-    "current_scheduler_state": "Mila queried: no project-name matching jobs; Alliance not freshly queried",
+    "recorded_worker_pid_alive": false,
+    "other_qwen_worker_process_found": false,
+    "current_scheduler_state": "Mila queried: no project-name matching jobs; Narval/Rorqual not freshly queried because no reusable cluv connections",
     "authentication_requested": false,
     "worker_restarted": false,
     "cluv_remote_version": "0.1.5",
-    "tamia_controller_probe": "Mila could not resolve tamia2.tamia.ecpia.ca"
+    "tamia_controller_probe": "official Tamia alias reached authentication but BatchMode was denied keyboard-interactive login; no Duo requested"
   },
   "last_verified_qwen_heartbeat": {
     "schema_version": 1,
@@ -60,22 +61,10 @@
     "tests": "tests/test_diagnostics.py",
     "git_state": "committed and pushed in 4023674d64c302cc9da3bd8e3616edae7464a95e; no cluster deployment"
   },
-  "new_docs_cluster_delivery": "Mila source remains 8fce9b064f77ce1616b03e318f83c15d821a8eae; new commits not delivered to this checkout",
+  "new_docs_cluster_delivery": "Mila source is still 8fce9b064f77ce1616b03e318f83c15d821a8eae; diagnostics and manuscript revisions are published to GitHub but not delivered to this checkout",
   "verification_evidence": {
     "path": "runs/ops/20261012-investigation-verification.json",
     "sha256": "ada6942fac436f9681c459ce21ae0f513b37d8f054aadb247d7549b75fcec93a"
-  },
-  "previous_live_probe": {
-    "checked_at_utc": "2026-10-12T01:26:44Z",
-    "command": "ssh -oBatchMode=yes -oConnectTimeout=8 -oConnectionAttempts=1 mila hostname",
-    "exit_code": 255,
-    "error": "Control socket Operation not permitted; Mila hostname could not be resolved",
-    "cluv_remote_probe_run": false,
-    "network_access": "restricted",
-    "current_worker_state": "unverified",
-    "current_scheduler_state": "unverified",
-    "authentication_requested": false,
-    "worker_restarted": false
   },
   "qwen_terminal_status": {
     "state": "stopped",
@@ -91,9 +80,80 @@
     },
     "scientific_decision": "pending"
   },
-  "runtime_recheck_evidence": "runs/ops/qwen-recheck-20261012.json",
+  "runtime_recheck_evidence": "runs/ops/autoresearch-live-status-20261012.json",
   "diagnostics_verification": "runs/ops/diagnostics-repair-verification-20261012.json",
   "publication": {
+    "remote_main_checked_before_update": "4c0b56e96000bde758f48115254b8a0d1c45e718",
+    "manuscript_commit": "c7c5f44f4a43ad09062752cf6bdb960ef8b2d9f2",
+    "subsequent_owner_overleaf_merge": "4c0b56e96000bde758f48115254b8a0d1c45e718",
+    "overleaf_merge_preserved": true,
+    "tracked_symlinks": 0,
+    "status_update_publication": "Final remote SHA recorded separately in runs/ops/autoresearch-status-publication-20261012.json"
+  },
+  "prior_live_probes": [
+    {
+      "checked_at_utc": "2026-10-12T01:26:44Z",
+      "command": "ssh -oBatchMode=yes -oConnectTimeout=8 -oConnectionAttempts=1 mila hostname",
+      "exit_code": 255,
+      "error": "Control socket Operation not permitted; Mila hostname could not be resolved",
+      "cluv_remote_probe_run": false,
+      "network_access": "restricted",
+      "current_worker_state": "unverified",
+      "current_scheduler_state": "unverified",
+      "authentication_requested": false,
+      "worker_restarted": false
+    },
+    {
+      "checked_at_utc": "2026-10-12T01:50:35.908869+00:00",
+      "exit_code": 0,
+      "hostname": "login-4.server.mila.quebec",
+      "network_access": "approved SSH outside local sandbox",
+      "current_worker_state": "stopped",
+      "current_scheduler_state": "Mila queried: no project-name matching jobs; Alliance not freshly queried",
+      "authentication_requested": false,
+      "worker_restarted": false,
+      "cluv_remote_version": "0.1.5",
+      "tamia_controller_probe": "Mila could not resolve tamia2.tamia.ecpia.ca"
+    }
+  ],
+  "head_at_status_update": "4c0b56e96000bde758f48115254b8a0d1c45e718",
+  "automatic_research": {
+    "has_run": true,
+    "currently_running": false,
+    "state": "stopped_at_call_cap",
+    "worker": "Qwen proposal-only worker on Mila",
+    "started_at_utc": "2026-10-11T08:15:21Z",
+    "finished_at_utc": "2026-10-11T23:28:39.245174+00:00",
+    "elapsed_seconds": 54797.71107839001,
+    "provider_attempts": 22,
+    "schema_verified_reviews": 22,
+    "reported_tokens": 125730,
+    "new_provider_calls_this_update": 0,
+    "proposals_scientifically_accepted": 0,
+    "current_bounds": "initial worker attempt cap and both GPU batch submission caps are consumed; no automatic restart"
+  },
+  "cluv_passive_access": {
+    "checked_at_utc": "2026-10-12T07:54:57.706936+00:00",
+    "controller": "mila",
+    "cluv_version": "0.1.5",
+    "results": [
+      {
+        "cluster": "narval",
+        "access": "no_reusable_master",
+        "reusable_master": false
+      },
+      {
+        "cluster": "rorqual",
+        "access": "no_reusable_master",
+        "reusable_master": false
+      }
+    ],
+    "interactive_authentication": false,
+    "remote_mutations": false,
+    "evidence": "runs/ops/autoresearch-cluv-access-20261012.json"
+  },
+  "model_provider_calls_this_update": 0,
+  "previous_publication": {
     "checked_at_utc": "2026-10-12T02:01:08.259225+00:00",
     "github_main_verified_sha": "4023674d64c302cc9da3bd8e3616edae7464a95e",
     "included_previous_commits": [
@@ -103,5 +163,25 @@
     "tracked_symlinks": 0,
     "overleaf_import_retried": false,
     "skill_discovery": "four regular SKILL.md pointers to canonical instructions"
+  },
+  "local_progress": {
+    "diagnostic_utilities": "implemented and reviewed; 48 tests pass",
+    "manuscript": "15 pages, seven-page main text, four reproducible figures and complete proofs",
+    "literature": "90 bibliography entries and 90 public PDFs; 26 substantive full-text passage reviews",
+    "accepted_harmful_collapse_claim": false,
+    "initial_gpu_pilots": "four historically verified COMPLETED/0:0; all fail native competence",
+    "periodicity_gpu_jobs": "four historically verified COMPLETED/0:0; independent array reduction pending",
+    "new_training_or_experiments_this_update": false
+  },
+  "next_actions": [
+    "independently reduce completed periodicity arrays with precision and probe-floor checks",
+    "finish stage-aware Gate B training integration and coordinate-wise competence validation",
+    "freeze v2 statistics and failed-seed policy before confirmation",
+    "synchronize published source before a separately bounded worker continuation",
+    "restore a Duo-authenticated cluv controller before any renewed cluster allocation"
+  ],
+  "latest_verification_evidence": {
+    "runs/ops/autoresearch-live-status-20261012.json": "f29beade63e595c037da3ddf381a21886c0060526314c3feec8a153f2a3aebc6",
+    "runs/ops/autoresearch-cluv-access-20261012.json": "e5340e14db74577d5a1ebb279ea386830b43e2a24fc83f37843fbcc04a9caae8"
   }
 }

@@ -14,8 +14,12 @@ workers, schedule paid calls, or authorize new compute.
 At task time inspect the available delegation tool and model overrides. The
 setup session exposed `gpt-6.1-sol`, `gpt-6-astra`, `gpt-6-sol`,
 `gpt-6-luna`, and `gpt-5.6-sol`; availability can differ later. Do not infer
-provider access from local caches or this list. No external provider, Cairn,
-Qwen, headless worker configuration, or model-call budget is established here.
+provider access from local caches or this list. The owner separately authorized
+a bounded Qwen cluster worker on 2026-10-11; its actual run and proposal-only
+contract are documented in `doc/auto/qwen-worker.md` and the tracker. It is now
+stopped at its consumed call cap. That historical route does not establish an
+available native Qwen subagent or a new model-call allowance. No paid fallback
+is approved.
 
 Prefer the inherited parent model and effort for native delegation. Specify a
 different model/effort only when the user or applicable instructions request

@@ -4,6 +4,24 @@ Updated 2026-10-12. See the [latest notebook entry](october/october12/2026-10-12
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Automatic research live status — verified 2026-10-12 07:52–07:54 UTC.**
+  Automatic research **has run, but is currently stopped**. The Mila Qwen
+  worker ran for about 15.2 hours and finished at its 22-call cap on October 11
+  at 23:28:39 UTC. Fresh heartbeat/status, PID and process checks agree:
+  22 schema-valid proposals, 125,730 reported tokens, exit 0, no live worker.
+  Mila's current queue has no matching project jobs. The four training and
+  four periodicity jobs retain their independently verified historical
+  `COMPLETED/0:0` outcomes; a fresh Alliance scheduler query was unavailable.
+  Native cluv 0.1.5 reports no reusable Narval/Rorqual connections from Mila;
+  the official Tamia alias requires interactive authentication. No Duo,
+  model call, restart or job submission occurred during this check.
+  GitHub contains manuscript revision `c7c5f44` and the owner's subsequent
+  Overleaf merge `4c0b56e`, now preserved locally. Mila source remains
+  `8fce9b0`, so those revisions have not reached that checkout. Both GPU
+  batches and the initial worker call allowance are consumed. The next
+  scientific work is independent periodicity reduction and competence recovery;
+  the completed pilots do not establish harmful collapse.
+  [Structured current status](auto/research-status-2026-10-12.json).
 - **Manuscript revision — venue-neutral diagnostic paper, 2026-10-12.**
   [When Does Repetition Erase Memory?](../paper/README.md) now has a seven-page
   main text and eight pages of references/appendices (15 total), complete

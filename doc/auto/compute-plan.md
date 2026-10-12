@@ -1,5 +1,18 @@
 # Compute plan: Floquet calibration to multimodal recurrent models
 
+Live-check update, 2026-10-12 07:52–07:54 UTC: the automatic Qwen research run
+is **finished, not currently active**. Fresh Mila heartbeat/status and process
+checks confirm 22 verified proposals, 125,730 reported tokens and the normal
+October 11 23:28:39 UTC call-cap stop. Mila has no matching project jobs.
+Native cluv 0.1.5 has no reusable Narval/Rorqual connections from Mila; the
+official Tamia alias reaches authentication but rejects noninteractive access.
+No Duo request or fresh Alliance scheduler query occurred. The eight GPU jobs
+retain their historically verified completed outcomes. No new compute or model
+call was made. Initial worker attempts and both GPU batch submission caps are
+consumed. The current GitHub manuscript and Overleaf merge are preserved locally;
+Mila source remains `8fce9b0`. See [current status](research-status-2026-10-12.json).
+The observations below are historical and do not supersede this check.
+
 Live-check update, 2026-10-12 01:50 UTC: approved SSH access reaches Mila.
 The earlier failure was the local sandbox. Qwen stopped normally at
 2026-10-11 23:28:39 UTC upon reaching its 22-call cap: 22 schema-valid

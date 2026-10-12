@@ -463,3 +463,57 @@ No harmful-collapse or empirical Floquet claim is accepted by this revision.
 The broader research charter retains its publication gates. Source and figure
 publication uses the owner's existing commit/push authorization; the exact
 publication receipt is recorded after the push in ignored operations artifacts.
+
+
+## Requested automatic-research status refresh — 07:52–07:54 UTC
+
+The owner requested a status update and confirmation that automatic research
+has actually run. Fresh read-only SSH checks reached
+`login-4.server.mila.quebec`. The recorded Qwen heartbeat and terminal status
+agree on a normal stop at the call cap on October 11 at 23:28:39 UTC: 22
+provider attempts, 22 schema-valid reviews, zero consecutive errors, 125,730
+reported tokens and exit code 0. Its recorded PID 2812601 is absent; a worker
+process-name check also finds no process. The elapsed runtime is 54,797.7
+seconds, about 15.2 hours. This establishes historical automatic proposal
+generation, **not an ongoing unattended researcher**. All proposals remain
+pending scientific acceptance.
+
+Mila's live `squeue --me` query succeeded; project-name filtering finds no
+matching jobs. The four training jobs and four checkpoint-periodicity jobs
+retain the independently verified October 11 `COMPLETED/0:0` outcomes.
+Their scheduler states were not freshly reconciled on the Alliance clusters.
+Native cluv 0.1.5 passive checks from Mila find no reusable Narval or Rorqual
+masters. The official Tamia alias now reaches authentication but denies
+BatchMode access with `Permission denied (keyboard-interactive)`; no Duo
+prompt was requested. The old controller route is not an active monitoring
+session. A first combined collector was interrupted by a DNS lookup's OS error;
+the subsequent isolated worker/queue collector and native cluv check succeeded.
+
+Fresh safe evidence is in ignored
+`runs/ops/autoresearch-live-status-20261012.json` and
+`runs/ops/autoresearch-cluv-access-20261012.json`; their hashes are recorded
+in the updated public `doc/auto/research-status-2026-10-12.json`. The probe reads
+only project status/reviews and process/scheduler metadata, not credentials,
+provider configuration or weights. No provider request, worker restart, job
+submission or queue mutation occurred. Both GPU batch submission caps and the
+initial worker attempt allowance remain consumed.
+
+GitHub main was newer than the local manuscript commit: the owner's Overleaf
+merge `4c0b56e96000bde758f48115254b8a0d1c45e718` includes
+`01a9a0b` after `c7c5f44`. Inspection found only four wrapper executable-mode
+changes, with no content changes. The clean local branch was fast-forwarded to
+preserve that merge before writing this status update. No wrapper modes were
+restored or other owner edits overwritten. Mila still runs source `8fce9b0`;
+the current manuscript/diagnostic documents have not been delivered there.
+
+Research progress is concrete: eight GPU experiments completed, automatic Qwen
+proposals produced, diagnostic utilities reviewed with 48 passing tests, and a
+complete 15-page manuscript with four reproducible figures published. The
+scientific conclusion remains limited: all four native-competence gates failed,
+and periodicity raw arrays still need independent reduction. Next work remains
+that reduction, stage-aware/coordinate-wise competence recovery and the frozen
+v2 statistics. A continued cluster worker needs a new bounded call envelope and
+current source; renewed allocations need a new concrete compute envelope.
+This status request did not restart either service. Updated tracker, compute
+plan and structured status distinguish historical execution from present
+inactivity. Publication uses the owner's existing commit/push authorization.
