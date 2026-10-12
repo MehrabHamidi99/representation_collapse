@@ -1,5 +1,41 @@
 # Verified cluster access
 
+Current verification, **2026-10-12 08:38 UTC**: native cluv **0.1.5** on
+`tamia3.tamia.ecpia.ca` passed identity, writable scratch and scheduler/account
+checks on all nine configured Alliance targets: Tamia, Narval, Rorqual, Fir,
+Nibi, Trillium, Trillium-GPU, Killarney and Vulcan. Mila was verified through
+the Mac's existing master. The working route is **Mac → Mila → Tamia3**.
+These restored connections use native cluv's ordinary socket namespace.
+Do not apply the historical project-private socket override to this session.
+The old Tamia2 route and adapter instructions below are historical.
+
+Clean immutable source `ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901` is staged
+on all ten targets, with original checkouts preserved. The continuation path is
+`representation-collapse/continuations/continuation-20261012-ec1c489/source`
+under `/scratch/m/mehrab` on Tamia, `/scratch/mehrab` on other Alliance targets,
+and `/network/scratch/m/mehrab.hamidi` on Mila. Trillium-GPU shares Trillium's
+filesystem. Source synchronization used native `cluv.cli.sync.clone_project`,
+a hash-verified project Git bundle and a process-local scratch-mirror URL
+rewrite; global Git/SSH settings were unchanged. Source staging alone does not
+establish environment readiness or authorize a GPU allocation.
+
+Passive verification on the restored Tamia controller used the pinned
+existing ops environment and system Python, avoiding cold scratch-interpreter
+startup:
+
+```bash
+cd /scratch/m/mehrab/representation-collapse/source
+PYTHONPATH="$PWD/.venv/lib/python3.11/site-packages" \
+  python3 -S code/ops/verify_cluv_access.py
+```
+
+The exact ignored receipts are `runs/ops/tamia-restored-cluv-access-system-20261012.json`,
+`runs/ops/continuation-cluv-source-sync-final-20261012.json` and
+`runs/ops/continuation-cluv-source-sync-mila-20261012.json`. Recheck masters
+before each operation; successful authentication does not grant a new budget.
+
+## Historical verification — October 11
+
 Checked 2026-10-11 at 12:31:07 UTC using pinned `cluster-uv==0.1.5`.
 All nine configured Alliance targets passed identity checks: Tamia, Narval,
 Rorqual, Fir, Nibi, Trillium, Trillium-GPU, Killarney and Vulcan. Eight remote

@@ -1,5 +1,18 @@
 # Implementation audit: measurement code versus the written contract
 
+Continuation, 2026-10-12, source `ec1c489`: additive `competence.py` now
+implements immediate/full-prefix R0/R1/R2 assays, frozen coordinate-wise gates,
+paired score records, fixture/test/validation separation and score-based stage
+eligibility. The original fifteen focused tests passed; a reviewed finite-score overflow
+repair adds one regression, with sixteen focused and 82 full-suite tests passing
+without skips. The repair is newer than the immutable ec1c489 cluster snapshot.
+The [usage contract](diagnostics-implementation.md) describes remaining training
+integration and selection gaps. Independent periodicity reduction also completed
+on Tamia CPU job 612745 and passed separate numerical review; see
+[verified results](periodicity-independent-results.md). Probe-floor robustness
+and manual QUERY adapter checks remain unavailable in that schema. These
+implemented portions do not complete Gate B or establish harmful collapse.
+
 Follow-up implementation, 2026-10-12: the additive `diagnostics.py` module now
 provides R0 and single-WRITE constructors, an eight-register streaming oracle,
 strict observation validation and dtype-preserving corruption controls. See

@@ -4,7 +4,29 @@ Updated 2026-10-12. See the [latest notebook entry](october/october12/2026-10-12
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
-- **Automatic research live status — verified 2026-10-12 07:52–07:54 UTC.**
+- **Restored-access continuation — 2026-10-12, current.** Native cluv 0.1.5
+  verified all nine configured Alliance targets from Tamia3; Mila was verified
+  separately. All ten targets now have an isolated clean source snapshot at
+  `ec1c489`; original checkouts were preserved. Tamia CPU job **612745**
+  completed `0:0` in 14 seconds, independently reducing the four periodicity
+  cells: 64 tangent windows and 1,536 step Jacobians, with no consistency
+  errors. A separate review passed 31,264 consistency assertions. The
+  [numerical report and reproducible plot](auto/periodicity-independent-results.md)
+  show attenuation in both arms and precision-sensitive, nonzero cue
+  differences. All four original competence gates failed: **no harmful-collapse
+  or certified Floquet claim is accepted**. Manual-query and probe-floor checks
+  remain unavailable in this artifact schema.
+  The owner explicitly approved a renewed Tamia Qwen run, bounded to 24 hours
+  and 24 attempts. PID **524659** and an actual model-identity-verified proposal
+  establish participation; the current timestamp, call count and usage are in
+  [structured status](auto/research-status-2026-10-12.json). It watches project
+  evidence and writes proposals; coordinator review governs scientific use.
+  Its uptime depends on the local proxy and encrypted SSH route. No new GPU
+  training or racing. Additive coordinate-wise competence assays are committed
+  and deployed; a final finite-score overflow repair raises the full suite to **82 tests**,
+  without skips. Training
+  integration, checkpoint selection and the statistics freeze remain next.
+- **Earlier automatic-research check — 2026-10-12 07:52–07:54 UTC, superseded.**
   Automatic research **has run, but is currently stopped**. The Mila Qwen
   worker ran for about 15.2 hours and finished at its 22-call cap on October 11
   at 23:28:39 UTC. Fresh heartbeat/status, PID and process checks agree:

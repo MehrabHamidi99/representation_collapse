@@ -21,6 +21,14 @@ budget. The initial envelope is now recorded and its four GPU submissions are
 consumed; follow existing authorization within its limits without asking again.
 Prepare a new concrete envelope for subsequent training allocations.
 
+The restored-access continuation on 2026-10-12 staged clean source `ec1c489`
+on all nine configured Alliance targets and Mila using native cluv. Tamia CPU
+job 612745 consumed its separate one-submission array-audit envelope and
+completed `0:0`; no retry or new GPU training follows. The explicitly approved
+Qwen continuation is separately bounded to 24 hours/24 attempts. Current
+connections are ordinary native cluv masters on Tamia3, not the historical
+Tamia2 project-private socket namespace. Recheck actual access and source.
+
 Use the project's pinned `cluster-uv==0.1.5` via `uv run --group ops cluv`.
 The same group pins uv 0.9.18, matching the remote CLIs and preventing cluv
 from downgrading another project's shared remote uv installation.

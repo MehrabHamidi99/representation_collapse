@@ -1,46 +1,186 @@
 {
-  "schema_version": 1,
-  "checked_at_utc": "2026-10-12T07:57:42.449596+00:00",
-  "reviewed_document_commit": "eb12ea1c86cbcfb56dbf8ccad95290cdd059b76c",
-  "stopped_pass_commit": "dc5e020a3b7489b8b1abf2191937476a33469f67",
-  "cluster_uv_version": "0.1.5",
-  "live_probe": {
-    "checked_at_utc": "2026-10-12T07:52:56.288357+00:00",
-    "exit_code": 0,
-    "hostname": "login-4.server.mila.quebec",
-    "network_access": "approved read-only SSH",
-    "current_worker_state": "stopped",
-    "recorded_worker_pid_alive": false,
-    "other_qwen_worker_process_found": false,
-    "current_scheduler_state": "Mila queried: no project-name matching jobs; Narval/Rorqual not freshly queried because no reusable cluv connections",
-    "authentication_requested": false,
-    "worker_restarted": false,
-    "cluv_remote_version": "0.1.5",
-    "tamia_controller_probe": "official Tamia alias reached authentication but BatchMode was denied keyboard-interactive login; no Duo requested"
+  "schema_version": 2,
+  "checked_at_utc": "2026-10-12T10:05:18.443607+00:00",
+  "state": "bounded-restored-access-continuation",
+  "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+  "cluv_version": "0.1.5",
+  "cluster_access": {
+    "checked_at_utc": "2026-10-12T08:38:34.000192+00:00",
+    "controller": "tamia3.tamia.ecpia.ca",
+    "route": "Mac to Mila to Tamia3",
+    "alliance_targets_verified": 9,
+    "alliance_targets": [
+      "tamia",
+      "narval",
+      "rorqual",
+      "fir",
+      "nibi",
+      "trillium",
+      "trillium-gpu",
+      "killarney",
+      "vulcan"
+    ],
+    "identity_scratch_scheduler_checks_passed": true,
+    "interactive_authentication_requested": false,
+    "mila_verified_separately": true,
+    "socket_namespace": "native ordinary restored masters"
   },
-  "last_verified_qwen_heartbeat": {
-    "schema_version": 1,
-    "state": "stopped",
-    "updated_at": "2026-10-11T23:28:39.243975+00:00",
-    "elapsed_seconds": 54797.71107839001,
-    "provider_call_attempts": 22,
-    "schema_verified_reviews": 22,
-    "consecutive_provider_errors": 0,
-    "usage_totals": {
-      "prompt_tokens": 114572,
-      "completion_tokens": 11158,
-      "total_tokens": 125730
+  "source_synchronization": {
+    "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+    "alliance": {
+      "tamia": {
+        "state": "staged",
+        "source": "/scratch/m/mehrab/representation-collapse/continuations/continuation-20261012-ec1c489/source",
+        "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901"
+      },
+      "narval": {
+        "state": "staged",
+        "source": "/scratch/mehrab/representation-collapse/continuations/continuation-20261012-ec1c489/source",
+        "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+        "original_head": "458bc9cfce474b8e11e433e33bf132faf5032387",
+        "original_checkout_preserved": true
+      },
+      "rorqual": {
+        "state": "staged",
+        "source": "/scratch/mehrab/representation-collapse/continuations/continuation-20261012-ec1c489/source",
+        "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+        "original_head": "458bc9cfce474b8e11e433e33bf132faf5032387",
+        "original_checkout_preserved": true
+      },
+      "fir": {
+        "state": "staged",
+        "source": "/scratch/mehrab/representation-collapse/continuations/continuation-20261012-ec1c489/source",
+        "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+        "original_head": null,
+        "original_checkout_preserved": true
+      },
+      "nibi": {
+        "state": "staged",
+        "source": "/scratch/mehrab/representation-collapse/continuations/continuation-20261012-ec1c489/source",
+        "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+        "original_head": null,
+        "original_checkout_preserved": true
+      },
+      "trillium": {
+        "state": "staged",
+        "source": "/scratch/mehrab/representation-collapse/continuations/continuation-20261012-ec1c489/source",
+        "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+        "original_head": null,
+        "original_checkout_preserved": true
+      },
+      "trillium-gpu": {
+        "state": "staged_shared_filesystem",
+        "source": "/scratch/mehrab/representation-collapse/continuations/continuation-20261012-ec1c489/source",
+        "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+        "original_head": null
+      },
+      "killarney": {
+        "state": "staged",
+        "source": "/scratch/mehrab/representation-collapse/continuations/continuation-20261012-ec1c489/source",
+        "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+        "original_head": null,
+        "original_checkout_preserved": true
+      },
+      "vulcan": {
+        "state": "staged",
+        "source": "/scratch/mehrab/representation-collapse/continuations/continuation-20261012-ec1c489/source",
+        "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+        "original_head": null,
+        "original_checkout_preserved": true
+      }
     },
-    "unknown_usage_policy": "null if any attempted call omits the relevant usage field",
-    "last_evidence_sha256": "083ea727dfed29054bbb3889c08f3f4ad21b95e7de30bb70a4ebabf1bbea4c22",
-    "stop_reason": "call_cap"
+    "mila": {
+      "checked_at_utc": "2026-10-12T09:32:29.615221+00:00",
+      "cluster": "mila",
+      "state": "staged",
+      "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+      "source": "/network/scratch/m/mehrab.hamidi/representation-collapse/continuations/continuation-20261012-ec1c489/source",
+      "native_cluv_api": "cluv.cli.sync.clone_project",
+      "controller": "Mac existing cluv master",
+      "original_checkout_preserved": true,
+      "jobs_submitted": 0
+    },
+    "original_checkouts_preserved": true,
+    "all_ten_targets_staged": true,
+    "native_cluv_api": "cluv.cli.sync.clone_project",
+    "environment_readiness_across_all_targets": false,
+    "note": "All ten targets contain immutable ec1c489. A subsequent defensive finite-score fix and final result docs are published locally/GitHub separately; updated training code must be restaged before any new training."
   },
-  "new_compute_submissions": 0,
-  "model_provider_calls": 0,
-  "scientific_acceptance": false,
+  "automatic_research": {
+    "has_run": true,
+    "currently_running": true,
+    "state": "running",
+    "cluster": "tamia",
+    "pid": 524659,
+    "started_at_utc": "2026-10-12T09:10:30.196748+00:00",
+    "live_checked_at_utc": "2026-10-12T10:03:04.163200+00:00",
+    "heartbeat": {
+      "schema_version": 1,
+      "state": "running",
+      "updated_at": "2026-10-12T10:02:41.477621+00:00",
+      "elapsed_seconds": 3131.1212371899746,
+      "provider_call_attempts": 2,
+      "schema_verified_reviews": 2,
+      "consecutive_provider_errors": 0,
+      "usage_totals": {
+        "prompt_tokens": 10683,
+        "completion_tokens": 988,
+        "total_tokens": 11671
+      },
+      "unknown_usage_policy": "null if any attempted call omits the relevant usage field",
+      "last_evidence_sha256": "c96772a0f0bb7a919f0496c332b5b98942b5532b16ea38297baea7035ba6b4ea",
+      "stop_reason": null
+    },
+    "latest_call": "call-0002",
+    "requested_model": "Qwen/Qwen3.8-Flash-Next-FP8",
+    "returned_model": "Qwen/Qwen3.8-Flash-Next-FP8",
+    "model_identity_verified": true,
+    "first_two_calls_verified": true,
+    "max_hours": 24,
+    "max_call_attempts": 24,
+    "owner_explicit_approval": true,
+    "proposal_only": true,
+    "actions_executed": 0,
+    "proposals_scientifically_accepted": 0,
+    "new_evidence_consumption_verified": "call-0002 cites the project continuation evidence feed",
+    "transport_dependency": "configured local proxy and encrypted SSH hops must remain live; three consecutive provider errors stop worker",
+    "paid_fallback": false,
+    "evidence_feed_identifiers": [
+      "artifact:/scratch/m/mehrab/representation-collapse/runs/ops/continuation-evidence/competence/status.json",
+      "artifact:/scratch/m/mehrab/representation-collapse/runs/ops/continuation-evidence/coordinator_review/status.json",
+      "artifact:/scratch/m/mehrab/representation-collapse/runs/ops/continuation-evidence/measurement/metrics.json",
+      "artifact:/scratch/m/mehrab/representation-collapse/runs/ops/continuation-evidence/reduction/status.json"
+    ]
+  },
+  "new_compute_submissions": 1,
+  "new_gpu_submissions": 0,
+  "new_training": false,
+  "cpu_reduction": {
+    "cluster": "tamia",
+    "job_id": 612745,
+    "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "started_at_utc": "2026-10-12T09:00:41Z",
+    "finished_at_utc": "2026-10-12T09:00:55Z",
+    "elapsed_seconds": 14,
+    "max_step_rss_kib": 684480,
+    "resources": {
+      "cpus": 1,
+      "memory_gib": 2,
+      "walltime_minutes": 10,
+      "gpus": 0,
+      "account": "aip-ioannism",
+      "partition": "cpubase_bycore_b1",
+      "qos": "normal"
+    },
+    "one_submission_envelope_consumed": true,
+    "automatic_retry": false,
+    "race": false,
+    "operational_deviation": "Slurm step warned about batch-created /tmp working directory; executed-source hashes and all outcomes verified. Future wrapper uses shared scratch plus explicit srun --chdir. No rerun."
+  },
   "periodicity_jobs": {
-    "state": "historically_verified_completed",
-    "verified_on": "2026-10-11",
+    "state": "fresh_scheduler_verified_COMPLETED",
     "job_ids": [
       5254858,
       5254871,
@@ -48,140 +188,266 @@
       22984963
     ],
     "all_exit_codes": "0:0",
-    "independent_raw_array_reduction": "pending",
-    "server_hash_integrity_verified": true,
-    "evidence": "doc/auto/periodicity-analysis-status.json"
+    "producer_source_commit": "458bc9cfce474b8e11e433e33bf132faf5032387",
+    "independent_raw_array_reduction": "verified",
+    "cells": 4,
+    "tangent_windows": 64,
+    "step_jacobians": 1536,
+    "independent_consistency_checks": 31264,
+    "original_checkpoint_bytes_freshly_verified": true,
+    "checkpoint_verification_at_utc": "2026-10-12T09:50:57.236736+00:00",
+    "all_original_artifact_hashes_verified": true,
+    "report": "doc/auto/periodicity-independent-results.md",
+    "scalar_results": "doc/auto/periodicity-independent-results.json",
+    "figure": "doc/auto/figures/periodicity-independent-v1.pdf",
+    "probe_floor_check": "unavailable; original probe clouds absent",
+    "manual_query_adapter_check": "partial; manual QUERY arrays absent",
+    "initial_training_job_ids": [
+      5234860,
+      5235508,
+      22980985,
+      22980998
+    ]
   },
-  "implementation_workers": {
-    "previous_pass": "stopped per handoff",
-    "followup": "bounded implementation and independent review completed",
-    "diagnostic_utilities": "accepted locally after 48 passing tests",
-    "full_gate_b_complete": false,
-    "source": "src/representation_collapse/diagnostics.py",
-    "tests": "tests/test_diagnostics.py",
-    "git_state": "committed and pushed in 4023674d64c302cc9da3bd8e3616edae7464a95e; no cluster deployment"
-  },
-  "new_docs_cluster_delivery": "Mila source is still 8fce9b064f77ce1616b03e318f83c15d821a8eae; diagnostics and manuscript revisions are published to GitHub but not delivered to this checkout",
-  "verification_evidence": {
-    "path": "runs/ops/20261012-investigation-verification.json",
-    "sha256": "ada6942fac436f9681c459ce21ae0f513b37d8f054aadb247d7549b75fcec93a"
-  },
-  "qwen_terminal_status": {
-    "state": "stopped",
-    "stop_reason": "call_cap",
-    "exit_code": 0,
-    "finished_at": "2026-10-11T23:28:39.245174+00:00",
-    "provider_call_attempts": 22,
-    "schema_verified_reviews": 22,
-    "usage_totals": {
-      "prompt_tokens": 114572,
-      "completion_tokens": 11158,
-      "total_tokens": 125730
-    },
-    "scientific_decision": "pending"
-  },
-  "runtime_recheck_evidence": "runs/ops/autoresearch-live-status-20261012.json",
-  "diagnostics_verification": "runs/ops/diagnostics-repair-verification-20261012.json",
-  "publication": {
-    "remote_main_checked_before_update": "4c0b56e96000bde758f48115254b8a0d1c45e718",
-    "manuscript_commit": "c7c5f44f4a43ad09062752cf6bdb960ef8b2d9f2",
-    "subsequent_owner_overleaf_merge": "4c0b56e96000bde758f48115254b8a0d1c45e718",
-    "overleaf_merge_preserved": true,
-    "tracked_symlinks": 0,
-    "status_update_publication": "Final remote SHA recorded separately in runs/ops/autoresearch-status-publication-20261012.json"
-  },
-  "prior_live_probes": [
-    {
-      "checked_at_utc": "2026-10-12T01:26:44Z",
-      "command": "ssh -oBatchMode=yes -oConnectTimeout=8 -oConnectionAttempts=1 mila hostname",
-      "exit_code": 255,
-      "error": "Control socket Operation not permitted; Mila hostname could not be resolved",
-      "cluv_remote_probe_run": false,
-      "network_access": "restricted",
-      "current_worker_state": "unverified",
-      "current_scheduler_state": "unverified",
-      "authentication_requested": false,
-      "worker_restarted": false
-    },
-    {
-      "checked_at_utc": "2026-10-12T01:50:35.908869+00:00",
-      "exit_code": 0,
-      "hostname": "login-4.server.mila.quebec",
-      "network_access": "approved SSH outside local sandbox",
-      "current_worker_state": "stopped",
-      "current_scheduler_state": "Mila queried: no project-name matching jobs; Alliance not freshly queried",
-      "authentication_requested": false,
-      "worker_restarted": false,
-      "cluv_remote_version": "0.1.5",
-      "tamia_controller_probe": "Mila could not resolve tamia2.tamia.ecpia.ca"
-    }
-  ],
-  "head_at_status_update": "4c0b56e96000bde758f48115254b8a0d1c45e718",
-  "automatic_research": {
-    "has_run": true,
-    "currently_running": false,
-    "state": "stopped_at_call_cap",
-    "worker": "Qwen proposal-only worker on Mila",
-    "started_at_utc": "2026-10-11T08:15:21Z",
-    "finished_at_utc": "2026-10-11T23:28:39.245174+00:00",
-    "elapsed_seconds": 54797.71107839001,
-    "provider_attempts": 22,
-    "schema_verified_reviews": 22,
-    "reported_tokens": 125730,
-    "new_provider_calls_this_update": 0,
-    "proposals_scientifically_accepted": 0,
-    "current_bounds": "initial worker attempt cap and both GPU batch submission caps are consumed; no automatic restart"
-  },
-  "cluv_passive_access": {
-    "checked_at_utc": "2026-10-12T07:54:57.706936+00:00",
-    "controller": "mila",
-    "cluv_version": "0.1.5",
-    "results": [
-      {
-        "cluster": "narval",
-        "access": "no_reusable_master",
-        "reusable_master": false
-      },
-      {
-        "cluster": "rorqual",
-        "access": "no_reusable_master",
-        "reusable_master": false
-      }
-    ],
-    "interactive_authentication": false,
-    "remote_mutations": false,
-    "evidence": "runs/ops/autoresearch-cluv-access-20261012.json"
-  },
-  "model_provider_calls_this_update": 0,
-  "previous_publication": {
-    "checked_at_utc": "2026-10-12T02:01:08.259225+00:00",
-    "github_main_verified_sha": "4023674d64c302cc9da3bd8e3616edae7464a95e",
-    "included_previous_commits": [
-      "eb12ea1c86cbcfb56dbf8ccad95290cdd059b76c",
-      "dc5e020a3b7489b8b1abf2191937476a33469f67"
-    ],
-    "tracked_symlinks": 0,
-    "overleaf_import_retried": false,
-    "skill_discovery": "four regular SKILL.md pointers to canonical instructions"
-  },
+  "numerical_acceptance": true,
+  "scientific_acceptance": false,
+  "floquet_acceptance": false,
+  "native_competence_established": false,
+  "scientific_decision": "Verified descriptive audit only. Both arms show strong local finite-time contraction and precision-sensitive nonzero paired-cue separation. Failed competence, one seed per cell and absent probe/query assays prevent harmful-collapse, causal, empirical-equivalence, certified-Floquet and cross-modal claims.",
   "local_progress": {
-    "diagnostic_utilities": "implemented and reviewed; 48 tests pass",
-    "manuscript": "15 pages, seven-page main text, four reproducible figures and complete proofs",
-    "literature": "90 bibliography entries and 90 public PDFs; 26 substantive full-text passage reviews",
-    "accepted_harmful_collapse_claim": false,
-    "initial_gpu_pilots": "four historically verified COMPLETED/0:0; all fail native competence",
-    "periodicity_gpu_jobs": "four historically verified COMPLETED/0:0; independent array reduction pending",
-    "new_training_or_experiments_this_update": false
+    "full_source_tests_passed": 82,
+    "skipped_tests": 0,
+    "coordinate_competence_module": "implemented and ec1c489 source deployed; subsequent local finite-score repair reviewed with 16 focused tests; restage before training",
+    "full_gate_b_complete": false,
+    "checkpoint_selection_implemented": false,
+    "fixtures_are_trained_model_evidence": false,
+    "reproducible_results_report_and_plot": true,
+    "manuscript_evidence_cutoff": "existing 15-page paper remains at earlier cutoff; new audit published separately",
+    "finite_score_repair": {
+      "module_sha256": "c281f4fe87577d7baefe3a6857564da5074d0ad66b56fc24de688ab4dae276be",
+      "tests_sha256": "2f2f09f62e3996b544a8bb14d14a41f02e37aefca647326cf237314e1968376a",
+      "cluster_snapshot_includes_repair": false,
+      "thresholds_changed": false,
+      "numerical_overflow": "explicit ValueError rather than nonfinite JSON or score clamping",
+      "source_commit": "78ce9746b83ee4b1b6b6f48ff1bc641ce59bd8a0"
+    }
   },
   "next_actions": [
-    "independently reduce completed periodicity arrays with precision and probe-floor checks",
-    "finish stage-aware Gate B training integration and coordinate-wise competence validation",
-    "freeze v2 statistics and failed-seed policy before confirmation",
-    "synchronize published source before a separately bounded worker continuation",
-    "restore a Duo-authenticated cluv controller before any renewed cluster allocation"
+    "integrate frozen competence-first training boundaries, gradient/parameter diagnostics and native phase capture",
+    "implement validation-only checkpoint/LR selection without geometry or held-out arm selection",
+    "recover probe clouds/query adapter evidence or explicitly run a separately frozen assay",
+    "freeze v2 effect sizes, uncertainty, multiplicity and failed-seed rules before confirmation",
+    "prepare exact new resource envelope after training integration; no inherited GPU budget"
   ],
-  "latest_verification_evidence": {
-    "runs/ops/autoresearch-live-status-20261012.json": "f29beade63e595c037da3ddf381a21886c0060526314c3feec8a153f2a3aebc6",
-    "runs/ops/autoresearch-cluv-access-20261012.json": "e5340e14db74577d5a1ebb279ea386830b43e2a24fc83f37843fbcc04a9caae8"
-  }
+  "evidence_sha256": {
+    "runs/ops/tamia-restored-cluv-access-system-20261012.json": "3d45f65f5859beda60428cd0c909698bb9eaa0e65dac14fdd8b5b5179df911e9",
+    "runs/ops/continuation-cluv-source-sync-final-20261012.json": "6e8cd7e0cedd4086281149550f1feaaace3e40eb1b8e201f4f2b4d448c231d67",
+    "runs/ops/continuation-cluv-source-sync-mila-20261012.json": "3477c07d76d13914bf5938f4471a73929aa6123b05f806fb5c9e9590118ea601",
+    "runs/ops/continuation-checkpoint-integrity-20261012.json": "2e1c6662da1d0d36057716f8e634f336ab4eb587736215a5afb27bffda18644b",
+    "runs/ops/periodicity-independent-reduction-612745-20261012.json": "7d1676cadeb0aa0db143aa9f6ee5566db64f2ae0f4ac0106e61839be5da79562",
+    "runs/ops/periodicity-reduction-review-20261012.json": "f7373aa3e1e9bc3a7a503db864af8efcdf76c8fc2ad605f2cda22b9ee193915b",
+    "runs/ops/qwen-continuation-launch-20261012.json": "6d216023ba4d5a6322e3ba440076db5d971cc225e2ff34c3e84fbd32533b5434",
+    "runs/ops/qwen-continuation-live-20261012.json": "f8c1db7a6eef7bbbb52213a2b90ba0a37e3fd70778cf310a09464e55d12406dd",
+    "runs/ops/qwen-evidence-refresh-20261012.json": "bc0bda10a6fa84c8824e8ce517047493bc72389fc815baa026b22fc3d6847505",
+    "runs/ops/restored-continuation-tests-20261012-final.log": "a5a60adaeb85d8df1526f020a64f2b136d3fd6e091fd1e8725c1d212800d2d31",
+    "runs/ops/restored-continuation-tests-20261012-repaired.log": "e45fe4d1b3e64e71b41b7701073685643148e506b5ef7cf05656d85bbaf522f4",
+    "runs/ops/competence-independent-review-20261012.json": "28e99e27b74d960ef136efa7125b6015d68a116426082172d7984519c4e28b6e"
+  },
+  "publication": {
+    "implementation_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+    "continuation_results_commit": "recorded after publication in ignored operations receipt",
+    "tracked_symlinks": 0,
+    "overleaf_merge_preserved": true,
+    "numerical_repair_commit": "78ce9746b83ee4b1b6b6f48ff1bc641ce59bd8a0"
+  },
+  "historical_snapshots": [
+    {
+      "schema_version": 1,
+      "checked_at_utc": "2026-10-12T07:57:42.449596+00:00",
+      "reviewed_document_commit": "eb12ea1c86cbcfb56dbf8ccad95290cdd059b76c",
+      "stopped_pass_commit": "dc5e020a3b7489b8b1abf2191937476a33469f67",
+      "cluster_uv_version": "0.1.5",
+      "live_probe": {
+        "checked_at_utc": "2026-10-12T07:52:56.288357+00:00",
+        "exit_code": 0,
+        "hostname": "login-4.server.mila.quebec",
+        "network_access": "approved read-only SSH",
+        "current_worker_state": "stopped",
+        "recorded_worker_pid_alive": false,
+        "other_qwen_worker_process_found": false,
+        "current_scheduler_state": "Mila queried: no project-name matching jobs; Narval/Rorqual not freshly queried because no reusable cluv connections",
+        "authentication_requested": false,
+        "worker_restarted": false,
+        "cluv_remote_version": "0.1.5",
+        "tamia_controller_probe": "official Tamia alias reached authentication but BatchMode was denied keyboard-interactive login; no Duo requested"
+      },
+      "last_verified_qwen_heartbeat": {
+        "schema_version": 1,
+        "state": "stopped",
+        "updated_at": "2026-10-11T23:28:39.243975+00:00",
+        "elapsed_seconds": 54797.71107839001,
+        "provider_call_attempts": 22,
+        "schema_verified_reviews": 22,
+        "consecutive_provider_errors": 0,
+        "usage_totals": {
+          "prompt_tokens": 114572,
+          "completion_tokens": 11158,
+          "total_tokens": 125730
+        },
+        "unknown_usage_policy": "null if any attempted call omits the relevant usage field",
+        "last_evidence_sha256": "083ea727dfed29054bbb3889c08f3f4ad21b95e7de30bb70a4ebabf1bbea4c22",
+        "stop_reason": "call_cap"
+      },
+      "new_compute_submissions": 0,
+      "model_provider_calls": 0,
+      "scientific_acceptance": false,
+      "periodicity_jobs": {
+        "state": "historically_verified_completed",
+        "verified_on": "2026-10-11",
+        "job_ids": [
+          5254858,
+          5254871,
+          22984956,
+          22984963
+        ],
+        "all_exit_codes": "0:0",
+        "independent_raw_array_reduction": "pending",
+        "server_hash_integrity_verified": true,
+        "evidence": "doc/auto/periodicity-analysis-status.json"
+      },
+      "implementation_workers": {
+        "previous_pass": "stopped per handoff",
+        "followup": "bounded implementation and independent review completed",
+        "diagnostic_utilities": "accepted locally after 48 passing tests",
+        "full_gate_b_complete": false,
+        "source": "src/representation_collapse/diagnostics.py",
+        "tests": "tests/test_diagnostics.py",
+        "git_state": "committed and pushed in 4023674d64c302cc9da3bd8e3616edae7464a95e; no cluster deployment"
+      },
+      "new_docs_cluster_delivery": "Mila source is still 8fce9b064f77ce1616b03e318f83c15d821a8eae; diagnostics and manuscript revisions are published to GitHub but not delivered to this checkout",
+      "verification_evidence": {
+        "path": "runs/ops/20261012-investigation-verification.json",
+        "sha256": "ada6942fac436f9681c459ce21ae0f513b37d8f054aadb247d7549b75fcec93a"
+      },
+      "qwen_terminal_status": {
+        "state": "stopped",
+        "stop_reason": "call_cap",
+        "exit_code": 0,
+        "finished_at": "2026-10-11T23:28:39.245174+00:00",
+        "provider_call_attempts": 22,
+        "schema_verified_reviews": 22,
+        "usage_totals": {
+          "prompt_tokens": 114572,
+          "completion_tokens": 11158,
+          "total_tokens": 125730
+        },
+        "scientific_decision": "pending"
+      },
+      "runtime_recheck_evidence": "runs/ops/autoresearch-live-status-20261012.json",
+      "diagnostics_verification": "runs/ops/diagnostics-repair-verification-20261012.json",
+      "publication": {
+        "remote_main_checked_before_update": "4c0b56e96000bde758f48115254b8a0d1c45e718",
+        "manuscript_commit": "c7c5f44f4a43ad09062752cf6bdb960ef8b2d9f2",
+        "subsequent_owner_overleaf_merge": "4c0b56e96000bde758f48115254b8a0d1c45e718",
+        "overleaf_merge_preserved": true,
+        "tracked_symlinks": 0,
+        "status_update_publication": "Final remote SHA recorded separately in runs/ops/autoresearch-status-publication-20261012.json"
+      },
+      "prior_live_probes": [
+        {
+          "checked_at_utc": "2026-10-12T01:26:44Z",
+          "command": "ssh -oBatchMode=yes -oConnectTimeout=8 -oConnectionAttempts=1 mila hostname",
+          "exit_code": 255,
+          "error": "Control socket Operation not permitted; Mila hostname could not be resolved",
+          "cluv_remote_probe_run": false,
+          "network_access": "restricted",
+          "current_worker_state": "unverified",
+          "current_scheduler_state": "unverified",
+          "authentication_requested": false,
+          "worker_restarted": false
+        },
+        {
+          "checked_at_utc": "2026-10-12T01:50:35.908869+00:00",
+          "exit_code": 0,
+          "hostname": "login-4.server.mila.quebec",
+          "network_access": "approved SSH outside local sandbox",
+          "current_worker_state": "stopped",
+          "current_scheduler_state": "Mila queried: no project-name matching jobs; Alliance not freshly queried",
+          "authentication_requested": false,
+          "worker_restarted": false,
+          "cluv_remote_version": "0.1.5",
+          "tamia_controller_probe": "Mila could not resolve tamia2.tamia.ecpia.ca"
+        }
+      ],
+      "head_at_status_update": "4c0b56e96000bde758f48115254b8a0d1c45e718",
+      "automatic_research": {
+        "has_run": true,
+        "currently_running": false,
+        "state": "stopped_at_call_cap",
+        "worker": "Qwen proposal-only worker on Mila",
+        "started_at_utc": "2026-10-11T08:15:21Z",
+        "finished_at_utc": "2026-10-11T23:28:39.245174+00:00",
+        "elapsed_seconds": 54797.71107839001,
+        "provider_attempts": 22,
+        "schema_verified_reviews": 22,
+        "reported_tokens": 125730,
+        "new_provider_calls_this_update": 0,
+        "proposals_scientifically_accepted": 0,
+        "current_bounds": "initial worker attempt cap and both GPU batch submission caps are consumed; no automatic restart"
+      },
+      "cluv_passive_access": {
+        "checked_at_utc": "2026-10-12T07:54:57.706936+00:00",
+        "controller": "mila",
+        "cluv_version": "0.1.5",
+        "results": [
+          {
+            "cluster": "narval",
+            "access": "no_reusable_master",
+            "reusable_master": false
+          },
+          {
+            "cluster": "rorqual",
+            "access": "no_reusable_master",
+            "reusable_master": false
+          }
+        ],
+        "interactive_authentication": false,
+        "remote_mutations": false,
+        "evidence": "runs/ops/autoresearch-cluv-access-20261012.json"
+      },
+      "model_provider_calls_this_update": 0,
+      "previous_publication": {
+        "checked_at_utc": "2026-10-12T02:01:08.259225+00:00",
+        "github_main_verified_sha": "4023674d64c302cc9da3bd8e3616edae7464a95e",
+        "included_previous_commits": [
+          "eb12ea1c86cbcfb56dbf8ccad95290cdd059b76c",
+          "dc5e020a3b7489b8b1abf2191937476a33469f67"
+        ],
+        "tracked_symlinks": 0,
+        "overleaf_import_retried": false,
+        "skill_discovery": "four regular SKILL.md pointers to canonical instructions"
+      },
+      "local_progress": {
+        "diagnostic_utilities": "implemented and reviewed; 48 tests pass",
+        "manuscript": "15 pages, seven-page main text, four reproducible figures and complete proofs",
+        "literature": "90 bibliography entries and 90 public PDFs; 26 substantive full-text passage reviews",
+        "accepted_harmful_collapse_claim": false,
+        "initial_gpu_pilots": "four historically verified COMPLETED/0:0; all fail native competence",
+        "periodicity_gpu_jobs": "four historically verified COMPLETED/0:0; independent array reduction pending",
+        "new_training_or_experiments_this_update": false
+      },
+      "next_actions": [
+        "independently reduce completed periodicity arrays with precision and probe-floor checks",
+        "finish stage-aware Gate B training integration and coordinate-wise competence validation",
+        "freeze v2 statistics and failed-seed policy before confirmation",
+        "synchronize published source before a separately bounded worker continuation",
+        "restore a Duo-authenticated cluv controller before any renewed cluster allocation"
+      ],
+      "latest_verification_evidence": {
+        "runs/ops/autoresearch-live-status-20261012.json": "f29beade63e595c037da3ddf381a21886c0060526314c3feec8a153f2a3aebc6",
+        "runs/ops/autoresearch-cluv-access-20261012.json": "e5340e14db74577d5a1ebb279ea386830b43e2a24fc83f37843fbcc04a9caae8"
+      }
+    }
+  ],
+  "renewed_provider_call_attempts_observed": 2
 }

@@ -1,5 +1,16 @@
 # Manuscript revision and scientific readiness
 
+Post-manuscript continuation, 2026-10-12: the
+[independent periodicity reduction](periodicity-independent-results.md) is now
+verified and published separately with a reproducible figure. Its finite-time
+contraction and arithmetic-sensitive cue separation remain descriptive, with
+all original competence failures retained. Probe-floor checks and manual QUERY
+arrays are still unavailable. Additive coordinate-wise competence utilities
+are tested; training integration and checkpoint selection remain incomplete.
+The 15-page manuscript below retains its earlier evidence cutoff; its appendix's
+"reduction pending" statement describes that cutoff. No new periodicity result
+has been inserted into the paper or promoted to a Floquet/collapse claim.
+
 The owner requested a more focused, precise conference paper with plots and
 selected a venue-neutral ML format. The new manuscript is **When Does
 Repetition Erase Memory? Identifiability Limits for Recurrent-State Collapse**.

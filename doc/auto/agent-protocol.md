@@ -6,10 +6,14 @@ coordinator with subagents. The setup supports bounded work in active sessions.
 The owner also authorized initial cluv jobs and a proposal-only Qwen cluster
 worker on 2026-10-11. That worker actually ran for about 15.2 hours and produced
 22 reviews, then stopped at its call cap; both GPU batches also completed.
-The 2026-10-12 07:52 UTC live check confirms no active Qwen worker. These
-consumed envelopes do not authorize a recurring dispatcher, additional model
-calls or further allocations. Current evidence and limits are in the tracker,
-dated notebook and ignored approval record.
+The 2026-10-12 07:52 UTC check found that initial worker stopped. After access
+was restored, the owner explicitly approved a separate 24-hour/24-attempt
+proposal-only continuation on Tamia, launched at 09:10:30 UTC and verified
+through an actual identity-matched response. A single CPU array-reduction job
+also completed; no new GPU training or dispatcher was launched. The consumed
+historical envelopes grant no recurring allowance. Current heartbeat evidence,
+limits and transport dependencies are in the tracker, dated notebook and
+ignored approval record.
 
 ## Coordinator responsibilities
 

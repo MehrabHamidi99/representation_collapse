@@ -292,8 +292,8 @@
         "initial_synthetic_engineering_phase",
         "compute_plan"
       ],
-      "status": "completed-awaiting-verification",
-      "scientific_decision": "diagnostic-only-prior-competence-failed",
+      "status": "verified",
+      "scientific_decision": "verified-descriptive-numerical-audit-only; harmful-collapse-inconclusive; Floquet-uncertified",
       "protocol": "configs/experiments/periodicity-analysis-v1.json",
       "deliverable": "Four source/checkpoint-pinned server analyses of state closure, paired cue separation, finite-time full-state tangent spectra and fixed-weight precision replay.",
       "acceptance": [
@@ -301,21 +301,27 @@
         "Step ordering, JVP, finite differences, checkpoint/source/array hashes and exact scheduler IDs independently verified.",
         "All finite-time labels and prior competence failures retained; no certified Floquet or harmful-collapse claim."
       ],
-      "verified_artifacts": [],
+      "verified_artifacts": [
+        "doc/auto/periodicity-independent-results.json",
+        "doc/auto/periodicity-independent-results.md",
+        "doc/auto/figures/periodicity-independent-v1.manifest.json"
+      ],
       "source_revision": "458bc9cfce474b8e11e433e33bf132faf5032387",
       "launch_evidence": "doc/auto/periodicity-analysis-launch.json",
-      "note": "Four jobs completed0:0; worker numerical checks pass. Independent raw-array reduction and scientific review remain pending.",
-      "completion_evidence": "doc/auto/periodicity-analysis-status.json"
+      "note": "Independent array reduction and separate result review passed; 64 tangent windows/1536 step Jacobians/31264 review assertions. All original checkpoints freshly rehashed through native cluv; every original artifact hash matches. Probe-floor and manual-query assays unavailable. One seed per cell; no harmful-collapse or certified Floquet claim.",
+      "completion_evidence": "doc/auto/periodicity-analysis-status.json",
+      "independent_reduction_source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+      "independent_reduction_job_id": 612745
     },
     {
       "node_id": "periodicity_independent_reduction",
       "depends_on": [
         "periodicity_checkpoint_diagnostics"
       ],
-      "status": "planned",
-      "scientific_decision": "pending",
+      "status": "verified",
+      "scientific_decision": "verified-descriptive-numerical-audit-only; harmful-collapse-inconclusive; Floquet-uncertified",
       "role": "independent-raw-array-reduction-and-scientific-review",
-      "protocol": "doc/auto/periodicity-analysis-v1.md",
+      "protocol": "doc/auto/periodicity-independent-reduction-v1.md",
       "design": "doc/auto/experimental-design-v2.md",
       "inputs": [
         "doc/auto/periodicity-analysis-status.json",
@@ -329,8 +335,18 @@
         "Every spectrum retains the finite-time label; no Floquet multiplier, harmful-collapse or competent-memory claim is issued for these failed-competence checkpoints.",
         "A supported/unsupported/inconclusive decision for each of the four frozen diagnostic interpretations is recorded in the dated notebook with discrepancies preserved."
       ],
-      "verified_artifacts": [],
-      "note": "Read-only reduction of existing artifacts; no cluster submission is required for the review itself."
+      "verified_artifacts": [
+        "doc/auto/periodicity-independent-results.json",
+        "doc/auto/periodicity-independent-results.md",
+        "doc/auto/figures/periodicity-independent-v1.manifest.json"
+      ],
+      "note": "Independent array reduction and separate result review passed; 64 tangent windows/1536 step Jacobians/31264 review assertions. All original checkpoints freshly rehashed through native cluv; every original artifact hash matches. Probe-floor and manual-query assays unavailable. One seed per cell; no harmful-collapse or certified Floquet claim.",
+      "independent_reduction_source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+      "independent_reduction_job_id": 612745,
+      "scope_deviations": [
+        "CPU allocation used for reduction under separately bounded one-submission envelope; review remained read-only.",
+        "Shared /tmp working-directory warning preserved; source/numerics verified; future wrapper fixed without rerun."
+      ]
     },
     {
       "node_id": "competence_recovery_discovery",
@@ -351,7 +367,22 @@
       ],
       "verified_artifacts": [],
       "execution_requires": "A new recorded approval envelope; the compute estimate is in doc/auto/experimental-design-v2.md section 8.",
-      "note": "No compute is authorized by this node or by the design document; all GPU submissions in both prior envelopes are consumed."
+      "note": "Constructors, oracle, coordinate gates and score-based eligibility verified locally; training integration/update diagnostics/selection remain pending. No additional GPU allowance.",
+      "local_preparatory_implementation": {
+        "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+        "artifacts": [
+          "src/representation_collapse/diagnostics.py",
+          "src/representation_collapse/competence.py",
+          "tests/test_diagnostics.py",
+          "tests/test_competence.py"
+        ],
+        "full_tests_passed": 82,
+        "training_integration_complete": false,
+        "checkpoint_selection_complete": false,
+        "subsequent_finite_score_repair": "module byte hash and final source commit recorded in current research status; not present in ec1c489 cluster snapshot",
+        "numerical_repair_source_commit": "78ce9746b83ee4b1b6b6f48ff1bc641ce59bd8a0",
+        "numerical_repair_deployed_to_clusters": false
+      }
     },
     {
       "node_id": "mechanism_study_gate_b",
@@ -466,29 +497,62 @@
   ],
   "current_handoff": "doc/october/october12/2026-10-12-progress-report.md",
   "active_allocation": {
-    "phase": "periodicity-analysis-v1",
-    "authorization_source": "Owner: go on and launch periodicity analysis on servers.",
-    "approval_record": "configs/approval.local.json",
-    "max_submissions": 4,
-    "submissions_used": 4,
-    "gpus_per_job": 1,
-    "cpus_per_job": 4,
-    "memory_gib": 16,
-    "walltime_minutes": 15,
-    "max_requested_gpu_hours": 1,
-    "max_concurrent_gpu_jobs": 2,
+    "phase": "qwen-continuation-20261012",
+    "cluster": "tamia",
+    "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+    "max_hours": 24,
+    "max_call_attempts": 24,
+    "owner_explicit_approval": true,
+    "scientific_acceptance": "coordinator only",
+    "proposal_only": true,
+    "paid_fallback": false,
     "training": false,
     "race": false,
-    "automatic_retries": false,
-    "note": "New user-directed checkpoint-only diagnostic batch. Prior initial-training envelope remains exhausted; no transfer of training budget.",
+    "note": "Runtime/call caps and live status govern. No recurring allowance; no new GPU allocation."
+  },
+  "historical_allocations": [
+    {
+      "phase": "periodicity-analysis-v1",
+      "authorization_source": "Owner: go on and launch periodicity analysis on servers.",
+      "approval_record": "configs/approval.local.json",
+      "max_submissions": 4,
+      "submissions_used": 4,
+      "gpus_per_job": 1,
+      "cpus_per_job": 4,
+      "memory_gib": 16,
+      "walltime_minutes": 15,
+      "max_requested_gpu_hours": 1,
+      "max_concurrent_gpu_jobs": 2,
+      "training": false,
+      "race": false,
+      "automatic_retries": false,
+      "note": "New user-directed checkpoint-only diagnostic batch. Prior initial-training envelope remains exhausted; no transfer of training budget.",
+      "submissions_remaining": 0,
+      "source_commit": "458bc9cfce474b8e11e433e33bf132faf5032387",
+      "job_ids": [
+        5254858,
+        22984956,
+        5254871,
+        22984963
+      ],
+      "launch_evidence": "doc/auto/periodicity-analysis-launch.json"
+    }
+  ],
+  "completed_cpu_continuation": {
+    "phase": "independent-periodicity-reduction-v1",
+    "cluster": "tamia",
+    "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+    "job_id": 612745,
+    "max_submissions": 1,
+    "submissions_used": 1,
     "submissions_remaining": 0,
-    "source_commit": "458bc9cfce474b8e11e433e33bf132faf5032387",
-    "job_ids": [
-      5254858,
-      22984956,
-      5254871,
-      22984963
-    ],
-    "launch_evidence": "doc/auto/periodicity-analysis-launch.json"
-  }
+    "cpus": 1,
+    "memory_gib": 2,
+    "walltime_minutes": 10,
+    "gpus": 0,
+    "automatic_retries": false,
+    "state": "COMPLETED",
+    "exit_code": "0:0"
+  },
+  "continuation_note": "Native cluv access restored; all ten source targets staged at ec1c489; independent reduction verified and reviewed; coordinate competence utilities tested. New bounded CPU allowance consumed and separate explicitly approved Qwen proposal worker running. Historical envelopes retained; no new GPU budget."
 }

@@ -517,3 +517,251 @@ current source; renewed allocations need a new concrete compute envelope.
 This status request did not restart either service. Updated tracker, compute
 plan and structured status distinguish historical execution from present
 inactivity. Publication uses the owner's existing commit/push authorization.
+
+
+## Restored-access continuation — 08:38–09:51 UTC
+
+The owner reported restored Tamia/native-cluv access and instructed continuation.
+The coordinator applied the project-ops, experiment-loop, floquet-analysis and
+model-routing skills. Bounded workers owned the independent reducer, additive
+competence implementation, independent numerical review and result/figure
+publication; the coordinator owns integration and scientific acceptance.
+Original graph/Floquet source snapshots and prior reports remain preserved.
+
+### Authentication, immutable source and cluv retrieval
+
+The working route is Mac → Mila → **Tamia3** (`tamia3.tamia.ecpia.ca`), replacing
+the unavailable historical Tamia2 route. Native **cluv 0.1.5** on Tamia3
+verified identity, writable scratch and scheduler/account visibility for all
+nine configured Alliance targets: Tamia, Narval, Rorqual, Fir, Nibi, Trillium,
+Trillium-GPU, Killarney and Vulcan. Mila was verified separately. The restored
+connections use ordinary cluv masters; the old project-private socket override
+was deliberately not applied. No new Duo prompt was needed. A cold scratch
+interpreter attempt timed out; system Python with the pinned ops site path
+completed the same bounded passive audit:
+
+```bash
+cd /scratch/m/mehrab/representation-collapse/source
+PYTHONPATH="$PWD/.venv/lib/python3.11/site-packages" \
+  python3 -S code/ops/verify_cluv_access.py
+```
+
+The source implementation commit **ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901**
+was published to GitHub before execution. A 20 MB project Git bundle, SHA-256
+`626ccd768bf180251e4641c8b99e742cf0c8ce553b298c2b9876e0df34cf5682`,
+provided authenticated-source content where remote private GitHub access was
+unavailable. Isolated source snapshots under
+`representation-collapse/continuations/continuation-20261012-ec1c489/source`
+were staged on all nine Alliance aliases and Mila through native
+`cluv.cli.sync.clone_project` plus a process-local scratch-mirror Git URL
+rewrite. Tamia uses `/scratch/m/mehrab`, the other Alliance targets use
+`/scratch/mehrab`, and Mila uses `/network/scratch/m/mehrab.hamidi`.
+Trillium-GPU shares Trillium's filesystem. All ten final source receipts match
+`ec1c489`; previous checkouts, including Tamia's known untracked helpers, were
+preserved. No global Git/SSH configuration or unrelated project jobs changed.
+
+Two source-sync attempts stopped on controller config type errors before
+completion: mutating the frozen partial config, then supplying a PurePosixPath
+where its validator requires a string. A validated process-local
+`dataclasses.replace(..., project_dir=str(path))` completed synchronization;
+existing bundles/mirrors were retained. These failures were not compute jobs
+or scientific observations. Source staging is not an assertion that every
+cluster has a ready Torch environment.
+
+Native `cluv.cli.sync.fetch_results` retrieved all four existing periodicity
+directories to Tamia scratch. Original arrays and weights stayed on cluster
+storage; only derived numeric audit outputs reached the ignored Mac runtime
+area. The original four training jobs and four diagnostic jobs were freshly
+reconciled as `COMPLETED/0:0`. A subsequent native-cluv read-only byte hash
+check at 09:50:57 UTC verified all four original checkpoints against the frozen
+registry without loading them. Receipts are in ignored
+`runs/ops/tamia-restored-cluv-access-system-20261012.json`,
+`continuation-cluv-source-sync-final-20261012.json`,
+`continuation-cluv-source-sync-mila-20261012.json` and
+`continuation-checkpoint-integrity-20261012.json`.
+
+### One completed CPU audit; no new training
+
+The frozen [independent reduction protocol](../../auto/periodicity-independent-reduction-v1.md)
+was committed before real-cell reduction. The separately recorded continuation
+allows exactly one Tamia submission: account `aip-ioannism`, partition
+`cpubase_bycore_b1`, QOS `normal`, one CPU/2 GiB/ten minutes/zero GPUs,
+no retry or race. Offline NumPy preflight passed with scratch-managed Python
+3.11.13 and the locked environment. Submission used native
+`cluv.cli.submit.submit` from the clean isolated source; its skip-sync option
+followed explicit successful staging. The submitted wrapper arguments were:
+
+```text
+code/ops/periodicity_reduction_job.sh
+  --source-commit ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901
+  --run-id independent-per-v1-20261012-ec1c489
+  --cluster tamia
+```
+
+**Tamia job 612745** ran on `tc11101`, 09:00:41–09:00:55 UTC, and completed
+`0:0` in **14 seconds**. Maximum recorded step RSS was **684,480 KiB**.
+The reducer audited four cells, 64 tangent windows and 1,536 saved step-Jacobian
+evaluations with no consistency errors. Independent result review passed
+**31,264 assertions**, covering spectra, closure, denominators, phase alignment,
+precision/adapter labels and derivative aggregates. All 28 original artifact
+hashes and four original manifests matched prior independently verified bindings.
+The reviewer checked the full derived audit and provenance; the CPU reducer
+performed fresh raw-NPZ arithmetic. Their responsibilities are distinct.
+
+Output is
+`/scratch/m/mehrab/representation-collapse/logs/cluv/tamia_612745/reduction/`.
+Reducer SHA-256 is
+`8c8acfc68ae82baa7f746673ad56ea47be667a4d53cb015e5171c18ad2708bf4`;
+raw report byte hash is
+`dd27cf606a2d0a0598d5018983731225aaa7b341ac331ed56fcfac53264b0c1b`.
+The ignored collected envelope is
+`runs/ops/periodicity-independent-reduction-612745-20261012.json`, SHA-256
+`7d1676cadeb0aa0db143aa9f6ee5566db64f2ae0f4ac0106e61839be5da79562`.
+Independent review receipt is `runs/ops/periodicity-reduction-review-20261012.json`,
+SHA-256 `f7373aa3e1e9bc3a7a503db864af8efcdf76c8fc2ad605f2cda22b9ee193915b`.
+
+Slurm emitted a pre-step working-directory warning for a batch-created `/tmp`
+snapshot. The correct executed reducer/config hashes, successful status and
+consistent audit support numerical acceptance; the operational deviation stays
+recorded. The future wrapper now puts its snapshot in shared scratch and passes
+explicit `srun --chdir`. That fix was not used by job 612745 and was not rerun.
+Bash syntax and seven argument-rejection checks passed. The one-submission
+CPU continuation is consumed; this does not extend either prior GPU allowance.
+
+### Accepted numerical scope and rejected overclaims
+
+The [descriptive report](../../auto/periodicity-independent-results.md),
+[exact scalar summary](../../auto/periodicity-independent-results.json) and
+[vector plot](../../auto/figures/periodicity-independent-v1.pdf) are new verified
+artifacts. Four-panel plots preserve all 128 native paired-cue measurements,
+two driver panels individually, both arms and precisions, with no fabricated
+confidence interval or positive replacement for zero. Regeneration from the
+committed scalar JSON reproduces all derived outputs byte-for-byte. The PDF
+and PNG were visually reviewed; figure provenance includes exact plotted values.
+
+All 64 manual final-12-step tangent gains are below one, roughly 0.00417–0.01264,
+in both forcing arms. Native R16/R32 cue separation is roughly 6.73e-9–2.77e-8
+in FP32 and 1.39e-17–4.54e-17 in FP64; all terminal pairs remain bitwise
+nonidentical and nonzero. Periodic last-cycle blocks pass tolerance at R16/R32,
+with no exact bitwise closure. Controls compare different adjacent driver
+blocks, so their larger closure residuals are not a retained-memory effect.
+LSTM categorical/control panel 1 at R16 provides a manual/native classification
+discrepancy under unchanged tolerances. Complete control bodies need not be
+nested across horizons; R32 has state measurements only, no tangent assay.
+
+**Decision: accept descriptive numerical audit only.** All four checkpoints
+failed native competence, have one seed per cell and only two cue histories.
+The derivative windows use cue zero and manual recurrence. These measurements
+do not establish harmful collapse, population equivalence, a causal mechanism,
+representation dimension, certified Floquet multipliers or cross-modal transfer.
+Manual QUERY arrays and original probe clouds are missing from this schema;
+query-adapter validation is partial and probe-floor robustness is still pending.
+The current paper remains at its earlier evidence cutoff, with this audit
+published separately; no new empirical paper claim was inserted automatically.
+
+### Renewed approved Qwen participation and its limits
+
+Automatic approval review first rejected the proposed renewed provider launch
+because renewed transmission approval was absent. The coordinator presented
+its exact project-excerpt payload, configured Qwen/Cairn destination and
+SSH-forwarding route; the owner answered **“Approve the bounded Qwen run.”**
+No renewed model call preceded that answer. Approval resolved the rejection
+and is recorded only in ignored `configs/approval.local.json`.
+
+The actual Tamia worker launched at **09:10:30 UTC**, PID **524659**, output
+`/scratch/m/mehrab/representation-collapse/runs/qwen-continuation-20261012T091030Z`,
+from source `ec1c489`. Bounds: 24 hours/24 attempts, evidence checks every 60
+seconds, hourly proposals when unchanged, at most 18,000 content characters
+and 2,048 requested output tokens, HTTP timeout 180 seconds, three consecutive
+provider errors stop, no paid fallback. Credentials were delivered via secure
+stdin to process environment; no key/provider endpoint configuration entered Git.
+Encrypted loopback SSH forwarding reuses the existing Mila and Tamia masters;
+other project connections remain intact. Uptime depends on the local proxy
+and these hops remaining alive, so this is not a guarantee of uninterrupted
+24-hour service or a permanent autonomous research dispatcher.
+
+Two actual calls returned the exact requested model
+`Qwen/Qwen3.8-Flash-Next-FP8`, with `finish_reason=stop`, no reasoning-text
+fallback and two schema-valid proposals. At 09:47:47 UTC the PID was live,
+heartbeat state running, zero consecutive errors, and cumulative usage was
+10,683 prompt plus 988 completion tokens (**11,671 total**). Four compact
+verified numerical/competence/coordinator-review packets were delivered to its
+explicit evidence root; call-0002 cited that new feed. Worker observation is
+deterministic; model calls generate proposals only. It cannot train, submit,
+cancel, execute response text or accept scientific claims.
+
+Both proposals remain scientifically unaccepted. Call-0001 proposed Floquet
+exponents without certification and a rank-based stopping rule without support.
+Call-0002 used synthetic analytic simulation to diagnose trained checkpoints,
+blurred normalized MSE units and made a desired failure pattern an acceptance
+condition. Those designs are not executable research protocols. Identity/schema
+verification proves participation, not validity. Current structured status
+preserves the initial stopped 22-call run as history and records this separate
+explicitly approved continuation.
+
+### Local competence work, verification and next node
+
+Additive `competence.py` implements immediate single-WRITE/query, full-prefix
+R0/R1/R2 assays, 128 episodes per required coordinate/arm, native QUERY-phase
+score records, frozen 0.95 categorical and 0.05 population-normalized continuous
+gates, paired raw-error contrasts and validation/test/fixture separation.
+Score-stage eligibility excludes held-out selection and reports remaining
+training obligations. Synthetic oracle fixtures count as zero trained-seed
+units. Fifteen focused tests pass; the full source suite passes **81 tests,
+zero skips, 7.441 seconds**. Receipt:
+`runs/ops/restored-continuation-tests-20261012-final.log`, SHA-256
+`a5a60adaeb85d8df1526f020a64f2b136d3fd6e091fd1e8725c1d212800d2d31`.
+
+The next bounded engineering node is frozen training integration: update
+boundaries, fixed-batch overfit/untouched IID generalization, gradients/parameter
+changes, validation-only checkpoint/LR selection and native three-phase capture.
+Then freeze effect-size, uncertainty, multiplicity and failed-seed rules before
+new confirmation data. Recover probe/query evidence or define a separately
+frozen assay. New GPU training needs an exact prepared allocation after those
+prerequisites; no scientific claim or new allocation follows from Qwen proposals.
+The living tracker, compute plan, cluster route, worker protocol, implementation
+guide and DAG are updated; historical reports and original allocations remain
+preserved. Publication uses the owner's existing commit/push authorization.
+
+
+### Final independent competence repair and handoff
+
+Independent code review identified COMP-001: finite continuous predictions
+can have finite individual squared errors while their FP64 mean reduction or
+population normalization overflows, producing Inf JSON metrics. No false
+competence pass occurred. The fix explicitly rejects nonfinite coordinate,
+aggregate, reference or paired means and normalized scores with `ValueError`;
+it neither clamps scores nor changes thresholds. A regression covers coordinate
+sum, aggregate sum and normalization overflow, with large representable failures
+still reportable. Valid undersampled coordinates retain failed gates and None
+for missing measurements; the existing nonempty-episode contract rejects empty
+batches.
+
+The independent reviewer passed sixteen focused tests and 25 supplemental
+assertions. Sixteen ordinary fixture/finite-failure reports match ec1c489
+exactly as sorted JSON, and overflow rejection emits no unhandled warnings.
+The final full suite passes **82 tests, zero skips, 7.041 seconds**. Repair and
+future shared-scratch wrapper correction are committed as **78ce9746b83ee4b1b6b6f48ff1bc641ce59bd8a0**; all ten
+cluster source snapshots intentionally remain immutable ec1c489. This repair
+must be restaged before new training, and was not the source of CPU job 612745.
+No old outputs were rewritten or rerun.
+
+Final review receipt `runs/ops/competence-independent-review-20261012.json`
+SHA-256 `28e99e27b74d960ef136efa7125b6015d68a116426082172d7984519c4e28b6e`
+preserves the original blocker and its resolution. Full repaired-suite log:
+`runs/ops/restored-continuation-tests-20261012-repaired.log`, SHA-256
+`e45fe4d1b3e64e71b41b7701073685643148e506b5ef7cf05656d85bbaf522f4`.
+Coordinator regeneration of the scalar-derived report/PDF/PNG/manifest was
+byte-identical; all 128 plotted native cue values and source hashes remain
+verified. The plot's PDF SHA-256 is
+`6226d8cac2066ec9ba13ff58c672ee56d82d424df8f85125b0440aa5b8ae2426`.
+
+A fresh Qwen check at **2026-10-12T10:03:04.163200+00:00** found PID 524659 alive,
+heartbeat running, 2 attempts and
+2 schema-verified proposals,
+0 consecutive provider errors.
+The latest evidence contains all four curated continuation packets and the
+latest response cites them. Numerical acceptance remains descriptive only;
+Qwen proposals remain scientifically unaccepted. Runtime/provider configuration
+and local approval records stay ignored. The final results/status publication
+commit and remote main check are recorded separately after pushing.

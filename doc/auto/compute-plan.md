@@ -1,5 +1,28 @@
 # Compute plan: Floquet calibration to multimodal recurrent models
 
+Current continuation, 2026-10-12: restored native cluv 0.1.5 connections on
+Tamia3 verified all nine configured Alliance targets; Mila passed separately.
+Isolated source `ec1c489` is staged on all ten targets, preserving previous
+checkouts. Native `cluv.cli.sync.fetch_results` retrieved the four periodicity
+directories to Tamia scratch. One new bounded CPU audit was submitted through
+`cluv.cli.submit.submit`: Tamia **612745**, account `aip-ioannism`, partition
+`cpubase_bycore_b1`, QOS `normal`, one CPU/2 GiB/ten minutes/zero GPUs,
+one submission/no retry/no race. It completed `0:0` in 14 seconds with maximum
+recorded step RSS 684,480 KiB. The one-submission continuation envelope is
+consumed; previous GPU and worker envelopes remain historical and consumed.
+See the [frozen independent protocol](periodicity-independent-reduction-v1.md)
+and [reviewed descriptive results](periodicity-independent-results.md).
+
+The owner explicitly approved a separate renewed Qwen run on Tamia for at most
+24 hours and 24 HTTP attempts, with 18,000-character project excerpts and no
+paid fallback. It launched at 09:10:30 UTC and its actual first response matched
+the requested model identity. The latest heartbeat/counts are in
+[structured status](research-status-2026-10-12.json). It cannot submit jobs or
+accept claims. Availability depends on the local proxy and encrypted SSH route;
+three consecutive provider failures stop it. No new GPU training is authorized
+by this continuation. Frozen training integration and exact resources must
+precede any subsequent allocation. Entries below retain earlier observations.
+
 Live-check update, 2026-10-12 07:52–07:54 UTC: the automatic Qwen research run
 is **finished, not currently active**. Fresh Mila heartbeat/status and process
 checks confirm 22 verified proposals, 125,730 reported tokens and the normal
@@ -11,7 +34,7 @@ retain their historically verified completed outcomes. No new compute or model
 call was made. Initial worker attempts and both GPU batch submission caps are
 consumed. The current GitHub manuscript and Overleaf merge are preserved locally;
 Mila source remains `8fce9b0`. See [current status](research-status-2026-10-12.json).
-The observations below are historical and do not supersede this check.
+That observation was superseded by the restored-access continuation above.
 
 Live-check update, 2026-10-12 01:50 UTC: approved SSH access reaches Mila.
 The earlier failure was the local sandbox. Qwen stopped normally at

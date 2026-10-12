@@ -1,0 +1,644 @@
+{
+  "command": ".venv/bin/python code/analysis/summarize_periodicity.py",
+  "full_report_hashes": {
+    "canonical_embedded_report_sha256": "740092cac48d1e14f2e1374b7e99b57531d9460818124dc453126ab6ae757495",
+    "envelope_sha256": "7d1676cadeb0aa0db143aa9f6ee5566db64f2ae0f4ac0106e61839be5da79562",
+    "hash_convention": "Original report hash is coordinator-verified remote bytes; canonical embedded hash uses sorted compact JSON.",
+    "original_report_sha256": "dd27cf606a2d0a0598d5018983731225aaa7b341ac331ed56fcfac53264b0c1b"
+  },
+  "outputs": {
+    "doc/auto/figures/periodicity-independent-v1.pdf": "6226d8cac2066ec9ba13ff58c672ee56d82d424df8f85125b0440aa5b8ae2426",
+    "doc/auto/figures/periodicity-independent-v1.png": "2d37b61b55719f261879e2eaeed833b9c48396b72a3dee17879720a05fa7fd44",
+    "doc/auto/periodicity-independent-results.md": "52381e4f3f10ee2183953a71b489fd4365e73bae0e2dc056eff3cf31c3d7e0be"
+  },
+  "plotting_values": [
+    {
+      "arm": "periodic",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        3.345362162317775e-05,
+        2.122796783979335e-07,
+        1.551351557092263e-08,
+        1.628756549793173e-08
+      ],
+      "panel": 0,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "control",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        3.345362162317775e-05,
+        2.0850656880210573e-07,
+        1.5209028026135737e-08,
+        1.5264619202400398e-08
+      ],
+      "panel": 0,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "periodic",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        3.344834225170515e-05,
+        2.1119779938129397e-07,
+        2.2908245196459332e-17,
+        2.5950792903531205e-17
+      ],
+      "panel": 0,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "control",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        3.344834225170515e-05,
+        2.1147653174127792e-07,
+        2.2792046907885705e-17,
+        1.7223571865131772e-17
+      ],
+      "panel": 0,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "periodic",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        2.092895894519353e-05,
+        9.598379746646284e-08,
+        1.3180276219346807e-08,
+        1.6248827798456776e-08
+      ],
+      "panel": 1,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "control",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        2.092895894519353e-05,
+        9.431269035252117e-08,
+        1.617652056611377e-08,
+        2.1731364621517004e-08
+      ],
+      "panel": 1,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "periodic",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        2.0918240247619625e-05,
+        9.210517984144504e-08,
+        1.85249513030145e-17,
+        2.7007191027825816e-17
+      ],
+      "panel": 1,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "control",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        2.0918240247619625e-05,
+        9.173624527940431e-08,
+        1.9811328767448454e-17,
+        2.7748798524668257e-17
+      ],
+      "panel": 1,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "periodic",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        6.687807313656088e-06,
+        5.799624509754953e-08,
+        1.5957075807929525e-08,
+        1.2695276329082374e-08
+      ],
+      "panel": 0,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "control",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        6.687807313656088e-06,
+        6.146577580399784e-08,
+        1.6549027639193356e-08,
+        1.565929427309156e-08
+      ],
+      "panel": 0,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "periodic",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        6.6823678107072705e-06,
+        5.4474838494199816e-08,
+        2.0812163712382152e-17,
+        2.0607828586852037e-17
+      ],
+      "panel": 0,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "control",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        6.6823678107072705e-06,
+        5.449384304347143e-08,
+        1.3898101731068107e-17,
+        3.815221022085381e-17
+      ],
+      "panel": 0,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "periodic",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        5.118625260452264e-06,
+        4.934072084366788e-08,
+        1.2531869113412787e-08,
+        9.304319808530622e-09
+      ],
+      "panel": 1,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "control",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        5.118625260452264e-06,
+        4.419041700731476e-08,
+        6.73300936396846e-09,
+        2.2955046661437564e-08
+      ],
+      "panel": 1,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "periodic",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        5.118828398774213e-06,
+        4.0592686050668456e-08,
+        2.4702707854455307e-17,
+        2.2235534288579633e-17
+      ],
+      "panel": 1,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "control",
+      "model": "gru",
+      "native_complete_state_pre_query_separation_l2": [
+        5.118828398774213e-06,
+        4.0630457088136866e-08,
+        2.0436060571842592e-17,
+        1.6450244815892524e-17
+      ],
+      "panel": 1,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "periodic",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        4.8271456144093265e-06,
+        2.132943468782222e-08,
+        2.1420913501051883e-08,
+        2.0964638775038234e-08
+      ],
+      "panel": 0,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "control",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        4.8271456144093265e-06,
+        2.5152517171497442e-08,
+        1.8665161426993326e-08,
+        1.3775069241283152e-08
+      ],
+      "panel": 0,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "periodic",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        4.82943748549495e-06,
+        8.926807484132615e-09,
+        3.99665657279509e-17,
+        4.045901283399904e-17
+      ],
+      "panel": 0,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "control",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        4.82943748549495e-06,
+        8.979739370678047e-09,
+        2.121771809507066e-17,
+        4.5417622411998045e-17
+      ],
+      "panel": 0,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "periodic",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        5.8265361006897534e-06,
+        2.7188169498874592e-08,
+        1.2094222396204474e-08,
+        2.0035078921020027e-08
+      ],
+      "panel": 1,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "control",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        5.8265361006897534e-06,
+        2.6400104349276443e-08,
+        1.9788084714818898e-08,
+        1.6356663430784235e-08
+      ],
+      "panel": 1,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "periodic",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        5.83483878476619e-06,
+        1.1420098986699833e-08,
+        3.6736179178197974e-17,
+        4.2704715339600926e-17
+      ],
+      "panel": 1,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "control",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        5.83483878476619e-06,
+        1.1397356498919115e-08,
+        3.4523327923617255e-17,
+        3.189886044093962e-17
+      ],
+      "panel": 1,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "categorical"
+    },
+    {
+      "arm": "periodic",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        2.3897217139475186e-06,
+        2.623535977453707e-08,
+        1.9784445938155964e-08,
+        1.644552494503271e-08
+      ],
+      "panel": 0,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "control",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        2.3897217139475186e-06,
+        2.568866044736135e-08,
+        2.0416357809387055e-08,
+        2.427373307837549e-08
+      ],
+      "panel": 0,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "periodic",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        2.3873251689348057e-06,
+        7.14707900039848e-09,
+        3.2709571076463804e-17,
+        3.75602147066595e-17
+      ],
+      "panel": 0,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "control",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        2.3873251689348057e-06,
+        7.152033533712423e-09,
+        3.4997088978009375e-17,
+        3.5084529866058283e-17
+      ],
+      "panel": 0,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "periodic",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        1.6068839763251968e-06,
+        2.7910334415675907e-08,
+        2.2756293455581167e-08,
+        1.9130263734404817e-08
+      ],
+      "panel": 1,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "control",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        1.6068839763251968e-06,
+        2.6016162951997014e-08,
+        2.6887491899515405e-08,
+        2.767095275914712e-08
+      ],
+      "panel": 1,
+      "precision": "float32",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "periodic",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        1.6082552751882611e-06,
+        4.760782882299544e-09,
+        2.7415379012373853e-17,
+        2.920558596579598e-17
+      ],
+      "panel": 1,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    },
+    {
+      "arm": "control",
+      "model": "lstm",
+      "native_complete_state_pre_query_separation_l2": [
+        1.6082552751882611e-06,
+        4.752784244390554e-09,
+        2.839360205159152e-17,
+        2.694827248041088e-17
+      ],
+      "panel": 1,
+      "precision": "float64",
+      "repeats": [
+        1,
+        2,
+        16,
+        32
+      ],
+      "task": "continuous"
+    }
+  ],
+  "scale": {
+    "x": "base-2 log",
+    "y": "base-10 log, absolute unnormalized L2",
+    "y_limits": [
+      1e-18,
+      0.0001
+    ],
+    "zero_count": 0,
+    "zero_rendering": "Separate exact-zero strip if any; no artificial positive floor."
+  },
+  "schema_version": 1,
+  "scientific_acceptance": false,
+  "source_hashes": {
+    "code/analysis/summarize_periodicity.py": "789555ed735f4ce54fa5faf8c51674b7171d2a1db84df216971fc8004dbf889d",
+    "doc/auto/periodicity-independent-results.json": "3221cd0a1a0e487108670ba05bfb81ffcbd8e2891af82d0bcaf17869372cc8e0"
+  },
+  "versions": {
+    "matplotlib": "3.11.2",
+    "python": "3.11.13"
+  }
+}

@@ -2,10 +2,47 @@
 
 The [worker](../../code/ops/qwen_worker.py) is a real OpenAI-compatible Qwen
 client, implemented using the Python standard library. The coordinator launches
-it on Mila with the already verified backend supplied through environment
+it on the recorded cluster with the verified backend supplied through environment
 variables. This document and the [launch recipe](../../configs/qwen-worker.example.json)
 contain no endpoint values or credentials. Creating these files does not launch
 a process or make a model call.
+
+## Renewed Tamia continuation — 2026-10-12
+
+The owner explicitly approved a **separate 24-hour/24-attempt run**, including
+the bounded project-excerpt payload, configured backend destination and
+encrypted SSH forwarding. Automatic approval review initially rejected the
+renewed launch because that transmission approval was missing; no call was
+made before the explicit reply. The reply resolved the rejection.
+
+The worker launched at **09:10:30 UTC** on Tamia3, PID **524659**, from clean
+source `ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901`. Output is
+`/scratch/m/mehrab/representation-collapse/runs/qwen-continuation-20261012T091030Z`.
+Its first two actual replies matched `Qwen/Qwen3.8-Flash-Next-FP8`, finished
+with `stop` and passed the response schema; no provider errors were recorded.
+The latest counts, usage and heartbeat timestamp are in
+[structured status](research-status-2026-10-12.json). The first run's 22-call
+cap remains historical and consumed; it was a launch allocation, not a Qwen
+provider restriction. This renewed allowance is neither recurring nor unlimited.
+
+The evidence feed contains bounded verified numerical summaries and coordinator
+corrections under project scratch, alongside the immutable source documents.
+The second reply cited that feed, demonstrating consumption of new evidence.
+Both proposals remain scientifically unaccepted: the first suggested Floquet
+exponents without certification and an unsupported rank stopping rule; the
+second proposed synthetic simulation to diagnose a trained checkpoint and
+confused raw with population-normalized error gates. Schema validity and model
+participation do not establish research quality. No proposal text was executed.
+
+Availability requires the Mac's local proxy and both encrypted SSH hops to
+remain live. The worker's runtime/call caps and three-error stop rule still
+apply; these dependencies prevent a promise of uninterrupted 24-hour service.
+The forwarding does not alter shared SSH configuration or close other projects'
+masters. Credentials were delivered only into the worker environment; provider
+configuration remains outside Git. This worker watches evidence and writes
+proposals, with no training, submission, cancellation or claim-acceptance role.
+
+## Worker contract
 
 Invoke it with `python3 code/ops/qwen_worker.py --project PROJECT --output NEWDIR
 --cluster LOCAL_CONTROLLER_CLUSTER --max-hours 24 --max-calls 24 --interval 60

@@ -32,7 +32,10 @@ Evidence records: [initial-phase report](auto/initial-phase-report.md),
 [independent scientific review](auto/initial-phase-scientific-review.md),
 [compact results](auto/initial-phase-results.json),
 [periodicity launch](auto/periodicity-analysis-launch.json) and
-[status](auto/periodicity-analysis-status.json).
+[original completion status](auto/periodicity-analysis-status.json),
+[independent numerical reduction and plot](auto/periodicity-independent-results.md),
+[frozen reduction protocol](auto/periodicity-independent-reduction-v1.md),
+and [current research/worker status](auto/research-status-2026-10-12.json).
 
 Operations: [compute plan](auto/compute-plan.md),
 [cluster access](auto/cluster-access.md), [agent protocol](auto/agent-protocol.md),
