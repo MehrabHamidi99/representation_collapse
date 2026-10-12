@@ -374,3 +374,15 @@ GitHub SSH authentication failed public-key validation; the existing HTTPS
 push route successfully read remote main at `8fce9b0`. Publication uses that
 configured HTTPS route, with a normal fast-forward push. Ignored approvals,
 credentials, runtime receipts and cluster artifacts stay outside the commits.
+
+Publication completed: `4023674d64c302cc9da3bd8e3616edae7464a95e` was
+committed and pushed normally to GitHub main, advancing `8fce9b0..4023674`.
+This also published the previously local `eb12ea1` and `dc5e020` document
+commits. A fresh HTTPS `git ls-remote` confirms the exact main SHA. The
+committed tree contains zero mode-120000 entries; four regular skill discovery
+entries retain matching frontmatter and valid canonical targets. Checks resolve
+130 relative links in changed Markdown, confirm no inherited-snapshot edits or
+ignored runtime/approval files in the index, and pass `git diff --check`.
+The prior 48/48 test result remains applicable: no further source changes were
+made during the import fix. This publication note is a follow-up documentation
+commit. The actual Overleaf import has not been retried from this session.

@@ -30,7 +30,10 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   the canonical instructions. `paper/main.tex` is the current manuscript
   entrypoint. Qwen's 22-call cap was a coordinator launch choice: the original
   24-call bound minus two earlier attempts, not a provider restriction.
-  Publication and validation evidence is appended to the latest notebook.
+  Commit `4023674` was pushed to GitHub main, including the previous
+  document commits `eb12ea1` and `dc5e020`. A fresh remote ref check confirms
+  the publication; the tree has zero symlinks. Evidence is appended to the
+  latest notebook.
 - **Submission framing consolidated — documents only, no new empirical result
   (2026-10-12).** The [research charter](auto/research-charter.md) is now the
   canonical statement of the question, hypotheses, estimands, claims,

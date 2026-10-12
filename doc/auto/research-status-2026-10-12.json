@@ -58,7 +58,7 @@
     "full_gate_b_complete": false,
     "source": "src/representation_collapse/diagnostics.py",
     "tests": "tests/test_diagnostics.py",
-    "git_state": "staged; not committed or deployed"
+    "git_state": "committed and pushed in 4023674d64c302cc9da3bd8e3616edae7464a95e; no cluster deployment"
   },
   "new_docs_cluster_delivery": "Mila source remains 8fce9b064f77ce1616b03e318f83c15d821a8eae; new commits not delivered to this checkout",
   "verification_evidence": {
@@ -92,5 +92,16 @@
     "scientific_decision": "pending"
   },
   "runtime_recheck_evidence": "runs/ops/qwen-recheck-20261012.json",
-  "diagnostics_verification": "runs/ops/diagnostics-repair-verification-20261012.json"
+  "diagnostics_verification": "runs/ops/diagnostics-repair-verification-20261012.json",
+  "publication": {
+    "checked_at_utc": "2026-10-12T02:01:08.259225+00:00",
+    "github_main_verified_sha": "4023674d64c302cc9da3bd8e3616edae7464a95e",
+    "included_previous_commits": [
+      "eb12ea1c86cbcfb56dbf8ccad95290cdd059b76c",
+      "dc5e020a3b7489b8b1abf2191937476a33469f67"
+    ],
+    "tracked_symlinks": 0,
+    "overleaf_import_retried": false,
+    "skill_discovery": "four regular SKILL.md pointers to canonical instructions"
+  }
 }
