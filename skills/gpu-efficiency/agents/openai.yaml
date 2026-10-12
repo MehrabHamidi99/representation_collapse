@@ -1,0 +1,4 @@
+interface:
+  display_name: "GPU Efficiency"
+  short_description: "Diagnose GPU waste and validate efficient cluster runs"
+  default_prompt: "Use $gpu-efficiency to audit these owned GPU jobs and propose a measured, scientifically valid improvement."

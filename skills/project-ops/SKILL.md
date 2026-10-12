@@ -93,3 +93,14 @@ three were used including the failed Mila attempt. This is not a recurring allow
 Future GPU count, walltime, model/data scope and concurrency follow measured
 pilot needs and the approved research plan. Never import the template's
 four-H100 allocation policy or other projects' remaining budgets.
+
+
+## GPU efficiency
+
+Before GPU admission, scaling or utilization diagnosis, read the complete
+[gpu-efficiency skill](../gpu-efficiency/SKILL.md) and
+[guideline](../gpu-efficiency/GUIDELINES.md). Apply measured useful throughput,
+phase timing and per-device telemetry within this project's resource envelope.
+Keep frozen batch/loss, precision and recurrence measurements fixed; a proposed
+scientific change follows its separate protocol. Missing measurements are
+unknown, and a low percentage alone does not authorize cancellation.

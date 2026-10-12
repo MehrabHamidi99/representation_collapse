@@ -13,6 +13,17 @@ Mehrab Hamidi. Remote: `git@github.com:MehrabHamidi99/representation_collapse.gi
    `skills/experiment-loop/SKILL.md`.
 4. Before cluster operations read `skills/project-ops/SKILL.md` and
    `doc/auto/compute-plan.md`; recheck the actual scheduler and cluv version.
+5. For GPU admission, scaling or utilization diagnosis, read the complete
+   `skills/gpu-efficiency/SKILL.md` and `GUIDELINES.md`. Shared copies are at
+   `/Users/mehrabhamidi/.agents/skills/gpu-efficiency/` locally and
+   `/home/mila/m/mehrab.hamidi/.agents/skills/gpu-efficiency/` on Mila. Existing
+   workers must explicitly re-read them after an update. Require measured useful
+   throughput and per-device evidence, or a documented justified exception,
+   before new long GPU jobs/sweeps. Preserve this project's frozen batch/loss,
+   precision, chronology, source identity, ownership, budgets and stop/resume
+   authority. Missing telemetry remains unknown; utilization alone does not
+   authorize cancellation or scientific changes. Originating-project examples
+   and permissions in the shared package do not transfer to this project.
 
 ## Scientific invariants
 
