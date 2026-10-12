@@ -12,8 +12,8 @@ status follows [the tracker](../TRACKER.md) and the dated notebook.
 At the owner's request, the paper is now a compact, venue-neutral methodological
 study titled **When Does Repetition Erase Memory? Identifiability Limits for
 Recurrent-State Collapse**. It presents established analytic nulls and explicit
-counterexamples, a matched-order experiment, and the verified failed-acquisition
-pilot audit. It does not claim a learned erasure mechanism, an empirical null,
+counterexamples, a matched-order experiment, and the verified pilot audit of
+failed native competence. It does not claim a learned erasure mechanism, an empirical null,
 a new general Floquet theorem or cross-modal transfer. Diagnostic
 non-identifiability means that individual geometric/stability measurements do
 not determine retained task information; it is not a new formal statistical
@@ -48,7 +48,10 @@ separately; analytic nulls fix what ordinary stability can and cannot explain;
 causal interventions with shams decide use. As of this version no trained-model
 claim is accepted: four seed-0 pilots failed short-horizon competence, so the
 harmful-collapse decision is inconclusive, and the checkpoint-only periodicity
-diagnostics are executed but not independently reduced.
+diagnostics have now passed independent numerical reduction and review. Their
+[descriptive measurements](periodicity-independent-results.md) retain the
+competence failures and do not establish harmful collapse or certified Floquet
+dynamics. Subsequent competence-recovery integration is prospective discovery.
 
 ## 2. Research question, sub-questions and gates
 

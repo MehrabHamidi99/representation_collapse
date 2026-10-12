@@ -7,7 +7,25 @@ variables. This document and the [launch recipe](../../configs/qwen-worker.examp
 contain no endpoint values or credentials. Creating these files does not launch
 a process or make a model call.
 
-## Renewed Tamia continuation — 2026-10-12
+## Current verification and continuity repair — 2026-10-12
+
+The Mila-to-Tamia master expired before the latest probe. Current worker
+liveness is unverified; its last successful check was 10:07 UTC. Authentication
+recovery is pending, and no replacement worker has been launched. Before any
+recovery, reconcile the recorded PID, final status and all attempt counters.
+The [lease planner](../../code/ops/qwen_resume_budget.py) subtracts prior calls
+and elapsed time from the original approved 24-hour/24-attempt bounds; unknown
+or live prior processes block a duplicate. This planner never launches or
+grants approval.
+
+A source repair corrects protocol discovery: public JSON protocols live under
+`configs/experiments/`, not the old root-level glob. An explicit public allowlist
+adds the bounded competence integration protocol and keeps approval/provider
+settings excluded. Request limits remain 18,000 characters/2,048 tokens. Four tests
+and independent privacy/budget checks pass. This source repair is published;
+remote deployment remains pending. Existing scientific proposals stay unaccepted.
+
+## Earlier renewed Tamia continuation — 2026-10-12
 
 The owner explicitly approved a **separate 24-hour/24-attempt run**, including
 the bounded project-excerpt payload, configured backend destination and

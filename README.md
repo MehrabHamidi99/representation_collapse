@@ -16,8 +16,13 @@ public T-GRAB benchmark) and currently runs on controlled vector memory tasks.
 **Status (2026-10-12):** no accepted scientific claim. Measurement and mechanism
 calibration pass (infrastructure evidence). Four seed-0 GRU/LSTM pilots failed
 short-horizon competence, so the harmful-collapse decision is inconclusive.
-Checkpoint-only periodicity diagnostics are executed; independent reduction is
-pending. Legacy graph assets are not recovered. See [doc/TRACKER.md](doc/TRACKER.md).
+Checkpoint-only periodicity diagnostics now pass independent numerical reduction
+and review; their finite-time measurements remain descriptive. The competence
+recovery trainer, pinned-validation selector and complete native phase capture
+are implemented and locally reviewed, with new training still pending. Upstream
+graph sources are pinned; legacy checkpoint/data payload provenance remains
+missing. Current Qwen liveness is unverified after an SSH master expired.
+See [doc/TRACKER.md](doc/TRACKER.md).
 
 ## Start here
 
@@ -42,7 +47,7 @@ Agents start at [AGENTS.md](AGENTS.md). The declarative dependency plan is
 | Path | Role |
 | --- | --- |
 | `src/representation_collapse/` | Measurement, calibration, vector task, pilot training and checkpoint periodicity analysis |
-| `tests/` | 48 unit and integration tests |
+| `tests/` | 128 passing unit and integration tests, no skips |
 | `configs/` | Research plan DAG, frozen experiment configurations, cluv examples |
 | `doc/auto/` | Scientific protocols, reviews, evidence records and operations notes |
 | `doc/literature/` | Bibliography, novelty review, reference records |
@@ -62,8 +67,8 @@ uv run --locked python -m representation_collapse.mechanism_calibration --output
 ```
 
 `torch` is in the `experiments` dependency group; a plain `uv sync --locked`
-installs a torch-less environment in which nine tests are skipped. If `uv run`
-cannot import the package (observed on one macOS checkout where `.venv` files
+installs a torch-less environment in which model-dependent tests are skipped.
+If `uv run` cannot import the package (observed on one macOS checkout where `.venv` files
 carry the hidden flag and CPython skips hidden `.pth` files), use
 `PYTHONPATH="$PWD/src" .venv/bin/python` in place of `uv run --locked python`.
 The [diagnostic constructor/oracle guide](doc/auto/diagnostics-implementation.md)

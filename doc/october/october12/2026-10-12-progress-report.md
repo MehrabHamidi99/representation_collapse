@@ -765,3 +765,221 @@ latest response cites them. Numerical acceptance remains descriptive only;
 Qwen proposals remain scientifically unaccepted. Runtime/provider configuration
 and local approval records stay ignored. The final results/status publication
 commit and remote main check are recorded separately after pushing.
+
+
+## Requested continuous research/status iteration — 12:24–13:12 UTC
+
+The owner requested updated status, concrete progress and continuous automatic
+research. The coordinator applied project-ops, experiment-loop, model-routing
+and floquet-analysis, assigning bounded disjoint implementation, native/selection,
+operations and independent review tasks. A subsequent bounded graph-source audit
+advanced asset recovery while remote authentication remained unavailable.
+
+### Current remote status and continuity
+
+At 12:24 UTC, Mac→Mila worked but the Mila→Tamia reusable master was absent.
+BatchMode reached the official Tamia endpoint and was denied keyboard-interactive
+login. One interactive Duo push attempt closed before successful authentication.
+A fresh readiness/push question remains pending; no second unsolicited push,
+worker restart or duplicate was launched. Native cluv **0.1.5** on Mila at
+**12:48:38 UTC** independently reported no reusable Tamia master. This iteration
+cannot establish current Qwen PID, call counter or scheduler state. Its last
+successful liveness check remains **10:07:18UTC**, when PID 524659 was running
+with two verified proposals. Current liveness is **unverified**, not reported as
+running or stopped. Earlier completed scheduler outcomes remain historical;
+no new compute or coordinator provider request occurred in this iteration.
+
+Private route receipts: `runs/ops/autoresearch-route-recovery-20261012.json` and
+`runs/ops/autoresearch-cluv-passive-recovery-20261012.json`. Failed probing output
+is not accepted heartbeat evidence. The public current status preserves the
+older successful snapshot and records the new authentication failure explicitly.
+
+A new deterministic `code/ops/qwen_resume_budget.py` planner requires fresh
+terminal status and absent-process evidence, sums all prior attempts in the
+exact lease, and subtracts elapsed time from the original 24-hour/24-attempt
+allowance. Live, stale, unknown or missing evidence prevents a duplicate. It
+never launches, sends a provider request or grants approval. Renewal does not
+reset the clock or multiply the call allowance. Existing transmission scope
+and configured backend remain unchanged; no paid fallback is added.
+
+Review also found that the worker searched the wrong location for public
+protocols: it globbed `configs/`, whereas actual protocols are under
+`configs/experiments/`. The repaired collector uses an explicit public
+allowlist plus the competence integration document, preserves 18,000 content
+characters/2,048 output tokens, and clarifies native addressed recall in its
+research instruction. Four tests and seven independent mocked privacy/size
+checks pass; private configurations, weights-folder metadata, wrong-cluster
+job IDs and unrelated scheduler jobs remain excluded. No live model/scheduler
+call was made in these checks. This repair is published but not deployed.
+
+### Verified competence training integration
+
+New additive modules provide the bounded trainer, validation-only selector and
+native phase adapter; frozen v1 code/configs and all inherited snapshots remain
+unchanged. The prospective protocol is
+[competence-training-v2.md](../../auto/competence-training-v2.md), with
+`configs/experiments/competence-recovery-v2.json`. The schedule remains at most
+500/500/500/500/1,500 updates. Stage 1 explicitly assigns 100 fixed-batch updates
+(four examples per required coordinate) then 400 fresh IID updates; its overfit
+check is distinct from 128-episode/coordinate validation. A fixed-batch failure
+stops at 100, while stage transitions use current-boundary gates, never a
+historical best checkpoint. Stage 4 records 167/167/166 horizon updates, because
+500 cannot divide equally among three horizons; paired arms are exactly balanced.
+
+Seven validation batches are generated and saved before optimizer construction.
+The six selection-horizon identities are caller-frozen hashes/sampling seeds,
+checked again at evaluation and selection. Native three-phase capture preserves
+all GRU hidden coordinates and both LSTM hidden/cell components. Behavior uses
+uninterrupted full-forward QUERY logits; forked output is a numerical chronology
+check, not a substitute for full native behavior. Pure FP32 training sets and
+records actual TF32/cuDNN/matmul/determinism flags. Gradient, input-gradient and
+per-module update norms, raw native logits, complete phase arrays, failed stages,
+checkpoints and atomic manifests are retained.
+
+Independent review reproduced and repaired INT-001 (validation batches could
+change at selector boundary) and INT-002 (immediate QUERY could target an
+unwritten address). It verifies full R0/R1/R2 coordinate gates, equal-arm/horizon
+CE or raw-MSE selection, earliest-step/frozen-LR-order ties, and exclusions of
+test, geometry and desired arm effects. Targeted tiny GRU/LSTM fits execute one
+actual gradient update and retain early failures; stage 5 bookkeeping is tested
+with explicitly mocked validation. Additional actual untrained R4/R8/R16
+assays verify 2,048 episodes per assay,128 per coordinate and complete finite state.
+These are engineering fixtures, not evidence of learned competence.
+
+The full source suite passes **121 tests, no skips, 12.255 seconds**. Independent
+integration review passes 35 targeted tests plus 75 additional assertions, followed
+by the four worker-evidence tests/seven supplemental checks. Receipt hash:
+`d82727a54af158176e87f5355984be5603637d81312ba68ac34a67c2ce41a7e8`.
+The complete test log SHA-256 is
+`d67f8ab16e7a5814f02c7a1e00ee9da489779438f24834c40ce49c89360bbbf3`.
+Implementation commit **af20702cc3998d2d9793d1a674cdb4e52a787952** was pushed to GitHub before handoff.
+All ten cluster source snapshots remain the earlier immutable ec1c489; this
+new implementation has not yet been staged or executed on a cluster.
+
+### Prepared four-fit canary, not an approved allocation
+
+`configs/experiments/competence-canary-v2.json` prepares GRU/LSTM×categorical/
+continuous, seed 0, LR 0.001, at most 3,500 updates per fit on Fir/Nibi. Requests
+are one GPU/four CPUs/16 GiB/30 minutes per fit, four submissions, two dependency
+chains, maximum two simultaneous jobs and two requested GPU-hours total; no retry,
+requeue, arrays, races or fallback. Architecture is confounded with the chosen
+cluster in this canary. It is four of twelve discovery fits, not a final grid-selected LR
+or confirmation. Both target scheduler/typedGPU/account/cache fields are
+explicitly unverified; no owner allocation approval was manufactured.
+
+The new wrapper snapshots shared scratch with explicit `srun --chdir`, verifies
+source/config/resource/approval bindings, uses locked offline Torch 2.6 and writes
+atomic job provenance/status. The native-cluv submitter defaults to zero remote
+actions and requires exact ignored owner approval plus fresh source/scheduler/
+offline-cache reconciliation. Serial journaling and dependencies prohibit
+unauthorized expansion, duplicate retry and more than two simultaneous jobs.
+OPS-001, an embedded Python indentation error missed by outer compilation,
+was independently found and repaired. All five generated Python snippets now
+compile locally before preview or submission. Independent ops review passes
+**91 checks**; physical Slurm/GPU/cache behavior remains untested. Its receipt
+with a separately labelled coordinator metadata-only annotation has SHA-256
+`db22a5198227f276765b972b3c00606586c86deda0b79921d98e5505f02780d9`.
+Four committed-source cell previews confirm source-ready and zero actions;
+target readiness and approval remain false. Preview command:
+
+```bash
+.venv/bin/python code/ops/submit_competence_recovery.py --cell 0
+```
+
+Exact allocation approval will follow fresh target/account/typedGPU/cache
+verification. The old GPU budgets and completed CPU-audit cap are unchanged.
+No new full-budget training has run, and complete Gate B still lacks competent
+replicas, full-resource/determinism checks, probe/precision/causal measurements
+and the statistics freeze.
+
+### Graph upstream source/metadata progress
+
+A bounded worker pinned T-GRAB source
+`31293102b065feef7817ff86211427d7594edfdb`, dataset metadata revision
+`603388f332c7756f90bc1702b26053c2bc834654`, and PyG-Temporal v0.54.0 tag commit
+`46abd39abec0cd8de23c0e489a617c320c3fc5e8`. The coordinator rechecked all 23 small
+source-file Git blob identities/SHA-256s, API receipts and dependency-cell hash.
+Only 143,542 source bytes plus small public metadata/card files were fetched;
+no dataset, weight, training, package installation or cluster operation.
+[Audit](../../auto/tgrab-upstream-pin-2026-10-12.md) and
+[pin record](../../../configs/graph/tgrab-upstream-pin.json) distinguish
+provider-declared LFS hashes from unverified payload checksums.
+
+Generator semantics are now verified: `(2,1)=AB`, `(2,2)=AABB`. The legacy
+checkpoint's actual condition remains unknown. Complete core state is 2LNH,
+not pooled 2H; pipeline cached z/previous-graph chronology also needs auditing.
+Source inspection verifies a conditional eval-only branch that consumes the
+current target before scoring and consumes it again when no cached z exists;
+ordinary cached z evaluation is explicitly distinguished. Periodic stopping
+checks cached test-F1==1, so a new scientific experiment must independently
+freeze validation-only stopping. These are source findings, not empirically
+reproduced behavior. The repository citation file declares a 2026 KDD DOI;
+publisher verification and bibliography reconciliation remain separate.
+
+### Scientific decision and next actions
+
+Accept the local engineering integration and immutable public source/metadata
+pins. No new harmful-collapse, competent-model equivalence, graph reproduction,
+causal or certified-Floquet claim is accepted. Previously audited periodicity
+measurements remain descriptive, and all original native-competence failures
+remain preserved. Next: restore Duo access and reconcile Qwen before recovery;
+stage the reviewed source and verify selected targets; obtain exact bounded
+canary approval, then run/reduce every outcome; implement tiny graph complete-
+state/chronology/derivative fixtures and recover legacy payload/checkpoint assets.
+The main manuscript remains at its earlier evidence cutoff; no new empirical
+result was inserted. Publication uses the owner's existing commit/push request.
+
+
+## Allocation-envelope review and final integration — 13:33–13:46 UTC
+
+The coordinator and independent reviewer found OPS-002: native cluv's sbatch
+command had no array/federation override, so inherited `SBATCH_ARRAY_INX`,
+`SBATCH_CLUSTERS` or `SLURM_CLUSTERS` could expand or redirect an allocation
+before the batch wrapper examined it. This follows
+[Slurm's input-environment precedence](https://slurm.schedmd.com/sbatch.html#SECTION_INPUT-ENVIRONMENT-VARIABLES).
+No such option was observed on a real frontend; this was a locally demonstrated
+submission-contract gap, not a reported remote allocation.
+
+Repair commit **9e22c6cbb5821200bfafe4c6c41f168677d4691b** rejects configured
+scheduler-input keys and rejects inherited options inside the actual native
+`bash --login -c` body immediately before `sbatch`. Exact native cluv 0.1.5
+command shape is checked, native `submit_job` remains the submission API, and
+both native job records and the serial journal retain the exact guarded command.
+Independent review passes 51 new checks, following 16 checks demonstrating the
+finding; the earlier 91 checks and OPS-001 repair remain recorded. OPS-002 is
+resolved with no implementation blocker. These checks use local stubs and
+mocked remotes, never a real scheduler.
+
+Seven persistent regressions exercise real local Bash with a harmless sbatch
+stub: clean invocation exactly once; inherited options, including empty values,
+prevent any invocation; configured inputs, malformed commands, unexpected
+versions/wrappers and embedded Python failures reject; production execution
+journals the exact guarded command. Twelve independent static checks accept
+the test artifact. The amended ignored review receipt has SHA-256
+`5ba0980039dd333c23c4a133a1347debb6e89049868594388f055f7eb962cdce`;
+prior finding/repair receipts remain in its amendment chain. Local login-profile
+portability is recorded separately from physical Slurm behavior.
+
+The complete source suite now passes **128 tests, no skips**, in 12.649 seconds
+(13.784 seconds measured process wall time). Log:
+`runs/ops/autoresearch-integration-tests-20261012-guarded.log`, SHA-256
+`6741a2e69ec050c8c0aafc7e74de4cd17ccde2044334bbcef6cf51e09250150a`.
+All four guarded-source previews bind commit 9e22c6c and confirm source readiness,
+zero remote actions, unverified targets and no allocation approval. Original
+previews and source/review hashes are preserved rather than overwritten.
+
+No new remote job, coordinator provider call, duplicate Qwen worker or
+scientific training was launched. Tamia liveness remains unverified, last
+successfully checked at 10:07 UTC; fresh Duo authentication is still pending.
+The existing Qwen lease retains its original 24-hour/24-attempt bound. Cluster
+source snapshots are still ec1c489 and need isolated staging before execution.
+The scientific decision remains descriptive-only; failed competence does not
+support harmful collapse. The tracker, dependency plan, prospective protocol,
+source pins and status record are updated. The final publication receipt in
+ignored `runs/ops/` records the verified GitHub revision after the push.
+
+Final passive master check at 2026-10-12T13:49:43.084905+00:00: Mila remains reachable; the
+configured Tamia socket is still absent (`ssh -O check`, exit 255). No Duo was
+requested. The latest ignored receipt is
+`runs/ops/autoresearch-final-passive-master-check-20261012.json`. This confirms
+route unavailability, not a stopped or running Qwen process.

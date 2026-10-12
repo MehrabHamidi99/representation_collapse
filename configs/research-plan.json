@@ -89,8 +89,17 @@
         },
         {
           "path": "doc/auto/graph-reproduction.md",
-          "sha256": "09a18995444879973c0e04465a4a42c77f5ee2d1c615240f8912de96912751e0"
-        }
+          "sha256": "0e78f3682ebc778b492a1d94f148413f9012af0bbfdfd652108c945e91c62fc2",
+          "prior_content_hashes": [
+            {
+              "sha256": "09a18995444879973c0e04465a4a42c77f5ee2d1c615240f8912de96912751e0",
+              "scope": "original graph reproduction contract before the 2026-10-12 upstream source/metadata audit"
+            }
+          ],
+          "revision_note": "2026-10-12 append-only upstream source/metadata follow-up; historical empirical reproduction remains unverified"
+        },
+        "doc/auto/tgrab-upstream-pin-2026-10-12.md",
+        "configs/graph/tgrab-upstream-pin.json"
       ]
     },
     {
@@ -151,7 +160,10 @@
       "recovery_leads": [
         "https://github.com/alirezadizaji/T-GRAB",
         "https://huggingface.co/datasets/Gilestel/T-GRAB"
-      ]
+      ],
+      "upstream_metadata_pin": "configs/graph/tgrab-upstream-pin.json",
+      "upstream_metadata_source_verified": true,
+      "note": "Upstream source/dataset metadata/dependency revisions pinned; AB/AABB source naming resolved. Datasetpayload andlegacycheckpoint/trajectories/environment/analysis provenance remain missing. Node remains blocked for exact empirical reproduction."
     },
     {
       "node_id": "compute_plan",
@@ -353,8 +365,8 @@
       "depends_on": [
         "initial_synthetic_engineering_phase"
       ],
-      "status": "planned",
-      "scientific_decision": "pending",
+      "status": "ready",
+      "scientific_decision": "pending; no new trained outcome",
       "role": "competence-first-training-discovery",
       "protocol": "doc/auto/competence-recovery-plan.md",
       "design": "doc/auto/experimental-design-v2.md",
@@ -367,22 +379,26 @@
       ],
       "verified_artifacts": [],
       "execution_requires": "A new recorded approval envelope; the compute estimate is in doc/auto/experimental-design-v2.md section 8.",
-      "note": "Constructors, oracle, coordinate gates and score-based eligibility verified locally; training integration/update diagnostics/selection remain pending. No additional GPU allowance.",
+      "note": "Staged training with current-boundary gates, uninterrupted native QUERY scores, complete hidden/cell capture and caller-pinned validation selection is locally reviewed. The four-fit canary covers LR 0.001 only; the other eight discovery fits and the remaining Gate B measurements have not run.",
       "local_preparatory_implementation": {
-        "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+        "source_commit": "af20702cc3998d2d9793d1a674cdb4e52a787952",
         "artifacts": [
-          "src/representation_collapse/diagnostics.py",
-          "src/representation_collapse/competence.py",
-          "tests/test_diagnostics.py",
-          "tests/test_competence.py"
+          "src/representation_collapse/competence_training.py",
+          "src/representation_collapse/competence_selection.py",
+          "src/representation_collapse/native_state.py",
+          "configs/experiments/competence-recovery-v2.json"
         ],
-        "full_tests_passed": 82,
-        "training_integration_complete": false,
-        "checkpoint_selection_complete": false,
+        "full_tests_passed": 128,
+        "training_integration_complete": true,
+        "checkpoint_selection_complete": true,
         "subsequent_finite_score_repair": "module byte hash and final source commit recorded in current research status; not present in ec1c489 cluster snapshot",
         "numerical_repair_source_commit": "78ce9746b83ee4b1b6b6f48ff1bc641ce59bd8a0",
-        "numerical_repair_deployed_to_clusters": false
-      }
+        "numerical_repair_deployed_to_clusters": false,
+        "cluster_deployed": false,
+        "allocation_guard_source_commit": "9e22c6cbb5821200bfafe4c6c41f168677d4691b",
+        "current_local_source_commit": "9e22c6cbb5821200bfafe4c6c41f168677d4691b"
+      },
+      "readiness_scope": "Local bounded discovery implementation only; cluster execution awaits authentication, target readiness and exact owner allocation approval."
     },
     {
       "node_id": "mechanism_study_gate_b",
@@ -508,7 +524,9 @@
     "paid_fallback": false,
     "training": false,
     "race": false,
-    "note": "Runtime/call caps and live status govern. No recurring allowance; no new GPU allocation."
+    "note": "Runtime/call caps and live status govern. No recurring allowance; no new GPU allocation.",
+    "current_worker_state": "unverified_authentication_pending",
+    "automatic_restart": false
   },
   "historical_allocations": [
     {
@@ -554,5 +572,15 @@
     "state": "COMPLETED",
     "exit_code": "0:0"
   },
-  "continuation_note": "Native cluv access restored; all ten source targets staged at ec1c489; independent reduction verified and reviewed; coordinate competence utilities tested. New bounded CPU allowance consumed and separate explicitly approved Qwen proposal worker running. Historical envelopes retained; no new GPU budget."
+  "continuation_note": "Bounded competence training/selection integration and allocation guard locally reviewed with 128 passing tests; four cluv canary previews make zero remote actions. Graph source and metadata are pinned. Remote Qwen liveness is unverified because the Tamia SSH master expired; no duplicate worker or GPU submission. Prior numerical outcomes unchanged.",
+  "proposed_next_allocation": {
+    "phase": "competence-canary-v2",
+    "configuration": "configs/experiments/competence-canary-v2.json",
+    "approved": false,
+    "submitted": false,
+    "max_submissions": 4,
+    "max_requested_gpu_hours": 2,
+    "max_concurrent_gpu_jobs": 2,
+    "scope": "partial seed 0 discovery; no final grid selection or scientific acceptance"
+  }
 }

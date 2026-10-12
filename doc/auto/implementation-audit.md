@@ -1,5 +1,15 @@
 # Implementation audit: measurement code versus the written contract
 
+Later continuation, 2026-10-12: bounded staged training, fixed-validation
+checkpoint selection and complete native state capture are now implemented
+and independently reviewed. The full source suite passes 128 tests without
+skips. See the [integration protocol](competence-training-v2.md) and
+[usage guide](diagnostics-implementation.md). The audit below retains its
+original source snapshot; training integration/selection/phase-capture absence
+items are superseded for this additive vector path. New GPU execution,
+full-budget resource validation and the remaining Gate B measurements are
+still pending. No learned competence or collapse finding is accepted.
+
 Continuation, 2026-10-12, source `ec1c489`: additive `competence.py` now
 implements immediate/full-prefix R0/R1/R2 assays, frozen coordinate-wise gates,
 paired score records, fixture/test/validation separation and score-based stage

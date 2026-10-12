@@ -87,3 +87,24 @@ state capture still require integration. No trained checkpoint has passed the
 new gates, and no new training was launched. R16 is outside selection eligibility
 and must remain reportable even if its competence fails. See the prospective
 [competence recovery protocol](competence-recovery-plan.md).
+
+
+## Bounded training integration — 2026-10-12
+
+The [additive trainer](../../src/representation_collapse/competence_training.py)
+now integrates the fixed stage schedule, fixed-batch/IID separation,
+current-boundary gates, gradient/module-change diagnostics and native three-phase
+capture. The [selection module](../../src/representation_collapse/competence_selection.py)
+requires a caller-pinned six-horizon validation manifest before optimization;
+all seven validation batches are saved before the first update. The
+[native adapter](../../src/representation_collapse/native_state.py) preserves
+complete LSTM hidden/cell state and scores uninterrupted QUERY logits, while
+forked execution remains a tolerance-qualified cross-check.
+
+The full source suite passes 128 tests without skips. Independent engineering
+review includes actual untrained R4/R8/R16 native evaluation; local tiny fits
+verify early failure paths, and explicitly mocked validation exercises stage 5
+bookkeeping. Neither proves full-budget GPU throughput or learned competence.
+Complete Gate B still needs resource-verified training, repeat-run determinism,
+probe/precision/causal checks, statistics and independent seeds. Read the
+[prospective integration protocol](competence-training-v2.md) before execution.

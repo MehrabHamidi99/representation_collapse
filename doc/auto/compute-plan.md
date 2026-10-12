@@ -1,6 +1,29 @@
 # Compute plan: Floquet calibration to multimodal recurrent models
 
-Current continuation, 2026-10-12: restored native cluv 0.1.5 connections on
+Current status refresh, 2026-10-12: the Mila-to-Tamia SSH master expired.
+Native cluv 0.1.5 on Mila reports no reusable Tamia master at 12:48 UTC;
+A final passive SSH master check at 13:49 UTC still finds the socket absent.
+Qwen's current liveness is unverified, with its last successful check at 10:07 UTC.
+One Duo attempt closed before login completed; a fresh authentication response
+is pending. No duplicate worker or new allocation was launched. Recovery must
+reconcile all attempts/PID/status and remain within the renewed run's original
+24-hour/24-attempt lease, subtracting failures and elapsed time.
+
+Bounded competence training/selection/native-state integration is now locally
+reviewed with 128 passing tests. The prospective four-fit Fir/Nibi canary requests
+one GPU, four CPUs, 16 GiB and 30 minutes per fit, at most two simultaneous jobs and two requested GPU-hours total;
+no retry/race or final-grid LR selection. The committed
+[canary](../../configs/experiments/competence-canary-v2.json) deliberately leaves
+current scheduler/account/typedGPU/offline-cache fields unverified. This is
+preparation; exact source/config/resource-bound approval follows verified target
+readiness. No new GPU allowance is inferred from the current request.
+The prepared submitter also rejects scheduler-input environment options in the
+actual submission login shell before native `sbatch`; exact command identity
+and the one-job envelope are retained. Local stub checks do not verify physical
+Slurm or offline-cache behavior.
+Earlier observations below retain their timestamps.
+
+Earlier restored-access continuation, 2026-10-12: native cluv 0.1.5 connections on
 Tamia3 verified all nine configured Alliance targets; Mila passed separately.
 Isolated source `ec1c489` is staged on all ten targets, preserving previous
 checkouts. Native `cluv.cli.sync.fetch_results` retrieved the four periodicity

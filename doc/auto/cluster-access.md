@@ -1,6 +1,16 @@
 # Verified cluster access
 
-Current verification, **2026-10-12 08:38 UTC**: native cluv **0.1.5** on
+Later probe, **2026-10-12 12:48 UTC**: the Mac-to-Mila connection still
+works, but the Mila-to-Tamia master has expired. Native cluv 0.1.5 confirms no
+reusable Tamia master from Mila. A Duo attempt closed before successful login;
+current Tamia/Qwen inspection requires restored authentication. A final passive
+SSH master check at 13:49 UTC still finds the configured Tamia socket absent,
+without requesting Duo. The all-nine
+verification and source staging below retain their earlier timestamps and do
+not assert current reusable connectivity. No new allocation or duplicate worker
+was launched during this status check.
+
+Earlier verification, **2026-10-12 08:38 UTC**: native cluv **0.1.5** on
 `tamia3.tamia.ecpia.ca` passed identity, writable scratch and scheduler/account
 checks on all nine configured Alliance targets: Tamia, Narval, Rorqual, Fir,
 Nibi, Trillium, Trillium-GPU, Killarney and Vulcan. Mila was verified through

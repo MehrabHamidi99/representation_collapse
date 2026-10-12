@@ -1,6 +1,17 @@
 # Graph-first reproduction protocol
 
 Version 1, 2026-10-11. Status: protocol ready; empirical reproduction not run.
+
+Source-pin follow-up, 2026-10-12: the
+[bounded upstream audit](tgrab-upstream-pin-2026-10-12.md) and
+[machine-readable record](../../configs/graph/tgrab-upstream-pin.json) now fix
+code, dataset metadata and dependency revisions, and verify AB/AABB generator
+semantics. Dataset payload hashes and the legacy checkpoint remain unverified.
+The audit identifies conditional eval-only current-target warm-start chronology,
+prediction caches beyond the core h/c state, and cached test-F1 participation in
+stopping. New scientific training must freeze validation-only stopping and
+native chronology; a historical reproduction records the original behavior.
+The preparation text below retains the prior source-audit snapshot.
 The goal is to reconstruct the inherited GC-LSTM behavior and then test
 dimension loss with calibrated measurements. Failure to recover a draft's
 numbers is a reportable result, not permission to tune against those numbers.

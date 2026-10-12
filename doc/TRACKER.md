@@ -4,7 +4,32 @@ Updated 2026-10-12. See the [latest notebook entry](october/october12/2026-10-12
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
-- **Restored-access continuation — 2026-10-12, current.** Native cluv 0.1.5
+- **Automatic-research continuation — 2026-10-12, current.**
+  Tamia's SSH master expired; current Qwen liveness is **unverified**. The last
+  successful check was at 10:07 UTC. Native cluv 0.1.5 confirms no reusable Tamia
+  master at 12:48 UTC; a passive SSH check still finds it absent at 13:49 UTC.
+  One Duo attempt closed before login completed. A fresh
+  authentication response is pending. No duplicate worker, renewed provider
+  call by the coordinator or new compute submission was made.
+  Local research advanced substantially: a bounded staged trainer, complete
+  native h/c phase capture and validation-only checkpoint selection are now
+  independently reviewed and published in **af20702**; the submission guard and
+  seven regression tests are committed in **9e22c6c**. All **128 tests pass**,
+  with no skips. Validation batches are pinned before optimization; repaired
+  selection rejects changed manifests and uses uninterrupted QUERY scores.
+  The [prospective training protocol](auto/competence-training-v2.md) and
+  [four-fit canary](../configs/experiments/competence-canary-v2.json) prepare
+  seed 0/LR 0.001 discovery on Fir/Nibi: one GPU/four CPUs/16 GiB/30 minutes per fit,
+  at most two simultaneous jobs and two requested GPU-hours total. Target cache/account/typed GPU
+  verification and exact owner allocation approval are still required;
+  no full-budget training, final LR-grid choice or scientific claim is accepted.
+  The [graph source audit](auto/tgrab-upstream-pin-2026-10-12.md) now pins T-GRAB
+  code, dataset metadata and GC-LSTM dependency, verifies 23 small source files,
+  and resolves upstream AB/AABB notation. Legacy checkpoint/data payload hashes
+  remain missing; graph reproduction has not run. The lease-recovery planner
+  preserves the existing 24-hour/24-attempt Qwen ceiling across retries.
+  [Structured current status](auto/research-status-2026-10-12.json).
+- **Earlier restored-access continuation — 2026-10-12, verified then.** Native cluv 0.1.5
   verified all nine configured Alliance targets from Tamia3; Mila was verified
   separately. All ten targets now have an isolated clean source snapshot at
   `ec1c489`; original checkouts were preserved. Tamia CPU job **612745**

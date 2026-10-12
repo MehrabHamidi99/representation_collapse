@@ -21,8 +21,10 @@ reviews and evidence records are under `auto/`; the literature library is under
 
 Supporting protocols: [measurement contract](auto/research-program.md),
 [competence-recovery ladder](auto/competence-recovery-plan.md),
+[bounded training integration](auto/competence-training-v2.md),
 [checkpoint periodicity protocol v1](auto/periodicity-analysis-v1.md),
 [graph reproduction](auto/graph-reproduction.md),
+[pinned upstream graph audit](auto/tgrab-upstream-pin-2026-10-12.md),
 [source inventory](auto/source-inventory.md). The
 [periodicity research plan](auto/periodicity-research-plan.md) records the
 theoretical and experimental path developed with the owner; its broad

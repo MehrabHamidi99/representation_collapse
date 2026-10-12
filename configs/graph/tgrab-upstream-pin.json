@@ -1,0 +1,303 @@
+{
+  "audited_at": "2026-10-12T13:11:33.570044+00:00",
+  "chronology_and_selection_findings": {
+    "evaluation_normal": "score cached z against current graph, then update from current graph",
+    "evaluation_without_cached_z": "conditional: consume current graph, score current graph, consume it again; not a blanket claim for standard training evaluation",
+    "native_chronology_fixtures_run": false,
+    "source_execution_verified": false,
+    "test_holdout_stopping": "PeriodicTrainer early stop explicitly checks cached test first metric ==1",
+    "training": "previous graph backbone update precedes current graph scoring"
+  },
+  "dataset": {
+    "ab_aabb_file_metadata": [
+      {
+        "bytes_declared": 197498,
+        "locally_verified_sha256": null,
+        "path": "periodicity/periodicity_det_(2, 1)_100N_40tr_4vl_4ts_pER(0.01).csv",
+        "payload_downloaded": false,
+        "provider_declared_lfs_sha256": "ffbae697c173118fe4a5e7d33a883d5293ac2b6aee3120c772239738b4bca5dc",
+        "provider_git_blob_oid": "e99c03878471a0e307980efa421cc53e3af9c98e",
+        "revision": "603388f332c7756f90bc1702b26053c2bc834654",
+        "url": "https://huggingface.co/datasets/Gilestel/T-GRAB/blob/603388f332c7756f90bc1702b26053c2bc834654/periodicity/periodicity_det_%282%2C%201%29_100N_40tr_4vl_4ts_pER%280.01%29.csv"
+      },
+      {
+        "bytes_declared": 406166,
+        "locally_verified_sha256": null,
+        "path": "periodicity/periodicity_det_(2, 2)_100N_40tr_4vl_4ts_pER(0.01).csv",
+        "payload_downloaded": false,
+        "provider_declared_lfs_sha256": "201a6d3f1032090294be7afef8ef29609a9a76eb6e97bed1258db1ac6aa71080",
+        "provider_git_blob_oid": "50c84150c7dead3e8c4edc3bcefbec7403dbc01e",
+        "revision": "603388f332c7756f90bc1702b26053c2bc834654",
+        "url": "https://huggingface.co/datasets/Gilestel/T-GRAB/blob/603388f332c7756f90bc1702b26053c2bc834654/periodicity/periodicity_det_%282%2C%202%29_100N_40tr_4vl_4ts_pER%280.01%29.csv"
+      }
+    ],
+    "card_license_declaration": "apache-2.0",
+    "dataset_payloads_downloaded": false,
+    "format_difference": "public CSV entries; upstream trainer reads generated data.npz; conversion not pinned or validated",
+    "local_payload_checksum_verification": false,
+    "repository": "https://huggingface.co/datasets/Gilestel/T-GRAB",
+    "revision": "603388f332c7756f90bc1702b26053c2bc834654",
+    "revision_verified_from_public_metadata": true,
+    "separate_license_file_present_in_metadata": false
+  },
+  "evidence": {
+    "ignored_directory": "runs/graph/upstream-pin-20261012",
+    "receipts_sha256": {
+      "dataset-card.md": "4a75c1c60f3f060af260458147ed212d1f6af1c960d0371a16d337dc48c3bb00",
+      "github-commit.json": "c2acbc9c2264ff96e035c30b55005c32477d825889a307bafd85b53d8b84b0bc",
+      "github-tree.json": "988078fa03ea98298dd20acdc9e214fa20841bb51c05af2711cbd8573dfe675f",
+      "hf-metadata.json": "c6b519445defa651d88e4ff5247498e13d96d6830d3bf51cd184954cc4421e75",
+      "hf-tree.json": "93fbd4b15f026a1f6821ca277ab24eee0aea9c7b9cec8fa27d0501756ae71225"
+    },
+    "report": "doc/auto/tgrab-upstream-pin-2026-10-12.md"
+  },
+  "gclstm_dependency": {
+    "cell_path": "torch_geometric_temporal/nn/recurrent/gc_lstm.py",
+    "cell_source_sha256": "c3568d2c1ba8926ab43e11c840213f90ebe782ad158dd76809d1dc1c255797af",
+    "cell_url": "https://github.com/benedekrozemberczki/pytorch_geometric_temporal/blob/46abd39abec0cd8de23c0e489a617c320c3fc5e8/torch_geometric_temporal/nn/recurrent/gc_lstm.py",
+    "distribution": "torch_geometric_temporal",
+    "legacy_installed_package_verified": false,
+    "repository": "https://github.com/benedekrozemberczki/pytorch_geometric_temporal",
+    "tag": "v0.54.0",
+    "tag_commit": "46abd39abec0cd8de23c0e489a617c320c3fc5e8",
+    "version_from_upstream_requirements": "0.54.0"
+  },
+  "graph_contract": {
+    "adapter_flattening_proposal": "component,layer,node_id,feature; not implemented/verified",
+    "conditional_source_branch": {
+      "chebyshev_order": 2,
+      "derived_joint_core_dimension": 25600,
+      "hidden_width": 128,
+      "legacy_architecture_identity_verified": false,
+      "nodes": 100,
+      "units": 1
+    },
+    "core_component_shape": "[units,nodes,hidden_width]",
+    "core_state_components": [
+      "hidden",
+      "cell"
+    ],
+    "end_to_end_prediction_state_audit": [
+      "hidden/cell core",
+      "cached node embedding z and its relationship to last hidden output",
+      "previous graph and matching edge weights",
+      "split/start chronology"
+    ],
+    "legacy_AB_or_AABB_checkpoint_resolved": false,
+    "node_order": "integer dataset node IDs; no loader relabeling observed; exact mapping receipt pending",
+    "period_semantics_verified_from_source": {
+      "Pdet_2_1": "AB, two updates",
+      "Pdet_2_2": "AABB, four updates"
+    },
+    "upstream_model": "MultiLayerGCLSTM"
+  },
+  "kind": "tgrab_upstream_source_and_dataset_metadata_pin",
+  "operations": {
+    "cluster_operations": 0,
+    "dataset_payload_downloads": 0,
+    "model_provider_calls": 0,
+    "package_installs": 0,
+    "small_source_and_metadata_fetches_only": true,
+    "training_runs": 0,
+    "weight_downloads": 0
+  },
+  "required_recovery_assets": [
+    "exact legacy dataset bytes/revision and hashes, conversion, masks and pattern manifest",
+    "legacy recurrent/link-head checkpoint bytes and hashes, dimensions, command/config/seed roles and selected epoch",
+    "installed environment and compiled extension hashes plus precision flags",
+    "initial/reset/cached native prediction state and node ordering",
+    "complete-state raw trajectories, phase-aligned graphs and native scores",
+    "plot/tangent analysis code, solver/derivative validation, windows and spectra",
+    "immutable job/run IDs, outcomes and resource receipts"
+  ],
+  "schema_version": 1,
+  "scientific_acceptance": false,
+  "upstream": {
+    "branch_observed": "main",
+    "commit": "31293102b065feef7817ff86211427d7594edfdb",
+    "commit_committer_date": "2026-06-24T00:11:18Z",
+    "license": {
+      "identifier": "Apache-2.0",
+      "legal_recommendation": null,
+      "license_file_inspected": true,
+      "source_file": "LICENSE"
+    },
+    "preferred_citation_metadata": {
+      "doi": "10.1145/3770854.3785699",
+      "pages": "2628-2639",
+      "publisher_page_independently_verified": false,
+      "repository_citation_file_inspected": true,
+      "source": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/citation.cff",
+      "venue": "Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.1",
+      "year": 2026
+    },
+    "ref_and_commit_api_verified": true,
+    "repository": "https://github.com/alirezadizaji/T-GRAB",
+    "source_bytes_fetched": 143542,
+    "source_files": [
+      {
+        "bytes": 11344,
+        "git_blob_sha1": "46505f80b3b1160a7516c307d31fa2f22140f096",
+        "path": "LICENSE",
+        "source_sha256": "346b0c38842100aa5bdd429d33ae3dab36fa68b174da1afa902974b7bdc60633",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/LICENSE"
+      },
+      {
+        "bytes": 1321,
+        "git_blob_sha1": "a119cdad4dcf905def2e08b2ae65ffbe54cc77fc",
+        "path": "citation.cff",
+        "source_sha256": "8942504b5b65271c88368cc4de1dde5431daed756ba75425c42ed7802bf15a9e",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/citation.cff"
+      },
+      {
+        "bytes": 5833,
+        "git_blob_sha1": "fe4f11425c81bf54f3f9dc3a590d5bad5ab566f7",
+        "path": "dataset/CTDG/torch_dataset/link_pred/node_feat_static.py",
+        "source_sha256": "1c379df541ea1a0a66e2eb5e2789e568476ac75db06edd300ba83bc70d634a17",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/dataset/CTDG/torch_dataset/link_pred/node_feat_static.py"
+      },
+      {
+        "bytes": 4463,
+        "git_blob_sha1": "48d845b15b95c62e903dc8332420c546d510d963",
+        "path": "dataset/DTDG/graph_generation/graph_generator.py",
+        "source_sha256": "447028d7c436bcc160c294ed10febe7dd372465d042531335b123c17aaf5e1f0",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/dataset/DTDG/graph_generation/graph_generator.py"
+      },
+      {
+        "bytes": 11108,
+        "git_blob_sha1": "457a9c239550352a97f6b6d15635c715da8128c2",
+        "path": "dataset/DTDG/graph_generation/periodicity.py",
+        "source_sha256": "754cd90de5a3ba0887d73df29391cc62933c479e89f5e5d6960d07b6bd542e54",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/dataset/DTDG/graph_generation/periodicity.py"
+      },
+      {
+        "bytes": 5433,
+        "git_blob_sha1": "d5fc947f4c0757db704660cc0c61175a74ee1e28",
+        "path": "dataset/DTDG/torch_dataset/link_pred/node_feat_static.py",
+        "source_sha256": "de5cbc2996c797df5982ff3e6ba6cd94c59c4da63921f3b8d8185e9b6f602234",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/dataset/DTDG/torch_dataset/link_pred/node_feat_static.py"
+      },
+      {
+        "bytes": 2320,
+        "git_blob_sha1": "a7ec1f93063365dcd095a242b2efa6170291102c",
+        "path": "dataset/DTDG/torch_dataset/link_pred/task_merger.py",
+        "source_sha256": "f909b58c2c6a86884b7e3d96ec540dcf2b9e55a20b91c0a7e23f51b22fdda65c",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/dataset/DTDG/torch_dataset/link_pred/task_merger.py"
+      },
+      {
+        "bytes": 1475,
+        "git_blob_sha1": "7b98bec491348735f9704648d0396a43592c94e3",
+        "path": "model/gclstm.py",
+        "source_sha256": "86069a32fced5f09c60cd795e4f0abd82674dafae250ef3673ac8c3650504609",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/model/gclstm.py"
+      },
+      {
+        "bytes": 781,
+        "git_blob_sha1": "9be4be9d1fced3348555f4fa661e3963735284d4",
+        "path": "model/link_predictor.py",
+        "source_sha256": "cca12cfc73b8660c92236f530504da08ba0b606ec13a1a681ffabcae43b7ca86",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/model/link_predictor.py"
+      },
+      {
+        "bytes": 283,
+        "git_blob_sha1": "e7b382d41c8f24924b76af4e9d2c5d7afb303955",
+        "path": "model/node_emb.py",
+        "source_sha256": "4be4450730f33949e0354348b3bd8f69ba0434e4aa911abec0fc5f798e8c2d29",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/model/node_emb.py"
+      },
+      {
+        "bytes": 337,
+        "git_blob_sha1": "2c49bf6dfd488d3f25800692628cdd8e9a3b5407",
+        "path": "requirements.txt",
+        "source_sha256": "83fe0a3654a0c4eb1460b662ee9bf04f06126bb3841f3ec6feb1a51de1209991",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/requirements.txt"
+      },
+      {
+        "bytes": 551,
+        "git_blob_sha1": "e828d5103a369b553eeaecf88931437e5a2cbfb0",
+        "path": "scripts/dataset/periodicity/fixed_er/_main.sh",
+        "source_sha256": "f3d1b0360a9d95bf6219f58113ecef2dd4dbd5134aa1f3bab4ae91235f83f056",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/scripts/dataset/periodicity/fixed_er/_main.sh"
+      },
+      {
+        "bytes": 1904,
+        "git_blob_sha1": "498612e3f51edc774c11e1c61953f5ca0e965104",
+        "path": "scripts/task/link_pred/periodicity/DTDG/_gclstm.sh",
+        "source_sha256": "6f283f86cf13c3284704f0a215e798330fc6103e9af75dd5153c8c1a4944796b",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/scripts/task/link_pred/periodicity/DTDG/_gclstm.sh"
+      },
+      {
+        "bytes": 39407,
+        "git_blob_sha1": "24f8fd0f372f8582cbbc7ed1f8caa1f839b82715",
+        "path": "scripts/task/link_pred/periodicity/slurm.sh",
+        "source_sha256": "a650ff4e7b9316d76ad06fedf1c53ae0d4d8a728e2f43a97d9577cd3e7ca8dbd",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/scripts/task/link_pred/periodicity/slurm.sh"
+      },
+      {
+        "bytes": 1331,
+        "git_blob_sha1": "1888b08ed60049b6487ac167c2ae111c7b6d5e54",
+        "path": "train/DTDG/gclstm.py",
+        "source_sha256": "25da1dec14b7e634e8a2998bc2bbe131effa270f3b6236d9a90be157bb36cbd4",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/train/DTDG/gclstm.py"
+      },
+      {
+        "bytes": 1453,
+        "git_blob_sha1": "5b18c179212ead01df916f1abd16b12b342abe63",
+        "path": "train/DTDG/link_pred/gclstm.py",
+        "source_sha256": "eb1dec8e81866f1068324e1917bd42535f2c93920c765850d72d3cca5f2da0e3",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/train/DTDG/link_pred/gclstm.py"
+      },
+      {
+        "bytes": 205,
+        "git_blob_sha1": "3f814200320a99c0de3b57be354c38d51aaae019",
+        "path": "train/DTDG/link_pred/periodicity/gclstm.py",
+        "source_sha256": "63a8409b83b42fd91f82614e055d5312330b8e00dee557b26913e44609483ec4",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/train/DTDG/link_pred/periodicity/gclstm.py"
+      },
+      {
+        "bytes": 3692,
+        "git_blob_sha1": "7227691f6d796cd5f074e9e222cf234758492319",
+        "path": "train/DTDG/link_pred/periodicity/trainer.py",
+        "source_sha256": "e25be9b55f4e1f54535e6a4ca7f05232d0236f50c0c5ab3eed0bfdb501c575ec",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/train/DTDG/link_pred/periodicity/trainer.py"
+      },
+      {
+        "bytes": 20931,
+        "git_blob_sha1": "19390efff8b43b8fb20a559c6270b24e076edda2",
+        "path": "train/DTDG/link_pred/trainer.py",
+        "source_sha256": "beada76c5761e771167247afed94ec273dba927ba1bd6167d081b394e14151a7",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/train/DTDG/link_pred/trainer.py"
+      },
+      {
+        "bytes": 2764,
+        "git_blob_sha1": "fd7975ea2c58c5c5d236bae2271a7b5b9a705fe8",
+        "path": "train/DTDG/trainer.py",
+        "source_sha256": "3fe29a1ed63d3f54494b09743f9a9e3d88a76c9d5e9b25a7a95bca0e7b99a91d",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/train/DTDG/trainer.py"
+      },
+      {
+        "bytes": 21423,
+        "git_blob_sha1": "11f362d1f337332994b97a3df2783a8f413f9da5",
+        "path": "train/trainer.py",
+        "source_sha256": "de11f276e58ea09f489b59e6f08e089e277fdbe8f42d3296b21dbf1256257bd2",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/train/trainer.py"
+      },
+      {
+        "bytes": 4167,
+        "git_blob_sha1": "bcd176b45cb60e1b73a08fba2f17d8aa7eaa9d61",
+        "path": "utils/early_stopping.py",
+        "source_sha256": "17294812a5cf3fd3e441509b5332eeec78d53217ab6d64fc99d3f2e928e4d7fc",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/utils/early_stopping.py"
+      },
+      {
+        "bytes": 1016,
+        "git_blob_sha1": "0751ccfdd31bd5c396129cba2befd2d458ae109e",
+        "path": "utils/node_feat.py",
+        "source_sha256": "c26c33871382cfd4128b452cc764239ca23a1d9f0c08c7819cb454b5314a9c26",
+        "url": "https://github.com/alirezadizaji/T-GRAB/blob/31293102b065feef7817ff86211427d7594edfdb/utils/node_feat.py"
+      }
+    ],
+    "source_files_fetched": 23,
+    "tree_truncated": false
+  }
+}

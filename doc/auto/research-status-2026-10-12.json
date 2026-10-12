@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "checked_at_utc": "2026-10-12T10:05:18.443607+00:00",
-  "state": "bounded-restored-access-continuation",
+  "checked_at_utc": "2026-10-12T13:49:43.084905+00:00",
+  "state": "local-integration-published-remote-liveness-unverified",
   "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
   "cluv_version": "0.1.5",
   "cluster_access": {
@@ -23,7 +23,8 @@
     "identity_scratch_scheduler_checks_passed": true,
     "interactive_authentication_requested": false,
     "mila_verified_separately": true,
-    "socket_namespace": "native ordinary restored masters"
+    "socket_namespace": "native ordinary restored masters",
+    "verification_scope": "Historical 08:38 UTC checks of all nine targets; current Tamia controller route is unavailable and these checks do not establish current cluster liveness."
   },
   "source_synchronization": {
     "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
@@ -108,8 +109,8 @@
   },
   "automatic_research": {
     "has_run": true,
-    "currently_running": true,
-    "state": "running",
+    "currently_running": null,
+    "state": "unverified_due_to_expired_ssh_master",
     "cluster": "tamia",
     "pid": 524659,
     "started_at_utc": "2026-10-12T09:10:30.196748+00:00",
@@ -150,7 +151,29 @@
       "artifact:/scratch/m/mehrab/representation-collapse/runs/ops/continuation-evidence/coordinator_review/status.json",
       "artifact:/scratch/m/mehrab/representation-collapse/runs/ops/continuation-evidence/measurement/metrics.json",
       "artifact:/scratch/m/mehrab/representation-collapse/runs/ops/continuation-evidence/reduction/status.json"
-    ]
+    ],
+    "last_successful_verification_at_utc": "2026-10-12T10:07:18.958558+00:00",
+    "latest_probe_at_utc": "2026-10-12T13:49:43.084905+00:00",
+    "latest_probe": "Final passive SSH check through Mila: reusable Tamia socket remains absent; no Duo requested. Current PID, heartbeat, total attempts and scheduler remain unverified.",
+    "restart_performed_this_update": false,
+    "last_verified_heartbeat": {
+      "schema_version": 1,
+      "state": "running",
+      "updated_at": "2026-10-12T10:06:41.715857+00:00",
+      "elapsed_seconds": 3371.3594954089494,
+      "provider_call_attempts": 2,
+      "schema_verified_reviews": 2,
+      "consecutive_provider_errors": 0,
+      "usage_totals": {
+        "prompt_tokens": 10683,
+        "completion_tokens": 988,
+        "total_tokens": 11671
+      },
+      "unknown_usage_policy": "null if any attempted call omits the relevant usage field",
+      "last_evidence_sha256": "c96772a0f0bb7a919f0496c332b5b98942b5532b16ea38297baea7035ba6b4ea",
+      "stop_reason": null
+    },
+    "current_provider_attempt_count": null
   },
   "new_compute_submissions": 1,
   "new_gpu_submissions": 0,
@@ -215,11 +238,11 @@
   "native_competence_established": false,
   "scientific_decision": "Verified descriptive audit only. Both arms show strong local finite-time contraction and precision-sensitive nonzero paired-cue separation. Failed competence, one seed per cell and absent probe/query assays prevent harmful-collapse, causal, empirical-equivalence, certified-Floquet and cross-modal claims.",
   "local_progress": {
-    "full_source_tests_passed": 82,
+    "full_source_tests_passed": 128,
     "skipped_tests": 0,
     "coordinate_competence_module": "implemented and ec1c489 source deployed; subsequent local finite-score repair reviewed with 16 focused tests; restage before training",
     "full_gate_b_complete": false,
-    "checkpoint_selection_implemented": false,
+    "checkpoint_selection_implemented": true,
     "fixtures_are_trained_model_evidence": false,
     "reproducible_results_report_and_plot": true,
     "manuscript_evidence_cutoff": "existing 15-page paper remains at earlier cutoff; new audit published separately",
@@ -230,14 +253,37 @@
       "thresholds_changed": false,
       "numerical_overflow": "explicit ValueError rather than nonfinite JSON or score clamping",
       "source_commit": "78ce9746b83ee4b1b6b6f48ff1bc641ce59bd8a0"
-    }
+    },
+    "training_integration": "bounded additive trainer, native3phase capture and caller-pinned validation selection independently accepted locally",
+    "canary_preparation": "four discovery fits/LR0.001/seed0 proposed; Fir/Nibi scheduler/environment values unverified, no allocation approval or submission",
+    "implementation_source_commit": "af20702cc3998d2d9793d1a674cdb4e52a787952",
+    "cluster_deployment_of_new_integration": false,
+    "validation": {
+      "full_suite_seconds": 12.649,
+      "integration_targeted_tests": 35,
+      "integration_supplemental_checks": 75,
+      "ops_independent_checks": 91,
+      "qwen_evidence_targeted_tests": 4,
+      "qwen_evidence_supplemental_checks": 7,
+      "new_scientific_training_runs": 0,
+      "stage5_test_scope": "explicit mocked native validation bookkeeping; not full-budget trained competence",
+      "full_suite_wall_seconds": 13.784,
+      "ops_environment_finding_checks": 16,
+      "ops_environment_repair_checks": 51,
+      "persistent_allocation_guard_tests": 7,
+      "ops_persistent_test_artifact_checks": 12
+    },
+    "allocation_guard_source_commit": "9e22c6cbb5821200bfafe4c6c41f168677d4691b",
+    "current_local_source_commit": "9e22c6cbb5821200bfafe4c6c41f168677d4691b",
+    "allocation_guard": "configured and inherited scheduler options rejected before native sbatch in the same login shell; independently accepted with local fixtures only"
   },
   "next_actions": [
-    "integrate frozen competence-first training boundaries, gradient/parameter diagnostics and native phase capture",
-    "implement validation-only checkpoint/LR selection without geometry or held-out arm selection",
-    "recover probe clouds/query adapter evidence or explicitly run a separately frozen assay",
-    "freeze v2 effect sizes, uncertainty, multiplicity and failed-seed rules before confirmation",
-    "prepare exact new resource envelope after training integration; no inherited GPU budget"
+    "restore Tamia Duo authentication and reconcile the existing Qwen PID/status/all attempt counters before bounded recovery",
+    "stage the published training code and validate fresh Fir/Nibi scheduler/typed GPU/account/offline cache evidence",
+    "obtain exact source/config/resource-bound owner approval for the prepared four-fit discovery canary",
+    "run and independently reduce all canary fits including failures; no full-grid LR choice from one rate",
+    "build graph full-state/timing fixtures from pinned sources; recover exact legacy checkpoint/data payload provenance",
+    "complete probe/precision/causal/statistical gates before scientific confirmation"
   ],
   "evidence_sha256": {
     "runs/ops/tamia-restored-cluv-access-system-20261012.json": "3d45f65f5859beda60428cd0c909698bb9eaa0e65dac14fdd8b5b5179df911e9",
@@ -251,7 +297,23 @@
     "runs/ops/qwen-evidence-refresh-20261012.json": "bc0bda10a6fa84c8824e8ce517047493bc72389fc815baa026b22fc3d6847505",
     "runs/ops/restored-continuation-tests-20261012-final.log": "a5a60adaeb85d8df1526f020a64f2b136d3fd6e091fd1e8725c1d212800d2d31",
     "runs/ops/restored-continuation-tests-20261012-repaired.log": "e45fe4d1b3e64e71b41b7701073685643148e506b5ef7cf05656d85bbaf522f4",
-    "runs/ops/competence-independent-review-20261012.json": "28e99e27b74d960ef136efa7125b6015d68a116426082172d7984519c4e28b6e"
+    "runs/ops/competence-independent-review-20261012.json": "28e99e27b74d960ef136efa7125b6015d68a116426082172d7984519c4e28b6e",
+    "runs/ops/autoresearch-route-recovery-20261012.json": "6111dec0ef6a9119636c46532c49b781ce268d6887fa508f8dec571b03edec91",
+    "runs/ops/autoresearch-cluv-passive-recovery-20261012.json": "0991655534020c9fd63e7c280b2fd256b22c980f5ecc96b37184f2059725a317",
+    "runs/ops/autoresearch-integration-tests-20261012-final.log": "d67f8ab16e7a5814f02c7a1e00ee9da489779438f24834c40ce49c89360bbbf3",
+    "runs/ops/competence-integration-review-20261012.json": "d82727a54af158176e87f5355984be5603637d81312ba68ac34a67c2ce41a7e8",
+    "runs/ops/competence-ops-review-20261012.json": "5ba0980039dd333c23c4a133a1347debb6e89049868594388f055f7eb962cdce",
+    "runs/ops/tgrab-pin-coordinator-verification-20261012.json": "62da72254d8685258392143dc8aeb6df8b098de0ce0e240d52eb7ef34034da6b",
+    "runs/ops/competence-canary-preview-cell0-20261012.json": "d472c92232d43f8da4334fde1bd75cf310a96c59eff50688636341451156f2d6",
+    "runs/ops/competence-canary-preview-cell1-20261012.json": "6457bc56e6fce6e408fccbbbefd94436a046d4ecb535a14ab75ef027e3f7a0bb",
+    "runs/ops/competence-canary-preview-cell2-20261012.json": "2f6f277833bf327ac876afae0ebe9e630407a48e80fd6ec808abd54d1eb05b95",
+    "runs/ops/competence-canary-preview-cell3-20261012.json": "f438e697b852d1831f75b8a55c32debbfd524906a791bb058ba4c7e5dd3bf5d5",
+    "runs/ops/autoresearch-integration-tests-20261012-guarded.log": "6741a2e69ec050c8c0aafc7e74de4cd17ccde2044334bbcef6cf51e09250150a",
+    "runs/ops/competence-canary-preview-cell0-20261012-guarded.json": "06cbea6ccfa09418a065404bb842875128847d4e3a4cd4cdb1742a0659c125f1",
+    "runs/ops/competence-canary-preview-cell1-20261012-guarded.json": "92b18b7c02aaaa2b022ec9f5703309ea6b6c670779509fdcb834c5b8a25687a2",
+    "runs/ops/competence-canary-preview-cell2-20261012-guarded.json": "c58c5d9cb4add6db2a67cd727b2b4907e140b833999dca112cbafa5dcc7e3f20",
+    "runs/ops/competence-canary-preview-cell3-20261012-guarded.json": "974308d4f6ad6b41f0268dba82812379343702bb118b2f7affa0cf1ff5875505",
+    "runs/ops/autoresearch-final-passive-master-check-20261012.json": "56da87391e36426d0591060f803b2e7acdb2c7ba424a3b8ef39efc364b835b05"
   },
   "publication": {
     "implementation_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
@@ -449,5 +511,85 @@
       }
     }
   ],
-  "renewed_provider_call_attempts_observed": 2
+  "renewed_provider_call_attempts_observed": 2,
+  "live_status_events": [
+    {
+      "recorded_at_utc": "2026-10-12T12:45:03.957813+00:00",
+      "previous_live_checked_at_utc": "2026-10-12T10:03:04.163200+00:00",
+      "previous_currently_running": true,
+      "previous_state": "running",
+      "last_verified_heartbeat": {
+        "schema_version": 1,
+        "state": "running",
+        "updated_at": "2026-10-12T10:02:41.477621+00:00",
+        "elapsed_seconds": 3131.1212371899746,
+        "provider_call_attempts": 2,
+        "schema_verified_reviews": 2,
+        "consecutive_provider_errors": 0,
+        "usage_totals": {
+          "prompt_tokens": 10683,
+          "completion_tokens": 988,
+          "total_tokens": 11671
+        },
+        "unknown_usage_policy": "null if any attempted call omits the relevant usage field",
+        "last_evidence_sha256": "c96772a0f0bb7a919f0496c332b5b98942b5532b16ea38297baea7035ba6b4ea",
+        "stop_reason": null
+      },
+      "probe": "Mila master alive; Tamia master absent; BatchMode denied keyboard-interactive; one Duo push attempt closed before successful login",
+      "current_worker_state": "unverified",
+      "new_worker_launch": false
+    }
+  ],
+  "new_compute_submissions_this_update": 0,
+  "new_gpu_submissions_this_update": 0,
+  "new_provider_calls_by_coordinator_this_update": 0,
+  "canary_preparation": {
+    "configuration": "configs/experiments/competence-canary-v2.json",
+    "protocol": "configs/experiments/competence-recovery-v2.json",
+    "source_commit": "9e22c6cbb5821200bfafe4c6c41f168677d4691b",
+    "fits": 4,
+    "models": [
+      "gru",
+      "lstm"
+    ],
+    "tasks": [
+      "categorical",
+      "continuous"
+    ],
+    "seed": 0,
+    "learning_rate": 0.001,
+    "maximum_updates_per_fit": 3500,
+    "targets": [
+      "fir",
+      "nibi"
+    ],
+    "requested_resources_per_fit": {
+      "gpus": 1,
+      "cpus": 4,
+      "memory_gib": 16,
+      "walltime_minutes": 30
+    },
+    "max_requested_gpu_hours": 2,
+    "max_concurrent_jobs": 2,
+    "race": false,
+    "retry": false,
+    "owner_allocation_approval": false,
+    "target_readiness_verified": false,
+    "submissions": 0,
+    "committed_source_previews_passed": 4,
+    "final_grid_lr_selection": false
+  },
+  "graph_upstream_pin": {
+    "record": "configs/graph/tgrab-upstream-pin.json",
+    "report": "doc/auto/tgrab-upstream-pin-2026-10-12.md",
+    "source_commit": "31293102b065feef7817ff86211427d7594edfdb",
+    "dataset_metadata_revision": "603388f332c7756f90bc1702b26053c2bc834654",
+    "gclstm_dependency_tag_commit": "46abd39abec0cd8de23c0e489a617c320c3fc5e8",
+    "source_files_verified": 23,
+    "dataset_payload_checksums_verified": false,
+    "legacy_checkpoint_recovered": false,
+    "graph_reproduction_run": false,
+    "scientific_acceptance": false
+  },
+  "source_commit_scope": "earlier CPU reduction and staged cluster sources; current local code revision is recorded separately"
 }
