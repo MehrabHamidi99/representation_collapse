@@ -1,7 +1,7 @@
 # Verified cluster access
 
 Later probe, **2026-10-12 12:48 UTC**: the Mac-to-Mila connection still
-works, but the Mila-to-Tamia master has expired. Native cluv 0.1.5 confirms no
+works, but the Mila-to-Tamia reusable master is absent. Native cluv 0.1.5 confirms no
 reusable Tamia master from Mila. A Duo attempt closed before successful login;
 current Tamia/Qwen inspection requires restored authentication. A final passive
 SSH master check at 13:49 UTC still finds the configured Tamia socket absent,

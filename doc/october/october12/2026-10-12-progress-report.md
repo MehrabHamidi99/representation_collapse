@@ -983,3 +983,8 @@ configured Tamia socket is still absent (`ssh -O check`, exit 255). No Duo was
 requested. The latest ignored receipt is
 `runs/ops/autoresearch-final-passive-master-check-20261012.json`. This confirms
 route unavailability, not a stopped or running Qwen process.
+
+Evidence wording clarification: earlier entries described the absent SSH master
+as expired. The directly observed fact is that its reusable control socket is
+absent; the disconnection cause was not established. Living status documents
+now distinguish that observation from the unverified Qwen process state.

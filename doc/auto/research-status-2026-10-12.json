@@ -110,7 +110,7 @@
   "automatic_research": {
     "has_run": true,
     "currently_running": null,
-    "state": "unverified_due_to_expired_ssh_master",
+    "state": "unverified_due_to_missing_ssh_master",
     "cluster": "tamia",
     "pid": 524659,
     "started_at_utc": "2026-10-12T09:10:30.196748+00:00",
@@ -173,7 +173,8 @@
       "last_evidence_sha256": "c96772a0f0bb7a919f0496c332b5b98942b5532b16ea38297baea7035ba6b4ea",
       "stop_reason": null
     },
-    "current_provider_attempt_count": null
+    "current_provider_attempt_count": null,
+    "ssh_disconnection_cause": "not established; only reusable socket absence is directly observed"
   },
   "new_compute_submissions": 1,
   "new_gpu_submissions": 0,

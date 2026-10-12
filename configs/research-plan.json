@@ -572,7 +572,7 @@
     "state": "COMPLETED",
     "exit_code": "0:0"
   },
-  "continuation_note": "Bounded competence training/selection integration and allocation guard locally reviewed with 128 passing tests; four cluv canary previews make zero remote actions. Graph source and metadata are pinned. Remote Qwen liveness is unverified because the Tamia SSH master expired; no duplicate worker or GPU submission. Prior numerical outcomes unchanged.",
+  "continuation_note": "Bounded competence training/selection integration and allocation guard locally reviewed with 128 passing tests; four cluv canary previews make zero remote actions. Graph source and metadata are pinned. Remote Qwen liveness is unverified because the reusable Tamia SSH master is absent; no duplicate worker or GPU submission. Prior numerical outcomes unchanged.",
   "proposed_next_allocation": {
     "phase": "competence-canary-v2",
     "configuration": "configs/experiments/competence-canary-v2.json",

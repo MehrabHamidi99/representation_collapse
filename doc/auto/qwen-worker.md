@@ -9,7 +9,7 @@ a process or make a model call.
 
 ## Current verification and continuity repair — 2026-10-12
 
-The Mila-to-Tamia master expired before the latest probe. Current worker
+The Mila-to-Tamia reusable master is absent at the latest probe. Current worker
 liveness is unverified; its last successful check was 10:07 UTC. Authentication
 recovery is pending, and no replacement worker has been launched. Before any
 recovery, reconcile the recorded PID, final status and all attempt counters.

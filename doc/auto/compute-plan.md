@@ -1,6 +1,6 @@
 # Compute plan: Floquet calibration to multimodal recurrent models
 
-Current status refresh, 2026-10-12: the Mila-to-Tamia SSH master expired.
+Current status refresh, 2026-10-12: the Mila-to-Tamia reusable SSH master is absent.
 Native cluv 0.1.5 on Mila reports no reusable Tamia master at 12:48 UTC;
 A final passive SSH master check at 13:49 UTC still finds the socket absent.
 Qwen's current liveness is unverified, with its last successful check at 10:07 UTC.

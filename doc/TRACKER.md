@@ -5,7 +5,7 @@ the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
 - **Automatic-research continuation — 2026-10-12, current.**
-  Tamia's SSH master expired; current Qwen liveness is **unverified**. The last
+  Tamia's reusable SSH master is absent; current Qwen liveness is **unverified**. The last
   successful check was at 10:07 UTC. Native cluv 0.1.5 confirms no reusable Tamia
   master at 12:48 UTC; a passive SSH check still finds it absent at 13:49 UTC.
   One Duo attempt closed before login completed. A fresh

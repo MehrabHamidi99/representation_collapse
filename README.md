@@ -21,7 +21,7 @@ and review; their finite-time measurements remain descriptive. The competence
 recovery trainer, pinned-validation selector and complete native phase capture
 are implemented and locally reviewed, with new training still pending. Upstream
 graph sources are pinned; legacy checkpoint/data payload provenance remains
-missing. Current Qwen liveness is unverified after an SSH master expired.
+missing. Current Qwen liveness is unverified while the reusable SSH master is absent.
 See [doc/TRACKER.md](doc/TRACKER.md).
 
 ## Start here
