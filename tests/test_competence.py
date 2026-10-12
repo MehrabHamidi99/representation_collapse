@@ -164,7 +164,8 @@ class CompetenceTests(unittest.TestCase):
 
     def test_missing_and_undersampled_coordinates_fail_without_nan(self):
         original = self.batches[R0, "categorical"]
-        for indexes in (np.flatnonzero(original.queries[:1024] != 7), np.arange(1023)):
+        for indexes in (np.flatnonzero(original.queries[:1024] != 7), np.arange(1023),
+                        np.arange(0, 1024, 128), np.array([0])):
             batch = self.subset_pairs(original, indexes)
             result = self.score(batch)
             self.assertFalse(result["coordinate_gate_passed"])
@@ -173,7 +174,15 @@ class CompetenceTests(unittest.TestCase):
             if not row["episodes"]:
                 self.assertIsNone(row["metric"])
                 self.assertIn("missing_coordinate", row["failure_reasons"])
+                self.assertIsNone(result["paired_coordinate_error_differences"][7])
+            if len(indexes) <= 8:
+                self.assertEqual(result["arms"]["periodic"]["failed_coordinates"], list(range(8)))
             json.dumps(result, allow_nan=False)
+        # Empty episode collections violate the renderer's existing nonempty
+        # contract; they cannot reach an aggregate mean of an empty array.
+        empty = self.subset_pairs(original, np.array([], dtype=int))
+        with self.assertRaisesRegex(ValueError, "nonempty"):
+            self.score(empty)
 
     def test_strict_task_phase_seed_and_prediction_validation(self):
         batch = self.batches[R0, "categorical"]
@@ -197,6 +206,27 @@ class CompetenceTests(unittest.TestCase):
                 self.score(continuous, np.full(len(continuous.targets), value))
         with self.assertRaises(ValueError):
             self.score(batch, split="training")
+
+    def test_finite_squared_errors_with_reduction_or_normalization_overflow_rejected(self):
+        batch = self.zero_targets(R0)
+        # Coordinate sums overflow at 1e154; at 1e153 the coordinate scores
+        # remain finite but the 1,024-episode aggregate reduction overflows.
+        for value in (1e154, 1e153):
+            prediction = np.full(len(batch.targets), value)
+            self.assertTrue(np.isfinite(np.square(prediction)).all())
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, "overflowed or is nonfinite"):
+                self.score(batch, prediction)
+        # With one episode per coordinate, mean MSE remains finite but dividing
+        # 6.4e307 by the population variance overflows. Counts cannot hide this.
+        small = self.subset_pairs(batch, np.arange(0, 1024, 128))
+        prediction = np.full(len(small.targets), 8e153)
+        self.assertTrue(np.isfinite(np.square(prediction)).all())
+        with self.assertRaisesRegex(ValueError, "coordinate metric overflowed"):
+            self.score(small, prediction)
+        # Large finite errors with finite reductions remain reportable failures.
+        result = self.score(batch, np.full(len(batch.targets), 1e150))
+        self.assertFalse(result["coordinate_gate_passed"])
+        json.dumps(result, allow_nan=False)
 
     def test_malformed_chronology_target_pairing_and_motif_control_rejected(self):
         batch = self.batches[R2, "categorical"]

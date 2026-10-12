@@ -211,6 +211,21 @@ def _batch_hash(batch: CompetenceBatch) -> str:
     return digest.hexdigest()
 
 
+def _finite_statistic(value: float, name: str) -> float:
+    result = float(value)
+    if not np.isfinite(result):
+        raise ValueError(f"{name} overflowed or is nonfinite")
+    return result
+
+
+def _finite_mean(values: np.ndarray, name: str) -> float:
+    # Finite individual errors do not guarantee a finite float64 reduction.
+    # Reject unresolved overflow instead of returning Inf or clamping a score.
+    with np.errstate(over="ignore", invalid="ignore"):
+        result = np.asarray(values, dtype=np.float64).mean()
+    return _finite_statistic(result, name)
+
+
 def evaluate_competence(batch: CompetenceBatch, predictions: np.ndarray, *,
                         trained_seed: int, checkpoint_id: str,
                         measurement_phase: str, split: str = "validation") -> dict:
@@ -255,8 +270,9 @@ def evaluate_competence(batch: CompetenceBatch, predictions: np.ndarray, *,
             mask = np.asarray(batch.queries)[start:end] == coordinate
             n = int(mask.sum())
             reasons = [] if n == PROTOCOL.episodes_per_coordinate else ["sample_count_mismatch"]
-            mse_or_error = float(error[start:end][mask].mean()) if n else None
-            metric = (1 - mse_or_error if batch.task == "categorical" else mse_or_error / POPULATION_VALUE_VARIANCE) if n else None
+            mse_or_error = _finite_mean(error[start:end][mask], "coordinate mean error") if n else None
+            metric = _finite_statistic(1 - mse_or_error if batch.task == "categorical" else mse_or_error / POPULATION_VALUE_VARIANCE,
+                                       "coordinate metric") if n else None
             metric_passed = metric is not None and (metric >= threshold - allowance if batch.task == "categorical" else metric <= threshold + allowance)
             if not metric_passed:
                 reasons.append("missing_coordinate" if not n else "below_accuracy_threshold" if batch.task == "categorical" else "above_normalized_mse_threshold")
@@ -265,13 +281,23 @@ def evaluate_competence(batch: CompetenceBatch, predictions: np.ndarray, *,
             if batch.task == "continuous":
                 row["raw_mse"] = mse_or_error
                 target = np.asarray(batch.targets)[start:end][mask].astype(np.float64)
-                row["sample_zero_predictor_mse"] = float(np.square(target).mean()) if n else None
+                row["sample_zero_predictor_mse"] = _finite_mean(np.square(target), "sample zero-predictor MSE") if n else None
             rows.append(row)
+        aggregate_error = _finite_mean(error[start:end], "aggregate mean error")
+        aggregate_metric = _finite_statistic(1 - aggregate_error if batch.task == "categorical" else aggregate_error / POPULATION_VALUE_VARIANCE,
+                                             "aggregate metric")
         arm_records[arm] = {"episodes": count, "coordinates": rows,
-            "aggregate_metric": float(1 - error[start:end].mean()) if batch.task == "categorical" else float(error[start:end].mean() / POPULATION_VALUE_VARIANCE),
+            "aggregate_metric": aggregate_metric,
             "passed": all(row["passed"] for row in rows),
             "failed_coordinates": [row["coordinate"] for row in rows if not row["passed"]]}
     passed = all(row["passed"] for row in arm_records.values())
+    paired_differences = None
+    if len(labels) == 2:
+        paired_differences = []
+        for coordinate in REQUIRED_COORDINATES:
+            mask = np.asarray(batch.queries)[:count] == coordinate
+            paired_differences.append(_finite_mean((error[:count] - error[count:])[mask], "paired mean error difference")
+                                      if np.any(mask) else None)
     return {"schema_version": 1, "kind": "native_coordinate_competence", "scientific_acceptance": False,
         "protocol": PROTOCOL.record(), "protocol_sha256": PROTOCOL.sha256, "assay": batch.assay, "task": batch.task,
         "trained_seed": trained_seed, "sampling_seed": int(batch.sampling_seed), "checkpoint_id": checkpoint_id,
@@ -283,7 +309,7 @@ def evaluate_competence(batch: CompetenceBatch, predictions: np.ndarray, *,
         "unique_episode_units": count, "trained_seed_units": 0 if split == "fixture" else 1,
         "fixture_only": split == "fixture",
         "statistical_unit": "synthetic reference fixture; no trained-seed evidence" if split == "fixture" else "one trained seed; paired episodes are within-seed evaluation draws",
-        "paired_coordinate_error_differences": [float((error[:count] - error[count:])[np.asarray(batch.queries)[:count] == c].mean()) if np.any(np.asarray(batch.queries)[:count] == c) else None for c in REQUIRED_COORDINATES] if len(labels) == 2 else None,
+        "paired_coordinate_error_differences": paired_differences,
         "paired_difference_units": "periodic minus control 0/1 error" if batch.task == "categorical" else "periodic minus control raw squared error; not normalized MSE",
         "aggregate_is_diagnostic_only": True,
         "interpretation": "R0 includes later required/nuisance WRITE updates; immediate acquisition is a separate assay" if batch.assay == R0 else "native behavior only; no geometry, tangent or causal-memory conclusion",

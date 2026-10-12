@@ -99,7 +99,9 @@ plain_path "$checkout"
 [[ -z "$(git status --porcelain --untracked-files=all)" ]] || fail 'controller checkout must be clean'
 [[ -z "$(git ls-files -s | awk '$1 == "120000" {print $4}')" ]] || fail 'tracked source symlinks rejected'
 git cat-file -e "${source_commit}^{commit}" || fail 'source SHA absent'
-snapshot_base="${SLURM_TMPDIR:-$job_root}"
+# Tamia step namespaces may not share the batch shell's node-local /tmp.
+# Keep this immutable snapshot on shared project scratch for srun visibility.
+snapshot_base="$job_root"
 plain_path "$snapshot_base"
 [[ -d "$snapshot_base" ]] || fail 'snapshot parent missing'
 snapshot="$snapshot_base/rc-periodicity-reduction-source-$SLURM_JOB_ID"
@@ -167,7 +169,7 @@ PY
 uv sync --locked --offline --no-dev --python "$python_path"
 
 stage='independent_reduction'
-srun --ntasks=1 --cpus-per-task=1 uv run --locked --offline --no-sync python code/analysis/reduce_periodicity.py \
+srun --ntasks=1 --cpus-per-task=1 --chdir="$snapshot" uv run --locked --offline --no-sync python code/analysis/reduce_periodicity.py \
     --artifact-dir "${artifacts[0]}" --artifact-dir "${artifacts[1]}" \
     --artifact-dir "${artifacts[2]}" --artifact-dir "${artifacts[3]}" \
     --expected-source-commit 458bc9cfce474b8e11e433e33bf132faf5032387 \
