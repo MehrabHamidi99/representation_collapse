@@ -211,3 +211,166 @@ Expected siblings (`gates.py`, `stats.py`, `capture.py`, `interventions.py`,
 `graph-assets-pin.md` and matching tests) were not created. Next actions remain
 independent periodicity reduction, Gate B constructors, a hashed freeze record,
 and the graph-asset pin.
+
+## Follow-up review and runtime-status investigation — 01:26–01:40 UTC
+
+The owner requested inspection of the new work and a current cluster research
+worker check, then supplied the stopped-worker handoff. This review confirmed
+`eb12ea1c86cbcfb56dbf8ccad95290cdd059b76c` and
+`dc5e020a3b7489b8b1abf2191937476a33469f67` in the local repository. The latter
+arrived during inspection; its stopped-pass entry above is preserved. No
+implementation pass was resumed and no leftover file was deleted or accepted.
+
+Two bounded independent reviews, with disjoint ignored receipt paths, audited
+the original documentation commit against `8fce9b0`. They found substantive
+corrections rather than a new empirical result. The current design, audit,
+theory and paper now correct the following statements:
+
+- A passing FP32 closure tolerance need not be bitwise equality. A sparse
+  one-ULP difference at 0.1 passes the actual frozen global bounds; a dense
+  half-ULP norm is not a universal nonzero residual floor.
+- Commuting deterministic cue propagation does not require equal native
+  error: offsets and process-noise propagation can still differ. The optional
+  SSM control's prediction now concerns the cue channel.
+- The linear readout-offset MSE gap includes its residual/offset cross term.
+  P1 distinguishes shared realized noise from episode-noise covariance.
+- Average approximate MSE competence does not imply noise-resolved local
+  rank. Exact smooth-memory P4 is retained with its original assumptions.
+- Sample-rank bounds include state dimension; motif trigram differences and
+  hundredfold probe regularization changes are not universal across pairs/cells.
+- Sign-flip exactness requires a justified null symmetry/randomization;
+  shifted SEI hypotheses and equivalence multiplicity must be frozen. The
+  proposed adjusted ten-seed t-interval half-width is 1.1215 seed SD, compared
+  with 0.7154 for the ordinary 95% interval. Bootstrap coverage is approximate.
+- Scalar forced-response uniqueness, nonzero coupling, harmonic scope and
+  participation-ratio equality conditions are stated precisely.
+
+The initial document session's claims above remain a historical record; this
+appendix corrects the present interpretation rather than rewriting that record.
+No frozen v1 tolerance, model source, existing test, experiment configuration,
+lockfile or inherited manuscript was changed. Remaining design issues include
+explicit vector versus graph readiness, statistics/prediction freeze
+dependencies, confirmation competence/missing-seed policy and measured costing
+of the expanded battery. They are recorded in the
+[review](../../auto/new-work-review-2026-10-12.md); no gate is promoted.
+
+The untracked 320-line `diagnostics.py` has valid syntax and passes eight small
+R0/R1/R2 and single-WRITE constructor/oracle fixture cases across both target
+types. Its hash is recorded; bytes remain unchanged. These bounded inspection
+checks are not a matching test suite or Gate B integration. Other stopped-pass
+modules and graph pin are still absent. The sixteen-node dependency graph is
+acyclic; 220 relative links resolve; `git diff --check` passes. The corrected
+manuscript builds to 35 pages with no errors, undefined references or overfull
+boxes; build artifacts stay outside the repository under `/private/tmp/`.
+The existing 34-test suite was not rerun for these documentation corrections.
+
+The passive live SSH attempt at 01:26:44 UTC returned exit 255 before reaching
+Mila: the saved control socket was inaccessible and hostname resolution failed
+under this session's restricted network/filesystem policy. Local cluv remains
+0.1.5, but no remote cluv/scheduler or Qwen process check was possible. **Current
+worker state is unverified.** The latest verified Qwen record remains October
+11 16:23:17 UTC, 14 schema-valid reviews, zero consecutive errors, 76,635
+reported tokens; call0014 consumed the periodicity completion packet. The
+24-hour/22-attempt contract may since have reached its call cap; no running or
+stopped state is inferred. The stopped implementation workers are separate.
+
+The four periodicity jobs retain their independently verified October 11
+completion and hash evidence; raw-array numerical reduction is still pending.
+New documents reaching Mila are unverified. The local branch has two commits
+beyond cached `origin/main`; a fresh publication check was unavailable. Current
+review changes are left locally: Git metadata is read-only in this session,
+and remote network access is restricted. No submission, worker restart,
+authentication request, paid fallback or manual model-service call occurred.
+
+The tracker and [dated status](../../auto/research-status-2026-10-12.json) now
+separate historical evidence from fresh observations. Detailed proofs and
+validation receipts are in ignored `runs/ops/20261012-new-work-theory-review.json`,
+`20261012-new-work-design-review.json` and
+`20261012-investigation-verification.json`. Next steps remain independent raw
+reduction, reviewed Gate B implementation, the hashed statistics freeze and
+T-GRAB provenance recovery. A fresh cluster check requires a session with
+working network access; no additional compute follows from this review.
+
+
+## SSH retry and diagnostic-code repair — follow-up
+
+The owner asked to retry SSH and fix the leftover diagnostic draft. The first
+bounded passive SSH probe again failed inside the local sandbox. Retrying via
+the approved execution mechanism succeeded; Mila returned
+`login-4.server.mila.quebec`. The earlier inability to connect was a session
+restriction, not evidence that the owner's SSH setup was broken.
+
+At 2026-10-12 01:50:35 UTC, terminal status and heartbeat agree that the Qwen
+worker stopped normally on October 11 at 23:28:39 UTC after its 22-call cap.
+All 22 review files have `schema_verified=true`; all scientific decisions remain
+pending. There were zero consecutive provider errors, 125,730 reported tokens,
+and recorded exit code 0. PID 2812601 was absent. The last proposal recommends
+independent raw-array reduction; its suggested thresholds and scientific
+interpretation are not accepted automatically. The safe receipt is
+`runs/ops/qwen-recheck-20261012.json`; private endpoint/config files were not read.
+
+Mila's queue query succeeded and showed no project-name matching jobs. Remote
+cluv remains 0.1.5. The existing source checkout is still `8fce9b0`, so the new
+document commits were not delivered there. A passive attempt from Mila to the
+old Tamia2 controller hostname failed DNS resolution; Alliance scheduler status
+was not refreshed. The four periodicity completions retain their historical
+verified status. No authentication prompt, worker restart, provider call or new
+compute submission occurred.
+
+“Untracked” meant the draft existed on disk but was absent from Git's index.
+“Unaccepted” described missing code review/tests and integration, not rejection
+of its research purpose. One bounded implementation worker repaired only
+`src/representation_collapse/diagnostics.py` and added
+`tests/test_diagnostics.py`; a separate reviewer inspected those files without
+editing. The coordinator integrated documentation and validation.
+
+The repaired additive module validates exact type/address flags, homogeneous
+payloads, one terminal QUERY and no value leakage. It rejects invalid integer
+arguments before consuming RNG, handles repeated writes with last-WRITE-wins
+semantics, ignores nuisance writes and rejects unwritten query targets. R0 and
+single-WRITE constructors are covered across both tasks and all eight required
+coordinates. R≥1 outputs and subsequent RNG state match v1 exactly. Corruption
+controls preserve dtype and caller arrays; memory permutations retain legitimate
+identity draws. Chance equality is possible and is documented.
+
+Focused tests: 14 pass. Full command
+`PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v` passes **48/48**
+with no skips (2.882 seconds). Independent review additionally checks 400
+streaming cases and six exact v1/RNG comparisons, finding no blockers. Existing
+v1 model/task/periodicity files, existing tests, frozen configs and lockfile are
+unchanged. Validation receipts and the full test log stay in ignored `runs/ops/`.
+The module, tests and usage guide were added to Git's index using approved Git
+access after the sandbox rejected index.lock creation. No commit or push.
+
+These utilities are accepted as local engineering infrastructure. Gate B still
+needs its stage-aware training validator, coordinate-wise competence gates,
+state capture, intervention/sham and statistics implementation. No learned-model
+competence or collapse finding follows. See
+[usage and scope](../../auto/diagnostics-implementation.md) and the updated
+[dated status](../../auto/research-status-2026-10-12.json).
+
+
+## Requested GitHub publication and Overleaf compatibility
+
+The owner explicitly requested committing and pushing current changes and
+reported Overleaf's rejection of symbolic links. Git's index identified exactly
+four links: `.agents/skills/{experiment-loop,floquet-analysis,model-routing,
+project-ops}` (mode 120000). These known project-owned links were replaced
+with regular directories containing discovery `SKILL.md` entries. Each entry
+retains its name/description, directs the agent to read the full canonical
+`skills/<name>/SKILL.md`, and resolves supporting references from that canonical
+file. Canonical skill content and inherited source snapshots were preserved.
+AGENTS/README and the paper guide document the new layout and Overleaf main
+document `paper/main.tex`.
+
+Qwen's 22-attempt cap was a coordinator-selected bound, not a model/provider
+limit. The initial worker contract had 24 attempts and 24 hours; one failed
+response and one direct-JSON verification consumed two attempts before the
+replacement launch, leaving 22. The ignored launch record explicitly supplies
+`--max-calls 22`; the code default is 24. This explained the recorded stop
+reason `call_cap`. No new worker call limit or restart was requested here.
+
+GitHub SSH authentication failed public-key validation; the existing HTTPS
+push route successfully read remote main at `8fce9b0`. Publication uses that
+configured HTTPS route, with a normal fast-forward push. Ignored approvals,
+credentials, runtime receipts and cluster artifacts stay outside the commits.

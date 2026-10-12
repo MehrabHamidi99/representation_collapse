@@ -42,13 +42,13 @@ Agents start at [AGENTS.md](AGENTS.md). The declarative dependency plan is
 | Path | Role |
 | --- | --- |
 | `src/representation_collapse/` | Measurement, calibration, vector task, pilot training and checkpoint periodicity analysis |
-| `tests/` | 34 unit and integration tests |
+| `tests/` | 48 unit and integration tests |
 | `configs/` | Research plan DAG, frozen experiment configurations, cluv examples |
 | `doc/auto/` | Scientific protocols, reviews, evidence records and operations notes |
 | `doc/literature/` | Bibliography, novelty review, reference records |
 | `doc/<month>/` | Dated progress reports (append-only) |
 | `paper/` | New manuscript skeleton; every number traces to a `doc/auto/` artifact |
-| `skills/` | Canonical operating skills, linked from `.agents/skills/` |
+| `skills/` | Canonical operating skills; regular discovery entries in `.agents/skills/` |
 | `code/ops/`, `code/literature/` | Cluster submission/monitoring helpers and the literature builder |
 | `floquet_analysis/`, `ACM___TGRAB/`, `ACM___TGRAB_KDD_2026/` | Inherited manuscript snapshots, preserved unchanged |
 
@@ -66,6 +66,9 @@ installs a torch-less environment in which nine tests are skipped. If `uv run`
 cannot import the package (observed on one macOS checkout where `.venv` files
 carry the hidden flag and CPython skips hidden `.pth` files), use
 `PYTHONPATH="$PWD/src" .venv/bin/python` in place of `uv run --locked python`.
+The [diagnostic constructor/oracle guide](doc/auto/diagnostics-implementation.md)
+explains the additive R0, single-WRITE and corruption-control fixtures.
+
 The calibrations check participation ratio and entropy dimension on known
 covariances, ordered Jacobian products, multipliers of known periodic maps,
 nonnormal transient gain, forced periodic responses, and the seven analytic
@@ -86,3 +89,10 @@ concrete approved resource envelope recorded in ignored
 new allocation is authorized by any document in this repository. Graph
 code/data leads from the manuscripts must be pinned and audited before training
 or reproduction.
+
+## Overleaf
+
+Import the GitHub repository and select `paper/main.tex` as the main document
+for the current manuscript. The inherited manuscript snapshots are separate
+entrypoints. Skill discovery uses regular files; the repository contains no
+tracked symbolic links, which would block Overleaf's GitHub import.

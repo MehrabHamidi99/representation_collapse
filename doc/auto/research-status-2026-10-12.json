@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-12T01:54:08.060089+00:00",
+  "head": "dc5e020a3b7489b8b1abf2191937476a33469f67",
+  "reviewed_document_commit": "eb12ea1c86cbcfb56dbf8ccad95290cdd059b76c",
+  "stopped_pass_commit": "dc5e020a3b7489b8b1abf2191937476a33469f67",
+  "cluster_uv_version": "0.1.5",
+  "live_probe": {
+    "checked_at_utc": "2026-10-12T01:50:35.908869+00:00",
+    "exit_code": 0,
+    "hostname": "login-4.server.mila.quebec",
+    "network_access": "approved SSH outside local sandbox",
+    "current_worker_state": "stopped",
+    "current_scheduler_state": "Mila queried: no project-name matching jobs; Alliance not freshly queried",
+    "authentication_requested": false,
+    "worker_restarted": false,
+    "cluv_remote_version": "0.1.5",
+    "tamia_controller_probe": "Mila could not resolve tamia2.tamia.ecpia.ca"
+  },
+  "last_verified_qwen_heartbeat": {
+    "schema_version": 1,
+    "state": "stopped",
+    "updated_at": "2026-10-11T23:28:39.243975+00:00",
+    "elapsed_seconds": 54797.71107839001,
+    "provider_call_attempts": 22,
+    "schema_verified_reviews": 22,
+    "consecutive_provider_errors": 0,
+    "usage_totals": {
+      "prompt_tokens": 114572,
+      "completion_tokens": 11158,
+      "total_tokens": 125730
+    },
+    "unknown_usage_policy": "null if any attempted call omits the relevant usage field",
+    "last_evidence_sha256": "083ea727dfed29054bbb3889c08f3f4ad21b95e7de30bb70a4ebabf1bbea4c22",
+    "stop_reason": "call_cap"
+  },
+  "new_compute_submissions": 0,
+  "model_provider_calls": 0,
+  "scientific_acceptance": false,
+  "periodicity_jobs": {
+    "state": "historically_verified_completed",
+    "verified_on": "2026-10-11",
+    "job_ids": [
+      5254858,
+      5254871,
+      22984956,
+      22984963
+    ],
+    "all_exit_codes": "0:0",
+    "independent_raw_array_reduction": "pending",
+    "server_hash_integrity_verified": true,
+    "evidence": "doc/auto/periodicity-analysis-status.json"
+  },
+  "implementation_workers": {
+    "previous_pass": "stopped per handoff",
+    "followup": "bounded implementation and independent review completed",
+    "diagnostic_utilities": "accepted locally after 48 passing tests",
+    "full_gate_b_complete": false,
+    "source": "src/representation_collapse/diagnostics.py",
+    "tests": "tests/test_diagnostics.py",
+    "git_state": "staged; not committed or deployed"
+  },
+  "new_docs_cluster_delivery": "Mila source remains 8fce9b064f77ce1616b03e318f83c15d821a8eae; new commits not delivered to this checkout",
+  "verification_evidence": {
+    "path": "runs/ops/20261012-investigation-verification.json",
+    "sha256": "ada6942fac436f9681c459ce21ae0f513b37d8f054aadb247d7549b75fcec93a"
+  },
+  "previous_live_probe": {
+    "checked_at_utc": "2026-10-12T01:26:44Z",
+    "command": "ssh -oBatchMode=yes -oConnectTimeout=8 -oConnectionAttempts=1 mila hostname",
+    "exit_code": 255,
+    "error": "Control socket Operation not permitted; Mila hostname could not be resolved",
+    "cluv_remote_probe_run": false,
+    "network_access": "restricted",
+    "current_worker_state": "unverified",
+    "current_scheduler_state": "unverified",
+    "authentication_requested": false,
+    "worker_restarted": false
+  },
+  "qwen_terminal_status": {
+    "state": "stopped",
+    "stop_reason": "call_cap",
+    "exit_code": 0,
+    "finished_at": "2026-10-11T23:28:39.245174+00:00",
+    "provider_call_attempts": 22,
+    "schema_verified_reviews": 22,
+    "usage_totals": {
+      "prompt_tokens": 114572,
+      "completion_tokens": 11158,
+      "total_tokens": 125730
+    },
+    "scientific_decision": "pending"
+  },
+  "runtime_recheck_evidence": "runs/ops/qwen-recheck-20261012.json",
+  "diagnostics_verification": "runs/ops/diagnostics-repair-verification-20261012.json"
+}

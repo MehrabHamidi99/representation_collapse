@@ -1,5 +1,15 @@
 # Compute plan: Floquet calibration to multimodal recurrent models
 
+Live-check update, 2026-10-12 01:50 UTC: approved SSH access reaches Mila.
+The earlier failure was the local sandbox. Qwen stopped normally at
+2026-10-11 23:28:39 UTC upon reaching its 22-call cap: 22 schema-valid
+reviews, zero consecutive provider errors, 125,730 reported tokens. Its PID
+is absent and terminal status records exit 0. No project-name matching jobs
+appear in Mila's current queue. Remote cluv is 0.1.5. The old Tamia2 controller
+hostname does not resolve from Mila, so no fresh Alliance scheduler check was
+obtained. Mila source remains `8fce9b0`; new document commits have not reached
+that checkout. No restart or submission. See [dated status](research-status-2026-10-12.json).
+
 Current status, 2026-10-11 16:19 UTC: all four periodicity jobs below have
 completed with exit `0:0`. Worker statuses agree and report passing numerical
 checks; independent raw-array reduction remains pending. The last job ended

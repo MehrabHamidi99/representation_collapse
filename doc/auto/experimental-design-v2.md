@@ -87,11 +87,14 @@ The five motifs `AXAXAXBXBXBX`, `AXAXBXAXBXBX`, `AXAXBXBXAXBX`, `AXBXAXAXBXBX`,
   subset of the six `(letter X)^6` strings whose letters permute `AAABBB`,
   start with `A` and end with `B`; the sixth candidate `ABABAB` =
   `AXBXAXBXAXBX` has proper period 4 and is excluded.
-- Motifs differ in symbol-level cyclic trigram counts (`AXA`, `BXB`, `AXB`,
+- Motifs can differ in symbol-level cyclic trigram counts (`AXA`, `BXB`, `AXB`,
   `BXA` are each 1 or 2 depending on the motif) and in letter-level
   (X-skipping) bigram counts (`AA` is 2 for `AAABBB`, 1 otherwise). For R>1
-  the arms therefore differ at trigram order while bigram order is matched:
-  the treatment is a **specified higher-order ordering intervention**.
+  the arms can differ at trigram order while bigram order is matched, but
+  not every paired body differs in trigram counts (periodic motif 1 twice
+  versus control motifs 2 then 1 is a counterexample). The treatment is a
+  **specified higher-order ordering intervention**; report realized
+  higher-order statistics rather than assuming pairwise trigram imbalance.
 
 ### 1.3 Arms and pairing (verified)
 
@@ -105,8 +108,9 @@ The five motifs `AXAXAXBXBXBX`, `AXAXBXAXBXBX`, `AXAXBXBXAXBX`, `AXBXAXAXBXBX`,
 - Control statistics from 2,000 scratch draws: the fraction of motif positions
   equal to the periodic motif is 0.50 at R2 (forced by the final match), 0.25
   at R16, 0.21 at R64; the longest run of identical consecutive motifs in a
-  control averages 2.5 at R16 (maximum observed 6 of 16). Controls are not
-  locally periodic but can share repeated substrings, including final motifs.
+  control averages 2.5 at R16 (maximum observed 6 of 16). Controls have no
+  proper whole-body period but may contain locally repeated motifs and
+  repeated substrings, including final motifs.
   The checkpoint-only diagnostic's generator (`fixed_panels`,
   `periodicity.py:167-181`) nests controls across horizons as
   `control[:R-1] + final`, rejecting only if any of R2/R16/R32 tiles.
@@ -151,7 +155,7 @@ every run (section 7).
   held-out probe cues, one fixed nuisance vector shared by both arms
   (`pilot.py:309-315`); `covariance_dimension` (PR, covariance entropy
   dimension, numerical rank at relative tolerance 1e-10, total variance);
-  ceiling `min(N-1, d) = 511` recorded. Probes: ridge with `alpha * N`
+  ceiling `min(N-1, d)` applies: 128 for GRU and 256 for joint LSTM state at N=512. Probes: ridge with `alpha * N`
   regularization (alpha 0.01) on train-only standardized features (floor
   1e-8); categorical probes predict 8 x 16 one-hot blocks with per-coordinate
   argmax; identical permuted-label control (`ridge_probe`, `pilot.py:123-148`).
@@ -230,8 +234,10 @@ evidence requirements, not requirements that a hypothesis be true.
   with corruption controls; (vi) D90/D95 and subsampling-curve fixtures;
   (vii) closure tolerances redefined in float32 ULP units at measured state
   scale with FP64 replay as reference: a float32 forced contracting map that
-  converges to an exact float32 cycle must pass, the same map with 1-ULP
-  jitter must fail with residual at the rounding floor
+  converges to an exact float32 cycle must have zero residual; sparse and
+  dense specified 1-ULP perturbations must reproduce the expected residuals
+  and pass/fail decisions under the declared bounds, with bitwise equality
+  reported separately
   ([implementation-audit.md](implementation-audit.md) section 5 R1);
   (viii) probe scale-equivariance and floor-accounting fixture (section 5 R2).
 - **Decision rule.** Every declared check passes at its stated tolerance.
@@ -254,7 +260,7 @@ writes `deterministic_algorithms: True` as a literal (`pilot.py:205`), so the
 A100/H100 v1 pilots may have used TF32 inside cuDNN RNN kernels
 ([implementation-audit.md](implementation-audit.md) section 4 item 9, section
 5 R8). Gate B decides pure-float32 training (TF32 off) before the first fit
-and records it. Each job script runs the discovery-seed configuration twice
+and records it. A selected seed-0 configuration per model/task cell is run twice
 and asserts identical weight hashes and identical `deltaR` (repeat-run
 determinism check); a mismatch is reported and blocks interpretation of that
 cell until explained. The periodicity path already sets and records these
@@ -268,7 +274,7 @@ after a failure.
 
 | Stage | Task | Updates | Gate to advance |
 |---|---|---|---|
-| 0 | Streaming register oracle on CPU fixtures (explicit memory reference, not a learned model) | none | exact categorical recovery; continuous error < 1e-12 at R0/R1/R2/R16; shuffled memories and shuffled queries destroy agreement |
+| 0 | Streaming register oracle on CPU fixtures (explicit memory reference, not a learned model) | none | exact categorical recovery; continuous error < 1e-12 at R0/R1/R2/R16; shuffled payloads/queries reduce agreement with original targets on distinct-value fixtures; random controls can retain chance matches |
 | 1 | Single WRITE, immediate QUERY (new constructor) | 500 | fixed-batch overfit, then IID generalization, with recorded gradient and parameter-change norms |
 | 2 | All 16 WRITEs, zero body (R0) | 500 | coordinate-wise gate on all 8 required coordinates |
 | 3 | R0 and R1, equal exposure | 500 | coordinate-wise gate at R0 and R1 |
@@ -317,7 +323,7 @@ with equal-size random and sham arms. Replication: seeds 0-2, then 10 fresh.
    evaluation must equal uninterrupted execution.
 3. *Cue-conditioned geometry.* Per cloud (fixed driver, nuisance, phase, arm):
    spectrum, PR, covariance entropy dimension, D90/D95, total variance,
-   numerical rank at relative tolerance 1e-10, stable rank, the `511` ceiling
+   numerical rank at relative tolerance 1e-10, stable rank, the `min(N-1,d)` ceiling (128 for GRU; 256 for joint LSTM at N=512)
    and the subsampling curve; between-driver components kept separate.
 4. *Information.* Train-fit ridge probes with shuffled-label controls per
    coordinate. The v1 standardization floor is an absolute constant
@@ -345,14 +351,17 @@ with equal-size random and sham arms. Replication: seeds 0-2, then 10 fresh.
    propagator. Closure tolerances are declared in float32 ULP units at the
    measured state scale, not as absolute constants: the v1 FP32 state
    tolerance `state_absolute = 1e-7` (`periodicity-analysis-v1.json:31`,
-   applied at `periodicity.py:329`) lies below the float32 half-ULP L2 floor
-   of a 13 x 128 block at unit scale (~2.4e-6; ~1.5e-7 at scale 0.1;
-   [implementation-audit.md](implementation-audit.md) section 5 R1), so an
-   FP32 closure pass there means a bitwise-repeated cycle and a near-closure
-   reads as failure. v2 reports residuals as multiples of the block's ULP RMS,
-   uses the FP64 replay (item 7) as the reference for whether the FP32 residual
-   is rounding-limited, and requires the Gate A fixture pair (exact float32
-   cycle passes; 1-ULP jitter fails with residual at the floor).
+   applied at `periodicity.py:329`) is a scale-dependent global bound, not
+   a universal rounding floor or bitwise-equality test. A single FP32
+   coordinate at 0.1 can differ by one ULP (~7.45e-9) and pass the bound.
+   An all-coordinate half-ULP norm is a hypothetical aggregate rounding
+   scale, not a minimum nonzero difference. v2 reports coordinate ULP
+   spacings at measured magnitudes, absolute/relative residuals, the number
+   of changed coordinates and bitwise equality separately; any block ULP
+   RMS normalization must use an explicitly matched residual normalization.
+   FP64 replay is a separate dynamics comparison, not an exact-arithmetic
+   reference. Gate A uses exact, sparse and dense ULP-perturbed fixtures
+   with analytically specified residuals and tolerance decisions.
 6. *Causal interventions with native readout.* (a) Complete-state swap between
    arms at pre-QUERY for the same cue (LSTM swaps `h` and `c`; `h`-only and
    `c`-only swaps are labelled decompositions); (b) same-phase transplant of
@@ -399,13 +408,16 @@ later layers receive cue-dependent inputs. The control: one pinned diagonal
 selective-SSM layer with its complete state declared (per-channel state plus
 any auxiliary variables), trained through the same ladder and measured with
 the same battery, run only after the GRU and LSTM cells. Prediction (frozen
-from P2): no cue-channel ordering effect at matched counts, that is
-`delta16` and `DID` within the equivalence margin and arm-independent centered
-cue-conditioned geometry, while offsets and propagated noise may still differ
-by arm. It serves as a positive control for the null: if the control shows a
-replicated ordering effect, either the transitions do not commute as declared
-(verify numerically) or the measurement pipeline leaks arm identity, and the
-GRU/LSTM contrasts are not interpretable until this is resolved. It is
+from P2): the deterministic cue propagator and centered cue-conditioned
+geometry agree at matched counts. Offset-compensated recovery should agree
+under the same decoder class and no process noise, or matched terminal noise.
+Raw `delta16` and `DID` need not vanish: native readout offsets and
+order-dependent propagated process noise can change native error without
+changing the deterministic cue propagator. A replicated difference in that
+propagator or in noiseless centered geometry requires checking commutation,
+complete-state accounting, history-dependent transitions and measurement
+leakage before interpreting GRU/LSTM contrasts. A raw error difference
+alone is not a failure of the commuting null. It is
 optional and labelled planned; it needs its own envelope line and a pinned
 implementation with a commutation fixture before any run.
 
@@ -476,9 +488,14 @@ implementation with a commutation fixture before any run.
 
 ## 3. Measurement battery
 
+Numerical constants in the table describe the implemented v1 reference unless
+explicitly marked otherwise. Proposed v2 ULP diagnostics, probe-floor rule and
+acceptance thresholds remain subject to an exact hashed freeze; the table does
+not silently redefine the frozen v1 reduction tolerances.
+
 | Estimand | Quantity | Sampling unit | Centering / normalization | Tolerance | Fixture or test | Interpretation limits |
 |---|---|---|---|---|---|---|
-| Covariance geometry | Participation ratio `(sum l)^2 / sum l^2` | 512 cue histories at fixed driver, nuisance, phase, arm; per seed | centered by cloud mean; raw state coordinates; normalized by trace | eigenvalue > 1e-10 x max for numerical rank; variance compared at atol 0, rtol 1e-5 | `metrics.covariance_dimension`; `test_metrics` spectrum/invariance tests; `isotropic_decay_preserves_pr` | ceiling `min(N-1, d) = 511`; not intrinsic dimension; changes under anisotropic rescaling; LSTM h/c scales; undefined at zero variance |
+| Covariance geometry | Participation ratio `(sum l)^2 / sum l^2` | 512 cue histories at fixed driver, nuisance, phase, arm; per seed | centered by cloud mean; raw state coordinates; normalized by trace | eigenvalue > 1e-10 x max for numerical rank; variance compared at atol 0, rtol 1e-5 | `metrics.covariance_dimension`; `test_metrics` spectrum/invariance tests; `isotropic_decay_preserves_pr` | ceiling `min(N-1,d)` (128 GRU; 256 joint LSTM at N=512); not intrinsic dimension; changes under anisotropic rescaling; LSTM h/c scales; undefined at zero variance |
 | Covariance geometry | Covariance entropy dimension `exp(-sum p log p)` | same | same | same | same | distinct from singular-value entropy rank of Z |
 | Covariance geometry | D90 / D95 | same | same | smallest rank reaching 90% / 95% of trace | not implemented (section 7) | threshold-dependent |
 | Covariance geometry | Total variance `trace(C)`; per-component h/c | same | uncentered state RMS also reported | atol 0, rtol 1e-5 | `isotropic_variance_decays_exactly` | attenuation is not dimension loss; v1 variation-to-ULP ratios 0.25-2.5 |
@@ -486,7 +503,7 @@ implementation with a commutation fixture before any run.
 | Tangent propagation | Singular values of `P_{t,12}`, rates `log sigma_i / 12`, largest gain, tangent PR | one window per driver pair, arm, horizon, precision; first cue history | fixed inputs and weights; complete state; product in replay dtype plus float64 accumulation | product vs direct map FP32 1e-5/1e-4, FP64 1e-10/1e-8; FD atol 1e-8, rel 1e-4 | `periodicity.tangent_window`; `test_periodicity` derivative and ordering tests; nonnormal fixture | local to one history; partial description; spectral radius is not Euclidean contraction |
 | Tangent propagation | Floquet multipliers (eigenvalues of the 12-step map) | window on a verified orbit only | as above | state closure FP32 1e-7/1e-5, FP64 1e-10/1e-8; Jacobian closure FP32 1e-6/1e-5, FP64 1e-10/1e-8 | `periodicity.distance`; closure tests; forced-scalar `a^T` fixture | tolerance-qualified; forced discrete orbits need no neutral multiplier; period may be a multiple |
 | Tangent propagation | Closure residuals (absolute, relative, max coordinate) over 13-state blocks | all R-1 adjacent cycle pairs | reference scale max norm, floor 1e-12 | as above | same | a pass is approximate-closure-compatible, not an exact orbit |
-| Behavior | Categorical error; continuous raw and normalized MSE per coordinate | 1,024 paired episodes per horizon, 128 per coordinate; summarized per seed | none; coordinate-stratified | gates 0.95 / 0.05 | `pilot.evaluate_batch`; oracle (planned) | one seed is one replicate; equal aggregates do not imply equal predictions |
+| Behavior | Categorical error; continuous raw and normalized MSE per coordinate | 1,024 paired episodes per horizon, 128 per coordinate; summarized per seed | none; coordinate-stratified | gates 0.95 / 0.05 | `pilot.evaluate_batch`; `diagnostics.streaming_register_oracle` | one seed is one replicate; equal aggregates do not imply equal predictions |
 | Behavior | `delta2`, `delta16`, `DID` | seed | paired within seed | smallest effect of interest (section 5) | `test_tiny_run_complete_artifacts_and_paired_contrast` | positive DID is relative deterioration, not harm at a horizon; DID at chance is uninformative |
 | Information | Ridge probe accuracy / MSE vs shuffled labels; floor counts; effective gain | 512 train / 256 test cues per cloud | train-only mean and SD, floor 1e-8; `alpha N` ridge, alpha 0.01 | advantage over control, reported | `pilot.ridge_probe`; `test_probe_recovers_known_linear_memory_and_label_control` | decodability is not native use; linear failure is not absence; decoder is driver-specific |
 | Information | Counterfactual cue separation (complete state, h, c) by phase | paired cue histories | raw norms; ratio to closure residual undefined at zero | report | periodicity paired-separation arrays | two histories are not a covariance sample |
@@ -525,10 +542,17 @@ interest (SEI) and intervals of section 5; "equal" means within `+/- SEI`.
   test episodes per horizon (`deltaR`) and `DID`; analyze these seed-level
   paired effects across seeds.
 - **Interval method (default).** Paired bootstrap over seeds, `B = 10,000`
-  resamples, percentile intervals on the seed-level effects: no distributional
-  assumption, respects pairing, cheap. Because percentile intervals are coarse
-  with 10 seeds, also report the exact paired sign-flip test (all `2^10 =
-  1,024` sign assignments) and a paired t-interval as sensitivity analyses; a
+  resamples, percentile intervals on the seed-level effects: no parametric
+  shape is imposed, but independent representative seeds and suitable
+  moments are required; finite-sample coverage is approximate. Because
+  percentile intervals are coarse with 10 seeds, also report a paired
+  sign-flip sensitivity test (all `2^10 = 1,024` sign assignments) and a
+  paired t-interval. Sign flipping is exact only under justified null
+  sign-exchangeability (for example independent seed effects symmetric
+  about the tested boundary) or a valid sign-randomization design. A
+  zero-mean null alone is insufficient. Declare the shifted SEI null,
+  one/two-sided alternative and exchangeability justification before
+  freezing; if unjustified, revise the primary test before confirmation; a
   claim requires the primary sign-flip decision (next bullet) and both
   interval methods to agree on SEI exclusion, otherwise the result is
   inconclusive.
@@ -536,7 +560,9 @@ interest (SEI) and intervals of section 5; "equal" means within `+/- SEI`.
   two registered primary tests, `delta16` and `DID` against the SEI: eight
   tests. Holm governs the eight-test decision family at level 0.05; the
   SEI-exclusion decision for each test uses the Holm-ordered p-values from the
-  exact paired sign-flip test as primary. For reporting, simultaneous
+  paired sign-flip test as primary only after its null assumptions are
+  justified in the freeze record; it is not distribution-free for mean
+  error differences. For reporting, simultaneous
   intervals are Bonferroni-adjusted paired intervals at level `1 - 0.05/8`
   (percentile bootstrap and t), used as the effect-size report, not as the
   decision device. `delta2` is a registered descriptor, not a claim target. R32/R64, geometry,
@@ -550,12 +576,17 @@ interest (SEI) and intervals of section 5; "equal" means within `+/- SEI`.
   equivalence margin equals the SEI. **Freeze these values and their
   justification before any confirmation-seed held-out result is inspected.**
 - **Equivalence versus absence.** "No excess" is claimed only by two one-sided
-  tests at the SEI margin (90% interval inside `+/- SEI`); an interval merely
+  tests at the SEI margin (a 90% interval inside `+/- SEI` is the
+  unadjusted per-comparison rule). Equivalence claims across the registered
+  family require a separately specified multiplicity correction, such as
+  Holm on valid TOST p-values; freeze that family and assumptions too. An interval merely
   containing zero is "inconclusive", never "no effect", and equivalence holds
   for the tested models, tasks, horizons and dwell only.
 - **Power check before confirmation.** Estimate the seed-level standard
-  deviation `s` of `delta16` from the three discovery seeds; with 10 seeds a
-  paired t-interval resolves roughly `0.7 s`. If `0.7 s > SEI`, record that 10
+  deviation `s` of `delta16` from the three discovery seeds; with 10 seeds an
+  ordinary 95% paired t-interval has half-width `0.7154 s`, whereas the
+  proposed 99.375% Bonferroni reporting interval has half-width `1.1215 s`
+  (df=9). Use the latter for this precision check. If `1.1215 s > SEI`, record that 10
   seeds are underpowered and request more in a new envelope or state the
   limitation; never lower the SEI after seeing data.
 - **Selection rules.** Learning rate and checkpoint by balanced validation task
@@ -588,7 +619,7 @@ blocked-input, executed, artifact-verified, interpreted, accepted, rejected-clai
 | v1 pilot LSTM categorical | same | same | Rorqual 22980985 (52 s, H100 MIG 3g.40gb) | `.../rorqual_22980985/pilot/`; sha `8752a480...`; archive `/lustre09/project/6044649/mehrab/...` | same aggregate accuracies as GRU; DID 0; R2 probes 14.7-15.5% vs 6.0-6.8% | same, including the probe-floor confound |
 | v1 pilot LSTM continuous | same | same | Rorqual 22980998 (32 s) | `.../rorqual_22980998/pilot/`; sha `ec63862d...` | MSE 0.352/0.366/0.335; DID -5.9e-8 | same, including the probe-floor confound |
 | v1 verification | artifact-verified | helpers after `9004a0c` | none | `runs/ops/phase1-final-verification-20261011.json` sha `4a71636f...`; verifier sha `5f092ee5...`; [compact results](initial-phase-results.json) | 6/6 directories reproduce from raw arrays | scientific acceptance |
-| Periodicity checkpoint diagnostics (4 cells) | executed; hashes verified (28 artifacts, 359,996,711 bytes); reduction pending (`executed-unverified`) | analysis `458bc9cfce474b8e11e433e33bf132faf5032387`; training `9004a0c` | Narval 5254858 (263 s), 5254871 (231 s); Rorqual 22984956 (62 s), 22984963 (52 s) | `/scratch/mehrab/representation-collapse/logs/cluv/<cluster>_<job>/periodicity/` (`inputs.npz`, `trajectories.npz`, `tangents.npz`, `metrics.json`, `manifest.json`); [status](periodicity-analysis-status.json); [launch](periodicity-analysis-launch.json) | worker-reported checks pass: 64 dense windows, 1,536 step Jacobians, 128 assays, 256 adapter passes, 32 FP64 JVP windows, 96 FD checks | closure, contraction or separation conclusions before recomputation from arrays; any Floquet or collapse claim (competence failed); FP32 closure flags as evidence of near-periodicity: the `state_absolute = 1e-7` tolerance is below the float32 half-ULP L2 floor (~2.4e-6 for a 13 x 128 block at unit scale), so the independent reduction must reinterpret every FP32 closure flag against the ULP floor at the measured state scale, with the FP64 assay as reference ([implementation-audit.md](implementation-audit.md) section 5 R1) |
+| Periodicity checkpoint diagnostics (4 cells) | executed; hashes verified (28 artifacts, 359,996,711 bytes); reduction pending (`executed-unverified`) | analysis `458bc9cfce474b8e11e433e33bf132faf5032387`; training `9004a0c` | Narval 5254858 (263 s), 5254871 (231 s); Rorqual 22984956 (62 s), 22984963 (52 s) | `/scratch/mehrab/representation-collapse/logs/cluv/<cluster>_<job>/periodicity/` (`inputs.npz`, `trajectories.npz`, `tangents.npz`, `metrics.json`, `manifest.json`); [status](periodicity-analysis-status.json); [launch](periodicity-analysis-launch.json) | worker-reported checks pass: 64 dense windows, 1,536 step Jacobians, 128 assays, 256 adapter passes, 32 FP64 JVP windows, 96 FD checks | closure, contraction or separation conclusions before recomputation from arrays; any Floquet or collapse claim (competence failed); FP32 closure flags as evidence of near-periodicity: the fixed `state_absolute = 1e-7` tolerance is not a bitwise-equality test or a universal ULP floor; independent reduction must report measured coordinate spacings, changed-coordinate counts and residuals, with a separate FP64 dynamics comparison ([implementation-audit.md](implementation-audit.md) section 5 R1) |
 | Independent periodicity reduction | planned | n/a | none | dated notebook (pending) | pending | pending |
 | Graph assets | blocked-input | none pinned | none | recovery leads only | nothing yet | legacy checkpoint identity |
 | Graph reproduction / interpretation | blocked / planned | none | none | none | nothing | the inherited `|mu| ~ 0.41-0.44` (`floquet_analysis/main.tex:502-510`, preliminary-attributed) |
@@ -608,14 +639,17 @@ tested backlog with file:line evidence is
 [implementation-audit.md](implementation-audit.md) section 7 and is not
 duplicated here.
 
-1. **R0 support.** `paired_body_ids` raises for `repeats < 1`
-   (`vector_task.py:36-37`); `validate_config` fixes `train_repeats` and
-   requires `{1, 2, 16}` (`pilot.py:158-161`). Needs an R0 path returning
-   identical empty arms and a stage-aware v2 validator; the v1 validator stays.
-2. **Single-WRITE immediate-QUERY constructor.** `render` requires memory
-   `(n, 16)` and writes all 16 coordinates (`vector_task.py:65,77-83`).
-3. **Streaming register oracle with corruption controls.** Not in `src/`; the
-   check in `competence-recovery-plan.md` was ad hoc.
+1. **R0 support — additive constructor implemented.**
+   `diagnostics.paired_batch_with_zero` returns identical empty-body arms.
+   The frozen v1 constructor and validator stay unchanged; a stage-aware v2
+   training validator remains needed.
+2. **Single-WRITE immediate-QUERY constructor — implemented.**
+   `diagnostics.single_write_episode` keeps the renderer layout and emits two
+   observations with no target value in QUERY.
+3. **Streaming register oracle and corruption controls — implemented.**
+   `diagnostics` supplies eight explicit registers, payload/query controls and
+   input validation. These fixtures do not establish learned competence.
+   See [implementation and checks](diagnostics-implementation.md).
 4. **Coordinate-wise gates and stratified manifests.** The gate uses arm-mean
    errors (`pilot.py:303-307`) and validation is unstratified (`pilot.py:259`).
 5. **Staged, gate-conditioned curriculum and learning-rate grid.** The loop is
@@ -664,6 +698,13 @@ duplicated here.
     audit section 5 R1 and R3).
 
 ## 8. Compute estimate (requires a new approval envelope; nothing submitted)
+
+These are provisional planning extrapolations, not validated runtime or memory
+ceilings for the expanded battery. Benchmark one eligible full measurement
+battery before pricing a new concrete allocation. The repeat-run allowance
+below covers one selected seed-0 configuration per model/task cell (four extra
+fits), not all twelve learning-rate candidates; repeating all candidates would
+require twelve extra fits and revised costing. Freeze that choice explicitly.
 
 Derived from the verified v1 runtimes: GRU 228-243 s and LSTM 32-52 s per
 1,500-update pilot including setup, evaluation and geometry, on one A100

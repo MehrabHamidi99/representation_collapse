@@ -4,6 +4,33 @@ Updated 2026-10-12. See the [latest notebook entry](october/october12/2026-10-12
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **New-work review and live-status check — 2026-10-12.** Reviewed document
+  commit `eb12ea1` and stopped-pass record `dc5e020`. Corrected numerical and
+  statistical overstatements in the current design/theory/paper: FP32 tolerance
+  does not imply bitwise equality; commuting cue propagation does not imply
+  equal raw error; the readout-offset MSE gap needs its cross term; finite MSE
+  competence alone does not bound local singular values; rank ceilings include
+  state dimension; sign-flip exactness needs exchangeability; the adjusted
+  ten-seed interval has half-width 1.1215 seed SD, not 0.7. The follow-up repair completes
+  `diagnostics.py` as tested local utilities: R0/single-WRITE constructors,
+  strict observation validation, streaming oracle and corruption controls.
+  All 48 tests pass, including 14 new regressions; independent review finds
+  no blockers. Source, tests and usage guide are verified and included in the
+  publication update requested by the owner; no cluster deployment. Full Gate B training integration remains incomplete. Frozen v1
+  model code, existing tests, run configurations and inherited snapshots are
+  unchanged. [Diagnostic usage](auto/diagnostics-implementation.md). **Follow-up SSH succeeds with approved network access:** Qwen is verified
+  stopped at its 22-call cap (October 11 23:28 UTC), with 22 schema-valid
+  reviews and zero consecutive errors. Mila has no project-name matching queued
+  jobs; Alliance scheduler status was not refreshed. No worker restart or new job.
+  [Review and remaining gaps](auto/new-work-review-2026-10-12.md) and
+  [dated status](auto/research-status-2026-10-12.json).
+- **GitHub publication and Overleaf fix — 2026-10-12.** The owner requested
+  committing and pushing all current changes. Four tracked skill-directory
+  symlinks were replaced by regular discovery entries that require reading
+  the canonical instructions. `paper/main.tex` is the current manuscript
+  entrypoint. Qwen's 22-call cap was a coordinator launch choice: the original
+  24-call bound minus two earlier attempts, not a provider restriction.
+  Publication and validation evidence is appended to the latest notebook.
 - **Submission framing consolidated — documents only, no new empirical result
   (2026-10-12).** The [research charter](auto/research-charter.md) is now the
   canonical statement of the question, hypotheses, estimands, claims,
@@ -22,9 +49,10 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   (`1e-8`) is active at the observed ~1e-9 per-feature state amplitudes, so
   the v1 R2-versus-R16 probe contrast carries a horizon-dependent effective
   regularization until re-reduced with the saved `probe_feature_scale`; the
-  FP32 closure tolerance (`1e-7`) sits below the float32 ULP floor, so closure
-  flags in the pending periodicity reduction must be read in ULP units against
-  the FP64 replay; TF32/cuDNN flags are unrecorded in v1 provenance. Ten
+  FP32 closure tolerance (`1e-7`) is scale-dependent and does not certify
+  bitwise equality; report coordinate spacings and sparse versus dense changes,
+  with fixed-weight FP64 replay as a separate assay. TF32/cuDNN flags are
+  unrecorded in v1 provenance. Ten
   document-versus-code mismatches (evaluation pairs 256 vs 1,024, driver pairs
   2 vs 8, aggregate 0.25 gates vs coordinate-wise 0.95/0.05, R0 unsupported,
   single learning rate and seed) are listed in design v2 §1.5. Local checks:
@@ -76,7 +104,7 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   remains blocked on assets and complete-state adapter validation.
 - **Repository and operating skills — implemented.** Git main initialized,
   requested origin configured, locked Python environment, four canonical skills
-  with `.agents/skills/` discovery links. Publication status is in the notebook.
+  with regular `.agents/skills/` discovery entries. Publication status is in the notebook.
 - **Expanded research path — documented; initial implementation ready.** The
   [periodicity research plan](auto/periodicity-research-plan.md) defines theory,
   matched categorical/continuous memory tasks, broad architecture coverage,
@@ -134,31 +162,27 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
 - **Graph replication — not run.** Graph evidence review and asset recovery
   remain required. Independent synthetic work may proceed alongside recovery;
   valid negative outcomes advance the plan.
-- **Automatic research — actual Qwen worker running on Mila.**
-  Heartbeat at 16:23:17 UTC verifies 14 schema-valid reviews, zero consecutive
-  provider errors and 76,635 reported tokens; PID **2812601** was separately
-  verified alive at 16:19 UTC. Actual call0014 received the four-job completion
-  packet and verified the exact Qwen model identity. Native cluv polling is
-  performed by the coordinator; the Qwen leaf
-  watches supplied project files and proposes analyses. It does not continuously
-  query Alliance queues. Completion evidence is supplied through that watcher.
-  Mila PID **2812601** produced a verified actual Qwen proposal at 08:15:24 UTC.
-  Worker uses bounded evidence,
-  schema-checked proposals and exact model identity; 24 hours/22 remaining attempts
-  after two recorded research attempts,
-  at most 2,048 output tokens per call, no paid fallback. It cannot submit jobs
-  or accept scientific claims. Mock tests pass model identity, cluster-scoped
-  monitoring, heartbeat, caps, unknown usage and three-error stopping. The first
-  proposal requires revision: its 10 CPU-hour request exceeds the envelope and
-  its significance-only stopping rule is insufficient. No proposal was submitted.
+- **Automatic research — verified stopped at its bounded call cap.**
+  Fresh Mila observation at 2026-10-12 01:50 UTC confirms PID 2812601 is absent,
+  heartbeat and terminal status both say stopped, and exit code is 0. The
+  worker finished October 11 at 23:28:39 UTC with 22 schema-valid reviews,
+  zero consecutive provider errors and 125,730 reported tokens. Its final
+  proposal recommends independent raw-array reduction, but its proposed
+  tolerances and inference still need review. Schema validity is not scientific
+  acceptance. The proposal-only worker cannot submit jobs; coordinator cluv
+  polling is separate. Its 22-attempt allowance is consumed; no restart was
+  performed. Mila source remains `8fce9b0`, predating the new documents.
+  Approved SSH bypasses the earlier local sandbox restriction. Remote cluv is
+  0.1.5; the old Tamia2 hostname failed DNS resolution from Mila, so a fresh
+  Alliance connection/scheduler check remains outstanding.
 
 Next bounded actions: independently reduce the completed periodicity raw arrays
 (closure in ULP units against FP64; probe floor-hit counts from the saved
-`probe_feature_scale`); implement the Gate B prerequisites from the
-implementation-audit backlog (R0 and single-WRITE constructors, streaming
-oracle fixture, coordinate-wise gates, three-phase state capture,
-intervention/sham and statistics modules) before any new compute request;
+`probe_feature_scale`); complete the remaining Gate B prerequisites from the
+implementation-audit backlog (stage-aware training validator, coordinate-wise
+gates, three-phase state capture, intervention/sham and statistics modules) before any new compute request;
 freeze the v2 statistics (SEI, family, interval method) in a hashed record;
 review bounded Qwen drafts against verified failures; recover and pin graph
-assets. Preserve the held cluv controller for authorized operations. No broad
+assets. Restore the Tamia controller route and reverify its cluv connections;
+Mila SSH works but the old Tamia2 hostname currently fails resolution. No broad
 sweep or additional GPU training follows automatically.

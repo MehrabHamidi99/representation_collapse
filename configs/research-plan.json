@@ -3,7 +3,7 @@
   "plan_id": "representation-collapse-v2",
   "created_on": "2026-10-11",
   "revised_on": "2026-10-12",
-  "revision_note": "v2 reorders execution around the novelty-audit gates: Gate A analytic/measurement falsification, Gate B minimal trained mechanism study (competence-first GRU/LSTM vector study with preregistered within-support R2 versus R16 contrasts), Gate C theory adding a prediction beyond the affine and commuting nulls, Gate D graph and native transfer. The 351-checkpoint screen of doc/auto/periodicity-research-plan.md section 3E becomes deferred coverage. Existing nodes, statuses, decisions, verified artifacts, approval and resource envelope are unchanged; six nodes are added. The integrated design is doc/auto/experimental-design-v2.md. This revision authorizes no compute.",
+  "revision_note": "v2 reorders execution around the novelty-audit gates: Gate A analytic/measurement falsification, Gate B minimal trained mechanism study (competence-first GRU/LSTM vector study with preregistered within-support R2 versus R16 contrasts), Gate C theory adding a prediction beyond the affine and commuting nulls, Gate D graph and native transfer. The 351-checkpoint screen of doc/auto/periodicity-research-plan.md section 3E becomes deferred coverage. Existing nodes, statuses, decisions, verified artifacts, approval and resource envelope are unchanged; seven nodes are added. The integrated design is doc/auto/experimental-design-v2.md. This revision authorizes no compute.",
   "purpose": "Calibrate and reproduce graph temporal representation dimension measurements, then test recurrence and modality generality.",
   "execution_mode": "active-session-only",
   "persistent_controller_installed": false,

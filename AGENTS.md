@@ -67,7 +67,9 @@ JSON artifacts. Verify hashes and scheduler outcomes before interpreting runs.
 Inspect existing project jobs before retries; reconcile ambiguous submissions
 instead of submitting duplicates. Do not change other projects' jobs.
 
-Canonical skills live in `skills/`; `.agents/skills/` links to them. Do not
+Canonical skills live in `skills/`; regular `.agents/skills/*/SKILL.md`
+discovery entries point to them. Keep tracked files free of symbolic links so
+Overleaf can import the GitHub repository. Do not
 write credentials, SSH keys, API tokens, or model endpoint configuration to git.
 Keep local approval records in ignored `configs/approval.local.json`.
 

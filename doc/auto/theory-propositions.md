@@ -93,9 +93,11 @@ are in section 4.
   time), with $A$ independent of $x_t$. The post-WRITE state is $s_0=E(u,\nu)$ for an arbitrary, possibly nonlinear encoder $E$.
   Optional additive process noise $\xi_t$ independent of $u$. Two bodies $h,h'$ of equal length $H$.
 - **Statement.** $s_H(u,h)=A^HE(u,\nu)+k(h)+\sum_{j<H}A^{H-1-j}\xi_j$ with offset $k(h)=\sum_{j<H}A^{H-1-j}(Bx_j+b)$. Hence the cue
-  difference $\Delta s_H=A^H\big(E(u)-E(u')\big)$, the cue derivative $\partial s_H/\partial u=A^H\,D_uE(u)$ and the centered
-  cue-conditioned covariance $A^H\,\mathrm{Cov}(E(u))\,A^{H\top}$ are independent of body ordering at equal $H$; only $k(h)$
-  changes. If the joint law of $(\xi_0,\dots,\xi_{H-1})$ is the same for both arms (common iid noise suffices), the propagated noise
+  difference $\Delta s_H=A^H\big(E(u)-E(u')\big)$ holds for shared realized noise or a noise-free comparison. The cue
+  derivative is $\partial s_H/\partial u=A^H\,D_uE(u)$ with noise held fixed. Centered covariance across cues at fixed
+  realized noise is $A^H\,\mathrm{Cov}(E(u))\,A^{H\top}$. With cue-independent random noise sampled per episode,
+  observed covariance additionally contains its propagated covariance $Q_H$, and independently sampled cue pairs have
+  a noise-difference term. The deterministic cue component is independent of body ordering at equal $H$; only $k(h)$ changes. If the joint law of $(\xi_0,\dots,\xi_{H-1})$ is the same for both arms (common iid noise suffices), the propagated noise
   law $\sum_j A^{H-1-j}\xi_j$ is identical too. *Readout-offset corollary.* For a common linear readout $y=Ws+c$,
   $y=WA^HE(u)+\big(Wk(h)+c\big)$: the cue-dependent component is unchanged while an arm-dependent additive bias
   $W\big(k(h)-k(h')\big)$ can change raw error; a decoder allowed to compensate the deterministic offset has identical risk in both
@@ -180,10 +182,11 @@ are in section 4.
   storage ($(1-\delta)^R$ contraction over $R$ periods is tolerable while $R\delta$ is below readout resolution); finite horizon (no
   invariant family); retained external input (re-presenting the cue gives $D_s\mathcal P\,DE+D_u\mathcal P=DE$, no constraint on
   $D_s\mathcal P$). The bound is on algebraic rank, not PR: an anisotropic $d$-dimensional cloud may have PR far below $d$ (P7).
-- **Empirical prediction.** A competent continuous model (raw MSE $\le1/60$ on each of eight coordinates) must have a conditioned
-  cue Jacobian with eight singular values above the readout's resolution on the tested cue region, hence body-propagator gains on
-  the cue directions above that resolution; exact unit multipliers are not required at finite $R$. Competence together with fewer
-  than eight such singular values would indicate quantized (categorical) coding and remove the model from P4's scope, not refute P4.
+- **Empirical use and limits.** The exact smooth invariant-memory assumptions imply the stated algebraic rank and unit
+  multipliers. Finite-horizon average MSE competence alone does not lower-bound noise-resolved cue singular values or
+  body-propagator gains: a decoder can amplify an attenuated continuous code, and average error does not control local
+  derivatives. A quantitative prediction needs declared state/output noise, decoder gain and local recovery assumptions.
+  Small measured singular values do not by themselves imply categorical coding or contradict P4.
 
 ### P5 — Forced scalar contracting recurrence (established)
 - **Assumptions.** $s_{t+1}=as_t+bx_t$, $0<|a|<1$, $b\neq0$, $x$ periodic with period $T$ and nonconstant.
@@ -191,8 +194,10 @@ are in section 4.
   $s^*_0=b(1-a^T)^{-1}\sum_{k=0}^{T-1}a^{T-1-k}x_k$. The response is nonconstant. The variational equation $\delta_{t+1}=a\delta_t$
   is input-independent, so the one-period multiplier is $a^T$ with $|a^T|<1$. The power spectrum of $s^*$ is a line spectrum at
   multiples of $1/T$ with the harmonic support of $x$, because $s^*$ is $x$ passed through the LTI filter
-  $b\,e^{-i\omega}/(1-ae^{-i\omega})$, whose gain never vanishes. A PSD peak at the forcing frequency thus coexists with a strictly
-  contracting multiplier. Vector form: $s_{t+1}=As_t+Bx_t$, $\rho(A)<1$, has $s^*_0=(I-A^T)^{-1}\sum_kA^{T-1-k}Bx_k$ and $M=A^T$.
+  $b\,e^{-i\omega}/(1-ae^{-i\omega})$, whose gain never vanishes. A present input harmonic persists with a strictly
+  contracting multiplier; minimal period T alone does not guarantee a first harmonic at 1/T. Vector form:
+  $s_{t+1}=As_t+Bx_t$, $\rho(A)<1$, has $s^*_0=(I-A^T)^{-1}\sum_kA^{T-1-k}Bx_k$ and $M=A^T$;
+  the vector transfer map can suppress input harmonics.
 - **Proof.** The geometric series converges since $|a|<1$; periodicity of $x$ makes $s^*$ periodic; any other solution differs by
   $a^t\delta_0\to0$. If $s^*$ were constant, $s^*_{t+1}-s^*_t=a(s^*_t-s^*_{t-1})+b(x_t-x_{t-1})$ would force $x$ constant. The
   filter statement is the convolution theorem for the periodic steady state. $\square$
@@ -206,7 +211,7 @@ are in section 4.
 - **Empirical prediction.** A periodic-arm complete-state trajectory that approximately closes, with all finite-window singular
   values below one and a PSD line at $1/12$, is consistent with input-driven computation (H3) and says nothing about cue retention,
   which must be read from the conditioned cue difference and behavior. The inherited inference "PSD peak implies neutral mode" is
-  refuted analytically; the checkpoint diagnostics should show the peak with $\rho(P)<1$ (executed-unverified).
+  refuted analytically; whether a trained checkpoint shows this pattern must be measured, not inferred from the scalar fixture (executed-unverified).
 
 ### P6 — Sampling rank ceilings (derived)
 - **Assumptions.** Rows of $Z\in\mathbb R^{N\times n}$ take at most $m$ distinct values, each with positive frequency.

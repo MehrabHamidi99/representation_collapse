@@ -1,5 +1,14 @@
 # Implementation audit: measurement code versus the written contract
 
+Follow-up implementation, 2026-10-12: the additive `diagnostics.py` module now
+provides R0 and single-WRITE constructors, an eight-register streaming oracle,
+strict observation validation and dtype-preserving corruption controls. See
+[the module contract and tests](diagnostics-implementation.md). The absence
+findings below describe the original audit snapshot; constructor/oracle items
+are now implemented locally. Stage-aware training validation, learned
+competence gates, state capture, interventions and statistics remain open.
+
+
 Date: 2026-10-12. Scope: `src/representation_collapse/`, `tests/`, `pyproject.toml`,
 `uv.lock`, `.python-version` at commit `8fce9b064f77ce1616b03e318f83c15d821a8eae`
 (branch main; clean at the time the CLIs below ran, `dirty_checkout=false`).
@@ -225,7 +234,7 @@ public-PDF retrieval via `uv run --no-project`.
 | Graph state includes nodes and ordering | none | none | No graph adapter exists (read-from-source: no `graph`/node code in `src`) |
 | Chronological Jacobian ordering | `metrics.ordered_product` 63–65; `periodicity.tangent_window` 76–78, 83–85 | `test_metrics::test_noncommuting_product_and_perturbation`; `test_periodicity::test_noncommuting_chronological_product`; calibrate `product_order` | Covered |
 | Finite-time labels on arbitrary products | `periodicity` packets 334–338; `mechanism_calibration` `product_label` | `test_periodicity::test_checkpoint_only_artifacts…` asserts `scientific_acceptance=False` only | `metrics.period_spectrum` emits `multipliers_*` keys regardless of periodicity (78–86) |
-| Floquet only after input periodicity and state closure | `periodicity` `driver_closed` 297, `numerical_closure_compatible` 333 requires periodic arm + driver + state + Jacobian closure; `floquet_acceptance` always `False` | no test exercises a closing trajectory | Flag semantics untested on a fixture that actually closes; FP32 absolute tolerance below rounding floor (§5 R1) |
+| Floquet only after input periodicity and state closure | `periodicity` `driver_closed` 297, `numerical_closure_compatible` 333 requires periodic arm + driver + state + Jacobian closure; `floquet_acceptance` always `False` | no test exercises a closing trajectory | Flag semantics untested on a fixture that actually closes; FP32 absolute fixed tolerance needs measured coordinate-spacing diagnostics (§5 R1) |
 | Seeds, sampling units, phase, centring, normalisation, tolerances, controls reported | `pilot.run` effective config 242–245, metrics 332–343; `periodicity.run` effective 250–259; `metrics.covariance_dimension` fields | `test_pilot::test_tiny_run…` checks artifacts exist | Pilot reports no uncertainty method (single seed, declared); account/partition not in artifacts |
 | Synthetic calibration labelled as infrastructure | `kind: synthetic_*`, `scope` strings in both CLIs | `test_mechanism_calibration::test_declared_checks…` | Covered |
 | Large Jacobians matrix-free, dense-checked on small cases | dense only: `periodicity.dense_jacobian` 58–60, budget guard 232 | `test_periodicity` dense versus direct map, JVP, FD at state dims 3–8 | No matrix-free path; dense reference exists for small cases only |
@@ -315,15 +324,16 @@ oracle, coordinate-wise gates and three-phase state capture.
     control `0.33`. The reported R16 cloud variances (`~1e-16` over 128–256
     coordinates, `initial-phase-scientific-review.md:113–120`) imply per-feature
     std `≈1e-9`, so the floor was active for essentially all features at R16 and
-    for many at R2 (inferred), making the ridge penalty ~100× stronger relative
-    to feature variance at R16 than at R2. `probe_feature_scale` arrays are saved
+    for many at R2 (inferred). The penalty relative to feature variance can
+    therefore vary by horizon and feature; no universal 100× horizon ratio
+    follows from this toy fixture or from aggregate cloud variance. `probe_feature_scale` arrays are saved
     in `cue_clouds.npz`, so floor-hit counts can be recovered from the artifacts.
 
 ## 5. Numerical risk register
 
 | Risk | Trigger | Symptom | Current mitigation | Proposed acceptance test |
 |---|---|---|---|---|
-| R1 FP32 closure `atol=1e-7` below rounding floor (inferred, arithmetic) | 13×128 state block at scale 1 has half-ULP L2 floor `2.4e-6`; at scale 0.1, `1.5e-7` (`verify_gaps.json` D) | FP32 closure passes only for bitwise-repeated states; near-closure reads as failure | Relative bound, raw residuals saved, FP64 assay | Float32 forced contracting map that converges to an exact float32 cycle must pass; same map with injected 1-ULP jitter must fail with residual ≈ floor |
+| R1 FP32 closure uses a fixed global tolerance | ULP spacing depends on each coordinate magnitude and on how many coordinates differ; one changed 0.1 coordinate has residual ~7.45e-9 and can pass `atol=1e-7` | Closure compatibility can include distinct stored states; hypothetical all-coordinate half-ULP norms are not universal lower bounds | Absolute/relative residuals saved; separate fixed-weight FP64 assay | Exact cycle has zero residual; sparse and dense specified ULP perturbations reproduce expected residuals and tolerance decisions; report changed-coordinate counts and bitwise equality separately |
 | R2 Probe scale floor | Per-feature std `<1e-8` | Horizon-dependent effective ridge; weak signals shrunk | Floors saved | Scale-equivariance: probe results invariant under uniform state rescaling `1e-10…1e2` for noise-free linear memory; floor-hit count in metrics |
 | R3 ULP-scale nonzero variance | Variance `~1e-16` on float32 states | `normalized_dimension_defined=True` and PR reported for roundoff-dominated clouds | Review notes; verifier ULP ratio | `resolution_limited` flag when centred RMS `<` k·ULP RMS; test with float32-quantised constant cloud plus 1-ULP noise |
 | R4 Numerical rank at `rtol=1e-10` | float32-origin matrices | Roundoff modes counted as rank | None | Known-rank fixture cast through float32: rank correct only with dtype-aware tolerance |

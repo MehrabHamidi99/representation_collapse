@@ -14,12 +14,12 @@ Let the body dynamics be $s_{t+1}=As_t+Bx_t+b$ with $s_0=E(u)$, and let $h=(x_0,
 \[
   s_H(u,h)=A^H E(u)+k(h),\qquad k(h)=\sum_{j=0}^{H-1}A^{H-1-j}(Bx_j+b),
 \]
-so (i) the cue difference $s_H(u,h)-s_H(u',h)=A^H\bigl(E(u)-E(u')\bigr)$ and the cue derivative $\partial_u s_H=A^H\,DE(u)$ are independent of $h$; (ii) the cue-conditioned centered covariance $\Cov_u[s_H\mid h]=A^H\Cov(E(u))A^{H\top}$ is independent of $h$ at equal $H$; (iii) for a common linear readout $y=Ws_H+w_0$, the cue-dependent component $WA^HE(u)$ is independent of $h$ and two bodies differ only by the additive offset $W\bigl(k(h)-k(h')\bigr)$. If additive process noise $\eta_t$ is present and the joint law of $(\eta_0,\dots,\eta_{H-1})$ is the same for both bodies (independent identically distributed noise suffices), the propagated noise law is also independent of $h$.
+so (i) the cue difference $s_H(u,h)-s_H(u',h)=A^H\bigl(E(u)-E(u')\bigr)$ and the cue derivative $\partial_u s_H=A^H\,DE(u)$ are independent of $h$; (ii) the cue-conditioned centered covariance $\Cov_u[s_H\mid h]=A^H\Cov(E(u))A^{H\top}$ is independent of $h$ at equal $H$; (iii) for a common linear readout $y=Ws_H+w_0$, the cue-dependent component $WA^HE(u)$ is independent of $h$ and two bodies differ only by the additive offset $W\bigl(k(h)-k(h')\bigr)$. If additive process noise $\eta_t$ is cue-independent and its joint law is the same for both bodies (cue-independent identically distributed noise suffices), its propagated law is also independent of $h$. The displayed cue-difference and covariance formulas assume no noise or shared fixed realized noise. With independently sampled episode noise, cue differences also contain a noise difference and observed covariance includes its propagated covariance $Q_H$; the latter agrees across arms under the common-law assumption.
 \end{proposition}
 
 \begin{corollary}[Readout offset]
 \label{cor:offset}
-Under \cref{prop:affine} with squared loss, a decoder that is informed of the body (or that may fit an intercept per body) has identical cue recoverability across arms. A fixed native readout can nevertheless show a different raw error in each arm, equal to the squared projected offset for a linear head, and a nonlinear head $g(Ws+w_0)$ can respond differently to the shifted operating point. An arm difference in native error that disappears under an offset-compensated decoder is a readout-offset effect, a legitimate outcome that must be reported as such.
+Under \cref{prop:affine} with squared loss, a decoder that is informed of the body (or that may fit an intercept per body) has identical cue recoverability across arms. A fixed native readout can nevertheless show a different raw error in each arm. For a linear head, write $e=y_{\rm control}-t$ and $\Delta=W(k(h_{\rm periodic})-k(h_{\rm control}))$. The expected squared-loss gap is $2\E[e]^\top\Delta+\norm{\Delta}^2$; only a zero-mean control residual removes the cross term, and a nonlinear head $g(Ws+w_0)$ can respond differently to the shifted operating point. An arm difference in native error that disappears under an offset-compensated decoder is a readout-offset effect, a legitimate outcome that must be reported as such.
 \end{corollary}
 
 \begin{proposition}[P2: commuting switched-affine null]
@@ -39,7 +39,7 @@ Let $U\subset\R^d$ be open, $E:U\to\R^n$ and $D:\R^n\to\R^d$ be $C^1$ with $D(E(
 
 \begin{proposition}[P5: forced contracting scalar recurrence]
 \label{prop:scalar}
-Let $s_{t+1}=as_t+bx_t$ with $0<|a|<1$ and $x$ nonconstant with period $T$. The unique bounded solution $s^*_t=\sum_{k\ge0}a^kbx_{t-1-k}$ is $T$-periodic and globally attracting with $s_t-s^*_t=a^t(s_0-s^*_0)$; the one-period multiplier is $a^T$; and the response has nonzero power at the input frequencies whenever $x$ does. For $s_{t+1}=As_t+Bx_t$ with $\rho(A)<1$ the same holds with multipliers $\operatorname{spec}(A^T)$. A spectral peak at the input period without a neutral multiplier is therefore compatible with correct input-driven computation.
+Let $s_{t+1}=as_t+bx_t$ with $0<|a|<1$, $b\ne0$ and $x$ nonconstant with period $T$. The unique periodic solution (equivalently the unique bounded bi-infinite solution) $s^*_t=\sum_{k\ge0}a^kbx_{t-1-k}$ is $T$-periodic and globally attracting with $s_t-s^*_t=a^t(s_0-s^*_0)$; the one-period multiplier is $a^T$; and the response has nonzero power at the input frequencies whenever $x$ does. For $s_{t+1}=As_t+Bx_t$ with $\rho(A)<1$, uniqueness of the periodic response and attraction hold with multipliers $\operatorname{spec}(A^T)$; vector input harmonics can be suppressed by the transfer map. Minimal input period $T$ alone does not ensure a nonzero first harmonic at $1/T$. A present input harmonic can therefore persist without a neutral multiplier, consistently with input-driven computation.
 \end{proposition}
 
 \begin{proposition}[P6: sampling rank ceilings]
@@ -49,7 +49,7 @@ Let $s_{t+1}=as_t+bx_t$ with $0<|a|<1$ and $x$ nonconstant with period $T$. The 
 
 \begin{proposition}[P7: participation-ratio invariances]
 \label{prop:pr}
-For a nonzero positive semidefinite $C$ with eigenvalues $\lambda_i$, $\PR(C)=(\tr C)^2/\tr(C^2)$ satisfies: (a) $\PR(\alpha C)=\PR(C)$ for $\alpha>0$, so isotropic attenuation changes $\tr C$ and not $\PR$; (b) $\PR(QCQ^\top)=\PR(C)$ for orthogonal $Q$; (c) $\PR$ is not invariant under anisotropic invertible rescaling, e.g.\ $\PR(\diag(1,\epsilon)\,I_2\,\diag(1,\epsilon))\to1$ as $\epsilon\to0$; (d) $1\le\PR(C)=\exp(H_2(p))\le\exp(H_1(p))=D_{\mathrm{ent}}\le\rank C$, with equality throughout iff the nonzero eigenvalues are equal, where $H_1,H_2$ are the Shannon and collision entropies of $p_i=\lambda_i/\tr C$. Consequently participation ratio and entropy dimension are reported together with absolute variance and in declared coordinates.
+For a nonzero positive semidefinite $C$ with eigenvalues $\lambda_i$, $\PR(C)=(\tr C)^2/\tr(C^2)$ satisfies: (a) $\PR(\alpha C)=\PR(C)$ for $\alpha>0$, so isotropic attenuation changes $\tr C$ and not $\PR$; (b) $\PR(QCQ^\top)=\PR(C)$ for orthogonal $Q$; (c) $\PR$ is not invariant under anisotropic invertible rescaling, e.g.\ $\PR(\diag(1,\epsilon)\,I_2\,\diag(1,\epsilon))\to1$ as $\epsilon\to0$; (d) $1\le\PR(C)=\exp(H_2(p))\le\exp(H_1(p))=D_{\mathrm{ent}}\le\rank C$, where $\PR=D_{\mathrm{ent}}=\rank C$ iff the nonzero eigenvalues are equal, and equality also at the lower bound $1$ requires rank one, where $H_1,H_2$ are the Shannon and collision entropies of $p_i=\lambda_i/\tr C$. Consequently participation ratio and entropy dimension are reported together with absolute variance and in declared coordinates.
 \end{proposition}
 
 \begin{proposition}[P8: nonnormal transient gain]
@@ -59,7 +59,7 @@ There exist matrices $M$ with $\rho(M)<1$ and $\norm{M^k}_2>1$ for some $k\ge1$ 
 
 \begin{proposition}[P9: Gaussian channel surrogate]
 \label{prop:channel}
-For $y=Hu+\varepsilon$ with $u\sim\mathcal N(0,\Lambda)$, $\varepsilon\sim\mathcal N(0,\Sigma)$ independent and $\Sigma\succ0$, the posterior covariance is $(\Lambda^{-1}+H^\top\Sigma^{-1}H)^{-1}$ and the Bayes risk is its trace. For any cue distribution with covariance $\Lambda$ the same trace is the linear-MMSE risk, while the Bayes risk of a nonlinear decoder can be lower. During storage without cue reinjection the channel factors as $H=C\,\Phi\,G$ (readout, propagation, injection). The uniform and categorical cues of our tasks do not have this exact posterior; the formula is a declared calibration surrogate with the noise location stated, and recovery is measured separately.
+For $y=Hu+\varepsilon$ with $u\sim\mathcal N(0,\Lambda)$, $\varepsilon\sim\mathcal N(0,\Sigma)$ independent and $\Lambda\succ0$, $\Sigma\succ0$, the posterior covariance is $(\Lambda^{-1}+H^\top\Sigma^{-1}H)^{-1}$ and the Bayes risk is its trace. For any cue distribution with covariance $\Lambda$ the same trace is the linear-MMSE risk, while the Bayes risk of a nonlinear decoder can be lower. During storage without cue reinjection the channel factors as $H=C\,\Phi\,G$ (readout, propagation, injection). The uniform and categorical cues of our tasks do not have this exact posterior; the formula is a declared calibration surrogate with the noise location stated, and recovery is measured separately.
 \end{proposition}
 
 \begin{proposition}[P10: depth-loop reinjection]

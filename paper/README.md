@@ -12,6 +12,10 @@ cd paper
 latexmk -pdf -interaction=nonstopmode -outdir=build main.tex
 ```
 
+For Overleaf, import the GitHub repository and select `paper/main.tex` as the
+main document. The repository's skill discovery entries are regular files
+because Overleaf's GitHub importer rejects symbolic links.
+
 Requires a TeX Live with `natbib`, `cleveref`, `booktabs`, `soul`, `xcolor`,
 `hyperref`, `enumitem` and `plainnat.bst` (TeX Live 2025 was used). Delete
 `paper/build/` before committing; build artifacts are not tracked.
