@@ -1,3 +1,15 @@
+Current overnight continuation, 2026-10-12: the existing Qwen worker has a
+fresh heartbeat and ten verified proposal calls at 17:26 UTC, with no restart.
+A pinned read-only metadata observer is running on Tamia1 until 04:00 UTC on
+October 13 (08:00 Asia/Yerevan). Native cluv 0.1.5 freshly verifies the nine Alliance
+connections; their project queues and a separate Mila queue check are empty.
+The [GPU-efficiency package](../../skills/gpu-efficiency/SKILL.md) is adopted;
+all six Mac/Mila/project files match. Fir/Nibi new source/offline-cache staging
+and exact allocation approval still precede any canary. Current live GPU
+telemetry is unavailable, not zero. See the [overnight record](overnight-research-2026-10-12.md)
+and [efficiency evidence](gpu-efficiency-adoption-2026-10-12.md). Earlier probes
+below retain their timestamps and do not describe current Qwen liveness.
+
 # Compute plan: Floquet calibration to multimodal recurrent models
 
 Current status refresh, 2026-10-12: the Mila-to-Tamia reusable SSH master is absent.

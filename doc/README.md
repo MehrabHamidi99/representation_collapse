@@ -61,3 +61,7 @@ Record protocol changes in a dated decision note and link the new frozen
 protocol. Analysis references source hashes, environment lock, run ID,
 cluster/job ID if applicable, seeds, controls, and uncertainty method.
 Speculative ideas remain labeled hypotheses until measured.
+
+- [GPU efficiency adoption and evidence](auto/gpu-efficiency-adoption-2026-10-12.md)
+- [Prospective statistics proposal](auto/statistics-freeze-proposal-v2.md) — reviewed, not frozen.
+- [Overnight continuation](auto/overnight-research-2026-10-12.md)

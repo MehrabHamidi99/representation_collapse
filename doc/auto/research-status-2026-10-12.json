@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "checked_at_utc": "2026-10-12T13:49:43.084905+00:00",
-  "state": "local-integration-published-remote-liveness-unverified",
+  "checked_at_utc": "2026-10-12T17:36:11.828021+00:00",
+  "state": "overnight-research-active-with-bounded-monitoring",
   "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
   "cluv_version": "0.1.5",
   "cluster_access": {
@@ -24,7 +24,11 @@
     "interactive_authentication_requested": false,
     "mila_verified_separately": true,
     "socket_namespace": "native ordinary restored masters",
-    "verification_scope": "Historical 08:38 UTC checks of all nine targets; current Tamia controller route is unavailable and these checks do not establish current cluster liveness."
+    "verification_scope": "Latest nine-target native cluv pass has reusable connections and empty matching project queues; Mila checked separately at17:11 via Mac. Environment readiness remains false.",
+    "latest_passive_verification_at_utc": "2026-10-12T17:02:37.597098+00:00",
+    "current_controller": "tamia1.tamia.ecpia.ca",
+    "current_alliance_targets_verified": 9,
+    "latest_project_queues_empty": true
   },
   "source_synchronization": {
     "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
@@ -109,30 +113,30 @@
   },
   "automatic_research": {
     "has_run": true,
-    "currently_running": null,
-    "state": "unverified_due_to_missing_ssh_master",
+    "currently_running": true,
+    "state": "running_fresh_heartbeat_verified_calls",
     "cluster": "tamia",
     "pid": 524659,
     "started_at_utc": "2026-10-12T09:10:30.196748+00:00",
-    "live_checked_at_utc": "2026-10-12T10:03:04.163200+00:00",
+    "live_checked_at_utc": "2026-10-12T17:26:39.313113+00:00",
     "heartbeat": {
       "schema_version": 1,
       "state": "running",
-      "updated_at": "2026-10-12T10:02:41.477621+00:00",
-      "elapsed_seconds": 3131.1212371899746,
-      "provider_call_attempts": 2,
-      "schema_verified_reviews": 2,
+      "updated_at": "2026-10-12T17:25:44.679429+00:00",
+      "elapsed_seconds": 29714.32305926003,
+      "provider_call_attempts": 10,
+      "schema_verified_reviews": 10,
       "consecutive_provider_errors": 0,
       "usage_totals": {
-        "prompt_tokens": 10683,
-        "completion_tokens": 988,
-        "total_tokens": 11671
+        "prompt_tokens": 50464,
+        "completion_tokens": 5018,
+        "total_tokens": 55482
       },
       "unknown_usage_policy": "null if any attempted call omits the relevant usage field",
-      "last_evidence_sha256": "c96772a0f0bb7a919f0496c332b5b98942b5532b16ea38297baea7035ba6b4ea",
+      "last_evidence_sha256": "f3ee8d7b6d01a53f303a42881444cc1dd176ed914f8d51a449f22f24dacce8eb",
       "stop_reason": null
     },
-    "latest_call": "call-0002",
+    "latest_call": "call-0010",
     "requested_model": "Qwen/Qwen3.8-Flash-Next-FP8",
     "returned_model": "Qwen/Qwen3.8-Flash-Next-FP8",
     "model_identity_verified": true,
@@ -143,7 +147,7 @@
     "proposal_only": true,
     "actions_executed": 0,
     "proposals_scientifically_accepted": 0,
-    "new_evidence_consumption_verified": "call-0002 cites the project continuation evidence feed",
+    "new_evidence_consumption_verified": "call-0010 evidence exactly matches the600-character public overnight progress event",
     "transport_dependency": "configured local proxy and encrypted SSH hops must remain live; three consecutive provider errors stop worker",
     "paid_fallback": false,
     "evidence_feed_identifiers": [
@@ -152,29 +156,33 @@
       "artifact:/scratch/m/mehrab/representation-collapse/runs/ops/continuation-evidence/measurement/metrics.json",
       "artifact:/scratch/m/mehrab/representation-collapse/runs/ops/continuation-evidence/reduction/status.json"
     ],
-    "last_successful_verification_at_utc": "2026-10-12T10:07:18.958558+00:00",
-    "latest_probe_at_utc": "2026-10-12T13:49:43.084905+00:00",
-    "latest_probe": "Final passive SSH check through Mila: reusable Tamia socket remains absent; no Duo requested. Current PID, heartbeat, total attempts and scheduler remain unverified.",
+    "last_successful_verification_at_utc": "2026-10-12T17:26:39.313113+00:00",
+    "latest_probe_at_utc": "2026-10-12T17:26:39.313113+00:00",
+    "latest_probe": "Fresh heartbeat and ten completed requested-model call records; the latest call consumed exactly the600-character overnight project-progress feed. Original-host PID remains separately unprobed.",
     "restart_performed_this_update": false,
     "last_verified_heartbeat": {
       "schema_version": 1,
       "state": "running",
-      "updated_at": "2026-10-12T10:06:41.715857+00:00",
-      "elapsed_seconds": 3371.3594954089494,
-      "provider_call_attempts": 2,
-      "schema_verified_reviews": 2,
+      "updated_at": "2026-10-12T17:25:44.679429+00:00",
+      "elapsed_seconds": 29714.32305926003,
+      "provider_call_attempts": 10,
+      "schema_verified_reviews": 10,
       "consecutive_provider_errors": 0,
       "usage_totals": {
-        "prompt_tokens": 10683,
-        "completion_tokens": 988,
-        "total_tokens": 11671
+        "prompt_tokens": 50464,
+        "completion_tokens": 5018,
+        "total_tokens": 55482
       },
       "unknown_usage_policy": "null if any attempted call omits the relevant usage field",
-      "last_evidence_sha256": "c96772a0f0bb7a919f0496c332b5b98942b5532b16ea38297baea7035ba6b4ea",
+      "last_evidence_sha256": "f3ee8d7b6d01a53f303a42881444cc1dd176ed914f8d51a449f22f24dacce8eb",
       "stop_reason": null
     },
-    "current_provider_attempt_count": null,
-    "ssh_disconnection_cause": "not established; only reusable socket absence is directly observed"
+    "current_provider_attempt_count": 10,
+    "ssh_disconnection_cause": "Earlier reusable-master absence did not establish worker stoppage; restored route is now verified.",
+    "schema_verified_reviews_observed": 10,
+    "remaining_call_attempts_at_probe": 14,
+    "pid_alive_on_original_worker_host": null,
+    "worker_source_sha256": "0f1684fafae8335cacb61ab3198dd08628e1e155fbd5137ccb7da3fae39661c7"
   },
   "new_compute_submissions": 1,
   "new_gpu_submissions": 0,
@@ -239,7 +247,7 @@
   "native_competence_established": false,
   "scientific_decision": "Verified descriptive audit only. Both arms show strong local finite-time contraction and precision-sensitive nonzero paired-cue separation. Failed competence, one seed per cell and absent probe/query assays prevent harmful-collapse, causal, empirical-equivalence, certified-Floquet and cross-modal claims.",
   "local_progress": {
-    "full_source_tests_passed": 128,
+    "full_source_tests_passed": 150,
     "skipped_tests": 0,
     "coordinate_competence_module": "implemented and ec1c489 source deployed; subsequent local finite-score repair reviewed with 16 focused tests; restage before training",
     "full_gate_b_complete": false,
@@ -260,7 +268,7 @@
     "implementation_source_commit": "af20702cc3998d2d9793d1a674cdb4e52a787952",
     "cluster_deployment_of_new_integration": false,
     "validation": {
-      "full_suite_seconds": 12.649,
+      "full_suite_seconds": 12.861,
       "integration_targeted_tests": 35,
       "integration_supplemental_checks": 75,
       "ops_independent_checks": 91,
@@ -268,23 +276,23 @@
       "qwen_evidence_supplemental_checks": 7,
       "new_scientific_training_runs": 0,
       "stage5_test_scope": "explicit mocked native validation bookkeeping; not full-budget trained competence",
-      "full_suite_wall_seconds": 13.784,
+      "full_suite_wall_seconds": 13.929,
       "ops_environment_finding_checks": 16,
       "ops_environment_repair_checks": 51,
       "persistent_allocation_guard_tests": 7,
-      "ops_persistent_test_artifact_checks": 12
+      "ops_persistent_test_artifact_checks": 12,
+      "overnight_observer_tests": 22
     },
     "allocation_guard_source_commit": "9e22c6cbb5821200bfafe4c6c41f168677d4691b",
-    "current_local_source_commit": "9e22c6cbb5821200bfafe4c6c41f168677d4691b",
-    "allocation_guard": "configured and inherited scheduler options rejected before native sbatch in the same login shell; independently accepted with local fixtures only"
+    "current_local_source_commit": "a7b24d9407ca4e76dbeebf3bc4359a2e94be7951",
+    "allocation_guard": "configured and inherited scheduler options rejected before native sbatch in the same login shell; independently accepted with local fixtures only",
+    "statistics_proposal": "independently reviewed proposal only; exact mean inference, SEI and numerical/probe choices remain unresolved"
   },
   "next_actions": [
-    "restore Tamia Duo authentication and reconcile the existing Qwen PID/status/all attempt counters before bounded recovery",
-    "stage the published training code and validate fresh Fir/Nibi scheduler/typed GPU/account/offline cache evidence",
-    "obtain exact source/config/resource-bound owner approval for the prepared four-fit discovery canary",
-    "run and independently reduce all canary fits including failures; no full-grid LR choice from one rate",
-    "build graph full-state/timing fixtures from pinned sources; recover exact legacy checkpoint/data payload provenance",
-    "complete probe/precision/causal/statistical gates before scientific confirmation"
+    "continue existing bounded Qwen proposal worker and metadata observer until the morning checkpoint; do not reset lease limits",
+    "prepare source/cache prerequisites for the unapproved Fir/Nibi canary using the GPU-efficiency workflow",
+    "resolve statistics proposal assumptions and measurement manifests before fresh confirmation; accept no post-selected seed rescue",
+    "obtain exact reviewed allocation approval before any new cluster submission"
   ],
   "evidence_sha256": {
     "runs/ops/tamia-restored-cluv-access-system-20261012.json": "3d45f65f5859beda60428cd0c909698bb9eaa0e65dac14fdd8b5b5179df911e9",
@@ -314,7 +322,20 @@
     "runs/ops/competence-canary-preview-cell1-20261012-guarded.json": "92b18b7c02aaaa2b022ec9f5703309ea6b6c670779509fdcb834c5b8a25687a2",
     "runs/ops/competence-canary-preview-cell2-20261012-guarded.json": "c58c5d9cb4add6db2a67cd727b2b4907e140b833999dca112cbafa5dcc7e3f20",
     "runs/ops/competence-canary-preview-cell3-20261012-guarded.json": "974308d4f6ad6b41f0268dba82812379343702bb118b2f7affa0cf1ff5875505",
-    "runs/ops/autoresearch-final-passive-master-check-20261012.json": "56da87391e36426d0591060f803b2e7acdb2c7ba424a3b8ef39efc364b835b05"
+    "runs/ops/autoresearch-final-passive-master-check-20261012.json": "56da87391e36426d0591060f803b2e7acdb2c7ba424a3b8ef39efc364b835b05",
+    "runs/ops/overnight-qwen-live-20261012T170037Z.json": "91a3cea1e1f0fcfbf639c70c2a4a0bf92257e62bef124ddd6691a47aafc92e1e",
+    "runs/ops/overnight-observer-launch-20261012.json": "6a3c1b2dcce3db827523375d511a9d2afd036289d7e8473d5d869646158f54fa",
+    "runs/ops/overnight-local-awake-20261012.json": "8d3c91c0625a342ac2b7716aca67ab199b5d4c4166739b8f430029ddf826f93d",
+    "runs/ops/overnight-compute-readiness-20261012.json": "5403a613b47d28388dec7295e7c590a0d0378ac708b077f9ca55c55d242f9146",
+    "runs/ops/overnight-compute-readiness-gpu-efficiency-amendment-20261012.json": "3a329ea42be712b90021b3160f043166178b4a7da99e65c5ccb089b45d20b22f",
+    "runs/ops/overnight-mila-queue-20261012.json": "5a37dcd61a01dcc8b496b4d7b63c6da931416dfa04784bec5181ae66202865f1",
+    "runs/ops/gpu-efficiency-local-adoption-20261012.json": "a8bdf54b2e23f8951ccae99c1089096a6b2e8f5c6ea93de27667ff62c93cc7db",
+    "runs/ops/overnight-research-review-20261012.json": "1a9676a3040a0e01d3f868ee0ef25fffe42492d96b5eaa2b07e0f97872d0a8c4",
+    "runs/ops/overnight-source-tests-20261012.log": "bfc25e7feb902bb0218128ec44f052fd67f962cc906c2f10bf09a864ab0c7dba",
+    "runs/review/statistics-proposal-v2-20261012.json": "1080e26b45d3634f684a6e0bf9e298fc455836e3527f5a80727679655b4261be",
+    "runs/ops/overnight-qwen-live-20261012T172639Z.json": "16d258b305fd86bdaa6157a940b2dbe36499d960519dd142d4b783476d8e0320",
+    "runs/ops/overnight-observer-live-verification-20261012.json": "b64dba5a76f69687b6181386b9f45edaa2110fa77bf65baa18802eed018bf5c5",
+    "runs/ops/overnight-evidence-feed-20261012.json": "b670b517a3997c2d488a7b61e67d2526061c505a067073496fd8fa58761fc715"
   },
   "publication": {
     "implementation_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
@@ -512,7 +533,7 @@
       }
     }
   ],
-  "renewed_provider_call_attempts_observed": 2,
+  "renewed_provider_call_attempts_observed": 10,
   "live_status_events": [
     {
       "recorded_at_utc": "2026-10-12T12:45:03.957813+00:00",
@@ -539,6 +560,14 @@
       "probe": "Mila master alive; Tamia master absent; BatchMode denied keyboard-interactive; one Duo push attempt closed before successful login",
       "current_worker_state": "unverified",
       "new_worker_launch": false
+    },
+    {
+      "recorded_at_utc": "2026-10-12T17:00:37.007180+00:00",
+      "prior_state": "unverified_due_to_missing_ssh_master",
+      "prior_currently_running": null,
+      "new_state": "running_fresh_heartbeat_verified_calls",
+      "proof": "runs/ops/overnight-qwen-live-20261012T170037Z.json",
+      "restart_performed": false
     }
   ],
   "new_compute_submissions_this_update": 0,
@@ -592,5 +621,37 @@
     "graph_reproduction_run": false,
     "scientific_acceptance": false
   },
-  "source_commit_scope": "earlier CPU reduction and staged cluster sources; current local code revision is recorded separately"
+  "source_commit_scope": "earlier CPU reduction and staged cluster sources; current local code revision is recorded separately",
+  "overnight_monitor": {
+    "observer_pid": 1299159,
+    "observer_host": "tamia1.tamia.ecpia.ca",
+    "output": "/scratch/m/mehrab/representation-collapse/observers/overnight-20261012T171633Z",
+    "source_sha256": "4543a30e0fbd17fda94f54013f46171e6a3e814d861e8a39283973b52bbfad14",
+    "code_commit": "60276a3741503a401ff7824c8c92479d9ed8582e",
+    "deadline_utc": "2026-10-13T04:00:00Z",
+    "interval_seconds": 300,
+    "outside_all_worker_artifact_roots": true,
+    "state": "running_process_owner_command_and_three_observations_verified",
+    "morning_local": "2026-10-13 08:00 Asia/Yerevan",
+    "worker_restarted": false,
+    "submissions": 0,
+    "provider_calls": 0,
+    "scope": "one existing worker public metadata; no all-cluster polling, source edits, restart, cancellation or scientific acceptance",
+    "stops_worker": false,
+    "last_verified_at_utc": "2026-10-12T17:29:13.221661+00:00",
+    "observations_at_probe": 3,
+    "owned_process_identity_verified": true,
+    "last_worker_metadata_issues": []
+  },
+  "gpu_efficiency_adoption": {
+    "canonical": "skills/gpu-efficiency/SKILL.md",
+    "report": "doc/auto/gpu-efficiency-adoption-2026-10-12.md",
+    "package_files_verified": 6,
+    "local_mila_project_byte_identical": true,
+    "adoption_commit": "a7b24d9407ca4e76dbeebf3bc4359a2e94be7951",
+    "current_owned_gpu_allocations": 0,
+    "live_gpu_utilization": null,
+    "live_gpu_throughput": null,
+    "scientific_settings_changed": false
+  }
 }

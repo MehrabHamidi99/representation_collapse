@@ -988,3 +988,77 @@ Evidence wording clarification: earlier entries described the absent SSH master
 as expired. The directly observed fact is that its reusable control socket is
 absent; the disconnection cause was not established. Living status documents
 now distinguish that observation from the unverified Qwen process state.
+
+
+## Overnight continuation and GPU-efficiency adoption — 16:55–17:29 UTC
+
+The owner requested continued autoresearch until morning, then explicitly asked
+this project to adopt the shared GPU-efficiency package. The assumed morning
+checkpoint is October 13 08:00 Asia/Yerevan (04:00 UTC); the existing model-call
+and compute envelopes are unchanged.
+
+The restored Mac→Mila→Tamia route lands on Tamia1, while the recorded original
+Qwen PID 524659 belongs to Tamia3. Shared-scratch heartbeat and all nine completed
+call records were fresh at 17:00 UTC: 9 valid proposals, 0 errors, 49,965 reported tokens.
+The worker source bytes match original ec1c489. Hourly call records during the
+previous route-inspection gap show continued activity; master-socket absence
+never established worker stoppage. No new worker, lease or retry was created.
+A single 600-character public progress event, within the existing approved
+payload/call envelope, was saved atomically with an immutable event. Call 10
+consumed exactly those bytes. At 17:26 UTC: 10 valid proposals, 0 errors, 55,482 reported
+tokens, 14 remaining attempts. Scientific acceptance remains zero.
+
+Reviewed observer commit 60276a3741503a401ff7824c8c92479d9ed8582e was deployed with
+source SHA 4543a30e0fbd17fda94f54013f46171e6a3e814d861e8a39283973b52bbfad14.
+PID 1299159 on Tamia1 polls every 300 seconds until04:00 UTC, with append-only
+observations and atomic status. Journals live outside every Qwen evidence root,
+preventing polling-generated model requests. First status passed; at 17:29 UTC
+its UID/command identity, three observations and zero metadata issues were
+verified. A coordinator-only command-line parser's NUL delimiter was corrected
+before accepting process identity; no process was restarted or modified.
+The observer cannot submit, restart, cancel, read model payloads or accept claims.
+A temporary Mac idle-sleep assertion, PID 74629, was separately verified and
+ends at the same morning deadline without changing persistent power settings.
+Transport/network/proxy availability remains a dependency.
+
+Independent review found WATCH001 (terminal status could coexist with an
+unfinished call) and WATCH002 (completed error streak could disagree with the
+heartbeat). Both are repaired and 22 focused tests pass. The complete source
+suite passes 150 tests, 0 skips, 12.861 seconds (13.929 process wall). Log SHA:
+`bfc25e7feb902bb0218128ec44f052fd67f962cc906c2f10bf09a864ab0c7dba`.
+Independent review receipt SHA:
+`1a9676a3040a0e01d3f868ee0ef25fffe42492d96b5eaa2b07e0f97872d0a8c4`.
+
+The statistics proposal MD/JSON passes 39 local checks and independent mathematical
+review. It preserves the eight-test family, seed-level pairing and all failures.
+An exact-rational skewed mean-null counterexample has rejection-event probability
+0.389416 with sign-flip p=1/1024, showing that a mean null alone does not confer
+exact sign invariance. This is analytic reasoning, not empirical trained-model
+evidence. The proposal stays unfrozen; primary inference, practical SEI and
+measurement/manifest choices remain explicit acceptance blockers. Proposed fresh
+seed IDs and confirmation resources are not approved by this report.
+
+GPU package adoption commit a7b24d9407ca4e76dbeebf3bc4359a2e94be7951 copies all six
+files into canonical skills/gpu-efficiency and adds a regular discovery pointer,
+AGENTS.md routing and project-ops guidance. The cluster agent explicitly re-read
+SKILL.md, GUIDELINES.md and references on Mila. All six shared Mac/Mila/project
+file digests match, including agent metadata. No originating-project permissions,
+GPU counts, datasets or tracker rights transfer. The official Mila profiling
+guide was checked and is cited in the adoption report.
+
+One bounded native-cluv 0.1.5 pass at 17:01–17:02 UTC verifies all nine Alliance
+connections and empty matching project queues. A separate 17:11 UTC Mila query
+through the Mac-origin master also finds no project jobs. Fir/Nibi expose
+`def-ioannism_gpu`, normal QOS, UP gpubase_bygpu_b1 and full/typed-MIG H100s;
+/scratch/mehrab is writable. Updated trainer/wrapper, offline environments and
+canary preflight receipts are absent. Availability is not a measured sizing
+recommendation. Live GPU activity/occupancy/VRAM/power/throughput are unavailable,
+not zero. Historical 555 and 608 allocated device-seconds are retained separately
+without step double counting or full-GPU conversion of MIG slices. Host MaxRSS
+is not GPU memory. The four-fit/two-GPU-hour canary remains unapproved/unlaunched.
+
+No Slurm submissions, environment installations, changes to other projects,
+model-worker restarts or scientific training occurred. The active remote work
+is the existing proposal leaf and bounded metadata observer. The living tracker,
+status JSON, dependency plan and new overnight/GPU-adoption reports record the
+handoff. The final ignored publication receipt binds the verified GitHub SHA.

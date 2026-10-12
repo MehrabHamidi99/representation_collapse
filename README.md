@@ -21,7 +21,8 @@ and review; their finite-time measurements remain descriptive. The competence
 recovery trainer, pinned-validation selector and complete native phase capture
 are implemented and locally reviewed, with new training still pending. Upstream
 graph sources are pinned; legacy checkpoint/data payload provenance remains
-missing. Current Qwen liveness is unverified while the reusable SSH master is absent.
+missing. Qwen has a freshly verified heartbeat and ten valid proposal calls. A bounded
+observer is running until 08:00 Asia/Yerevan on October 13.
 See [doc/TRACKER.md](doc/TRACKER.md).
 
 ## Start here
@@ -47,7 +48,7 @@ Agents start at [AGENTS.md](AGENTS.md). The declarative dependency plan is
 | Path | Role |
 | --- | --- |
 | `src/representation_collapse/` | Measurement, calibration, vector task, pilot training and checkpoint periodicity analysis |
-| `tests/` | 128 passing unit and integration tests, no skips |
+| `tests/` | 150 passing unit and integration tests, no skips |
 | `configs/` | Research plan DAG, frozen experiment configurations, cluv examples |
 | `doc/auto/` | Scientific protocols, reviews, evidence records and operations notes |
 | `doc/literature/` | Bibliography, novelty review, reference records |

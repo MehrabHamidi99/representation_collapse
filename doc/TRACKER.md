@@ -4,7 +4,29 @@ Updated 2026-10-12. See the [latest notebook entry](october/october12/2026-10-12
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
-- **Automatic-research continuation — 2026-10-12, current.**
+- **Overnight continuation — 2026-10-12, current.** Fresh heartbeat at 17:00 UTC
+  and nine completed model-identity-verified proposal calls confirm continued Qwen
+  activity: nine valid reviews, zero recorded errors, 49,965 reported tokens. The
+  same original worker and 24-hour/24-attempt ceiling remain; no restart occurred.
+  A 600-character project update was consumed by call 10 at 17:24 UTC. The 17:26
+  check verifies ten valid reviews, zero errors and 55,482 reported tokens.
+  Native cluv 0.1.5 now verifies all nine Alliance targets from Tamia1. Their
+  project queues are empty; Mila was independently checked at 17:11 UTC.
+  Observer PID **1299159** on Tamia1 polls public metadata every five minutes
+  until **2026-10-13 08:00 Asia/Yerevan (04:00 UTC)**. Its journals are outside
+  Qwen's evidence roots, so polling cannot cause provider calls. It does not
+  submit, restart, cancel or accept scientific claims. A temporary local idle-
+  sleep assertion supports the existing transport until the same deadline.
+  All **150 source tests pass**, with no skips. Independent review resolved two
+  observer metadata bugs. The [GPU guide](auto/gpu-efficiency-adoption-2026-10-12.md)
+  is permanently adopted; all six local/Mila/project package files match.
+  The [statistics specification](auto/statistics-freeze-proposal-v2.md) is a
+  reviewed proposal, with mean-inference/SEI/measurement freeze blockers explicit.
+  Fir/Nibi expose suitable account/typed-device availability, but new source and
+  offline environments are unprepared. The four-fit/two-GPU-hour canary remains
+  unapproved and unlaunched. No new GPU work or harmful-collapse claim.
+  [Overnight record](auto/overnight-research-2026-10-12.md).
+- **Earlier local integration and route check — 2026-10-12.**
   Tamia's reusable SSH master is absent; current Qwen liveness is **unverified**. The last
   successful check was at 10:07 UTC. Native cluv 0.1.5 confirms no reusable Tamia
   master at 12:48 UTC; a passive SSH check still finds it absent at 13:49 UTC.

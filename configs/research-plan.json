@@ -388,7 +388,7 @@
           "src/representation_collapse/native_state.py",
           "configs/experiments/competence-recovery-v2.json"
         ],
-        "full_tests_passed": 128,
+        "full_tests_passed": 150,
         "training_integration_complete": true,
         "checkpoint_selection_complete": true,
         "subsequent_finite_score_repair": "module byte hash and final source commit recorded in current research status; not present in ec1c489 cluster snapshot",
@@ -525,8 +525,10 @@
     "training": false,
     "race": false,
     "note": "Runtime/call caps and live status govern. No recurring allowance; no new GPU allocation.",
-    "current_worker_state": "unverified_authentication_pending",
-    "automatic_restart": false
+    "current_worker_state": "running_fresh_heartbeat_verified_calls",
+    "automatic_restart": false,
+    "last_verified_attempts": 10,
+    "last_verified_at_utc": "2026-10-12T17:26:39.313113+00:00"
   },
   "historical_allocations": [
     {
@@ -572,7 +574,7 @@
     "state": "COMPLETED",
     "exit_code": "0:0"
   },
-  "continuation_note": "Bounded competence training/selection integration and allocation guard locally reviewed with 128 passing tests; four cluv canary previews make zero remote actions. Graph source and metadata are pinned. Remote Qwen liveness is unverified because the reusable Tamia SSH master is absent; no duplicate worker or GPU submission. Prior numerical outcomes unchanged.",
+  "continuation_note": "Qwen fresh heartbeat and ten verified proposals; bounded metadata observer runs until08:00Asia/Yerevan. GPU-efficiency package adopted with six matching files and150passing tests. Statistics is a reviewed proposal. Canary source/cache staging and exact allocation approval are outstanding; no new GPU work.",
   "proposed_next_allocation": {
     "phase": "competence-canary-v2",
     "configuration": "configs/experiments/competence-canary-v2.json",
@@ -582,5 +584,15 @@
     "max_requested_gpu_hours": 2,
     "max_concurrent_gpu_jobs": 2,
     "scope": "partial seed 0 discovery; no final grid selection or scientific acceptance"
+  },
+  "bounded_metadata_observer": {
+    "installed": true,
+    "process_pid": 1299159,
+    "cluster": "tamia",
+    "source_commit": "60276a3741503a401ff7824c8c92479d9ed8582e",
+    "deadline_utc": "2026-10-13T04:00:00Z",
+    "submission_authority": false,
+    "provider_calls": false,
+    "worker_restart_authority": false
   }
 }

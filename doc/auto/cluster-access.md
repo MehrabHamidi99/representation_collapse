@@ -1,3 +1,14 @@
+Fresh passive verification, **2026-10-12 17:01–17:02 UTC**: native cluv
+**0.1.5** on Tamia1 passes the nine configured Alliance target checks. There
+are no matching project jobs in their current queues. Mila's existing Mac-origin
+connection works; its matching queue was checked separately at 17:11 UTC. Mila
+has no reusable Tamia1-origin master, so the two controller routes are distinct.
+The original Qwen worker's shared-scratch heartbeat is fresh; no restart occurred.
+Fir/Nibi scheduler availability is verified, while updated training source and
+offline environments are missing. These connections do not grant an allocation.
+[Overnight status](overnight-research-2026-10-12.md). Earlier observations below
+are retained as historical evidence.
+
 # Verified cluster access
 
 Later probe, **2026-10-12 12:48 UTC**: the Mac-to-Mila connection still

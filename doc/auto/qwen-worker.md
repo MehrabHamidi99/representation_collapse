@@ -7,7 +7,20 @@ variables. This document and the [launch recipe](../../configs/qwen-worker.examp
 contain no endpoint values or credentials. Creating these files does not launch
 a process or make a model call.
 
-## Current verification and continuity repair — 2026-10-12
+## Overnight continuation — 2026-10-12, current
+
+The original worker continued across the earlier inspection gap. Fresh 17:26 UTC
+heartbeat/call records verify ten valid model-identity-matched proposals, zero
+errors and 55,482 reported tokens. Call 10 consumed the exact 600-character public
+progress update; no restart or new lease occurred. The existing 24-hour/24-attempt
+limits remain. A pinned metadata observer is running until 08:00 Asia/Yerevan on
+October 13, with journals outside all worker evidence roots. It makes no provider
+requests and cannot submit, restart or accept claims. See the
+[overnight handoff](overnight-research-2026-10-12.md). Public-protocol discovery
+repairs below are not deployed into the immutable running worker; the bounded
+progress feed carries current corrections instead.
+
+## Earlier verification and continuity repair — 2026-10-12
 
 The Mila-to-Tamia reusable master is absent at the latest probe. Current worker
 liveness is unverified; its last successful check was 10:07 UTC. Authentication
