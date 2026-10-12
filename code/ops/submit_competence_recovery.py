@@ -44,6 +44,19 @@ REQUIRED_SOURCE = (CANARY_PATH, PROTOCOL_PATH, WRAPPER_PATH, "uv.lock",
                    "src/representation_collapse/vector_task.py",
                    "src/representation_collapse/pilot.py")
 
+# Login profiles can introduce sbatch input variables after passive preflight.
+# Reject their presence in the same login shell that would invoke native sbatch.
+# This prints no environment names or values and changes no global environment.
+SBATCH_ENVIRONMENT_GUARD = """for rc_comp_sbatch_option in ${!SBATCH_@}; do
+  printf '%s\\n' 'competence submission: inherited sbatch input environment rejected' >&2
+  exit 2
+done
+if [[ ${SLURM_CLUSTERS+x} ]]; then
+  printf '%s\\n' 'competence submission: inherited cluster environment rejected' >&2
+  exit 2
+fi
+"""
+
 
 def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
@@ -93,6 +106,31 @@ def ignored_path(path: Path) -> None:
     result = subprocess.run(["git", "check-ignore", "--quiet", "--", str(path)], cwd=ROOT)
     if result.returncode:
         raise ValueError("approval and runtime journal must be git-ignored")
+
+
+def validate_cluv_environment(environment: dict) -> None:
+    """Reject configured scheduler input overrides without displaying values."""
+    if any(key.startswith("SBATCH_") or key == "SLURM_CLUSTERS" for key in environment):
+        raise ValueError("configured cluv environment contains forbidden scheduler input keys")
+
+
+def guard_native_submission(submission, cluster_config):
+    """Preserve native0.1.5 submission fields; guard its exact login-shell body."""
+    from cluv.cli.submit import get_job_env_vars, get_sbatch_command
+    if version("cluster-uv") != "0.1.5":
+        raise ValueError("native cluster-uv0.1.5 command shape required")
+    validate_cluv_environment(cluster_config.env)
+    if str(cluster_config.job_script_path) != WRAPPER_PATH:
+        raise ValueError("unexpected native wrapper path")
+    expected = get_sbatch_command(
+        cluster_config.job_script_path, submission.sbatch_args, submission.program_args,
+        get_job_env_vars(submission.cluster, submission.git_commit, cluster_config),
+        cluster_config.project_dir)
+    words = shlex.split(submission.sbatch_command)
+    if (submission.sbatch_command != expected or len(words) != 4
+            or words[:3] != ["bash", "--login", "-c"]):
+        raise ValueError("unexpected native0.1.5 sbatch command shape; refusing execution")
+    return replace(submission, sbatch_command=shlex.join(words[:3] + [SBATCH_ENVIRONMENT_GUARD + words[3]]))
 
 
 def validate_plan(plan: dict, protocol: dict) -> None:
@@ -299,6 +337,10 @@ async def execute(args, plan: dict, hashes: dict, approval: dict, preview: dict)
     from cluv.cli.login import get_remote_without_2fa_prompt
     from cluv.cli.submit import display_commands, get_submissions, submit_job
     from cluv.config import get_cluv_config
+    native = get_cluv_config()
+    validate_cluv_environment(native.env)
+    for cluster in plan["targets"]:
+        validate_cluv_environment(native.clusters[cluster].env)
     ignored_path(args.journal)
     if args.journal.exists():
         journal = strict_json(args.journal.read_bytes())
@@ -360,7 +402,6 @@ async def execute(args, plan: dict, hashes: dict, approval: dict, preview: dict)
             display=False, hide=True, warn=True), timeout=30)
         if receipt_result.returncode:
             raise ValueError("cannot stage exact sanitized approval receipt")
-        native = get_cluv_config()
         native.clusters[cell["cluster"]] = replace(native.clusters[cell["cluster"]],
                                                    project_dir=target["source_directory"],
                                                    job_script_path=WRAPPER_PATH,
@@ -380,11 +421,12 @@ async def execute(args, plan: dict, hashes: dict, approval: dict, preview: dict)
             chunking=None, git_commit=args.source_commit, vram=None)
         if len(submissions) != 1 or submissions[0].n_chunks is not None:
             raise ValueError("require exactly one native submission; arrays/races excluded")
-        submission = submissions[0]
+        submission = guard_native_submission(submissions[0], native.get_cluster_config(cell["cluster"]))
         row = {"cell": args.cell, "cluster": cell["cluster"], "run_id": preview["run_id"],
                "model": cell["model"], "task": cell["task"], "seed": 0, "learning_rate": 0.001,
                "state": "submitting", "resources": submission.sbatch_args,
                "command": submission.sbatch_command, "approval_receipt_sha256": receipt_sha,
+               "inherited_scheduler_input_guard": "same_login_shell_before_native_sbatch",
                "prepared_at_utc": now(), "reconciliation": reconciliation,
                "requested_gpu_hours": 0.5, "scientific_acceptance": False}
         journal["cells"][key] = row
