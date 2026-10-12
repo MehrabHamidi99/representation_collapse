@@ -1,0 +1,25 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth,font=\small,
+ box/.style={draw=black!25,rounded corners=2pt,minimum height=0.7cm,align=center},
+ periodic/.style={box,fill=blue!7,draw=blue!40!black},
+ control/.style={box,fill=orange!10,draw=orange!55!black}]
+\node[box,fill=black!4,text width=2.55cm,minimum height=1.9cm] (write) at (1.4,0)
+ {\textbf{WRITE}\\8 required values\\8 nuisance values};
+\node[periodic,text width=5.4cm] (periodic) at (6.6,0.58)
+ {\textbf{Periodic body} \quad $m\,m\,m\,m$};
+\node[control,text width=5.4cm] (control) at (6.6,-0.58)
+ {\textbf{Matched control} \quad $m_1\,m_2\,m_3\,m$};
+\node[box,fill=black!4,text width=2.3cm,minimum height=1.9cm] (query) at (12,0)
+ {\textbf{QUERY}\\Reveal address\\Predict stored value};
+\draw[->] (write.east) -- ++(.35,0) |- (periodic.west);
+\draw[->] (write.east) -- ++(.35,0) |- (control.west);
+\draw[->] (periodic.east) -- ++(.45,0) |- (query.west);
+\draw[->] (control.east) -- ++(.45,0) |- (query.west);
+\node[align=center,text width=12.6cm,font=\footnotesize] at (6.8,-1.65)
+ {Same weights, cue, query and elapsed updates; matched symbol counts, cyclic bigrams and final motif.\\
+ Vary cues under each fixed body to measure complete-state geometry; evaluate task error separately.};
+\end{tikzpicture}
+\caption{The matched ordering intervention. The four-motif drawing is illustrative; a control is accepted only if the full body has no proper tiling period. The query address appears only after the body. Neither arm contains cue values during the body. Periodic versus control effects are compared at equal retention length, after verifying that the model can perform short-horizon memory.}
+\label{fig:design}
+\end{figure}

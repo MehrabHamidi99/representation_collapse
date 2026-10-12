@@ -386,3 +386,80 @@ ignored runtime/approval files in the index, and pass `git diff --check`.
 The prior 48/48 test result remains applicable: no further source changes were
 made during the import fix. This publication note is a follow-up documentation
 commit. The actual Overleaf import has not been retried from this session.
+
+
+## Conference-format manuscript revision
+
+The owner requested a more precise, better structured paper with plots and
+selected a venue-neutral ML format. Three bounded workers owned disjoint
+narrative, theory/proof, and figure/results files. A subsequent read-only review
+checked mathematical assumptions and claim scope; the coordinator integrated
+corrections and reviewed the rendered manuscript. No cluster submission,
+remote worker restart, or model-service call occurred.
+
+The new title is **When Does Repetition Erase Memory? Identifiability Limits
+for Recurrent-State Collapse**. The active source is `paper/main.tex`; all
+inherited graph/Floquet source snapshots remain unchanged. The previous
+35-page research-program skeleton is replaced by seven pages of main text,
+one page of references and seven pages of appendices. The main argument
+separates conditioned geometry, complete-state propagation and task information;
+it presents affine/commuting ordering nulls, readout-offset effects, categorical
+attractor memory, a matched-order experiment and the verified competence audit.
+Internal operations and anticipated-result placeholders are removed. The
+inherited-draft critique remains in the source inventory and theory documents.
+
+Four visuals now support the argument: a WRITE/body/QUERY schematic, four
+analytic dissociations, native pilot behavior, and an appendix counterexample
+for the probe's fixed feature-scale floor. The generator
+`code/analysis/make_paper_figures.py` creates vector PDFs, PNG previews, all 32
+pilot-cloud table rows, and a manifest of source/output hashes, formulas,
+parameters and plotted values. Two complete generations produced identical
+PDF/PNG/table bytes. The generator passes all 36 mechanism checks, independently
+checks the noncommuting risk formula through singular values, and compares the
+probe-floor formula to the actual v1 ridge implementation at 101 amplitudes
+(maximum absolute discrepancy 4.44e-16). These are constructed controls, not
+new trained-model results. Single-seed pilot plots do not invent seed intervals.
+
+The review tightened several assumptions: unrestricted decoding invariance
+uses a rotationally invariant full noise law (independent isotropic Gaussian
+noise in the example), not just isotropic covariance; linear-risk calculations
+specify independent zero-mean noise; the offset-loss cross term remains;
+exact smooth continuous-memory neutral modes retain their stronger hypotheses.
+Failed native competence is not localized to acquisition, since R2 probes
+already recover some cue information. A scalar invertible-code example shows
+a possible probe confound without claiming to explain the actual R16 results.
+The ABAB/AABB analytic construction is explicitly distinguished from the
+stricter experimental motif match. Primary antecedents Pals et al. (2024),
+Ashwin and Ceni (2023), and Ganguli et al. (2008) were spot-checked.
+
+Validation commands:
+
+```bash
+uv sync --locked --all-groups
+PYTHONPATH=src .venv/bin/python code/analysis/make_paper_figures.py
+PYTHONPATH=src .venv/bin/python -m unittest discover -s tests
+cd paper
+latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex
+```
+
+The optional `paper` dependency group adds locked Matplotlib and PyMuPDF.
+The full source suite passes **48/48**, with no skips. The final PDF has
+**15 pages**, four figures and 19 cited bibliography entries, with no build
+warnings, overfull/underfull boxes or unresolved references. PyMuPDF-rendered
+pages were visually checked, including figures, tables, references and the
+reproduction command block. Final validation receipts and rendered previews
+remain in ignored `runs/paper-revision-20261012/`; the full test log is
+`runs/ops/paper-revision-tests-20261012.log`. An offline uv lock check initially
+hit a macOS system-configuration panic inside the sandbox and passed when run
+through the approved execution mechanism.
+
+The [readiness review](../../auto/manuscript-review-2026-10-12.md) is explicit:
+this is an editorially complete diagnostic manuscript. The analytic ingredients
+substantially overlap prior work; all four trained cells fail native competence.
+A strong empirical mechanism submission still needs competent replicated
+baselines, independently reduced periodicity arrays, a frozen confirmation
+procedure, and an original prediction or causal intervention with shams.
+No harmful-collapse or empirical Floquet claim is accepted by this revision.
+The broader research charter retains its publication gates. Source and figure
+publication uses the owner's existing commit/push authorization; the exact
+publication receipt is recorded after the push in ignored operations artifacts.

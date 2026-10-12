@@ -30,7 +30,7 @@ pending. Legacy graph assets are not recovered. See [doc/TRACKER.md](doc/TRACKER
 | Evidence and current state | [doc/TRACKER.md](doc/TRACKER.md), [doc/auto/initial-phase-scientific-review.md](doc/auto/initial-phase-scientific-review.md), dated notebook under `doc/october/` |
 | Literature and novelty audit | [doc/literature/novelty-review.md](doc/literature/novelty-review.md), [doc/literature/README.md](doc/literature/README.md) |
 | Code status versus the contract | [doc/auto/implementation-audit.md](doc/auto/implementation-audit.md) |
-| Manuscript skeleton | [paper/README.md](paper/README.md) |
+| Diagnostic manuscript | [paper/README.md](paper/README.md) |
 | Operations and compute | [doc/auto/compute-plan.md](doc/auto/compute-plan.md), [skills/project-ops/SKILL.md](skills/project-ops/SKILL.md) |
 
 Agents start at [AGENTS.md](AGENTS.md). The declarative dependency plan is
@@ -47,7 +47,7 @@ Agents start at [AGENTS.md](AGENTS.md). The declarative dependency plan is
 | `doc/auto/` | Scientific protocols, reviews, evidence records and operations notes |
 | `doc/literature/` | Bibliography, novelty review, reference records |
 | `doc/<month>/` | Dated progress reports (append-only) |
-| `paper/` | New manuscript skeleton; every number traces to a `doc/auto/` artifact |
+| `paper/` | Focused manuscript with reproducible analytic and pilot figures |
 | `skills/` | Canonical operating skills; regular discovery entries in `.agents/skills/` |
 | `code/ops/`, `code/literature/` | Cluster submission/monitoring helpers and the literature builder |
 | `floquet_analysis/`, `ACM___TGRAB/`, `ACM___TGRAB_KDD_2026/` | Inherited manuscript snapshots, preserved unchanged |

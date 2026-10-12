@@ -1,31 +1,23 @@
-% Manuscript skeleton — representation_collapse project.
-% Canonical question/claims: doc/auto/research-charter.md.
-% Every number in this manuscript must trace to a doc/auto/ artifact or the
-% independent scientific review; see paper/README.md for the placeholder policy.
-\documentclass[11pt]{article}
-
+% Venue-neutral manuscript. Claims and source data are documented in paper/README.md.
+\documentclass[10pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage[margin=1in]{geometry}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{microtype}
 \usepackage{amsmath,amsthm,amssymb}
-\usepackage{booktabs}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{soul}
+\usepackage{newtxtext,newtxmath}
+\usepackage{booktabs,graphicx,xcolor}
 \usepackage{enumitem}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
 \usepackage[round,authoryear]{natbib}
-\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
-\usepackage{xurl}   % allow \url/\path to break anywhere (long artifact paths)
+\usepackage[colorlinks=true,linkcolor=blue!40!black,citecolor=blue!40!black,urlcolor=blue!40!black]{hyperref}
+\usepackage{xurl}
 \usepackage[capitalise,noabbrev]{cleveref}
-
-% Unicode characters that may appear in the snapshot bibliography.
 \DeclareUnicodeCharacter{2212}{-}
 \DeclareUnicodeCharacter{2009}{\,}
 \DeclareUnicodeCharacter{00A0}{~}
-
-% Theorem environments.
-% Propositions carry their own counter so that Proposition k is Pk in the text.
 \theoremstyle{plain}
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
@@ -35,19 +27,6 @@
 \newtheorem{assumption}{Assumption}
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}
-
-% Placeholder and evidence-status macros.
-% \todo{...}      highlighted placeholder; plain text only (no \cite, no math).
-% \evidence{...}  inline evidence-status tag. Allowed values:
-%   analytic | infrastructure | executed-verified | executed-unreduced |
-%   inconclusive | attributed-unverified | protocol | planned | conditional
-\definecolor{todoback}{RGB}{255,240,140}
-\definecolor{evidencecolor}{RGB}{0,90,150}
-\sethlcolor{todoback}
-\newcommand{\todo}[1]{\hl{TODO: #1}}
-\newcommand{\evidence}[1]{{\small\textcolor{evidencecolor}{[\textsc{evidence: #1}]}}}
-
-% Math shorthands.
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\tr}{\operatorname{tr}}
@@ -57,38 +36,43 @@
 \newcommand{\PR}{\operatorname{PR}}
 \newcommand{\norm}[1]{\lVert #1 \rVert}
 \newcommand{\DID}{\mathrm{DID}}
-% \hash{hex}: typewriter hash that may break after any character.
-\ExplSyntaxOn
-\NewDocumentCommand{\hash}{m}{\texttt{\small\rc_hash_break:n{#1}}}
-\cs_new_protected:Npn \rc_hash_break:n #1
-  { \tl_map_inline:nn {#1} { ##1 \allowbreak } }
-\ExplSyntaxOff
-
-\title{When does repetition erase what a recurrent network needs?\\[0.4em]
-\large Useful-history loss under controlled periodic forcing in fixed-weight recurrent models}
-\author{Mehrab Hamidi\thanks{\todo{affiliation and contact}} \and \todo{coauthors, order and affiliations}}
-\date{Manuscript skeleton, 2026-10-12. Internal draft; not for distribution.}
-
+\newcommand{\hash}[1]{\texttt{\small\nolinkurl{#1}}}
+\setlist{itemsep=2pt,topsep=3pt,leftmargin=1.6em}
+\setlength{\parskip}{2pt}
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\floatsep}{10pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{6pt}
+\setcounter{topnumber}{3}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.75}
+\title{When Does Repetition Erase Memory?\\Identifiability Limits for Recurrent-State Collapse}
+\author{Anonymous author(s)}
+\date{}
 \begin{document}
 \maketitle
-
 \input{sections/00-abstract}
 \input{sections/01-introduction}
-\input{sections/02-related-work}
+\input{figures/design}
 \input{sections/03-setting}
 \input{sections/04-theory}
 \input{sections/05-task-and-design}
 \input{sections/06-results}
-\input{sections/07-discussion}
+\input{sections/02-related-work}
 \input{sections/08-limitations}
-\input{sections/09-reproducibility}
-
+\input{sections/07-discussion}
+\label{main-text-end}
+\clearpage
+\begingroup
+\small
+\setlength{\bibsep}{3pt}
 \bibliographystyle{plainnat}
 \bibliography{references}
-
+\endgroup
+\clearpage
 \appendix
 \input{sections/A-proofs}
-\input{sections/B-inherited-draft}
 \input{sections/C-protocol}
-
+\input{sections/D-pilot-details}
+\input{sections/09-reproducibility}
 \end{document}

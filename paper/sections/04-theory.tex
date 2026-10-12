@@ -1,79 +1,114 @@
-% Canonical source: doc/literature/novelty-review.md §3 (affine and commuting nulls, continuous-memory
-% consequences, Gaussian posterior); doc/auto/periodicity-research-plan.md §2B–E;
-% doc/auto/research-program.md (forced scalar recurrence, rank ceilings, PR invariances);
-% src/representation_collapse/mechanism_calibration.py (fixtures). Full proposition table:
-% doc/auto/theory-propositions.md (P1–P12 with fixtures and limits; this section defers to it).
-\section{Analytic nulls and constructions}
+% Scope: elementary diagnostic results, not a new general theory of forgetting.
+% Repository derivations: doc/auto/theory-propositions.md; inherited drafts remain unchanged.
+\section{What collapse diagnostics can identify}
 \label{sec:theory}
 
-The statements below are elementary or standard. They are included because each one blocks a specific invalid inference and each has an executable fixture in the calibration suite (\cref{app:protocol}). None is claimed as a new theorem. Proofs are in \cref{app:proofs}. Throughout, $\mathcal U\subset\R^d$ is the cue set, $E:\mathcal U\to\R^n$ the (possibly nonlinear) encoding produced by the WRITE prefix, and $H$ the body length. \evidence{analytic}
+An ordering intervention changes the sequence of state transitions. Whether it
+changes memory depends on the cue-bearing channel, the decoder, and the noise
+model. The following elementary results separate these dependencies. They
+organize established linear-memory and attractor arguments
+\citep{ganguli2008-memory-traces,seung1996,pals2024-phase-locked-memory}; no
+novelty is claimed for the individual results. Proofs and additional
+counterexamples appear in \cref{app:proofs}.
 
-\begin{proposition}[P1: affine ordering null]
-\label{prop:affine}
-Let the body dynamics be $s_{t+1}=As_t+Bx_t+b$ with $s_0=E(u)$, and let $h=(x_0,\dots,x_{H-1})$ be any body. Then
-\[
-  s_H(u,h)=A^H E(u)+k(h),\qquad k(h)=\sum_{j=0}^{H-1}A^{H-1-j}(Bx_j+b),
-\]
-so (i) the cue difference $s_H(u,h)-s_H(u',h)=A^H\bigl(E(u)-E(u')\bigr)$ and the cue derivative $\partial_u s_H=A^H\,DE(u)$ are independent of $h$; (ii) the cue-conditioned centered covariance $\Cov_u[s_H\mid h]=A^H\Cov(E(u))A^{H\top}$ is independent of $h$ at equal $H$; (iii) for a common linear readout $y=Ws_H+w_0$, the cue-dependent component $WA^HE(u)$ is independent of $h$ and two bodies differ only by the additive offset $W\bigl(k(h)-k(h')\bigr)$. If additive process noise $\eta_t$ is cue-independent and its joint law is the same for both bodies (cue-independent identically distributed noise suffices), its propagated law is also independent of $h$. The displayed cue-difference and covariance formulas assume no noise or shared fixed realized noise. With independently sampled episode noise, cue differences also contain a noise difference and observed covariance includes its propagated covariance $Q_H$; the latter agrees across arms under the common-law assumption.
+\subsection{Ordering nulls concern the cue channel}
+
+Let $E(u)\in\R^n$ be the state after writing cue $u$, and let
+$h=(x_0,\ldots,x_{H-1})$ be a distractor body independent of $u$.
+All comparisons use the same encoder and body length $H$.
+
+\begin{proposition}[Affine cue-channel ordering nulls]
+\label{prop:affine}\label{prop:commuting}
+For $s_{t+1}=As_t+c_{x_t}$ with $s_0=E(u)$,
+\begin{equation}
+ s_H(u,h)=A^H E(u)+k_h,\qquad
+ k_h=\sum_{j=0}^{H-1}A^{H-1-j}c_{x_j}.
+ \label{eq:affine-channel}
+\end{equation}
+Consequently cue differences, cue derivatives (when defined), and the
+body-conditioned cue covariance are body-independent; the covariance is
+$A^H\Cov(E(u))(A^H)^\top$.
+More generally, for $s_{t+1}=A_{x_t}s_t+c_{x_t}$, if the symbol matrices
+commute pairwise, equal symbol counts imply the same cue propagator
+$\Phi_h=A_{x_{H-1}}\cdots A_{x_0}$ and the same centered cue covariance.
+These are noiseless statements, also valid conditional on shared fixed noise.
 \end{proposition}
 
-\begin{corollary}[Readout offset]
+The null concerns centered, body-conditioned cue information. It does not imply
+equal native task error. Nor does commutativity eliminate noise effects:
+intermediate noise is propagated through suffix products, which can differ
+between equal-count bodies. With fixed $A$, cue-independent additive noise
+with the same \emph{joint} law across arms produces the same terminal-noise law;
+matching its one-step marginals alone is insufficient.
+
+\begin{corollary}[Readout offsets can change error without changing memory]
 \label{cor:offset}
-Under \cref{prop:affine} with squared loss, a decoder that is informed of the body (or that may fit an intercept per body) has identical cue recoverability across arms. A fixed native readout can nevertheless show a different raw error in each arm. For a linear head, write $e=y_{\rm control}-t$ and $\Delta=W(k(h_{\rm periodic})-k(h_{\rm control}))$. The expected squared-loss gap is $2\E[e]^\top\Delta+\norm{\Delta}^2$; only a zero-mean control residual removes the cross term, and a nonlinear head $g(Ws+w_0)$ can respond differently to the shifted operating point. An arm difference in native error that disappears under an offset-compensated decoder is a readout-offset effect, a legitimate outcome that must be reported as such.
+Suppose two terminal states differ by a cue-independent translation and,
+if noisy, have matched translated joint laws with the cue. A body-informed
+decoder can compensate that translation and attain equal optimal risk.
+For a fixed affine native head, let $e$ be its control-arm residual and
+$\Delta$ its deterministic output shift. The squared-loss gap is
+\begin{equation}
+ \E\norm{e+\Delta}^2-\E\norm{e}^2
+ =2\E[e]^\top\Delta+\norm{\Delta}^2.
+ \label{eq:offset-gap}
+\end{equation}
 \end{corollary}
 
-\begin{proposition}[P2: commuting switched-affine null]
-\label{prop:commuting}
-Let $s_{t+1}=A_{x_t}s_t+c_{x_t}$ with symbol-indexed matrices $\{A_\sigma\}$ that commute pairwise. If two bodies have equal symbol counts $(n_\sigma)$, then $\prod_t A_{x_t}=\prod_\sigma A_\sigma^{n_\sigma}$ is the same for both, so cue differences, cue derivatives and the cue-conditioned covariance agree across arms at equal $H$. The statement concerns the noiseless cue channel or matched terminal noise; the covariance of intermediate process noise, $\sum_j(\prod_{i>j}A_{x_i})\Sigma(\prod_{i>j}A_{x_i})^{\top}$, can depend on the order.
-\end{proposition}
+Thus an error contrast can identify readout sensitivity while leaving cue
+recoverability unchanged. Conversely, noncommuting transitions permit, but do
+not guarantee, unequal cue products or unequal recovery risk. The standard
+adjacent-swap bound in \cref{lem:swaps} quantifies a possible product change;
+it neither assigns a harmful direction to periodic order nor bounds decoder
+error without further assumptions.
 
-\begin{proposition}[P3: noncommutativity is necessary, not sufficient]
-\label{prop:noncommuting}
-If two equal-count bodies yield different products $\prod_tA_{x_t}$, some pair $A_\sigma,A_{\sigma'}$ does not commute. Conversely, noncommuting families exist for which equal-count orderings give identical products (for instance two reflections at angle $\pi/4$: $A_AA_B\neq A_BA_A$ yet $(A_AA_B)^2=(A_BA_A)^2=-I$), and families exist for which the products differ by an orthogonal factor so that isotropic-noise linear recoverability is unchanged. The positive construction in the calibration suite (two $2\times2$ triangular symbols) exhibits order-dependent products, conditioned clouds and terminal-noise linear risk; it is a specific construction, not a universal periodicity effect.
-\end{proposition}
+\subsection{Dimension, contraction, and recovery are distinct}
 
-\begin{proposition}[P4: continuous-memory rank bound]
-\label{prop:continuous}
-Let $U\subset\R^d$ be open, $E:U\to\R^n$ and $D:\R^n\to\R^d$ be $C^1$ with $D(E(u))=u$ on $U$. Then $\rank DE(u)=d$ for every $u\in U$. If moreover a $C^1$ period map $\mathcal P:\R^n\to\R^n$ fixes the memory family, $\mathcal P(E(u))=E(u)$ on $U$, then $D\mathcal P(E(u))\,DE(u)=DE(u)$, so $D\mathcal P(E(u))$ has at least $d$ linearly independent eigenvectors with eigenvalue $1$. The statement concerns exact smooth recovery of a continuously varying memory on a preserved family \citep{seung1996}; it does not apply to categorical codes, approximate or finite-horizon storage, or information retained in external input.
-\end{proposition}
+Consider $u\sim\mathcal N(0,I_d)$, stored as $s_H=a^Hu$ with $0<a<1$.
+At every finite horizon, the signal covariance has participation ratio $d$,
+although its trace is $d a^{2H}$. If the measured state is
+$y_H=s_H+\varepsilon$ with independent
+$\varepsilon\sim\mathcal N(0,\sigma^2I_d)$ and $\sigma>0$, its covariance
+also has participation ratio $d$, while the optimal squared recovery risk is
+\begin{equation}
+ \E\norm{u-\E[u\mid y_H]}^2
+ =\frac{d\sigma^2}{a^{2H}+\sigma^2}\longrightarrow d.
+ \label{eq:attenuation-risk}
+\end{equation}
+Without that noise, $a^{-H}s_H$ recovers $u$ exactly. A scale-invariant
+dimension statistic therefore cannot identify reliable memory loss; a noise
+or precision model is essential. The converse is also possible:
+$s_H=(u,a^Hv)$ for independent isotropic $u\in\R^d,v\in\R^k$ retains $u$
+exactly while participation ratio decreases from $d+k$ toward $d$.
 
-\begin{proposition}[P5: forced contracting scalar recurrence]
-\label{prop:scalar}
-Let $s_{t+1}=as_t+bx_t$ with $0<|a|<1$, $b\ne0$ and $x$ nonconstant with period $T$. The unique periodic solution (equivalently the unique bounded bi-infinite solution) $s^*_t=\sum_{k\ge0}a^kbx_{t-1-k}$ is $T$-periodic and globally attracting with $s_t-s^*_t=a^t(s_0-s^*_0)$; the one-period multiplier is $a^T$; and the response has nonzero power at the input frequencies whenever $x$ does. For $s_{t+1}=As_t+Bx_t$ with $\rho(A)<1$, uniqueness of the periodic response and attraction hold with multipliers $\operatorname{spec}(A^T)$; vector input harmonics can be suppressed by the transfer map. Minimal input period $T$ alone does not ensure a nonzero first harmonic at $1/T$. A present input harmonic can therefore persist without a neutral multiplier, consistently with input-driven computation.
-\end{proposition}
-
-\begin{proposition}[P6: sampling rank ceilings]
-\label{prop:ceilings}
-(a) If $s_t$ is exactly $P$-periodic, the centered covariance of any time-only sample of the orbit has rank at most $P-1$, independent of $n$. (b) A cloud of $N_{\mathrm{cue}}$ states has centered sample covariance of rank at most $\min(N_{\mathrm{cue}}-1,n)$; with two histories the rank is at most one and any nonzero normalized participation ratio equals one. Neither ceiling says anything about retained task information.
-\end{proposition}
-
-\begin{proposition}[P7: participation-ratio invariances]
-\label{prop:pr}
-For a nonzero positive semidefinite $C$ with eigenvalues $\lambda_i$, $\PR(C)=(\tr C)^2/\tr(C^2)$ satisfies: (a) $\PR(\alpha C)=\PR(C)$ for $\alpha>0$, so isotropic attenuation changes $\tr C$ and not $\PR$; (b) $\PR(QCQ^\top)=\PR(C)$ for orthogonal $Q$; (c) $\PR$ is not invariant under anisotropic invertible rescaling, e.g.\ $\PR(\diag(1,\epsilon)\,I_2\,\diag(1,\epsilon))\to1$ as $\epsilon\to0$; (d) $1\le\PR(C)=\exp(H_2(p))\le\exp(H_1(p))=D_{\mathrm{ent}}\le\rank C$, where $\PR=D_{\mathrm{ent}}=\rank C$ iff the nonzero eigenvalues are equal, and equality also at the lower bound $1$ requires rank one, where $H_1,H_2$ are the Shannon and collision entropies of $p_i=\lambda_i/\tr C$. Consequently participation ratio and entropy dimension are reported together with absolute variance and in declared coordinates.
-\end{proposition}
-
-\begin{proposition}[P8: nonnormal transient gain]
-\label{prop:nonnormal}
-There exist matrices $M$ with $\rho(M)<1$ and $\norm{M^k}_2>1$ for some $k\ge1$ (e.g.\ $M=\bigl(\begin{smallmatrix}a&g\\0&a\end{smallmatrix}\bigr)$ with $|a|<1<g$). Hence multipliers of a verified orbit bound asymptotic per-cycle growth only; within-cycle amplitude need not decrease monotonically, and finite-window gain requires singular values of $P_{t,L}$.
-\end{proposition}
-
-\begin{proposition}[P9: Gaussian channel surrogate]
-\label{prop:channel}
-For $y=Hu+\varepsilon$ with $u\sim\mathcal N(0,\Lambda)$, $\varepsilon\sim\mathcal N(0,\Sigma)$ independent and $\Lambda\succ0$, $\Sigma\succ0$, the posterior covariance is $(\Lambda^{-1}+H^\top\Sigma^{-1}H)^{-1}$ and the Bayes risk is its trace. For any cue distribution with covariance $\Lambda$ the same trace is the linear-MMSE risk, while the Bayes risk of a nonlinear decoder can be lower. During storage without cue reinjection the channel factors as $H=C\,\Phi\,G$ (readout, propagation, injection). The uniform and categorical cues of our tasks do not have this exact posterior; the formula is a declared calibration surrogate with the noise location stated, and recovery is measured separately.
-\end{proposition}
-
-\begin{proposition}[P10: depth-loop reinjection]
-\label{prop:reinjection}
-For a depth loop $z_{\ell+1}=G(z_\ell,x)$ with $J_\ell=\partial_zG$ and $B_\ell=\partial_xG$, the input sensitivity obeys $S_{\ell+1}=J_\ell S_\ell+B_\ell$. At a fixed point $z^*=G(z^*,x)$ with $\rho(J^*)<1$, $S^*=(I-J^*)^{-1}B^*$. In the scalar calibration $z_{\ell+1}=az_\ell+(1-a)x$, initial-state influence decays as $a^\ell$ while $z_\ell\to x$. Contraction to the initial state therefore coexists with full input sensitivity when the input is supplied at every loop \citep{deep_equilibrium,looped_stability_recall}; a depth loop is a distinct forcing unit from a streaming body.
-\end{proposition}
-
-\begin{proposition}[P11: stable categorical basins under forcing]
+Local contraction is likewise compatible with finite categorical memory.
+This is the elementary counterpart of phase-locked memory in driven recurrent
+networks \citep{pals2024-phase-locked-memory}.
+\begin{proposition}[Contracting categorical memory]
 \label{prop:basins}
-Let $\phi_k\in\{0.2,-0.2\}$ alternate with $k$, and let $f_k(s)=1.5r-0.5r^3+\phi_{k+1}$ with $r=s-\phi_k$. The points $s=\pm1+\phi_k$ form two period-two orbits with local derivative $0$ on the orbit; for $|r\mp1|\le0.05$ the map sends the neighbourhood into itself with next error at most $1.5(0.05)^2+0.5(0.05)^3$ and derivative bound $1.5(2\cdot0.05+0.05^2)$; the two basins remain separated by more than $1.9$. A sign readout recovers the label after any number of forced updates. All local multipliers are strictly inside the unit circle while a finite categorical memory is preserved exactly; the trained-network counterpart is the phase-locked memory of \citet{pals2024-phase-locked-memory}.
+Let $\phi_t=0.2(-1)^t$, $r_t=s_t-\phi_t$, and
+$s_{t+1}=g(r_t)+\phi_{t+1}$ with $g(r)=1.5r-0.5r^3$.
+The two period-two responses $s_t=\pm1+\phi_t$ have zero tangent multipliers.
+The tubes $|r_t\mp1|\le0.05$ are invariant and contracting, yet
+$\operatorname{sign}(s_t)$ recovers their binary label for every $t$.
 \end{proposition}
 
-\paragraph{Fixture coverage.}
-Each proposition except P8 and P10 has a tolerance-qualified check in the mechanism-calibration suite (36 checks across seven families: affine ordering null, commuting ordering null, noncommuting construction, amplitude only, categorical forced basins, continuous neutral memory, fresh noise without old memory); P5 and P7--P8 are covered by the ten measurement-calibration checks (isotropic and rank-one participation ratios, contracted rotation with four-step multiplier $0.8^4$, a nonnormal matrix with spectral radius $0.8$ and singular gain above one, a forced periodic response that closes its four-step orbit with multiplier $0.5^4$). Passing these checks is infrastructure evidence about the measurement code, not evidence about trained models. \evidence{infrastructure}
+Contraction within a basin does not measure separation between basins. Exact
+smooth memory of a continuum has a different local requirement, familiar from
+continuous-attractor models \citep{seung1996}.
+\begin{proposition}[Exact smooth memory requires neutral directions]
+\label{prop:continuous}
+Let $U\subset\R^d$ be open and let $E:U\to\R^n$ and
+$\mathcal D:\R^n\to\R^d$ be $C^1$, with $\mathcal D(E(u))=u$.
+Then $\rank DE(u)=d$. If a $C^1$ period map $\mathcal P$ also satisfies
+$\mathcal P(E(u))=E(u)$ on $U$, then
+$D\mathcal P(E(u))DE(u)=DE(u)$: its tangent map has at least $d$
+independent eigenvectors with eigenvalue one.
+\end{proposition}
 
-\paragraph{Open target for Gate C (P12 in \texttt{doc/auto/theory-propositions.md}).}
-\textbf{OPEN.} The nulls above show that an ordering effect on the written cue requires a non-affine, noncommuting, or noise-mediated mechanism, and P11 shows that local contraction is compatible with exact categorical memory. What is missing is a sufficient condition, with assumptions visible, under which a gated or switched family $\{F_\sigma\}$ and a cue code $E$ produce different cue recoverability at a declared noise level for equal-count periodic versus matched non-periodic orderings, and a complementary condition (basin structure, neutral manifold, or saturation regime) under which they do not. The result must yield a prediction that differs from the affine null, from echo-index multiplicity \citep{ashwin2023-echo-repetitions,ceni2020}, from covariance accounts and from Fisher-memory accounts \citep{ganguli2008-memory-traces}, and must be tested on held-out histories and models before any mechanism claim. \todo{Gate C statement, assumptions, proof or counterexample, and the empirical prediction it adds; do not write a commutator plot or a restated neutral-eigenvector argument here.} \evidence{planned}
+This is an exact preserved-family statement. Finite-sample mean-squared
+competence alone supplies neither a local singular-value bound nor a neutral
+multiplier. Finally, a forced periodic response can persist with strictly
+contracting multipliers (\cref{prop:scalar}), and stable eigenvalues allow
+transient gain (\cref{prop:nonnormal}). Periodic activity, covariance dimension,
+and tangent stability each require a separate task-memory measurement.

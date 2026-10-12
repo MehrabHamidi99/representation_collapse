@@ -1,37 +1,10 @@
-% Canonical source: doc/auto/initial-phase-scientific-review.md; doc/literature/novelty-review.md §4;
-% doc/auto/research-charter.md §6, §10.
 \section{Limitations}
 \label{sec:limitations}
 
-\paragraph{Evidence state.}
-No trained-model claim is accepted. The v1 pilots have one training seed per cell, failed competence, a fixed learning rate, a jointly trained encoder and a curriculum that never trained the zero-body task; they establish an acquisition problem and a verified pipeline. The periodicity diagnostics are executed but not reduced. The legacy graph observations are unverified.
+The analytic results concern stated affine, local, or exact-memory assumptions; they do not predict a generic GRU or LSTM outcome. Their individual foundations are established, and the paper's contribution is their use as a coherent diagnostic contract.
 
-\paragraph{Identification of the treatment.}
-The periodic and control arms match symbol counts, cyclic bigrams, run lengths, endpoints, final motif and elapsed updates, but not every higher-order subsequence, autocovariance, spectral or predictability statistic. The treatment is a specified higher-order ordering intervention; any effect must be compared against input- and encoder-level covariance and predictability predictors before being attributed to periodicity. A dwell sweep confounds dwell and period and is reported as such.
+The empirical audit has one training seed in each of four synthetic model/task cells, and none passes competence. It cannot estimate effects across training runs or establish repetition-induced forgetting. Probe regularization at tiny state scales also confounds comparisons across horizons. Float64 analysis of saved float32 states cannot restore lost numerical information.
 
-\paragraph{Sampling and estimation.}
-Cue-conditioned clouds have centered rank at most $N_{\mathrm{cue}}-1$; time-only covariance of a period-$P$ orbit has rank at most $P-1$; two histories support paired separation and nothing more. Participation ratio depends on the coordinate metric, so GRU and LSTM values are not directly comparable and LSTM $h$ and $c$ are reported separately. Sample-size convergence and estimator bias are checked by subsampling before any dimension statement.
+The ordering intervention matches selected statistics, not every temporal dependency. Covariance dimension depends on conditioning, sample size, and coordinate metric; local tangent dynamics do not characterize global basin structure. State interventions can themselves cause off-manifold disruption. These limitations require explicit controls rather than a single collapse score.
 
-\paragraph{Precision.}
-Native recurrence and stored states are float32; centering and decomposition in float64 cannot restore lost resolution. Variations near the float32 ULP are reported with the ULP ratio; FP64 replay of fixed weights is a separately labelled numerical assay, not a repaired model.
-
-\paragraph{Local versus global.}
-Jacobians, finite-time products and multipliers describe local perturbations at one history. Categorical memory can persist in attractors with contracting local spectra, and algebraic rank can remain full while every usable direction is below the noise floor. Finite cue differences, basin membership and perturbation radii are required.
-
-\paragraph{State accounting and architectures.}
-Only GRU and full-state LSTM on the vector renderer are in scope for Gate B. Other families (state-space, matrix-memory, block-recurrent and looped transformers) differ in which quantities are persistent state and in input access; they are deferred coverage, not results. Graph models require a $2NH$ full-state adapter that has not yet been validated.
-
-\paragraph{Probes and interventions.}
-Held-out probes with shuffled controls estimate conditional recoverability by a driver-specific decoder with offset compensation; they do not measure native use, and linear probe failure does not certify absence. Full-state swaps establish causal relevance of the state, not mediation by a dimension change; direction-specific interventions need equal-energy shams and off-manifold checks.
-
-\paragraph{Probe feature-scale floor.}
-The v1 ridge probe standardizes features with a $10^{-8}$ scale floor. At the observed per-feature state amplitudes ($\sim10^{-9}$ standard deviation, cloud variances $\sim10^{-16}$ over 128--256 coordinates) the floor is active for essentially every feature at $R=16$ and for many at $R=2$, so the effective ridge strength differs by horizon (implementation audit, sections 4--5). The $R=2$ real-versus-shuffled advantage is unaffected as counterevidence to complete erasure, but the v1 $R=2$-versus-$R=16$ probe comparison is confounded until re-reduced from the saved \texttt{probe\_feature\_scale} arrays with floor-hit counts and an unstandardized-probe sensitivity analysis. The design v2 battery declares the floor relative to the cloud scale and reports floor-hit counts and effective gains.
-
-\paragraph{Statistics.}
-Three discovery and pilot seeds diagnose implementation and effect scale; they are not population inference. Confirmation requires ten fresh seeds, a frozen smallest effect of interest ($0.02$ proposed), Bonferroni-adjusted paired seed-level intervals (bootstrap and $t$) with the exclusion decision taken from Holm-ordered sign-flip $p$-values over eight registered tests, all three required to agree; the sign-flip test is exact only under justified sign-exchangeability or valid sign randomization at the declared SEI null, not under an arbitrary zero-mean null. These assumptions and multiplicity-adjusted equivalence rules must be resolved in the freeze record; with ten seeds the proposed 99.375\% Bonferroni paired $t$ interval has half-width about $1.1215$ seed-level standard deviations (the ordinary 95\% interval has half-width $0.7154$), so the power check may show the design underpowered, in which case more seeds are requested in a new envelope rather than the threshold lowered. An interval containing zero is inconclusive, never ``no effect''.
-
-\paragraph{External validity.}
-Agreement across isomorphic renderers of one latent task is a control for the recurrence mechanism, not independent evidence of real-world importance. A frozen prediction must transfer to at least one native task where retaining earlier information is required, with encoder and external-memory audits.
-
-\paragraph{Literature boundary.}
-The novelty audit is scoped to 2026-10-11 with 26 full-text, 60 abstract and 4 metadata records; several classical results were not reread in full, recent preprint code was not audited, and citation-chain expansion around the closest 2026 papers can reveal further overlap.
+No graph or native cross-modal transfer is demonstrated. Rendering one latent task in several modalities would not by itself establish such transfer. The proposed stronger competence and statistical design remains separate from the executed pilot evidence.

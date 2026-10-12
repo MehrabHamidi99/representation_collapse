@@ -1,111 +1,78 @@
-# Manuscript skeleton
+# Recurrent-memory diagnostic manuscript
 
-Submission-oriented skeleton for the paper described in
-[`doc/auto/research-charter.md`](../doc/auto/research-charter.md). Created
-2026-10-12. It contains no accepted scientific claim; every empirical sentence
-is tagged with its evidence status and every placeholder is a visible `\todo{}`.
+**When Does Repetition Erase Memory? Identifiability Limits for Recurrent-State Collapse**
 
-## Build
+A compact, venue-neutral ML manuscript with a seven-page main text and 15 pages
+including references and detailed appendices. It replaces the earlier 35-page research-program
+skeleton. The scientific scope is a diagnostic framework: analytic ordering
+nulls and counterexamples, a controlled experimental design, and a verified
+four-cell pilot audit. It does not claim successful learned-memory erasure,
+an empirical equivalence result, or a new general Floquet theorem.
+
+## Read and build
+
+The local compiled manuscript is `paper/build/main.pdf` (ignored by Git).
+Overleaf users should select **`paper/main.tex`** as the main document.
+The source tree contains no symbolic links. Author metadata uses an anonymous
+review placeholder rather than inventing affiliations or coauthors.
+
+From the repository root:
 
 ```bash
+uv sync --locked --all-groups
+PYTHONPATH=src .venv/bin/python code/analysis/make_paper_figures.py
 cd paper
-latexmk -pdf -interaction=nonstopmode -outdir=build main.tex
+latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 ```
 
-For Overleaf, import the GitHub repository and select `paper/main.tex` as the
-main document. The repository's skill discovery entries are regular files
-because Overleaf's GitHub importer rejects symbolic links.
+The locked `paper` dependency group supplies Matplotlib and PyMuPDF for figure
+reproduction and visual review. The `experiments` group supplies PyTorch,
+needed for the exact probe implementation cross-check. TeX Live 2025 was used;
+packages include `newtx`, `microtype`, `tikz`, `natbib`, `cleveref` and `caption`.
+No cluster, training run or remote model service is needed to reproduce plots.
 
-Requires a TeX Live with `natbib`, `cleveref`, `booktabs`, `soul`, `xcolor`,
-`hyperref`, `enumitem` and `plainnat.bst` (TeX Live 2025 was used). Delete
-`paper/build/` before committing; build artifacts are not tracked.
+## Structure
 
-Without a toolchain, run the structural check (balanced braces, matched
-environments, existing `\input` targets, cite keys present in the snapshot
-bibliography) with a script such as `/tmp/rc-paper/check_tex.py` from the
-session that created this skeleton; the check is not part of the repository.
+The main text proceeds through motivation, measurement targets, analytic
+constraints, matched-order design, analytic controls and the competence audit,
+related work, limitations, and discussion/conclusion. Appendices contain full
+proofs, exact task/training settings, all 32 cue-conditioned cloud measurements,
+the probe-floor derivation and provenance. The earlier internal critique of
+inherited manuscripts is retained in `doc/auto/source-inventory.md` and
+`doc/auto/theory-propositions.md`; it is not a paper appendix.
 
-## Layout
+## Figures and traceability
 
-| File | Content | Canonical source |
-| --- | --- | --- |
-| `main.tex` | class, packages, theorem environments, `\todo{}` and `\evidence{}` macros, section inputs | this README |
-| `references.bib` | snapshot copy of the canonical bibliography | `doc/literature/references.bib` (regenerate by copying; never edit here) |
-| `sections/00-abstract.tex` | conditional abstract with bracketed placeholders | charter §1, §6, §9 |
-| `sections/01-introduction.tex` | motivation, RQ, why dimension is insufficient, contributions with status tags | charter §1–§3, §6, §10; novelty review §1, §4, §7 |
-| `sections/02-related-work.tex` | grouped antecedents; each paragraph ends with the delta to demonstrate | novelty review §2–§3; bibliography; charter §7 |
-| `sections/03-setting.tex` | notation, complete state, discrete framework, Floquet applicability, finite-time propagators, estimands | `research-program.md`; `periodicity-analysis-v1.md`; charter §4 |
-| `sections/04-theory.tex` | statements P1–P11, fixture coverage, explicit OPEN Gate C target (P12) | `doc/auto/theory-propositions.md`; novelty review §3; `periodicity-research-plan.md` §2 |
-| `sections/05-task-and-design.tex` | task, intervention, arms, horizons, gates, three-phase battery, interventions (a)–(d), noise assays, controls incl. optional commuting-null SSM control, statistics (proposed values from design v2 §2, §5), preregistration | charter §2, §5; `doc/auto/experimental-design-v2.md` §2, §5; `competence-recovery-plan.md` |
-| `sections/06-results.tex` | strictly the verified evidence state; tables of v1 native errors, probes, geometry; probe-floor and FP32-closure caveats; pending periodicity reduction; unverified legacy observations | `initial-phase-results.json`; `initial-phase-scientific-review.md`; `periodicity-analysis-status.json`; `implementation-audit.md` §4–5 |
-| `sections/07-discussion.tex` | interpretation matrix, alternatives, meaning of each outcome | charter §3, §11; `periodicity-research-plan.md` §4 |
-| `sections/08-limitations.tex` | limitations, including the probe feature-scale floor | scientific review; novelty review §4; `implementation-audit.md` §4–5 |
-| `sections/09-reproducibility.tex` | commits, jobs, hashes, artifact locations, environment, seeds, state shapes, numerical settings, determinism/TF32 status of v1 training | `initial-phase-report.md`; `periodicity-analysis-launch.json`; progress report 2026-10-11; `implementation-audit.md` §4–5, §8 |
-| `sections/A-proofs.tex` | complete proofs of P1, P2, P5, P6, P7; sketches of P4, P8, P9, P10; P3 example; P11 computation | novelty review §3; `mechanism_calibration.py` constants |
-| `sections/B-inherited-draft.tex` | one-page table: May 2025 draft assertions and their replacements | `floquet_analysis/main.tex`; `source-inventory.md`; `graph-reproduction.md` |
-| `sections/C-protocol.tex` | motif library, matching, competence ladder, capture points, tolerances, fixtures, graph gate | `competence-recovery-plan.md`; `periodicity-analysis-v1.md`; `vector_task.py` |
+- `figures/design.tex`: vector schematic of WRITE/body/QUERY pairing.
+- `figures/analytic_controls.pdf`: deterministic analytic constructions
+  separating dimension, local contraction, readout offsets and noise-dependent
+  ordering risk. These are not measurements of trained networks.
+- `figures/pilot_audit.pdf`: native behavior from the verified
+  `doc/auto/initial-phase-results.json`; one training seed per cell, no
+  fabricated training-seed intervals.
+- `figures/probe_scale_artifact.pdf`: a noiseless invertible scalar code whose
+  fixed-floor ridge probe deteriorates. It illustrates a possible confound;
+  it does not re-reduce or explain away the actual pilot clouds.
 
-## Placeholder and evidence policy
+The figure script creates the PDFs, PNG previews, `figures/manifest.json`
+and `sections/D-pilot-details.tex`. Edit the script to change generated tables.
+The manifest records source/output hashes, all plotted values, formulas,
+package versions, calibration checks and exact-ridge comparison residuals.
+Reproduction is deterministic within the locked environment. The body schematic
+is TeX source and is not generated by that script.
 
-- `\todo{plain text}` renders highlighted. Arguments must be plain text (no
-  `\cite`, no math). Every `\todo` names the artifact or review that will fill
-  it. A manuscript with any remaining `\todo` is not submittable.
-- `\evidence{status}` tags the status of a claim inline. Allowed values:
-  `analytic`, `infrastructure`, `executed-verified`, `executed-unreduced`,
-  `inconclusive`, `attributed-unverified`, `protocol`, `planned`,
-  `conditional`. Remove tags only when converting to the submission version,
-  and only after the status is `executed-verified` plus independent scientific
-  acceptance.
-- Every number traces to a committed `doc/auto/` artifact or to the
-  independent scientific review (`doc/auto/initial-phase-scientific-review.md`).
-  Table values in `06-results.tex` come from `doc/auto/initial-phase-results.json`.
-  Hashes and job IDs come from `doc/auto/*.json` and the dated progress report.
-  Nothing from the pending periodicity reduction, from Qwen proposals, or from
-  the inherited draft's figures is reported as a result.
-- Non-claims (charter §6) are never written as claims; "novel" and "first" are
-  not used unless the novelty audit supports them.
+`references.bib` retains the project's bibliography snapshot. Internal wording
+about an unverified publication venue is omitted from the manuscript note;
+this does not assert a new publication venue. The canonical full literature
+library remains under `doc/literature/`. Only cited entries print in the paper.
 
-## Inherited sources consulted
+## Scientific readiness
 
-- `floquet_analysis/main.tex` (May 2025 draft): lines 66–140 (introduction,
-  periodic task definitions), 145–220 (ODE surrogate and assumed periodic
-  solution), 295–345 (discrete monodromy product), 437–565 (AABB prediction,
-  six multipliers, envelopes, linearization errors), 675–750 (PSD and PCA
-  interpretation). Treated as unverified attributed observations; corrections
-  are in Appendix B.
-- `ACM___TGRAB_KDD_2026/kdd/main.tex`: entrypoint lines 327–354; active
-  includes `kdd/tex/000abstract`, `010intro`, `020related`, `030prelims`,
-  `040method_ai`, `050periodic_ai`, `060cause_ai`, `070long_ai`,
-  `080discussion_ai`, `085conclusion`, appendix `100appendix`. The periodic
-  task definition `Pdet(k,n)`/`Psto(k,n)` was read from `050periodic_ai.tex`
-  lines 1–40; other section contents were taken from `doc/auto/source-inventory.md`
-  and `doc/auto/graph-reproduction.md` rather than reread in full.
-- No inherited file was modified.
-
-## Checklist: skeleton to submission (after Gate B evidence)
-
-1. Independent raw-array reduction of the periodicity batch accepted; fill the
-   five `\todo` items in §6.4 or delete the subsection if superseded.
-2. Competence ladder passed in both arms for the Gate B cells; replace Table 1
-   with the competent-model native errors and add the per-coordinate gate
-   table; keep the v1 failures in an appendix or supplement.
-3. Preregistered `δ2`, `δ16`, `DID` with paired seed-level intervals, Holm
-   correction and the declared smallest effect; write the Discussion against
-   the interpretation matrix without renaming outcomes.
-4. Fill the conditional abstract and contribution sentences only from accepted
-   evidence; otherwise convert the paper to the null/counterexample form per
-   charter §11.
-5. Replace the OPEN Gate C paragraph with a stated result (assumptions, proof
-   or counterexample, added prediction) or move it to future work.
-6. Remove every `\evidence{}` tag whose status is `executed-verified` and
-   accepted; delete any sentence whose tag is still `planned` or
-   `executed-unreduced`.
-7. Update `references.bib` by copying the canonical file; add missing
-   antecedents (for example ChaosBook cycle stability) to the canonical
-   library first.
-8. Regenerate Section 9 from the final `doc/auto/*.json` records; verify every
-   hash and job ID against them.
-9. Author list, affiliations, funding, compute acknowledgement and T-GRAB
-   coauthorship statement.
-10. Run the build, check for overfull boxes in hash strings, and remove
-    `paper/build/`.
+The manuscript has complete prose, proofs, captions and figures rather than
+anticipated-result placeholders. Editorial completeness does not establish
+conference acceptance or resolve the outstanding research question. The
+current ingredients substantially overlap established work, and all four
+pilots fail native competence. The
+[readiness review](../doc/auto/manuscript-review-2026-10-12.md) distinguishes
+what is supported from what still requires an original result, competent
+replicated models, causal controls and independent periodicity reduction.

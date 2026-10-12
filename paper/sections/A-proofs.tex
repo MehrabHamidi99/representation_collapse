@@ -1,40 +1,200 @@
-% Canonical source: doc/literature/novelty-review.md §3; doc/auto/periodicity-research-plan.md §2;
-% doc/auto/research-program.md; src/representation_collapse/mechanism_calibration.py (P11 constants).
-\section{Proofs and sketches}
+% Self-contained derivations for the diagnostic statements in the main text.
+\section{Proofs and supporting counterexamples}
 \label{app:proofs}
 
-\subsection*{Proof of \cref{prop:affine} (P1)}
-By induction on $t$, $s_t=A^tE(u)+\sum_{j=0}^{t-1}A^{t-1-j}(Bx_j+b)$: the case $t=0$ is the definition, and if it holds at $t$ then $s_{t+1}=A s_t+Bx_t+b=A^{t+1}E(u)+\sum_{j=0}^{t-1}A^{t-j}(Bx_j+b)+(Bx_t+b)$, which is the claim at $t+1$. Setting $t=H$ gives $s_H(u,h)=A^HE(u)+k(h)$ with $k(h)$ depending on $h$ only. (i) The difference of two cue states under the same body cancels $k(h)$; differentiating in $u$ (when $E$ is differentiable) removes the constant $k(h)$. (ii) Covariance is translation invariant, so $\Cov_u[s_H\mid h]=\Cov_u[A^HE(u)]=A^H\Cov(E(u))A^{H\top}$. (iii) $Ws_H+w_0=WA^HE(u)+(Wk(h)+w_0)$; the first term does not depend on $h$ and the second does not depend on $u$. With additive noise, $s_H=A^HE(u)+k(h)+\sum_j A^{H-1-j}\eta_j$; the last term is a fixed linear image of $(\eta_0,\dots,\eta_{H-1})$, so its law is determined by the joint noise law, which is assumed equal across bodies. Matching only per-step marginals is insufficient because the linear image depends on the joint law through cross-covariances $\E[\eta_i\eta_j^\top]$. \qed
+\subsection{Cue-channel ordering and readout effects}
 
-\subsection*{Proof of \cref{cor:offset}}
-For squared loss and a decoder allowed an intercept per body, the optimal decoder within the affine class in each arm can be written $y=\hat W(s_H-k(h))+\hat b$ with the same $\hat W,\hat b$, since $s_H-k(h)=A^HE(u)$ has identical joint law with $u$ in both arms; hence identical risk. For a fixed linear head and fixed paired bodies, let $e=y_{h'}-t$ and $\Delta=W(k(h)-k(h'))$. Expanding $\norm{e+\Delta}^2-\norm{e}^2$ gives $2\E[e]^\top\Delta+\norm{\Delta}^2$. Centering the cue component alone does not center the control residual: its intercept and readout bias also matter. If bodies vary across pairs, retain $2\E[e^\top\Delta]+\E\norm{\Delta}^2$; independence cannot be assumed. For a nonlinear head, $g(WA^HE(u)+Wk(h)+w_0)$ is evaluated at different operating points in the two arms, and nothing forces equal error. \qed
+\paragraph{Proof of \cref{prop:affine}.}
+Unrolling the switched-affine recurrence gives
+\begin{equation}
+ s_H=\Phi_hE(u)+k_h,\qquad
+ \Phi_h=A_{x_{H-1}}\cdots A_{x_0},\qquad
+ k_h=\sum_{j=0}^{H-1}
+       (A_{x_{H-1}}\cdots A_{x_{j+1}})c_{x_j},
+ \label{eq:unrolled-switched}
+\end{equation}
+where an empty product is the identity. Subtraction cancels $k_h$,
+differentiation gives $D_us_H=\Phi_hDE(u)$, and covariance is invariant to
+translation. Fixed $A$ yields $\Phi_h=A^H$. Pairwise commutativity yields
+$\Phi_h=\prod_\sigma A_\sigma^{n_\sigma}$, so equal counts give equal products.
+All covariance claims require a common cue law with finite second moments.
+For fixed $A$ and cue-independent additive noise,
+$s_H=A^HE(u)+k_h+\sum_jA^{H-1-j}\eta_j$. A common joint noise law gives the
+same propagated law; if the noise is independent of the cue, its covariance
+adds to the displayed signal covariance. With independently drawn episode
+noise, individual cue differences also contain noise differences. With
+switched matrices, even independent identically distributed process noise can
+produce unequal terminal covariance: two scalar transitions $a,b$, with
+independent variance-$\tau^2$ noise after each update, give terminal-noise
+variances $(1+b^2)\tau^2$ in order $ab$ and $(1+a^2)\tau^2$ in order $ba$,
+although both cue products equal $ab$. \qed
 
-\subsection*{Proof of \cref{prop:commuting} (P2)}
-Pairwise commuting matrices can be reordered freely in a product, so $\prod_{t=0}^{H-1}A_{x_t}=\prod_\sigma A_\sigma^{n_\sigma}$ depends only on the counts $(n_\sigma)$. The affine part contributes a cue-independent term by the same induction as in P1, so cue differences, derivatives and conditioned covariances agree. For intermediate noise, the term $\sum_j(\prod_{i>j}A_{x_i})\eta_j$ involves partial products from position $j+1$ to the end, whose symbol counts depend on the order of the body; the diagonal fixture in the calibration suite exhibits a nonzero gap between the two arms' propagated noise covariances while the full products coincide. \qed
+\paragraph{Proof of \cref{cor:offset}.}
+Subtracting $k_h$ makes the joint law of state and target identical between
+bodies. Composing any decoder with this translation gives the same risk under
+any fixed loss; the affine-decoder class is also closed under translations
+when it includes an intercept. This is an equality of attainable optimal
+risks, not of finite-sample fitted probes. Expanding
+$\norm{e+\Delta}^2-\norm{e}^2$ proves \cref{eq:offset-gap}.
+If bodies vary across paired samples, the general expression is
+$2\E[e^\top\Delta]+\E\norm{\Delta}^2$; the factorization in the main text
+requires a deterministic shift. The required compensation is body-specific:
+a single intercept per arm need not suffice for a mixture of bodies. \qed
 
-\subsection*{\cref{prop:noncommuting} (P3): example}
-Necessity is the contrapositive of P2. For insufficiency, let $A_A$ and $A_B$ be reflections of $\R^2$ about lines at angle $\pi/4$ to each other. Then $A_AA_B$ is a rotation by $\pm\pi/2$ and $A_BA_A$ the rotation by $\mp\pi/2$, so $A_AA_B\neq A_BA_A$, yet $(A_AA_B)^2=(A_BA_A)^2=-I$. The equal-count bodies $\mathrm{ABAB}$ and $\mathrm{BABA}$ therefore have identical cue products. Separately, if two products differ by a left orthogonal factor, $\Phi'=Q\Phi$, then for isotropic terminal noise the linear-MMSE risk $\tr\bigl((\Lambda^{-1}+\Phi^\top\Sigma^{-1}\Phi)^{-1}\bigr)$ with $\Sigma=\sigma^2I$ is unchanged. \qed
+\begin{remark}[Noncommutativity is insufficient]
+\label{prop:noncommuting}
+If equal-count products differ, at least one matrix pair fails to commute,
+by the contrapositive of \cref{prop:affine}. The converse is false.
+Take $A=\diag(1,-1)$ and
+$B=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$.
+Then $AB=-BA$, but $(AB)^2=(BA)^2=-I$.
+Moreover, the unequal products $AB$ and $BA$ are orthogonal, so their cue
+channels have identical optimal recovery risk with independent isotropic Gaussian terminal noise
+and unrestricted decoding: rotating the observation converts either into the
+same channel $u+\varepsilon$. Thus a changed product is itself insufficient
+for a changed recovery risk.
+\end{remark}
 
-\subsection*{Sketch for \cref{prop:continuous} (P4)}
-Differentiate $D(E(u))=u$ by the chain rule: $DD(E(u))\,DE(u)=I_d$, so $DE(u)\in\R^{n\times d}$ has a left inverse and rank $d$. Differentiate $\mathcal P(E(u))=E(u)$: $D\mathcal P(E(u))\,DE(u)=DE(u)$, so each of the $d$ independent columns of $DE(u)$ is an eigenvector of $D\mathcal P(E(u))$ with eigenvalue $1$. The argument uses only that the identities hold on an open set, which is why it does not apply to finite cue sets (categorical codes), to approximate recovery, or to information carried by external inputs rather than the state. \qed
+\begin{lemma}[Adjacent-swap bound]
+\label{lem:swaps}
+Let two words of length $H\ge2$ have the same symbol counts and be connected
+by $K$ adjacent swaps. If $\norm{A_\sigma}_2\le L$ with $L>0$ and
+$\kappa=\max_{\sigma,\tau}\norm{A_\sigma A_\tau-A_\tau A_\sigma}_2$, then
+\[
+ \norm{\Phi_h-\Phi_{h'}}_2\le K L^{H-2}\kappa.
+\]
+\end{lemma}
+\begin{proof}
+For a single swap, factor the difference into a common left product, the
+commutator, and a common right product. The common products contain $H-2$
+factors in total, so submultiplicativity bounds the difference by
+$L^{H-2}\kappa$. Sum the $K$ differences along the swap sequence and use the
+triangle inequality. Equal-count words admit such a sequence by successive
+adjacent transpositions. The corresponding change in a cue difference is at
+most $KL^{H-2}\kappa\norm{E(u)-E(v)}$. This standard telescoping bound omits
+affine offsets and process-noise propagation, and has no lower bound or sign.
+\end{proof}
 
-\subsection*{Proof of \cref{prop:scalar} (P5)}
-Let $s^*_t=\sum_{k\ge0}a^kbx_{t-1-k}$, which converges absolutely because $|a|<1$ and $x$ is bounded. Then $as^*_t+bx_t=\sum_{k\ge0}a^{k+1}bx_{t-1-k}+bx_t=\sum_{k\ge0}a^kbx_{t-k}=s^*_{t+1}$, so $s^*$ solves the recurrence, and $s^*_{t+T}=s^*_t$ because $x_{t+T-1-k}=x_{t-1-k}$ for all $k$. For any solution, $e_t=s_t-s^*_t$ satisfies $e_{t+1}=ae_t$, hence $e_t=a^te_0\to0$, which proves global attraction and uniqueness among periodic solutions. Bounded forward-time transients are not unique; requiring a bounded bi-infinite trajectory removes the homogeneous transient. The one-period tangent map of the scalar recurrence is the product of $T$ copies of $a$, namely $a^T$. The response is the convolution of $x$ with the causal kernel $ba^k$, whose transfer function $b/(1-ae^{-i\omega})$ is nonzero for every frequency, so every input frequency present in $x$ is present in $s^*$. The vector case replaces $a^k$ by $A^k$ (convergent since $\rho(A)<1$) and the multiplier by $A^T$, whose spectrum is $\{\lambda^T:\lambda\in\operatorname{spec}A\}$. \qed
+\subsection{Covariance geometry and noisy recovery}
 
-\subsection*{Proof of \cref{prop:ceilings} (P6)}
-(a) A $P$-periodic trajectory takes at most $P$ distinct values; any sample consists of rows drawn from these $P$ vectors, so the centered rows lie in the span of $P$ vectors minus their mean, a subspace of dimension at most $P-1$; the sample covariance has rank at most that. (b) $N$ centered rows span a subspace of dimension at most $N-1$ since they sum to zero; the covariance rank is at most $\min(N-1,n)$. With $N=2$ the rank is at most one, and a rank-one nonzero covariance has a single nonzero eigenvalue, so $\PR=\lambda^2/\lambda^2=1$. \qed
+\begin{proposition}[Sampling ceilings and coordinate dependence]
+\label{prop:ceilings}\label{prop:pr}
+A centered cloud of $N$ states in $\R^n$ has covariance rank at most
+$\min(N-1,n)$. A time-only sample of an exactly $P$-periodic orbit has rank at
+most $\min(P-1,n)$. For nonzero covariance $C\succeq0$,
+$\PR(C)=(\tr C)^2/\tr(C^2)$ is invariant to positive scalar multiplication
+and orthogonal coordinate changes, but not to anisotropic invertible scaling.
+Writing $p_i=\lambda_i/\tr C$ on the positive eigenvalues,
+\[
+ 1\le\PR(C)=e^{H_2(p)}\le e^{H_1(p)}\le\rank C.
+\]
+The upper three quantities coincide exactly for equal positive eigenvalues;
+equality also with one requires rank one. For zero covariance, normalized
+dimension is undefined.
+\end{proposition}
+\begin{proof}
+Centered sample rows sum to zero. An orbit sample additionally lies in the
+affine span of at most $P$ points. These give the rank bounds. Scaling and
+orthogonal invariance follow directly from traces. In contrast,
+$C=I_2$ transformed by $\diag(1,\epsilon)$ has
+$\PR=(1+\epsilon^2)^2/(1+\epsilon^4)\to1$ as $\epsilon\downarrow0$,
+although the transformation is invertible for every $\epsilon>0$.
+Finally, $\PR=1/\sum_i p_i^2$. Jensen's inequality gives
+$-\sum_i p_i\log p_i\ge-\log\sum_i p_i^2$, and the entropy maximum on a
+support of size $r$ is $\log r$, attained exactly at the uniform law.
+\end{proof}
 
-\subsection*{Proof of \cref{prop:pr} (P7)}
-(a) $\PR(\alpha C)=(\alpha\tr C)^2/(\alpha^2\tr C^2)=\PR(C)$. (b) Trace and the eigenvalue multiset are invariant under orthogonal conjugation. (c) For $C=I_2$ and $D=\diag(1,\epsilon)$, $DCD=\diag(1,\epsilon^2)$ has $\PR=(1+\epsilon^2)^2/(1+\epsilon^4)$, which tends to $1$ as $\epsilon\to0$ while $\PR(C)=2$. (d) With $p_i=\lambda_i/\tr C$, $\PR=1/\sum_ip_i^2=\exp(H_2(p))$ where $H_2$ is the collision (R\'enyi order 2) entropy, and $D_{\mathrm{ent}}=\exp(H_1(p))$ with $H_1$ the Shannon entropy. R\'enyi entropies are non-increasing in their order, so $H_2\le H_1$, and $H_1\le\log\rank C$ with equality iff $p$ is uniform on its support; the lower bound $\PR\ge1$ follows from $\sum p_i^2\le1$. The upper three quantities are equal iff the nonzero eigenvalues are equal; equality also at the lower bound $1$ requires rank one. \qed
+\begin{lemma}[Linear recovery channel]
+\label{prop:channel}
+For independent zero-mean $u,\varepsilon$ with covariances
+$\Lambda\succ0,\Sigma\succ0$, the best linear estimator of $u$ from
+$y=Gu+\varepsilon$ has squared error
+$\tr[(\Lambda^{-1}+G^\top\Sigma^{-1}G)^{-1}]$.
+For Gaussian $u,\varepsilon$, this is also the unrestricted Bayes risk.
+\end{lemma}
+\begin{proof}
+The best linear estimator is
+$\Lambda G^\top(G\Lambda G^\top+\Sigma)^{-1}y$.
+Its error covariance is
+$\Lambda-\Lambda G^\top(G\Lambda G^\top+\Sigma)^{-1}G\Lambda$;
+the Woodbury identity yields the displayed expression. Gaussian conditioning
+makes the same estimator the conditional mean. Setting
+$G=a^HI_d$, $\Lambda=I_d$, and $\Sigma=\sigma^2I_d$ gives
+\cref{eq:attenuation-risk}. For non-Gaussian cues, a nonlinear decoder can
+improve on the linear risk.
+\end{proof}
 
-\subsection*{Sketch for \cref{prop:nonnormal} (P8)}
-For $M=\bigl(\begin{smallmatrix}a&g\\0&a\end{smallmatrix}\bigr)$, $\rho(M)=|a|<1$ while $\norm{M}_2\ge\norm{Me_2}=\sqrt{g^2+a^2}>1$ when $g>1$, so the one-step gain exceeds one; $M^k=a^{k-1}\bigl(\begin{smallmatrix}a&kg\\0&a\end{smallmatrix}\bigr)$ shows the gain can grow for several steps before the geometric factor dominates. Applied to a period map $M_t=J_{t+T-1}\cdots J_t$: the multipliers bound $\norm{M_t^m}^{1/m}$ asymptotically in $m$, whereas the within-cycle partial products $J_{t+k-1}\cdots J_t$ and the finite-window singular values are not controlled by them. \qed
+For the complementary nuisance-compression example in the main text, put
+$q=a^{2H}$. The covariance of $(u,a^Hv)$ is
+$\diag(I_d,qI_k)$ and its participation ratio is
+$(d+kq)^2/(d+kq^2)$. Its derivative with respect to $q\in(0,1)$ is
+$2dk(d+kq)(1-q)/(d+kq^2)^2>0$ for $d,k>0$, so participation ratio decreases
+with $H$ while the readout selecting $u$ remains exact.
 
-\subsection*{Sketch for \cref{prop:channel} (P9)}
-With $u\sim\mathcal N(0,\Lambda)$ and $y\mid u\sim\mathcal N(Hu,\Sigma)$, the joint is Gaussian and the conditional covariance of $u$ given $y$ is $\Lambda-\Lambda H^\top(H\Lambda H^\top+\Sigma)^{-1}H\Lambda=(\Lambda^{-1}+H^\top\Sigma^{-1}H)^{-1}$ by the Woodbury identity; the Bayes risk under squared loss is its trace. For a non-Gaussian $u$ with the same second moments, the best \emph{linear} estimator is the same matrix and attains the same risk, since the linear-MMSE solution depends only on second moments; a nonlinear decoder can do better, which is why the formula is a calibration surrogate and recovery is measured separately. \qed
+\subsection{Categorical basins and continuous memory}
 
-\subsection*{Sketch for \cref{prop:reinjection} (P10)}
-Differentiate $z_{\ell+1}=G(z_\ell,x)$ with respect to $x$: $S_{\ell+1}=J_\ell S_\ell+B_\ell$. At a fixed point with $\rho(J^*)<1$, $I-J^*$ is invertible and the stationary solution of $S=J^*S+B^*$ is $S^*=(I-J^*)^{-1}B^*$, to which the iteration converges. In the scalar example $J=a$, $B=1-a$, so $S_\ell\to1$ while $\partial z_\ell/\partial z_0=a^\ell\to0$. \qed
+\paragraph{Proof of \cref{prop:basins}.}
+The shifted coordinate satisfies $r_{t+1}=g(r_t)$, with
+$g(\pm1)=\pm1$ and $g'(\pm1)=0$. At $r=1+\delta$,
+$g(r)-1=-1.5\delta^2-0.5\delta^3$; odd symmetry gives the same magnitude
+bound at $-1$. For $|\delta|\le0.05$, the next error is at most
+$0.0038125<0.05$, proving invariance, and
+$|g'(r)|\le1.5(2\cdot0.05+0.05^2)=0.15375<1$, proving contraction.
+At each phase the two tubes are separated by at least $1.9$;
+$|\phi_t|=0.2$ ensures that their signs also agree with their labels.
+The period-two tangent product along either reference response is zero.
+This proves retention for all times within the stated tubes, not global
+attraction to those tubes. \qed
 
-\subsection*{Computation for \cref{prop:basins} (P11)}
-With $r=s-\phi_k$ and $g(r)=1.5r-0.5r^3$: $g(\pm1)=\pm1$ and $g'(r)=1.5-1.5r^2$ vanishes at $r=\pm1$, so $s=\pm1+\phi_k$ are period-two points of the forced map with zero local derivative. For $r=1+\delta$, $g(1+\delta)-1=-1.5\delta^2-0.5\delta^3$, whose absolute value for $|\delta|\le0.05$ is at most $1.5(0.05)^2+0.5(0.05)^3=0.0038125<0.05$, so the tube maps into itself; $|g'(1+\delta)|=1.5|2\delta+\delta^2|\le1.5(0.1+0.0025)=0.15375<1$ in the tube. The same holds at $r=-1$ by symmetry. Iterates from the two tubes stay within $0.05$ of $\pm1$ in $r$ and are therefore separated by at least $2-0.1=1.9$; a sign readout of $r$ recovers the label after any number of updates. The calibration fixture iterates sixteen forced updates from 128 initial perturbations, confirms label retention, closure of the terminal cycle and basin separation. \qed
+\paragraph{Proof of \cref{prop:continuous}.}
+Differentiating $\mathcal D(E(u))=u$ yields
+$D\mathcal D(E(u))DE(u)=I_d$, so $DE(u)$ has rank $d$.
+Differentiating $\mathcal P(E(u))=E(u)$ yields
+$D\mathcal P(E(u))DE(u)=DE(u)$. Each of the $d$ independent columns of
+$DE(u)$ is therefore a unit-eigenvalue eigenvector. Both identities must hold
+on an open set. A small average reconstruction error cannot replace them:
+in one dimension, $E_\epsilon(u)=u+\epsilon\sin(u/\epsilon)$ and
+$\mathcal D(s)=s$ have pointwise squared error at most $\epsilon^2$,
+yet $E_\epsilon'$ vanishes wherever $\cos(u/\epsilon)=-1$.
+Approximate competence alone therefore gives no positive local gain bound. \qed
+
+\subsection{Periodic response, transient gain, and reinjection}
+
+\begin{remark}[A forced oscillation needs no neutral multiplier]
+\label{prop:scalar}
+For $s_{t+1}=as_t+bx_t$ with $0<|a|<1$, $b\ne0$, and $T$-periodic $x$,
+\[
+ s_t^*=\sum_{k=0}^{\infty}a^k b x_{t-1-k}
+\]
+is the unique periodic solution and unique bounded bi-infinite solution.
+Absolute convergence and an index shift verify the recurrence; input
+periodicity verifies $s_{t+T}^*=s_t^*$. Every forward solution has
+$s_t-s_t^*=a^t(s_0-s_0^*)$, so the response attracts globally and its period
+multiplier is $a^T$. For an input harmonic $e^{i\omega t}$, the response gain
+is $b/(e^{i\omega}-a)$, which is nonzero. An input harmonic can therefore
+persist while initial-state sensitivity vanishes. Minimal period $T$ does
+not itself guarantee a nonzero first harmonic at frequency $1/T$.
+\end{remark}
+
+\begin{remark}[Stable eigenvalues do not exclude transient gain]
+\label{prop:nonnormal}
+For $M=\left(\begin{smallmatrix}a&g\\0&a\end{smallmatrix}\right)$ with
+$|a|<1<g$, the spectral radius is $|a|<1$, yet
+$\norm{M}_2\ge\norm{Me_2}_2=\sqrt{g^2+a^2}>1$.
+Stable period multipliers concern asymptotic powers of the period map;
+finite-window and within-period gains require their own singular-value
+measurements. They are not implied to decrease monotonically.
+\end{remark}
+
+\begin{remark}[Reinjected input is a different memory problem]
+\label{prop:reinjection}
+For a $C^1$ depth loop $z_{\ell+1}=F(z_\ell,x)$, differentiation gives
+$S_{\ell+1}=J_\ell S_\ell+B_\ell$ with $J_\ell=\partial_zF$ and
+$B_\ell=\partial_xF$. At a fixed point with $\rho(J^*)<1$, the implicit
+function theorem gives local fixed-point sensitivity
+$S^*=(I-J^*)^{-1}B^*$ \citep{deep_equilibrium}.
+For $z_{\ell+1}=az_\ell+(1-a)x$ with $|a|<1$, the explicit solution is
+$z_\ell=a^\ell z_0+(1-a^\ell)x$: initial-state influence vanishes while
+input sensitivity approaches one. This does not establish retention of a
+cue absent from subsequent inputs.
+\end{remark}

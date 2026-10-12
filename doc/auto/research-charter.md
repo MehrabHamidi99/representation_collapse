@@ -7,6 +7,26 @@ document disagrees, this charter governs and the older text is deferred
 coverage, not a competing plan. It records no new empirical result. Evidence
 status follows [the tracker](../TRACKER.md) and the dated notebook.
 
+## Current manuscript scope — revision of 2026-10-12
+
+At the owner's request, the paper is now a compact, venue-neutral methodological
+study titled **When Does Repetition Erase Memory? Identifiability Limits for
+Recurrent-State Collapse**. It presents established analytic nulls and explicit
+counterexamples, a matched-order experiment, and the verified failed-acquisition
+pilot audit. It does not claim a learned erasure mechanism, an empirical null,
+a new general Floquet theorem or cross-modal transfer. Diagnostic
+non-identifiability means that individual geometric/stability measurements do
+not determine retained task information; it is not a new formal statistical
+identification theorem.
+
+This presentation scope is distinct from the broader mechanism program below.
+The scientific publication requirements in section 11 remain in force for
+mechanism or empirical-null claims. A polished theory/methodology manuscript
+also needs a compelling original contribution relative to the cited antecedents;
+reorganizing known results and illustrating failed pilots does not itself
+satisfy a top-conference novelty threshold. The manuscript's readiness review
+records these limitations separately from editorial completeness.
+
 ## 1. Framing and abstract
 
 **Working title.** When does repetition erase what a recurrent network needs?
@@ -291,5 +311,5 @@ about collapse.
 | Literature and novelty | [novelty-review.md](../literature/novelty-review.md), [bibliography.md](../literature/bibliography.md) |
 | Graph reproduction and provenance | [graph-reproduction.md](graph-reproduction.md), [source-inventory.md](source-inventory.md) |
 | Operations and compute | [compute-plan.md](compute-plan.md), [cluster-access.md](cluster-access.md), [project-ops skill](../../skills/project-ops/SKILL.md) |
-| Manuscript | `paper/` (skeleton; every number traces to a `doc/auto/` artifact) |
+| Manuscript | `paper/` (focused diagnostic manuscript; plots trace to committed evidence or declared analytic constructions) |
 | Manuscript build, layout and placeholder policy | [paper/README.md](../../paper/README.md) |

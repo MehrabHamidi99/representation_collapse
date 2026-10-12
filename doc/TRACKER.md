@@ -4,6 +4,20 @@ Updated 2026-10-12. See the [latest notebook entry](october/october12/2026-10-12
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Manuscript revision — venue-neutral diagnostic paper, 2026-10-12.**
+  [When Does Repetition Erase Memory?](../paper/README.md) now has a seven-page
+  main text and eight pages of references/appendices (15 total), complete
+  proofs, four figures, and all 32 pilot cloud measurements. The scope is
+  diagnostic limitations and controlled ordering, with no learned-collapse,
+  empirical equivalence, or cross-modal claim. Reproducible plots use the
+  verified seed-0 summaries and explicitly constructed analytic examples;
+  a new probe-floor counterexample matches the actual ridge implementation
+  at 101 amplitudes. The full source suite passes 48 tests, and all 36
+  mechanism checks pass. The PDF builds without warnings or unresolved
+  references and was visually reviewed. The paper dependency group is locked.
+  [Readiness review](auto/manuscript-review-2026-10-12.md) records remaining
+  novelty and evidence requirements; editorial completion does not establish
+  scientific submission readiness. No new training or worker restart.
 - **New-work review and live-status check — 2026-10-12.** Reviewed document
   commit `eb12ea1` and stopped-pass record `dc5e020`. Corrected numerical and
   statistical overstatements in the current design/theory/paper: FP32 tolerance
@@ -45,8 +59,9 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   the competence-first ladder, the preregistered `δ16`/`DID` family, the
   measurement battery, an evidence ledger and the compute estimate (no
   envelope requested); the [implementation audit](auto/implementation-audit.md)
-  maps code and tests to the contract; a `paper/` skeleton builds cleanly and
-  reports only the verified evidence state. Working framing: useful-history
+  maps code and tests to the contract; the original `paper/` skeleton was
+  subsequently replaced by the diagnostic manuscript described above.
+  Working framing: useful-history
   loss under controlled periodic forcing in fixed-weight recurrent models.
   Audit findings that qualify earlier evidence: the ridge-probe feature floor
   (`1e-8`) is active at the observed ~1e-9 per-feature state amplitudes, so
