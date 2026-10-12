@@ -194,3 +194,20 @@ and ignored. Inherited directories `floquet_analysis/`, `ACM___TGRAB/` and
 `ACM___TGRAB_KDD_2026/`, `src/`, `tests/`, frozen experiment configurations and
 the 2026-10-11 report are unchanged. The commit for this work uses the `doc:`
 prefix. No cluster job, model-service call or compute approval is part of it.
+
+## Later — implementation pass stopped
+
+Five Gate B implementation/pin workers were launched after `eb12ea1` and then
+stopped: the first batch failed on a model-usage limit; the second batch was
+interrupted by the owner. No new Gate B code was accepted, no new compute was
+submitted, and no empirical claim was accepted. Working tree after the stop:
+committed documentation session remains `eb12ea1` (ahead of `origin/main`, not
+pushed); one untracked leftover `src/representation_collapse/diagnostics.py`
+(320 lines: R0 constructors, single-WRITE episodes, streaming-register oracle
+and shuffle controls) is not imported by existing modules and has no matching
+test. It is not an empty stub, so it was left untracked rather than deleted.
+Expected siblings (`gates.py`, `stats.py`, `capture.py`, `interventions.py`,
+`provenance.py`, `reduce_periodicity.py`, `probe_floor.py`,
+`graph-assets-pin.md` and matching tests) were not created. Next actions remain
+independent periodicity reduction, Gate B constructors, a hashed freeze record,
+and the graph-asset pin.
