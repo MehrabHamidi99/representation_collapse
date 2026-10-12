@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "kind": "bounded_competence_discovery_canary",
+  "phase_id": "competence-canary-v2",
+  "protocol_path": "configs/experiments/competence-recovery-v2.json",
+  "wrapper_path": "code/ops/competence_job.sh",
+  "trainer_module": "representation_collapse.competence_training",
+  "scientific_acceptance": false,
+  "confirmation": false,
+  "grid_selection": false,
+  "learning_rate": 0.001,
+  "maximum_updates_per_fit": 3500,
+  "resource_envelope": {
+    "max_submissions": 4,
+    "max_concurrent_gpu_jobs": 2,
+    "max_requested_gpu_hours": 2,
+    "gpus_per_job": 1,
+    "cpus_per_job": 4,
+    "memory_gib": 16,
+    "walltime": "00:30:00",
+    "nodes": 1,
+    "tasks": 1,
+    "race": false,
+    "automatic_retries": false,
+    "requeue": false
+  },
+  "targets": {
+    "fir": {
+      "scheduler_verified": false,
+      "offline_environment_verified": false,
+      "account": null,
+      "partition": null,
+      "qos": null,
+      "gres": null,
+      "source_directory": null,
+      "scratch_root": null,
+      "verified_at_utc": null,
+      "verification_receipt_sha256": null,
+      "offline_preflight_receipt_sha256": null
+    },
+    "nibi": {
+      "scheduler_verified": false,
+      "offline_environment_verified": false,
+      "account": null,
+      "partition": null,
+      "qos": null,
+      "gres": null,
+      "source_directory": null,
+      "scratch_root": null,
+      "verified_at_utc": null,
+      "verification_receipt_sha256": null,
+      "offline_preflight_receipt_sha256": null
+    }
+  },
+  "cells": [
+    {
+      "cell": 0,
+      "model": "gru",
+      "task": "categorical",
+      "seed": 0,
+      "cluster": "fir",
+      "concurrency_slot": 0,
+      "predecessor_cell": null
+    },
+    {
+      "cell": 1,
+      "model": "lstm",
+      "task": "categorical",
+      "seed": 0,
+      "cluster": "nibi",
+      "concurrency_slot": 1,
+      "predecessor_cell": null
+    },
+    {
+      "cell": 2,
+      "model": "gru",
+      "task": "continuous",
+      "seed": 0,
+      "cluster": "fir",
+      "concurrency_slot": 0,
+      "predecessor_cell": 0
+    },
+    {
+      "cell": 3,
+      "model": "lstm",
+      "task": "continuous",
+      "seed": 0,
+      "cluster": "nibi",
+      "concurrency_slot": 1,
+      "predecessor_cell": 1
+    }
+  ],
+  "submission_policy": {
+    "approval_key": "competence_canary_v2",
+    "default": "preview_without_network_or_filesystem_mutation",
+    "explicit_execution_flag": "--submit",
+    "native_cluv_version": "0.1.5",
+    "staging": "separate approved clean immutable source and fresh offline locked environment preflight; submit skips sync",
+    "scheduler_reconciliation": "inspect both selected targets and known journal IDs before every submission; ambiguous or unregistered matching jobs block",
+    "submission_failure": "record ambiguous; never resubmit automatically even if sbatch response is lost",
+    "cluster_fallback": "none; any target/resource/source change requires a newly reviewed exact approval binding",
+    "dependency": "afterany of registered same-slot predecessor on the same cluster; no arrays or races"
+  },
+  "stopping_rules": [
+    "Stop each fit at its frozen stage boundary when any required coordinate competence gate fails.",
+    "Stop fixed-batch acquisition at update 100 on failure; no silent continuation or extension.",
+    "Stop on numerical errors; preserve failed output and scheduler status.",
+    "The hard allocation limit is 30 minutes per fit; retain timeout and partial status.",
+    "Submit each cell at most once; stop after 4 attempts whether successful, failed or ambiguous.",
+    "Do not select a final learning rate from this one-rate canary; this is 4 of 12 frozen discovery fits.",
+    "Qwen may propose follow-ups but cannot submit, execute proposals or accept scientific claims."
+  ],
+  "limitations": [
+    "One seed and one learning rate; not a full-grid or confirmation result.",
+    "Architecture is confounded with requested cluster: GRU on Fir and LSTM on Nibi.",
+    "Full-budget training runtime, memory and disk footprint are not measured by tiny CPU fixtures.",
+    "Current target entitlement, typed GPU, clean source and offline cache must be verified before exact allocation approval."
+  ]
+}
