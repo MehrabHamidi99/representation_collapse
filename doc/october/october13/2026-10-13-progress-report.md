@@ -327,3 +327,90 @@ are unsubmitted. The coordinator requests owner confirmation asynchronously
 for this specific graceful replacement, preserving current unlimitedQwen
 operation and continuing all unblocked local scientific work. No indirect
 shutdown workaround, new allocation or shared-infrastructure change occurred.
+
+## 11:46 UTC — exact v5 local execution admission
+
+Reviewed sourcef766df5e792c8a6dedaa3ea17f2c92fd630f067d is pushed.
+A separate clean local checkout at runs/query-acquisition-v5-20261013/source
+contains the exact committed source and20hashed ignored pins, including the
+independent implementation-review receipt. External freezeSHA256
+ff73dbedc6215b71d581f966bff8268e1197a677e5c302245accb2bf00c210fd
+was created before execution. Root authorizes the producer to launch exactly
+four localCPU fits/20,000updates/1,200engine seconds; an independent result
+reviewer starts a separate read-only preparation. No outcome, periodicity
+assay, newcluster allocation or accepted trained-model claim exists yet.
+
+## 11:51 UTC — numerical stop preserved before v5 fixed endpoint
+
+ActualPID43157 launched11:46:45UTC and exited1 at11:47:16UTC.
+The original native phase consistency check rejected read_query-versus-forked
+logits at the scheduled step4,000 evaluation: maximum absolute discrepancy
+1.4491379261e-6 exceeds the frozen componentwise1e-6+1e-5*abs(reference) allowance
+for at least one entry. Weights remain finite; all4,000returned optimizersteps
+are counted and the current-weight censored checkpoint/history is preserved.
+Zero declared fixed5,000endpoints completed; the otherthreecells are unstarted.
+No retry, resume, selected earlier weights or tolerance change is made.
+This is a numerical measurement failure, not an acquisition-failure finding.
+Independent raw/native review and a separate prospective label-independent
+chronology calibration proposal are delegated with disjoint write scopes.
+
+Today32fits are completed plusoneincomplete fit,114,200actual updates.
+No newclustertraining/allocation or periodicity-harm/Floquetclaim exists.
+
+## 12:09 UTC — failed attempt independently reduced, native callback delivered
+
+Final independent v5 result receiptSHA256
+46b5dc21549373cd11bedb556b780d3956b6f93d6507d324f6fc9777055a2331
+passes integrity review with no audit blocker. The coordinator accepts source,
+4,000returnedsteps, numericalstop, preservedcurrentθ andsevensavedpartial
+observations. All planned5,000endpoints andequal-updatecontrasts remainunknown;
+there isnoR0/GateB orharm/Floquet acceptance. Review validates520committedfiles,
+20pins,50runfiles,20,000prospectivebase/querybatches,176coordinate-armmetrics,
+7,168descriptivepaired differences and299,008native logits/10,223,616complete
+state entries bitwise. TwoFP32 logit violations areduplicatedarms ofonehistory
+(rows1018/2042,column4); firstbadchunk960 hasone toleranceviolation among744
+bitwisechangedentries. FP64label-freereplay passes; no causal kernelassertion.
+
+First timednativecallback wasaccepted bytheexistingCodex task anddelivered at
+11:58:36UTC; the coordinator continuedscopedwork. One delivery isverified,
+notfutureall-dayexecution. The nextwake willberearmed afterpublication. Fresh
+12:03UTC read-only cluster certificateSHA256
+4546865d37d7bfc75d2a52ddfa3c5cf7aaac718339d696012ae65fa845078444
+verifiesallfiveoriginalprocesses, freshheartbeat, sixreplies/0errors/0inflight,
+24observerobservations andarmedphysicalguard. Reviewedreplacement remains
+stagedunchanged; specificrestartapproval ispending afterautomaticrejection.
+
+The separate native-chronology proposal deriveslabel-freeargmax/rawMSEbounds
+and205exact-rational fixtures withoutreplay/scoring/fits. A disjoint native
+reviewer checksproposal/callbudget/stateobservability andcanonical-versus-interop
+choices. No calibration/implementation/newfit isadmitted bythatproposal yet.
+
+## 12:12 UTC — second native continuation armed
+
+After independent failed-campaign reduction andfreshclusterverification, a
+single second30-minute native callback is armed for12:42:13UTC in toolcell502.
+RegistrationreceiptSHA256 83c037ab15cac358059579ac97fec2c5725f054518b777d3100ebe88f7709428
+binds the existingtask, ownerstop/deadline controls andunique secondnonce.
+The firstcallback actualdelivery isverified; the secondhasnotfired anddoesnot
+certifyfuture research. Its promptpreserves failed-v5/noresume/no-tolerancechange,
+numerical-protocol review/freeze gates, pending specificQwenrestartapproval and
+zeroadditionalSlurm/GPU/shared-infrastructure changes. Daytime coordinator
+endpoint is20:00UTC(midnightYerevan); app/server/tool availability remainsrequired.
+
+## 12:21 UTC — revised numerical design and next bounded implementation
+
+Independent static review accepts proposal9438ec2626b30b3f85aca2f784ed5d9d16bc7af18ccc6ad6216181d36cd83f32
+for implementationpreparation only, receiptSHA256
+ec445dea80061e72446881ac838d30f3621aed441952f76a68cf15a321575c3f.
+Directedcandidate/reference comparisons, LSTM intermediatecellunobservability,
+P0hook/P3cache-sharing and120,000=116,288primary+2,944knownregression+768null
+corecalls are nowexplicit. Argmax/rawMSE/head sensitivitybounds arechecked
+analytically, notmodelscores. The originalknown4000strictinterop regression
+fails andisretained; canonical-only semantics arestillseparately unadmitted.
+
+Root delegates additive label-freeengine/config/test/protocolpreparation and
+separateengineeringreview withdisjointnamedscopes,35-minute tasks andatmost
+500tiny/syntheticnativecorecalls/120seconds peragent. No fullmatrix, trained
+4000replay, labels/scoring, newfit, source repair orcanonical-only selection is
+authorized. Independent source/configreview, cleancommit andexternalfreeze
+precede any120k/600s diagnosticexecution. Nativecallback2 isarmed12:42UTC.

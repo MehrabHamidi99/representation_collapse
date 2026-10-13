@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-10-13T11:44:06.913068+00:00",
+  "updated_at_utc": "2026-10-13T12:21:32.549390+00:00",
   "date": "2026-10-13",
   "research_has_run": true,
   "uninterrupted_overnight_research_confirmed": false,
@@ -134,7 +134,7 @@
   },
   "day_continuation": {
     "deadline_utc": "2026-10-13T20:00:00Z",
-    "state": "active native research turn; single30minute native callback armed",
+    "state": "firstcallback delivered; second30minute callback actuallyarmed",
     "native_model": "inherit_current_task",
     "maximum_new_slurm_submissions_without_new_approval": 0,
     "new_qwen_lease_without_explicit_answer": false,
@@ -145,10 +145,13 @@
       "roll over Qwen to reviewed task-binding source and test live relevance",
       "prepare matched target-position and nuisance controls without main-gate relaxation"
     ],
-    "next_wake_at_utc": "2026-10-13T11:58:36.153955+00:00",
-    "registration_receipt_sha256": "6ba1e70fb3ab624e6dfc87f8fced9d61a906b75201dc855bd60b1712bde9112e",
+    "next_wake_at_utc": "2026-10-13T12:42:13.949830+00:00",
+    "registration_receipt_sha256": "83c037ab15cac358059579ac97fec2c5725f054518b777d3100ebe88f7709428",
     "runtime_dependency": "existing native app/server and yielded tool cell remain available",
-    "future_wake_completed": false
+    "future_wake_completed": false,
+    "native_followups_delivered": 1,
+    "delivery_observed_at_utc": "2026-10-13T12:07:29.989550+00:00",
+    "first_registered_wake_delivered": true
   },
   "harmful_collapse_claim_accepted": false,
   "floquet_claim_accepted": false,
@@ -175,7 +178,7 @@
   },
   "continuous_qwen": {
     "state": "running",
-    "observed_at_utc": "2026-10-13T11:17:13.388540+00:00",
+    "observed_at_utc": "2026-10-13T12:03:02.425890Z",
     "started_at_utc": "2026-10-13T09:56:09.064521+00:00",
     "cluster": "mila",
     "host": "cn-f003.server.mila.quebec",
@@ -213,7 +216,7 @@
       "wrapper_pid": 3248325,
       "interval_seconds": 300,
       "deadline_utc": "2026-10-13T20:00:00Z",
-      "observations_verified": 15,
+      "observations_verified": 24,
       "issues": [],
       "full_completed_history_observed_at_check": true,
       "observed_usage_totals_reconciled": true,
@@ -221,7 +224,8 @@
       "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
       "receipt_sha256": "8f2de43637577cf6b67e30dd415b6c9c32f7b8ba496d5ac3f8b2bcf742fd9e46",
       "report": "doc/auto/qwen-continuous-monitor-deployment-2026-10-13.md",
-      "last_observed_at_utc": "2026-10-13T11:17:05.577438+00:00"
+      "last_observed_at_utc": "2026-10-13T12:02:05Z",
+      "current_certificate_scope": "ownedprocess andlatestboundedmetadata; no fullhistoricalimmutabilityrecertification"
     },
     "coordinator_task_events_consumed": 4,
     "scientific_task_answers_accepted": 0,
@@ -235,7 +239,7 @@
       "receipt_sha256": "26fc2fe7f4cfd5d8d919c68cf02c9b1f1fa6d83f5b1cb1ce651047be119c5241",
       "fresh_certificate_at_utc": "2026-10-13T11:17:13.388540+00:00"
     },
-    "fresh_process_certificate_sha256": "e1f521eac5d5f381ecea0a371438395373087063fb8d551bb661bb99c2262d0f",
+    "fresh_process_certificate_sha256": "4546865d37d7bfc75d2a52ddfa3c5cf7aaac718339d696012ae65fa845078444",
     "rollover": "native cluv source/helpers/feed staged; automaticreview rejected specific graceful shutdown; current originalworker/observer/guard remainrunning; owner confirmation requested",
     "rollover_approval_pending": true,
     "fresh_postrejection_check_at_utc": "2026-10-13T11:41:34Z"
@@ -265,28 +269,65 @@
   },
   "today_local_totals": {
     "actual_production_fits": 32,
-    "optimizer_updates": 110200,
+    "optimizer_updates": 114200,
     "original_eight_coordinate_eligible_checkpoints": 0,
     "training_initialization_seeds": [
       0
     ],
-    "new_cluster_training_jobs": 0
+    "new_cluster_training_jobs": 0,
+    "completed_production_fits": 32,
+    "additional_incomplete_production_fits": 1
   },
   "query_averaged_acquisition_v5": {
-    "state": "independently reviewed implementation; root commit and external production freeze pending",
+    "state": "independently verified numericalexecutionstop; rootaccepts integrity andscopedpartialobservations, no fixedendpoint",
     "production_module_exists": true,
-    "production_fits": 0,
-    "optimizer_updates": 0,
+    "optimizer_updates": 4000,
     "calibrated_tiny_cases": 16,
     "max_gradient_difference_fp32": 2.9802322387695312e-08,
     "max_gradient_difference_fp64": 2.7755575615628914e-17,
     "independent_scientific_acceptance": false,
     "proposal": "doc/auto/query-averaged-acquisition-proposal-v5.md",
-    "next_gates": "commit clean source; external freeze; four localCPU fits/20kupdates/1200seconds; independent result reduction",
+    "next_gates": "independent failedcampaign reduction; label-independent numerical chronology proposal/calibration before separately admitted newfit",
     "implementation_sha256": "f2af2c73088731e3664b7ca59c54ed9c9f083dc863b83881b20956ffb429a19d",
     "config_sha256": "d6d89b431942c8e786f1ac169d5fee09ef51e8f85f2030cee1ec8bcdd9d4289e",
     "independent_implementation_review_receipt_sha256": "b534713d78dcda3c6e347dd83f10b47e6921b7c6ae0f69514d606b8ba10fa342",
     "production_protocol": "doc/auto/query-averaged-acquisition-v5.md",
-    "overall_GateB_R0_R1_R2_eligibility_tested": false
+    "overall_GateB_R0_R1_R2_eligibility_tested": false,
+    "source_commit": "f766df5e792c8a6dedaa3ea17f2c92fd630f067d",
+    "freeze_receipt_sha256": "ff73dbedc6215b71d581f966bff8268e1197a677e5c302245accb2bf00c210fd",
+    "copied_pinned_artifacts": 20,
+    "production_fits_started": 1,
+    "production_fits_completed": 0,
+    "unstarted_fits": [
+      {
+        "model": "gru",
+        "task": "continuous"
+      },
+      {
+        "model": "lstm",
+        "task": "categorical"
+      },
+      {
+        "model": "lstm",
+        "task": "continuous"
+      }
+    ],
+    "endpoint_gate_known": false,
+    "numerical_error": "native chronology/continuation agreement failed: {\"passed\": false, \"max_absolute_difference\": 1.4491379261016846e-06, \"changed_coordinates\": 744, \"coordinates\": 1024, \"bitwise_equal\": false, \"absolute_tolerance\": 1e-06, \"relative_tolerance\": 1e-05, \"comparison\": \"elementwise |candidate-reference| <= atol + rtol*|reference|\"}",
+    "all_saved_weights_finite": true,
+    "retry_or_resume_performed": false,
+    "independent_result_review_receipt_sha256": "46b5dc21549373cd11bedb556b780d3956b6f93d6507d324f6fc9777055a2331",
+    "fixed_endpoint_scientific_acceptance": false,
+    "report": "doc/auto/query-averaged-acquisition-v5-results-2026-10-13.md"
+  },
+  "native_chronology_calibration_v1": {
+    "state": "design_reviewed; implementation_andengineeringreview delegated; nofullmatrix/replay/fits admitted",
+    "proposal_sha256": "9438ec2626b30b3f85aca2f784ed5d9d16bc7af18ccc6ad6216181d36cd83f32",
+    "review_receipt_sha256": "ec445dea80061e72446881ac838d30f3621aed441952f76a68cf15a321575c3f",
+    "planned_calls": 120000,
+    "proposed_seconds": 600,
+    "native_calibration_calls": 0,
+    "new_fits": 0,
+    "production_execution_admitted": false
   }
 }

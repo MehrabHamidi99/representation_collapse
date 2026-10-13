@@ -11,7 +11,7 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   are verified; this was not uninterrupted all-night inference.
   The new **continuous Qwen client is actually running** in existing Mila job
   **11228391**, on cn-f003: leaf PID **3244371**, supervisor **3244355**, separate
-  project tmux session and journal. At 10:12 UTC, six exact-model/schema
+  project tmux session and journal. At 12:03 UTC, six exact-model/schema
   proposals are verified: six attempts, zero errors, 29,862 reported tokens.
   Multiple recommendations are rejected for missed topics, weakened gates or
   unsupported information-loss inference; native OpenAI review and a local
@@ -24,10 +24,14 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   October14. The existing allocation ends
   **October 14 08:55:56 UTC** (12:55 Yerevan); no replacement allocation is automatic.
   Native OpenAI coordinator/subagents prepare and review independent work.
+  The first timed native follow-up was delivered; one second30-minute wake is
+  armed for12:42UTC, with daytime continuation through20:00UTC subject to app
+  availability. Pending wakes do not certify future research execution.
   The project's five-minute observer is running outside Qwen evidence roots;
-  a fresh11:17UTC certificate verifies15 observations and live owned processes
+  a fresh12:03UTC certificate verifies24 observations and live owned processes
   without metadata issues; the observer ends20:00UTC.
-  Today **32 actual local CPU fits / 110,200 optimizer updates** completed:
+  Today **32 local CPU fits completed, plus one incomplete fit;
+  114,200 optimizer updates** were executed:
   twelve v2 discovery fits fail before body training, and eight fixed 5,000-update
   v3 fits fail full-coordinate competence despite five passing coordinate scores.
   Independent raw/source/native reduction accepts this scoped acquisition audit.
@@ -43,7 +47,15 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   original task and averages eight QUERY branches; sixteen tiny gradient fixtures
   pass, with no optimizer updates or learned result. Additive implementation and
   actual-size calibration pass independent review; clean source/freeze precede
-  four local fits. An all-eight R0 pass would still leave GateB R1/R2 untested.
+  four local fits. Actual production stopped in its first fit at4,000updates
+  when the frozen QUERY-path consistency check failed. Finite weights and seven
+  prior validations are independently verified; all fixed5,000endpoints remain
+  unknown and three cells unstarted. No retry, resume or tolerance change occurred.
+  [V5 stopped campaign](auto/query-averaged-acquisition-v5-results-2026-10-13.md).
+  A separate numerical-chronology proposal passed independent design review;
+  implementation and engineering review are delegated, with full calibration
+  and further fitting unadmitted. An
+  all-eight R0 pass would still leave GateB R1/R2 untested.
   Reviewed seed-statistics and complete-state matrix-free utilities were published
   in **999d88d**. The current reviewed integration passes **271 source tests**,
   zero skips. Inference assumptions,

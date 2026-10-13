@@ -565,19 +565,44 @@
         "prefix_acquisition_discovery_v3",
         "address_acquisition_discovery_v4"
       ],
-      "status": "reviewed_preproduction",
-      "scientific_decision": "exact expected-loss/unclipped-gradient implementation calibrated and independently reviewed; no production result; R0candidate doesnotgrant overallGateBeligibility",
+      "status": "verified_numerical_execution_stop",
+      "scientific_decision": "4000-step measurementstop independently verified; sevensavedpartialall-eightgatesfail; planned5000endpoints/primarycontrastsunknown; noR0/GateBeligibility; noresume/retry/tolerancechange",
       "proposal": "doc/auto/query-averaged-acquisition-proposal-v5.md",
       "maximum_proposed_local_fits": 4,
       "maximum_proposed_optimizer_updates": 20000,
       "maximum_proposed_wall_seconds": 1200,
       "new_slurm_submissions": 0,
-      "execution_started": false,
+      "execution_started": true,
       "confirmation": false,
       "protocol": "configs/experiments/query-averaged-acquisition-v5.json",
       "implementation_sha256": "f2af2c73088731e3664b7ca59c54ed9c9f083dc863b83881b20956ffb429a19d",
       "config_sha256": "d6d89b431942c8e786f1ac169d5fee09ef51e8f85f2030cee1ec8bcdd9d4289e",
-      "independent_implementation_review_sha256": "b534713d78dcda3c6e347dd83f10b47e6921b7c6ae0f69514d606b8ba10fa342"
+      "independent_implementation_review_sha256": "b534713d78dcda3c6e347dd83f10b47e6921b7c6ae0f69514d606b8ba10fa342",
+      "source_commit": "f766df5e792c8a6dedaa3ea17f2c92fd630f067d",
+      "optimizer_updates": 4000,
+      "completed_fixed_endpoints": 0,
+      "unstarted_cells": 3,
+      "independent_result_review_sha256": "46b5dc21549373cd11bedb556b780d3956b6f93d6507d324f6fc9777055a2331",
+      "result_report": "doc/auto/query-averaged-acquisition-v5-results-2026-10-13.md"
+    },
+    {
+      "node_id": "native_chronology_calibration_v1",
+      "depends_on": [
+        "query_averaged_acquisition_v5"
+      ],
+      "status": "implementation_preparation",
+      "scientific_decision": "prospective directedcomparison/numericalbounds reviewed; no calibration/newfit/canonicalcontract accepted",
+      "proposal": "doc/auto/native-chronology-calibration-proposal-2026-10-13.md",
+      "proposal_sha256": "9438ec2626b30b3f85aca2f784ed5d9d16bc7af18ccc6ad6216181d36cd83f32",
+      "independent_design_review_sha256": "ec445dea80061e72446881ac838d30f3621aed441952f76a68cf15a321575c3f",
+      "maximum_proposed_native_core_calls": 120000,
+      "maximum_proposed_local_cpu_seconds": 600,
+      "maximum_fixture_native_core_calls_per_agent": 500,
+      "calibration_execution_admitted": false,
+      "new_fitting_admitted": false,
+      "execution_started": false,
+      "new_slurm_submissions": 0,
+      "provider_calls": 0
     }
   ],
   "current_handoff": "doc/october/october13/2026-10-13-progress-report.md",
@@ -675,7 +700,7 @@
     "state": "COMPLETED",
     "exit_code": "0:0"
   },
-  "continuation_note": "Continuous old999 Qwen and project observer/hosting guard remain live:6schema-valid replies, no complete scientificproposal accepted. Reviewed a36taskbinding replacement is nativecluv-staged; exactgracefulshutdown awaitsownerconfirmation after automaticreviewrejection.32productionfits/110200updates,8singletonpasses/0maineligibility. V5implementation/actualsizegradients independently reviewed;271tests pass. Nativeone-shot afternooncallback armed, no futurewake yetconfirmed. No newGPUallocation/periodicityharm/Floquetclaim.",
+  "continuation_note": "Original999 Qwen/observer/hostingguard verified12:03UTC alive:6replies/0errors; revieweda36promptrollover staged butexactgracefulstop awaitsownerconfirmation afterauto-reviewrejection.32completedlocalfits+1incomplete,114200updates;8singletonpasses noGateBeligibility. V5stoppednumerically at4000 beforeany5000endpoint; independentreview complete. Numerical-chronology proposal underreview;271tests pass. Firstnative timedcallback actuallydelivered; single30minute continuation rearmed afterusefulwork until20UTC. No newGPUallocation/periodicityharm/Floquetclaim.",
   "proposed_next_allocation": {
     "phase": "competence-canary-v2",
     "configuration": "configs/experiments/competence-canary-v2.json",
@@ -728,9 +753,14 @@
   "day_native_continuation": {
     "deadline_utc": "2026-10-13T20:00:00Z",
     "prepared": true,
-    "armed": false,
+    "armed": true,
     "route": "existing Codex task follow-up, inherited model",
-    "control": "runs/ops/day-research-loop-control-20261013.json"
+    "control": "runs/ops/day-research-loop-control-20261013.json",
+    "first_callback_delivered": true,
+    "callbacks_delivered": 1,
+    "state": "firstcallback delivered; secondone-shot armed; app/server dependency",
+    "next_wake_at_utc": "2026-10-13T12:42:13.949830+00:00",
+    "registration_receipt_sha256": "83c037ab15cac358059579ac97fec2c5725f054518b777d3100ebe88f7709428"
   },
   "persistent_controller_scope": "proposal client, deterministic metadata/claim observation; no autonomous scheduler submissions or scientific acceptance",
   "continuous_metadata_observer": {
@@ -739,13 +769,15 @@
     "wrapper_pid": 3248325,
     "interval_seconds": 300,
     "deadline_utc": "2026-10-13T20:00:00Z",
-    "observations_verified": 2,
+    "observations_verified": 24,
     "issues": [],
     "full_completed_history_observed_at_check": true,
     "observed_usage_totals_reconciled": true,
     "previous_call_file_immutability_rescanned": false,
     "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
     "receipt_sha256": "8f2de43637577cf6b67e30dd415b6c9c32f7b8ba496d5ac3f8b2bcf742fd9e46",
-    "report": "doc/auto/qwen-continuous-monitor-deployment-2026-10-13.md"
+    "report": "doc/auto/qwen-continuous-monitor-deployment-2026-10-13.md",
+    "observed_at_utc": "2026-10-13T12:03:02.425890Z",
+    "fresh_process_certificate_sha256": "4546865d37d7bfc75d2a52ddfa3c5cf7aaac718339d696012ae65fa845078444"
   }
 }
