@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-10-13T10:20:47.785852+00:00",
+  "updated_at_utc": "2026-10-13T11:19:50.225306+00:00",
   "date": "2026-10-13",
   "research_has_run": true,
   "uninterrupted_overnight_research_confirmed": false,
@@ -81,14 +81,27 @@
     },
     "continuous_qwen_and_monitor": "live continuous leaf and five-minute monitor verified; schema participation does not establish proposal quality",
     "continuation_review_sha256": "426a6c36a077b59e04dc50a2a46d90b91595aee28ea3320cb8769c6ffaa1c86e",
-    "address_acquisition_v4": "independent implementation review accepted; production requires source/test/commit/external freeze"
+    "address_acquisition_v4": "production completed and independently verified; eight singleton passes do not promote main eligibility",
+    "qwen_task_binding_repair": {
+      "state": "independently_reviewed_local_source",
+      "worker_sha256": "0f78851940d7f3323fc5cf4408fd0f682a33d93d151c6be4ff6358e1185d8997",
+      "review_receipt_sha256": "cffa0c901905510f26785c9c50b66befc94a16ec0c103baf9304566714c922ea",
+      "deployed": false,
+      "live_answer_quality_improvement_verified": false,
+      "quality_report": "doc/auto/qwen-proposal-quality-2026-10-13.md"
+    }
   },
   "tests": {
-    "tests_passed": 239,
+    "tests_passed": 260,
     "skipped": 0,
-    "seconds": 17.208,
-    "log_sha256": "dbf0dae301f94a635975dac5259677751ec40c2044bafe0b1a2c861a32b5166f",
+    "seconds": 18.02,
+    "log_sha256": "ee6705e2213859b6c5e6f6dd346e948b9b8218e3accef739cb5f17a293a06040",
     "command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v",
+    "reviewed_frozen_v4_source_tests": {
+      "source": "ab96cad9dece7d881f04065431c0d102f7665882",
+      "passed": 251,
+      "seconds": 18.529
+    },
     "initial_environment_failure_preserved": "runs/ops/day-source-tests-unset-pythonpath-20261013.log"
   },
   "compute": {
@@ -120,12 +133,17 @@
   },
   "day_continuation": {
     "deadline_utc": "2026-10-13T20:00:00Z",
-    "state": "prepared_not_yet_armed",
+    "state": "active native research turn; one-shot follow-up registration remains pending",
     "native_model": "inherit_current_task",
     "maximum_new_slurm_submissions_without_new_approval": 0,
     "new_qwen_lease_without_explicit_answer": false,
     "control_record": "runs/ops/day-research-loop-control-20261013.json",
-    "continuous_qwen_owner_authorized": true
+    "continuous_qwen_owner_authorized": true,
+    "next_tasks": [
+      "implement/review admitted query-averaging discovery",
+      "roll over Qwen to reviewed task-binding source and test live relevance",
+      "prepare matched target-position and nuisance controls without main-gate relaxation"
+    ]
   },
   "harmful_collapse_claim_accepted": false,
   "floquet_claim_accepted": false,
@@ -201,6 +219,58 @@
     },
     "coordinator_task_events_consumed": 4,
     "scientific_task_answers_accepted": 0,
-    "proposal_quality_state": "multiple off-topic or unsound recommendations rejected; native OpenAI audits and local task-binding repair ongoing"
+    "proposal_quality_state": "multiple off-topic or unsound recommendations rejected; native OpenAI audits and local task-binding repair ongoing",
+    "hosting_guard": {
+      "state": "armed",
+      "pid": 3255471,
+      "stop_at_utc": "2026-10-14T08:52:40Z",
+      "purpose": "graceful exit before physical allocation expires; no fixed model-call cap or replacement job",
+      "only_own_leaf_STOP": true,
+      "receipt_sha256": "26fc2fe7f4cfd5d8d919c68cf02c9b1f1fa6d83f5b1cb1ce651047be119c5241"
+    }
+  },
+  "address_acquisition_v4": {
+    "state": "independently_verified_scoped_result_accepted",
+    "source_commit": "ab96cad9dece7d881f04065431c0d102f7665882",
+    "config_sha256": "55c564c5c607ce3cf298e4daabaeafb2700d50419a4ee859200e0c9bba811c55",
+    "fits_completed": 12,
+    "optimizer_updates": 60000,
+    "process_wall_seconds": 220.88100820800173,
+    "initialization_seeds": [
+      0
+    ],
+    "singleton_endpoints_passed": 8,
+    "singleton_endpoints_failed": 4,
+    "passed_addresses": [
+      7,
+      15
+    ],
+    "failed_address": 0,
+    "original_eight_coordinate_eligible_checkpoints": 0,
+    "independent_review_receipt_sha256": "6d0ef52b2c33215cf6fccc28adb19cb4c8d80936f018dd1098f83d82f9f0dda7",
+    "report": "doc/auto/address-acquisition-v4-results-2026-10-13.md",
+    "causal_lag_or_capacity_attribution": false,
+    "periodic_body_used": false
+  },
+  "today_local_totals": {
+    "actual_production_fits": 32,
+    "optimizer_updates": 110200,
+    "original_eight_coordinate_eligible_checkpoints": 0,
+    "training_initialization_seeds": [
+      0
+    ],
+    "new_cluster_training_jobs": 0
+  },
+  "query_averaged_acquisition_v5": {
+    "state": "local implementation admitted; independent review and production freeze pending",
+    "production_module_exists": false,
+    "production_fits": 0,
+    "optimizer_updates": 0,
+    "calibrated_tiny_cases": 16,
+    "max_gradient_difference_fp32": 2.9802322387695312e-08,
+    "max_gradient_difference_fp64": 2.7755575615628914e-17,
+    "independent_scientific_acceptance": false,
+    "proposal": "doc/auto/query-averaged-acquisition-proposal-v5.md",
+    "next_gates": "actual-size gradient calibration, independent source/config review, committed source and external freeze before production"
   }
 }

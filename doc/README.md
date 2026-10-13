@@ -39,14 +39,16 @@ Evidence records: [initial-phase report](auto/initial-phase-report.md),
 [frozen reduction protocol](auto/periodicity-independent-reduction-v1.md),
 [local competence grid](auto/local-competence-grid-2026-10-13.md),
 [prefix acquisition results/plot](auto/prefix-acquisition-v3-results-2026-10-13.md),
-[prospective addressed diagnostic](auto/address-acquisition-discovery-v4.md),
+[addressed diagnostic and results](auto/address-acquisition-v4-results-2026-10-13.md),
+[query-averaging proposal](auto/query-averaged-acquisition-proposal-v5.md),
 and [current research/worker status](auto/research-status-2026-10-13.json).
 
 Operations: [compute plan](auto/compute-plan.md),
 [cluster access](auto/cluster-access.md), [agent protocol](auto/agent-protocol.md),
 [Qwen worker](auto/qwen-worker.md),
 [daytime research plan](auto/day-research-2026-10-13.md),
-[continuous monitor](auto/qwen-continuous-monitor-deployment-2026-10-13.md).
+[continuous monitor](auto/qwen-continuous-monitor-deployment-2026-10-13.md),
+[proposal-quality audit](auto/qwen-proposal-quality-2026-10-13.md).
 
 ## Notebook convention
 

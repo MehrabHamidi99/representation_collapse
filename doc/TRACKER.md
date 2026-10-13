@@ -15,22 +15,33 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   proposals are verified: six attempts, zero errors, 29,862 reported tokens.
   Multiple recommendations are rejected for missed topics, weakened gates or
   unsupported information-loss inference; native OpenAI review and a local
-  prompt repair address these failures. Total-call/runtime caps are null; backoff, signal/STOP controls remain.
-  Four task events are consumed, with no scientific answer automatically accepted. The existing allocation ends
+  prompt repair address these failures. The repair is independently reviewed
+  locally; live answer-quality improvement is unverified. Total-call/runtime caps are null; backoff, signal/STOP controls remain.
+  Four task events are consumed, with no scientific answer automatically accepted. A project-only hosting guard will request graceful stop at08:52:40UTC on
+  October14. The existing allocation ends
   **October 14 08:55:56 UTC** (12:55 Yerevan); no replacement allocation is automatic.
   Native OpenAI coordinator/subagents prepare and review independent work.
   The project's five-minute observer is running outside Qwen evidence roots;
   two observations reconcile counters/usage without metadata issues, ending20:00UTC.
-  Today **20 actual local CPU fits / 50,200 optimizer updates** completed:
+  Today **32 actual local CPU fits / 110,200 optimizer updates** completed:
   twelve v2 discovery fits fail before body training, and eight fixed 5,000-update
   v3 fits fail full-coordinate competence despite five passing coordinate scores.
   Independent raw/source/native reduction accepts this scoped acquisition audit.
   [V3 results and reproducible plot](auto/prefix-acquisition-v3-results-2026-10-13.md)
   retain every coordinate; neither periodicity harm nor architectural impossibility
-  follows. The new fixed-address-v4 diagnostic passed independent source review, with paired new
-  validation for q0/q7 and a separate q15 domain; production has not run.
-  Reviewed seed-statistics and complete-state matrix-free utilities are published
-  in **999d88d**, with **239 source tests passing**, zero skips. Inference assumptions,
+  follows. The new fixed-address-v4 diagnostic completed all twelve fixed endpoints: all
+  eight q7/q15 singleton gates pass and four q0 gates fail. Independent reduction
+  accepts this scoped seed0 result, with q0/q7 paired native-error comparisons.
+  Those separate successful weights do not confer original eight-coordinate
+  eligibility or isolate lag/capacity causes.
+  [V4 results](auto/address-acquisition-v4-results-2026-10-13.md).
+  The [v5 proposal](auto/query-averaged-acquisition-proposal-v5.md) retains the
+  original task and averages eight QUERY branches; sixteen tiny gradient fixtures
+  pass, with no optimizer updates or learned result. Additive implementation is
+  delegated; independent review/freeze precede production.
+  Reviewed seed-statistics and complete-state matrix-free utilities were published
+  in **999d88d**. The current reviewed integration passes **260 source tests**,
+  zero skips. Inference assumptions,
   smallest effects and confirmation freeze remain unresolved.
   Native **cluv 0.1.5 verifies Mila plus all nine configured Alliance clusters**
   at 09:25 UTC; matching project queues are empty and all scheduler queries succeed.

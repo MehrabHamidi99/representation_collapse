@@ -235,3 +235,42 @@ Only reduced infrastructure fixtures were executed. Next:publish source, run
 checks on an immutable archive, freeze externally, then execute12declared local
 fits. The predictable-singleton/query-load/selection-uncertainty intervention
 remains jointly changed; no pure lag/capacity or periodicity result is implied.
+
+## 11:12 UTC — accepted singleton findings and next admitted local preparation
+
+Independent v4 result review passes, receiptSHA
+`6d0ef52b2c33215cf6fccc28adb19cb4c8d80936f018dd1098f83d82f9f0dda7`.
+The coordinator accepts eight q7/q15 empirical singleton passes and four q0
+failures under the frozen seed0 schedule. Review verifies504trackedsourcefiles,
+333runfiles,40,000base/derivedbatches,60,000optimizerrows, all120scheduled
+evaluations and1,024pairedbaselineerrors. Native24checkpoint+8baseline replay
+checks69,632logits/4,718,592complete-stateentries bitwise. Only256task-specific
+validationhistories are sampled, reused acrossaddresses/models with paired copies.
+No combinedeight-coordinate eligibility, independent-seed/population claim,
+purelag/capacity attribution, periodicityharm or Floquet result follows.
+Cumulative actual localproduction:32fits,110,200optimizerupdates.
+
+The Qwen task-binding repair is accepted independently, receiptSHA
+`cffa0c901905510f26785c9c50b66befc94a16ec0c103baf9304566714c922ea`.
+All260source tests pass, zero skips,18.020seconds; 37Qwen-focused checks pass.
+The actual six previously sent prompts reconstruct within18kcharacters under
+the revised foreground projection. This is an offline check; live scientific
+answer quality remains unverified. All six complete old proposals are rejected
+with useful kernels/actual packet hashes preserved in the quality ledger.
+
+The physical-hosting guard is armed:PID3255471, own sourceSHA
+`e7740d65dde5aec81670742a03aa246085e949dfd2e849e8de1f1aec4df34f2e`.
+It atomically requests only this worker's STOP atOct14 08:52:40UTC,196seconds
+before existing allocation expiry. It makes no model call/submission/shared
+change; no fixed Qwen total-call/runtime cap is restored. Old-client immutable
+source remains999d88d. Fresh liveness and a reviewed rollover are being prepared.
+
+The v5 expected-loss query-averaging proposal calibrates16tiny nativecases with
+zerooptimizerupdates. Maximum gradientdifference is2.98e-8FP32/2.78e-17FP64;
+336rawchecks and64FP64finite differences pass. The coordinator admits additive
+local implementation and actual-size gradient calibration, followed by
+independent source review/commit/freeze before any four-fit20,000-update run.
+Compute and QUERY-supervision exposure differ despite identical expected loss.
+No newGPU/allocation/held-out confirmation is admitted. Native all-day work
+will resume through one guarded30-minute callback to the existing Codex task;
+actual runtime registration remains separate from this prospective source record.

@@ -95,3 +95,30 @@ Continuous Qwen lives in a separate project-owned tmux session on job11228391.
 It requires no Mac proxy or ongoing launch SSH connection. Its physical allocation
 expires October14 at08:55:56UTC; no automatic replacement is configured. Shared
 model-dispatch migration and other projects' journals remain with their owner.
+
+## Accepted singleton result and next native iteration
+
+V4 production and independent raw/native review are complete: twelve fixed
+5,000-update fits,60,000updates; eight q7/q15 singleton passes and four q0
+failures. The exact conditional comparison and no-main-eligibility boundary
+are in the accepted dated result report. Together with v2/v3 this is32actual
+fits/110,200updates, all before periodic distractor-body training.
+
+The prospective v5 proposal averages the original task loss over eight alternative
+native QUERY branches sharing the complete differentiable prefix state. Tiny
+FP32/FP64 fixtures and raw finite differences support expected-loss/unclipped-
+gradient equivalence; clipping/AdamW trajectories and compute exposure differ.
+Implementation is now admitted locally, with four-fit20,000update/1,200second
+production limits requiring independent source review and exact freeze first.
+No v5 production fit, new cluster allocation or confirmation score exists.
+
+The reviewed Qwen prompt repair is local. Prepare a uniquely journaled rollover
+with old-client/observer/hosting-guard reconciliation before deploying the new
+source and testing one actual assigned answer. Keep all original call artifacts
+and don't equate a consumed task ID with an accepted scientific answer.
+
+Native continuation uses a single one-shot background request to the existing
+Codex task, rearmed only after meaningful work, with a30-minute cadence until
+20:00UTC. The ignored local control record is its runtime authority; the app/server
+must remain available. This is not a hosted Codex Automation or an OS cron job.
+A pending wake does not prove that its future research task has completed.

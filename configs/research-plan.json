@@ -541,18 +541,39 @@
       "depends_on": [
         "prefix_acquisition_discovery_v3"
       ],
-      "status": "reviewed_preparation",
-      "scientific_decision": "no result yet; production source/commit/test/freeze pending",
+      "status": "verified",
+      "scientific_decision": "eight singletonq7/q15 passes and four singletonq0 failures accepted under fixedlocal seed0schedule; no original eight-coordinate eligibility",
       "protocol": "configs/experiments/address-acquisition-discovery-v4.json",
       "maximum_local_cpu_fits": 12,
       "maximum_optimizer_updates": 60000,
       "maximum_wall_seconds": 1200,
       "cluster_submissions": 0,
       "confirmation": false,
-      "execution_started": false,
+      "execution_started": true,
       "question": "Does fixed-address native acquisition succeed at equal prefix training exposure? Joint known-target/load/distribution intervention; no pure lag/capacity attribution.",
       "implementation_review_sha256": "6a5718f0575a2e2d8c7b1e39e20e57209c77ae144516d14f3383fd4fd0405a46",
-      "config_sha256": "55c564c5c607ce3cf298e4daabaeafb2700d50419a4ee859200e0c9bba811c55"
+      "config_sha256": "55c564c5c607ce3cf298e4daabaeafb2700d50419a4ee859200e0c9bba811c55",
+      "source_commit": "ab96cad9dece7d881f04065431c0d102f7665882",
+      "optimizer_updates": 60000,
+      "fits_completed": 12,
+      "result_report": "doc/auto/address-acquisition-v4-results-2026-10-13.md",
+      "independent_result_review_sha256": "6d0ef52b2c33215cf6fccc28adb19cb4c8d80936f018dd1098f83d82f9f0dda7"
+    },
+    {
+      "node_id": "query_averaged_acquisition_v5",
+      "depends_on": [
+        "prefix_acquisition_discovery_v3",
+        "address_acquisition_discovery_v4"
+      ],
+      "status": "implementation_preparation",
+      "scientific_decision": "tiny unclipped-gradient identity calibrated; no learned competence result",
+      "proposal": "doc/auto/query-averaged-acquisition-proposal-v5.md",
+      "maximum_proposed_local_fits": 4,
+      "maximum_proposed_optimizer_updates": 20000,
+      "maximum_proposed_wall_seconds": 1200,
+      "new_slurm_submissions": 0,
+      "execution_started": false,
+      "confirmation": false
     }
   ],
   "current_handoff": "doc/october/october13/2026-10-13-progress-report.md",
@@ -650,7 +671,7 @@
     "state": "COMPLETED",
     "exit_code": "0:0"
   },
-  "continuation_note": "Original19-attempt16-proposal Qwen failure cohort and129observation overnight journal preserved. Twelve v2 and eight v3 actual localCPUfits fail full-coordinate acquisition beforebody; five v3coordinate endpoints pass. Continuous Qwen successor running in existing shared Mila job11228391 with no totalcall/runtimecaps, first proposal verified. Native OpenAI workers prepare separate prospective address controls; metadata observer being deployed. No newGPUallocation or harmfulcollapse/Floquetclaim.",
+  "continuation_note": "Continuous Qwen and project observer/hosting guard active in existing11228391; six actual schema-valid replies, no complete scientific proposal accepted. Native OpenAI audits/reviews and prepares next task.32 actual localfits/110200 optimizerupdates;8singleton passes do not promote main8coord eligibility. V5 expected-loss query-averaging has16tiny no-fit gradient fixtures; source/review/freeze/execution pending. Local task-binding repair reviewed and260tests pass, not yet live-deployed. No newGPUallocation/periodicityharm/Floquetclaim.",
   "proposed_next_allocation": {
     "phase": "competence-canary-v2",
     "configuration": "configs/experiments/competence-canary-v2.json",
@@ -693,7 +714,12 @@
     "next_local_protocol": "configs/experiments/address-acquisition-discovery-v4.json",
     "new_protocol_executed": true,
     "v3_fits": 8,
-    "v3_optimizer_updates": 40000
+    "v3_optimizer_updates": 40000,
+    "v4_fits": 12,
+    "v4_optimizer_updates": 60000,
+    "v4_singleton_passes": 8,
+    "v4_main_eligible_checkpoints": 0,
+    "next_local_proposal": "doc/auto/query-averaged-acquisition-proposal-v5.md"
   },
   "day_native_continuation": {
     "deadline_utc": "2026-10-13T20:00:00Z",
