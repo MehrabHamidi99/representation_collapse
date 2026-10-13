@@ -2,11 +2,11 @@
   "schema_version": 1,
   "local_date": "2026-10-14",
   "timezone": "Asia/Yerevan",
-  "updated_at_utc": "2026-10-13T21:06:29Z",
+  "updated_at_utc": "2026-10-13T21:13:17.757763+00:00",
   "research_has_run": true,
   "uninterrupted_native_coordination_confirmed": false,
   "qwen": {
-    "observed_at_utc": "2026-10-13T21:01:49.091664+00:00",
+    "observed_at_utc": "2026-10-13T21:12:31.392349+00:00",
     "state": "running_waiting_for_evidence",
     "pid": 3244371,
     "supervisor_pid": 3244355,
@@ -51,7 +51,9 @@
       "worker_controls_written": 0,
       "output_outside_qwen_evidence_roots": true,
       "second_observation_at_utc": "2026-10-13T20:57:40.757146+00:00",
-      "first_interval_seconds": 300.000158
+      "first_interval_seconds": 300.000158,
+      "verified_observations": 5,
+      "last_observation_at_utc": "2026-10-13T21:12:40.757845+00:00"
     }
   },
   "compute": {
@@ -68,8 +70,11 @@
     "new_slurm_submissions": 0,
     "new_gpu_jobs": 0,
     "cluv_version": "0.1.5",
-    "mila_matching_project_queue": "empty at20:46UTC",
-    "full_alliance_scheduler_recheck_this_turn": false
+    "mila_matching_project_queue": "empty at21:13UTC",
+    "full_alliance_scheduler_recheck_this_turn": "all configured targets inspected; only Mila/Tamia queries possible",
+    "tamia_matching_project_queue": "empty at21:13UTC",
+    "other_alliance_connections": "eight targets have no reusable master",
+    "other_alliance_queues_verified": false
   },
   "scientific_evidence": {
     "completed_acquisition_fits": 32,
@@ -89,7 +94,7 @@
     },
     "new_contract": {
       "path": "doc/auto/post-calibration-measurement-contract-v2-2026-10-14.md",
-      "state": "static_design_accepted_additive_implementation_in_progress",
+      "state": "implementation_independently_accepted_source_publication_and_root_admission_pending",
       "proposed_native_calls": 736,
       "labels": 0,
       "derivatives": 0,
@@ -97,7 +102,14 @@
       "execution_admitted": false,
       "protocol_sha256": "83c0b8c61fdefa9eb73e8386deab6c073d5ac04a82b13d251e1be699b25124d7",
       "config_sha256": "0170170b7724311a3903e5f1cde1917e91263b57fe45ebfc89f6d90b121a1740",
-      "review_receipt_sha256": "4228f28f6df771c4623361c44982082ddac47e8fb999c4c0a658c57cc62f8560"
+      "review_receipt_sha256": "4228f28f6df771c4623361c44982082ddac47e8fb999c4c0a658c57cc62f8560",
+      "tiny_fixture_native_calls": 184,
+      "tiny_fixture_wall_seconds": 1.6072913329990115,
+      "independent_saved_array_comparisons": 2948,
+      "independent_review_native_calls": 0,
+      "implementation_engine_sha256": "7bd9bb6b8d05b1ffdc1264492830745f2e019c7e08af817820ba8898c8bbfd04",
+      "fixture_equivalence_sha256": "c017d4932833f94e9163e5243b79c3fdd789f351ee0e6c532057c3799e26e85f",
+      "implementation_review_sha256": "67bfc920d26ffad8221fcb3feb3f6d25946d15b40bbd288364fc32bc9413da84"
     },
     "harmful_collapse_claim_accepted": false,
     "certified_floquet_claim_accepted": false
@@ -138,6 +150,8 @@
     "second_observer_verification_sha256": "83df04b9798a75ee4d4d54a60dbe46674f42b112ecf5266c6f35b9cdb331bd32",
     "wandb_authenticated_lookup_sha256": "19196bc4c5ba403cc1a03b5d315ee1322517d7c959557d96a7b7e99d5cf773e1",
     "wandb_project_create_and_online_smoke_sha256": "71bde8c6b550262d3aef1dd9a9296c5d5fa92f2f02589ad246270e0322952a9b",
-    "wandb_reporting_final_manifest_sha256": "482de132f75e7dfdb7125a98ed2414e74272a23012d6395250822f1f0ea77a7a"
-  }
+    "wandb_reporting_final_manifest_sha256": "482de132f75e7dfdb7125a98ed2414e74272a23012d6395250822f1f0ea77a7a",
+    "all_cluster_pass_sha256": "9c0da7fb18e2b84380db5bfb2d3bffe429e29e9baf0a67f333a666315a5eaed8"
+  },
+  "published_foundation_commit": "18aa494d734e2d885de4411f899de5c2ade1dea7"
 }

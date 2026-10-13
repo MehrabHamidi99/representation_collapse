@@ -29,8 +29,11 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   rejects baseline-output agreement as a causal bridge and requires distinct
   training-map/AD budgets. A new [736-call forward-only contract](auto/post-calibration-measurement-contract-v2-2026-10-14.md)
   and exact disabled config passed [static review](auto/post-calibration-contract-v2-independent-review-2026-10-14.md).
-  Additive implementation and bounded unit fixtures are active; production
-  execution and new scientific claims remain unadmitted. The owner-authorized
+  The additive implementation and one184-call tiny fixture campaign passed
+  [independent engineering review](auto/cached-forward-v2-implementation-independent-review-2026-10-14.md).
+  A single manifest-bookkeeping correction is independently proven equivalent
+  without rerunning native fixtures. Clean publication and exact root admission
+  remain before production; no new scientific claim is accepted. The owner-authorized
   [W&B project](https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse)
   was created at21:05UTC; a tiny online SDK0.21.0 transport smoke has verified
   history/summary readback. The pinned SDK0.30.0 reporting helper separately
@@ -38,6 +41,9 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   remote delivery remains unverified. The initial lazy-object lookup error and
   zero-init failed transport attempt are preserved. [Reporting contract](auto/wandb-reporting.md),
   [structured status](auto/research-status-2026-10-14.json).
+  A fresh21:13UTC native-cluv check verifies Mila and Tamia with empty project
+  queue matches. The other eight Alliance targets have no reusable masters from
+  this controller; their queues are unverified. No fresh Duo or submission.
 - **Daytime research — 2026-10-13, historical snapshot.** The old Qwen cohort produced
   16 valid proposals in 19 attempts before three provider errors stopped it at
   00:36 UTC. The 129-snapshot overnight observer and original-host PID absence

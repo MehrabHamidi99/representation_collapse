@@ -1,4 +1,16 @@
-Fresh passive verification, **2026-10-12 17:01–17:02 UTC**: native cluv
+Current passive verification, **2026-10-13 21:13 UTC / October 14 local**:
+native cluv0.1.5 reports Mila as local in the authorized shared allocation and
+Tamia as local through its existing shared Tamia3 SSH master. Both scheduler
+queries succeed with empty project-name matches. Narval, Rorqual, Fir, Nibi,
+Trillium, Trillium-GPU, Killarney and Vulcan have no reusable masters from this
+controller. Their queues are unknown; the old all-nine check is not current
+access evidence. No Duo, new authentication, job submission or shared socket
+change occurred. Certificate SHA
+`9c0da7fb18e2b84380db5bfb2d3bffe429e29e9baf0a67f333a666315a5eaed8`,
+under ignored `runs/ops/all-cluster-readonly-20261014/live-certificate.json`.
+See [current research status](research-status-2026-10-14.json).
+
+Historical passive verification, **2026-10-12 17:01–17:02 UTC**: native cluv
 **0.1.5** on Tamia1 passes the nine configured Alliance target checks. There
 are no matching project jobs in their current queues. Mila's existing Mac-origin
 connection works; its matching queue was checked separately at 17:11 UTC. Mila

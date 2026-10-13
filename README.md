@@ -19,7 +19,8 @@ fits and stopped one fit after 114,200 total updates. No checkpoint has passed
 the original eight-coordinate gate. A 120,000-call numerical audit is independently
 verified, with strict execution-path agreement failing at a trained GRU checkpoint.
 The next 736-call, label-free complete-state design passed static review;
-implementation is underway, with production execution still pending review.
+its implementation and184-call tiny fixtures passed independent review, with
+clean publication and exact execution admission next.
 Graph source pins are available, while legacy payload provenance remains missing.
 
 Qwen has eight verified replies and a live worker in existing Mila allocation

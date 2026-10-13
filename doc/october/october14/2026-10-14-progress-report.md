@@ -108,3 +108,54 @@ any 736-call run. Training, derivatives, new GPU allocations and causal/Floquet
 claims remain outside that stage. The prompt repair remains staged; the exact
 live Qwen replacement still awaits the pending owner restart response after
 automatic approval review rejected the earlier shutdown action.
+
+## 01:13 local / October 13 21:13 UTC — publication and fresh cluster reachability
+
+Commit `18aa494d734e2d885de4411f899de5c2ade1dea7` publishes the reviewed
+reporting implementation, W&B destination, old rejected draft/review, accepted
+static v2 contract, algebraic audit and current status. Push and a separate
+`ls-remote` check confirm that exact GitHub main. The other agent's template
+linkage files and October13 notebook addition remain untouched and unstaged.
+
+A new native-cluv0.1.5 pass verifies Mila through the existing allocation and
+Tamia through its shared master. Both scheduler queries succeed and contain no
+project-name matches. The other eight configured Alliance targets have no
+reusable masters on this controller; queue state is unknown. This updates the
+older all-nine connectivity observation rather than assuming it persists.
+No interactive authentication, job submission or shared socket changes occurred.
+The live certificate hash is
+`9c0da7fb18e2b84380db5bfb2d3bffe429e29e9baf0a67f333a666315a5eaed8`.
+Qwen remains at eight verified replies with zero errors or in-flight calls;
+observer snapshot5 at21:12:40 has no issues. New implementation, independent
+code review and independent NumPy-reducer preparation proceed under separate
+bounded native-agent tasks; these are not new trained-model experiments.
+
+## 01:28 local / October13 21:28 UTC — reviewed forward calibration implementation
+
+The additive native B0/C producer, mandatory offline W&B reporting and deadline
+launcher passed independent engineering review. One tiny native campaign used
+184calls, with184matching independent hook records, in1.607seconds internally
+and1.846seconds externally. Ten pure/fake tests pass. No research checkpoint,
+target, production input or training was used. Independent reduction of1616
+saved arrays recomputed2948comparisons/176128entries,137boundary checks,
+19guard checks and1188registry/operand assertions; reviewer native calls were0.
+
+Review caught terminal head count persisting after raw-manifest hashing. A
+single `budget.persist()` insertion fixes that ordering. The original fixture
+receipt and executed source remain intact; independent whole-module AST
+equivalence, after removing exactly that insertion, supports reusing those
+fixtures with zero additional native calls. Final engine SHA is
+`7bd9bb6b8d05b1ffdc1264492830745f2e019c7e08af817820ba8898c8bbfd04`;
+fixture-equivalence receipt SHA is
+`c017d4932833f94e9163e5243b79c3fdd789f351ee0e6c532057c3799e26e85f`.
+Independent implementation receipt SHA is
+`67bfc920d26ffad8221fcb3feb3f6d25946d15b40bbd288364fc32bc9413da84`.
+
+The exact root supervisor was also statically reviewed: its shared clock starts
+before launcher spawn, no native call starts at/after590seconds, the child
+watchdog acts at598 and the outer cap is600. Only owned descendants are subject
+to cleanup; post-spawn exceptions and late finalization become incomplete.
+Supervisor SHA `193ecd77d4fa762cba20873b40a605e3e98d8bf64b219b6d40eed94b7f4667a2`.
+Next is immutable source publication, an isolated clean source and external
+root admission for exactly one736-call local CPU run. Training, derivatives,
+new allocations and scientific acceptance remain unadmitted.
