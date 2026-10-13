@@ -229,3 +229,28 @@ Local repaired worker SHA-256:
 `0f78851940d7f3323fc5cf4408fd0f682a33d93d151c6be4ff6358e1185d8997`.
 New test SHA-256:
 `4dddef010cdb6e25305f30d957a81c8c8e193711a31b0078da537eba87968e4e`.
+
+## Seventh live proposal — participation verified, recommendation rejected
+
+At16:12:47UTC the existing999d88d worker answered a new compact v5 numerical-stop
+event. The exact assigned question and619-character scientific note were
+verified in its16,722-character request. Model/schema/usage checks pass:
+4,472prompt+560completion=5,032tokens; cumulative seven replies/34,894tokens.
+All original six reply files remain unchanged. The client returns to waiting
+for evidence with no provider error or in-flight request. Final receiptSHA
+e1eff3e6eeed25ab96bab14f37a0cbd813c18cd8649b71be36c4f702105a874e
+is under ignored runs/ops/qwen-v5-review-event-20261013T1608Z/.
+
+The coordinator rejects its scientific recommendation. Agreement between
+execution paths does not establish retained information about earlier inputs.
+The precision comparison and tiny encoder residual do not identify accumulation
+order as the cause or prove behavioral insignificance. Without target scores,
+the known checkpoint's competence remains unmeasured. Its new1e-5stopping
+predicate and zero/nonzero state rule contradict the assigned frozen numerical
+contract and cannot establish a causal distinction. Original provider output
+and its pending scientific-decision field are immutable; rejection is recorded
+in a separate coordinator receiptSHA
+6bf81a29a090426ed286306a7eb364800c34e8b4121c29ff28dec2112501bd9d.
+No suggested experiment or threshold change was executed. The independent
+numerical calibration was separately frozen before this reply. The reviewed
+prompt repair remains staged; this call did not test the repaired source.

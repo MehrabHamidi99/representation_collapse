@@ -590,8 +590,8 @@
       "depends_on": [
         "query_averaged_acquisition_v5"
       ],
-      "status": "implementation_preparation",
-      "scientific_decision": "prospective directedcomparison/numericalbounds reviewed; no calibration/newfit/canonicalcontract accepted",
+      "status": "verified",
+      "scientific_decision": "complete numerical diagnostic accepted; strict interoperability failed; no collapse/competence/tangent or new-fit acceptance",
       "proposal": "doc/auto/native-chronology-calibration-proposal-2026-10-13.md",
       "proposal_sha256": "9438ec2626b30b3f85aca2f784ed5d9d16bc7af18ccc6ad6216181d36cd83f32",
       "independent_design_review_sha256": "ec445dea80061e72446881ac838d30f3621aed441952f76a68cf15a321575c3f",
@@ -602,7 +602,17 @@
       "new_fitting_admitted": false,
       "execution_started": false,
       "new_slurm_submissions": 0,
-      "provider_calls": 0
+      "provider_calls": 0,
+      "implementation_source_commit": "9cff2d3d2bbaccee1642441b325625969e551f7b",
+      "implementation_review_receipt_sha256": "1fdbf9cafabd29af3d2a48e32c63b4f7e3cf2d3e291c30244f443c96f221752e",
+      "production_execution_admitted": true,
+      "execution_freeze_sha256": "ccb20be2512e6d1bc5a6c7a6d67813d9a1671fd655077067982d8a4ebe9e7e4b",
+      "result_review_receipt_sha256": "a48031c7c0a32c5691fba45af150c839ff51705df45f300fb0f6318b72b4adc1",
+      "actual_native_calls": 120000,
+      "conditions_completed": 372,
+      "engine_seconds": 272.35851833299967,
+      "strict_interoperability_passed": false,
+      "next_gate": "independently review prospective measurement contract before any new implementation or fitting"
     }
   ],
   "current_handoff": "doc/october/october13/2026-10-13-progress-report.md",

@@ -414,3 +414,106 @@ separateengineeringreview withdisjointnamedscopes,35-minute tasks andatmost
 4000replay, labels/scoring, newfit, source repair orcanonical-only selection is
 authorized. Independent source/configreview, cleancommit andexternalfreeze
 precede any120k/600s diagnosticexecution. Nativecallback2 isarmed12:42UTC.
+
+## 16:05 UTC — actual continuation audit and reviewed code integration
+
+The owner requested a fresh status check. The second native callback, scheduled
+for12:42:13UTC, was actually dispatched16:01:30UTC: 11,956.399seconds late.
+The native message arrived with this resumed turn. The exact reason is unknown;
+this mechanism did not establish uninterrupted coordinator work while inactive.
+Implementation/review agents independently completed by12:53UTC. Their queued
+messages and receipts are now reconciled. No new fits or optimizer updates
+occurred in this integration; totals remain32complete+1incomplete/114,200updates.
+Fresh cluster liveness and observer-history inspection is delegated read-only.
+
+The numerical engine passes final independent engineering review, receipt
+1fdbf9cafabd29af3d2a48e32c63b4f7e3cf2d3e291c30244f443c96f221752e.
+Root verifies all104bound artifact hashes and final source/config/protocol/test
+hashes. All279integrated source tests pass in24.704seconds, zero skips; logSHA
+54917afcb33694935ec89aa48436c5e798ca1fd3c2817d6d3e6011eb3edd3d52.
+Source9cff2d3d2bbaccee1642441b325625969e551f7b is committed, pushed and
+independently verified at GitHub main. Synthetic checks certify preparation,
+not trained-state interoperability or a scientific collapse result.
+
+Preparation of one isolated local120,000-native-call/600-second/CPU1 diagnostic
+is delegated. Exact clean source, pinned artifact copies and external freeze
+precede execution; no production native calls have been admitted yet. A separate
+reviewer prepares array-level reduction with zero additional native forwards.
+The Qwen replacement still awaits the specific restart answer after automatic
+review rejected old-client shutdown. No indirect shutdown or extra allocation.
+
+## 16:08 UTC — live monitoring verified and numerical execution admitted
+
+Fresh read-only certificate c37b574148d5e3f5b6b3f6aa1dfa8564cdcbae7391a7e6fc00a84051ca8f4dd2
+at16:05:14UTC verifies all five owned Qwen/supervisor/observer/guard processes
+in existing Mila job11228391. Cluv remains0.1.5. Leaf heartbeat16:04:27UTC
+says running/waiting for evidence:6attempts,6schema/model-valid replies,
+0errors,0inflight,29,862tokens. No fixed call/hour cap. The complete bounded
+monitor journal contains48consecutive observations25–72 since12:03UTC, maximum
+gap300.000416seconds, zero metadata issues and unchanged six-call count.
+This verifies continued monitoring, not additional proposal generation or
+training. The own guard is armed. Matching Mila training queue is empty;
+Alliance queues were not freshly rechecked. Shared foreign observer liveness
+is not certified. Staged replacement remains clean and unlaunched.
+
+Root verifies the isolated9cff2d3 source and three exact ignored input/review
+pins without loading targets/weights. New immutable execution freezeSHA
+ccb20be2512e6d1bc5a6c7a6d67813d9a1671fd655077067982d8a4ebe9e7e4b
+admits one local numerical diagnostic: one CPU,600seconds,120,000nativecore
+calls, zero training/provider/cluster operations. The earlier false-authority
+draft freeze is preserved. Producer has GO for the exact execution-plan argv;
+an independent reviewer owns saved-array reduction after termination.
+
+Separately, one new compact v5 numerical-stop event is delegated to the existing
+Qwen client under its continuous approval. It uses normal project evidence/task
+publication only; no denied restart/control action, new process or allocation.
+Actual event acceptance/call/reply still needs verification.
+
+## 16:22 UTC — numerical results accepted within scope; seventh Qwen reply reviewed
+
+The single admitted diagnostic actually ran PID63057 from16:09:51 to16:14:28UTC,
+exit0. All372conditions and120,000nativecore calls completed in272.359engine
+seconds (277.063launcher seconds). The actual launcher PID is63054; an earlier
+producer message naming63056 was corrected against the immutable receipt.
+No retry, additional fit, target scoring or modified tolerance occurred.
+
+Independent final receipt a48031c7c0a32c5691fba45af150c839ff51705df45f300fb0f6318b72b4adc1
+verifies530tracked source files,1,152run artifacts and28,136saved-operand
+comparisons. Root verifies the final receipt's artifact/runtime/report hashes
+and accepts the finite numerical audit. Strict interoperability remains false.
+All38failed comparisons concern the known trained GRU/categorical checkpoint
+in FP32. P2→P0 logits have54violations perrepeat (max5.960464e-6); public
+QUERY P3→P0 has2perrepeat (max1.907349e-6).34cross-precision comparisons also
+fail. Repeated paths, arms and entries are not independent sampling units.
+Initialization/null conditions pass; knownFP64local paths pass their bounds.
+Twenty-four unexported copy-origin before/after checks remain runtime assertions,
+explicitly separate from independent saved-array reduction. No kernel cause,
+competence, harmful-collapse, tangent or Floquet claim is accepted.
+
+Exactly one new compact task event produced Qwen call0007 at16:12:47UTC. Its
+16,722-character request and exact question/evidence hashes are verified. It
+used5,032tokens; total seven calls/34,894tokens, zero provider errors. At16:15UTC
+the original worker is again waiting for evidence with no pending request; all
+old six call artifacts are unchanged. Root rejects its information-retention,
+accumulation-cause and threshold recommendations; original output remains
+immutable. Normal event publication did not restart or change any owned/shared
+process. Replacement approval remains pending after the earlier automatic
+review rejection. Native OpenAI agents perform independent scientific review.
+
+A separate30-minute static measurement-contract proposal and independent review
+are active with disjoint write scopes, zero native calls/weights loading/labels
+or fits. They must distinguish canonical behavior, cached-state interventions
+and separately declared FP64 assays, preserving the eight-query competence
+gates and failed v5 outcomes. No subsequent implementation/execution is admitted.
+One best-effort native callback is armed for16:50:56UTC in cell546, registration
+SHA8167b9ed0073b9f7bfe2851ce0e835642f76e4fc1406d37261d1b0e9c58a7060.
+The earlier delayed callback prevents a claim of guaranteed unattended timing;
+owner-stop and20:00UTC deadline checks remain in force. Today's training totals
+remain32completedfits+1incomplete/114,200updates; numerical and proposal activity
+is recorded separately.
+
+The next static proposal author encountered a native stream disconnection before
+producing a file. Root verified no partial writes, preserved the error receipt,
+and resumed the same task once with twenty minutes remaining. The independent
+reviewer was informed. This recovery adds no experiment, model-service fallback
+or cluster operation; a second route failure must hand back partial work.

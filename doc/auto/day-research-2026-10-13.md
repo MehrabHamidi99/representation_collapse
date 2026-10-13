@@ -122,3 +122,24 @@ Codex task, rearmed only after meaningful work, with a30-minute cadence until
 20:00UTC. The ignored local control record is its runtime authority; the app/server
 must remain available. This is not a hosted Codex Automation or an OS cron job.
 A pending wake does not prove that its future research task has completed.
+
+## Afternoon continuation audit and next numerical diagnostic
+
+The second native callback was scheduled for12:42UTC but was dispatched only
+at16:01UTC. Independent implementation/review finished by12:53UTC; continuous
+coordinator research in the gap is unverified. The independently checked cluster
+monitor did continue:48consecutive checks from12:07 through16:02UTC, maximum
+gap300.000416seconds. Qwen remained at six completed proposals, waiting for new
+evidence. Persistent monitoring is therefore verified; uninterrupted substantive
+research is not. Native timed callbacks are best effort and depend on app/tool
+availability; do not treat their planned timestamps as completed research.
+
+The v5 attempt stopped at4,000updates under its frozen numerical guard. Its
+fixed5,000endpoint remains unknown; no retry, resume or tolerance change is
+authorized. The new label-free native-chronology diagnostic has independently
+reviewed implementation/source9cff2d3,279passing integrated tests and a distinct
+external execution freeze. One local CPU run starts16:09:51UTC, with120,000native
+core calls/600seconds maximum. Saved-array review follows termination. Completion
+and strict interoperability are distinct; no new fitting contract is implied.
+A separate compact v5 evidence event is being published to the existing Qwen
+client. Its reviewed replacement remains pending the specific restart answer.

@@ -43,6 +43,8 @@ Evidence records: [initial-phase report](auto/initial-phase-report.md),
 [query-averaging proposal](auto/query-averaged-acquisition-proposal-v5.md),
 [stopped v5 campaign and independent review](auto/query-averaged-acquisition-v5-results-2026-10-13.md),
 [prospective numerical chronology calibration](auto/native-chronology-calibration-proposal-2026-10-13.md),
+[reviewed calibration implementation](auto/native-chronology-calibration-v1.md),
+[independent full calibration results](auto/native-chronology-calibration-v1-independent-results-review-2026-10-13.md),
 and [current research/worker status](auto/research-status-2026-10-13.json).
 
 Operations: [compute plan](auto/compute-plan.md),

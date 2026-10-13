@@ -11,8 +11,10 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   are verified; this was not uninterrupted all-night inference.
   The new **continuous Qwen client is actually running** in existing Mila job
   **11228391**, on cn-f003: leaf PID **3244371**, supervisor **3244355**, separate
-  project tmux session and journal. At 12:03 UTC, six exact-model/schema
-  proposals are verified: six attempts, zero errors, 29,862 reported tokens.
+  project tmux session and journal. At 16:15 UTC, seven exact-model/schema
+  proposals are verified: seven attempts, zero errors, 34,894 reported tokens.
+  The latest call completed16:12UTC on a new numerical-stop event; its scientific
+  recommendation was rejected after explicit review.
   Multiple recommendations are rejected for missed topics, weakened gates or
   unsupported information-loss inference; native OpenAI review and a local
   prompt repair address these failures. The repair is independently reviewed
@@ -20,16 +22,20 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   specific old-client shutdown; graceful replacement awaits owner confirmation.
   The current client, observer and guard remain active. Live answer-quality
   improvement is unverified. Total-call/runtime caps are null; backoff, signal/STOP controls remain.
-  Four task events are consumed, with no scientific answer automatically accepted. A project-only hosting guard will request graceful stop at08:52:40UTC on
+  Five task events are consumed, with no scientific answer automatically accepted. A project-only hosting guard will request graceful stop at08:52:40UTC on
   October14. The existing allocation ends
   **October 14 08:55:56 UTC** (12:55 Yerevan); no replacement allocation is automatic.
   Native OpenAI coordinator/subagents prepare and review independent work.
-  The first timed native follow-up was delivered; one second30-minute wake is
-  armed for12:42UTC, with daytime continuation through20:00UTC subject to app
-  availability. Pending wakes do not certify future research execution.
+  Both native follow-ups were delivered, but the second scheduled for12:42UTC
+  arrived only at16:01UTC (3h19m late). Independent implementation/review
+  completed by12:53UTC; continuous coordinator work in the intervening gap
+  is unverified. The coordinator resumed integration at16:01UTC. A single best-effort callback
+  is now armed for16:50UTC; its timing and future execution are not guaranteed.
   The project's five-minute observer is running outside Qwen evidence roots;
-  a fresh12:03UTC certificate verifies24 observations and live owned processes
-  without metadata issues; the observer ends20:00UTC.
+  a fresh16:05UTC certificate verifies72 observations and live owned processes.
+  The48 checks since12:03UTC are consecutive, maximum gap300.000416seconds,
+  with no metadata issues. Qwen produced no additional proposals during that
+  interval and was waiting for evidence. The observer ends20:00UTC.
   Today **32 local CPU fits completed, plus one incomplete fit;
   114,200 optimizer updates** were executed:
   twelve v2 discovery fits fail before body training, and eight fixed 5,000-update
@@ -53,11 +59,18 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   unknown and three cells unstarted. No retry, resume or tolerance change occurred.
   [V5 stopped campaign](auto/query-averaged-acquisition-v5-results-2026-10-13.md).
   A separate numerical-chronology proposal passed independent design review;
-  implementation and engineering review are delegated, with full calibration
-  and further fitting unadmitted. An
+  implementation and engineering review are complete, published as9cff2d3.
+  The isolated local diagnostic completed372conditions/120,000native core
+  calls in272.36seconds, exit0, with strict numerical interoperability failing.
+  Independent reduction verifies all saved comparisons and accepts the numerical
+  audit: all38failed comparisons concern the known trained GRU checkpoint
+  in FP32; initialization and null conditions pass.
+  [Calibration result and limits](auto/native-chronology-calibration-v1-independent-results-review-2026-10-13.md).
+  A separate measurement-contract proposal and scientific review are active;
+  further fitting is unadmitted. An
   all-eight R0 pass would still leave GateB R1/R2 untested.
   Reviewed seed-statistics and complete-state matrix-free utilities were published
-  in **999d88d**. The current reviewed integration passes **271 source tests**,
+  in **999d88d**. The current reviewed integration passes **279 source tests**,
   zero skips. Inference assumptions,
   smallest effects and confirmation freeze remain unresolved.
   Native **cluv 0.1.5 verifies Mila plus all nine configured Alliance clusters**
@@ -345,13 +358,13 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   0.1.5; the old Tamia2 hostname failed DNS resolution from Mila, so a fresh
   Alliance connection/scheduler check remains outstanding.
 
-Next bounded actions: independently reduce the completed periodicity raw arrays
-(closure in ULP units against FP64; probe floor-hit counts from the saved
-`probe_feature_scale`); complete the remaining Gate B prerequisites from the
-implementation-audit backlog (stage-aware training validator, coordinate-wise
-gates, three-phase state capture, intervention/sham and statistics modules) before any new compute request;
-freeze the v2 statistics (SEI, family, interval method) in a hashed record;
-review bounded Qwen drafts against verified failures; recover and pin graph
-assets. Restore the Tamia controller route and reverify its cluv connections;
-Mila SSH works but the old Tamia2 hostname currently fails resolution. No broad
-sweep or additional GPU training follows automatically.
+Next actions: execute and independently reduce the newly frozen native-chronology
+diagnostic, preserving every numerical failure; then decide the measurement
+contract before preparing any new acquisition fit. Check the new Qwen event
+against its assigned scientific question and preserve rejected answers. The
+reviewed prompt replacement remains staged pending the specific restart answer.
+The native coordinator's delayed callback does not establish continuous work;
+cluster monitoring and substantive research are reported separately. Complete
+the confirmation statistics freeze and outstanding intervention/sham controls,
+then recover the remaining graph data/checkpoint provenance. No broad sweep or
+additional GPU training follows automatically.

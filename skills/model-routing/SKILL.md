@@ -20,9 +20,13 @@ contract are documented in `doc/auto/qwen-worker.md` and the tracker. The
 initial worker stopped at its consumed cap. On 2026-10-12 the owner explicitly
 approved a separate 24-hour/24-attempt Tamia continuation; its actual first
 response matched the requested Qwen identity. Read current heartbeat and
-approval evidence before treating that route as active. It remains a
-proposal-only cluster process, not an available native Qwen tool or a recurring
-allowance. No paid fallback is approved.
+approval evidence before treating that route as active. The October 12 bounds
+describe that historical cohort. On October 13 the owner removed fixed Qwen
+call/runtime caps and authorized OpenAI fallback. Use the current continuous
+project worker and currently exposed native OpenAI agents within the approved
+project-excerpt scope; do not infer credentials or entitlement to an unavailable
+external API. Qwen remains a proposal-only cluster process. Record actual
+requests, answers and scientific acceptance separately from worker liveness.
 
 Prefer the inherited parent model and effort for native delegation. Specify a
 different model/effort only when the user or applicable instructions request
