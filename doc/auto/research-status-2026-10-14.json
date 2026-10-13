@@ -2,11 +2,11 @@
   "schema_version": 1,
   "local_date": "2026-10-14",
   "timezone": "Asia/Yerevan",
-  "updated_at_utc": "2026-10-13T21:13:17.757763+00:00",
+  "updated_at_utc": "2026-10-13T21:35:45.798827+00:00",
   "research_has_run": true,
   "uninterrupted_native_coordination_confirmed": false,
   "qwen": {
-    "observed_at_utc": "2026-10-13T21:12:31.392349+00:00",
+    "observed_at_utc": "2026-10-13T21:29:42.322272+00:00",
     "state": "running_waiting_for_evidence",
     "pid": 3244371,
     "supervisor_pid": 3244355,
@@ -39,7 +39,7 @@
       "both_original_pids_absent": true
     },
     "continuation": {
-      "state": "running_two_observations_verified",
+      "state": "running_eight_observations_verified",
       "launched_at_utc": "2026-10-13T20:52:40Z",
       "observer_pid": 3468694,
       "wrapper_pid": 3468674,
@@ -52,8 +52,9 @@
       "output_outside_qwen_evidence_roots": true,
       "second_observation_at_utc": "2026-10-13T20:57:40.757146+00:00",
       "first_interval_seconds": 300.000158,
-      "verified_observations": 5,
-      "last_observation_at_utc": "2026-10-13T21:12:40.757845+00:00"
+      "verified_observations": 8,
+      "last_observation_at_utc": "2026-10-13T21:27:40.758231+00:00",
+      "maximum_gap_seconds": 300.000441
     }
   },
   "compute": {
@@ -94,12 +95,12 @@
     },
     "new_contract": {
       "path": "doc/auto/post-calibration-measurement-contract-v2-2026-10-14.md",
-      "state": "implementation_independently_accepted_source_publication_and_root_admission_pending",
+      "state": "production_completed_independent_results_reduction_pending",
       "proposed_native_calls": 736,
       "labels": 0,
       "derivatives": 0,
       "fits": 0,
-      "execution_admitted": false,
+      "execution_admitted": true,
       "protocol_sha256": "83c0b8c61fdefa9eb73e8386deab6c073d5ac04a82b13d251e1be699b25124d7",
       "config_sha256": "0170170b7724311a3903e5f1cde1917e91263b57fe45ebfc89f6d90b121a1740",
       "review_receipt_sha256": "4228f28f6df771c4623361c44982082ddac47e8fb999c4c0a658c57cc62f8560",
@@ -109,7 +110,16 @@
       "independent_review_native_calls": 0,
       "implementation_engine_sha256": "7bd9bb6b8d05b1ffdc1264492830745f2e019c7e08af817820ba8898c8bbfd04",
       "fixture_equivalence_sha256": "c017d4932833f94e9163e5243b79c3fdd789f351ee0e6c532057c3799e26e85f",
-      "implementation_review_sha256": "67bfc920d26ffad8221fcb3feb3f6d25946d15b40bbd288364fc32bc9413da84"
+      "implementation_review_sha256": "67bfc920d26ffad8221fcb3feb3f6d25946d15b40bbd288364fc32bc9413da84",
+      "source_commit": "edc47ee8914125b20d9fee9816e3255f194bc462",
+      "production_conditions": 32,
+      "production_native_calls": 736,
+      "outer_wall_seconds": 49.662797166005475,
+      "producer_reported_failed_comparisons": 4,
+      "raw_integrity_files_verified": 72,
+      "root_admission_sha256": "a8f0e3e57d30792e8a726560e2c67ff217b9d2e0644e0aabd0806d6f43e69172",
+      "raw_manifest_sha256": "eab056eb81300812d78d13b89b8f5983c1d2c2a34636cc62c98e45328c1b2ddd",
+      "scientific_acceptance": false
     },
     "harmful_collapse_claim_accepted": false,
     "certified_floquet_claim_accepted": false
@@ -133,14 +143,23 @@
     "online_transport_sdk": "0.21.0+computecanada",
     "online_transport_run_url": "https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse/runs/rc-reporting-smoke-20261013t2058z",
     "remote_sdk030_helper_delivery_verified": false,
-    "offline_smoke_run_id": "dfb0e42e08ee4564819df5eb40e0abb1"
+    "offline_smoke_run_id": "dfb0e42e08ee4564819df5eb40e0abb1",
+    "first_numerical_offline_run": {
+      "run_id": "94871a2d43e6406f8022e763a905f14e",
+      "state": "completed",
+      "history_records_verified": 32,
+      "final_summary_verified": true,
+      "metadata_artifacts_verified": 2,
+      "transaction_sha256": "934de7bd6d21f778e499304b68b71e1cf9dbd3febb7683ca4d70c0f1f120dc1c",
+      "remote_delivery_verified": false
+    }
   },
   "native_continuation": {
     "prior_callback": "expired_and_skipped_on_resumption",
     "prior_callback_due_utc": "2026-10-13T16:50:56Z",
     "prior_callback_deadline_utc": "2026-10-13T20:00:00Z",
     "current_pending_timers": 0,
-    "current_work": "bounded native design/review/reporting implementation and cluster operations",
+    "current_work": "independent NumPy reduction preparation and result review",
     "automatic_allocation_renewal": false
   },
   "evidence": {
@@ -151,7 +170,9 @@
     "wandb_authenticated_lookup_sha256": "19196bc4c5ba403cc1a03b5d315ee1322517d7c959557d96a7b7e99d5cf773e1",
     "wandb_project_create_and_online_smoke_sha256": "71bde8c6b550262d3aef1dd9a9296c5d5fa92f2f02589ad246270e0322952a9b",
     "wandb_reporting_final_manifest_sha256": "482de132f75e7dfdb7125a98ed2414e74272a23012d6395250822f1f0ea77a7a",
-    "all_cluster_pass_sha256": "9c0da7fb18e2b84380db5bfb2d3bffe429e29e9baf0a67f333a666315a5eaed8"
+    "all_cluster_pass_sha256": "9c0da7fb18e2b84380db5bfb2d3bffe429e29e9baf0a67f333a666315a5eaed8",
+    "fresh_worker_liveness_sha256": "37c574ebfaf7a68e70fe4fa1dc05038df7f9cfa94065970a76c6bb53b387d3db"
   },
-  "published_foundation_commit": "18aa494d734e2d885de4411f899de5c2ade1dea7"
+  "published_foundation_commit": "18aa494d734e2d885de4411f899de5c2ade1dea7",
+  "published_implementation_commit": "edc47ee8914125b20d9fee9816e3255f194bc462"
 }

@@ -32,8 +32,11 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   The additive implementation and one184-call tiny fixture campaign passed
   [independent engineering review](auto/cached-forward-v2-implementation-independent-review-2026-10-14.md).
   A single manifest-bookkeeping correction is independently proven equivalent
-  without rerunning native fixtures. Clean publication and exact root admission
-  remain before production; no new scientific claim is accepted. The owner-authorized
+  without rerunning native fixtures. Published source`edc47ee` and a hash-bound root admission enabled one
+  local CPU run:32conditions/736calls,49.66seconds, zero fitting or targets.
+  All72raw file hashes and32offline W&B metric records are verified. Producer
+  reports four failed comparisons; independent raw reduction remains pending.
+  No new scientific claim is accepted. The owner-authorized
   [W&B project](https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse)
   was created at21:05UTC; a tiny online SDK0.21.0 transport smoke has verified
   history/summary readback. The pinned SDK0.30.0 reporting helper separately

@@ -159,3 +159,44 @@ Supervisor SHA `193ecd77d4fa762cba20873b40a605e3e98d8bf64b219b6d40eed94b7f4667a2
 Next is immutable source publication, an isolated clean source and external
 root admission for exactly one736-call local CPU run. Training, derivatives,
 new allocations and scientific acceptance remain unadmitted.
+
+## 01:35 local / October13 21:35 UTC — actual forward run completed
+
+Commit `edc47ee8914125b20d9fee9816e3255f194bc462` was pushed and separately
+verified against GitHub main. An isolated clean worktree preserves the main
+workspace's unrelated template files. Preparation corrected two staging-only
+issues (an extra descriptive field in a pin dictionary and a top-level symlink
+not covered by a directory ignore); no model call or experiment launch occurred
+during either correction. All native/source/lock/checkpoint byte pins matched
+before admission. No environment package or scientific contract was changed.
+
+Root froze one736-call local CPU attempt, with exact source, config, receipts,
+outer supervisor, invocation, output and shared clock. Admission SHA
+`a8f0e3e57d30792e8a726560e2c67ff217b9d2e0644e0aabd0806d6f43e69172`.
+The run launched21:31:06 and exited0 at21:31:56UTC:32conditions,736/736core
+calls,64encoder and224head calls,49.36seconds internally/49.66seconds externally.
+No deadline censor, retry, fit, derivative, target or cluster operation occurred.
+Producer metadata reports four failed comparisons across two FP32 known
+GRU/categorical challenge conditions. This is not independently accepted
+numerical evidence yet; the separate NumPy reducer and result review are active.
+
+Root verified all72raw-manifest file hashes without loading arrays. Manifest
+SHA `eab056eb81300812d78d13b89b8f5983c1d2c2a34636cc62c98e45328c1b2ddd`.
+W&B initialized before input generation. Its completed offline run is
+`94871a2d43e6406f8022e763a905f14e`; authenticated dashboard delivery remains
+unverified. Read-only inspection of the40579-byte transaction, including a
+fragmented record, verified32history records at steps0–31, exact condition IDs
+and reported counts, completed summary and two compact metadata artifacts.
+Transaction SHA `934de7bd6d21f778e499304b68b71e1cf9dbd3febb7683ca4d70c0f1f120dc1c`.
+CRC/fragment handling follows the [pinned upstream format](https://github.com/wandb/wandb/blob/v0.30.0/core/pkg/leveldb/record.go);
+corruption and truncation fixtures were rejected. No automatic host, code,
+console, dataset or weight artifact appeared. Operational receipts and verifier
+are under `runs/ops/cached-forward-v2-20261014T0130Y/`.
+
+A separate21:29:42UTC cluster pass verified identities/source/cgroups for all
+five owned Qwen/supervisor/guard/observer processes. Eight replies and39932tokens
+remain unchanged; zero errors/inflight calls, heartbeat9.9seconds old. The
+observer reached8checks with no issues and maxgap300.000441seconds. Guard and
+allocation deadlines remain08:52:40/08:55:56UTC October14. Receipt SHA
+`37c574ebfaf7a68e70fe4fa1dc05038df7f9cfa94065970a76c6bb53b387d3db`.
+No new login, cluster allocation, GPU job or worker control change occurred.
