@@ -200,3 +200,89 @@ observer reached8checks with no issues and maxgap300.000441seconds. Guard and
 allocation deadlines remain08:52:40/08:55:56UTC October14. Receipt SHA
 `37c574ebfaf7a68e70fe4fa1dc05038df7f9cfa94065970a76c6bb53b387d3db`.
 No new login, cluster allocation, GPU job or worker control change occurred.
+
+## 01:50 local / October13 21:50 UTC — independent reduction and continued theory work
+
+The independent NumPy reducer was published as
+`70b3a05a49fcd8e08fe2af2d5409095d6b2d1f60`; a separate GitHub readback
+verified that revision. Independent preparation receipt
+`039f50060a16fcca2f4ab992bcc40a995cb77edf283ce2c7892d214272edef37`
+binds the exact reducer and13engineering checks. Producer metadata acceptance
+receipt `4edc1342b287c6847363ccf77cee861b0c22e659937055c25b2e0bc7856628ec`
+reconciles source, runtime counts/deadlines and offline reporting. Root then
+admitted one1CPU/600second reduction, initialized offline W&B before numerical
+array reading or frozen-input replay, and executed it once. No checkpoint,
+target, native model call or fit entered that audit. Root admission SHA
+`027ea3ceba3cc4e3a4fc9760274d8b69fcb59085957a2e1ae2278b440b3cc7c7`.
+It exited0 after41.057seconds; audit SHA
+`d36e9ca551f9a2b31602abe2afe7da84cef4b2b911b919e5501dd01faffab035`.
+
+The independent audit recomputed15024comparisons over300399104reused scalar
+entries. Four failed edges compare signed hidden-intervention logits in FP32
+with FP64 at the known GRU/categorical checkpoint. Each repeats the two
+coordinates[18,2]and[50,2]: eight reported violations represent one original
+history reused across its duplicate, signs and exact repetitions. Local
+B0/C comparisons, shams, state/cache identity, duplication and repeat checks
+pass. All6144finite C-effect rows have nonzero observed effects; this neither
+measures useful information nor establishes a B0 intervention correspondence.
+Strict all-comparison acceptance remains false; old competence gates and v5's
+stop remain unchanged. Final written closeout is in progress.
+
+The independent reviewer's connection failed twice after its checks and
+numerical-summary artifact were saved. No experiment or numerical reduction
+was repeated. A fresh bounded agent is reconciling the saved evidence and
+finishing the written report; the failed route is not retried further.
+
+One new mathematical task was published to the existing Qwen worker at
+21:43:31UTC. Call9 completed21:43:52 with verified model identity,5129tokens
+and the full16543-character request. All48files from calls1–8 are unchanged.
+The answer omitted the requested error-propagation derivation and proposed
+training/precision changes instead. Root rejected it; no suggested action or
+retry followed. Totals are9replies,45061tokens, zero recorded provider errors
+and no request in flight. A coordinator-written conditional finite-horizon
+bound and explicit intervention assumptions are in the
+[approximate-bridge audit](../../auto/approximate-bridge-audit-2026-10-14.md),
+with separate review pending. No empirical/novelty claim is assigned to that
+standard deterministic derivation. Qwen participation receipt SHA
+`d0c5d23fd237f57ef12a28a8d64a15e2bb700cf96e81c297b815b320a6baa820`.
+
+## 01:56 local / October 13 21:56 UTC — independent closeout accepted
+
+A fresh reviewer completed the [numerical evidence closeout](../../auto/cached-forward-v2-results-independent-review-2026-10-14.md)
+from the saved audit, source identities, compact summaries and receipts.
+Numerical integrity is accepted; strict all-comparison acceptance is false,
+with four cross-dtype failures retained. The eight scalar violations reuse
+one independent history. No raw reduction, native experiment, test campaign,
+checkpoint load or target evaluation was repeated. The report SHA-256 is
+`29e84e097c2499715a108d3653f97ec73a3f17d0f6d2f216e845ec9f8ae5ecb8`;
+closeout receipt SHA-256 is
+`065b7c4556a499d2a0672f07fe12c4c1286f4c02c646fdd509141ea232222085`.
+Root reverified every file bound by that receipt before integration.
+
+The independent static algebra review accepted the conditional finite-horizon
+bridge derivation without corrections. It does not certify actual B0/C
+constants, state correspondence, intervention transfer or novelty. Review
+receipt SHA-256 is
+`08b3ae5d9570b675314f81e1417c81fc03a4d2b1214cd7790c92d32edb8dc691`,
+binding document SHA-256
+`197922576ae0b750bd4221bf0294c376fc7ff88d4bd562faa3a392ac75c009e9`.
+Root changed only the introductory review-status sentence from pending to
+accepted; the algebra and remaining content are byte-identical. The before/after
+hashes and editorial check are saved in
+`runs/review/cached-forward-v2-closeout/root-integration.json`.
+
+README, tracker, structured status and W&B documentation now distinguish
+accepted numerical integrity from failed precision agreement and absent
+scientific acceptance. The W&B project exists with verified online smoke;
+both numerical runs retain verified offline records, with cloud sync pending.
+Qwen's latest verified state remains nine replies at 21:44 UTC, waiting for
+evidence; its latest proposal was rejected. Observer and allocation deadlines
+remain 08:50 and 08:55:56 UTC on October 14. No automatic renewal or native
+continuation timer is armed. No new Slurm/GPU allocation or fit occurred.
+
+Next scientific work is to choose and prospectively review a measurement map
+that exposes the complete recurrent state, keep the observed precision failures
+in its calibration record, and specify separate derivative and training
+budgets before further model execution. Original-task competence must still
+be established before periodic versus matched-ordering effects support a
+scientific claim. Unrelated October 13 template-agent edits remain untouched.

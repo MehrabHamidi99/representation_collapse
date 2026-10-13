@@ -2,30 +2,30 @@
   "schema_version": 1,
   "local_date": "2026-10-14",
   "timezone": "Asia/Yerevan",
-  "updated_at_utc": "2026-10-13T21:35:45.798827+00:00",
+  "updated_at_utc": "2026-10-13T21:55:49.176387+00:00",
   "research_has_run": true,
   "uninterrupted_native_coordination_confirmed": false,
   "qwen": {
-    "observed_at_utc": "2026-10-13T21:29:42.322272+00:00",
+    "observed_at_utc": "2026-10-13T21:44:24.857717+00:00",
     "state": "running_waiting_for_evidence",
     "pid": 3244371,
     "supervisor_pid": 3244355,
     "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
     "source_sha256": "8d9e6149f83a91cefdf8cd51c7e38777cdfade4c73cfb42136f104d7ea45a606",
-    "attempts": 8,
-    "schema_model_verified_replies": 8,
+    "attempts": 9,
+    "schema_model_verified_replies": 9,
     "errors": 0,
     "request_in_flight": false,
-    "reported_tokens": 39932,
-    "last_reply_at_utc": "2026-10-13T21:00:30.819354+00:00",
+    "reported_tokens": 45061,
+    "last_reply_at_utc": "2026-10-13T21:43:52.455999+00:00",
     "max_calls": null,
     "max_hours": null,
     "whole_scientific_answers_accepted": 0,
     "restarted": false,
     "prompt_repair": "staged; exact live replacement remains pending owner restart response after automatic approval rejection",
-    "new_task_published_at_utc": "2026-10-13T21:00:16.152223+00:00",
-    "new_task_id": "causal-bridge-20261013T2100Z",
-    "new_task_state": "response_verified_whole_answer_rejected"
+    "new_task_published_at_utc": "2026-10-13T21:43:31.983821+00:00",
+    "new_task_id": "approximate-bridge-20261014T0142Y",
+    "new_task_state": "response_verified_whole_answer_rejected_as_nonresponsive"
   },
   "monitor": {
     "historical_observer": {
@@ -84,18 +84,20 @@
     "new_fits_this_continuation": 0,
     "original_eight_coordinate_eligible_checkpoints": 0,
     "last_verified_calibration": {
-      "conditions": 372,
-      "native_calls": 120000,
+      "conditions": 32,
+      "native_calls": 736,
       "optimizer_updates": 0,
-      "source_commit": "9cff2d3d2bbaccee1642441b325625969e551f7b",
+      "source_commit": "edc47ee8914125b20d9fee9816e3255f194bc462",
+      "reducer_source_commit": "70b3a05a49fcd8e08fe2af2d5409095d6b2d1f60",
       "integrity_accepted": true,
       "strict_interoperability_passed": false,
-      "failed_comparisons": 38,
-      "review_receipt_sha256": "a48031c7c0a32c5691fba45af150c839ff51705df45f300fb0f6318b72b4adc1"
+      "failed_comparisons": 4,
+      "independent_failing_histories": 1,
+      "review_receipt_sha256": "065b7c4556a499d2a0672f07fe12c4c1286f4c02c646fdd509141ea232222085"
     },
     "new_contract": {
       "path": "doc/auto/post-calibration-measurement-contract-v2-2026-10-14.md",
-      "state": "production_completed_independent_results_reduction_pending",
+      "state": "independent_numerical_closeout_completed_integrity_accepted",
       "proposed_native_calls": 736,
       "labels": 0,
       "derivatives": 0,
@@ -119,10 +121,43 @@
       "raw_integrity_files_verified": 72,
       "root_admission_sha256": "a8f0e3e57d30792e8a726560e2c67ff217b9d2e0644e0aabd0806d6f43e69172",
       "raw_manifest_sha256": "eab056eb81300812d78d13b89b8f5983c1d2c2a34636cc62c98e45328c1b2ddd",
-      "scientific_acceptance": false
+      "scientific_acceptance": false,
+      "independent_reducer_source_commit": "70b3a05a49fcd8e08fe2af2d5409095d6b2d1f60",
+      "independent_audit_sha256": "d36e9ca551f9a2b31602abe2afe7da84cef4b2b911b919e5501dd01faffab035",
+      "independent_reduction_wall_seconds": 41.05692891700892,
+      "independent_comparisons": 15024,
+      "reused_scalar_entries": 300399104,
+      "strict_all_comparison_acceptance": false,
+      "failed_comparisons": 4,
+      "failed_comparison_family": "cross_dtype",
+      "failed_independent_history_ids": [
+        18
+      ],
+      "original_gate_changes": false,
+      "numerical_integrity_accepted": true,
+      "closeout_receipt_sha256": "065b7c4556a499d2a0672f07fe12c4c1286f4c02c646fdd509141ea232222085",
+      "result_report": "doc/auto/cached-forward-v2-results-independent-review-2026-10-14.md"
     },
     "harmful_collapse_claim_accepted": false,
-    "certified_floquet_claim_accepted": false
+    "certified_floquet_claim_accepted": false,
+    "prior_verified_calibration": {
+      "conditions": 372,
+      "native_calls": 120000,
+      "optimizer_updates": 0,
+      "source_commit": "9cff2d3d2bbaccee1642441b325625969e551f7b",
+      "integrity_accepted": true,
+      "strict_interoperability_passed": false,
+      "failed_comparisons": 38,
+      "review_receipt_sha256": "a48031c7c0a32c5691fba45af150c839ff51705df45f300fb0f6318b72b4adc1"
+    },
+    "approximate_bridge": {
+      "static_algebra_accepted": true,
+      "actual_B0_C_certificate": false,
+      "review_receipt_sha256": "08b3ae5d9570b675314f81e1417c81fc03a4d2b1214cd7790c92d32edb8dc691",
+      "reviewed_document_sha256": "197922576ae0b750bd4221bf0294c376fc7ff88d4bd562faa3a392ac75c009e9",
+      "published_document_sha256": "ac702dea1c72a920fb6a10a21bad7e2a7d2434a3d2c33fff00878194e50659b2",
+      "editorial_change": "Only the introductory review-status sentence changed; algebra and remaining content are byte-identical."
+    }
   },
   "wandb": {
     "owner_authorized_project_creation": true,
@@ -152,6 +187,13 @@
       "metadata_artifacts_verified": 2,
       "transaction_sha256": "934de7bd6d21f778e499304b68b71e1cf9dbd3febb7683ca4d70c0f1f120dc1c",
       "remote_delivery_verified": false
+    },
+    "independent_reduction_offline_run": {
+      "run_id": "6055233d62b4469796c50122e4cfa8ce",
+      "state": "completed",
+      "history_records_verified": 1,
+      "final_summary_verified": true,
+      "remote_delivery_verified": false
     }
   },
   "native_continuation": {
@@ -159,7 +201,7 @@
     "prior_callback_due_utc": "2026-10-13T16:50:56Z",
     "prior_callback_deadline_utc": "2026-10-13T20:00:00Z",
     "current_pending_timers": 0,
-    "current_work": "independent NumPy reduction preparation and result review",
+    "current_work": "numerical and theory reviews completed; final documentation integration and publication",
     "automatic_allocation_renewal": false
   },
   "evidence": {
@@ -171,8 +213,12 @@
     "wandb_project_create_and_online_smoke_sha256": "71bde8c6b550262d3aef1dd9a9296c5d5fa92f2f02589ad246270e0322952a9b",
     "wandb_reporting_final_manifest_sha256": "482de132f75e7dfdb7125a98ed2414e74272a23012d6395250822f1f0ea77a7a",
     "all_cluster_pass_sha256": "9c0da7fb18e2b84380db5bfb2d3bffe429e29e9baf0a67f333a666315a5eaed8",
-    "fresh_worker_liveness_sha256": "37c574ebfaf7a68e70fe4fa1dc05038df7f9cfa94065970a76c6bb53b387d3db"
+    "fresh_worker_liveness_sha256": "37c574ebfaf7a68e70fe4fa1dc05038df7f9cfa94065970a76c6bb53b387d3db",
+    "qwen_call9_participation_sha256": "d0c5d23fd237f57ef12a28a8d64a15e2bb700cf96e81c297b815b320a6baa820",
+    "final_closeout_sha256": "065b7c4556a499d2a0672f07fe12c4c1286f4c02c646fdd509141ea232222085",
+    "root_closeout_integration_sha256": "d151866fe73365134d5726be8261803401956d6ff137673d259c06ac4300c682"
   },
   "published_foundation_commit": "18aa494d734e2d885de4411f899de5c2ade1dea7",
-  "published_implementation_commit": "edc47ee8914125b20d9fee9816e3255f194bc462"
+  "published_implementation_commit": "edc47ee8914125b20d9fee9816e3255f194bc462",
+  "published_reducer_commit": "70b3a05a49fcd8e08fe2af2d5409095d6b2d1f60"
 }

@@ -18,13 +18,15 @@ four pilots failed competence; subsequent acquisition work completed 32 local
 fits and stopped one fit after 114,200 total updates. No checkpoint has passed
 the original eight-coordinate gate. A 120,000-call numerical audit is independently
 verified, with strict execution-path agreement failing at a trained GRU checkpoint.
-A new label-free, complete-state calibration completed32conditions/736forward
-calls in50seconds after independent implementation review. Raw hash integrity
-and32offline W&B metric records are verified; independent numerical reduction
-is underway.
+A new label-free, complete-state calibration completed 32 conditions and 736
+forward calls in 50 seconds. Independent review accepts the audit's integrity:
+fixed-precision checks pass, while four FP32/FP64 perturbation-logit comparisons
+fail at one independent history. See the [reviewed results](doc/auto/cached-forward-v2-results-independent-review-2026-10-14.md).
+The experiment and reduction have verified offline W&B records; cloud sync is
+pending.
 Graph source pins are available, while legacy payload provenance remains missing.
 
-Qwen has eight verified replies and a live worker in existing Mila allocation
+Qwen has nine verified replies and a live worker in existing Mila allocation
 11228391. The five-minute observer continues through October 14 08:50 UTC;
 allocation expiry is 08:55:56 UTC. Native coordination has had gaps, and worker
 liveness alone does not establish continuous research. The new

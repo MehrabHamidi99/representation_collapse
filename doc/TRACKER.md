@@ -6,7 +6,35 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
-- **Renewed continuation — 2026-10-14, current.** At October13 20:46 UTC
+- **Completed forward calibration — 2026-10-14, current.** Published producer
+  `edc47ee` completed 32 conditions and 736 native forward calls in 49.66 seconds,
+  with zero fitting, targets or derivatives. Independent NumPy reduction from
+  published `70b3a05` completed in 41.06 seconds and verified 15,024 comparisons.
+  Independent closeout accepts numerical integrity. Fixed-precision B0/C, sham,
+  state/cache identity, duplication and repeat checks pass. Four FP32/FP64
+  comparisons of signed hidden-intervention logits fail at the known
+  GRU/categorical checkpoint: one original history, reused across duplicate
+  rows, signs and exact repetitions. Strict all-comparison acceptance is false.
+  These new inputs/runtime controls do not repair the old v5 stop or confer
+  original-task competence. [Results and limits](auto/cached-forward-v2-results-independent-review-2026-10-14.md).
+  Both numerical runs have verified contemporaneous offline W&B records;
+  cloud delivery remains pending. The dashboard's verified online smoke is
+  [here](https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse/runs/rc-reporting-smoke-20261013t2058z).
+  A fresh Qwen task produced reply 9 at 21:43 UTC: nine attempts/replies, 45,061
+  tokens, zero recorded provider errors. It missed the mathematical task and
+  was rejected; no proposed training or precision change was executed. Native
+  agents carried out implementation and independent checks. A fresh reviewer
+  completed the written closeout from saved evidence after the original
+  reviewer's connection failures; no numerical work was repeated. The
+  [conditional bridge derivation](auto/approximate-bridge-audit-2026-10-14.md)
+  passed independent static algebra review; it establishes no actual B0/C
+  certificate. The last complete process check at 21:29 UTC verified the worker,
+  supervisor, guard and five-minute observer; the worker was checked again at
+  21:44 UTC. The observer ends October 14 at 08:50 UTC, guard at 08:52:40,
+  allocation at 08:55:56 UTC (12:55 Yerevan), with no automatic renewal.
+  No new Slurm/GPU submission. Counts remain 32 completed fits plus one
+  incomplete fit, 114,200 updates, zero original-eight-query eligible checkpoints.
+- **Renewed continuation — 2026-10-14, earlier snapshot.** At October13 20:46 UTC
   (October14 00:46 Yerevan), the original Qwen leaf, supervisor and expiry guard
   are verified alive in existing Mila allocation11228391. Seven replies and
   34,894 reported tokens are unchanged since16:12UTC; the worker is waiting

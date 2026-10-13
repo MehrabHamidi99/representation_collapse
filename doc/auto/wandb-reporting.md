@@ -1,7 +1,7 @@
 # Mandatory experiment reporting
 
 2026-10-14. `src/representation_collapse/reporting.py` is additive infrastructure
-for future admitted runs. It does not launch an experiment or retrofit W&B into
+for newly admitted runs. It does not launch an experiment or retrofit W&B into
 historical runs. The `reporting` dependency group pins **wandb==0.30.0**; existing
 experiment, ops and paper groups are retained, as are all previous package
 versions in the lockfile. Use `uv sync --frozen --group reporting --inexact` when
@@ -197,3 +197,20 @@ measurement contract or execution config is changed by this infrastructure.
 Artifact APIs follow the official [artifact source](https://github.com/wandb/wandb/blob/v0.30.0/wandb/sdk/artifacts/artifact.py).
 
 The smoke reader follows the official [transaction-log reader](https://github.com/wandb/wandb/blob/v0.30.0/core/internal/transactionlog/reader.go) and version-0 LevelDB framing. No protocol-buffer contents from experiments are read by this smoke.
+
+## First numerical runs recorded offline
+
+The complete-state forward calibration ran once from published `edc47ee` on
+October 13 at 21:31 UTC. Offline run `94871a2d43e6406f8022e763a905f14e` has 32
+verified committed history records at steps 0–31, completed summary and two
+compact metadata manifests. Transaction SHA-256 is
+`934de7bd6d21f778e499304b68b71e1cf9dbd3febb7683ca4d70c0f1f120dc1c`.
+A separate NumPy reduction from `70b3a05` ran at 21:40 UTC; offline run
+`6055233d62b4469796c50122e4cfa8ce` has one verified history record, completed
+summary and one metadata manifest. Its transaction SHA-256 is
+`d96706e1436caab1cac7149d501a3c7dc9058f71f69066f0cd5a835d13ea4429`.
+Both SDK 0.30.0 reporters initialized before their numerical work. These are
+actual contemporaneous offline experiment logs, not retrospective annotations.
+Neither numerical run has a verified cloud delivery receipt; the dashboard's
+verified online run remains the earlier SDK 0.21 transport smoke. Raw arrays
+and weights are retained locally outside the W&B artifact boundary.
