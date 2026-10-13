@@ -16,6 +16,7 @@ experiments = [
 ]
 ops = ["cluster-uv==0.1.5", "uv==0.9.18", "pyyaml>=6,<7"]
 paper = ["matplotlib>=3.10,<4", "pymupdf>=1.26,<2"]
+reporting = ["wandb==0.30.0"]
 
 [project.scripts]
 collapse-calibrate = "representation_collapse.calibrate:main"

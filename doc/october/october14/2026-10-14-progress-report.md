@@ -1,0 +1,110 @@
+# Research progress — October 14, 2026 (Asia/Yerevan)
+
+## 00:44 local / October 13 20:44 UTC — renewed status and continuation
+
+The owner requests a fresh status and continued autoresearch. The last verified
+scientific work remains the complete numerical diagnostic and independent
+reduction published as 6b65149, with 32 completed acquisition fits plus one
+stopped fit and 114,200 optimizer updates. No additional fit is yet verified.
+
+The next proposal author suffered its second native stream interruption; a
+saved draft exists without a completed handoff. The independent reviewer
+returned a partial static review identifying missing causal-bridge assumptions,
+training-versus-state graph confusion, and compound AD budget accounting. Neither
+design nor execution was admitted. The new author starts a narrower revision
+of the 736-call forward-only stage, with separate independent review. Historical
+drafts and outcomes remain unchanged.
+
+The callback due October13 16:50 UTC was not dispatched before its 20:00 UTC
+deadline. Its resumed tool now reports dispatch=false, and the old loop record
+is closed without submitting a stale task. It did not provide unattended
+continuation. A fresh read-only audit checks the cluster leaf, the observer
+whose planned deadline was20:00 UTC, and the physical-allocation guard.
+
+The new research-wandb skill is adopted for future quantitative implementations.
+SDK/authenticated project setup is not yet present in this checkout; offline
+logging and explicit unsynced state must precede the next numerical sweep. Old
+runs remain immutable and are not relabelled as having live W&B tracking.
+
+New shared-template linkage files and an appended October13 linkage note were
+found from another agent. Their source content is preserved; no shared-template
+synchronization or foreign project change is performed here.
+
+## 01:08 local / October 13 21:08 UTC — verified continuation and W&B project
+
+Fresh scheduler, process identity, source hash and cgroup checks verified the
+original Qwen worker, supervisor and guard in Mila allocation 11228391. The
+old observer stopped normally at 20:00 UTC with exit 0, after 119 checks; its
+PIDs were absent. A distinct project observer continuation started at 20:52:40
+UTC. Observations at 20:52:40.756988 and 20:57:40.757146 are 300.000158 seconds
+apart, with no metadata issues. Worker/guard controls and shared infrastructure
+were unchanged. The new observer ends October 14 08:50 UTC; the existing guard
+requests worker stop at 08:52:40 and the allocation ends 08:55:56. There was a
+monitoring gap after the earlier deadline. No uninterrupted native coordinator
+activity, automatic allocation renewal or extra Slurm/GPU budget is claimed.
+The initial live certificate SHA is
+`f716fb303a04c53e9a7e6bcad8eacd24fbaf26f158a880f515d1030600eda2c2`;
+the second-observation verification is
+`83df04b9798a75ee4d4d54a60dbe46674f42b112ecf5266c6f35b9cdb331bd32`.
+
+One substantive mathematical task was published to the existing Qwen leaf at
+21:00:16 UTC, with 16,644 actual request characters and no restart. Call 8
+finished at 21:00:30: eight model/schema-verified replies in eight attempts,
+zero errors, 39,932 cumulative reported tokens. The preceding seven calls are
+byte-identical. The answer's scalar square-readout example was correct, while
+its proposed finite-intervention transfer conditions were insufficient. Root
+rejected the whole answer and supplied an exact polynomial counterexample and
+domain-specific sufficient map conditions in the
+[causal-bridge audit](../../auto/causal-bridge-audit-2026-10-14.md).
+Independent static review agrees with the algebra and one-way induction:
+addendum SHA `5e90ae46c9a969b8e08d9e932c959cc22aad1db928616863c254a136f63d57a7`.
+No new trained-model claim follows; this is a scope check rather than novelty.
+
+The revised 736-call forward-only contract passed independent static review.
+Protocol SHA `83c0b8c61fdefa9eb73e8386deab6c073d5ac04a82b13d251e1be699b25124d7`,
+config SHA `0170170b7724311a3903e5f1cde1917e91263b57fe45ebfc89f6d90b121a1740`,
+review receipt SHA `4228f28f6df771c4623361c44982082ddac47e8fb999c4c0a658c57cc62f8560`.
+All eight checkpoint byte pins and native source/binary pins were checked
+without deserializing weights. Independent enumeration confirms 736 native
+calls, 64 encoder calls and 224 head calls, with zero AD. Complete-state C
+effects stay C-scoped; B0's fused intermediate LSTM cell remains unobserved.
+The original competence gates are retained. Missing W&B authentication is not
+a blocker for durable explicit offline work. Native implementation and separate
+review are now assigned with disjoint files; no production execution is admitted.
+
+The owner replied **“create one”** to the W&B destination question. No local
+authentication or browser connection was available. Read-only cluster probes
+found existing protected user-level W&B authentication on Mila and Tamia; no
+credentials were printed or copied. Tamia's authenticated default entity is
+`mehrab-hamidi-milaquebec5431`. The first project lookup was wrong: it used a
+full entity/project path as a name and treated a lazy SDK object as existence
+evidence. The malformed URL assertion failed before any online run was created.
+That failed receipt is retained. A corrected server listing showed the project
+was absent; exactly one `create_project` created `representation-collapse`.
+Exactly one online logging-only smoke then finished at 21:05:49 UTC. A fresh
+authenticated API read verified both history records (steps 0/1) and final
+summary. It used existing SDK 0.21.0+computecanada, zero native calls/updates,
+and no new Slurm job. [Project](https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse),
+[verified smoke](https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse/runs/rc-reporting-smoke-20261013t2058z).
+Creation/transport receipt SHA
+`71bde8c6b550262d3aef1dd9a9296c5d5fa92f2f02589ad246270e0322952a9b`.
+
+The additive reporting helper pins SDK 0.30.0, preserving every prior dependency
+version. Root reviewed the source, reran 13 passing lifecycle tests and verified
+all final implementation-manifest hashes. A real offline smoke's saved transaction
+stream contains exactly two history records, explicit config, completed summary,
+and its self-generated compact metadata artifact. Automatic host/environment/code
+capture is disabled and checked. The run ID is
+`dfb0e42e08ee4564819df5eb40e0abb1`, stream SHA
+`2fed6c1d38d16945173c984638f3d10dfa9725b5480e75dbc4d57849e3b91e31`.
+Initial local-socket failure and subsequent hostname/artifact-staging corrections
+are preserved as separate infrastructure attempts. SDK 0.30.0 remote delivery
+remains unverified; the SDK 0.21.0 transport receipt does not certify that new
+implementation's delivery. No historical run is relabelled as tracked live.
+
+Next: independently review the additive forward driver and its bounded tiny
+unit fixtures, publish an immutable source and freeze exact execution before
+any 736-call run. Training, derivatives, new GPU allocations and causal/Floquet
+claims remain outside that stage. The prompt repair remains staged; the exact
+live Qwen replacement still awaits the pending owner restart response after
+automatic approval review rejected the earlier shutdown action.

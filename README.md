@@ -13,17 +13,24 @@ and cannot explain. "Dimension collapse across modalities" is the motivating
 umbrella, not the claim. The program began with temporal graphs (GC-LSTM on the
 public T-GRAB benchmark) and currently runs on controlled vector memory tasks.
 
-**Status (2026-10-12):** no accepted scientific claim. Measurement and mechanism
-calibration pass (infrastructure evidence). Four seed-0 GRU/LSTM pilots failed
-short-horizon competence, so the harmful-collapse decision is inconclusive.
-Checkpoint-only periodicity diagnostics now pass independent numerical reduction
-and review; their finite-time measurements remain descriptive. The competence
-recovery trainer, pinned-validation selector and complete native phase capture
-are implemented and locally reviewed, with new training still pending. Upstream
-graph sources are pinned; legacy checkpoint/data payload provenance remains
-missing. Qwen has a freshly verified heartbeat and ten valid proposal calls. A bounded
-observer is running until 08:00 Asia/Yerevan on October 13.
-See [doc/TRACKER.md](doc/TRACKER.md).
+**Status (2026-10-14):** harmful collapse remains inconclusive. The original
+four pilots failed competence; subsequent acquisition work completed 32 local
+fits and stopped one fit after 114,200 total updates. No checkpoint has passed
+the original eight-coordinate gate. A 120,000-call numerical audit is independently
+verified, with strict execution-path agreement failing at a trained GRU checkpoint.
+The next 736-call, label-free complete-state design passed static review;
+implementation is underway, with production execution still pending review.
+Graph source pins are available, while legacy payload provenance remains missing.
+
+Qwen has eight verified replies and a live worker in existing Mila allocation
+11228391. The five-minute observer continues through October 14 08:50 UTC;
+allocation expiry is 08:55:56 UTC. Native coordination has had gaps, and worker
+liveness alone does not establish continuous research. The new
+[W&B project](https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse)
+has a verified logging-only transport run. Future numerical runs use the
+[reporting contract](doc/auto/wandb-reporting.md); historical runs were not
+tracked from their beginning. See [doc/TRACKER.md](doc/TRACKER.md) for evidence
+and limits.
 
 ## Start here
 
@@ -48,7 +55,7 @@ Agents start at [AGENTS.md](AGENTS.md). The declarative dependency plan is
 | Path | Role |
 | --- | --- |
 | `src/representation_collapse/` | Measurement, calibration, vector task, pilot training and checkpoint periodicity analysis |
-| `tests/` | 150 passing unit and integration tests, no skips |
+| `tests/` | Measurement and operations tests; versioned verification receipts in the tracker |
 | `configs/` | Research plan DAG, frozen experiment configurations, cluv examples |
 | `doc/auto/` | Scientific protocols, reviews, evidence records and operations notes |
 | `doc/literature/` | Bibliography, novelty review, reference records |
@@ -63,8 +70,6 @@ Agents start at [AGENTS.md](AGENTS.md). The declarative dependency plan is
 ```bash
 uv sync --locked --all-groups
 uv run --locked python -m unittest discover -s tests -v
-uv run --locked python -m representation_collapse.calibrate --output runs/calibration/local
-uv run --locked python -m representation_collapse.mechanism_calibration --output runs/calibration/local-mechanism
 ```
 
 `torch` is in the `experiments` dependency group; a plain `uv sync --locked`
@@ -80,6 +85,9 @@ covariances, ordered Jacobian products, multipliers of known periodic maps,
 nonnormal transient gain, forced periodic responses, and the seven analytic
 mechanism families (10 + 36 checks). Choose a new output directory for every
 attempt. These calibrate analysis code; they are not trained-model findings.
+Numerical experiment entry points additionally require their reviewed protocol,
+source/config freeze and W&B initialization before work; the legacy calibration
+modules have not yet been integrated with the new reporting helper.
 
 ## Research and compute
 

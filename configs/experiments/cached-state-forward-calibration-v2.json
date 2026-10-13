@@ -1,0 +1,663 @@
+{
+  "admission": {
+    "additive_implementation_review_required": true,
+    "clean_source_publication_required": true,
+    "exact_argv": null,
+    "external_hash_bound_freeze_required": true,
+    "freeze_must_resolve": [
+      "driver/sourcecommit",
+      "bounded fixture envelope and independent review",
+      "exact argv/output",
+      "wandb==0.30.0 lock/installed identity and durable offline lifecycle receipt; project representation-collapse, entity/auth deferred with sync_pending",
+      "allcurrentbinary/source/config/checkpoint hashes"
+    ],
+    "independent_static_review_required": true,
+    "no_config_toggle_authority": true,
+    "owner": "root coordinator",
+    "unique_attempt_output": null
+  },
+  "b0_counterfactual_transfer_authorized": false,
+  "behavior_bounds": {
+    "argmax_tie_policy": "first index; also export every tie",
+    "continuous_actual_error": "undefined_no_targets",
+    "continuous_label_free_bound": "mean_rows(3*e*(2*(abs(B0_v)+1)+e)); e=abs(C_u-B0_v), valid for every target y in[-1,1]",
+    "continuous_tolerance_bound": "same formula replacing e by tolerance, only where original directed bound passes",
+    "counterfactual_bridge_certified": false,
+    "exact_argmax_agreement": "separate per-row Boolean, not accuracy or causal equivalence",
+    "labels_allowed": false,
+    "margin_certificate": "unique B0 winner a AND all directed residuals pass AND for every j!=a z[a]-z[j] > b[a]+b[j]; b=atol+rtol*abs(B0 z)",
+    "task_gate_certified": false
+  },
+  "budget": {
+    "clock_end": "completion of all finalization/writes",
+    "clock_start": "external launcher before interpreter imports/hash checks/W&B/input generation",
+    "cluster_operations": 0,
+    "external_hard_deadline_required": true,
+    "extra_conditions": false,
+    "finalization_reserve_seconds": 10,
+    "fits": 0,
+    "interrupted_run": "save partial registry, leave all unexecuted conditions incomplete; no recovery call",
+    "labels": 0,
+    "last_native_call_start_before_seconds": 590,
+    "maximum_wall_seconds": 600,
+    "native_calls": 736,
+    "optimizer_updates": 0,
+    "providers": 0,
+    "resume": false,
+    "retries": 0,
+    "stop_on": [
+      "owner stop",
+      "clock limit",
+      "counter limit",
+      "missing dependency",
+      "source/binary/weight hash mismatch",
+      "nonfinite native output",
+      "exception"
+    ],
+    "targets": 0
+  },
+  "calls": {
+    "attempt_counter": "increment in pre-hook immediately before execution, including exceptions",
+    "completion_counter": "increment after successful return",
+    "compound_jvp_requests": 0,
+    "condition_count": 32,
+    "copy_zero_query": 64,
+    "derivative_primals": 0,
+    "expected_encoder_invocations": 64,
+    "expected_head_invocations": 224,
+    "expected_native_core_completions": 736,
+    "gru_conditions": 16,
+    "gru_core_calls_per_condition": 22,
+    "internal_reverse_passes": 0,
+    "lstm_conditions": 16,
+    "lstm_core_calls_per_condition": 24,
+    "main_forward": 576,
+    "maximum_native_core_attempts": 736,
+    "no_extra_calls": true,
+    "per_condition_order": [
+      "B0",
+      "C steps0..16",
+      "copy_query",
+      "zero_displacement_query",
+      "hidden_plus",
+      "hidden_minus",
+      "cell_plus_if_LSTM",
+      "cell_minus_if_LSTM"
+    ],
+    "registry_fields": [
+      "global_index",
+      "context",
+      "dtype",
+      "repeat",
+      "map",
+      "step_or_arm",
+      "input_hash",
+      "complete_state_hash",
+      "start_elapsed",
+      "end_elapsed",
+      "completed",
+      "exception"
+    ],
+    "signed_direction_query": 96,
+    "standalone_reverse_requests": 0,
+    "unit": "physical native core module invocation, irrespective sequence length or batch size"
+  },
+  "comparisons": {
+    "B0_intermediate_cell_policy": "unobserved/null, never compared to C complete preQUERY state",
+    "directed_edges": [
+      {
+        "candidate": "C baseline logits, terminalh/c, hidden sequence",
+        "interpretation": "forward alignment only",
+        "reference": "corresponding B0 values",
+        "tolerance": "condition dtype"
+      },
+      {
+        "candidate": "copy and zero logits/returnedterminalh/c",
+        "interpretation": "C control validity",
+        "reference": "C baseline",
+        "tolerance": "condition dtype"
+      },
+      {
+        "candidate": "same-map repeat2 all observables",
+        "reference": "repeat1",
+        "tolerance": "exact shape,dtype,raw bytes including signed zero"
+      },
+      {
+        "candidate": "state/cache/origin after snapshots",
+        "reference": "separately exported before snapshots",
+        "tolerance": "exact shape,dtype,raw bytes including signed zero"
+      },
+      {
+        "candidate": "duplicate rows32..63",
+        "reference": "rows0..31",
+        "tolerance": "condition dtype"
+      },
+      {
+        "candidate": "float32 matched observable",
+        "interpretation": "sensitivity only",
+        "reference": "float64 matched observable",
+        "tolerance": "float32"
+      }
+    ],
+    "formula": "abs(candidate-reference)<=atol+rtol*abs(reference)",
+    "nonfinite_output": "stop; mark incomplete",
+    "numerical_failure": "retain all failed coordinates and continue declared registry if finite; no fallback",
+    "reduction_dtype": "float64",
+    "tolerances": {
+      "float32": {
+        "atol": 1e-06,
+        "rtol": 1e-05
+      },
+      "float64": {
+        "atol": 1e-12,
+        "rtol": 1e-10
+      }
+    },
+    "unchanged_perturbed_logit": "unresolved_at_this_perturbation",
+    "undefined_ratios": "null with named reason and count; preserve finite absolute operands/residuals",
+    "zero_represented_perturbation": "represented_zero; no gain ratio"
+  },
+  "condition_order": [
+    "contexts_as_listed",
+    "dtype_order",
+    "repeat_order"
+  ],
+  "contexts": [
+    {
+      "checkpoint": {
+        "bytes": 319720,
+        "path": "runs/prefix-acquisition-v3-20261013/experiment/gru-categorical-fresh_seed0/initial-checkpoint.pt",
+        "sha256": "1d865f50723ee4388a06a7c16937cbb5929e5dfefd19f3afb6b146d220e03904"
+      },
+      "directions": [
+        "hidden"
+      ],
+      "id": "gru-categorical-initialization",
+      "model": "gru",
+      "role": "initialization",
+      "selection_rule": "stored seed-0 v3 fresh initialization",
+      "stored_dtype": "float32",
+      "stored_step": 0,
+      "task": "categorical",
+      "tensor_field": "model_state_dict",
+      "training_seed": 0
+    },
+    {
+      "checkpoint": {
+        "bytes": 320032,
+        "path": "runs/query-acquisition-v5-20261013/experiment/gru-categorical/censored-current-step-004000.pt",
+        "sha256": "b57b645f80a8e85a1743385e01df8075706904e122a57923b6216310365f3788"
+      },
+      "directions": [
+        "hidden"
+      ],
+      "id": "gru-categorical-fixed_challenge",
+      "model": "gru",
+      "role": "fixed_challenge",
+      "selection_rule": "predeclared v5 censored current challenge, never resume or task rescore",
+      "stored_dtype": "float32",
+      "stored_step": 4000,
+      "task": "categorical",
+      "tensor_field": "model_state_dict",
+      "training_seed": 0
+    },
+    {
+      "checkpoint": {
+        "bytes": 311976,
+        "path": "runs/prefix-acquisition-v3-20261013/experiment/gru-continuous-fresh_seed0/initial-checkpoint.pt",
+        "sha256": "ea2e3c827b44991d23709240a986091ecf28b256a2d98b59ad84913dca82ea79"
+      },
+      "directions": [
+        "hidden"
+      ],
+      "id": "gru-continuous-initialization",
+      "model": "gru",
+      "role": "initialization",
+      "selection_rule": "stored seed-0 v3 fresh initialization",
+      "stored_dtype": "float32",
+      "stored_step": 0,
+      "task": "continuous",
+      "tensor_field": "model_state_dict",
+      "training_seed": 0
+    },
+    {
+      "checkpoint": {
+        "bytes": 316952,
+        "path": "runs/prefix-acquisition-v3-20261013/experiment/gru-continuous-fresh_seed0/checkpoint-step-005000.pt",
+        "sha256": "0cb44d7e7b143fc18c037c0a22a4e4e38b5a4d803307666a3266784c4a448b96"
+      },
+      "directions": [
+        "hidden"
+      ],
+      "id": "gru-continuous-fixed_challenge",
+      "model": "gru",
+      "role": "fixed_challenge",
+      "selection_rule": "predeclared v3 fresh current fixed endpoint, never best-score selection",
+      "stored_dtype": "float32",
+      "stored_step": 5000,
+      "task": "continuous",
+      "tensor_field": "model_state_dict",
+      "training_seed": 0
+    },
+    {
+      "checkpoint": {
+        "bytes": 419048,
+        "path": "runs/prefix-acquisition-v3-20261013/experiment/lstm-categorical-fresh_seed0/initial-checkpoint.pt",
+        "sha256": "c95e01cf440bf24cb4016093f949a4f7a8e1b165ba27c8edd4739504e61cc57e"
+      },
+      "directions": [
+        "hidden",
+        "cell"
+      ],
+      "id": "lstm-categorical-initialization",
+      "model": "lstm",
+      "role": "initialization",
+      "selection_rule": "stored seed-0 v3 fresh initialization",
+      "stored_dtype": "float32",
+      "stored_step": 0,
+      "task": "categorical",
+      "tensor_field": "model_state_dict",
+      "training_seed": 0
+    },
+    {
+      "checkpoint": {
+        "bytes": 424024,
+        "path": "runs/prefix-acquisition-v3-20261013/experiment/lstm-categorical-fresh_seed0/checkpoint-step-005000.pt",
+        "sha256": "47c44d1d0fa0bfdd7f88e750bca750bc6d229c21f4c8cd63d1e4f73c4005a9ca"
+      },
+      "directions": [
+        "hidden",
+        "cell"
+      ],
+      "id": "lstm-categorical-fixed_challenge",
+      "model": "lstm",
+      "role": "fixed_challenge",
+      "selection_rule": "predeclared v3 fresh current fixed endpoint, never best-score selection",
+      "stored_dtype": "float32",
+      "stored_step": 5000,
+      "task": "categorical",
+      "tensor_field": "model_state_dict",
+      "training_seed": 0
+    },
+    {
+      "checkpoint": {
+        "bytes": 411304,
+        "path": "runs/prefix-acquisition-v3-20261013/experiment/lstm-continuous-fresh_seed0/initial-checkpoint.pt",
+        "sha256": "c31ae7cab4a5dc67847b95b291a5e6e83b4c261cd8766a30843c411c204babf6"
+      },
+      "directions": [
+        "hidden",
+        "cell"
+      ],
+      "id": "lstm-continuous-initialization",
+      "model": "lstm",
+      "role": "initialization",
+      "selection_rule": "stored seed-0 v3 fresh initialization",
+      "stored_dtype": "float32",
+      "stored_step": 0,
+      "task": "continuous",
+      "tensor_field": "model_state_dict",
+      "training_seed": 0
+    },
+    {
+      "checkpoint": {
+        "bytes": 416280,
+        "path": "runs/prefix-acquisition-v3-20261013/experiment/lstm-continuous-fresh_seed0/checkpoint-step-005000.pt",
+        "sha256": "31a8ef0449284f3c072b68ead74fea73ae16fe16bd9f871dbe75cf95e602b693"
+      },
+      "directions": [
+        "hidden",
+        "cell"
+      ],
+      "id": "lstm-continuous-fixed_challenge",
+      "model": "lstm",
+      "role": "fixed_challenge",
+      "selection_rule": "predeclared v3 fresh current fixed endpoint, never best-score selection",
+      "stored_dtype": "float32",
+      "stored_step": 5000,
+      "task": "continuous",
+      "tensor_field": "model_state_dict",
+      "training_seed": 0
+    }
+  ],
+  "deferred": {
+    "autodiff_backend_for_current_stage": "none",
+    "derivative_certificate_map_specific": true,
+    "derivative_stages": "separate future proposal, zero current allowance",
+    "new_acquisition": "separate future proposal, zero current allowance"
+  },
+  "dimensions": {
+    "batch": 64,
+    "body_updates": 0,
+    "categorical_outputs": 16,
+    "continuous_outputs": 1,
+    "encoder": 64,
+    "hidden": 128,
+    "input": 38,
+    "layers": 1,
+    "query_updates": 1,
+    "sequence_updates": 17,
+    "write_updates": 16
+  },
+  "directions": {
+    "amplitude": 0.001,
+    "application": "fresh copy of C S16 plus sign*dtype(1e-3)*dtype(direction), zero in untargeted LSTM component",
+    "canonical_dtype": "float64",
+    "component_order": "hidden then cell for LSTM; hidden only for GRU",
+    "context_order": "contexts_as_listed",
+    "draw": "standard_normal(size=(32,128),dtype=float64) in C row-major order",
+    "duplication": "concatenate([unit_directions,unit_directions],axis=0)",
+    "normalization": "each independent row divided by its float64 Euclidean norm in raw component coordinates",
+    "positive_logit_effect_required": false,
+    "represented_displacements_required": true,
+    "reuse": "identical canonical directions for both dtypes and repeats",
+    "rng": "numpy.random.Generator(numpy.random.PCG64(30029))",
+    "runtime_direction": "cast canonical direction to condition dtype; no post-cast renormalization",
+    "seed": 30029,
+    "sign_order": [
+      1,
+      -1
+    ],
+    "stream_reset": "once only before all contexts",
+    "total_context_directions": 12,
+    "unit_norm_check_atol": 1e-06,
+    "zero_or_nonfinite_direction": "stop; no redraw"
+  },
+  "dtype_order": [
+    "float64",
+    "float32"
+  ],
+  "execution_authorized": false,
+  "fp64_policy": "exact promotion of pinned FP32 parameter/input values; no training or precision selection",
+  "historical_evidence": {
+    "completed_conditions": 372,
+    "native_calls": 120000,
+    "prior_contract": {
+      "bytes": 17058,
+      "path": "doc/auto/post-calibration-measurement-contract-proposal-2026-10-13.md",
+      "sha256": "48ca2e906329f37ade430c29beabcb96ce216a43bf477caf254351fdcf145eeb"
+    },
+    "prior_contract_review": {
+      "bytes": 7710,
+      "path": "doc/auto/post-calibration-measurement-contract-independent-review-2026-10-13.md",
+      "sha256": "5d3a33f2588bbbae0119c1c15fc7f4747aaf63de1648b003be12b587e32a7f49"
+    },
+    "receipt_sha256": "a48031c7c0a32c5691fba45af150c839ff51705df45f300fb0f6318b72b4adc1",
+    "review": {
+      "bytes": 6076,
+      "path": "doc/auto/native-chronology-calibration-v1-independent-results-review-2026-10-13.md",
+      "sha256": "39e37c64e3fd62c0a775ae1dab079b8439959445c04de328608eb185fb9b66db"
+    },
+    "strict_interoperability": false
+  },
+  "initialization_policy": "load all eight pinned FP32 model_state_dicts; no random reinitialization or optimizer loading",
+  "inputs": {
+    "base_dtype": "float32",
+    "bodies": "64 empty strings",
+    "categorical_draw": "integers(0,16,size=(32,16),dtype=int64)",
+    "continuous_draw": "uniform(-1,1,size=(32,16)).astype(float32)",
+    "draw_order": "C row-major",
+    "duplication": "concatenate([histories,histories],axis=0)",
+    "existing_validation_files_permitted": false,
+    "history_width": 16,
+    "independent_histories": 32,
+    "independent_history_id": "row_id % 32",
+    "input_hashes": "generated only in a separately admitted execution, then saved before first native call",
+    "layout": {
+      "categorical_value": [
+        21,
+        37
+      ],
+      "coordinate": [
+        5,
+        21
+      ],
+      "real_value": 37,
+      "type": [
+        0,
+        5
+      ]
+    },
+    "query": "row_id % 8",
+    "renderer": "pinned vector_task.render",
+    "reset_rng_per_task": true,
+    "reuse": "same task input across models, contexts, dtypes and repeats",
+    "rng": "numpy.random.Generator(numpy.random.PCG64(30019))",
+    "row_ids": "0..63",
+    "seed": 30019,
+    "shape": [
+      64,
+      17,
+      38
+    ],
+    "stream_role": "label-free validation-input calibration; not task scoring",
+    "target_arrays_permitted": false
+  },
+  "maps": {
+    "B0": {
+      "core_partition": [
+        17
+      ],
+      "encoder": "one full episode call inside public model.forward",
+      "extra_recovery_calls": false,
+      "hooks": "non-mutating encoder output, native core full hidden sequence and returned complete terminal state",
+      "initial_state": "native default exact zero",
+      "input": "full [64,17,38]",
+      "readout": "original head on bulk core output[:,16,:]",
+      "unobserved": [
+        "LSTM intermediate cell t1..t16"
+      ]
+    },
+    "C": {
+      "baseline_query": "C step17 already counted; no duplicate baseline call",
+      "body": false,
+      "cache_layout": "retain full-episode-strided slices, batch stride1088,time stride64,feature stride1; export actual strides",
+      "core_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "encoder": "one separate full episode call; retain [64,17,64] E",
+      "initial_state": "explicit exact-zero h (and c)",
+      "intervention_origin": "S16 after all16WRITEs beforeQUERY",
+      "readout": "original head on QUERY core output[:,0,:]",
+      "selected_rows": "all0..63",
+      "state_packing": "h feature0..127 then c feature0..127 forLSTM",
+      "state_transition": "native core(E[:,t:t+1,:],independent contiguous clone of St)",
+      "terminal_state": "S17 returned after native QUERY update"
+    },
+    "D64": {
+      "ground_truth": false,
+      "identity": "same named B0/C recipes after exact FP32-to-FP64 promotion",
+      "precision_selection": false
+    },
+    "T": {
+      "execution_in_current_stage": false,
+      "gradient_certificate_scope": "T full parameter graph only; complete prefix/cache remains attached",
+      "identity": "separately encoded bulk16WRITE prefix plus eight separately encoded QUERY branches at B32",
+      "independent_core_calls": 16,
+      "shared_core_calls": 9
+    }
+  },
+  "protocol_document": {
+    "bytes": 20563,
+    "path": "doc/auto/post-calibration-measurement-contract-v2-2026-10-14.md",
+    "sha256": "83c0b8c61fdefa9eb73e8386deab6c073d5ac04a82b13d251e1be699b25124d7"
+  },
+  "protocol_id": "cached-state-forward-calibration-v2",
+  "repeat_order": [
+    1,
+    2
+  ],
+  "required_exports": [
+    "config/source/environment identities",
+    "input bytes and row/history/query IDs, no targets",
+    "canonical directions and actual norms",
+    "B0 cache/hiddensequence/returned terminal h+c",
+    "C fullcache and S0..S17 complete state plus per-step hidden outputs",
+    "all baseline/sham/signedarm logits and returned terminal complete state",
+    "independent complete state and cache before/after snapshots for every C/arm core call",
+    "untouched originS16 before/after entirearmset",
+    "constructed arm complete-stateinputs and representeddisplacements",
+    "percallregistry with attempted/completedcounts",
+    "all failedcoordinates with candidate/reference operands and bound",
+    "argmaxes,ties,margincertificates and continuousbounds",
+    "weightidentity/promotion metadata without rawweightupload",
+    "status/errors/resourceclock/CPUtime/RSS",
+    "manifestsha256 and independentreduction receipt",
+    "W&B offline directory/runID"
+  ],
+  "runtime": {
+    "ad_backend": "none",
+    "autograd": "no_grad",
+    "automatic_backend_fallback": false,
+    "cpu_threads": 1,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cudnn_enabled": true,
+    "dependency_installation_in_stage": false,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "environment_threads": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    },
+    "float32_matmul_precision": "highest",
+    "gpus": 0,
+    "historical_environment": {
+      "bytes": 2400,
+      "path": "runs/native-chronology-calibration-v1-20261013T1610Z/experiment/environment.json",
+      "sha256": "ea96eacc12020bd508bcc499d67668328a879deeb1952d3d02340fc914fcc3a1"
+    },
+    "historical_interop_threads": 10,
+    "interop_threads": 1,
+    "machine": "arm64",
+    "mkldnn_available": false,
+    "mkldnn_enabled": true,
+    "model_mode": "eval",
+    "native_file_pins": [
+      {
+        "bytes": 74269,
+        "path": ".venv/lib/python3.11/site-packages/torch/nn/modules/rnn.py",
+        "sha256": "545ead6b06e9431528a4407cdc8f53b8d514b2b393dafd8fd1b2f89ef0397f9f"
+      },
+      {
+        "bytes": 49944,
+        "path": ".venv/lib/python3.11/site-packages/torch/_C.cpython-311-darwin.so",
+        "sha256": "63da29ef5da262164de48f55d3c6417f7508eec4a22670dcb54463b6b100e288"
+      },
+      {
+        "bytes": 186195520,
+        "path": ".venv/lib/python3.11/site-packages/torch/lib/libtorch_cpu.dylib",
+        "sha256": "02579cce1c5be7a38a5876df56de5d1ab1ff529976e813f57e1aeb5f6ccb614c"
+      }
+    ],
+    "native_forward_backend": "pinned PyTorch CPU native GRU/LSTM with Accelerate build; no alternate implementation",
+    "native_python_rnn_source_sha256": "545ead6b06e9431528a4407cdc8f53b8d514b2b393dafd8fd1b2f89ef0397f9f",
+    "numpy_version": "2.4.6",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "prospective_interop_change_explicit": true,
+    "python_version": "3.11.13",
+    "runtime_identity_mismatch": "stop_before_sweep",
+    "subnormal_flush_mode": "unknown; record runtime evidence and do not infer from ULPs",
+    "tf32_cudnn": false,
+    "tf32_matmul": false,
+    "torch_build_configuration": "PyTorch built with:\n  - GCC 4.2\n  - C++ Version: 201703\n  - clang 15.0.0\n  - OpenMP 201811\n  - LAPACK is enabled (usually provided by MKL)\n  - NNPACK is enabled\n  - CPU capability usage: NO AVX\n  - Build settings: BLAS_INFO=accelerate, BUILD_TYPE=Release, COMMIT_SHA=2236df1770800ffea5697b11b0bb0d910b2e59e1, CXX_COMPILER=/Applications/Xcode_15.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++, CXX_FLAGS= -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOCUPTI -DLIBKINETO_NOROCTRACER -DLIBKINETO_NOXPUPTI=ON -DUSE_PYTORCH_QNNPACK -DAT_BUILD_ARM_VEC256_WITH_SLEEF -DUSE_XNNPACK -DUSE_PYTORCH_METAL_EXPORT -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -DUSE_COREML_DELEGATE -O2 -fPIC -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Werror=braced-scalar-init -Werror=range-loop-construct -Werror=bool-operation -Wnarrowing -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-unused-parameter -Wno-strict-overflow -Wno-strict-aliasing -Wvla-extension -Wsuggest-override -Wnewline-eof -Winconsistent-missing-override -Winconsistent-missing-destructor-override -Wno-pass-failed -Wno-error=old-style-cast -Wconstant-conversion -Wno-missing-braces -Qunused-arguments -fcolor-diagnostics -faligned-new -Wno-unused-but-set-variable -fno-math-errno -fno-trapping-math -Werror=format -DUSE_MPS -Wno-unused-private-field -Wno-missing-braces, LAPACK_INFO=accelerate, TORCH_VERSION=2.6.0, USE_CUDA=OFF, USE_CUDNN=OFF, USE_CUSPARSELT=OFF, USE_EIGEN_FOR_BLAS=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_GLOO=ON, USE_MKL=OFF, USE_MKLDNN=OFF, USE_MPI=OFF, USE_NCCL=OFF, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, USE_ROCM_KERNEL_ASSERT=OFF, \n",
+    "torch_build_configuration_sha256": "731f201129499a13154fb822195fb16c11eb45896b8b217e19545dfc5d3f4a74",
+    "torch_version": "2.6.0"
+  },
+  "schema_version": 2,
+  "scientific_acceptance": false,
+  "scientific_scope": "forward engineering/reproducibility only; no competence, covariance, tangent, periodicity, causal-memory or collapse acceptance",
+  "shams": {
+    "arms_concatenated": false,
+    "copy": "RQ_C(independent complete clone of S16)",
+    "same_cache_dtype_batch_head": true,
+    "zero": "RQ_C(independent S16 clone plus zeros_like each complete component)",
+    "zero_is_state_reset": false
+  },
+  "source": {
+    "archive_deserialization_during_design": false,
+    "base_commit": "9cff2d3d2bbaccee1642441b325625969e551f7b",
+    "historical_native_baseline_uv_lock": {
+      "bytes": 373383,
+      "path": "uv.lock",
+      "sha256": "588147aa66724c075fd44754db3ddf757b249eefcaf94c9154ddc49578c016dc"
+    },
+    "native_files": [
+      {
+        "bytes": 22693,
+        "path": "src/representation_collapse/pilot.py",
+        "sha256": "0aa1c337ffd0ab576056e70b4ecb0dfeee073c1d3453e87389447f77f1dfbbd3"
+      },
+      {
+        "bytes": 4715,
+        "path": "src/representation_collapse/vector_task.py",
+        "sha256": "df3843330ac9c59205823c8d55868e7878e903c0065c5af8bc89d1308243a297"
+      },
+      {
+        "bytes": 13321,
+        "path": "src/representation_collapse/native_state.py",
+        "sha256": "eeadc7a7332045c6209c6b823af2ec35740dbe3eb662dc0de25755e82041fdeb"
+      }
+    ],
+    "new_driver": null,
+    "new_driver_source_freeze_required": true,
+    "uv_lock": {
+      "bytes": 466445,
+      "path": "uv.lock",
+      "role": "reviewed reporting dependency lock; existing native package versions unchanged per separate reporting receipt",
+      "sha256": "85304e351feacf6d73326996a202ddc1a7470f3fb5a55b2e212b9747e8ace996"
+    }
+  },
+  "stage": "label_free_forward_only",
+  "status": "static_proposal_pending_independent_review",
+  "training_authorized": false,
+  "wandb": {
+    "artifacts": "compact metadata manifests only",
+    "credential_upload": false,
+    "durable_directory_required": true,
+    "entity": null,
+    "initialization_failure": "stop_before_sweep; never disable reporting",
+    "initialize_before": "input/direction sweep generation and any native forward",
+    "live_logs": [
+      "config/source/checkpoint/input/direction hashes",
+      "percondition counts/residualsummaries",
+      "CPUtime/RSS/walltime",
+      "failures",
+      "completion"
+    ],
+    "missing_entity_blocks_offline": false,
+    "mode": "offline",
+    "offline_lifecycle_smoke_required": true,
+    "offline_receipt_is_dashboard_delivery": false,
+    "online_sync_in_stage": false,
+    "project": "representation-collapse",
+    "raw_dataset_upload": false,
+    "raw_weights_upload": false,
+    "remote_delivery_verified": false,
+    "required": true,
+    "sdk_pin_requires_implementation_verification": true,
+    "sdk_version": "0.30.0",
+    "sync_pending": true,
+    "unique_run_id_required": true,
+    "unresolved_destination_policy": "Durable local offline may use entity=null; owner-authorized project is fixed. SDK/lock/installed identity and offline lifecycle smoke must pass at implementation freeze. Actual owning entity/authentication and separate verified receipt are required only for later authenticated sync; no dashboard-delivery claim."
+  }
+}

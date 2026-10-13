@@ -45,14 +45,18 @@ Evidence records: [initial-phase report](auto/initial-phase-report.md),
 [prospective numerical chronology calibration](auto/native-chronology-calibration-proposal-2026-10-13.md),
 [reviewed calibration implementation](auto/native-chronology-calibration-v1.md),
 [independent full calibration results](auto/native-chronology-calibration-v1-independent-results-review-2026-10-13.md),
-and [current research/worker status](auto/research-status-2026-10-13.json).
+[reviewed next forward-only contract](auto/post-calibration-measurement-contract-v2-2026-10-14.md),
+[contract review](auto/post-calibration-contract-v2-independent-review-2026-10-14.md),
+[causal-bridge scope audit](auto/causal-bridge-audit-2026-10-14.md),
+and [current research/worker status](auto/research-status-2026-10-14.json).
 
 Operations: [compute plan](auto/compute-plan.md),
 [cluster access](auto/cluster-access.md), [agent protocol](auto/agent-protocol.md),
 [Qwen worker](auto/qwen-worker.md),
 [daytime research plan](auto/day-research-2026-10-13.md),
 [continuous monitor](auto/qwen-continuous-monitor-deployment-2026-10-13.md),
-[proposal-quality audit](auto/qwen-proposal-quality-2026-10-13.md).
+[proposal-quality audit](auto/qwen-proposal-quality-2026-10-13.md),
+[W&B reporting and verification](auto/wandb-reporting.md).
 
 ## Notebook convention
 

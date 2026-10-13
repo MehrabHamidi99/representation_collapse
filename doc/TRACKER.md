@@ -1,11 +1,44 @@
 # Current research state
 
-Updated 2026-10-13. See the [latest notebook entry](october/october13/2026-10-13-progress-report.md),
+Updated 2026-10-14. See the [latest notebook entry](october/october14/2026-10-14-progress-report.md),
+the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
-- **Daytime research — 2026-10-13, current.** The old Qwen cohort produced
+- **Renewed continuation — 2026-10-14, current.** At October13 20:46 UTC
+  (October14 00:46 Yerevan), the original Qwen leaf, supervisor and expiry guard
+  are verified alive in existing Mila allocation11228391. Seven replies and
+  34,894 reported tokens are unchanged since16:12UTC; the worker is waiting
+  for evidence, with zero errors or requests in flight. Liveness does not imply
+  additional proposals or experiments. The previous observer ended normally
+  at20:00UTC after119 observations; a separately owned observer-only continuation
+  launched at20:52UTC through October14 08:50UTC. Two observations300.000158s
+  apart verify advancement with no issues. At21:00UTC, a new mathematical task
+  produced Qwen reply8: eight attempts/replies, zero errors,39,932reportedtokens.
+  Its counterexample was correct; insufficient conditions for finite intervention
+  transfer caused rejection of the whole answer. The [algebraic audit](auto/causal-bridge-audit-2026-10-14.md)
+  records a counterexample to that recommendation and sufficient scoped map conditions.
+  No worker restart, new allocation, GPU job or fitting occurred. The guard
+  remains armed for08:52:40UTC; allocation expiry is08:55:56UTC (12:55Yerevan).
+  The native callback due16:50UTC missed its deadline and was skipped upon
+  resumption. No uninterrupted native coordinator activity is claimed.
+  The last accepted numerical result remains372conditions/120,000native calls;
+  the cumulative acquisition count remains32complete fits plus1incomplete,
+  114,200updates. The [old measurement draft review](auto/post-calibration-measurement-contract-independent-review-2026-10-13.md)
+  rejects baseline-output agreement as a causal bridge and requires distinct
+  training-map/AD budgets. A new [736-call forward-only contract](auto/post-calibration-measurement-contract-v2-2026-10-14.md)
+  and exact disabled config passed [static review](auto/post-calibration-contract-v2-independent-review-2026-10-14.md).
+  Additive implementation and bounded unit fixtures are active; production
+  execution and new scientific claims remain unadmitted. The owner-authorized
+  [W&B project](https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse)
+  was created at21:05UTC; a tiny online SDK0.21.0 transport smoke has verified
+  history/summary readback. The pinned SDK0.30.0 reporting helper separately
+  passes13lifecycle tests and an offline transaction/artifact inspection; its
+  remote delivery remains unverified. The initial lazy-object lookup error and
+  zero-init failed transport attempt are preserved. [Reporting contract](auto/wandb-reporting.md),
+  [structured status](auto/research-status-2026-10-14.json).
+- **Daytime research — 2026-10-13, historical snapshot.** The old Qwen cohort produced
   16 valid proposals in 19 attempts before three provider errors stopped it at
   00:36 UTC. The 129-snapshot overnight observer and original-host PID absence
   are verified; this was not uninterrupted all-night inference.

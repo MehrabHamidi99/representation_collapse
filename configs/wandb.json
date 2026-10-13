@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "entity": "mehrab-hamidi-milaquebec5431",
+  "project": "representation-collapse",
+  "project_url": "https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse",
+  "default_mode": "offline",
+  "sdk_version": "0.30.0",
+  "destination_verified_via": "authenticated server project listing after creation on Tamia",
+  "verification_date_utc": "2026-10-13",
+  "existing_project_reused": false,
+  "upload_raw_datasets": false,
+  "upload_model_weights": false,
+  "upload_code": false,
+  "offline_is_remote_delivery": false,
+  "project_existence_verified": true,
+  "project_created_at_utc": "2026-10-13T21:05:49.720968+00:00",
+  "transport_smoke_run_url": "https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse/runs/rc-reporting-smoke-20261013t2058z",
+  "transport_smoke_sdk_version": "0.21.0+computecanada",
+  "transport_history_and_summary_verified": true
+}
