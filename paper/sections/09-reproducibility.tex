@@ -12,6 +12,7 @@ Plotting uses the committed evidence JSON and deterministic calculations. The \t
 \begin{verbatim}
 uv sync --locked --all-groups
 PYTHONPATH=src .venv/bin/python code/analysis/make_paper_figures.py
+.venv/bin/python code/analysis/summarize_prefix_acquisition.py
 cd paper
 latexmk -pdf -interaction=nonstopmode -halt-on-error \
     -outdir=build main.tex
@@ -19,7 +20,7 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error \
 \end{minipage}
 \par
 
-The figure manifest records input/output hashes, versions, parameters and plotted values. The local suite passes 48 tests, including 14 constructor/oracle tests; measurement and mechanism calibrations check ten and thirty-six conditions, respectively. Analytical fixtures validate measurements and identities, not a trained-model mechanism.
+The figure manifests record input/output hashes, versions, parameters and plotted values. At source \hash{999d88d8679c0f353c6bb7fb4f5ab8433a7e730c}, the local suite passes 239 tests with zero skips, including the original 14 constructor/oracle tests and additive complete-state, inference and worker-lifecycle checks; measurement and mechanism calibrations check ten and thirty-six conditions, respectively. Analytical fixtures validate measurements and identities, not a trained-model mechanism.
 
 \paragraph{Evidence excluded from the reported results.}
-A checkpoint-only periodicity batch ran source \hash{458bc9cfce474b8e11e433e33bf132faf5032387}. Artifact hashes were verified, but independent raw-array reduction remains pending; no empirical Floquet multiplier, closure residual or FP32/FP64 comparison is reported. Inherited graph figures lack recovered checkpoint and trajectory provenance and are excluded. Causal interventions and competent multi-seed replications remain prospective.
+A checkpoint-only periodicity batch ran source \hash{458bc9cfce474b8e11e433e33bf132faf5032387}. Independent reduction at source \hash{ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901} checks 64 finite-time tangent windows and 1,536 step Jacobians, with descriptive native FP32/FP64 cue and closure comparisons recorded in \path{doc/auto/periodicity-independent-results.json}. Two cue histories cannot estimate representation dimension, tolerance-qualified closure does not certify an exact orbit, and all original competence gates fail. These arrays establish no empirical Floquet or causal-memory result. Inherited graph figures lack recovered checkpoint and trajectory provenance and are excluded. Causal interventions and competent multi-seed replications remain prospective.

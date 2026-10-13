@@ -5,8 +5,8 @@
   "revised_on": "2026-10-13",
   "revision_note": "v2 reorders execution around the novelty-audit gates: Gate A analytic/measurement falsification, Gate B minimal trained mechanism study (competence-first GRU/LSTM vector study with preregistered within-support R2 versus R16 contrasts), Gate C theory adding a prediction beyond the affine and commuting nulls, Gate D graph and native transfer. The 351-checkpoint screen of doc/auto/periodicity-research-plan.md section 3E becomes deferred coverage. Existing nodes, statuses, decisions, verified artifacts, approval and resource envelope are unchanged; seven nodes are added. The integrated design is doc/auto/experimental-design-v2.md. This revision authorizes no compute.",
   "purpose": "Calibrate and reproduce graph temporal representation dimension measurements, then test recurrence and modality generality.",
-  "execution_mode": "active-session-only",
-  "persistent_controller_installed": false,
+  "execution_mode": "native_coordinator_plus_persistent_proposal_leaf_and_metadata_monitor",
+  "persistent_controller_installed": true,
   "status": "running",
   "approval": {
     "cluster_submission": "authorized-bounded-initial-phase",
@@ -53,7 +53,7 @@
   "operating_contract": {
     "artifact_contract": "skills/experiment-loop/references/workflow.md",
     "agent_handoff": "doc/auto/agent-protocol.md",
-    "monitoring": "deterministic-on-demand",
+    "monitoring": "five-minute deterministic project observer in existing shared allocation; native coordinator independent",
     "mechanical_repair_retries": 1,
     "scientific_decision_distinct_from_verification": true,
     "release_dependents_on": "verified",
@@ -365,8 +365,8 @@
       "depends_on": [
         "initial_synthetic_engineering_phase"
       ],
-      "status": "ready",
-      "scientific_decision": "pending; no new trained outcome",
+      "status": "verified",
+      "scientific_decision": "all twelve frozen local fits completed; no eligible full-prefix checkpoint; negative acquisition audit accepted",
       "role": "competence-first-training-discovery",
       "protocol": "doc/auto/competence-recovery-plan.md",
       "design": "doc/auto/experimental-design-v2.md",
@@ -377,7 +377,12 @@
         "Every fit, including non-qualifying fits and numerical failures, is reported; no relaxed thresholds or extra updates after a failure.",
         "Artifacts satisfy the provenance/manifest contract and are independently verified from saved arrays."
       ],
-      "verified_artifacts": [],
+      "verified_artifacts": [
+        {
+          "path": "doc/auto/local-competence-grid-2026-10-13.md",
+          "receipt_sha256": "be50cd921497f78cebbaf978c051e5ca042cf69730df9a39890e0041d125a986"
+        }
+      ],
       "execution_requires": "A new recorded approval envelope; the compute estimate is in doc/auto/experimental-design-v2.md section 8.",
       "note": "Staged training with current-boundary gates, uninterrupted native QUERY scores, complete hidden/cell capture and caller-pinned validation selection is locally reviewed. The four-fit canary covers LR 0.001 only; the other eight discovery fits and the remaining Gate B measurements have not run.",
       "local_preparatory_implementation": {
@@ -406,7 +411,7 @@
         "competence_recovery_discovery",
         "measurement_calibration"
       ],
-      "status": "planned",
+      "status": "blocked",
       "scientific_decision": "pending",
       "role": "minimal-trained-mechanism-study",
       "protocol": "doc/auto/experimental-design-v2.md",
@@ -419,8 +424,13 @@
       ],
       "verified_artifacts": [],
       "execution_requires": "A new recorded approval envelope; see doc/auto/experimental-design-v2.md section 8.",
-      "note": "All12frozen CPU discovery fits reconciled;2fixed-batch failures,10immediate passes thenR0failures. Noeligiblecheckpoint or body-stage training. Separate prospective prefix-acquisition-v3 preparation precedes retention/confirmation; no v2 rescue.",
-      "current_acquisition_evidence": "doc/auto/local-competence-grid-2026-10-13.md"
+      "note": "Resolve acquisition through separately frozen diagnostic protocols before main periodicity/retention inference. Negative discovery evidence remains verified; no v2/v3 extension or rescue.",
+      "current_acquisition_evidence": "doc/auto/local-competence-grid-2026-10-13.md",
+      "blockers": [
+        "No full-prefix competent checkpoint after twelve v2 and eight v3 local fits.",
+        "Primary inference assumptions, smallest effects and confirmation freeze remain incomplete.",
+        "New mechanism-study allocations are not admitted."
+      ]
     },
     {
       "node_id": "theory_gate_c",
@@ -510,28 +520,71 @@
       "verified_artifacts": [],
       "execution_requires": "A new recorded approval envelope.",
       "note": "Depends on verified Gate B artifacts and graph reproduction; negative transfer is an admissible completed outcome."
+    },
+    {
+      "node_id": "prefix_acquisition_discovery_v3",
+      "depends_on": [
+        "competence_recovery_discovery"
+      ],
+      "status": "verified",
+      "scientific_decision": "eight fixed5000-update endpoints fail full-coordinate competence, partial coordinate successes retained; scoped local seed0 acquisition audit accepted",
+      "protocol": "configs/experiments/prefix-acquisition-discovery-v3.json",
+      "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+      "report": "doc/auto/prefix-acquisition-v3-results-2026-10-13.md",
+      "independent_review_sha256": "c55a189c18fa97c4fa76016339a9780230835aa969219a632b08cdda568ad0fd",
+      "optimizer_updates": 40000,
+      "eligible_checkpoints": 0,
+      "harm_or_floquet_claim": false
+    },
+    {
+      "node_id": "address_acquisition_discovery_v4",
+      "depends_on": [
+        "prefix_acquisition_discovery_v3"
+      ],
+      "status": "reviewed_preparation",
+      "scientific_decision": "no result yet; production source/commit/test/freeze pending",
+      "protocol": "configs/experiments/address-acquisition-discovery-v4.json",
+      "maximum_local_cpu_fits": 12,
+      "maximum_optimizer_updates": 60000,
+      "maximum_wall_seconds": 1200,
+      "cluster_submissions": 0,
+      "confirmation": false,
+      "execution_started": false,
+      "question": "Does fixed-address native acquisition succeed at equal prefix training exposure? Joint known-target/load/distribution intervention; no pure lag/capacity attribution.",
+      "implementation_review_sha256": "6a5718f0575a2e2d8c7b1e39e20e57209c77ae144516d14f3383fd4fd0405a46",
+      "config_sha256": "55c564c5c607ce3cf298e4daabaeafb2700d50419a4ee859200e0c9bba811c55"
     }
   ],
   "current_handoff": "doc/october/october13/2026-10-13-progress-report.md",
   "active_allocation": {
-    "phase": "qwen-continuation-20261012",
-    "cluster": "tamia",
-    "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
-    "max_hours": 24,
-    "max_call_attempts": 24,
-    "owner_explicit_approval": true,
-    "scientific_acceptance": "coordinator only",
+    "cluster": "mila",
+    "host": "cn-f003.server.mila.quebec",
+    "existing_slurm_job_id": 11228391,
+    "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+    "worker_source_sha256": "8d9e6149f83a91cefdf8cd51c7e38777cdfade4c73cfb42136f104d7ea45a606",
+    "worker_pid": 3244371,
+    "supervisor_pid": 3244355,
+    "continuous": true,
+    "max_total_attempts": null,
+    "max_hours": null,
+    "allocation_expiry_utc": "2026-10-14T08:55:56Z",
+    "model": "Qwen/Qwen3.8-Flash-Next-FP8",
     "proposal_only": true,
-    "paid_fallback": false,
+    "actions_executed": 0,
+    "accepted_scientific_claims": 0,
+    "phase": "qwen-continuous-20261013T093936Z",
+    "owner_explicit_approval": true,
     "training": false,
     "race": false,
-    "note": "Runtime/call caps and live status govern. No recurring allowance; no new GPU allocation.",
-    "current_worker_state": "stopped_three_consecutive_provider_errors",
-    "automatic_restart": false,
-    "last_verified_attempts": 19,
-    "last_verified_at_utc": "2026-10-13T08:28:51.910561+00:00",
-    "last_verified_reviews": 16,
-    "finished_at_utc": "2026-10-13T00:36:43.388238+00:00"
+    "scientific_acceptance": "coordinator only",
+    "new_allocations": 0,
+    "current_worker_state": "running",
+    "last_verified_at_utc": "2026-10-13T10:12:05.575592+00:00",
+    "last_verified_attempts": 6,
+    "last_verified_reviews": 6,
+    "automatic_replacement_allocation": false,
+    "last_reported_token_total": 29862,
+    "model_task_event_consumption_is_scientific_acceptance": false
   },
   "historical_allocations": [
     {
@@ -559,6 +612,26 @@
         22984963
       ],
       "launch_evidence": "doc/auto/periodicity-analysis-launch.json"
+    },
+    {
+      "phase": "qwen-continuation-20261012",
+      "cluster": "tamia",
+      "source_commit": "ec1c489fc97c2e6cf94fd58e8a4e04dd3e8ba901",
+      "max_hours": 24,
+      "max_call_attempts": 24,
+      "owner_explicit_approval": true,
+      "scientific_acceptance": "coordinator only",
+      "proposal_only": true,
+      "paid_fallback": false,
+      "training": false,
+      "race": false,
+      "note": "Runtime/call caps and live status govern. No recurring allowance; no new GPU allocation.",
+      "current_worker_state": "stopped_three_consecutive_provider_errors",
+      "automatic_restart": false,
+      "last_verified_attempts": 19,
+      "last_verified_at_utc": "2026-10-13T08:28:51.910561+00:00",
+      "last_verified_reviews": 16,
+      "finished_at_utc": "2026-10-13T00:36:43.388238+00:00"
     }
   ],
   "completed_cpu_continuation": {
@@ -577,7 +650,7 @@
     "state": "COMPLETED",
     "exit_code": "0:0"
   },
-  "continuation_note": "Original Qwen stopped after16proposals/19attempts/threeprovidererrors;129overnight observations verified. Twelve actual localCPUfits fail acquisition before periodicity, with independent raw/native/oracle review. Seed statistics and matrix-free complete-state tangent engineering accepted; no harm or Floquet claim and no statistics freeze. Owner now authorizes continuous Qwen and native OpenAI fallback. New continuous worker, observer and separate prefix acquisition runner await final source review/freeze/deployment. Mila source/offlineTorch cache ready; no new Slurm jobs.",
+  "continuation_note": "Original19-attempt16-proposal Qwen failure cohort and129observation overnight journal preserved. Twelve v2 and eight v3 actual localCPUfits fail full-coordinate acquisition beforebody; five v3coordinate endpoints pass. Continuous Qwen successor running in existing shared Mila job11228391 with no totalcall/runtimecaps, first proposal verified. Native OpenAI workers prepare separate prospective address controls; metadata observer being deployed. No newGPUallocation or harmfulcollapse/Floquetclaim.",
   "proposed_next_allocation": {
     "phase": "competence-canary-v2",
     "configuration": "configs/experiments/competence-canary-v2.json",
@@ -609,7 +682,7 @@
     "implemented_fallback_route": "exposed_native_coordinator_and_subagents",
     "new_cluster_budget": false,
     "continuous_successor_configuration": "configs/experiments/qwen-day-renewal-2026-10-13.json",
-    "continuous_successor_launched": false
+    "continuous_successor_launched": true
   },
   "local_discovery_oct13": {
     "protocol": "configs/experiments/competence-recovery-v2.json",
@@ -617,8 +690,10 @@
     "fits": 12,
     "optimizer_updates": 10200,
     "eligible_checkpoints": 0,
-    "next_local_protocol": "configs/experiments/prefix-acquisition-discovery-v3.json",
-    "new_protocol_executed": false
+    "next_local_protocol": "configs/experiments/address-acquisition-discovery-v4.json",
+    "new_protocol_executed": true,
+    "v3_fits": 8,
+    "v3_optimizer_updates": 40000
   },
   "day_native_continuation": {
     "deadline_utc": "2026-10-13T20:00:00Z",
@@ -626,5 +701,21 @@
     "armed": false,
     "route": "existing Codex task follow-up, inherited model",
     "control": "runs/ops/day-research-loop-control-20261013.json"
+  },
+  "persistent_controller_scope": "proposal client, deterministic metadata/claim observation; no autonomous scheduler submissions or scientific acceptance",
+  "continuous_metadata_observer": {
+    "state": "running",
+    "pid": 3248354,
+    "wrapper_pid": 3248325,
+    "interval_seconds": 300,
+    "deadline_utc": "2026-10-13T20:00:00Z",
+    "observations_verified": 2,
+    "issues": [],
+    "full_completed_history_observed_at_check": true,
+    "observed_usage_totals_reconciled": true,
+    "previous_call_file_immutability_rescanned": false,
+    "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+    "receipt_sha256": "8f2de43637577cf6b67e30dd415b6c9c32f7b8ba496d5ac3f8b2bcf742fd9e46",
+    "report": "doc/auto/qwen-continuous-monitor-deployment-2026-10-13.md"
   }
 }

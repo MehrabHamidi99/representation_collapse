@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-10-13T09:24:10.148741+00:00",
+  "updated_at_utc": "2026-10-13T10:20:47.785852+00:00",
   "date": "2026-10-13",
   "research_has_run": true,
   "uninterrupted_overnight_research_confirmed": false,
@@ -24,10 +24,11 @@
     "restart_performed": false,
     "original_lease_deadline_utc": "2026-10-13T09:10:30.196748Z",
     "original_lease_max_attempts": 24,
-    "renewal": "owner explicitly authorizes continuous successor and native OpenAI fallback; implementation and transport reconciliation pending",
+    "renewal": "continuous successor launched and first model-identity/schema-verified proposal accepted operationally; old cohort immutable",
     "renewal_configuration": "configs/experiments/qwen-day-renewal-2026-10-13.json",
     "accepted_scientific_claims": 0,
-    "original_host_process_absence_verified_at_utc": "2026-10-13T09:21:19Z"
+    "original_host_process_absence_verified_at_utc": "2026-10-13T09:21:19Z",
+    "historical": true
   },
   "overnight_observer": {
     "status_read": "read",
@@ -72,14 +73,15 @@
   "implementation": {
     "seed_statistics": "implemented; inference assumptions and protocol remain unfrozen",
     "matrix_free_tangent": "implemented; tiny CPU full-state fixtures only, partial singular-pair estimates",
-    "prefix_acquisition_v3": "independently reviewed and prospective configuration frozen; production not yet executed",
+    "prefix_acquisition_v3": "independently verified production; scoped negative acquisition evidence accepted",
     "independent_review": {
       "state": "accepted scoped engineering and negative acquisition evidence",
       "receipt_sha256": "1da57ad3cea1f60907ece9d07d0af2ccf09a5b1d17e9ab043ecdaf1448479b06",
       "unresolved_implementation_blockers": 0
     },
-    "continuous_qwen_and_monitor": "independent review accepted; deployment pending shared compute route readiness",
-    "continuation_review_sha256": "426a6c36a077b59e04dc50a2a46d90b91595aee28ea3320cb8769c6ffaa1c86e"
+    "continuous_qwen_and_monitor": "live continuous leaf and five-minute monitor verified; schema participation does not establish proposal quality",
+    "continuation_review_sha256": "426a6c36a077b59e04dc50a2a46d90b91595aee28ea3320cb8769c6ffaa1c86e",
+    "address_acquisition_v4": "independent implementation review accepted; production requires source/test/commit/external freeze"
   },
   "tests": {
     "tests_passed": 239,
@@ -95,10 +97,10 @@
     "mila_source_commit": "1add2b6aba948714673f45f1b7854eff6212833d",
     "mila_fresh_offline_torch_environment_verified": true,
     "cluv_version_on_verified_mila_controller": "0.1.5",
-    "mila_matching_queue_empty_at_utc": "2026-10-13T08:18:55.925966+00:00",
-    "alliance_route_from_mila": "no_reusable_masters_at_passive_probe",
-    "alliance_current_queues": null,
-    "tamia": "Duo restored for08:28audit; shared route subsequently unavailable; isolated master not established",
+    "mila_matching_queue_empty_at_utc": "2026-10-13T09:24:54.605610+00:00",
+    "alliance_route_from_mila": "verified via owner-authorized Slurm allocation and existing shared Tamia route",
+    "alliance_current_queues": "all nine configured Alliance project-name matching queues empty at09:25UTC; scheduler exit0",
+    "tamia": "actualTamia3 shared socket verified; original worker PID absent",
     "gpu_efficiency_telemetry": null,
     "unchanged_four_fit_gpu_canary": "unapproved_unlaunched; reconsider after failed local grid",
     "shared_control_allocation_user_authorized": {
@@ -110,8 +112,11 @@
       "purpose": "compact coordination/model clients; no substantial tests/training/weights",
       "live_verification": "verified existing RUNNING job and fresh supervisor heartbeat; Tamia destination is actualtamia3",
       "model_dispatch_migration_owner": "Radius root; leave shared setup untouched",
-      "model_dispatch_readiness": "SETUP migration notyetverified/active; owner coordination requested; do not duplicate"
-    }
+      "model_dispatch_readiness": "Radius owner authorizes separate project client through existing configured route; shared migration remains owner-owned",
+      "expiry_utc": "2026-10-14T08:55:56Z",
+      "project_qwen_deployment": "durable isolated project tmux session launched; first expected-model proposal verified"
+    },
+    "shared_access_receipt_sha256": "841ad220396b7637f785f9746bd4c251cab8d02ca0a301d1eab6529c0949e159"
   },
   "day_continuation": {
     "deadline_utc": "2026-10-13T20:00:00Z",
@@ -124,5 +129,78 @@
   },
   "harmful_collapse_claim_accepted": false,
   "floquet_claim_accepted": false,
-  "confirmation_protocol_frozen": false
+  "confirmation_protocol_frozen": false,
+  "prefix_acquisition_v3": {
+    "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+    "config_sha256": "c5d32b861cf22b063c91cb14cf6126617ee80cbca357c8720bb1fb140928fef9",
+    "fits_completed": 8,
+    "optimizer_updates": 40000,
+    "process_wall_seconds": 189.30314541699772,
+    "trained_seed_ids": [
+      0
+    ],
+    "full_competence_passes": 0,
+    "some_individual_coordinates_pass": true,
+    "eligible_checkpoints": 0,
+    "fixed_endpoint_updates_per_fit": 5000,
+    "periodic_body_training_reached": false,
+    "held_out_evaluation": false,
+    "state": "independently_verified_coordinator_accepts_scoped_acquisition_audit",
+    "producer_verification_receipt_sha256": "d12297e6205f71c11fee12091aaa872925141273bcf02a5a70496d38fe6e1ecd",
+    "report": "doc/auto/prefix-acquisition-v3-results-2026-10-13.md",
+    "independent_review_receipt_sha256": "c55a189c18fa97c4fa76016339a9780230835aa969219a632b08cdda568ad0fd"
+  },
+  "continuous_qwen": {
+    "state": "running",
+    "observed_at_utc": "2026-10-13T10:12:05.575592+00:00",
+    "started_at_utc": "2026-10-13T09:56:09.064521+00:00",
+    "cluster": "mila",
+    "host": "cn-f003.server.mila.quebec",
+    "existing_slurm_job_id": 11228391,
+    "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+    "worker_source_sha256": "8d9e6149f83a91cefdf8cd51c7e38777cdfade4c73cfb42136f104d7ea45a606",
+    "worker_pid": 3244371,
+    "supervisor_pid": 3244355,
+    "tmux_session": "representation-collapse-qwen-20261013",
+    "durable_in_slurm_batch_namespace_verified": true,
+    "model": "Qwen/Qwen3.8-Flash-Next-FP8",
+    "continuous": true,
+    "max_total_attempts": null,
+    "max_hours": null,
+    "allocation_expiry_utc": "2026-10-14T08:55:56Z",
+    "allocation_expiry_is_model_call_cap": false,
+    "automatic_replacement_allocation": false,
+    "provider_call_attempts": 6,
+    "schema_model_identity_verified_proposals": 6,
+    "consecutive_provider_errors": 0,
+    "usage_totals": {
+      "completion_tokens": 3745,
+      "prompt_tokens": 26117,
+      "total_tokens": 29862
+    },
+    "proposal_only": true,
+    "actions_executed": 0,
+    "accepted_scientific_claims": 0,
+    "native_openai_fallback": "coordinator and exposed subagents actively work; no separate external API configured",
+    "worker_stop_file": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/qwen-continuous-20261013T093936Z/STOP",
+    "launch_receipt": "runs/ops/qwen-continuous-launch-20261013.json",
+    "monitor": {
+      "state": "running",
+      "pid": 3248354,
+      "wrapper_pid": 3248325,
+      "interval_seconds": 300,
+      "deadline_utc": "2026-10-13T20:00:00Z",
+      "observations_verified": 2,
+      "issues": [],
+      "full_completed_history_observed_at_check": true,
+      "observed_usage_totals_reconciled": true,
+      "previous_call_file_immutability_rescanned": false,
+      "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+      "receipt_sha256": "8f2de43637577cf6b67e30dd415b6c9c32f7b8ba496d5ac3f8b2bcf742fd9e46",
+      "report": "doc/auto/qwen-continuous-monitor-deployment-2026-10-13.md"
+    },
+    "coordinator_task_events_consumed": 4,
+    "scientific_task_answers_accepted": 0,
+    "proposal_quality_state": "multiple off-topic or unsound recommendations rejected; native OpenAI audits and local task-binding repair ongoing"
+  }
 }

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "kind": "descriptive_acquisition_endpoint_figure",
+  "input_sha256": "769a99c25feeca2dd8bc54852df8743d2eeb8c8aa280431a0803f0edb36b8b40",
+  "generator_sha256": "f200a2665ed2939029a56decf228c4571b1617e880eac095b638b868d78e1465",
+  "matplotlib": "3.11.2",
+  "outputs": {
+    "prefix-acquisition-v3-endpoints.pdf": "a2496169d4a62d8586d2b5d5ccfcbb2b48852d5c4de18e881bf3d6057552aa15",
+    "prefix-acquisition-v3-endpoints.png": "30bddb7a90d0d12b0250a84b32cbc66d9416c9fae0af6e3dd34c16cd96e07ac3"
+  },
+  "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+  "independent_review_receipt_sha256": "c55a189c18fa97c4fa76016339a9780230835aa969219a632b08cdda568ad0fd",
+  "claim_scope": "local seed0 acquisition under fixed schedule; no periodicity harm, equivalence, population guarantee or Floquet certification",
+  "no_trained_seed_uncertainty_estimated": true,
+  "references": {
+    "categorical": "uniform classifier expected accuracy1/16",
+    "continuous": "population zero-predictor MSE/(1/3)=1; not sample-normalized"
+  },
+  "plotted_values": {
+    "gru/categorical/fresh_seed0": [
+      0.265625,
+      0.234375,
+      0.203125,
+      0.3046875,
+      0.21875,
+      0.2265625,
+      0.171875,
+      0.203125
+    ],
+    "gru/categorical/immediate_step500_transfer_reset_optimizer": [
+      0.2890625,
+      0.21875,
+      0.1953125,
+      0.265625,
+      0.2109375,
+      0.1953125,
+      0.25,
+      0.265625
+    ],
+    "gru/continuous/fresh_seed0": [
+      0.7848578530358145,
+      0.6682281342693245,
+      0.7515646304735637,
+      0.7752404762502604,
+      0.5982816981452661,
+      0.08246150572354462,
+      0.03888799961888934,
+      0.01950136004348367
+    ],
+    "gru/continuous/immediate_step500_transfer_reset_optimizer": [
+      0.39708005445328526,
+      0.5845729315686995,
+      0.6111136174658888,
+      0.7024036395502944,
+      0.5969220106074256,
+      0.4096670635249695,
+      0.0480081401483306,
+      0.026074405788232637
+    ],
+    "lstm/categorical/fresh_seed0": [
+      0.09375,
+      0.0703125,
+      0.078125,
+      0.0546875,
+      0.0625,
+      0.046875,
+      0.0625,
+      0.03125
+    ],
+    "lstm/categorical/immediate_step500_transfer_reset_optimizer": [
+      0.984375,
+      0.125,
+      0.1328125,
+      0.15625,
+      0.1640625,
+      0.203125,
+      0.171875,
+      0.140625
+    ],
+    "lstm/continuous/fresh_seed0": [
+      0.9773526951678635,
+      0.937738694355959,
+      1.008225143047526,
+      1.027363964171003,
+      0.9625695525787019,
+      0.8471674811368414,
+      0.9888402571476574,
+      1.1063389719309444
+    ],
+    "lstm/continuous/immediate_step500_transfer_reset_optimizer": [
+      0.9772311092846105,
+      0.9374717155856174,
+      1.0081970670269262,
+      1.0274792499863594,
+      0.9625024894311252,
+      0.8468187866764927,
+      0.9881190010007845,
+      1.106293161578541
+    ]
+  }
+}

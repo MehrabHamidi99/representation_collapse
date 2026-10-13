@@ -1,0 +1,1539 @@
+{
+  "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+  "config_sha256": "c5d32b861cf22b063c91cb14cf6126617ee80cbca357c8720bb1fb140928fef9",
+  "freeze_receipt_sha256": "bb2ab77a6fa1f3eabc94ab6004d398f3af502b9026463f9f615dcea4c4d507fc",
+  "fit_count": 8,
+  "total_optimizer_updates": 40000,
+  "engine_wall_seconds": 187.7589318750106,
+  "process_wall_seconds": 189.30314541699772,
+  "training_stream_sha256": {
+    "categorical": "71845dbba715abaa68a20037028eb91fa1f358c382056e16852721cab26c16c1",
+    "continuous": "c394311766112db25e69c791f8f2f2acd4a9da48e0a255049e0300b6948df7d3"
+  },
+  "fits": [
+    {
+      "artifact_sha256": {
+        "history.json": "26509543b004fcd42eeb0ec5aa8aaafbff199b842d23752352e9e4e1d9122aa2",
+        "manifest.json": "e713c78e2637f6db623a9fe2227dd76890f14b14cde4cfc1840629280ace414d",
+        "metrics.json": "60a267ba4091361d56b0215080eb502450ae88bd246ec3d2aec4757b3a139c32",
+        "provenance.json": "c7351b45ff6f091beddeae4098ff77f9c2d61c0183087558afea3d9645d90a7b",
+        "status.json": "ed0e3358bec41b36e670fc8491d7562d9d1de20c0cf15a8a9a9cd0e17c3d0ae8"
+      },
+      "condition": "fresh_seed0",
+      "endpoint_checkpoint_sha256": "710e470c8a3c55ba4db993f108cacb362a19198721c05d7a81d0d3578cfb23fe",
+      "endpoint_coordinate_gate_passed": false,
+      "endpoint_coordinate_metrics": [
+        0.265625,
+        0.234375,
+        0.203125,
+        0.3046875,
+        0.21875,
+        0.2265625,
+        0.171875,
+        0.203125
+      ],
+      "endpoint_weight_sha256": "5f6c2a188793491ee44d1eb8d57fa6ae470572962526b2cb2d5eb3dc867a52d9",
+      "failed_coordinates": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "first_passing_validation_step": null,
+      "initial_weight_sha256": "cb952cf7c65745fc0b5a70c9549bab7e1b79927b1df2d973c58f6a30273fbb3b",
+      "max_native_logit_replay_absolute_difference": 0.0,
+      "max_native_state_replay_absolute_difference": 0.0,
+      "metric_units": "accuracy",
+      "model": "gru",
+      "native_state_dimension": 128,
+      "native_state_packing_order": "hidden",
+      "task": "categorical",
+      "trajectory": [
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.078125,
+            0.03125,
+            0.0703125,
+            0.03125,
+            0.0546875,
+            0.0703125,
+            0.0859375,
+            0.078125
+          ],
+          "step": 500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.078125,
+            0.0703125,
+            0.0546875,
+            0.0546875,
+            0.0390625,
+            0.0390625,
+            0.0625,
+            0.046875
+          ],
+          "step": 1000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.0625,
+            0.0390625,
+            0.0703125,
+            0.09375,
+            0.0390625,
+            0.0546875,
+            0.0703125,
+            0.0625
+          ],
+          "step": 1500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.046875,
+            0.0390625,
+            0.0625,
+            0.0859375,
+            0.0625,
+            0.0546875,
+            0.0546875,
+            0.0390625
+          ],
+          "step": 2000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.078125,
+            0.0859375,
+            0.0546875,
+            0.1015625,
+            0.0625,
+            0.0703125,
+            0.078125,
+            0.1015625
+          ],
+          "step": 2500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.0859375,
+            0.109375,
+            0.09375,
+            0.125,
+            0.1015625,
+            0.109375,
+            0.1171875,
+            0.1015625
+          ],
+          "step": 3000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.125,
+            0.1484375,
+            0.1484375,
+            0.2109375,
+            0.1015625,
+            0.1484375,
+            0.140625,
+            0.1015625
+          ],
+          "step": 3500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.1015625,
+            0.1875,
+            0.21875,
+            0.2109375,
+            0.109375,
+            0.125,
+            0.1796875,
+            0.1640625
+          ],
+          "step": 4000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.25,
+            0.15625,
+            0.2421875,
+            0.2578125,
+            0.1484375,
+            0.203125,
+            0.21875,
+            0.203125
+          ],
+          "step": 4500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.265625,
+            0.234375,
+            0.203125,
+            0.3046875,
+            0.21875,
+            0.2265625,
+            0.171875,
+            0.203125
+          ],
+          "step": 5000
+        }
+      ],
+      "updates": 5000
+    },
+    {
+      "artifact_sha256": {
+        "history.json": "def61c67611e47289321401861da80bdf8bc537f37cc019c57981ff9bf98a7b8",
+        "manifest.json": "e26d18394739315d70305783231b31841334d2ea6e7e2c7c37c460cd863aff1f",
+        "metrics.json": "10f93222f678523cf54b3df8698ba68a235415b5f5cd01071cc61ea6ef62b80c",
+        "provenance.json": "5bfdda432dbcd00d9d8c2bc5b3fd216a88956f6c84def6428bdf759668c668af",
+        "status.json": "f174e28f184e34263fc1165818418bfdea6a002fe6ec4c9a7cb72db9f58f9765"
+      },
+      "condition": "immediate_step500_transfer_reset_optimizer",
+      "endpoint_checkpoint_sha256": "16266acf6f74d7cdcc6c4646464dff256a51309f69ce0785625150a0d9924edc",
+      "endpoint_coordinate_gate_passed": false,
+      "endpoint_coordinate_metrics": [
+        0.2890625,
+        0.21875,
+        0.1953125,
+        0.265625,
+        0.2109375,
+        0.1953125,
+        0.25,
+        0.265625
+      ],
+      "endpoint_weight_sha256": "c6efe39298da1c58d57de3c80f3c4a6ded06506cdf47321ea18b8e50f2d7c67a",
+      "failed_coordinates": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "first_passing_validation_step": null,
+      "initial_weight_sha256": "37dfde545a8611f2bc02f83e949abd50718a173ca566a3c90cfaa1c84ac62c93",
+      "max_native_logit_replay_absolute_difference": 0.0,
+      "max_native_state_replay_absolute_difference": 0.0,
+      "metric_units": "accuracy",
+      "model": "gru",
+      "native_state_dimension": 128,
+      "native_state_packing_order": "hidden",
+      "task": "categorical",
+      "trajectory": [
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.1796875,
+            0.1015625,
+            0.0859375,
+            0.0859375,
+            0.0625,
+            0.0546875,
+            0.046875,
+            0.0859375
+          ],
+          "step": 500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.265625,
+            0.15625,
+            0.1171875,
+            0.1875,
+            0.1640625,
+            0.109375,
+            0.046875,
+            0.1484375
+          ],
+          "step": 1000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.3046875,
+            0.1796875,
+            0.1796875,
+            0.234375,
+            0.1875,
+            0.15625,
+            0.0703125,
+            0.1171875
+          ],
+          "step": 1500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.2421875,
+            0.171875,
+            0.25,
+            0.2890625,
+            0.1953125,
+            0.1875,
+            0.171875,
+            0.1953125
+          ],
+          "step": 2000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.3046875,
+            0.296875,
+            0.2734375,
+            0.25,
+            0.2109375,
+            0.1953125,
+            0.140625,
+            0.25
+          ],
+          "step": 2500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.328125,
+            0.2265625,
+            0.234375,
+            0.2421875,
+            0.21875,
+            0.1796875,
+            0.1640625,
+            0.2890625
+          ],
+          "step": 3000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.3125,
+            0.1875,
+            0.234375,
+            0.3515625,
+            0.234375,
+            0.2109375,
+            0.1640625,
+            0.25
+          ],
+          "step": 3500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.296875,
+            0.2734375,
+            0.2265625,
+            0.359375,
+            0.1484375,
+            0.1640625,
+            0.203125,
+            0.2890625
+          ],
+          "step": 4000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.2578125,
+            0.1875,
+            0.2265625,
+            0.328125,
+            0.21875,
+            0.2109375,
+            0.2265625,
+            0.296875
+          ],
+          "step": 4500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.2890625,
+            0.21875,
+            0.1953125,
+            0.265625,
+            0.2109375,
+            0.1953125,
+            0.25,
+            0.265625
+          ],
+          "step": 5000
+        }
+      ],
+      "updates": 5000
+    },
+    {
+      "artifact_sha256": {
+        "history.json": "c693fa603c4beb488d8a050c4d0450c8f13ffc04f2320c363c66b7434a3146c6",
+        "manifest.json": "241b6b65b057caf1420f1c7fa9e3173455d8b968f1f305375443e4396e83148f",
+        "metrics.json": "5f0f3c2f4477d6994c8c36d5b0d64eb97f4d0a5265c5751f989fe9e7ad2e1879",
+        "provenance.json": "016b3a1d4b98f834f8f88775a6dcdeb61dd73438911152fd190c0d57a84a5a1d",
+        "status.json": "bcc9238e338bae4dc0f6a668272401891c9050866814d4d36b2d499a0846f077"
+      },
+      "condition": "fresh_seed0",
+      "endpoint_checkpoint_sha256": "0cb44d7e7b143fc18c037c0a22a4e4e38b5a4d803307666a3266784c4a448b96",
+      "endpoint_coordinate_gate_passed": false,
+      "endpoint_coordinate_metrics": [
+        0.7848578530358145,
+        0.6682281342693245,
+        0.7515646304735637,
+        0.7752404762502604,
+        0.5982816981452661,
+        0.08246150572354462,
+        0.03888799961888934,
+        0.01950136004348367
+      ],
+      "endpoint_weight_sha256": "a85de2697415feccf6a41a76f2708996eea626a78bd2bcfe39c6266b9405b02b",
+      "failed_coordinates": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "first_passing_validation_step": null,
+      "initial_weight_sha256": "441f06e40d95fb61b46055e1529fa79d6125c3719e3f369299ce333fdf85d12e",
+      "max_native_logit_replay_absolute_difference": 0.0,
+      "max_native_state_replay_absolute_difference": 0.0,
+      "metric_units": "MSE/(1/3)",
+      "model": "gru",
+      "native_state_dimension": 128,
+      "native_state_packing_order": "hidden",
+      "task": "continuous",
+      "trajectory": [
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9494931716552967,
+            0.8392239307656996,
+            0.938216972224651,
+            0.9583848750888562,
+            0.9281861188166846,
+            0.7819901911346845,
+            0.9430587796751766,
+            1.0500422503792035
+          ],
+          "step": 500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            1.0386014717851486,
+            0.76313771563539,
+            0.8368155558705345,
+            0.8483234220746336,
+            0.8104182124521261,
+            0.6735696960938832,
+            0.8661752102391135,
+            0.9866033500470234
+          ],
+          "step": 1000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            1.0377522244686113,
+            0.7603187586325402,
+            0.8389278685350332,
+            0.8720470078337896,
+            0.8187862527175709,
+            0.7170124380789383,
+            0.6720810768613436,
+            0.7595628784651128
+          ],
+          "step": 1500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.8606901860788864,
+            0.7796736884365173,
+            0.8744268295587992,
+            0.895746749705197,
+            0.8372598956107884,
+            0.7415766454401717,
+            0.6004002406429265,
+            0.615440735478723
+          ],
+          "step": 2000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.8897544659366771,
+            0.7530240385477933,
+            0.8420138530354403,
+            0.8617741478542268,
+            0.8217718955618996,
+            0.6973717403795391,
+            0.49604115288494577,
+            0.4715214082787852
+          ],
+          "step": 2500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.966383238135225,
+            0.7373310472595465,
+            0.812146207888364,
+            0.8412966819308265,
+            0.8424669000647355,
+            0.7006359438488903,
+            0.07322871907889161,
+            0.027694926962649975
+          ],
+          "step": 3000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.8401449729078964,
+            0.7783988849268972,
+            0.8085329736650506,
+            0.8902464269518168,
+            0.7866749500454127,
+            0.6962644851145904,
+            0.10571343575091827,
+            0.021566566865901
+          ],
+          "step": 3500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.7299705391813316,
+            0.7080349238656732,
+            0.848673201504536,
+            0.8946644022290368,
+            0.7196035539439645,
+            0.27533706337356706,
+            0.029153326497853283,
+            0.0289325619709696
+          ],
+          "step": 4000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.8598053668691,
+            0.6770938316252737,
+            0.810839798286029,
+            0.8800677090478647,
+            0.7487209450953066,
+            0.16028310676412863,
+            0.01856852676975638,
+            0.03739885240658207
+          ],
+          "step": 4500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.7848578530358145,
+            0.6682281342693245,
+            0.7515646304735637,
+            0.7752404762502604,
+            0.5982816981452661,
+            0.08246150572354462,
+            0.03888799961888934,
+            0.01950136004348367
+          ],
+          "step": 5000
+        }
+      ],
+      "updates": 5000
+    },
+    {
+      "artifact_sha256": {
+        "history.json": "f65df2c19642e29d3686a11bf8749954658bb00ecb5e2ddcfeab469b80ca8bab",
+        "manifest.json": "9e1005733ccdb5844ea0244695d7de3d5614282f496f8edd71a625ec760677cc",
+        "metrics.json": "14f9e4b5cdcf5702071fb1d6d48a008079320abe8ede3229c53c932d2abc9be2",
+        "provenance.json": "9714465accd9054a56c9a58bb5da83725c6dccfad16c3efa82a4dc8ff968862f",
+        "status.json": "72803af7acbe5ca03c3c793b5956d93653ab66bed66cb4b9e9cf41d8a37e6b7c"
+      },
+      "condition": "immediate_step500_transfer_reset_optimizer",
+      "endpoint_checkpoint_sha256": "00db0d5f15a79ea124e10ac69e2961baebcb5699467e9130d1c1966b4e6618bf",
+      "endpoint_coordinate_gate_passed": false,
+      "endpoint_coordinate_metrics": [
+        0.39708005445328526,
+        0.5845729315686995,
+        0.6111136174658888,
+        0.7024036395502944,
+        0.5969220106074256,
+        0.4096670635249695,
+        0.0480081401483306,
+        0.026074405788232637
+      ],
+      "endpoint_weight_sha256": "43e387ebe1e9fda426fbb230e0d2f73accdff86ffeefe35d2d3cf5c4c63d5434",
+      "failed_coordinates": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "first_passing_validation_step": null,
+      "initial_weight_sha256": "9fd295a26e2d034ed8f9e510848a9eb061e0e1c84df05cfe4b90926c73e33b16",
+      "max_native_logit_replay_absolute_difference": 0.0,
+      "max_native_state_replay_absolute_difference": 0.0,
+      "metric_units": "MSE/(1/3)",
+      "model": "gru",
+      "native_state_dimension": 128,
+      "native_state_packing_order": "hidden",
+      "task": "continuous",
+      "trajectory": [
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9020080299749269,
+            0.7774647693567912,
+            0.8786188930525488,
+            0.9291074261045128,
+            0.8781788824288171,
+            0.7392416032668319,
+            0.9073989115569782,
+            1.0197506672945442
+          ],
+          "step": 500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9969530768656253,
+            0.7577874735177189,
+            0.8371868625732739,
+            0.8584424947530601,
+            0.8138637499382916,
+            0.6819900143528925,
+            0.8744082297578994,
+            0.9910623272271685
+          ],
+          "step": 1000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            1.0873606966788971,
+            0.8412288591276195,
+            0.8775886307981623,
+            0.8766126126607265,
+            0.8310469320043505,
+            0.6680286496544755,
+            0.7621870207896394,
+            0.8355054363914882
+          ],
+          "step": 1500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.8123547265450192,
+            0.7851457031207686,
+            0.8893708848052232,
+            0.9194498262846839,
+            0.836872831056196,
+            0.7315704589950315,
+            0.6382243827156373,
+            0.671491013298838
+          ],
+          "step": 2000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.7668429618295547,
+            0.6947614728393883,
+            0.8247815930460973,
+            0.8898666838693329,
+            0.7916436237123318,
+            0.611982967408228,
+            0.516472114492919,
+            0.16213970182605517
+          ],
+          "step": 2500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.8533039114851461,
+            0.7100845132323288,
+            0.802969027250418,
+            0.8508228189893533,
+            0.7959391089779284,
+            0.6343607734324065,
+            0.3869239446150464,
+            0.062163953934341945
+          ],
+          "step": 3000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.8256791568573701,
+            0.7664284400882503,
+            0.7902721856426208,
+            0.9174472704962389,
+            0.8049204106282019,
+            0.6874989258363741,
+            0.2434915736646645,
+            0.04404474450744087
+          ],
+          "step": 3500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.5209516672791625,
+            0.6535369764105124,
+            0.8279102893484114,
+            0.7933070842891677,
+            0.6115906250628349,
+            0.5442147340425381,
+            0.057297357689794964,
+            0.07047638943583136
+          ],
+          "step": 4000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.6135196712854196,
+            0.5739279814531356,
+            0.7941567760785917,
+            0.775657376987481,
+            0.591230154494,
+            0.5393505847792769,
+            0.04027610135972799,
+            0.024505345989915713
+          ],
+          "step": 4500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.39708005445328526,
+            0.5845729315686995,
+            0.6111136174658888,
+            0.7024036395502944,
+            0.5969220106074256,
+            0.4096670635249695,
+            0.0480081401483306,
+            0.026074405788232637
+          ],
+          "step": 5000
+        }
+      ],
+      "updates": 5000
+    },
+    {
+      "artifact_sha256": {
+        "history.json": "2066113a7ef4ad197cc547498248b008ad76e87550ad5e06b80d888144d4185d",
+        "manifest.json": "f613db3af39ca9f8f5a545b14f81166992d4cf56ff4acb0e4ca8dca5d99b74f1",
+        "metrics.json": "d2f665c347ac3c97f231298cd60d2913fabc2ab856d2ea17a9c3e370b4d53cd6",
+        "provenance.json": "21510f633c09fa17998e79f43703f6c2a2b7fdfd2dcd6648ef512d42b756782f",
+        "status.json": "c2d4c2517e7f4d7e6c6b32ff226a8cc07e08e52b6fa49504cf917ffebb31a16e"
+      },
+      "condition": "fresh_seed0",
+      "endpoint_checkpoint_sha256": "47c44d1d0fa0bfdd7f88e750bca750bc6d229c21f4c8cd63d1e4f73c4005a9ca",
+      "endpoint_coordinate_gate_passed": false,
+      "endpoint_coordinate_metrics": [
+        0.09375,
+        0.0703125,
+        0.078125,
+        0.0546875,
+        0.0625,
+        0.046875,
+        0.0625,
+        0.03125
+      ],
+      "endpoint_weight_sha256": "3fecbdecb547bc23f87e87ccc0c35f61e179c55e2562520743557e2a9a7d03ab",
+      "failed_coordinates": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "first_passing_validation_step": null,
+      "initial_weight_sha256": "1c316b3e32795d73adf0563761e02c467d51986f64e2d855e36527a21a5582af",
+      "max_native_logit_replay_absolute_difference": 0.0,
+      "max_native_state_replay_absolute_difference": 0.0,
+      "metric_units": "accuracy",
+      "model": "lstm",
+      "native_state_dimension": 256,
+      "native_state_packing_order": "hidden_then_cell",
+      "task": "categorical",
+      "trajectory": [
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.0625,
+            0.0390625,
+            0.0546875,
+            0.0546875,
+            0.0625,
+            0.0546875,
+            0.0625,
+            0.078125
+          ],
+          "step": 500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.078125,
+            0.078125,
+            0.0625,
+            0.0546875,
+            0.0390625,
+            0.046875,
+            0.0625,
+            0.046875
+          ],
+          "step": 1000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.0625,
+            0.078125,
+            0.0625,
+            0.0859375,
+            0.0390625,
+            0.0546875,
+            0.0859375,
+            0.046875
+          ],
+          "step": 1500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.0703125,
+            0.0390625,
+            0.0625,
+            0.0859375,
+            0.0390625,
+            0.0546875,
+            0.09375,
+            0.078125
+          ],
+          "step": 2000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.0390625,
+            0.0703125,
+            0.0546875,
+            0.0546875,
+            0.09375,
+            0.0703125,
+            0.0859375,
+            0.09375
+          ],
+          "step": 2500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.03125,
+            0.0859375,
+            0.078125,
+            0.078125,
+            0.0546875,
+            0.0546875,
+            0.0703125,
+            0.0546875
+          ],
+          "step": 3000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.0625,
+            0.0390625,
+            0.0546875,
+            0.0546875,
+            0.0625,
+            0.0546875,
+            0.0625,
+            0.078125
+          ],
+          "step": 3500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.0546875,
+            0.078125,
+            0.0625,
+            0.078125,
+            0.0546875,
+            0.0859375,
+            0.03125,
+            0.09375
+          ],
+          "step": 4000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.0859375,
+            0.0703125,
+            0.078125,
+            0.0703125,
+            0.09375,
+            0.078125,
+            0.0546875,
+            0.046875
+          ],
+          "step": 4500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.09375,
+            0.0703125,
+            0.078125,
+            0.0546875,
+            0.0625,
+            0.046875,
+            0.0625,
+            0.03125
+          ],
+          "step": 5000
+        }
+      ],
+      "updates": 5000
+    },
+    {
+      "artifact_sha256": {
+        "history.json": "e01cb204b1ae485d90deb70c2ae7ba82d8145331972a3864bacced181b5a591a",
+        "manifest.json": "047ef001b75597764c77e77e43ff580061036906ea209364bd358e6dd08f23a5",
+        "metrics.json": "da79a73c04336a69ca11bea712e5bfb4de6e2f61f534451f14cc8ece1efdc25e",
+        "provenance.json": "d9cb05de70743171f3dec6af59eedee980e44f3f4255a63b7df937e3cc56099a",
+        "status.json": "1ab7ee3649ad14476d1eea0d96c09a7af61cb268758d8a1d7de6e7bd7e1db5ff"
+      },
+      "condition": "immediate_step500_transfer_reset_optimizer",
+      "endpoint_checkpoint_sha256": "bc0c2f66b8a52959f9af0d605c75f036cbf3dda2db1ace4eb4a414c4767f4a99",
+      "endpoint_coordinate_gate_passed": false,
+      "endpoint_coordinate_metrics": [
+        0.984375,
+        0.125,
+        0.1328125,
+        0.15625,
+        0.1640625,
+        0.203125,
+        0.171875,
+        0.140625
+      ],
+      "endpoint_weight_sha256": "9dd8fedba4b7a7b85f0232d625f4eeb79cf813ccd98e44df2687ad8f7a6d9623",
+      "failed_coordinates": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "first_passing_validation_step": null,
+      "initial_weight_sha256": "f304a1efcc4826c687cc23f61a29b27eb9bb382b97b65f668e918b601e2f2c3b",
+      "max_native_logit_replay_absolute_difference": 0.0,
+      "max_native_state_replay_absolute_difference": 0.0,
+      "metric_units": "accuracy",
+      "model": "lstm",
+      "native_state_dimension": 256,
+      "native_state_packing_order": "hidden_then_cell",
+      "task": "categorical",
+      "trajectory": [
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.140625,
+            0.078125,
+            0.0625,
+            0.1015625,
+            0.0546875,
+            0.0625,
+            0.0546875,
+            0.0703125
+          ],
+          "step": 500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.59375,
+            0.0625,
+            0.125,
+            0.09375,
+            0.03125,
+            0.0625,
+            0.0703125,
+            0.1015625
+          ],
+          "step": 1000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.8671875,
+            0.0859375,
+            0.1328125,
+            0.0625,
+            0.03125,
+            0.0078125,
+            0.0625,
+            0.09375
+          ],
+          "step": 1500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.90625,
+            0.0703125,
+            0.109375,
+            0.03125,
+            0.0390625,
+            0.03125,
+            0.0390625,
+            0.1015625
+          ],
+          "step": 2000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.890625,
+            0.09375,
+            0.0703125,
+            0.0859375,
+            0.046875,
+            0.0390625,
+            0.0546875,
+            0.09375
+          ],
+          "step": 2500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.96875,
+            0.109375,
+            0.1484375,
+            0.0859375,
+            0.0390625,
+            0.0234375,
+            0.0546875,
+            0.1015625
+          ],
+          "step": 3000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9296875,
+            0.09375,
+            0.171875,
+            0.0859375,
+            0.0625,
+            0.0390625,
+            0.078125,
+            0.1015625
+          ],
+          "step": 3500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9765625,
+            0.1328125,
+            0.078125,
+            0.1171875,
+            0.078125,
+            0.03125,
+            0.0703125,
+            0.0859375
+          ],
+          "step": 4000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            1.0,
+            0.1015625,
+            0.09375,
+            0.0703125,
+            0.140625,
+            0.125,
+            0.078125,
+            0.0859375
+          ],
+          "step": 4500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.984375,
+            0.125,
+            0.1328125,
+            0.15625,
+            0.1640625,
+            0.203125,
+            0.171875,
+            0.140625
+          ],
+          "step": 5000
+        }
+      ],
+      "updates": 5000
+    },
+    {
+      "artifact_sha256": {
+        "history.json": "10cac963b5c8830ab5e96c7d8663e3e48e9159b7bd8c444bd102c7ef338b78f2",
+        "manifest.json": "2896b90e2a5c3f3076194fe58712f83fc5c0fc1b82b68869a2e59b35c30c0c1e",
+        "metrics.json": "539859c5dbdcaa441f9a99bbd69ee0be86a30dc6e270b558215fd98a0e607a37",
+        "provenance.json": "7762d15f5198bb833083f38967f5cf0af39f6a4e7df59fe2eb0581588b7a71da",
+        "status.json": "61cf42a80466d7fd0edcba86df7480f797d2211fc6c2ac2c7cb9e4b5a202ef33"
+      },
+      "condition": "fresh_seed0",
+      "endpoint_checkpoint_sha256": "31a8ef0449284f3c072b68ead74fea73ae16fe16bd9f871dbe75cf95e602b693",
+      "endpoint_coordinate_gate_passed": false,
+      "endpoint_coordinate_metrics": [
+        0.9773526951678635,
+        0.937738694355959,
+        1.008225143047526,
+        1.027363964171003,
+        0.9625695525787019,
+        0.8471674811368414,
+        0.9888402571476574,
+        1.1063389719309444
+      ],
+      "endpoint_weight_sha256": "a43f1b2ce946ea448fc06e3d07144cf990a3572308470ee34d21809800ba82c3",
+      "failed_coordinates": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "first_passing_validation_step": null,
+      "initial_weight_sha256": "3185df0d365dac30c3748f63d4ef748c91bd9c62e40bcd50697b65029da3ae88",
+      "max_native_logit_replay_absolute_difference": 0.0,
+      "max_native_state_replay_absolute_difference": 0.0,
+      "metric_units": "MSE/(1/3)",
+      "model": "lstm",
+      "native_state_dimension": 256,
+      "native_state_packing_order": "hidden_then_cell",
+      "task": "continuous",
+      "trajectory": [
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9787523261338936,
+            0.9350751571557478,
+            1.007655843247825,
+            1.0257512209407529,
+            0.9641520635237246,
+            0.8422837860392371,
+            0.9857344393726497,
+            1.10832909813428
+          ],
+          "step": 500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9708558718475362,
+            0.9359726024344591,
+            1.0099030919902618,
+            1.0299833147218087,
+            0.9620395313793892,
+            0.8444096455859389,
+            0.9845789110708518,
+            1.1074574239277175
+          ],
+          "step": 1000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.96773410593102,
+            0.9326550757737059,
+            1.010855421884561,
+            1.034811242543677,
+            0.9621890128372287,
+            0.8429181448441136,
+            0.9839916133892563,
+            1.1080498459744772
+          ],
+          "step": 1500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9755874928034404,
+            0.93713293269759,
+            1.0090634426509586,
+            1.0292702125243005,
+            0.9620493489327039,
+            0.8452354160393334,
+            0.9888946180444355,
+            1.1061854629602081
+          ],
+          "step": 2000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9887563992473446,
+            0.9411556175437704,
+            1.0079169672918504,
+            1.023119491306469,
+            0.9627726147932713,
+            0.8467878368325837,
+            0.9944483038576262,
+            1.106011318289182
+          ],
+          "step": 2500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9714686335436247,
+            0.9342533087076068,
+            1.009888974696341,
+            1.0325665013544076,
+            0.9621280556676876,
+            0.8437382642979492,
+            0.9858044876996682,
+            1.1073753955335657
+          ],
+          "step": 3000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9647009275609013,
+            0.9341817614503911,
+            1.0105509698739108,
+            1.0346832985594763,
+            0.9621075975354757,
+            0.8440840444718676,
+            0.9852471939319791,
+            1.1072857052170026
+          ],
+          "step": 3500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9733785070010413,
+            0.9347962261438724,
+            1.0087764621608544,
+            1.030027700793574,
+            0.9621636119748666,
+            0.8440825222618002,
+            0.9853995092373461,
+            1.1070321694474843
+          ],
+          "step": 4000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9814288557491062,
+            0.9406684180880803,
+            1.0077565427514636,
+            1.0244265048641386,
+            0.9636308094830632,
+            0.8517361806887485,
+            0.9916838229830506,
+            1.1066446263115466
+          ],
+          "step": 4500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9773526951678635,
+            0.937738694355959,
+            1.008225143047526,
+            1.027363964171003,
+            0.9625695525787019,
+            0.8471674811368414,
+            0.9888402571476574,
+            1.1063389719309444
+          ],
+          "step": 5000
+        }
+      ],
+      "updates": 5000
+    },
+    {
+      "artifact_sha256": {
+        "history.json": "d9e90e2b8458bb5220cd45b109b83e211faf0086143dbb7645d52385bfa0c74c",
+        "manifest.json": "ea667eff9966a11a07bd7189c8f74fa8f0c47a02ca613913af99266abd29681c",
+        "metrics.json": "194d354be2e17fe9063e5fd0d4a181fe87f02df9ed125279970cc869b9f96bb1",
+        "provenance.json": "d6583961747d313588ca9e07bec782f3ffc3f282748992130c37d50fe808103d",
+        "status.json": "f4e5d2d4829720cf3de01cf431f34923bc431c889efd77531928b9bff72fc5c0"
+      },
+      "condition": "immediate_step500_transfer_reset_optimizer",
+      "endpoint_checkpoint_sha256": "83752a96516628b8679f9f2911a96e11e1e58b5523ed5e9871d4afce90a62843",
+      "endpoint_coordinate_gate_passed": false,
+      "endpoint_coordinate_metrics": [
+        0.9772311092846105,
+        0.9374717155856174,
+        1.0081970670269262,
+        1.0274792499863594,
+        0.9625024894311252,
+        0.8468187866764927,
+        0.9881190010007845,
+        1.106293161578541
+      ],
+      "endpoint_weight_sha256": "f89d71fe6f582c6703ac8e8038335728842e9915edf128a238139dd6670334ee",
+      "failed_coordinates": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "first_passing_validation_step": null,
+      "initial_weight_sha256": "b995bd2059659a9d8dce7ad863e20a8929faaa44a137c82ff36166ed3f605643",
+      "max_native_logit_replay_absolute_difference": 0.0,
+      "max_native_state_replay_absolute_difference": 0.0,
+      "metric_units": "MSE/(1/3)",
+      "model": "lstm",
+      "native_state_dimension": 256,
+      "native_state_packing_order": "hidden_then_cell",
+      "task": "continuous",
+      "trajectory": [
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9789615770768326,
+            0.93701338432635,
+            1.008738776861885,
+            1.028375043587707,
+            0.9645225197619373,
+            0.8417283855458447,
+            0.9847194150563184,
+            1.108160158715439
+          ],
+          "step": 500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9740124614795422,
+            0.9373690029136387,
+            1.009308387273065,
+            1.0273887952841096,
+            0.962346179106928,
+            0.8445307489145225,
+            0.9844350966288093,
+            1.1071723463873455
+          ],
+          "step": 1000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9681843575814618,
+            0.9322179662848588,
+            1.011073714260931,
+            1.0345546118576034,
+            0.9623775360809173,
+            0.842399054956796,
+            0.9831211633541391,
+            1.1083741927758868
+          ],
+          "step": 1500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9751472934364199,
+            0.9380833394678703,
+            1.009354814342062,
+            1.0300480019236118,
+            0.9618437563997129,
+            0.844431511187404,
+            0.9881244244427544,
+            1.1057320785753828
+          ],
+          "step": 2000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9881477026032609,
+            0.9406576556693634,
+            1.0080387124923076,
+            1.02344658050657,
+            0.9630274778142311,
+            0.8467343821887894,
+            0.9928016943808499,
+            1.1059320939809034
+          ],
+          "step": 2500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9722315959367398,
+            0.9334363114416602,
+            1.009621054070073,
+            1.0315441585218874,
+            0.9623749558126843,
+            0.8439281122137935,
+            0.9853089534198656,
+            1.1074071941798072
+          ],
+          "step": 3000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9671580915837035,
+            0.9351235389726317,
+            1.0096947243036705,
+            1.032990441687451,
+            0.9619902011756933,
+            0.8440487576964026,
+            0.9852817998982677,
+            1.1068499001688514
+          ],
+          "step": 3500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.974191988723672,
+            0.9362478753307243,
+            1.008866957771333,
+            1.030495962876875,
+            0.962016892941336,
+            0.8438397559777898,
+            0.9854852669021449,
+            1.1063072270180119
+          ],
+          "step": 4000
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9807846611777731,
+            0.9403741884647518,
+            1.0076611981438002,
+            1.0235778492270773,
+            0.96412189244928,
+            0.8532789019258769,
+            0.9929408077731705,
+            1.1072910921745074
+          ],
+          "step": 4500
+        },
+        {
+          "coordinate_gate_passed": false,
+          "coordinate_metrics": [
+            0.9772311092846105,
+            0.9374717155856174,
+            1.0081970670269262,
+            1.0274792499863594,
+            0.9625024894311252,
+            0.8468187866764927,
+            0.9881190010007845,
+            1.106293161578541
+          ],
+          "step": 5000
+        }
+      ],
+      "updates": 5000
+    }
+  ],
+  "verification_counts": {
+    "checkpoint_trajectories_replayed": 80,
+    "complete_state_entries_replayed": 94371840,
+    "file_hashes_verified": 209,
+    "native_logit_entries_replayed": 1392640,
+    "prefit_validation_oracle_arm_instances": 4096,
+    "producer_native_adapter_checks_verified": 20480,
+    "producer_native_chronology_chunks_verified": 2560,
+    "raw_coordinate_metrics_verified": 1280,
+    "recorded_optimizer_updates_verified": 40000,
+    "source_hashes_verified": 9,
+    "training_batches_reconstructed": 10000,
+    "training_oracle_arm_instances": 320000,
+    "validation_oracle_arm_instances": 163840
+  },
+  "selected_checkpoints": [],
+  "cpu_threads": 1,
+  "device": "cpu",
+  "dtype": "float32",
+  "independent_units": "one initialization/discovery seed; conditions, arms, coordinates, steps and shared validation episodes are dependent",
+  "schema_version": 1,
+  "kind": "descriptive_prefix_acquisition_v3_scalar_summary",
+  "producer_verification_receipt_sha256": "d12297e6205f71c11fee12091aaa872925141273bcf02a5a70496d38fe6e1ecd",
+  "result_acceptance": "coordinator accepts independently verified local seed0 acquisition failure and partial coordinate performance under the fixed schedule",
+  "independent_review_receipt_sha256": "c55a189c18fa97c4fa76016339a9780230835aa969219a632b08cdda568ad0fd",
+  "coordinate_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "validation_episodes_per_coordinate_per_arm": 128,
+  "categorical_accuracy_gate": 0.95,
+  "continuous_population_normalized_mse_gate": 0.05,
+  "continuous_population_variance": 0.3333333333333333,
+  "identical_r0_arms_displayed_once": true,
+  "periodic_body_used": false,
+  "trained_seed_ids": [
+    0
+  ],
+  "confidence_intervals": null,
+  "scientific_scope": "local seed0 acquisition under fixed schedule; no periodicity harm, equivalence, population guarantee or Floquet certification",
+  "scientific_acceptance_scope": "observed fixed-schedule acquisition audit only",
+  "harmful_collapse_claim_accepted": false,
+  "floquet_claim_accepted": false
+}

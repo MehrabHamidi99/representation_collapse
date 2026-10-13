@@ -27,29 +27,30 @@ therefore changes the next work: isolate acquisition before GPU escalation.
    Preserve the eight multiplicity slots, missing/failed seeds, all numerical
    failures and explicit approximate inference assumptions. Partial singular
    pairs do not certify a leading spectrum or Floquet dynamics.
-2. Review and freeze the distinct
+2. The distinct
    [prefix-acquisition-v3 discovery](../../configs/experiments/prefix-acquisition-discovery-v3.json)
-   implementation before any run. Compare fresh seed-0 initialization with the
+   implementation was reviewed/frozen and all eight fixed endpoints executed. It compares fresh seed-0 initialization with the
    fixed immediate-step-500 weight transfer, using a new AdamW in each condition
    and the same R0 training stream. Run eight local CPU fits with at most 40,000
    optimizer updates and a 20-minute total deadline. Fixed 5,000-update endpoints
    retain all interim validations and censored failures. Independently check
    oracle targets, native chronology, complete state, config/source/stream and
    checkpoint hashes. This is a new discovery protocol, not a v2 extension.
-3. If acquisition still fails, prepare addressed-prefix controls separating
+3. Acquisition still fails. Prepare addressed-prefix controls separating
    required capacity, nuisance WRITEs, order and credit assignment. Freeze each
    new local comparison before execution. If competence succeeds, prepare a
    distinct short-body training/retention protocol; do not silently reuse the
    failed v2 fit or inspect confirmation manifests.
-4. Deploy the owner-authorized continuous Qwen leaf after exact source and old
-   run reconciliation. Use changed evidence or unique explicit task events;
+4. The owner-authorized continuous Qwen leaf is deployed after exact source and old
+   run reconciliation, with its first model/schema-valid call verified. Use changed evidence or unique explicit task events;
    unchanged polling must not generate repetitive model calls. Retain retry
    backoff and degraded/stalled status, model identity, usage unknowns and stop
    controls. Native OpenAI agents are the available fallback. No provider
    credentials or entitlement to an unavailable external API are inferred.
-5. Recover fresh native cluv access to the actual Alliance controller set.
+5. Fresh native cluv access verifies Mila and all nine configured Alliance targets
+   through the existing owner-authorized compute allocation.
    Verify source and offline environment readiness before proposing allocations.
-   Mila's new 1add2b6 scratch snapshot and a fresh locked Torch environment are
+   Mila's 999d88d continuous source and earlier locked Torch environment are
    verified; source preparation alone is not experiment execution. The unchanged
    four-fit GPU canary remains unapproved and should be reconsidered after the
    local failures. Apply the adopted GPU guide without changing scientific
@@ -75,3 +76,22 @@ changes under the owner's continuing commit/push instruction. Never change an
 inherited manuscript snapshot or another project's jobs/connections. No harmful
 collapse, cross-modal replication, empirical equivalence, population competence
 guarantee or Floquet certification is accepted from today's acquisition screen.
+
+## New prospective addressed diagnostic
+
+The address-acquisition-v4 preparation compares fixed future QUERY addresses
+0, 7 and 15 in all four model/task cells, with 12 new local CPU fits and fixed
+5,000-update endpoints. It reuses the exact v3 base training payload/RNG stream,
+changes only terminal selector/target, and uses new validation seed 20003.
+Pinned v3 fresh step-5000 weights will be evaluated on the same q0/q7 histories
+for paired native-error contrasts; q15 lies outside their trained QUERY support
+and receives no primary baseline contrast. Fixed target support changes required
+load and selection uncertainty jointly; address and lag are also confounded.
+The separate 0--15-domain adapter cannot relax the main v2/v3 eligibility rules.
+Source/config review and a coordinator freeze precede execution; no production
+result or new GPU allocation is yet admitted.
+
+Continuous Qwen lives in a separate project-owned tmux session on job11228391.
+It requires no Mac proxy or ongoing launch SSH connection. Its physical allocation
+expires October14 at08:55:56UTC; no automatic replacement is configured. Shared
+model-dispatch migration and other projects' journals remain with their owner.

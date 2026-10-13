@@ -2,11 +2,11 @@
 
 **When Does Repetition Erase Memory? Identifiability Limits for Recurrent-State Collapse**
 
-A compact, venue-neutral ML manuscript with a seven-page main text and 15 pages
+A compact, venue-neutral ML manuscript with a seven-page main text and 17 pages
 including references and detailed appendices. It replaces the earlier 35-page research-program
 skeleton. The scientific scope is a diagnostic framework: analytic ordering
 nulls and counterexamples, a controlled experimental design, and a verified
-four-cell pilot audit. It does not claim successful learned-memory erasure,
+four-cell pilot audit plus twenty local acquisition fits. It does not claim successful learned-memory erasure,
 an empirical equivalence result, or a new general Floquet theorem.
 
 ## Read and build
@@ -21,6 +21,7 @@ From the repository root:
 ```bash
 uv sync --locked --all-groups
 PYTHONPATH=src .venv/bin/python code/analysis/make_paper_figures.py
+.venv/bin/python code/analysis/summarize_prefix_acquisition.py
 cd paper
 latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 ```
@@ -37,7 +38,7 @@ The main text proceeds through motivation, measurement targets, analytic
 constraints, matched-order design, analytic controls and the competence audit,
 related work, limitations, and discussion/conclusion. Appendices contain full
 proofs, exact task/training settings, all 32 cue-conditioned cloud measurements,
-the probe-floor derivation and provenance. The earlier internal critique of
+the probe-floor derivation, zero-body acquisition controls and provenance. The earlier internal critique of
 inherited manuscripts is retained in `doc/auto/source-inventory.md` and
 `doc/auto/theory-propositions.md`; it is not a paper appendix.
 
@@ -53,6 +54,10 @@ inherited manuscripts is retained in `doc/auto/source-inventory.md` and
 - `figures/probe_scale_artifact.pdf`: a noiseless invertible scalar code whose
   fixed-floor ridge probe deteriorates. It illustrates a possible confound;
   it does not re-reduce or explain away the actual pilot clouds.
+- `../doc/auto/figures/prefix-acquisition-v3-endpoints.pdf`: every required
+  coordinate at eight fixed 5,000-update endpoints, from the independently
+  verified scalar summary. All eight full-coordinate gates fail; five
+  coordinate scores pass. No independent training-seed interval is estimated.
 
 The figure script creates the PDFs, PNG previews, `figures/manifest.json`
 and `sections/D-pilot-details.tex`. Edit the script to change generated tables.
@@ -75,4 +80,6 @@ current ingredients substantially overlap established work, and all four
 pilots fail native competence. The
 [readiness review](../doc/auto/manuscript-review-2026-10-12.md) distinguishes
 what is supported from what still requires an original result, competent
-replicated models, causal controls and independent periodicity reduction.
+replicated models and causal controls. Independent periodicity reduction and
+the October 13 acquisition audits are now complete; they preserve the failed
+competence prerequisite rather than establish repetition-induced forgetting.

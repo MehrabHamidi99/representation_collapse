@@ -145,3 +145,93 @@ sockets, supervisor and journals are left to that owner. Local training remains
 outside the shared two-CPU coordination allocation. No new Qwen generation or
 Slurm allocation has occurred yet. Source publication and the independent local
 freeze receipt precede production execution.
+
+## 09:44 UTC — completed prefix discovery and all-cluster access
+
+Reviewed source `999d88d8679c0f353c6bb7fb4f5ab8433a7e730c` is pushed to GitHub.
+The local eight-fit prefix study ran every fixed 5,000-update endpoint: 40,000
+updates in 189.3 process-wall seconds, no timeout or nonfinite failure. All eight
+full-competence gates fail; some individual coordinates pass. Producer replay
+reconciles both complete 5,000-batch streams, all 40,000 update identities,
+1,280 coordinate metrics and 80 native checkpoint trajectories. Independent
+scientific reduction is underway; no periodic body or held-out test was used.
+
+The 09:25:50 UTC native cluv 0.1.5 pass verifies Mila plus all nine configured
+Alliance targets, all with empty project-name matching queues and successful
+scheduler queries. Shared access receipt SHA:
+`841ad220396b7637f785f9746bd4c251cab8d02ca0a301d1eab6529c0949e159`.
+This supersedes the earlier unavailable-route snapshots, without rewriting them.
+
+The Radius owner confirms that a separate project Qwen API client can use its
+existing route without waiting for shared model-dispatch migration. A project
+claim was registered at 09:40:37 UTC before isolated source/runtime writes.
+Durable one-session usage is being coordinated with that owner. No new worker
+call or allocation is claimed yet. Cancellation of our unused prior reverse
+forward reported that the port was no longer forwarded; the shared master and
+other forwarding channels were retained.
+
+## 10:00 UTC — actual continuous Qwen participation and accepted acquisition audit
+
+Continuous Qwen started at09:56:09UTC inside the existing Mila allocation11228391.
+Leaf3244371 is parented by project supervisor3244355 and the Slurm-owned tmux
+server; both processes belong to the job's batch cgroup. Its separate approved
+session persists after the launch SSH exits. Source is clean999d88d and worker
+SHA8d9e6149f83a91cefdf8cd51c7e38777cdfade4c73cfb42136f104d7ea45a606.
+At10:00:04UTC the first exact-model/schema response is verified: request16,578
+characters, 4,387prompt+620completion=5,007reported tokens, stopfinish, noerrors,
+noexecuted actions or accepted claims. max_calls/max_hours are null. The existing
+allocation expiresOctober14 08:55:56UTC; its infrastructure deadline is distinct
+from a model-call cap, and no replacement allocation is configured. Four unique
+scientific tasks are prepared; publication to the worker inbox is being checked.
+
+Nativecluv staged this exact source, retaining failed quoting/SSH-forward/input
+probe attempts rather than overwriting them. Radius owner approved only our
+project tmux session and clarified that observer_exited described its retired
+bootstrap child, replaced by its live tmux observer. Shared model-dispatch,
+sessions, credentials and other journals were not taken over. Our own reviewed
+five-minute observer is being deployed in a project session window, outside
+all Qwen evidence roots; the allocation's twoCPUs/4GiB/zeroGPUs serve compact
+coordination/API clients. All training remained local.
+
+The coordinator accepts the independently verified v3 acquisition audit:
+8fits,40,000updates,8failed full-coordinate endpoints,5passing coordinate scores.
+Independent receiptSHA c55a189c18fa97c4fa76016339a9780230835aa969219a632b08cdda568ad0fd.
+The reviewer separately reconstructs10,000trainingbatches without the renderer,
+checksall40,000updatehashes/all80rawvalidations/209artifacthashes/490sourcefiles,
+and replays16checkpoints exactly. No harm/Floquet/impossibility inference.
+Together with v2:20actualfits,50,200optimizerupdates,0eligible main checkpoints.
+
+Committed scalar results and a deterministic plot generator now reproduce
+every fixed-endpoint coordinate from public summary data without weights.
+The paper adds a zero-body acquisition appendix, corrects stale pending
+periodicity-reduction language and retains its seven-page main text. Final
+LaTeX has17pages, no undefined references/overfull boxes; updated pages are
+visually inspected. Fixed-address-v4 code/protocol preparation advances locally,
+with no production execution before review/freeze and no new Slurm submission.
+
+## 10:18 UTC — monitored participation, quality rejection and next source review
+
+The project observer is durably running:3248354, claim wrapper3248325, own
+project-session window. Observations at10:07:05.575407 and10:12:05.575592UTC
+are300.000185seconds apart, both with no metadata issues. At the second check,
+all6model/schema-valid proposals and29,862reported tokens reconcile with the
+completed journal prefix. The cursor is caught up; prior call files are not
+rescanned every pass, so this does not certify perpetual file immutability.
+Observer deadline20:00UTC is separate from the continuous Qwen client.
+
+Model participation is verified; scientific proposal quality is not automatic.
+The coordinator read all6responses and rejects repeated already-failed short
+schedules, gate relaxation, ignored theoretical/statistical questions and the
+claim that unsuccessful probes prove information loss. Four consumed task IDs
+do not mean four accepted scientific answers. Native OpenAI source/science
+review remains active; a local prompt-only task-binding repair and quality
+ledger are delegated, leaving the immutable live999d88d worker unchanged.
+
+V4 independent implementation review accepts exactconfig55c564c5 and module
+cb06f60d:12focusedtests,98domain/native/streamchecks and39paired-baseline
+checks pass. ReviewreceiptSHA:
+6a5718f0575a2e2d8c7b1e39e20e57209c77ae144516d14f3383fd4fd0405a46.
+Only reduced infrastructure fixtures were executed. Next:publish source, run
+checks on an immutable archive, freeze externally, then execute12declared local
+fits. The predictable-singleton/query-load/selection-uncertainty intervention
+remains jointly changed; no pure lag/capacity or periodicity result is implied.

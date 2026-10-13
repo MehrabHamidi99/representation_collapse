@@ -5,29 +5,39 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
-- **Daytime research — 2026-10-13, current.** The overnight audit verifies
-  16 Qwen proposals from 19 attempts; three provider errors stopped the original
-  worker at 00:36 UTC. Its last valid response was 23:25 UTC on October 12.
-  The observer completed 129 snapshots with no metadata issues. Full-run usage
-  is unknown; successful responses report an 88,650-token subtotal.
-  Today, **all twelve frozen local CPU discovery fits ran**: 10,200 updates;
-  two fixed-batch failures and ten immediate-task passes followed by R0 failures.
-  No fit reached a periodic body or eligible checkpoint. Independent reduction
-  and native/oracle replay accept this scoped acquisition failure.
-  The [full grid](auto/local-competence-grid-2026-10-13.md) redirects work toward
-  prefix acquisition, before periodicity or unchanged GPU canary escalation.
-  Seed statistics and complete-state matrix-free tangent operators passed
-  independent review, including two repaired numerical issues. All **239 tests pass**, including reviewed continuous-mode, observer and
-  prefix-runner additions; inference remains unfrozen.
-  Native cluv 0.1.5 staged clean 1add2b6 on Mila and verified a fresh locked
-  offline Torch environment. Mila's queue was empty at 08:18 UTC; fresh Alliance
-  queues were unavailable after an intermittently restored Tamia route. The
-  owner-supplied shared compute allocation **11228391** now verifies Tamia3 and
-  original Qwen PID absence at 09:21 UTC. Shared model-dispatch migration remains
-  with its owner. No new Slurm allocation or GPU telemetry. The owner explicitly removes fixed Qwen
-  call/runtime caps and requests OpenAI fallback. A new evidence-driven continuous
-  leaf and the separately frozen local prefix comparison are being implemented.
-  The old run is preserved; no continuous successor is launched yet.
+- **Daytime research — 2026-10-13, current.** The old Qwen cohort produced
+  16 valid proposals in 19 attempts before three provider errors stopped it at
+  00:36 UTC. The 129-snapshot overnight observer and original-host PID absence
+  are verified; this was not uninterrupted all-night inference.
+  The new **continuous Qwen client is actually running** in existing Mila job
+  **11228391**, on cn-f003: leaf PID **3244371**, supervisor **3244355**, separate
+  project tmux session and journal. At 10:12 UTC, six exact-model/schema
+  proposals are verified: six attempts, zero errors, 29,862 reported tokens.
+  Multiple recommendations are rejected for missed topics, weakened gates or
+  unsupported information-loss inference; native OpenAI review and a local
+  prompt repair address these failures. Total-call/runtime caps are null; backoff, signal/STOP controls remain.
+  Four task events are consumed, with no scientific answer automatically accepted. The existing allocation ends
+  **October 14 08:55:56 UTC** (12:55 Yerevan); no replacement allocation is automatic.
+  Native OpenAI coordinator/subagents prepare and review independent work.
+  The project's five-minute observer is running outside Qwen evidence roots;
+  two observations reconcile counters/usage without metadata issues, ending20:00UTC.
+  Today **20 actual local CPU fits / 50,200 optimizer updates** completed:
+  twelve v2 discovery fits fail before body training, and eight fixed 5,000-update
+  v3 fits fail full-coordinate competence despite five passing coordinate scores.
+  Independent raw/source/native reduction accepts this scoped acquisition audit.
+  [V3 results and reproducible plot](auto/prefix-acquisition-v3-results-2026-10-13.md)
+  retain every coordinate; neither periodicity harm nor architectural impossibility
+  follows. The new fixed-address-v4 diagnostic passed independent source review, with paired new
+  validation for q0/q7 and a separate q15 domain; production has not run.
+  Reviewed seed-statistics and complete-state matrix-free utilities are published
+  in **999d88d**, with **239 source tests passing**, zero skips. Inference assumptions,
+  smallest effects and confirmation freeze remain unresolved.
+  Native **cluv 0.1.5 verifies Mila plus all nine configured Alliance clusters**
+  at 09:25 UTC; matching project queues are empty and all scheduler queries succeed.
+  No new Slurm allocation or GPU telemetry. The unchanged GPU canary is unapproved
+  and should be reconsidered after the acquisition failures.
+  The venue-neutral manuscript now includes the verified zero-body audit and
+  endpoint figure: seven-page main text, seventeen pages including appendices.
   [Day plan](auto/day-research-2026-10-13.md),
   [structured status](auto/research-status-2026-10-13.json).
 - **Overnight continuation — 2026-10-12, historical.** Fresh heartbeat at 17:00 UTC
