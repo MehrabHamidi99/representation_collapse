@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bounded persistent Qwen research leaf worker; proposals never execute actions."""
+"""Qwen proposal leaf: bounded by default, continuous only with explicit opt-in."""
 from __future__ import annotations
 
 import argparse
@@ -40,6 +40,90 @@ def scrub(text, key):
 
 def digest(text):
     return hashlib.sha256(text.encode()).hexdigest()
+
+
+VOLATILE_EVIDENCE_FIELDS = frozenset({
+    "updated_at", "collected_at", "observed_at", "checked_at", "heartbeat_at",
+    "last_heartbeat_at", "last_poll_at", "last_seen_at", "timestamp",
+    "elapsed_seconds", "age_seconds", "poll_count", "observation_count",
+})
+
+
+def meaningful_evidence_hash(items):
+    """Ignore metadata clocks/counters, while retaining states and measurements.
+
+    Artifact excerpts may be incomplete JSON. Normalize the same explicitly
+    named scalar metadata in that case, without treating arbitrary numbers or
+    scientific metric fields as polling noise. The sent excerpts are unchanged.
+    """
+    def clean(value):
+        if isinstance(value, dict):
+            return {name: clean(item) for name, item in value.items()
+                    if name not in VOLATILE_EVIDENCE_FIELDS}
+        if isinstance(value, list):
+            return [clean(item) for item in value]
+        return value
+    normalized = {}
+    names = "|".join(re.escape(name) for name in sorted(VOLATILE_EVIDENCE_FIELDS))
+    scalar = r'"(?:[^"\\]|\\.)*"|-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?|null|true|false'
+    pattern = re.compile(r'("(?:' + names + r')"\s*:\s*)(?:' + scalar + r')')
+    for name, text in items.items():
+        try:
+            normalized[name] = clean(json.loads(text))
+        except (ValueError, TypeError):
+            normalized[name] = pattern.sub(r'\1"[VOLATILE_METADATA]"', text)
+    return digest(json.dumps(normalized, sort_keys=True))
+
+
+def retry_delay(consecutive_errors, base_seconds, maximum_seconds):
+    """Exponential pacing with a delay ceiling, without an attempt/time cap."""
+    if consecutive_errors < 1:
+        return 0.0
+    exponent = consecutive_errors - 1
+    saturation = max(0, math.ceil(math.log2(maximum_seconds / base_seconds)))
+    return maximum_seconds if exponent >= saturation else min(maximum_seconds, base_seconds * 2 ** exponent)
+
+
+def coordinator_tasks(inbox, completed, identities, key):
+    """Read one immutable public research task, never executable instructions.
+
+    Coordinator files are tasks/<task_id>.json with exactly task_id/task.
+    A successful ID is processed only once. Files stay in the inbox as a
+    durable input journal. Invalid files are reported without provider calls.
+    """
+    if inbox.is_symlink() or not inbox.is_dir():
+        return None, ["task_inbox_missing_or_symlink"]
+    issues = []
+    inspected = 0
+    for path in sorted(inbox.iterdir()):
+        if path.suffix != ".json" or path.stem in completed:
+            continue
+        inspected += 1
+        if inspected > 64:
+            break
+        try:
+            if path.is_symlink() or not path.is_file() or path.stat().st_size > 8192:
+                raise ValueError("task_file_not_small_regular_file")
+            if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]{0,63}", path.stem):
+                raise ValueError("invalid_task_filename")
+            content = json.loads(path.read_text())
+            if not isinstance(content, dict) or set(content) != {"task_id", "task"}:
+                raise ValueError("invalid_task_schema")
+            task_id, task = content["task_id"], content["task"]
+            if task_id != path.stem or scrub(task_id, key) != task_id:
+                raise ValueError("invalid_or_sensitive_task_identity")
+            if not isinstance(task, str) or not task.strip() or len(task) > 1500:
+                raise ValueError("task_requires_nonempty_1500_character_public_question")
+            task = {"task_id": task_id, "task": scrub(task, key)}
+            identity = digest(json.dumps(task, sort_keys=True))
+            if task_id in identities and identities[task_id] != identity:
+                raise ValueError("task_identity_changed_after_first_observation")
+            identities[task_id] = identity
+            return task, issues
+        except (OSError, ValueError, TypeError) as error:
+            # Names and malformed contents are untrusted; do not persist them.
+            issues.append(type(error).__name__ + ":invalid_coordinator_task")
+    return None, issues
 
 
 def read_excerpt(path, limit, key):
@@ -240,23 +324,42 @@ def add_usage(totals, usage):
             totals[name] += value
 
 
-def main():
+def main(argv=None):
+    global _STOP
+    _STOP = False
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--cluster", required=True,
                         help="Exact cluster identity for the local squeue controller; required")
-    parser.add_argument("--max-hours", type=float, default=24)
-    parser.add_argument("--max-calls", type=int, default=24)
+    parser.add_argument("--continuous", action="store_true",
+                        help="Explicit opt-in: no total runtime/call cap; proposals remain coordinator-reviewed")
+    parser.add_argument("--max-hours", type=float)
+    parser.add_argument("--max-calls", type=int)
     parser.add_argument("--interval", type=float, default=60)
-    parser.add_argument("--research-interval", type=float, default=3600)
+    parser.add_argument("--research-interval", type=float)
     parser.add_argument("--http-timeout", type=float, default=180)
+    parser.add_argument("--minimum-call-spacing", type=float, default=60)
+    parser.add_argument("--retry-base", type=float, default=60)
+    parser.add_argument("--retry-maximum", type=float, default=3600)
     parser.add_argument("--artifact-root", type=Path, action="append", default=[])
     parser.add_argument("--job-id", action="append", default=[])
-    args = parser.parse_args()
-    limits = (args.max_hours, args.interval, args.research_interval, args.http_timeout)
-    if not all(math.isfinite(v) and v > 0 for v in limits) or args.max_calls < 1:
-        parser.error("positive finite runtime, call count and intervals required")
+    args = parser.parse_args(argv)
+    if args.continuous and any(value is not None for value in
+                               (args.max_hours, args.max_calls, args.research_interval)):
+        parser.error("continuous mode has no caps or periodic duplicate requests; omit cap/research-interval flags")
+    if not args.continuous:
+        args.max_hours = 24 if args.max_hours is None else args.max_hours
+        args.max_calls = 24 if args.max_calls is None else args.max_calls
+        args.research_interval = 3600 if args.research_interval is None else args.research_interval
+    limits = (args.interval, args.http_timeout, args.minimum_call_spacing, args.retry_base, args.retry_maximum)
+    if not all(math.isfinite(v) and v > 0 for v in limits):
+        parser.error("positive finite polling, HTTP timeout and pacing intervals required")
+    if args.continuous and (args.minimum_call_spacing < 1 or args.retry_base < 1 or args.retry_maximum < args.retry_base):
+        parser.error("continuous pacing must be at least one second; retry maximum must be at least its base")
+    if not args.continuous and (not math.isfinite(args.max_hours) or args.max_hours <= 0
+            or args.max_calls < 1 or not math.isfinite(args.research_interval) or args.research_interval <= 0):
+        parser.error("positive finite runtime, call count and research interval required")
     if not all(re.fullmatch(r"[0-9]+(?:_[0-9]+)?", identifier) for identifier in args.job_id):
         parser.error("job IDs must be numeric Slurm identifiers")
     if not re.fullmatch(r"[A-Za-z0-9_-]+", args.cluster):
@@ -272,12 +375,28 @@ def main():
     if not project.is_dir():
         parser.error("project directory does not exist")
     output.mkdir(parents=True, exist_ok=False)
+    inbox = output / "tasks"
+    if args.continuous:
+        inbox.mkdir()
+    stop_file = output / "STOP"
     roots = [project / "runs", project / "logs"] + [p.resolve() for p in args.artifact_root]
-    atomic_json(output / "config.json", {"kind": "qwen_research_leaf_worker", "schema_version": 1,
+    mode = "continuous" if args.continuous else "bounded"
+    schema_version = 2 if args.continuous else 1
+    atomic_json(output / "config.json", {"kind": "qwen_research_leaf_worker", "schema_version": schema_version,
+        "execution_mode": mode, "continuous": args.continuous,
         "requested_model": model, "provider_identity_policy": "returned model must exactly equal requested model",
         "project": str(project), "max_hours": args.max_hours, "max_calls": args.max_calls,
         "interval_seconds": args.interval, "research_interval_seconds": args.research_interval,
         "http_timeout_seconds": args.http_timeout,
+        "trigger_policy": "semantic_evidence_change_or_unique_coordinator_task_plus_backoff_retry" if args.continuous else
+                          "evidence_change_or_research_interval_plus_retry",
+        "minimum_provider_call_spacing_seconds": args.minimum_call_spacing if args.continuous else None,
+        "retry_policy": {"base_seconds": args.retry_base, "maximum_delay_seconds": args.retry_maximum,
+            "consecutive_error_stop_count": None, "stalled_after_errors": 3} if args.continuous else
+            {"delay_seconds": args.interval, "consecutive_error_stop_count": 3},
+        "task_inbox": str(inbox) if args.continuous else None,
+        "stop_policy": "SIGTERM_or_SIGINT_or_regular_STOP_file",
+        "http_provider_fallback": False, "OpenAI_routing": "native_coordinator_and_subagents_only",
         "max_tokens": MAX_TOKENS, "context_character_budget": CONTEXT_CHARACTERS,
         "response_policy": {"enable_thinking": False, "reasoning_effort": "low",
             "requested_final_answer_token_target": 900, "reject_truncated_final_answers": True},
@@ -287,49 +406,89 @@ def main():
         "worker_source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "scientific_acceptance": "coordinator_only", "autonomous_actions": "structured_proposals_only"})
     started, calls, successful, consecutive_errors = time.monotonic(), 0, 0, 0
-    last_hash, last_research = None, -float("inf")
+    last_hash, last_sent_hash, last_research = None, None, -float("inf")
+    last_attempt_started, retry_at, backoff_seconds = -float("inf"), None, 0.0
+    task_identities, completed_tasks = {}, set()
+    task_issues, active_task, last_completed_task = [], None, None
+    activity, call_in_flight = "starting", False
     totals = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
     state, stop_reason = "running", None
     def heartbeat():
-        atomic_json(output / "heartbeat.json", {"schema_version": 1, "state": state,
+        next_call = max(last_attempt_started + args.minimum_call_spacing, retry_at or -float("inf"))
+        next_call_at = datetime.fromtimestamp(time.time() + max(0, next_call - time.monotonic()),
+                                             timezone.utc).isoformat() if math.isfinite(next_call) else None
+        atomic_json(output / "heartbeat.json", {"schema_version": schema_version, "state": state,
+            "execution_mode": mode, "continuous": args.continuous,
+            "max_hours": args.max_hours, "max_calls": args.max_calls,
             "updated_at": now(), "elapsed_seconds": time.monotonic() - started,
             "provider_call_attempts": calls, "schema_verified_reviews": successful,
             "consecutive_provider_errors": consecutive_errors, "usage_totals": totals,
             "unknown_usage_policy": "null if any attempted call omits the relevant usage field",
-            "last_evidence_sha256": last_hash, "stop_reason": stop_reason})
+            "last_evidence_sha256": last_sent_hash, "stop_reason": stop_reason,
+            "last_semantic_evidence_sha256": last_hash if args.continuous else None,
+            "activity": activity, "provider_call_in_flight": call_in_flight,
+            "next_provider_call_not_before": next_call_at if args.continuous else None,
+            "retry_backoff_seconds": backoff_seconds, "task_inbox_issues": task_issues,
+            "active_task_id": active_task["task_id"] if active_task else None,
+            "completed_coordinator_tasks": len(completed_tasks), "last_completed_task_id": last_completed_task,
+            "http_provider_fallback": False, "scientific_decision": "pending"})
     def stop(_signum, _frame):
         global _STOP
         _STOP = True
     signal.signal(signal.SIGTERM, stop)
     signal.signal(signal.SIGINT, stop)
+    def stopping():
+        return _STOP or (stop_file.is_file() and not stop_file.is_symlink())
+
+    def remaining_seconds():
+        return None if args.continuous else args.max_hours * 3600 - (time.monotonic() - started)
+
     heartbeat()
-    while not _STOP:
-        remaining = args.max_hours * 3600 - (time.monotonic() - started)
-        if remaining <= 0:
+    while not stopping():
+        remaining = remaining_seconds()
+        if remaining is not None and remaining <= 0:
             stop_reason = "runtime_cap"
             break
-        if calls >= args.max_calls:
+        if args.max_calls is not None and calls >= args.max_calls:
             stop_reason = "call_cap"
             break
         items, known_ids = evidence(project, roots, output, args.job_id, key, args.cluster)
-        evidence_hash = digest(json.dumps(items, sort_keys=True))
+        evidence_hash = meaningful_evidence_hash(items) if args.continuous else digest(json.dumps(items, sort_keys=True))
         changed = evidence_hash != last_hash
-        due = time.monotonic() - last_research >= args.research_interval
-        if changed or due or consecutive_errors:
-            trigger = "evidence_changed" if changed else "provider_retry" if consecutive_errors else "research_interval"
+        due = not args.continuous and time.monotonic() - last_research >= args.research_interval
+        if args.continuous and active_task is None:
+            active_task, task_issues = coordinator_tasks(inbox, completed_tasks, task_identities, key)
+        pacing_ready = not args.continuous or time.monotonic() >= max(
+            last_attempt_started + args.minimum_call_spacing, retry_at or -float("inf"))
+        needs_research = changed or due or consecutive_errors or active_task is not None
+        if needs_research and pacing_ready and not stopping():
+            trigger = ("provider_retry" if args.continuous and consecutive_errors else
+                       "coordinator_task" if active_task else "evidence_changed" if changed else
+                       "provider_retry" if consecutive_errors else "research_interval")
+            if active_task:
+                items["coordinator:explicit-research-task"] = json.dumps(active_task, sort_keys=True)
+                while len(json.dumps(items, sort_keys=True)) > 15000:
+                    candidates = [name for name in items if name != "coordinator:explicit-research-task"]
+                    largest = max(candidates, key=lambda name: len(items[name]))
+                    items[largest] = items[largest][:max(0, len(items[largest]) - 500)]
             calls += 1
+            last_attempt_started = time.monotonic()
             attempt = output / f"call-{calls:04d}"
             attempt.mkdir()
-            atomic_json(attempt / "evidence.json", {"sha256": evidence_hash, "items": items,
+            sent_hash = digest(json.dumps(items, sort_keys=True))
+            atomic_json(attempt / "evidence.json", {"sha256": sent_hash, "items": items,
+                "semantic_evidence_sha256": evidence_hash if args.continuous else None,
                 "known_project_job_ids": known_ids, "collected_at": now()})
             body = request_body(model, items, trigger)
             atomic_json(attempt / "request.json", body)
-            atomic_json(attempt / "status.json", {"state": "calling", "started_at": now(),
+            atomic_json(attempt / "status.json", {"state": "calling", "started_at": now(), "trigger": trigger,
+                "execution_mode": mode, "coordinator_task_id": active_task["task_id"] if active_task else None,
                 "requested_model": model, "scientific_decision": "pending"})
+            activity, call_in_flight = "provider_call", True
             heartbeat()
             usage, returned_model, finish_reason, reasoning_characters = None, None, None, None
             try:
-                raw = provider_call(base_url, key, body, min(args.http_timeout, remaining))
+                raw = provider_call(base_url, key, body, args.http_timeout if remaining is None else min(args.http_timeout, remaining))
                 (attempt / "raw-reply.json").write_text(scrub(raw, key))
                 envelope = json.loads(raw)
                 usage = envelope.get("usage")
@@ -343,22 +502,45 @@ def main():
                 content = final_content(choice)
                 review = parse_review(scrub(content, key), items)
                 atomic_json(attempt / "review.json", {"schema_verified": True, "scientific_decision": "pending",
-                    "review": review, "evidence_sha256": evidence_hash})
+                    "review": review, "evidence_sha256": sent_hash})
                 consecutive_errors = 0
+                retry_at, backoff_seconds = None, 0.0
+                state = "running"
                 successful += 1
+                if active_task:
+                    completed_tasks.add(active_task["task_id"])
+                    last_completed_task = active_task["task_id"]
                 atomic_json(attempt / "status.json", {"state": "proposal_ready", "finished_at": now(),
+                    "execution_mode": mode, "trigger": trigger,
+                    "coordinator_task_id": active_task["task_id"] if active_task else None,
                     "requested_model": model, "returned_model": returned_model, "model_identity_verified": True,
                     "finish_reason": finish_reason, "reasoning_characters": reasoning_characters,
                     "scientific_decision": "pending", "actions_executed": 0})
+                active_task = None
             except Exception as error:
                 consecutive_errors += 1
+                if args.continuous:
+                    backoff_seconds = retry_delay(consecutive_errors, args.retry_base, args.retry_maximum)
+                    retry_at = time.monotonic() + backoff_seconds
+                    state = "stalled" if consecutive_errors >= 3 else "degraded"
+                error_body_state = None
                 if isinstance(error, urllib.error.HTTPError):
-                    (attempt / "raw-error.txt").write_text(scrub(error.read(65536).decode(errors="replace"), key))
+                    try:
+                        (attempt / "raw-error.txt").write_text(scrub(error.read(65536).decode(errors="replace"), key))
+                        error_body_state = "preserved"
+                    except Exception as body_error:
+                        # A broken HTTP error-body stream must not erase the
+                        # already observed failure or break paced recovery.
+                        error_body_state = "unavailable:" + type(body_error).__name__
                 atomic_json(attempt / "status.json", {"state": "failed", "finished_at": now(),
+                    "execution_mode": mode, "trigger": trigger,
+                    "coordinator_task_id": active_task["task_id"] if active_task else None,
                     "requested_model": model, "returned_model": scrub(str(returned_model), key) if returned_model is not None else None,
                     "model_identity_verified": returned_model == model,
                     "finish_reason": finish_reason, "reasoning_characters": reasoning_characters,
-                    "error": scrub(f"{type(error).__name__}: {error}", key), "scientific_decision": "pending"})
+                    "error_body_state": error_body_state,
+                    "error": scrub(f"{type(error).__name__}: {error}", key).replace(base_url, "[REDACTED_ENDPOINT]"),
+                    "scientific_decision": "pending"})
             add_usage(totals, usage)
             reported_usage = None
             if isinstance(usage, dict):
@@ -367,22 +549,31 @@ def main():
                     value = usage.get(field)
                     reported_usage[field] = value if isinstance(value, int) and not isinstance(value, bool) and value >= 0 else None
             atomic_json(attempt / "usage.json", {"reported": reported_usage,
-                "missing_usage_is_unknown": usage is None or any(v is None for v in reported_usage.values())})
-            last_hash, last_research = evidence_hash, time.monotonic()
+                "missing_usage_is_unknown": reported_usage is None or any(v is None for v in reported_usage.values())})
+            last_hash, last_sent_hash, last_research = evidence_hash, sent_hash, time.monotonic()
+            call_in_flight = False
+            activity = "waiting_for_retry" if consecutive_errors else "waiting_for_evidence"
             heartbeat()
-            if consecutive_errors >= 3:
+            if consecutive_errors >= 3 and not args.continuous:
                 stop_reason = "three_consecutive_provider_errors"
                 break
-        remaining = args.max_hours * 3600 - (time.monotonic() - started)
-        if remaining > 0 and calls < args.max_calls:
-            deadline = time.monotonic() + min(args.interval, remaining)
-            while not _STOP and time.monotonic() < deadline:
+        else:
+            activity = ("waiting_for_retry" if consecutive_errors else "waiting_for_pacing" if needs_research
+                        else "waiting_for_evidence")
+            heartbeat()
+        remaining = remaining_seconds()
+        if remaining is None or (remaining > 0 and calls < args.max_calls):
+            deadline = time.monotonic() + (args.interval if remaining is None else min(args.interval, remaining))
+            while not stopping() and time.monotonic() < deadline:
                 time.sleep(min(1, max(0, deadline - time.monotonic())))
             heartbeat()
     state = "stopped"
-    stop_reason = stop_reason or "termination_signal"
+    activity, call_in_flight = "stopped", False
+    stop_reason = stop_reason or ("termination_signal" if _STOP else "stop_file_requested")
     heartbeat()
     atomic_json(output / "status.json", {"state": state, "stop_reason": stop_reason,
+        "schema_version": schema_version, "execution_mode": mode, "continuous": args.continuous,
+        "max_hours": args.max_hours, "max_calls": args.max_calls,
         "exit_code": 1 if stop_reason == "three_consecutive_provider_errors" else 0,
         "finished_at": now(), "provider_call_attempts": calls, "schema_verified_reviews": successful,
         "usage_totals": totals, "scientific_decision": "pending"})

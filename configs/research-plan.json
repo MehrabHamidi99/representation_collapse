@@ -2,7 +2,7 @@
   "schema_version": 1,
   "plan_id": "representation-collapse-v2",
   "created_on": "2026-10-11",
-  "revised_on": "2026-10-12",
+  "revised_on": "2026-10-13",
   "revision_note": "v2 reorders execution around the novelty-audit gates: Gate A analytic/measurement falsification, Gate B minimal trained mechanism study (competence-first GRU/LSTM vector study with preregistered within-support R2 versus R16 contrasts), Gate C theory adding a prediction beyond the affine and commuting nulls, Gate D graph and native transfer. The 351-checkpoint screen of doc/auto/periodicity-research-plan.md section 3E becomes deferred coverage. Existing nodes, statuses, decisions, verified artifacts, approval and resource envelope are unchanged; seven nodes are added. The integrated design is doc/auto/experimental-design-v2.md. This revision authorizes no compute.",
   "purpose": "Calibrate and reproduce graph temporal representation dimension measurements, then test recurrence and modality generality.",
   "execution_mode": "active-session-only",
@@ -419,7 +419,8 @@
       ],
       "verified_artifacts": [],
       "execution_requires": "A new recorded approval envelope; see doc/auto/experimental-design-v2.md section 8.",
-      "note": "Releases Gate C prediction tests and Gate D transfer only on verified artifacts; null or opposite effects release dependents."
+      "note": "All12frozen CPU discovery fits reconciled;2fixed-batch failures,10immediate passes thenR0failures. Noeligiblecheckpoint or body-stage training. Separate prospective prefix-acquisition-v3 preparation precedes retention/confirmation; no v2 rescue.",
+      "current_acquisition_evidence": "doc/auto/local-competence-grid-2026-10-13.md"
     },
     {
       "node_id": "theory_gate_c",
@@ -511,7 +512,7 @@
       "note": "Depends on verified Gate B artifacts and graph reproduction; negative transfer is an admissible completed outcome."
     }
   ],
-  "current_handoff": "doc/october/october12/2026-10-12-progress-report.md",
+  "current_handoff": "doc/october/october13/2026-10-13-progress-report.md",
   "active_allocation": {
     "phase": "qwen-continuation-20261012",
     "cluster": "tamia",
@@ -525,10 +526,12 @@
     "training": false,
     "race": false,
     "note": "Runtime/call caps and live status govern. No recurring allowance; no new GPU allocation.",
-    "current_worker_state": "running_fresh_heartbeat_verified_calls",
+    "current_worker_state": "stopped_three_consecutive_provider_errors",
     "automatic_restart": false,
-    "last_verified_attempts": 10,
-    "last_verified_at_utc": "2026-10-12T17:26:39.313113+00:00"
+    "last_verified_attempts": 19,
+    "last_verified_at_utc": "2026-10-13T08:28:51.910561+00:00",
+    "last_verified_reviews": 16,
+    "finished_at_utc": "2026-10-13T00:36:43.388238+00:00"
   },
   "historical_allocations": [
     {
@@ -574,7 +577,7 @@
     "state": "COMPLETED",
     "exit_code": "0:0"
   },
-  "continuation_note": "Qwen fresh heartbeat and ten verified proposals; bounded metadata observer runs until08:00Asia/Yerevan. GPU-efficiency package adopted with six matching files and150passing tests. Statistics is a reviewed proposal. Canary source/cache staging and exact allocation approval are outstanding; no new GPU work.",
+  "continuation_note": "Original Qwen stopped after16proposals/19attempts/threeprovidererrors;129overnight observations verified. Twelve actual localCPUfits fail acquisition before periodicity, with independent raw/native/oracle review. Seed statistics and matrix-free complete-state tangent engineering accepted; no harm or Floquet claim and no statistics freeze. Owner now authorizes continuous Qwen and native OpenAI fallback. New continuous worker, observer and separate prefix acquisition runner await final source review/freeze/deployment. Mila source/offlineTorch cache ready; no new Slurm jobs.",
   "proposed_next_allocation": {
     "phase": "competence-canary-v2",
     "configuration": "configs/experiments/competence-canary-v2.json",
@@ -583,7 +586,9 @@
     "max_submissions": 4,
     "max_requested_gpu_hours": 2,
     "max_concurrent_gpu_jobs": 2,
-    "scope": "partial seed 0 discovery; no final grid selection or scientific acceptance"
+    "scope": "partial seed 0 discovery; no final grid selection or scientific acceptance",
+    "readiness": "reconsider_after_12_local_fits_failed_before_periodicity",
+    "local_discovery_report": "doc/auto/local-competence-grid-2026-10-13.md"
   },
   "bounded_metadata_observer": {
     "installed": true,
@@ -593,6 +598,33 @@
     "deadline_utc": "2026-10-13T04:00:00Z",
     "submission_authority": false,
     "provider_calls": false,
-    "worker_restart_authority": false
+    "worker_restart_authority": false,
+    "state": "stopped_deadline",
+    "journal_observations": 129,
+    "last_verified_at_utc": "2026-10-13T08:28:51.910561+00:00"
+  },
+  "owner_steering_2026_10_13": {
+    "Qwen_fixed_call_and_runtime_caps_removed": true,
+    "OpenAI_fallback_requested": true,
+    "implemented_fallback_route": "exposed_native_coordinator_and_subagents",
+    "new_cluster_budget": false,
+    "continuous_successor_configuration": "configs/experiments/qwen-day-renewal-2026-10-13.json",
+    "continuous_successor_launched": false
+  },
+  "local_discovery_oct13": {
+    "protocol": "configs/experiments/competence-recovery-v2.json",
+    "source_commit": "1add2b6aba948714673f45f1b7854eff6212833d",
+    "fits": 12,
+    "optimizer_updates": 10200,
+    "eligible_checkpoints": 0,
+    "next_local_protocol": "configs/experiments/prefix-acquisition-discovery-v3.json",
+    "new_protocol_executed": false
+  },
+  "day_native_continuation": {
+    "deadline_utc": "2026-10-13T20:00:00Z",
+    "prepared": true,
+    "armed": false,
+    "route": "existing Codex task follow-up, inherited model",
+    "control": "runs/ops/day-research-loop-control-20261013.json"
   }
 }

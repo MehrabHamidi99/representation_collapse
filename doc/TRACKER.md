@@ -1,10 +1,36 @@
 # Current research state
 
-Updated 2026-10-12. See the [latest notebook entry](october/october12/2026-10-12-progress-report.md),
+Updated 2026-10-13. See the [latest notebook entry](october/october13/2026-10-13-progress-report.md),
+the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
-- **Overnight continuation — 2026-10-12, current.** Fresh heartbeat at 17:00 UTC
+- **Daytime research — 2026-10-13, current.** The overnight audit verifies
+  16 Qwen proposals from 19 attempts; three provider errors stopped the original
+  worker at 00:36 UTC. Its last valid response was 23:25 UTC on October 12.
+  The observer completed 129 snapshots with no metadata issues. Full-run usage
+  is unknown; successful responses report an 88,650-token subtotal.
+  Today, **all twelve frozen local CPU discovery fits ran**: 10,200 updates;
+  two fixed-batch failures and ten immediate-task passes followed by R0 failures.
+  No fit reached a periodic body or eligible checkpoint. Independent reduction
+  and native/oracle replay accept this scoped acquisition failure.
+  The [full grid](auto/local-competence-grid-2026-10-13.md) redirects work toward
+  prefix acquisition, before periodicity or unchanged GPU canary escalation.
+  Seed statistics and complete-state matrix-free tangent operators passed
+  independent review, including two repaired numerical issues. All **239 tests pass**, including reviewed continuous-mode, observer and
+  prefix-runner additions; inference remains unfrozen.
+  Native cluv 0.1.5 staged clean 1add2b6 on Mila and verified a fresh locked
+  offline Torch environment. Mila's queue was empty at 08:18 UTC; fresh Alliance
+  queues were unavailable after an intermittently restored Tamia route. The
+  owner-supplied shared compute allocation **11228391** now verifies Tamia3 and
+  original Qwen PID absence at 09:21 UTC. Shared model-dispatch migration remains
+  with its owner. No new Slurm allocation or GPU telemetry. The owner explicitly removes fixed Qwen
+  call/runtime caps and requests OpenAI fallback. A new evidence-driven continuous
+  leaf and the separately frozen local prefix comparison are being implemented.
+  The old run is preserved; no continuous successor is launched yet.
+  [Day plan](auto/day-research-2026-10-13.md),
+  [structured status](auto/research-status-2026-10-13.json).
+- **Overnight continuation — 2026-10-12, historical.** Fresh heartbeat at 17:00 UTC
   and nine completed model-identity-verified proposal calls confirm continued Qwen
   activity: nine valid reviews, zero recorded errors, 49,965 reported tokens. The
   same original worker and 24-hour/24-attempt ceiling remain; no restart occurred.

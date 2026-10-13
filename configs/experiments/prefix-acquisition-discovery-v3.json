@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "protocol_id": "prefix-acquisition-discovery-v3",
+  "status": "frozen_local_discovery_contract_pending_code_acceptance",
+  "frozen_before_execution": true,
+  "execution_started": false,
+  "confirmation": false,
+  "question": "At equal R0 training exposure, does immediate-WRITE pretraining transfer help acquisition across the sixteen-WRITE prefix relative to fresh initialization?",
+  "rationale": "All twelve frozenv2 CPU fits fail before periodic distractor stages; preservev2 outcomes.",
+  "models": [
+    "gru",
+    "lstm"
+  ],
+  "tasks": [
+    "categorical",
+    "continuous"
+  ],
+  "conditions": [
+    "fresh_seed0",
+    "immediate_step500_transfer_reset_optimizer"
+  ],
+  "seed": 0,
+  "learning_rate": 0.001,
+  "warm_start_checkpoints": [
+    {
+      "model": "gru",
+      "task": "categorical",
+      "checkpoint_relative_to_project": "runs/day-competence-20261013/gru-categorical-s0-lr001/checkpoints/gru-categorical-seed0-lr0.001-step-000500.pt",
+      "checkpoint_sha256": "604372680d2e8bf67ce2a321f0163007276f30b27042fc925d691912b5fa9d24",
+      "source_commit": "1add2b6aba948714673f45f1b7854eff6212833d",
+      "step": 500
+    },
+    {
+      "model": "gru",
+      "task": "continuous",
+      "checkpoint_relative_to_project": "runs/day-competence-20261013/gru-continuous-s0-lr001/checkpoints/gru-continuous-seed0-lr0.001-step-000500.pt",
+      "checkpoint_sha256": "17ffdd794e036acec979022110566a32a80a6991e918207a145da30ed79744e8",
+      "source_commit": "1add2b6aba948714673f45f1b7854eff6212833d",
+      "step": 500
+    },
+    {
+      "model": "lstm",
+      "task": "categorical",
+      "checkpoint_relative_to_project": "runs/day-competence-20261013/lstm-categorical-s0-lr001/checkpoints/lstm-categorical-seed0-lr0.001-step-000500.pt",
+      "checkpoint_sha256": "38bdc15fd3d5b941def08ded446d47d5bc5d820b65637ef30f93ecd1bb3b8db2",
+      "source_commit": "1add2b6aba948714673f45f1b7854eff6212833d",
+      "step": 500
+    },
+    {
+      "model": "lstm",
+      "task": "continuous",
+      "checkpoint_relative_to_project": "runs/day-competence-20261013/lstm-continuous-s0-lr001/checkpoints/lstm-continuous-seed0-lr0.001-step-000500.pt",
+      "checkpoint_sha256": "bf010cd5e04471baaccfd586490fd76066f32a8a80b9ac0273951254e280c86f",
+      "source_commit": "1add2b6aba948714673f45f1b7854eff6212833d",
+      "step": 500
+    }
+  ],
+  "dimensions": {
+    "hidden_size": 128,
+    "input_bottleneck": 64,
+    "batch_size": 32
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "new_optimizer_for_each_condition": true
+  },
+  "task": "unchanged v2 full_prefix_r0:16 ordered WRITEs, required coordinates0..7, nuisance8..15, terminal QUERY, zero distractorbody",
+  "device": "cpu",
+  "cpu_threads": 1,
+  "precision": "float32; deterministic_algorithms; CUDA/cuDNN TF32off; matmul_precision highest",
+  "training_stream_seed": 2026101301,
+  "training_stream_matching": "identical synthetic R0 draws within each model/task condition pair; exact same manifest input/target hashes recorded; no reuse of validation draws",
+  "validation_sampling_seed": 20001,
+  "validation_episodes_per_coordinate_per_arm": 128,
+  "required_coordinates": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "categorical_accuracy_gate": 0.95,
+  "continuous_population_normalized_mse_gate": 0.05,
+  "population_variance": 0.3333333333333333,
+  "evaluation_every_updates": 500,
+  "updates_per_fit": 5000,
+  "maximum_fits": 8,
+  "maximum_total_optimizer_updates": 40000,
+  "maximum_total_wall_seconds": 1200,
+  "endpoint_policy": "fixed5000 R0 updates; all scheduled validations retained; firstpassing step descriptive only; no early-success stop or best-checkpoint substitution",
+  "stop_on": [
+    "nonfinite training/evaluation",
+    "1200second overalldeadline",
+    "malformed source/checkpoint/manifest/precision identity"
+  ],
+  "timeout_policy": "explicit incomplete/censored fit; no gate failure fabrication, replacement or extension",
+  "freeze_gates": [
+    "independent source/chronology/unit review",
+    "commit configuration and implementation before training",
+    "pin source and config hashes",
+    "persist fresh validation inputs/targets/hashes before optimizerstep0",
+    "pin complete train-stream hash provenance before fitting",
+    "verify exact warmstep500 hashes"
+  ],
+  "statistical_units": "one initialization/discovery seed; matched fresh/transfer conditions, LR choices and query coordinates are not independent trained replications",
+  "native_measurements": "uninterrupted terminalQUERY scores; full GRU h/LSTM h+c phase captures; independent targetoracle and checkpoint replay",
+  "selection": "no heldout test/checkpoint or LR selection; fixed endpoint discovery metrics",
+  "prohibited_inferences": [
+    "periodicitycausalharm",
+    "architectureimpossibility",
+    "crossmodalreplication",
+    "certifiedFloquet",
+    "populationcompetenceguarantee"
+  ],
+  "cluster_submissions": 0,
+  "provider_calls": 0,
+  "frozen_at_utc": "2026-10-13T09:12:55.928430+00:00",
+  "freeze_scope": "prospective scientific settings and local budget; production requires independent code review and immutable source receipt"
+}

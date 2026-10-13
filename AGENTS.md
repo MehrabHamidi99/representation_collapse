@@ -13,7 +13,15 @@ Mehrab Hamidi. Remote: `git@github.com:MehrabHamidi99/representation_collapse.gi
    `skills/experiment-loop/SKILL.md`.
 4. Before cluster operations read `skills/project-ops/SKILL.md` and
    `doc/auto/compute-plan.md`; recheck the actual scheduler and cluv version.
-5. For GPU admission, scaling or utilization diagnosis, read the complete
+5. For shared compute-hosted coordination, read
+   `skills/compute-autoresearch/SKILL.md` and its workflow, then verify the live
+   allocation/SETUP and register ownership. The owner granted use of existing
+   Mila job 11228391 on 2026-10-13. Enter via `srun --jobid ... --overlap`,
+   share its Slurm-owned Tamia socket, and leave shared infrastructure/model
+   dispatch migration to its owner. Its two CPUs/4 GiB/zero GPUs support compact
+   coordination only; no training/weights/heavy builds. Other project model
+   limits and journals do not override this project's explicit Oct13 policy.
+6. For GPU admission, scaling or utilization diagnosis, read the complete
    `skills/gpu-efficiency/SKILL.md` and `GUIDELINES.md`. Shared copies are at
    `/Users/mehrabhamidi/.agents/skills/gpu-efficiency/` locally and
    `/home/mila/m/mehrab.hamidi/.agents/skills/gpu-efficiency/` on Mila. Existing
@@ -57,7 +65,14 @@ The owner subsequently authorized initial cluv launches and an actual bounded
 Qwen cluster research worker on 2026-10-11. Current execution evidence and
 resource limits are in the tracker, dated notebook and ignored approval record.
 The Qwen leaf worker writes proposals; it cannot submit work or accept scientific
-claims. No paid model-service fallback is approved.
+claims. On 2026-10-13 the owner explicitly removed fixed Qwen call/runtime caps
+and requested OpenAI models when Qwen encounters problems. A new continuous
+worker may use evidence-driven calls with retry backoff, preserving the already
+approved project-excerpt scope and credential handling. Earlier bounded runs and
+their consumed attempts remain immutable. Use currently exposed native OpenAI
+agents as the fallback; do not infer credentials or entitlement to an unavailable
+external API. This authorization does not increase cluster allocation budgets.
+Record the actual launch, source, stop control, health and model participation.
 Do not import authorization, provider credentials, or GPU-hour limits from
 Skill Inference or another project. Carry out local development, literature
 research, read-only cluster inspection, and preparation autonomously.

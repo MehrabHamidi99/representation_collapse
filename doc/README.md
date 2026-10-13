@@ -37,11 +37,13 @@ Evidence records: [initial-phase report](auto/initial-phase-report.md),
 [original completion status](auto/periodicity-analysis-status.json),
 [independent numerical reduction and plot](auto/periodicity-independent-results.md),
 [frozen reduction protocol](auto/periodicity-independent-reduction-v1.md),
-and [current research/worker status](auto/research-status-2026-10-12.json).
+[local competence grid](auto/local-competence-grid-2026-10-13.md),
+and [current research/worker status](auto/research-status-2026-10-13.json).
 
 Operations: [compute plan](auto/compute-plan.md),
 [cluster access](auto/cluster-access.md), [agent protocol](auto/agent-protocol.md),
-[Qwen worker](auto/qwen-worker.md).
+[Qwen worker](auto/qwen-worker.md),
+[daytime research plan](auto/day-research-2026-10-13.md).
 
 ## Notebook convention
 

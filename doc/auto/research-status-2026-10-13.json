@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "updated_at_utc": "2026-10-13T09:24:10.148741+00:00",
+  "date": "2026-10-13",
+  "research_has_run": true,
+  "uninterrupted_overnight_research_confirmed": false,
+  "qwen": {
+    "observed_at_utc": "2026-10-13T08:28:51.910561+00:00",
+    "state": "stopped_three_consecutive_provider_errors",
+    "last_successful_proposal_utc": "2026-10-12T23:25:39.016686+00:00",
+    "stopped_at_utc": "2026-10-13T00:36:43.388238+00:00",
+    "attempts": 19,
+    "valid_model_identity_verified_proposals": 16,
+    "failed_attempts": [
+      17,
+      18,
+      19
+    ],
+    "usage_total": null,
+    "successful_call_reported_token_subtotal": 88650,
+    "subtotal_is_full_run_usage": false,
+    "terminal_verified": true,
+    "original_host_process_absence_verified": true,
+    "restart_performed": false,
+    "original_lease_deadline_utc": "2026-10-13T09:10:30.196748Z",
+    "original_lease_max_attempts": 24,
+    "renewal": "owner explicitly authorizes continuous successor and native OpenAI fallback; implementation and transport reconciliation pending",
+    "renewal_configuration": "configs/experiments/qwen-day-renewal-2026-10-13.json",
+    "accepted_scientific_claims": 0,
+    "original_host_process_absence_verified_at_utc": "2026-10-13T09:21:19Z"
+  },
+  "overnight_observer": {
+    "status_read": "read",
+    "state": "stopped",
+    "status_sha256": "017e57ae3357bcf87ee35e3e44dbe505b87fe532e6051aa4bd16c635b18c28f1",
+    "pid_exists_on_launch_host": false,
+    "observations": 129,
+    "first_at_utc": "2026-10-12T17:16:36.817908+00:00",
+    "last_at_utc": "2026-10-13T03:56:36.843606+00:00",
+    "max_observation_gap_seconds": 300.000306,
+    "worker_state_counts": {
+      "worker_heartbeat_fresh_process_unverified": 89,
+      "worker_stopped_failure": 40
+    },
+    "issue_observation_counts": {},
+    "journal_sha256": "e8677ba9def6377f8e883a42fd1bb1f37b534b043accf061ac8b5706acb4a52d",
+    "last_observed_worker_calls": 19
+  },
+  "local_discovery": {
+    "source_commit": "1add2b6aba948714673f45f1b7854eff6212833d",
+    "fits_completed": 12,
+    "trained_seed_ids": [
+      0
+    ],
+    "learning_rates": [
+      0.0005,
+      0.001,
+      0.003
+    ],
+    "optimizer_updates": 10200,
+    "process_wall_seconds": 87.177716904,
+    "fixed_batch_failures": 2,
+    "immediate_pass_then_R0_failure": 10,
+    "periodic_body_training_reached": false,
+    "eligible_checkpoints": 0,
+    "gpu_jobs": 0,
+    "held_out_evaluation": false,
+    "report": "doc/auto/local-competence-grid-2026-10-13.md",
+    "evidence_scope": "localCPU discovery acquisition failures; no periodicity harm or architecture impossibility",
+    "aggregate_receipt_sha256": "be50cd921497f78cebbaf978c051e5ca042cf69730df9a39890e0041d125a986"
+  },
+  "implementation": {
+    "seed_statistics": "implemented; inference assumptions and protocol remain unfrozen",
+    "matrix_free_tangent": "implemented; tiny CPU full-state fixtures only, partial singular-pair estimates",
+    "prefix_acquisition_v3": "independently reviewed and prospective configuration frozen; production not yet executed",
+    "independent_review": {
+      "state": "accepted scoped engineering and negative acquisition evidence",
+      "receipt_sha256": "1da57ad3cea1f60907ece9d07d0af2ccf09a5b1d17e9ab043ecdaf1448479b06",
+      "unresolved_implementation_blockers": 0
+    },
+    "continuous_qwen_and_monitor": "independent review accepted; deployment pending shared compute route readiness",
+    "continuation_review_sha256": "426a6c36a077b59e04dc50a2a46d90b91595aee28ea3320cb8769c6ffaa1c86e"
+  },
+  "tests": {
+    "tests_passed": 239,
+    "skipped": 0,
+    "seconds": 17.208,
+    "log_sha256": "dbf0dae301f94a635975dac5259677751ec40c2044bafe0b1a2c861a32b5166f",
+    "command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v",
+    "initial_environment_failure_preserved": "runs/ops/day-source-tests-unset-pythonpath-20261013.log"
+  },
+  "compute": {
+    "new_slurm_submissions": 0,
+    "mila_source_staged_via_native_cluv": true,
+    "mila_source_commit": "1add2b6aba948714673f45f1b7854eff6212833d",
+    "mila_fresh_offline_torch_environment_verified": true,
+    "cluv_version_on_verified_mila_controller": "0.1.5",
+    "mila_matching_queue_empty_at_utc": "2026-10-13T08:18:55.925966+00:00",
+    "alliance_route_from_mila": "no_reusable_masters_at_passive_probe",
+    "alliance_current_queues": null,
+    "tamia": "Duo restored for08:28audit; shared route subsequently unavailable; isolated master not established",
+    "gpu_efficiency_telemetry": null,
+    "unchanged_four_fit_gpu_canary": "unapproved_unlaunched; reconsider after failed local grid",
+    "shared_control_allocation_user_authorized": {
+      "job_id": 11228391,
+      "node": "cn-f003.server.mila.quebec",
+      "cpus_total": 2,
+      "memory_gib": 4,
+      "gpus": 0,
+      "purpose": "compact coordination/model clients; no substantial tests/training/weights",
+      "live_verification": "verified existing RUNNING job and fresh supervisor heartbeat; Tamia destination is actualtamia3",
+      "model_dispatch_migration_owner": "Radius root; leave shared setup untouched",
+      "model_dispatch_readiness": "SETUP migration notyetverified/active; owner coordination requested; do not duplicate"
+    }
+  },
+  "day_continuation": {
+    "deadline_utc": "2026-10-13T20:00:00Z",
+    "state": "prepared_not_yet_armed",
+    "native_model": "inherit_current_task",
+    "maximum_new_slurm_submissions_without_new_approval": 0,
+    "new_qwen_lease_without_explicit_answer": false,
+    "control_record": "runs/ops/day-research-loop-control-20261013.json",
+    "continuous_qwen_owner_authorized": true
+  },
+  "harmful_collapse_claim_accepted": false,
+  "floquet_claim_accepted": false,
+  "confirmation_protocol_frozen": false
+}
