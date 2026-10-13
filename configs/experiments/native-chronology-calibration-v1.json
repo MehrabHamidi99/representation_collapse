@@ -1,0 +1,89 @@
+{
+  "canonical_only_admitted": false,
+  "chunk_sizes": [
+    64,
+    32,
+    16,
+    8,
+    1
+  ],
+  "core_call_registry": {
+    "N1": 368,
+    "N2": 320,
+    "N3": 80,
+    "known_regression": 2944,
+    "primary": 116288
+  },
+  "cpu_threads": 1,
+  "device": "cpu",
+  "dimensions": {
+    "encoder": 64,
+    "hidden": 128
+  },
+  "dtype_order": [
+    "float64",
+    "float32"
+  ],
+  "histories": 64,
+  "initialization_seeds": [
+    0,
+    17
+  ],
+  "input_seeds": [
+    30013,
+    30017
+  ],
+  "known_checkpoint": {
+    "path": "runs/query-acquisition-v5-20261013/experiment/gru-categorical/censored-current-step-004000.pt",
+    "sha256": "b57b645f80a8e85a1743385e01df8075706904e122a57923b6216310365f3788"
+  },
+  "known_failed_source": "f766df5e792c8a6dedaa3ea17f2c92fd630f067d",
+  "known_inputs": {
+    "path": "runs/query-acquisition-v5-20261013/experiment/prefit/validation-categorical.npz",
+    "sha256": "5f86500b5378bde6a179074a2c1ee4d682ea1989b6e185020843ac452ddee877"
+  },
+  "maximum_core_calls": 120000,
+  "maximum_wall_seconds": 600,
+  "models_tasks": [
+    [
+      "gru",
+      "categorical"
+    ],
+    [
+      "gru",
+      "continuous"
+    ],
+    [
+      "lstm",
+      "categorical"
+    ],
+    [
+      "lstm",
+      "continuous"
+    ]
+  ],
+  "proposal_review_sha256": "ec445dea80061e72446881ac838d30f3621aed441952f76a68cf15a321575c3f",
+  "proposal_sha256": "9438ec2626b30b3f85aca2f784ed5d9d16bc7af18ccc6ad6216181d36cd83f32",
+  "protocol_id": "native-chronology-calibration-v1",
+  "repeats": 2,
+  "schema_version": 1,
+  "scientific_acceptance": false,
+  "source_pins": {
+    "src/representation_collapse/native_state.py": "eeadc7a7332045c6209c6b823af2ec35740dbe3eb662dc0de25755e82041fdeb",
+    "src/representation_collapse/pilot.py": "0aa1c337ffd0ab576056e70b4ecb0dfeee073c1d3453e87389447f77f1dfbbd3",
+    "src/representation_collapse/vector_task.py": "df3843330ac9c59205823c8d55868e7878e903c0065c5af8bc89d1308243a297"
+  },
+  "targets_read": false,
+  "tolerances": {
+    "float32": {
+      "atol": 1e-06,
+      "rtol": 1e-05
+    },
+    "float64": {
+      "atol": 1e-12,
+      "rtol": 1e-10
+    }
+  },
+  "torch_version": "2.6.0",
+  "training_authorized": false
+}
