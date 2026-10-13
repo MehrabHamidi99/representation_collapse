@@ -22,7 +22,8 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   **October 14 08:55:56 UTC** (12:55 Yerevan); no replacement allocation is automatic.
   Native OpenAI coordinator/subagents prepare and review independent work.
   The project's five-minute observer is running outside Qwen evidence roots;
-  two observations reconcile counters/usage without metadata issues, ending20:00UTC.
+  a fresh11:17UTC certificate verifies15 observations and live owned processes
+  without metadata issues; the observer ends20:00UTC.
   Today **32 actual local CPU fits / 110,200 optimizer updates** completed:
   twelve v2 discovery fits fail before body training, and eight fixed 5,000-update
   v3 fits fail full-coordinate competence despite five passing coordinate scores.
@@ -48,7 +49,7 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   No new Slurm allocation or GPU telemetry. The unchanged GPU canary is unapproved
   and should be reconsidered after the acquisition failures.
   The venue-neutral manuscript now includes the verified zero-body audit and
-  endpoint figure: seven-page main text, seventeen pages including appendices.
+  endpoint figures: seven-page main text, eighteen pages including appendices.
   [Day plan](auto/day-research-2026-10-13.md),
   [structured status](auto/research-status-2026-10-13.json).
 - **Overnight continuation — 2026-10-12, historical.** Fresh heartbeat at 17:00 UTC

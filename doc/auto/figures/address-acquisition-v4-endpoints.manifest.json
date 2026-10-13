@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "kind": "descriptive_singleton_acquisition_figure",
+  "input_sha256": "528db77aa62dc3b45a9f61f1fc76ae4b325d07466fd15cc2abc7a50b466da742",
+  "generator_sha256": "bc8c900643295259b480a96dd8cd3007e9089c660cbb7e68b724af82b12ecdae",
+  "matplotlib": "3.11.2",
+  "outputs": {
+    "address-acquisition-v4-endpoints.pdf": "8da5b4e0cc5822e7abe473c9b826e1621ecb2967ef558b26a1e9c5ba4abba22d",
+    "address-acquisition-v4-endpoints.png": "e019bcb0639208c69a87e13d1ba26539ae889044c68775585bccbb638ba78da3"
+  },
+  "source_commit": "ab96cad9dece7d881f04065431c0d102f7665882",
+  "independent_result_review_receipt_sha256": "6d0ef52b2c33215cf6fccc28adb19cb4c8d80936f018dd1098f83d82f9f0dda7",
+  "claim_scope": "eight singletonq7/q15 endpoint passes and four singletonq0 failures; paired supported baseline errors only",
+  "plotted_values": {
+    "gru/categorical/0": {
+      "singleton": 0.09375,
+      "pinned_baseline": 0.1640625
+    },
+    "gru/categorical/7": {
+      "singleton": 1.0,
+      "pinned_baseline": 0.234375
+    },
+    "gru/categorical/15": {
+      "singleton": 1.0,
+      "pinned_baseline": null
+    },
+    "gru/continuous/0": {
+      "singleton": 1.1711400921855342,
+      "pinned_baseline": 0.7111430559990837
+    },
+    "gru/continuous/7": {
+      "singleton": 4.801981406876004e-05,
+      "pinned_baseline": 0.018950535971208986
+    },
+    "gru/continuous/15": {
+      "singleton": 3.1023746891815855e-05,
+      "pinned_baseline": null
+    },
+    "lstm/categorical/0": {
+      "singleton": 0.046875,
+      "pinned_baseline": 0.0625
+    },
+    "lstm/categorical/7": {
+      "singleton": 1.0,
+      "pinned_baseline": 0.0625
+    },
+    "lstm/categorical/15": {
+      "singleton": 1.0,
+      "pinned_baseline": null
+    },
+    "lstm/continuous/0": {
+      "singleton": 1.1690305789976367,
+      "pinned_baseline": 1.1674289744907125
+    },
+    "lstm/continuous/7": {
+      "singleton": 0.00028101463434061503,
+      "pinned_baseline": 0.9573806234550003
+    },
+    "lstm/continuous/15": {
+      "singleton": 1.5860451319358934e-05,
+      "pinned_baseline": null
+    }
+  },
+  "validation_sampling_seed": 20003,
+  "task_specific_shared_histories": 256,
+  "histories_per_task": 128,
+  "training_initialization_seeds": [
+    0
+  ],
+  "no_trained_seed_uncertainty_estimated": true,
+  "baselines": "pinned v3 fresh endpoints, reevaluated without fitting; QUERY15 outside original selection support",
+  "limits": "address, lag, known future query and required load vary jointly; separate singleton weights are not one multi-query model"
+}

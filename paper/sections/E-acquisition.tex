@@ -2,7 +2,7 @@
 \label{app:acquisition}
 
 The original pilots do not distinguish acquisition, retention and readout.
-Two subsequent, separately frozen local CPU discovery protocols test native
+Three subsequent, separately frozen local CPU discovery protocols test native
 recall before a distractor body is introduced. Both use seed 0, GRU hidden
 state 128 or LSTM complete state $[h,c]$ of dimension 256, encoder width 64,
 batch size 32 and native FP32. A full-prefix $R=0$ episode has sixteen ordered
@@ -67,3 +67,48 @@ hashes, acceptance scope and figure provenance appear in
 No held-out confirmation, periodicity harm, trained-seed population claim,
 architectural impossibility, empirical equivalence or Floquet certification
 is established by either discovery protocol.
+
+\paragraph{Predictable singleton queries reveal conditional acquisition success.}
+A third protocol keeps the sixteen ordered WRITEs and trains twelve separate
+fresh seed-0 models: GRU/LSTM $\times$ categorical/continuous $\times$ one
+fixed QUERY address $\{0,7,15\}$. All fits complete 5,000 updates with the
+same architecture, optimizer and base WRITE streams as the fresh-prefix
+comparison. Only the terminal selector and target change. New validation
+seed 20003 supplies 128 shared histories per task, reused across models and
+addresses; duplicated $R=0$ arms are the same observations.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\linewidth]{../doc/auto/figures/address-acquisition-v4-endpoints.pdf}
+\caption{\textbf{Singleton success does not establish joint memory competence.}
+Blue points show every fixed-endpoint singleton model. All address-7 and
+address-15 fits pass; all address-0 fits fail. Orange crosses reevaluate the
+pinned fresh-prefix models on the same new histories at addresses 0 and 7,
+without retraining. No primary baseline is supplied at address 15, outside
+their original trained QUERY support. Continuous error uses a logarithmic
+axis and the fixed population variance $1/3$; reference lines retain the
+conventions of \cref{fig:prefix-acquisition}. Markers are offset horizontally
+for visibility. There is one training seed and no trained-seed uncertainty
+estimate. These are different trained weights, with no distractor body.}
+\label{fig:singleton-acquisition}
+\end{figure}
+
+Categorical accuracies at addresses 0/7/15 are 0.09375/1/1 for GRU and
+0.046875/1/1 for LSTM. Continuous normalized MSE is
+1.171140092/0.000048020/0.000031024 for GRU and
+1.169030579/0.000281015/0.000015860 for LSTM.
+No address-0 scheduled checkpoint passes. The eight successful weights
+cannot be combined into one model retaining all eight required items.
+Address identity is confounded with 15/8/0 subsequent WRITEs, while fixed
+future QUERY changes both required load and selection uncertainty.
+The results therefore do not identify a pure lag, overwriting, capacity,
+binding or credit-assignment effect.
+
+This source is \hash{ab96cad9dece7d881f04065431c0d102f7665882}; the
+configuration is \path{configs/experiments/address-acquisition-discovery-v4.json}.
+Independent reduction reconstructs all recorded streams and 60,000 updates,
+recomputes every scheduled score and supported paired error, and directly
+replays a 24-checkpoint/eight-baseline subset. Complete endpoints and paired
+contrasts appear in \path{doc/auto/address-acquisition-v4-results.json}.
+The conditional singleton finding is accepted within this local schedule;
+original eight-coordinate eligibility and periodicity harm remain unestablished.

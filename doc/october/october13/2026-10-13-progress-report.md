@@ -274,3 +274,32 @@ Compute and QUERY-supervision exposure differ despite identical expected loss.
 No newGPU/allocation/held-out confirmation is admitted. Native all-day work
 will resume through one guarded30-minute callback to the existing Codex task;
 actual runtime registration remains separate from this prospective source record.
+
+## 11:30 UTC — singleton figure, shared staging and native wake registration
+
+The accepted v4 scalar dossier now reproduces a four-panel figure retaining all
+twelve singleton endpoints and the eight supported pinned-baseline reevaluations.
+The categorical axis reports accuracy; continuous population-normalized error
+uses a log scale. QUERY15 has no primary baseline, and different singleton
+weights do not confer joint eight-address competence. Two generator executions
+produce identical PDF/PNG bytes. The manuscript incorporates this finding in
+the main results and acquisition appendix; final TeX has no unresolved or
+overfull warnings, seven-page main text and18pages total. Changed pages6/16/17
+were rendered and visually inspected. Source snapshots remain untouched.
+
+GitHub main is verified at a36cae812490af89f57843771e7aabae3aab0781 for the
+reviewed worker repair and accepted v4 results. Native cluv staging of that
+source is complete in the existing Mila allocation. The original worker,
+observer and guard remain live while exact replacement commands are prepared;
+no new allocation, model call, STOP or replacement has occurred in that stage.
+The11:17UTC process certificate reports six schema-valid replies, zero errors
+and29,862tokens, plus15monitor observations, all in job11228391.
+
+A single native30-minute callback is now actually armed in yielded tool cell469
+for11:58:36UTC. Registration receiptSHA256
+6ba1e70fb3ab624e6dfc87f8fced9d61a906b75201dc855bd60b1712bde9112e
+binds the existing project task, unique nonce and20:00UTC daytime deadline.
+The852-byte prompt requires review/freeze before v5 fitting, project-only
+Qwen rollover and rearming one wake after meaningful work. The callback has
+not yet fired or submitted its next task. Its app/server/tool-cell availability
+is a dependency; registration does not certify future research execution.

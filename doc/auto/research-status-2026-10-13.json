@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-10-13T11:19:50.225306+00:00",
+  "updated_at_utc": "2026-10-13T11:29:10.137804+00:00",
   "date": "2026-10-13",
   "research_has_run": true,
   "uninterrupted_overnight_research_confirmed": false,
@@ -88,7 +88,8 @@
       "review_receipt_sha256": "cffa0c901905510f26785c9c50b66befc94a16ec0c103baf9304566714c922ea",
       "deployed": false,
       "live_answer_quality_improvement_verified": false,
-      "quality_report": "doc/auto/qwen-proposal-quality-2026-10-13.md"
+      "quality_report": "doc/auto/qwen-proposal-quality-2026-10-13.md",
+      "committed_source": "a36cae812490af89f57843771e7aabae3aab0781"
     }
   },
   "tests": {
@@ -133,7 +134,7 @@
   },
   "day_continuation": {
     "deadline_utc": "2026-10-13T20:00:00Z",
-    "state": "active native research turn; one-shot follow-up registration remains pending",
+    "state": "active native research turn; single30minute native callback armed",
     "native_model": "inherit_current_task",
     "maximum_new_slurm_submissions_without_new_approval": 0,
     "new_qwen_lease_without_explicit_answer": false,
@@ -143,7 +144,11 @@
       "implement/review admitted query-averaging discovery",
       "roll over Qwen to reviewed task-binding source and test live relevance",
       "prepare matched target-position and nuisance controls without main-gate relaxation"
-    ]
+    ],
+    "next_wake_at_utc": "2026-10-13T11:58:36.153955+00:00",
+    "registration_receipt_sha256": "6ba1e70fb3ab624e6dfc87f8fced9d61a906b75201dc855bd60b1712bde9112e",
+    "runtime_dependency": "existing native app/server and yielded tool cell remain available",
+    "future_wake_completed": false
   },
   "harmful_collapse_claim_accepted": false,
   "floquet_claim_accepted": false,
@@ -170,7 +175,7 @@
   },
   "continuous_qwen": {
     "state": "running",
-    "observed_at_utc": "2026-10-13T10:12:05.575592+00:00",
+    "observed_at_utc": "2026-10-13T11:17:13.388540+00:00",
     "started_at_utc": "2026-10-13T09:56:09.064521+00:00",
     "cluster": "mila",
     "host": "cn-f003.server.mila.quebec",
@@ -208,14 +213,15 @@
       "wrapper_pid": 3248325,
       "interval_seconds": 300,
       "deadline_utc": "2026-10-13T20:00:00Z",
-      "observations_verified": 2,
+      "observations_verified": 15,
       "issues": [],
       "full_completed_history_observed_at_check": true,
       "observed_usage_totals_reconciled": true,
       "previous_call_file_immutability_rescanned": false,
       "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
       "receipt_sha256": "8f2de43637577cf6b67e30dd415b6c9c32f7b8ba496d5ac3f8b2bcf742fd9e46",
-      "report": "doc/auto/qwen-continuous-monitor-deployment-2026-10-13.md"
+      "report": "doc/auto/qwen-continuous-monitor-deployment-2026-10-13.md",
+      "last_observed_at_utc": "2026-10-13T11:17:05.577438+00:00"
     },
     "coordinator_task_events_consumed": 4,
     "scientific_task_answers_accepted": 0,
@@ -226,8 +232,11 @@
       "stop_at_utc": "2026-10-14T08:52:40Z",
       "purpose": "graceful exit before physical allocation expires; no fixed model-call cap or replacement job",
       "only_own_leaf_STOP": true,
-      "receipt_sha256": "26fc2fe7f4cfd5d8d919c68cf02c9b1f1fa6d83f5b1cb1ce651047be119c5241"
-    }
+      "receipt_sha256": "26fc2fe7f4cfd5d8d919c68cf02c9b1f1fa6d83f5b1cb1ce651047be119c5241",
+      "fresh_certificate_at_utc": "2026-10-13T11:17:13.388540+00:00"
+    },
+    "fresh_process_certificate_sha256": "e1f521eac5d5f381ecea0a371438395373087063fb8d551bb661bb99c2262d0f",
+    "rollover": "reviewed source committed/pushed; staging admitted, old-client controls/actualreplacement notyetexecuted"
   },
   "address_acquisition_v4": {
     "state": "independently_verified_scoped_result_accepted",

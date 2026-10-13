@@ -2,11 +2,13 @@
 
 **When Does Repetition Erase Memory? Identifiability Limits for Recurrent-State Collapse**
 
-A compact, venue-neutral ML manuscript with a seven-page main text and 17 pages
+A compact, venue-neutral ML manuscript with a seven-page main text and 18 pages
 including references and detailed appendices. It replaces the earlier 35-page research-program
 skeleton. The scientific scope is a diagnostic framework: analytic ordering
 nulls and counterexamples, a controlled experimental design, and a verified
-four-cell pilot audit plus twenty local acquisition fits. It does not claim successful learned-memory erasure,
+four-cell pilot audit plus thirty-two local acquisition fits. Eight singleton
+models pass their individual gates; the original joint competence requirement
+remains unmet. It does not claim successful learned-memory erasure,
 an empirical equivalence result, or a new general Floquet theorem.
 
 ## Read and build
@@ -22,6 +24,7 @@ From the repository root:
 uv sync --locked --all-groups
 PYTHONPATH=src .venv/bin/python code/analysis/make_paper_figures.py
 .venv/bin/python code/analysis/summarize_prefix_acquisition.py
+.venv/bin/python code/analysis/summarize_address_acquisition.py
 cd paper
 latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 ```
@@ -58,6 +61,11 @@ inherited manuscripts is retained in `doc/auto/source-inventory.md` and
   coordinate at eight fixed 5,000-update endpoints, from the independently
   verified scalar summary. All eight full-coordinate gates fail; five
   coordinate scores pass. No independent training-seed interval is estimated.
+- `../doc/auto/figures/address-acquisition-v4-endpoints.pdf`: all twelve fixed
+  singleton-query endpoints with paired pinned-prefix baseline reevaluations
+  at addresses 0 and 7. All eight address-7/address-15 gates pass; four
+  address-0 gates fail. Different singleton weights do not establish joint
+  memory, and address, lag and required load change together.
 
 The figure script creates the PDFs, PNG previews, `figures/manifest.json`
 and `sections/D-pilot-details.tex`. Edit the script to change generated tables.

@@ -163,3 +163,13 @@ The [committed scalar dossier](address-acquisition-v4-results.json) preserves
 all endpoints, failed fits and supported per-history baseline contrasts.
 No main eight-coordinate eligibility, periodicity harm, pure lag/capacity
 attribution, population guarantee or Floquet claim is accepted.
+
+## Reproducible endpoint figure
+
+[The plotted endpoints and pinned baseline reevaluations](figures/address-acquisition-v4-endpoints.pdf)
+are generated from the accepted scalar dossier by
+[summarize_address_acquisition.py](../../code/analysis/summarize_address_acquisition.py).
+All twelve fits are retained; continuous normalized error uses a log scale.
+Address15 has no primary baseline. Points represent separate trained weights
+and shared validation histories, without trained-seed uncertainty intervals.
+The adjacent manifest records exact input, generator and output hashes.
