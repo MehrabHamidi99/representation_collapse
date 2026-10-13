@@ -303,3 +303,27 @@ The852-byte prompt requires review/freeze before v5 fitting, project-only
 Qwen rollover and rearming one wake after meaningful work. The callback has
 not yet fired or submitted its next task. Its app/server/tool-cell availability
 is a dependency; registration does not certify future research execution.
+
+## 11:44 UTC — v5 source admitted and specific rollover blocked
+
+V5 exact implementation/config/protocol hashes pass independent review:
+receiptSHA256 b534713d78dcda3c6e347dd83f10b47e6921b7c6ae0f69514d606b8ba10fa342.
+All271integrated tests pass, zero skips,24.132seconds. Actual-size gradients,
+complete h+c states,32FP64 finite differences and64two-history independent
+selector combinations per cell pass; all10,000original/10,000allquery batches
+reconstruct. The coordinator accepts prospective source admission. Scientific
+acceptance is false: commit/clean-source freeze precedes four localCPU fits,
+20,000updates and1,200seconds. An R0 pass would release only acquisition,
+not overall GateB R0/R1/R2 eligibility.
+
+Automatic approval review rejected the exact old-cohort shutdown before it
+executed, citing possible in-flight interruption and insufficient specific
+rollover authorization. Rejected scriptSHA256
+da30a4ea57a11ecbd8a8ffd8325e1e1fd2b13541aa399febd38d1d2127e8b9d1.
+Fresh11:41:34UTC read-only checks find allfiveownedprocesses active, no pending
+provider call and no STOP/CANCEL/anchor/newclient. Staged source/helpers and
+eightcompact public feed summaries remain prepared; affine/v5 inbox tasks
+are unsubmitted. The coordinator requests owner confirmation asynchronously
+for this specific graceful replacement, preserving current unlimitedQwen
+operation and continuing all unblocked local scientific work. No indirect
+shutdown workaround, new allocation or shared-infrastructure change occurred.

@@ -16,7 +16,10 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   Multiple recommendations are rejected for missed topics, weakened gates or
   unsupported information-loss inference; native OpenAI review and a local
   prompt repair address these failures. The repair is independently reviewed
-  locally; live answer-quality improvement is unverified. Total-call/runtime caps are null; backoff, signal/STOP controls remain.
+  locally and staged through cluv. Automatic approval review rejected the
+  specific old-client shutdown; graceful replacement awaits owner confirmation.
+  The current client, observer and guard remain active. Live answer-quality
+  improvement is unverified. Total-call/runtime caps are null; backoff, signal/STOP controls remain.
   Four task events are consumed, with no scientific answer automatically accepted. A project-only hosting guard will request graceful stop at08:52:40UTC on
   October14. The existing allocation ends
   **October 14 08:55:56 UTC** (12:55 Yerevan); no replacement allocation is automatic.
@@ -38,10 +41,11 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   [V4 results](auto/address-acquisition-v4-results-2026-10-13.md).
   The [v5 proposal](auto/query-averaged-acquisition-proposal-v5.md) retains the
   original task and averages eight QUERY branches; sixteen tiny gradient fixtures
-  pass, with no optimizer updates or learned result. Additive implementation is
-  delegated; independent review/freeze precede production.
+  pass, with no optimizer updates or learned result. Additive implementation and
+  actual-size calibration pass independent review; clean source/freeze precede
+  four local fits. An all-eight R0 pass would still leave GateB R1/R2 untested.
   Reviewed seed-statistics and complete-state matrix-free utilities were published
-  in **999d88d**. The current reviewed integration passes **260 source tests**,
+  in **999d88d**. The current reviewed integration passes **271 source tests**,
   zero skips. Inference assumptions,
   smallest effects and confirmation freeze remain unresolved.
   Native **cluv 0.1.5 verifies Mila plus all nine configured Alliance clusters**

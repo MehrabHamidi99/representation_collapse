@@ -565,15 +565,19 @@
         "prefix_acquisition_discovery_v3",
         "address_acquisition_discovery_v4"
       ],
-      "status": "implementation_preparation",
-      "scientific_decision": "tiny unclipped-gradient identity calibrated; no learned competence result",
+      "status": "reviewed_preproduction",
+      "scientific_decision": "exact expected-loss/unclipped-gradient implementation calibrated and independently reviewed; no production result; R0candidate doesnotgrant overallGateBeligibility",
       "proposal": "doc/auto/query-averaged-acquisition-proposal-v5.md",
       "maximum_proposed_local_fits": 4,
       "maximum_proposed_optimizer_updates": 20000,
       "maximum_proposed_wall_seconds": 1200,
       "new_slurm_submissions": 0,
       "execution_started": false,
-      "confirmation": false
+      "confirmation": false,
+      "protocol": "configs/experiments/query-averaged-acquisition-v5.json",
+      "implementation_sha256": "f2af2c73088731e3664b7ca59c54ed9c9f083dc863b83881b20956ffb429a19d",
+      "config_sha256": "d6d89b431942c8e786f1ac169d5fee09ef51e8f85f2030cee1ec8bcdd9d4289e",
+      "independent_implementation_review_sha256": "b534713d78dcda3c6e347dd83f10b47e6921b7c6ae0f69514d606b8ba10fa342"
     }
   ],
   "current_handoff": "doc/october/october13/2026-10-13-progress-report.md",
@@ -671,7 +675,7 @@
     "state": "COMPLETED",
     "exit_code": "0:0"
   },
-  "continuation_note": "Continuous Qwen and project observer/hosting guard active in existing11228391; six actual schema-valid replies, no complete scientific proposal accepted. Native OpenAI audits/reviews and prepares next task.32 actual localfits/110200 optimizerupdates;8singleton passes do not promote main8coord eligibility. V5 expected-loss query-averaging has16tiny no-fit gradient fixtures; source/review/freeze/execution pending. Local task-binding repair reviewed and260tests pass, not yet live-deployed. No newGPUallocation/periodicityharm/Floquetclaim.",
+  "continuation_note": "Continuous old999 Qwen and project observer/hosting guard remain live:6schema-valid replies, no complete scientificproposal accepted. Reviewed a36taskbinding replacement is nativecluv-staged; exactgracefulshutdown awaitsownerconfirmation after automaticreviewrejection.32productionfits/110200updates,8singletonpasses/0maineligibility. V5implementation/actualsizegradients independently reviewed;271tests pass. Nativeone-shot afternooncallback armed, no futurewake yetconfirmed. No newGPUallocation/periodicityharm/Floquetclaim.",
   "proposed_next_allocation": {
     "phase": "competence-canary-v2",
     "configuration": "configs/experiments/competence-canary-v2.json",

@@ -1,0 +1,200 @@
+{
+  "baseline_policy": "reevaluate exact pinnedv3fresh5000 theta on identical newstratifiedR0validation20005; no baseline training/selection; no historicalscore pooling",
+  "categorical_accuracy_gate": 0.95,
+  "cluster_submissions": 0,
+  "comparison_ulps_float64": 4,
+  "confirmation": false,
+  "continuous_population_normalized_mse_gate": 0.05,
+  "cpu_threads": 1,
+  "device": "cpu",
+  "dimensions": {
+    "batch_size": 32,
+    "hidden_size": 128,
+    "input_bottleneck": 64
+  },
+  "endpoint_policy": "fixedcurrent5000; allscheduledresults; firstpassing descriptive; no earlysuccess/best/selection/resume/extension",
+  "evaluation_every_updates": 500,
+  "execution_started": false,
+  "exposure": {
+    "arm_instances_per_update": 32,
+    "branch_loss_evaluations_per_update": 256,
+    "equal_optimizer_update_and_prefix_exposure": true,
+    "equal_query_supervision_or_compute": false,
+    "independent_prefix_histories_per_update": 16,
+    "native_row_updates_per_update": 768,
+    "nominal_recurrence_ratio": "24/17",
+    "queries_per_prefix": 8,
+    "v3_row_updates_per_update": 544
+  },
+  "frozen_before_execution": false,
+  "learning_rate": 0.001,
+  "maximum_fits": 4,
+  "maximum_total_optimizer_updates": 20000,
+  "maximum_total_wall_seconds": 1200,
+  "model_source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+  "models": [
+    "gru",
+    "lstm"
+  ],
+  "optimizer": {
+    "clip_once_after_mean_loss_backward": true,
+    "gradient_clip": 1.0,
+    "name": "AdamW",
+    "new_optimizer_per_fit": true,
+    "updates_per_batch": 1,
+    "weight_decay": 0.01
+  },
+  "population_variance": 0.3333333333333333,
+  "pre_fit_calibration": {
+    "dtypes": [
+      "float32",
+      "float64"
+    ],
+    "fp32_atol": 1e-06,
+    "fp32_rtol": 1e-05,
+    "fp64_atol": 1e-12,
+    "fp64_rtol": 1e-10,
+    "model_dimensions": "actual128/64/batch32",
+    "negative_controls": [
+      "detach_prefix",
+      "sequential_query_chaining",
+      "omit_lstm_cell",
+      "missing_mean_normalization"
+    ],
+    "optimizer_updates": 0,
+    "reference": "mean8 independent fullnative17update trajectories; compareeverytheta gradient andcompletequery state"
+  },
+  "precision": "float32; deterministic_algorithms; CUDA/cuDNN TF32off; matmul_precision highest",
+  "prohibited_inferences": [
+    "equaloptimizationtrajectories",
+    "purecapacitycausality",
+    "purelagcausality",
+    "periodicityharm",
+    "architectureimpossibility",
+    "crossmodalreplication",
+    "certifiedFloquet",
+    "populationcompetenceguarantee"
+  ],
+  "protocol_id": "query-averaged-acquisition-v5",
+  "provider_calls": 0,
+  "required_queries": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "schema_version": 1,
+  "scientific_acceptance": false,
+  "seed": 0,
+  "status": "prospective_local_discovery_preparation",
+  "tasks": [
+    "categorical",
+    "continuous"
+  ],
+  "timeout_policy": "actualcompletedsteps/currenttheta preserved with endpointunknown; no fabricatedfailure/replacement/resume/extension",
+  "training_objective": "mean8 native independent QUERY losses per shared differentiable complete postWRITE state; native full16WRITE graph; rawMSE forcontinuous; no detaching/no newhead",
+  "training_stream_seed": 2026101301,
+  "unchanged_source_sha256": {
+    "src/representation_collapse/diagnostics.py": "076ef9d9600f4b73bbf2b92d4ead7802452a51fd3492b55828c34f2eaf6027c4",
+    "src/representation_collapse/pilot.py": "0aa1c337ffd0ab576056e70b4ecb0dfeee073c1d3453e87389447f77f1dfbbd3",
+    "src/representation_collapse/prefix_acquisition.py": "cf3f443b9596ddc93cf675f33bb152fa1a3a31fd618aadda11de4263eb88dc52",
+    "src/representation_collapse/vector_task.py": "df3843330ac9c59205823c8d55868e7878e903c0065c5af8bc89d1308243a297"
+  },
+  "updates_per_fit": 5000,
+  "v3_base_training_streams": [
+    {
+      "manifest_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/prefit_manifests/train-stream-categorical.json",
+      "manifest_sha256": "063521661c4be33d92481f6844f97b3d6099657ce7ba8eda6961befba7c792a5",
+      "sampling_seed": 2026101301,
+      "stream_sha256": "71845dbba715abaa68a20037028eb91fa1f358c382056e16852721cab26c16c1",
+      "task": "categorical",
+      "updates": 5000
+    },
+    {
+      "manifest_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/prefit_manifests/train-stream-continuous.json",
+      "manifest_sha256": "443800c1d91c78467e2ad39f3d03e4c402f4318ed6f464dbe7bf1478ddcdcdec",
+      "sampling_seed": 2026101301,
+      "stream_sha256": "c394311766112db25e69c791f8f2f2acd4a9da48e0a255049e0300b6948df7d3",
+      "task": "continuous",
+      "updates": 5000
+    }
+  ],
+  "v3_fresh_references": [
+    {
+      "condition": "fresh_seed0",
+      "endpoint_checkpoint_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/gru-categorical-fresh_seed0/checkpoint-step-005000.pt",
+      "endpoint_checkpoint_sha256": "710e470c8a3c55ba4db993f108cacb362a19198721c05d7a81d0d3578cfb23fe",
+      "endpoint_updates": 5000,
+      "initial_checkpoint_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/gru-categorical-fresh_seed0/initial-checkpoint.pt",
+      "initial_checkpoint_sha256": "1d865f50723ee4388a06a7c16937cbb5929e5dfefd19f3afb6b146d220e03904",
+      "initial_weight_sha256": "cb952cf7c65745fc0b5a70c9549bab7e1b79927b1df2d973c58f6a30273fbb3b",
+      "metrics_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/gru-categorical-fresh_seed0/metrics.json",
+      "metrics_sha256": "60a267ba4091361d56b0215080eb502450ae88bd246ec3d2aec4757b3a139c32",
+      "model": "gru",
+      "provenance_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/gru-categorical-fresh_seed0/provenance.json",
+      "provenance_sha256": "c7351b45ff6f091beddeae4098ff77f9c2d61c0183087558afea3d9645d90a7b",
+      "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+      "task": "categorical",
+      "validation_sampling_seed": 20001
+    },
+    {
+      "condition": "fresh_seed0",
+      "endpoint_checkpoint_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/gru-continuous-fresh_seed0/checkpoint-step-005000.pt",
+      "endpoint_checkpoint_sha256": "0cb44d7e7b143fc18c037c0a22a4e4e38b5a4d803307666a3266784c4a448b96",
+      "endpoint_updates": 5000,
+      "initial_checkpoint_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/gru-continuous-fresh_seed0/initial-checkpoint.pt",
+      "initial_checkpoint_sha256": "ea2e3c827b44991d23709240a986091ecf28b256a2d98b59ad84913dca82ea79",
+      "initial_weight_sha256": "441f06e40d95fb61b46055e1529fa79d6125c3719e3f369299ce333fdf85d12e",
+      "metrics_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/gru-continuous-fresh_seed0/metrics.json",
+      "metrics_sha256": "5f0f3c2f4477d6994c8c36d5b0d64eb97f4d0a5265c5751f989fe9e7ad2e1879",
+      "model": "gru",
+      "provenance_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/gru-continuous-fresh_seed0/provenance.json",
+      "provenance_sha256": "016b3a1d4b98f834f8f88775a6dcdeb61dd73438911152fd190c0d57a84a5a1d",
+      "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+      "task": "continuous",
+      "validation_sampling_seed": 20001
+    },
+    {
+      "condition": "fresh_seed0",
+      "endpoint_checkpoint_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/lstm-categorical-fresh_seed0/checkpoint-step-005000.pt",
+      "endpoint_checkpoint_sha256": "47c44d1d0fa0bfdd7f88e750bca750bc6d229c21f4c8cd63d1e4f73c4005a9ca",
+      "endpoint_updates": 5000,
+      "initial_checkpoint_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/lstm-categorical-fresh_seed0/initial-checkpoint.pt",
+      "initial_checkpoint_sha256": "c95e01cf440bf24cb4016093f949a4f7a8e1b165ba27c8edd4739504e61cc57e",
+      "initial_weight_sha256": "1c316b3e32795d73adf0563761e02c467d51986f64e2d855e36527a21a5582af",
+      "metrics_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/lstm-categorical-fresh_seed0/metrics.json",
+      "metrics_sha256": "d2f665c347ac3c97f231298cd60d2913fabc2ab856d2ea17a9c3e370b4d53cd6",
+      "model": "lstm",
+      "provenance_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/lstm-categorical-fresh_seed0/provenance.json",
+      "provenance_sha256": "21510f633c09fa17998e79f43703f6c2a2b7fdfd2dcd6648ef512d42b756782f",
+      "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+      "task": "categorical",
+      "validation_sampling_seed": 20001
+    },
+    {
+      "condition": "fresh_seed0",
+      "endpoint_checkpoint_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/lstm-continuous-fresh_seed0/checkpoint-step-005000.pt",
+      "endpoint_checkpoint_sha256": "31a8ef0449284f3c072b68ead74fea73ae16fe16bd9f871dbe75cf95e602b693",
+      "endpoint_updates": 5000,
+      "initial_checkpoint_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/lstm-continuous-fresh_seed0/initial-checkpoint.pt",
+      "initial_checkpoint_sha256": "c31ae7cab4a5dc67847b95b291a5e6e83b4c261cd8766a30843c411c204babf6",
+      "initial_weight_sha256": "3185df0d365dac30c3748f63d4ef748c91bd9c62e40bcd50697b65029da3ae88",
+      "metrics_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/lstm-continuous-fresh_seed0/metrics.json",
+      "metrics_sha256": "539859c5dbdcaa441f9a99bbd69ee0be86a30dc6e270b558215fd98a0e607a37",
+      "model": "lstm",
+      "provenance_relative_to_project": "runs/prefix-acquisition-v3-20261013/experiment/lstm-continuous-fresh_seed0/provenance.json",
+      "provenance_sha256": "7762d15f5198bb833083f38967f5cf0af39f6a4e7df59fe2eb0581588b7a71da",
+      "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+      "task": "continuous",
+      "validation_sampling_seed": 20001
+    }
+  ],
+  "v3_result_receipt_relative_to_project": "runs/prefix-acquisition-v3-20261013/verification-receipt.json",
+  "v3_result_receipt_sha256": "d12297e6205f71c11fee12091aaa872925141273bcf02a5a70496d38fe6e1ecd",
+  "validation_episodes_per_coordinate_per_arm": 128,
+  "validation_sampling_seed": 20005
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at_utc": "2026-10-13T11:29:10.137804+00:00",
+  "updated_at_utc": "2026-10-13T11:44:06.913068+00:00",
   "date": "2026-10-13",
   "research_has_run": true,
   "uninterrupted_overnight_research_confirmed": false,
@@ -93,10 +93,10 @@
     }
   },
   "tests": {
-    "tests_passed": 260,
+    "tests_passed": 271,
     "skipped": 0,
-    "seconds": 18.02,
-    "log_sha256": "ee6705e2213859b6c5e6f6dd346e948b9b8218e3accef739cb5f17a293a06040",
+    "seconds": 24.132,
+    "log_sha256": "a8f7ffca1e2cbab391892ca328633174942cd9482039e71421dbeb02d8683770",
     "command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -v",
     "reviewed_frozen_v4_source_tests": {
       "source": "ab96cad9dece7d881f04065431c0d102f7665882",
@@ -236,7 +236,9 @@
       "fresh_certificate_at_utc": "2026-10-13T11:17:13.388540+00:00"
     },
     "fresh_process_certificate_sha256": "e1f521eac5d5f381ecea0a371438395373087063fb8d551bb661bb99c2262d0f",
-    "rollover": "reviewed source committed/pushed; staging admitted, old-client controls/actualreplacement notyetexecuted"
+    "rollover": "native cluv source/helpers/feed staged; automaticreview rejected specific graceful shutdown; current originalworker/observer/guard remainrunning; owner confirmation requested",
+    "rollover_approval_pending": true,
+    "fresh_postrejection_check_at_utc": "2026-10-13T11:41:34Z"
   },
   "address_acquisition_v4": {
     "state": "independently_verified_scoped_result_accepted",
@@ -271,8 +273,8 @@
     "new_cluster_training_jobs": 0
   },
   "query_averaged_acquisition_v5": {
-    "state": "local implementation admitted; independent review and production freeze pending",
-    "production_module_exists": false,
+    "state": "independently reviewed implementation; root commit and external production freeze pending",
+    "production_module_exists": true,
     "production_fits": 0,
     "optimizer_updates": 0,
     "calibrated_tiny_cases": 16,
@@ -280,6 +282,11 @@
     "max_gradient_difference_fp64": 2.7755575615628914e-17,
     "independent_scientific_acceptance": false,
     "proposal": "doc/auto/query-averaged-acquisition-proposal-v5.md",
-    "next_gates": "actual-size gradient calibration, independent source/config review, committed source and external freeze before production"
+    "next_gates": "commit clean source; external freeze; four localCPU fits/20kupdates/1200seconds; independent result reduction",
+    "implementation_sha256": "f2af2c73088731e3664b7ca59c54ed9c9f083dc863b83881b20956ffb429a19d",
+    "config_sha256": "d6d89b431942c8e786f1ac169d5fee09ef51e8f85f2030cee1ec8bcdd9d4289e",
+    "independent_implementation_review_receipt_sha256": "b534713d78dcda3c6e347dd83f10b47e6921b7c6ae0f69514d606b8ba10fa342",
+    "production_protocol": "doc/auto/query-averaged-acquisition-v5.md",
+    "overall_GateB_R0_R1_R2_eligibility_tested": false
   }
 }
