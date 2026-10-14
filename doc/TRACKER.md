@@ -7,6 +7,21 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Correction published and staged; analytic review complete — October 15 02:49 Yerevan.**
+  Reviewed v2 source `e4ab463` is clean, pinned and hash-verified on Mila.
+  The staged plan is explicitly disabled; fresh one-CPU allocation approval
+  remains pending. Whole-project scratch is 9,081,705,472 bytes, below 20 GiB.
+  The prospective independent v2 verifier is frozen before any v2 outputs;
+  it retains 60 arrays, 27 comparisons and the original numerical tolerances.
+  An independently accepted one-step folding construction shows required-bit
+  loss with unchanged pooled population covariance and no contracting local
+  tangent direction on the initial support. This is an analytic measurement
+  guard, without an empirical, periodicity or novelty claim.
+  Qwen identity/source verified at 22:48:19 UTC: 14 replies, 71,910 reported
+  tokens, zero provider errors; it was waiting for evidence. Three new bounded
+  analytic questions are queued. Whole answers remain unaccepted.
+  [Analytic review](auto/folding-memory-counterexample-independent-review-2026-10-15.md),
+  [v2 result-verification contract](auto/native-graph-calibration-v2-result-verifier-2026-10-15.md).
 - **Native import failure closed out; correction ready — October 15 02:25 Yerevan.**
   Mila11256293 endedFAILED1:0/23seconds at22:05:26UTC, before all model/
   derivative calls; noNPZ. ExactTemporal0.54/PyG2.6.1 umbrella import uses an

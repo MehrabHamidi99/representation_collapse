@@ -6,15 +6,23 @@
   "qwen": {
     "hosting": "local_mac",
     "state": "running_waiting_for_evidence",
-    "verified_at_utc": "2026-10-14T22:16:39.466225+00:00",
+    "verified_at_utc": "2026-10-14T22:48:19.334670+00:00",
     "pid": 84719,
     "process_start_source_verified": true,
-    "verified_replies_at_identity_check": 13,
-    "additional_schema_reply_observed": 13,
-    "new_task": "11-native-calibration-inference-boundary",
+    "verified_replies_at_identity_check": 14,
+    "additional_schema_reply_observed": 14,
+    "new_task": "12-memory-estimands-without-contraction",
     "whole_answers_accepted": 0,
     "uninterrupted_research_confirmed": false,
-    "reported_tokens": 66705
+    "reported_tokens": 71910,
+    "provider_errors_at_check": 0,
+    "provider_call_in_flight_at_check": false,
+    "new_queued_tasks_at_utc": "2026-10-14T22:48:58.618473+00:00",
+    "new_queued_task_ids": [
+      "13-global-folding-counterexample-scope",
+      "14-memory-loss-versus-decoder-error",
+      "15-periodic-ordering-identification"
+    ]
   },
   "compute": {
     "cluv_version": "0.1.5",
@@ -37,13 +45,13 @@
       "memory_gib": 2,
       "wall_minutes": 10,
       "gpus": 0,
-      "purpose": "additional native analytic engineering calibration",
+      "purpose": "historical initial CPU scope; zero submissions remain",
       "retries": 0,
       "race": false
     },
     "new_submissions": 1,
     "new_gpu_training_budget": false,
-    "project_scratch_bytes": 9008236544,
+    "project_scratch_bytes": 9081705472,
     "staging_limit_gib": 20,
     "native_calibration_job_id": 11256293,
     "native_calibration_scheduler_state": "FAILED",
@@ -201,6 +209,16 @@
       "reconstruction_native_preflight_ready": false,
       "reconstruction_component_source_sha256": "89894f8bd3e8574b5b57c777353fe1aac3a1f123f792467a009b04b8a6f9bcdb",
       "reconstruction_component_review_sha256": "65443bd4a2ab20af59b6f6df0548852165fb6e9f301843b4e0e6716631efb11f"
+    },
+    "folding_memory_counterexample": {
+      "proof": "doc/auto/folding-memory-counterexample-2026-10-15.md",
+      "independent_review": "doc/auto/folding-memory-counterexample-independent-review-2026-10-15.md",
+      "one_step_analytic_proof_accepted": true,
+      "exact_rational_checks": 10,
+      "claim": "Required sign-bit loss with identical pooled centered population covariance and no contracting local tangent direction on initial support",
+      "empirical_claim_accepted": false,
+      "periodicity_effect_accepted": false,
+      "novelty_claim_accepted": false
     }
   },
   "current_native_work": {
@@ -228,7 +246,14 @@
     "v2_code_engineering_accepted": true,
     "v2_dependency_free_tests": 23,
     "import_helper_dependency_free_fixture_tests": 15,
-    "new_job_execution_authorized": false
+    "new_job_execution_authorized": false,
+    "v2_source_commit": "e4ab463d60976108dbb23d74acb9600126f8f690",
+    "v2_source_staged_verified_at_utc": "2026-10-14T22:37:19.753231+00:00",
+    "v2_plan_staged_execution_disabled": true,
+    "v2_plan_sha256": "626020749aff2084d08287c75a7cf1817279fc52933507a2410cff4193909afc",
+    "v2_result_verifier_prepared": true,
+    "v2_result_verifier_executed": false,
+    "v2_numerical_integrity_accepted": false
   },
   "evidence": {
     "cluster_status_sha256": "91343b481f477508a1a854c45cf3f7e23a4bce556c10f1632bcd7d2452b87af6",
@@ -240,7 +265,14 @@
     "failed_job_closeout_sha256": "fbb29483020621bb9da6cb5b311a4e49be4c24851a9df1e01ab2e0818fd8e9bf",
     "failed_job_independent_review_sha256": "30d7486b032323ebf65c0632c6b37820e6a908f8e2be324b7274e4f4eb4567be",
     "import_helper_review_sha256": "043936574f7e75f7375306889d685966293fd53ac2339e4b69eec293a1044c85",
-    "v2_integration_review_sha256": "a824c9cd526b18bba13582e2a80ff721f904b2cec3523a507c8fa18feb5c7f05"
+    "v2_integration_review_sha256": "a824c9cd526b18bba13582e2a80ff721f904b2cec3523a507c8fa18feb5c7f05",
+    "v2_source_staging_receipt_sha256": "26641237a51b6b27cb4fd91d695e41c9be2f1e2f8c7272ec19d18d3c34344e88",
+    "v2_pending_plan_staging_receipt_sha256": "d05d98d7bbc18e708db6e089ed6833f0a92c9fa99b256698f8d1dd57c27649b5",
+    "v2_normal_python_controller_review_sha256": "0f7526a10403774515b8350335d7eb855f282f72136abe76805f2c8e8c2f7128",
+    "v2_prospective_result_verifier_readiness_sha256": "cfea09872924ada673df545a6fa56a3f7e44a2bd806fde577f5875fcde039eee",
+    "folding_proof_review_receipt_sha256": "4fb4d9fdc228339b6fc1e77f2c04ce0382e467244554d31307395e9fdc1220a0",
+    "latest_qwen_live_receipt_sha256": "b3aa8a30e11a573af048194df140da109e42a183ba7d228d61c3461b54a6ecc6",
+    "qwen_three_tasks_publication_sha256": "422f1c6789b1d7e84fe16242eb1af5b365368f760a9ef92798e519894cdfb31f"
   },
   "next_compute_request": {
     "descriptor": "configs/experiments/native-graph-calibration-v2-launch.json",
@@ -252,6 +284,9 @@
     "wall_minutes": 10,
     "gpu": 0,
     "retries": 0,
-    "training": false
+    "training": false,
+    "approval_state": "pending_owner_reply",
+    "source_commit": "e4ab463d60976108dbb23d74acb9600126f8f690",
+    "report": "doc/auto/native-graph-calibration-v2-launch-request-2026-10-15.md"
   }
 }

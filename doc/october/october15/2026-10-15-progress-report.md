@@ -151,3 +151,62 @@ vectorprotocols, treatsallcalibrationfailuresasimplementationerrors and
 requirescontractionforanyharm. Thosecross-estimandinferences areunsupported.
 Theleafreceivedpublicsummary/proposalquestionsonly, no arrays/weights/secrets,
 andhasnocomputeauthority. No uninterruptednumericalresearchisclaimed.
+
+## 02:37–02:49 Yerevan / October 14 22:37–22:49 UTC — staged correction and independent review
+
+Published main commit `e4ab463d60976108dbb23d74acb9600126f8f690`
+contains the reviewed v2 correction and preserves the failed v1 job/source.
+Native cluv staged a clean checkout at that exact commit and verified all six
+source pins. A fresh v2 run root contains exact wrapper inputs and readiness
+receipts, with `plan.pending.json` SHA
+`626020749aff2084d08287c75a7cf1817279fc52933507a2410cff4193909afc`.
+Owner-allocation and execution flags are false; no v2 submission occurred.
+Whole-project scratch is 9,081,705,472 bytes, below the existing 20 GiB staging
+limit. The installed legacy CPU environment is reused; no further installation
+or model calls occurred. The fresh one-Mila-CPU/2-GiB/10-minute/zero-GPU
+approval question is pending. All four initial CPU submissions are consumed.
+
+The reviewed v2 submission controller adds an explicit normal-Python guard
+before assertion-based checks. Independent operational review accepts only
+preparation: exact source/config/resources, fresh path and one-submission
+claim, scratch cache and native cluv command bindings. Approval is still
+required; access and staging do not grant a new allocation.
+
+Independent prospective result verification is frozen as source SHA
+`5bbd5345499ba5dd1919ddee7d3ba11e8cd34bc2aff54b06facc5fe97762dd51`.
+AST/source checks preserve the v1 arithmetic, 60-array schema, 27 comparisons,
+counts and tolerances; only v2 identity/provenance gates are added. It has not
+executed. Complete returned NPZ/counts and a separate exact local audit
+admission are prerequisites. Saved central-difference candidates cannot be
+regenerated because their positive/negative native outputs are not saved;
+that existing verification limitation is explicit. No numerical or scientific
+acceptance is inferred from this preparation.
+
+Independent review accepted the exact one-step proof in
+`doc/auto/folding-memory-counterexample-2026-10-15.md`, unchanged source SHA
+`e1e26fb0e59a744506a247ace04ba7cacbf49b8efdf79678de43d71ca1895d99`.
+It loses a balanced required sign bit by global folding while both pooled,
+centered population covariance matrices remain (19/3)I2 and every local
+tangent on the initial support is noncontracting. Ten exact-rational algebra
+checks passed. The conclusion concerns one step and the stated complete-state
+information boundary; it does not preserve all finite pair distances, future
+derivatives, conditional covariances or higher moments. It accepts an analytic
+measurement guard, with no trained-model, periodicity, Floquet or novelty claim.
+Review receipt SHA
+`4fb4d9fdc228339b6fc1e77f2c04ce0382e467244554d31307395e9fdc1220a0`.
+
+Qwen process/start/source was verified alive at 22:48:19 UTC: 14 exact-model,
+schema-valid replies, 71,910 reported tokens, zero provider errors, no call in
+flight; it was waiting for evidence. Reply14 correctly allows required-history
+loss without pooled-rank change, but confuses fixed-decoder failure with Bayes
+information loss and refers to isolated-cell outputs that do not exist yet.
+Its full recommendation is unaccepted. Three immutable, public analytic tasks
+were queued at 22:48:58 UTC: limits of the folding proof, information versus
+decoder loss, and identification of matched periodic ordering. They permit no
+submissions or scientific acceptance. Queueing is not completion and worker
+liveness does not establish uninterrupted research or cluster execution.
+
+Next: on a fresh owner CPU allocation grant, bind that exact record to the
+reviewed e4ab463 source and one v2 attempt, submit through native cluv, verify
+scheduler/physical resources and reconcile outcomes. Otherwise continue local
+analytic review and reconstruction preparation without allocating compute.
