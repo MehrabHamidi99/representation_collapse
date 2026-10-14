@@ -1,11 +1,23 @@
 # Current research state
 
-Updated 2026-10-14. See the [latest notebook entry](october/october14/2026-10-14-progress-report.md),
+Updated 2026-10-15. See the [latest notebook entry](october/october15/2026-10-15-progress-report.md),
+the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Resumption and resubmission preparation — October 15 01:14 Yerevan.**
+  Local Qwen PID/start/source verified alive at21:11UTC, eleven replies; a new
+  evidence/task event subsequently produced reply12. No inference or numerical
+  work occurred during the preceding gap. Mila/Tamia project queues are empty;
+  eight other Alliance targets lack reusable masters. Independent accounting
+  confirms one remaining initial CPUcalibration slot:1CPU/2GiB/10minutes,
+  zero GPUs, no retry/race. Three native agents prepare exact-cell calibration,
+  isolated legacy-compatiblePython3.10 environment and independent review.
+  Actual native work and submission await complete immutable readiness.
+  [Budget audit](auto/compute-resubmission-envelope-audit-2026-10-15.md),
+  [new status](auto/research-status-2026-10-15.json).
 - **Local worker refreshed — October 14 13:24 UTC.** PID/start/source
   verification confirms ten replies, 51,176 reported tokens, nine completed
   tasks and zero provider errors. Whole recommendations remain unaccepted;

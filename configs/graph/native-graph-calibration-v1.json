@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "protocol_id": "native_graph_calibration_v1",
+  "status": "prepared_not_executed_not_admitted",
+  "execution_authorized": false,
+  "training_authorized": false,
+  "scientific_acceptance": false,
+  "retries": 0,
+  "architecture": {"nodes": 3, "input_channels": 3, "layers": 1, "hidden_channels": 2, "K": 2, "normalization": "sym", "bias": true, "joint_state_dimension": 12, "initialization_and_public_parity_precision": "float32", "AD_and_finite_difference_precision": "float64_after_exact_parameter_conversion", "device": "cpu", "seed": 0},
+  "state_order": ["hidden", "cell", "layer", "node", "feature"],
+  "fixtures": {
+    "node_order": [0, 1, 2],
+    "features": "3 by 3 identity; coordinate permutation permutes rows only",
+    "A_edges": [[0, 1], [1, 0], [1, 2], [2, 1]],
+    "B_edges": [[0, 2], [2, 0]],
+    "edge_weights": 1.0,
+    "initial_state": [0.05, -0.1, 0.15, -0.2, 0.25, -0.3, 0.1, 0.2, -0.15, 0.05, -0.25, 0.3],
+    "direction_v": [1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 11, -12],
+    "cotangent_w": [12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    "normalize_v_and_w": true,
+    "new_node_to_old_node_permutation": [2, 0, 1],
+    "chronology_inputs": ["A", "B", "A"],
+    "chronology_events": ["consume_0", "score_1", "consume_1", "score_2", "consume_2"],
+    "analytic_A": [[1.0, 1.0], [0.0, 1.0]],
+    "analytic_B": [[1.0, 0.0], [1.0, 1.0]],
+    "analytic_direction": [1.0, 2.0],
+    "analytic_chronological_product": [[1.0, 1.0], [1.0, 2.0]],
+    "analytic_reversed_product": [[2.0, 1.0], [1.0, 1.0]]
+  },
+  "tolerances": {
+    "forward_fp32_atol": 1e-6, "forward_fp32_rtol": 1e-5,
+    "forward_atol": 1e-12, "forward_rtol": 1e-10,
+    "derivative_atol": 1e-10, "derivative_rtol": 1e-8,
+    "finite_difference_atol": 5e-6, "finite_difference_rtol": 5e-5,
+    "finite_difference_epsilons": [0.001, 0.0001, 0.00001],
+    "native_commutator_min_frobenius": 1e-10,
+    "native_wrong_order_min_direction_error": 1e-10,
+    "analytic_nonnormal_min_spectral_norm": 1.2
+  },
+  "finite_counts": {
+    "wrapper_constructors": 1, "cell_constructors": 1, "head_constructors": 1,
+    "cell_forward_calls": 50, "head_forward_calls": 5, "head_sequence_forward_calls": 6,
+    "dense_jacobian_api_calls": 4, "jvp_api_calls": 9, "vjp_api_calls": 5,
+    "finite_difference_function_evaluations": 12,
+    "analytic_control_cases": 1
+  },
+  "resources": {"cpu_threads": 1, "memory_bytes": 2147483648, "wall_seconds": 600, "worker_work_seconds": 590, "cleanup_reserve_seconds": 10, "kernel_memory_cgroup_required": true, "memory_enforcement": "Slurm physical memory and inherited kernel cgroup", "virtual_address_limit": null},
+  "environment_policy": {"python_major_minor": [3, 10], "platform": "linux", "machine": "x86_64", "isolated_from_main_project_environment": true, "main_project_package_installation": false, "source_import_via_PYTHONPATH": true},
+  "reporting": {"project": "representation-collapse", "mode": "offline", "sdk_version": "0.30.0", "required_before_native_constructors_or_arrays": true},
+  "sources": {
+    "public_commit": "31293102b065feef7817ff86211427d7594edfdb",
+    "temporal_commit": "46abd39abec0cd8de23c0e489a617c320c3fc5e8",
+    "cell_sha256": "c3568d2c1ba8926ab43e11c840213f90ebe782ad158dd76809d1dc1c255797af",
+    "wrapper_files": {
+      "model/gclstm.py": "86069a32fced5f09c60cd795e4f0abd82674dafae250ef3673ac8c3650504609",
+      "model/link_predictor.py": "cca12cfc73b8660c92236f530504da08ba0b606ec13a1a681ffabcae43b7ca86",
+      "model/node_emb.py": "4be4450730f33949e0354348b3bd8f69ba0434e4aa911abec0fc5f798e8c2d29"
+    },
+    "ownership_helper": {"path": "code/ops/legacy_floquet_audit.py", "sha256": "8e1f388d4f5ce72e0bfd9a4b5a4b1f8c98f66f2512841d96875822bfd9bffe09"},
+    "reporter": {"path": "src/representation_collapse/reporting.py", "sha256": "443c9e89d2eba954ee60cc35e015fe61196fbec2f50331067540b4a8259e8184"}
+  },
+  "required_distributions": {
+    "torch": "2.0.0+cpu", "torch-geometric": "2.6.1", "torch-geometric-temporal": "0.54.0", "numpy": "1.24.4",
+    "torch-cluster": "1.6.3+pt20cpu", "torch-scatter": "2.1.2+pt20cpu", "torch-sparse": "0.6.18+pt20cpu", "torch-spline-conv": "1.2.2+pt20cpu", "wandb": "0.30.0"
+  },
+  "complex_tangent_control": {"native_states": "real float64 only", "operator": "separate real and imaginary JVP application to fixed real two-step derivative", "checks": ["dense complex extension", "homogeneity under multiplication by i"], "additional_jvp_api_calls": 4, "additional_cell_forward_calls": 8},
+  "deviations": ["tiny engineering architecture rather than N100/H128 reconstruction", "untrained default float32 seed0 source initialization then exact parameter conversion to float64 for AD and fixed literal graphs rather than dataset or checkpoint", "isolated legacy-compatible CPython3.10 source imports rather than main project package installation requiring Python>=3.11", "source public versions retained with explicit Linux CPU wheel build tags", "head eval-mode structural consistency only; no trained head or dropout training parity"],
+  "forbidden": ["training", "optimizer", "checkpoint_loading", "dataset_generator", "real_dataset", "GPU", "sweep", "automatic_retry", "orbit_or_Floquet_certification", "scientific_acceptance"]
+}

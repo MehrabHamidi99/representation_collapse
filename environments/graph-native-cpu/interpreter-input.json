@@ -1,0 +1,16 @@
+{
+  "actual_target_interpreter_must_be_hash_pinned_in_admission": true,
+  "implementation": "CPython",
+  "interpreter_archive_sha256": "d87398fc9292c33ec9f5c85cf72de27e520904d0aff18f0f92221493dd6f7a4c",
+  "interpreter_archive_url": "https://github.com/astral-sh/python-build-standalone/releases/download/20251209/cpython-3.10.19%2B20251209-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz",
+  "kind": "legacy_native_graph_cpu_interpreter_input",
+  "local_interpreter_downloaded": false,
+  "main_project_package_install_allowed": false,
+  "main_project_requires_python_deviation": true,
+  "platform": "linux-x86_64",
+  "python_version": "3.10.19",
+  "schema_version": 1,
+  "uv_download_metadata_key": "cpython-3.10.19-linux-x86_64-gnu",
+  "uv_download_metadata_source": "https://raw.githubusercontent.com/astral-sh/uv/0.9.18/crates/uv-python/download-metadata.json",
+  "uv_version": "0.9.18"
+}
