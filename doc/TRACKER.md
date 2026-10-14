@@ -7,6 +7,31 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Native import failure closed out; correction ready — October 15 02:25 Yerevan.**
+  Mila11256293 endedFAILED1:0/23seconds at22:05:26UTC, before all model/
+  derivative calls; noNPZ. ExactTemporal0.54/PyG2.6.1 umbrella import uses an
+  obsolete module path. All17selectedfailurefiles/34,828bytes verify; durable
+  offlineW&B failed summary haszero history and both retained ownedidentities
+  reportexit/noerrors. Independent failure review accepts evidenceonly.
+  The isolated actual-cell loader andv2integration passengineeringreview;
+  15helperfixtures and23v2controltests pass, numericalcode/config unchanged.
+  V1 ispreserved. InitialCPUslots4used/0remaining; newsingleMilaCPU1/2GiB/
+  tenminute/zeroGPUrequest prepared, awaitingfreshownerallocation approval.
+  Qwenalive/sourceverified22:16UTC,13replies/66,705reportedtokens, waiting;
+  wholeproposalsunaccepted. Nooriginalgraphtraining orcollapseclaim.
+  [Failure](auto/native-graph-calibration-failure-2026-10-15.md),
+  [reviewed correction](auto/native-graph-calibration-v2-independent-review-2026-10-15.md),
+  [next exact allocation](auto/native-graph-calibration-v2-launch-request-2026-10-15.md).
+- **Native graph calibration submitted — October 15 02:05 Yerevan.**
+  Nativecluv0.1.5 submitted Mila job11256293 from published15074fb. Scheduler
+  confirmsRUNNING/cn-f003/accountmila/QOSnormal/main-cpu/CPU1/Mem2G/GPU0,
+  tenminutes/no-requeue. Physicalcgroup2147483648bytes andoneCPU affinity
+  verified; offlineSDK0.30 initialized before nativework. Exact60-wheel
+  legacyCPUenvironment installed/hash/metadata/pipcheck verified in170seconds;
+  wholeproject scratch9,008,236,544bytes<20GiB. Nativeoutcomes stillpending.
+  This consumes the final initialCPUslot; noGPU orrecurringbudget added.
+  [Frozen launch](auto/native-graph-single-cpu-launch-2026-10-15.md),
+  [prospective result verifier](auto/native-graph-calibration-result-verifier-2026-10-15.md).
 - **Resumption and resubmission preparation — October 15 01:14 Yerevan.**
   Local Qwen PID/start/source verified alive at21:11UTC, eleven replies; a new
   evidence/task event subsequently produced reply12. No inference or numerical

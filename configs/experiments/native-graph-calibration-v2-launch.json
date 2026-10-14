@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "phase_id": "native-graph-calibration-v2",
+  "state": "prepared_fresh_owner_allocation_required",
+  "execution_authorized": false,
+  "scientific_acceptance": false,
+  "prior_job_id": 11256293,
+  "prior_job_state": "FAILED",
+  "initial_cpu_submissions_remaining": 0,
+  "target": {"cluster": "mila", "account": "mila", "qos": "normal", "partition": "main-cpu"},
+  "resources": {"max_submissions": 1, "nodes": 1, "tasks": 1, "cpus": 1, "memory_gib": 2, "wall_seconds": 600, "gpus": 0, "max_requested_cpu_hours": 0.16666666666666666, "retries": 0, "requeue": false, "race": false},
+  "source_hashes": {
+    "src/representation_collapse/native_graph_calibration_v2.py": "d4ecd1d240978beb2746a12b2d68f2b8df5a22ec53cb3821b09a2b3f3f907f72",
+    "configs/graph/native-graph-calibration-v2.json": "00c1bb0e961dfad990605bbc04894b6976e76c0161e0b8ec117c43816d93675b",
+    "doc/auto/native-graph-calibration-v2.md": "49be571978111c2cd9ec7d42d25995e5a7ce8a98263e7cd77fe7193f285f5ddb",
+    "src/representation_collapse/pinned_graph_import.py": "2f14b3683f67d33f4a5f6325b5b204aee3a086e1fad1966acb9810a302d04344",
+    "code/ops/native_graph_calibration_v2_job.py": "62b4fdb3221e805bd50537a8d2388abdc9ca78496de94bfa9fb420e01f3c4ea3",
+    "code/ops/native_graph_calibration_v2_job.sh": "eb0faa97050d632c6b6417d2a085b15f330e2d30cd8f99e1846744f78892119c"
+  },
+  "source_commit": null,
+  "source_commit_binding": "Coordinator runtime continuation records the exact published commit before approval/execution; source files above must match.",
+  "source_directory": "/network/scratch/m/mehrab.hamidi/representation-collapse/sources/native-gclstm-calibration-v2-20261015-attempt001",
+  "run_root": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/native-gclstm-calibration-v2-20261015",
+  "log_root": "/network/scratch/m/mehrab.hamidi/representation-collapse/logs/native-gclstm-calibration-v2-20261015",
+  "environment": "/network/scratch/m/mehrab.hamidi/representation-collapse/environments/graph-native-cpu-20261015-calibration01/venv",
+  "environment_lock_sha256": "ea2f58d2a12f5d8562b31d5fa7b5c646121784867c134afd4a5cf6a8108b8c06",
+  "artifact_manifest_sha256": "67e27963f2166f8a7e26dba301c9020d2bd7d4c012010fb859e6e43b15ce9842",
+  "finite_counts": {"wrapper_constructors": 1, "cell_constructors": 1, "head_constructors": 1, "cell_forward_calls": 50, "head_forward_calls": 5, "head_sequence_forward_calls": 6, "dense_jacobian_api_calls": 4, "jvp_api_calls": 9, "vjp_api_calls": 5, "finite_difference_function_evaluations": 12, "analytic_control_cases": 1},
+  "stop_rule": "One attempt; import/reporting/source/resource/deadline/ownerSTOP failure terminates; preserve failure, reconcile createdjob, never retry or race.",
+  "training": false,
+  "datasets_or_checkpoints": false,
+  "paid_model_service": false
+}

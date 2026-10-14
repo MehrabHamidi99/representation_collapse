@@ -86,3 +86,68 @@ completed source/closure review and prospective reduction preparation. No
 continuous numerical research or cluster worker activity is inferred from
 Qwen liveness. One unused CPU slot remains; installation, immutable source
 publication and exact runtime admission still precede the actual cluv launch.
+
+## 01:56–02:25 Yerevan / October 14 21:56–22:25 UTC — actual allocation, failure and fix
+
+Reviewed code/CPUlock were published as15074fbbb1098fcad6954ff857f5e211a54d659c.
+Nativecluv source-onlysync staged a new clean/pinned Mila checkout and exact
+three public wrappers/derivedpureTemporalwheel. The separately admitted
+installation completed in170.037seconds:60wholewheelhashes, exactversions,
+offlinepipcheck andcellsource metadataverified; no mainproject install.
+Independent whole-projectdu recorded9,008,236,544bytes<20GiB. Actual remote
+cluv0.1.5 sixlibrarysourcehashes matchtheindependentreviewed controller snapshot.
+
+Exactrootplan323aeeb8171d7114bae791c194a635837ddce699557e801620a22481897dcb70
+wasstagedwithreview/environment/offline-readiness receipts, immutable source,
+argv, finitecounts andoneCPUauthority. Nativecluv submittedjob11256293,
+accountmila/QOSnormal/main-cpu/CPU1/Mem2G/10minutes/GPU0/no-requeue.
+RUNNINGwasverified22:05:20UTC. TheterminalUTC schedulerrecord isFAILED1:0,
+22:05:03–22:05:26UTC,23seconds. Actualcgroup cap2147483648bytes/CPUaffinityone
+verified. OfflineW&B initialized thenimport failed beforeevery declared
+constructor/forward/AD/FD/control count; all eleven counterszero, noNPZ.
+Error: No module named 'torch_geometric.utils.to_dense_adj'. Installation
+metadata/constraintclosure didnotguarantee completeTemporalimport compatibility.
+
+The source-inferred cause is an unrelated attentioninitializer imported by
+Temporal'sumbrella package, consistently usingthe obsoletePyGmodulepath.
+No fulltraceback or trainedmodelnegativefinding is claimed. Alloriginalv1
+source/config/protocol andjoboutputs remainpreserved. ExactjobadmissionSHA
+346d222b6a7b5f092ed305b9aea56adaa177046d3648b8c5c90fc8b7988777dd.
+Supervisor22.272seconds,worker21.063seconds,peakworkerRSS326639616bytes.
+Both retainedworker/SDKcoreidentities reportexit withno cleanup errors;
+short-lived spawnjournalentries arepreserved withoutoverstatingtheir explicit
+reconciliation. InitialCPUslotsare4used/0remaining; failuredoesnotrefundaslot.
+
+Whole-runtransferpreflight firststoppedonanSDK debugsymlink. Rootthenmadea
+freshselectedregular-fileexport, leavingoriginalrununchanged, andusednative
+cluvfetch_results withboundexistingmastertofetch17files/34828bytes. Allhashes
+verified; independent metadata/source/checksumcloseout agrees. Nativeoffline
+transaction2005bytes hasone run,5telemetry,3summary,oneexit,zerohistory; CRC/
+protobufverifier confirmsfailedsummary/laststep-1 andno automaticenvironment/
+code/console payload. Entityrequestednull/actualempty,cloudsyncunverified.
+Prospective60array/27comparisonreducerwasnotrunbecauseinputNPZdoesnotexist.
+
+Three nativeagents completed a boundedcorrection: standaloneactualcell loader
+compilesliteralverifiedsourcebyteswithoutstale.pyc orunrelatedpackageinit,
+keepscell/publicwrapper/math/dependencyversions intact, refusespreloaded
+namespaces andchecksclass/path/releasehashprovenance. Fifteen fake-source
+fixtures pass; independentlyacceptedcomponentSHA2f14b3683f67d33f4a5f6325b5b204aee3a086e1fad1966acb9810a302d04344.
+Separatev2engine/config/protocol bindthehelper, v2admissionandsourceidentities,
+reporter-firstactualTorchloading andoriginalphysicalsupervision. Twentythree
+controltests pass. Independentreview verifiesexactsource/ASTpreservationof
+numerics/runtimepreflight andallnumeric/runtimeconfigsections. Cell/fullpackage
+import scope difference isexplicit; actualnewcellruntime remainspending.
+Reviewedv2engineSHA d4ecd1d240978beb2746a12b2d68f2b8df5a22ec53cb3821b09a2b3f3f907f72;
+config00c1bb0e961dfad990605bbc04894b6976e76c0161e0b8ec117c43816d93675b.
+NewdisabledallocationrequestisoneMilaCPU1/2GiB/10minutes/GPU0/noretry orrace;
+existinginstalledenvironmentisreused. Freshownerallocationapproval precedes
+execution; thisisnot an automaticretry orGPUrenewal. Separategraphrunner/data/
+checkpoint/competence/throughputplanisprospective, notimplementedtraining.
+
+Qwenidentity/sourceverifiedalive22:16:39UTC:13exactmodel/schemareplies,
+66,705reportedtokens,zero providererrors,nowwaitingforevidence. Reply13's
+wholeproposal remainsunaccepted: it inventsa0.95graphaccuracygate/imports
+vectorprotocols, treatsallcalibrationfailuresasimplementationerrors and
+requirescontractionforanyharm. Thosecross-estimandinferences areunsupported.
+Theleafreceivedpublicsummary/proposalquestionsonly, no arrays/weights/secrets,
+andhasnocomputeauthority. No uninterruptednumericalresearchisclaimed.

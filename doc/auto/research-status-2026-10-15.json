@@ -6,14 +6,15 @@
   "qwen": {
     "hosting": "local_mac",
     "state": "running_waiting_for_evidence",
-    "verified_at_utc": "2026-10-14T21:40:27.094751+00:00",
+    "verified_at_utc": "2026-10-14T22:16:39.466225+00:00",
     "pid": 84719,
     "process_start_source_verified": true,
-    "verified_replies_at_identity_check": 12,
-    "additional_schema_reply_observed": 12,
-    "new_task": "10-legacy-environment-preflight",
+    "verified_replies_at_identity_check": 13,
+    "additional_schema_reply_observed": 13,
+    "new_task": "11-native-calibration-inference-boundary",
     "whole_answers_accepted": 0,
-    "uninterrupted_research_confirmed": false
+    "uninterrupted_research_confirmed": false,
+    "reported_tokens": 66705
   },
   "compute": {
     "cluv_version": "0.1.5",
@@ -29,8 +30,8 @@
       "state": "COMPLETED",
       "actual_end_utc": "2026-10-14T08:53:38Z"
     },
-    "initial_cpu_submissions_used": 3,
-    "initial_cpu_submissions_remaining": 1,
+    "initial_cpu_submissions_used": 4,
+    "initial_cpu_submissions_remaining": 0,
     "remaining_cpu_scope": {
       "cpus": 1,
       "memory_gib": 2,
@@ -40,10 +41,15 @@
       "retries": 0,
       "race": false
     },
-    "new_submissions": 0,
+    "new_submissions": 1,
     "new_gpu_training_budget": false,
-    "project_scratch_bytes": 6338379776,
-    "staging_limit_gib": 20
+    "project_scratch_bytes": 9008236544,
+    "staging_limit_gib": 20,
+    "native_calibration_job_id": 11256293,
+    "native_calibration_scheduler_state": "FAILED",
+    "scheduler_verified_at_utc": "2026-10-14T22:07:10.637872+00:00",
+    "scheduler_exit_code": "1:0",
+    "scheduler_elapsed_seconds": 23
   },
   "scientific_evidence": {
     "completed_acquisition_fits": 32,
@@ -201,7 +207,7 @@
     "author": "graph_checkpoint_reconstruction",
     "environment": "legacy_array_audit_impl",
     "independent_review": "legacy_array_audit_review",
-    "native_calibration_state": "implementation_and_environment_source_reviews_accepted_installation_and_runtime_admission_pending",
+    "native_calibration_state": "v1_failed_before_all_model_calls_v2_import_fix_independently_reviewed_fresh_allocation_pending",
     "native_model_calls": 0,
     "environment_variant": "isolated legacy-compatible CPython3.10; mainproject>=3.11 package notinstalled",
     "original_versions_retained": true,
@@ -211,7 +217,18 @@
     "environment_artifacts": 60,
     "environment_download_bytes": 314764667,
     "toolchain_staged": true,
-    "toolchain_python": "3.10.19"
+    "toolchain_python": "3.10.19",
+    "environment_installed_metadata_verified": true,
+    "environment_native_imports_verified": false,
+    "source_commit": "15074fbbb1098fcad6954ff857f5e211a54d659c",
+    "native_derivative_calls": 0,
+    "native_calibration_accepted": false,
+    "raw_npz_present": false,
+    "native_import_failure": "No module named 'torch_geometric.utils.to_dense_adj'",
+    "v2_code_engineering_accepted": true,
+    "v2_dependency_free_tests": 23,
+    "import_helper_dependency_free_fixture_tests": 15,
+    "new_job_execution_authorized": false
   },
   "evidence": {
     "cluster_status_sha256": "91343b481f477508a1a854c45cf3f7e23a4bce556c10f1632bcd7d2452b87af6",
@@ -219,6 +236,22 @@
     "cpu_capacity_review_sha256": "f593b313b148295382409e21a5e0296b32e9ab94f2e3c4ad2aa321c25ac12216",
     "native_implementation_review_sha256": "c12967d1ff4aa71df8f6c9eac510af380dfcafab832388f9fb5b19b6018e5255",
     "native_environment_review_sha256": "454db0997847d7ed650ccc503aa485e3de18c615b4ff516161a99fa6b0fa9167",
-    "legacy_toolchain_staging_sha256": "a67a8eb1e90bfc52848103cd6467c1b4838c8f650c9abbb607da89aa29af88de"
+    "legacy_toolchain_staging_sha256": "a67a8eb1e90bfc52848103cd6467c1b4838c8f650c9abbb607da89aa29af88de",
+    "failed_job_closeout_sha256": "fbb29483020621bb9da6cb5b311a4e49be4c24851a9df1e01ab2e0818fd8e9bf",
+    "failed_job_independent_review_sha256": "30d7486b032323ebf65c0632c6b37820e6a908f8e2be324b7274e4f4eb4567be",
+    "import_helper_review_sha256": "043936574f7e75f7375306889d685966293fd53ac2339e4b69eec293a1044c85",
+    "v2_integration_review_sha256": "a824c9cd526b18bba13582e2a80ff721f904b2cec3523a507c8fa18feb5c7f05"
+  },
+  "next_compute_request": {
+    "descriptor": "configs/experiments/native-graph-calibration-v2-launch.json",
+    "owner_approval_required": true,
+    "cluster": "mila",
+    "max_submissions": 1,
+    "cpu": 1,
+    "memory_gib": 2,
+    "wall_minutes": 10,
+    "gpu": 0,
+    "retries": 0,
+    "training": false
   }
 }
