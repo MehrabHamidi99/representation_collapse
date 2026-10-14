@@ -2,6 +2,16 @@
 
 Version 1, 2026-10-11. Status: protocol ready; empirical reproduction not run.
 
+Archive recovery and debugging follow-up, **2026-10-14**: original numerical
+candidates and TSA source have now been located in the owner's Mila archive;
+checkpoint/data/producer linkage is still unverified. The
+[graph reproduction audit](tgrab-reproduction-audit-2026-10-14.md) records
+seven engineering checks, confirmed current-code issues, and the limits of
+attributing them to the original results. Reproduce the `Pdet(2,32)` behavioral
+curve separately from the AB and AABB Floquet candidates. Prioritize this
+source-matched graph control before additional vector expansion. No graph
+reproduction has run, and this update admits no numerical payload read or job.
+
 Source-pin follow-up, 2026-10-12: the
 [bounded upstream audit](tgrab-upstream-pin-2026-10-12.md) and
 [machine-readable record](../../configs/graph/tgrab-upstream-pin.json) now fix

@@ -376,3 +376,55 @@ receipt: `runs/ops/completion-inventory-20261014T0950Y/reconciliation.json`, SHA
 `133a3ed30a94958edbee6da0efdf3f44d8dd4ca4f4ccdb752fc595005a7baa74`. Current source publication remains `fcaafe5`
 at the beginning of this inventory pass; the inventory will be published
 separately. Existing foreign template edits remain untouched.
+
+## 10:16 local / October 14 06:16 UTC — T-GRAB archive recovery and bug audit
+
+The owner requested the original graph benchmark as the collapse reproduction
+control, then directed a search of Mila's TSA archive. Three bounded native
+agents audited manuscript claims, upstream code parity and archive metadata.
+The [integrated report](../../auto/tgrab-reproduction-audit-2026-10-14.md)
+records the distinction between unrun graph replication and current vector
+competence failures. The original behavioral forgetting plot is `Pdet(2,32)`
+(period 64); the Floquet draft separately refers to AB and AABB.
+
+Recovered `/network/archive/m/mehrab.hamidi/projects/lab/TSA` and
+`/network/archive/m/mehrab.hamidi/floquet_analysis`. Bounded inventory examined
+364 file-metadata rows and 12 small source identities. Four `.npy` headers read
+512 bytes, no payload: six complex eigenpairs, eigenvectors `(25600,6)`,
+envelope `(20,25600,6)`, norm `(20,6)`. Twenty Jacobian files total
+52,428,815,150 bytes; none was loaded, hashed or transferred. No model
+checkpoint was found in enumerated TSA scopes. A dangling scratch symlink
+points to a collaborator; that user's storage was not searched. Search limits
+and oversized/pruned files are explicit. The initial sandbox/socket failure
+and a local text-probe preparation failure are preserved; neither is evidence
+of a remote asset failure. The diagnosed sandbox failure was resolved by one
+reviewed escalation using the existing master, without fresh authentication.
+
+Seven small engineering checks ran: three demonstrate public-pinned negative
+sampling accepts a forced positive edge under local Torch 2.6.0; two symbolic
+spies confirm conditional evaluation warm-start timing; two exact archived
+matvec tests demonstrate imaginary-input loss in `.double()`. Independent
+static reviews accepted the scoped evidence. No graph model or optimizer
+executed. Current archived analysis also repeats envelope entries and uses
+a 20-step window while loading cached eigenpairs. The June 1 source is unbound
+to April 25 arrays, so none of these bugs establishes the cause of original
+multipliers or collapse. Two missing public source entrypoints were recovered
+at pinned commit and verified against Git blob hashes; no imports/training.
+
+Key immutable receipts: archive inventory
+`c847ed429110a01707e37adaefac5b97db87c79163e3f30584260f91f8229577`;
+manuscript audit `7aae4e51e9b629dfea6466f33e2aa1ca65a25b5026d551a105d836cb39eaabc3`;
+public code audit `aada82ee7be2fb2c516c513c4572e01c332edc8343b002249fbe369587f94427`;
+archived analysis review
+`64a3c51b247c0fd883470f5eaec8c8611cae9b357e3089bdfdc32ce484d28264`.
+
+README, tracker, graph protocol, charter, dependency-plan notes and structured
+status now prioritize source-matched graph parity before further vector
+expansion. Historical source audits/notebooks and inherited manuscripts remain
+unchanged. This is provenance/engineering progress, not a graph reproduction
+or empirical collapse claim. Next: freeze a bounded raw-array audit and
+resolve checkpoint/data capture linkage; if absent, prepare a labeled GC-LSTM
+reconstruction, with complete state, native metric chronology, independent
+review and exact compute admission. Byte-identical old checkpoints cannot be
+promised from incomplete RNG/environment histories. No new cluster budget was
+created by this report. Other agents' template changes remain untouched.

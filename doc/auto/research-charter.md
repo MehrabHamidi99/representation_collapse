@@ -215,8 +215,10 @@ entrypoint `ACM___TGRAB_KDD_2026/kdd/main.tex:327–354`, active includes
 replaced in `paper/sections/B-inherited-draft.tex`. New here: the equal-horizon
 matched-body intervention, complete-state (`2NH`) measurement, separated
 estimands, analytic nulls, causal interventions and the competence prerequisite.
-Legacy graph checkpoint, raw arrays and analysis code are not recovered; the six
-inherited multipliers `|λ|≈0.41–0.44` are unverified attributed observations.
+October 14 follow-up recovered archived graph-analysis source and numerical
+candidates on Mila. Their checkpoint/data/producer linkage and numerical values
+remain unverified; the six inherited multipliers `|λ|≈0.41–0.44` remain
+attributed observations. See the [recovery and debugging audit](tgrab-reproduction-audit-2026-10-14.md).
 
 ## 9. Evidence state, 2026-10-12
 

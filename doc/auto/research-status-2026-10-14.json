@@ -2,7 +2,7 @@
   "schema_version": 1,
   "local_date": "2026-10-14",
   "timezone": "Asia/Yerevan",
-  "updated_at_utc": "2026-10-14T05:50:30.019467+00:00",
+  "updated_at_utc": "2026-10-14T06:16:44.276404+00:00",
   "research_has_run": true,
   "uninterrupted_native_coordination_confirmed": false,
   "qwen": {
@@ -166,6 +166,46 @@
       "reviewed_document_sha256": "197922576ae0b750bd4221bf0294c376fc7ff88d4bd562faa3a392ac75c009e9",
       "published_document_sha256": "ac702dea1c72a920fb6a10a21bad7e2a7d2434a3d2c33fff00878194e50659b2",
       "editorial_change": "Only the introductory review-status sentence changed; algebra and remaining content are byte-identical."
+    },
+    "graph_reproduction": {
+      "state": "not_run_archive_candidates_recovered",
+      "negative_replication_observed": false,
+      "vector_runs_are_graph_replications": false,
+      "original_model_checkpoint_identified": false,
+      "archive_inventory_sha256": "c847ed429110a01707e37adaefac5b97db87c79163e3f30584260f91f8229577",
+      "report": "doc/auto/tgrab-reproduction-audit-2026-10-14.md",
+      "legacy_payloads_read_this_pass": 0,
+      "new_graph_native_calls": 0,
+      "new_training_jobs": 0,
+      "engineering_unit_tests": 7,
+      "candidate_eigenvector_shape": [
+        25600,
+        6
+      ],
+      "candidate_envelope_shape": [
+        20,
+        25600,
+        6
+      ],
+      "primary_behavior_condition": {
+        "num_patterns": 2,
+        "block_length": 32,
+        "period_steps": 64
+      },
+      "separate_note_conditions": [
+        {
+          "num_patterns": 2,
+          "block_length": 1,
+          "period_steps": 2
+        },
+        {
+          "num_patterns": 2,
+          "block_length": 2,
+          "period_steps": 4
+        }
+      ],
+      "scientific_claim_accepted": false,
+      "current_priority": "Original graph parity/reconstruction before further vector expansion"
     }
   },
   "wandb": {
@@ -210,7 +250,7 @@
     "prior_callback_due_utc": "2026-10-13T16:50:56Z",
     "prior_callback_deadline_utc": "2026-10-13T20:00:00Z",
     "current_pending_timers": 0,
-    "current_work": "completed-task inventory reconciled against source, execution and independent-review receipts",
+    "current_work": "T-GRAB manuscript/source/archive audit and seven engineering reproducers completed; graph reproduction prioritized",
     "automatic_allocation_renewal": false
   },
   "evidence": {
@@ -230,7 +270,9 @@
     "fresh_cluv_status_path": "runs/ops/status-check-20261014T0944Y/cluv-status-receipt.json",
     "fresh_cluv_status_sha256": "81aebee55a1adcefbd56ff50ebdc7b1e154c2621e4684137f64b0b690d73e33c",
     "completed_task_reconciliation_path": "runs/ops/completion-inventory-20261014T0950Y/reconciliation.json",
-    "completed_task_reconciliation_sha256": "133a3ed30a94958edbee6da0efdf3f44d8dd4ca4f4ccdb752fc595005a7baa74"
+    "completed_task_reconciliation_sha256": "133a3ed30a94958edbee6da0efdf3f44d8dd4ca4f4ccdb752fc595005a7baa74",
+    "tgrab_archive_inventory_sha256": "c847ed429110a01707e37adaefac5b97db87c79163e3f30584260f91f8229577",
+    "tgrab_legacy_analysis_review_sha256": "64a3c51b247c0fd883470f5eaec8c8611cae9b357e3089bdfdc32ce484d28264"
   },
   "published_foundation_commit": "18aa494d734e2d885de4411f899de5c2ade1dea7",
   "published_implementation_commit": "edc47ee8914125b20d9fee9816e3255f194bc462",

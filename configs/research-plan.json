@@ -142,7 +142,8 @@
       "status": "blocked",
       "scientific_decision": "pending",
       "blockers": [
-        "Executable graph training/analysis code, source-linked checkpoints, and raw datasets have not been recovered in this repository."
+        "Exact graph dataset/conversion, trained recurrent and link-head checkpoint, environment and producer linkage remain unverified.",
+        "Recovered archive numerical candidates have metadata only; their payload hashes and independent reduction remain pending."
       ],
       "role": "asset-and-provenance-recovery",
       "inputs": [
@@ -163,7 +164,8 @@
       ],
       "upstream_metadata_pin": "configs/graph/tgrab-upstream-pin.json",
       "upstream_metadata_source_verified": true,
-      "note": "Upstream source/dataset metadata/dependency revisions pinned; AB/AABB source naming resolved. Datasetpayload andlegacycheckpoint/trajectories/environment/analysis provenance remain missing. Node remains blocked for exact empirical reproduction."
+      "note": "October14 recovered archived TSA source plus eigenpair/envelope/Jacobian candidates on Mila; no checkpoint found in bounded owner TSA search. Public source pins remain available. Exact legacy replay still blocked; labeled reconstruction is the fallback.",
+      "legacy_candidates": "configs/graph/legacy-asset-candidates-2026-10-14.json"
     },
     {
       "node_id": "compute_plan",
@@ -222,7 +224,8 @@
         "Low rank and contraction are reported as separate estimands with performance and forcing controls.",
         "Artifacts satisfy provenance/schema/checksum contracts, and missing/failed replications remain visible."
       ],
-      "verified_artifacts": []
+      "verified_artifacts": [],
+      "note": "Immediate priority is the original Pdet(2,32) behavior and separate AB/AABB diagnostics; vector results do not constitute a negative graph replication. Resolve archive provenance/code parity and freeze exact reconstruction/source/compute before execution."
     },
     {
       "node_id": "graph_interpretation_review",
@@ -789,5 +792,13 @@
     "report": "doc/auto/qwen-continuous-monitor-deployment-2026-10-13.md",
     "observed_at_utc": "2026-10-13T12:03:02.425890Z",
     "fresh_process_certificate_sha256": "4546865d37d7bfc75d2a52ddfa3c5cf7aaac718339d696012ae65fa845078444"
+  },
+  "current_priority": {
+    "updated_at_utc": "2026-10-14T06:16:44.276404+00:00",
+    "work": "Original T-GRAB graph recovery and parity before further vector expansion",
+    "reproduction_audit": "doc/auto/tgrab-reproduction-audit-2026-10-14.md",
+    "legacy_candidates": "configs/graph/legacy-asset-candidates-2026-10-14.json",
+    "scientific_acceptance": false,
+    "additional_compute_authorized": false
   }
 }

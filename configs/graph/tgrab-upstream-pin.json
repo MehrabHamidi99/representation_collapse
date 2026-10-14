@@ -299,5 +299,32 @@
     ],
     "source_files_fetched": 23,
     "tree_truncated": false
-  }
+  },
+  "followup_source_audits": [
+    {
+      "at_utc": "2026-10-14T06:01:46.258824+00:00",
+      "commit": "31293102b065feef7817ff86211427d7594edfdb",
+      "files": [
+        {
+          "path": "train/run.py",
+          "url": "https://raw.githubusercontent.com/alirezadizaji/T-GRAB/31293102b065feef7817ff86211427d7594edfdb/train/run.py",
+          "bytes": 982,
+          "git_blob_sha1": "2ac92512a4d07a94c8ce77b26ae3e55d5be1223c",
+          "source_sha256": "0307e50958e3cca25675886721e90de2535248add0bfdde545a50f3e870f716a",
+          "local_path": "runs/graph/upstream-followup-20261014/source/train/run.py"
+        },
+        {
+          "path": "dataset/DTDG/graph_generation/run.py",
+          "url": "https://raw.githubusercontent.com/alirezadizaji/T-GRAB/31293102b065feef7817ff86211427d7594edfdb/dataset/DTDG/graph_generation/run.py",
+          "bytes": 1106,
+          "git_blob_sha1": "42d35563f3b51d6a583d56ac5953ac631e9101c7",
+          "source_sha256": "126e149445842a244620354828688257041ec95a99f12db5f263bc063e2924db",
+          "local_path": "runs/graph/upstream-followup-20261014/source/dataset/DTDG/graph_generation/run.py"
+        }
+      ],
+      "receipt_sha256": "96fbb3292c3796ac7e461cf8aeca9f5ebd258395cdd14446cf71d9e82aa653a9",
+      "review_sha256": "70d72210204976c5fce631ded7c9d8e4c7c996ef0f3af5ca123c538992874b83",
+      "imports_or_model_execution": false
+    }
+  ]
 }

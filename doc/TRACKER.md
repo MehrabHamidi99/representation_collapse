@@ -6,6 +6,20 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Original graph reproduction — 2026-10-14, priority update.** The current
+  vector studies are not graph replications; no negative T-GRAB replication has
+  occurred. The owner-directed Mila TSA search recovered archived analysis
+  source and eigenpair/envelope/Jacobian candidates (20 Jacobians, 52.43 GB).
+  Headers show eigenvectors `(25600,6)` and envelopes `(20,25600,6)`; no payload
+  or checkpoint was loaded. No original model checkpoint was found in the
+  enumerated owner TSA scopes. Source/array/checkpoint linkage remains open.
+  Three native agents audited claims, source parity and archive recovery;
+  seven engineering checks reproduce sampler/evaluation/complex-matvec issues.
+  The archived source also repeats envelope time entries, hardcodes 20 steps
+  and reloads eigenpairs; its relationship to the older plots is unverified.
+  Prioritize `Pdet(2,32)` behavioral parity separately from AB/AABB dynamics,
+  before additional vector expansion. [Audit and next steps](auto/tgrab-reproduction-audit-2026-10-14.md).
+  No graph model execution, numerical payload audit or new submission occurred.
 - **Completed-task inventory — 2026-10-14.** Seven milestones are complete:
   protocol review, forward-engine implementation, the actual 736-call run,
   independent numerical reduction, conditional theory review, W&B reporting

@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "kind": "legacy_tgrab_graph_asset_candidates",
+  "observed_at_utc": "2026-10-14T06:09:49.371486+00:00",
+  "scientific_acceptance": false,
+  "payloads_verified": false,
+  "producer_revision_verified": false,
+  "model_checkpoint_identified": false,
+  "archive_paths": {
+    "archived_lab_figures": "/network/archive/m/mehrab.hamidi/projects/lab",
+    "floquet_numerical_assets": "/network/archive/m/mehrab.hamidi/floquet_analysis",
+    "mila_archive": "/network/archive/m/mehrab.hamidi",
+    "tsa_source": "/network/archive/m/mehrab.hamidi/projects/lab/TSA"
+  },
+  "tsa_git_metadata": {
+    "commit": "403bd6f47e42f5fd98c1cf366da6891b955fc208",
+    "head": "ref: refs/heads/appendix",
+    "working_tree_identity_verified": false
+  },
+  "header_metadata": [
+    {
+      "bytes": 176,
+      "bytes_read": 128,
+      "dtype_descriptor": "<c8",
+      "fortran_order": false,
+      "header_length": 118,
+      "is_dir": false,
+      "is_file": true,
+      "is_symlink": false,
+      "mtime_utc": "2025-04-25T20:04:48+00:00",
+      "npy_format_version": [
+        1,
+        0
+      ],
+      "path": "/network/archive/m/mehrab.hamidi/floquet_analysis/eigvals.npy",
+      "payload_bytes_read": 0,
+      "shape": [
+        6
+      ]
+    },
+    {
+      "bytes": 1228928,
+      "bytes_read": 128,
+      "dtype_descriptor": "<c8",
+      "fortran_order": true,
+      "header_length": 118,
+      "is_dir": false,
+      "is_file": true,
+      "is_symlink": false,
+      "mtime_utc": "2025-04-25T20:04:48+00:00",
+      "npy_format_version": [
+        1,
+        0
+      ],
+      "path": "/network/archive/m/mehrab.hamidi/floquet_analysis/eigvecs.npy",
+      "payload_bytes_read": 0,
+      "shape": [
+        25600,
+        6
+      ]
+    },
+    {
+      "bytes": 24576128,
+      "bytes_read": 128,
+      "dtype_descriptor": "<c8",
+      "fortran_order": false,
+      "header_length": 118,
+      "is_dir": false,
+      "is_file": true,
+      "is_symlink": false,
+      "mtime_utc": "2025-04-25T21:25:44+00:00",
+      "npy_format_version": [
+        1,
+        0
+      ],
+      "path": "/network/archive/m/mehrab.hamidi/floquet_analysis/envelope_0.npy",
+      "payload_bytes_read": 0,
+      "shape": [
+        20,
+        25600,
+        6
+      ]
+    },
+    {
+      "bytes": 608,
+      "bytes_read": 128,
+      "dtype_descriptor": "<f4",
+      "fortran_order": false,
+      "header_length": 118,
+      "is_dir": false,
+      "is_file": true,
+      "is_symlink": false,
+      "mtime_utc": "2025-04-25T21:25:44+00:00",
+      "npy_format_version": [
+        1,
+        0
+      ],
+      "path": "/network/archive/m/mehrab.hamidi/floquet_analysis/norm_env_0.npy",
+      "payload_bytes_read": 0,
+      "shape": [
+        20,
+        6
+      ]
+    }
+  ],
+  "jacobian_metadata": {
+    "count": 20,
+    "total_bytes": 52428815150,
+    "contents_hashed_or_loaded": false
+  },
+  "archive_inventory_sha256": "c847ed429110a01707e37adaefac5b97db87c79163e3f30584260f91f8229577",
+  "checkpoint_search_scope": "Only enumerated user-owned TSA/lab scopes to recorded depth/count limits; no global absence claim.",
+  "collaborator_storage_searched": false
+}

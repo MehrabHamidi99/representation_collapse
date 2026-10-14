@@ -24,7 +24,9 @@ fixed-precision checks pass, while four FP32/FP64 perturbation-logit comparisons
 fail at one independent history. See the [reviewed results](doc/auto/cached-forward-v2-results-independent-review-2026-10-14.md).
 The experiment and reduction have verified offline W&B records; cloud sync is
 pending.
-Graph source pins are available, while legacy payload provenance remains missing.
+Legacy graph-analysis source and numerical candidates have now been located in
+the Mila TSA/Floquet archive; checkpoint and producer linkage remain unverified.
+[Original graph reproduction is the next priority](doc/auto/tgrab-reproduction-audit-2026-10-14.md).
 
 Qwen and its monitor were verified running at October 14 05:42 UTC. The worker
 has nine verified replies and is waiting for evidence; no additional reply has

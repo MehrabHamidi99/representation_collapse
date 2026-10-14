@@ -49,6 +49,7 @@ Evidence records: [initial-phase report](auto/initial-phase-report.md),
 [contract review](auto/post-calibration-contract-v2-independent-review-2026-10-14.md),
 [forward implementation review](auto/cached-forward-v2-implementation-independent-review-2026-10-14.md),
 [independent forward results](auto/cached-forward-v2-results-independent-review-2026-10-14.md),
+[T-GRAB archive recovery and debugging](auto/tgrab-reproduction-audit-2026-10-14.md),
 [causal-bridge scope audit](auto/causal-bridge-audit-2026-10-14.md),
 [conditional approximate-bridge bounds](auto/approximate-bridge-audit-2026-10-14.md),
 and [current research/worker status](auto/research-status-2026-10-14.json).
