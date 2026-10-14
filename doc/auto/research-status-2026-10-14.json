@@ -2,11 +2,11 @@
   "schema_version": 1,
   "local_date": "2026-10-14",
   "timezone": "Asia/Yerevan",
-  "updated_at_utc": "2026-10-13T21:55:49.176387+00:00",
+  "updated_at_utc": "2026-10-14T05:45:50.059888+00:00",
   "research_has_run": true,
   "uninterrupted_native_coordination_confirmed": false,
   "qwen": {
-    "observed_at_utc": "2026-10-13T21:44:24.857717+00:00",
+    "observed_at_utc": "2026-10-14T05:42:34.549168+00:00",
     "state": "running_waiting_for_evidence",
     "pid": 3244371,
     "supervisor_pid": 3244355,
@@ -25,7 +25,11 @@
     "prompt_repair": "staged; exact live replacement remains pending owner restart response after automatic approval rejection",
     "new_task_published_at_utc": "2026-10-13T21:43:31.983821+00:00",
     "new_task_id": "approximate-bridge-20261014T0142Y",
-    "new_task_state": "response_verified_whole_answer_rejected_as_nonresponsive"
+    "new_task_state": "response_verified_whole_answer_rejected_as_nonresponsive",
+    "heartbeat_age_seconds": 47.506026,
+    "attempts_since_previous_check": 0,
+    "additional_replies_since_previous_check": 0,
+    "new_research_overnight_verified": false
   },
   "monitor": {
     "historical_observer": {
@@ -39,7 +43,7 @@
       "both_original_pids_absent": true
     },
     "continuation": {
-      "state": "running_eight_observations_verified",
+      "state": "running_106_observations_verified",
       "launched_at_utc": "2026-10-13T20:52:40Z",
       "observer_pid": 3468694,
       "wrapper_pid": 3468674,
@@ -52,9 +56,11 @@
       "output_outside_qwen_evidence_roots": true,
       "second_observation_at_utc": "2026-10-13T20:57:40.757146+00:00",
       "first_interval_seconds": 300.000158,
-      "verified_observations": 8,
-      "last_observation_at_utc": "2026-10-13T21:27:40.758231+00:00",
-      "maximum_gap_seconds": 300.000441
+      "verified_observations": 106,
+      "last_observation_at_utc": "2026-10-14T05:37:40.772697+00:00",
+      "maximum_gap_seconds": 300.000441,
+      "metadata_issue_records": 0,
+      "all_owned_process_identities_verified_at_utc": "2026-10-14T05:42:34.549168+00:00"
     }
   },
   "compute": {
@@ -71,11 +77,14 @@
     "new_slurm_submissions": 0,
     "new_gpu_jobs": 0,
     "cluv_version": "0.1.5",
-    "mila_matching_project_queue": "empty at21:13UTC",
+    "mila_matching_project_queue": "empty at 05:44 UTC",
     "full_alliance_scheduler_recheck_this_turn": "all configured targets inspected; only Mila/Tamia queries possible",
-    "tamia_matching_project_queue": "empty at21:13UTC",
-    "other_alliance_connections": "eight targets have no reusable master",
-    "other_alliance_queues_verified": false
+    "tamia_matching_project_queue": "empty at 05:44 UTC",
+    "other_alliance_connections": "eight targets have no reusable master; freshly rechecked",
+    "other_alliance_queues_verified": false,
+    "observed_at_utc": "2026-10-14T05:42:34.549168+00:00",
+    "allocation_remaining_seconds_at_check": 11601.450811,
+    "cluv_observed_at_utc": "2026-10-14T05:44:17.952859+00:00"
   },
   "scientific_evidence": {
     "completed_acquisition_fits": 32,
@@ -201,7 +210,7 @@
     "prior_callback_due_utc": "2026-10-13T16:50:56Z",
     "prior_callback_deadline_utc": "2026-10-13T20:00:00Z",
     "current_pending_timers": 0,
-    "current_work": "numerical and theory reviews completed; final documentation integration and publication",
+    "current_work": "fresh read-only status reconciliation and documentation update; no new numerical run or model request in this status pass",
     "automatic_allocation_renewal": false
   },
   "evidence": {
@@ -213,12 +222,16 @@
     "wandb_project_create_and_online_smoke_sha256": "71bde8c6b550262d3aef1dd9a9296c5d5fa92f2f02589ad246270e0322952a9b",
     "wandb_reporting_final_manifest_sha256": "482de132f75e7dfdb7125a98ed2414e74272a23012d6395250822f1f0ea77a7a",
     "all_cluster_pass_sha256": "9c0da7fb18e2b84380db5bfb2d3bffe429e29e9baf0a67f333a666315a5eaed8",
-    "fresh_worker_liveness_sha256": "37c574ebfaf7a68e70fe4fa1dc05038df7f9cfa94065970a76c6bb53b387d3db",
+    "fresh_worker_liveness_sha256": "de651c28e839a8403ad081da700dededcbcfdd58538595f4ec0ed9a1732de820",
     "qwen_call9_participation_sha256": "d0c5d23fd237f57ef12a28a8d64a15e2bb700cf96e81c297b815b320a6baa820",
     "final_closeout_sha256": "065b7c4556a499d2a0672f07fe12c4c1286f4c02c646fdd509141ea232222085",
-    "root_closeout_integration_sha256": "d151866fe73365134d5726be8261803401956d6ff137673d259c06ac4300c682"
+    "root_closeout_integration_sha256": "d151866fe73365134d5726be8261803401956d6ff137673d259c06ac4300c682",
+    "fresh_worker_liveness_path": "runs/ops/status-check-20261014T0944Y/sanitized-status-receipt.json",
+    "fresh_cluv_status_path": "runs/ops/status-check-20261014T0944Y/cluv-status-receipt.json",
+    "fresh_cluv_status_sha256": "81aebee55a1adcefbd56ff50ebdc7b1e154c2621e4684137f64b0b690d73e33c"
   },
   "published_foundation_commit": "18aa494d734e2d885de4411f899de5c2ade1dea7",
   "published_implementation_commit": "edc47ee8914125b20d9fee9816e3255f194bc462",
-  "published_reducer_commit": "70b3a05a49fcd8e08fe2af2d5409095d6b2d1f60"
+  "published_reducer_commit": "70b3a05a49fcd8e08fe2af2d5409095d6b2d1f60",
+  "published_closeout_commit": "3c6d07215a12f364085841a9eb301dd6f7d98c77"
 }

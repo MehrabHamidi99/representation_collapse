@@ -1,14 +1,16 @@
-Current verification, **2026-10-13 21:13 UTC / October 14 local**: native
-cluv 0.1.5 verifies the existing Mila allocation route and shared Tamia3 route.
-Both project-name-filtered scheduler queries succeed with no matches. The other
-eight Alliance targets have no reusable masters from this Tamia controller;
-their queues are unverified. No fresh authentication or submission was attempted.
-Qwen has eight verified replies and a fresh heartbeat in existing Mila job
-11228391 (shared 2 CPUs/4 GiB/0 GPUs). The project observer is advancing every
-five minutes through October 14 08:50 UTC; the guard remains armed for08:52:40,
-before allocation expiry08:55:56. Fixed Qwen call/hour caps were removed by the
-owner; that did not extend the physical allocation or grant extra GPU jobs.
-No replacement allocation is automatic. See [current status](research-status-2026-10-14.json).
+Current verification, **2026-10-14 05:42–05:44 UTC / 09:42–09:44 Yerevan**:
+native cluv 0.1.5 verifies the existing Mila allocation route and shared Tamia3
+route. Both project-name-filtered scheduler queries succeed with no matches.
+Eight other Alliance targets have no reusable masters; their queues remain
+unverified. No fresh authentication or submission was attempted. Qwen and all
+five owned worker/supervisor/guard/observer processes have verified source,
+UID and allocation identities. Qwen remains at nine replies and 45,061 reported
+tokens, waiting for evidence; no new reply has appeared since October 13 21:43 UTC.
+The observer continued overnight and has 106 verified observations, zero
+metadata issues and a maximum interval of 300.000441 seconds. Existing Mila
+job 11228391 has shared 2 CPUs/4 GiB/zero GPUs. Observer deadline remains
+08:50 UTC, guard 08:52:40, allocation expiry 08:55:56 (12:55:56 Yerevan).
+No automatic replacement or new GPU budget. See [current status](research-status-2026-10-14.json).
 The following observations retain their historical timestamps and limits.
 
 Historical overnight continuation, 2026-10-12: the existing Qwen worker has a

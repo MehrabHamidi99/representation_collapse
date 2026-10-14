@@ -6,7 +6,26 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
-- **Completed forward calibration — 2026-10-14, current.** Published producer
+- **Morning status check — 2026-10-14, current (09:42–09:44 Yerevan).**
+  A fresh read-only check at 05:42:34 UTC verifies existing Mila job `11228391`
+  is RUNNING and all five owned worker/supervisor/guard/observer process
+  identities, source hashes and job cgroups match. Qwen has nine verified
+  replies, 45,061 reported tokens, zero provider errors and no request in flight.
+  Its heartbeat is 47.5 seconds old; it is waiting for evidence. Counts have
+  not advanced since the last reply at October 13 21:43 UTC. Monitoring continued
+  overnight: 106 observations through 05:37:40 UTC, maximum interval
+  300.000441 seconds, zero recorded metadata issues. This establishes continued
+  monitoring and worker health, not additional overnight model research.
+  Native cluv 0.1.5 at 05:44 UTC verifies Mila/Tamia project-name queue queries
+  with no matching experiment jobs. Eight other Alliance targets have no
+  reusable masters; their queues remain unknown. No new login or submission.
+  The last completed numerical work remains the reviewed 32-condition,
+  736-call calibration and independent reduction below. No new fit, numerical
+  experiment or model request occurred in this status pass. Observer deadline
+  is 12:50 Yerevan today; allocation expiry is 12:55:56, without automatic renewal.
+  [Structured status](auto/research-status-2026-10-14.json) and
+  [dated report](october/october14/2026-10-14-progress-report.md) retain receipts.
+- **Completed forward calibration — 2026-10-14, latest completed run.** Published producer
   `edc47ee` completed 32 conditions and 736 native forward calls in 49.66 seconds,
   with zero fitting, targets or derivatives. Independent NumPy reduction from
   published `70b3a05` completed in 41.06 seconds and verified 15,024 comparisons.

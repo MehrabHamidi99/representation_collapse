@@ -26,8 +26,11 @@ The experiment and reduction have verified offline W&B records; cloud sync is
 pending.
 Graph source pins are available, while legacy payload provenance remains missing.
 
-Qwen has nine verified replies and a live worker in existing Mila allocation
-11228391. The five-minute observer continues through October 14 08:50 UTC;
+Qwen and its monitor were verified running at October 14 05:42 UTC. The worker
+has nine verified replies and is waiting for evidence; no additional reply has
+appeared overnight. Its five-minute monitor has 106 observations with no recorded
+metadata issues in existing Mila allocation 11228391. Monitoring continues
+through October 14 08:50 UTC;
 allocation expiry is 08:55:56 UTC. Native coordination has had gaps, and worker
 liveness alone does not establish continuous research. The new
 [W&B project](https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse)

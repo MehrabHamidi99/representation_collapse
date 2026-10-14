@@ -286,3 +286,46 @@ in its calibration record, and specify separate derivative and training
 budgets before further model execution. Original-task competence must still
 be established before periodic versus matched-ordering effects support a
 scientific claim. Unrelated October 13 template-agent edits remain untouched.
+
+## 09:45 local / October 14 05:45 UTC — fresh autoresearch status reconciliation
+
+The owner requested a confirmed, updated autoresearch report. A fresh
+read-only pass at 05:42:34 UTC entered the existing Mila allocation through
+its authenticated SSH master and `srun --jobid=11228391 --overlap`. It verified
+RUNNING scheduler state, the fixed expiry, shared SETUP ownership and all five
+owned process identities, source hashes, UID and job cgroups. Qwen's heartbeat
+was 47.5 seconds old: nine attempts/replies, 45,061 reported tokens, zero
+recorded provider errors, no request in flight, waiting for evidence. The last
+reply remains October 13 21:43:52 UTC. No additional overnight model research
+is claimed. Deterministic monitoring did continue: 106 observations through
+05:37:40 UTC, maximum interval 300.000441 seconds, zero metadata-issue records.
+STOP/CANCEL controls are absent and the project expiry guard remains armed.
+
+A separate native cluv 0.1.5 pass at 05:44:17 UTC queried Mila and Tamia
+project-name queues successfully with no matching experiment jobs. Eight other
+Alliance targets have no reusable masters; their queues remain unverified.
+No fresh authentication, allocation, submission, worker control or provider
+request occurred. The 08:50 UTC observer deadline and 08:55:56 UTC allocation
+expiry (12:50 and 12:55:56 Yerevan) remain unchanged.
+
+The final numerical closeout receipt and all four files it binds were rehashed
+successfully. Last completed work remains 32 conditions/736 native forward
+calls plus an independent reduction of 15,024 comparisons. Numerical integrity
+is accepted, with four cross-dtype failures retained; harmful collapse and
+original-task competence remain unestablished. Counts remain 32 completed fits
+plus one incomplete fit and 114,200 updates. W&B numerical cloud delivery has
+not been newly verified; the prior offline logs and online smoke retain their
+existing evidence status. No experiment or model call was repeated.
+
+Evidence and commands are preserved under `runs/ops/status-check-20261014T0944Y/`:
+
+- `check_readonly.py` produced `sanitized-status-receipt.json`, SHA-256
+  `de651c28e839a8403ad081da700dededcbcfdd58538595f4ec0ed9a1732de820`.
+- `verify_cluv_readonly.py` produced `cluv-status-receipt.json`, SHA-256
+  `81aebee55a1adcefbd56ff50ebdc7b1e154c2621e4684137f64b0b690d73e33c`.
+
+README, tracker, compute plan and structured status now carry these fresh
+timestamps and distinguish a healthy waiting worker from substantive research
+progress. The next scientific step remains a prospectively reviewed complete-state
+measurement map with explicit derivative/training budgets. This status pass
+does not admit it. Other agents' October 13 template changes remain untouched.
