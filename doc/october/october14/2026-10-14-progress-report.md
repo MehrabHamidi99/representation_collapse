@@ -572,3 +572,12 @@ allocation or automatic native coordinator continuation is claimed.
 Live receipt: `runs/ops/local-qwen-continuation-20261014T1650Y/live-20261014T132422Z.json`.
 The proposal leaf remains active with its separate STOP control; continued
 availability depends on the Mac and approved proxy/backend.
+
+Publication follow-up: generated SVG whitespace triggered the Git formatting
+check. The renderer now normalizes trailing whitespace; the previous visually
+accepted render is preserved as `figure-attempt002`. The first geometry probe
+assumed every SVG path carried a `d` attribute and failed on an empty path;
+the corrected reader retains all path attributes. Regeneration produces
+byte-identical PNG output and identical SVG path attributes after whitespace
+normalization, with verified renderer/output hashes. Git formatting passes.
+No numerical/model experiment was repeated.
