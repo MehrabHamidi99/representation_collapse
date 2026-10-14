@@ -2,23 +2,23 @@
   "schema_version": 1,
   "local_date": "2026-10-14",
   "timezone": "Asia/Yerevan",
-  "updated_at_utc": "2026-10-14T12:59:38.749435+00:00",
+  "updated_at_utc": "2026-10-14T13:25:32.470110+00:00",
   "research_has_run": true,
   "uninterrupted_native_coordination_confirmed": false,
   "qwen": {
-    "observed_at_utc": "2026-10-14T12:54:45.568029+00:00",
+    "observed_at_utc": "2026-10-14T13:24:22.486519+00:00",
     "state": "running_waiting_for_evidence",
     "hosting": "local_mac",
     "pid": 84719,
     "source_commit": "351fa688f3333f0e44701d15d2acf9a2553a4b98",
     "source_sha256": "0f78851940d7f3323fc5cf4408fd0f682a33d93d151c6be4ff6358e1185d8997",
     "process_start_identity_verified": true,
-    "attempts": 4,
-    "schema_model_verified_replies": 4,
+    "attempts": 10,
+    "schema_model_verified_replies": 10,
     "errors": 0,
     "request_in_flight": false,
-    "reported_tokens": 20384,
-    "completed_coordinator_tasks": 3,
+    "reported_tokens": 51176,
+    "completed_coordinator_tasks": 9,
     "max_calls": null,
     "max_hours": null,
     "whole_scientific_answers_accepted": 0,
@@ -26,7 +26,10 @@
     "native_fallback": "two active implementation/review agents plus coordinator; no external paid API",
     "output": "runs/qwen/local-continuous-20261014T1650Y",
     "stop_file": "runs/qwen/local-continuous-20261014T1650Y/STOP",
-    "documentation": "doc/auto/local-autoresearch-continuation-2026-10-14.md"
+    "documentation": "doc/auto/local-autoresearch-continuation-2026-10-14.md",
+    "additional_tasks_queued_after_check": 0,
+    "coordinator_tasks_pending_at_check": 0,
+    "whole_recommendations_reviewed": 10
   },
   "monitor": {
     "historical_observer": {
@@ -167,7 +170,7 @@
       "editorial_change": "Only the introductory review-status sentence changed; algebra and remaining content are byte-identical."
     },
     "graph_reproduction": {
-      "state": "stored_array_producer_complete_independent_reconciliation_pending",
+      "state": "legacy_numerical_diagnostics_verified_reconstruction_components_accepted_native_execution_pending",
       "negative_replication_observed": false,
       "vector_runs_are_graph_replications": false,
       "original_model_checkpoint_identified": false,
@@ -221,7 +224,20 @@
       "producer_reported_time_rows_per_envelope": 20,
       "producer_reported_norm_comparisons": 2280,
       "producer_reported_norm_failures": 0,
-      "legacy_numerical_integrity_accepted": false
+      "legacy_numerical_integrity_accepted": true,
+      "independent_scalar_comparisons": 11700,
+      "independent_mismatches": 0,
+      "independent_norm_comparisons": 2280,
+      "independent_norm_failures": 0,
+      "independent_byte_repeated_envelopes": 19,
+      "legacy_results_report": "doc/auto/legacy-floquet-array-audit-results-2026-10-14.md",
+      "independent_review_sha256": "97e42bb4c791f72dabf948c279ddcdd6a421c936845fce611d632b15a10172c1",
+      "reconstruction_component_engineering_accepted": true,
+      "reconstruction_synthetic_tests_passed": 28,
+      "reconstruction_native_calls": 0,
+      "reconstruction_native_preflight_ready": false,
+      "reconstruction_component_source_sha256": "89894f8bd3e8574b5b57c777353fe1aac3a1f123f792467a009b04b8a6f9bcdb",
+      "reconstruction_component_review_sha256": "65443bd4a2ab20af59b6f6df0548852165fb6e9f301843b4e0e6716631efb11f"
     }
   },
   "wandb": {
@@ -266,6 +282,13 @@
       "history_records_verified": 20,
       "transaction_sha256": "9a3da98011bf1866e8db710c3055ffcb984592dedd9bb9d57ce5077c5e0c9b18",
       "remote_delivery_verified": false
+    },
+    "legacy_array_reconciliation_offline_run": {
+      "run_id": "92f391eee88440f392700990bcc8dc54",
+      "state": "completed",
+      "history_records_verified": 20,
+      "transaction_sha256": "e3ab4199490cecf97a8c83259544bfec86c0fa430549c23766c1104544ad1449",
+      "remote_delivery_verified": false
     }
   },
   "native_continuation": {
@@ -273,10 +296,11 @@
     "prior_callback_due_utc": "2026-10-13T16:50:56Z",
     "prior_callback_deadline_utc": "2026-10-13T20:00:00Z",
     "current_pending_timers": 0,
-    "current_work": "Production array audit completed; independent numerical verifier preparing. Corrected graph components and independent implementation review active.",
+    "current_work": "Verified archive diagnostics/figure and reviewed graph components complete; publication/handoff. Local proposal leaf remains running and consumes new evidence.",
     "automatic_allocation_renewal": false,
     "persistent_worker_running": true,
-    "persistent_worker_hosting": "local_mac"
+    "persistent_worker_hosting": "local_mac",
+    "pending_native_subagent_tasks": 0
   },
   "evidence": {
     "live_certificate_path": "runs/ops/status-check-20261014T0044Y/live-certificate.json",
@@ -302,10 +326,14 @@
     "terminal_reconciled_sha256": "08966b58e3472687aa0de54b8787211a5de2f612f02587e882e403482b348f3e",
     "legacy_acquisition_receipt_sha256": "4ab1cce4c089e8d5b5c049be2de81f5d0369e52247e239e8ed3b977a7a5a01a4",
     "legacy_reader_final_review_sha256": "bf77b158a280e23949697112bb4e9383f82f1519110a1f28db4018d6bb04fac3",
-    "local_qwen_live_receipt_path": "runs/ops/local-qwen-continuation-20261014T1650Y/live-20261014T125445Z.json",
-    "local_qwen_live_receipt_sha256": "c38ce98c9c937869b56f5f37ac04974ec0ae48e81fea48ce2a4cc45233aae0bb",
-    "local_qwen_proposal_review_sha256": "84e860a0d09c2868921699008667f6f69a1888e3ffcd695678657717e71b9e23",
-    "legacy_array_root_admission_sha256": "f9865692da872e92775a84019c4dbe2535d4549974ced6e8ddd4ec71c9d39014"
+    "local_qwen_live_receipt_path": "runs/ops/local-qwen-continuation-20261014T1650Y/live-20261014T132422Z.json",
+    "local_qwen_live_receipt_sha256": "76a5ee5d8c26110a224cca9d7f723c61398131ac526274302f56af2aaf3cc25c",
+    "local_qwen_proposal_review_sha256": "a43c620c594fe54b2b9975aef101c695f1bcbe969d58a0181edc9206b159600e",
+    "legacy_array_root_admission_sha256": "f9865692da872e92775a84019c4dbe2535d4549974ced6e8ddd4ec71c9d39014",
+    "legacy_array_final_review_path": "runs/review/legacy-array-results-independent-20261014/final-review.json",
+    "legacy_array_final_review_sha256": "97e42bb4c791f72dabf948c279ddcdd6a421c936845fce611d632b15a10172c1",
+    "graph_component_final_review_path": "runs/review/tgrab-reconstruction-implementation-independent-20261014/receipt.json",
+    "graph_component_final_review_sha256": "65443bd4a2ab20af59b6f6df0548852165fb6e9f301843b4e0e6716631efb11f"
   },
   "published_foundation_commit": "18aa494d734e2d885de4411f899de5c2ade1dea7",
   "published_implementation_commit": "edc47ee8914125b20d9fee9816e3255f194bc462",

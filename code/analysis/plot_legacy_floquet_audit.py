@@ -47,7 +47,7 @@ def main() -> None:
     axes[0].set(xlim=(-1.08, 1.08), ylim=(-1.08, 1.08), aspect="equal",
                 xlabel="Real part", ylabel="Imaginary part",
                 title="a  Six stored eigenvalues")
-    axes[0].text(0.04, 0.04, "Product period and residuals unknown", transform=axes[0].transAxes, fontsize=10)
+    axes[0].text(0.04, 0.04, "Period and residuals\nunknown", transform=axes[0].transAxes, fontsize=9)
 
     indices = list(range(19))
     norms = np.array([audit["envelopes"][str(i)]["recomputed_norms"][0] for i in indices])
@@ -56,7 +56,7 @@ def main() -> None:
         axes[1].plot(indices, norms[:, mode], color=colors[mode], linewidth=1.5,
                      label=f"Column {mode + 1}")
     axes[1].set(xlabel="Stored prefix-file index", ylabel="State-axis norm (row 0)",
-                yscale="log", title="b  Different prefix files")
+                yscale="log", title="b  Prefix-file norms")
     axes[1].set_xticks([0, 6, 12, 18])
     axes[1].grid(axis="y", alpha=0.2)
     axes[1].legend(fontsize=9, ncol=2, frameon=False)
@@ -67,7 +67,7 @@ def main() -> None:
                    vmin=0, vmax=1, cmap=ListedColormap(["#f5ddd7", "#2c8875"]),
                    extent=(-0.5, 18.5, -0.5, 19.5))
     axes[2].set(xlabel="Stored prefix-file index", ylabel="Stored time-row index",
-                title="c  Repetition within every file")
+                title="c  Repeated time rows")
     axes[2].set_xticks([0, 6, 12, 18])
     axes[2].set_yticks([0, 5, 10, 15, 19])
     axes[2].legend(handles=[Patch(color="#2c8875", label="Byte-identical to row 0")],

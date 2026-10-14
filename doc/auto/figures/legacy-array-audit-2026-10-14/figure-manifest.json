@@ -1,0 +1,14 @@
+{
+  "kind": "legacy_array_audit_summary_figure",
+  "audit_sha256": "c201ecf6e8451a2aef32c37a69360eccd49dbf376d47bb36472e52b59d6d4fdf",
+  "review_sha256": "97e42bb4c791f72dabf948c279ddcdd6a421c936845fce611d632b15a10172c1",
+  "renderer_sha256": "f3c03432c8d23dba5eca43257dd0aeaf370c80c4acd84eb2e1fcb6e63697fb45",
+  "raw_array_reads": 0,
+  "new_model_calls": 0,
+  "scientific_collapse_claim": false,
+  "caption": "Six stored eigenvalues lack product, residual and orbit certification. Six state-axis norms vary across nineteen archived prefix files. All twenty rows within each file are byte-identical. One archived run; prefixes, modes and rows are not independent replications.",
+  "files": {
+    "legacy-array-audit.png": "ad43d24efc6491a13743611249215fbae4ceeabb9b3ad7994c792098d03625f2",
+    "legacy-array-audit.svg": "d68fb5e91f40bb594239a1fef9f890cd371d87ffc7cc262cbe91337281450052"
+  }
+}

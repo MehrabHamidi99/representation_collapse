@@ -2,7 +2,7 @@
   "schema_version": 1,
   "plan_id": "representation-collapse-v2",
   "created_on": "2026-10-11",
-  "revised_on": "2026-10-13",
+  "revised_on": "2026-10-14",
   "revision_note": "v2 reorders execution around the novelty-audit gates: Gate A analytic/measurement falsification, Gate B minimal trained mechanism study (competence-first GRU/LSTM vector study with preregistered within-support R2 versus R16 contrasts), Gate C theory adding a prediction beyond the affine and commuting nulls, Gate D graph and native transfer. The 351-checkpoint screen of doc/auto/periodicity-research-plan.md section 3E becomes deferred coverage. Existing nodes, statuses, decisions, verified artifacts, approval and resource envelope are unchanged; seven nodes are added. The integrated design is doc/auto/experimental-design-v2.md. This revision authorizes no compute.",
   "purpose": "Calibrate and reproduce graph temporal representation dimension measurements, then test recurrence and modality generality.",
   "execution_mode": "native_coordinator_plus_persistent_proposal_leaf_and_metadata_monitor",
@@ -164,7 +164,7 @@
       ],
       "upstream_metadata_pin": "configs/graph/tgrab-upstream-pin.json",
       "upstream_metadata_source_verified": true,
-      "note": "October14 recovered archived TSA source plus eigenpair/envelope/Jacobian candidates on Mila; no checkpoint found in bounded owner TSA search. Public source pins remain available. Exact legacy replay still blocked; labeled reconstruction is the fallback.",
+      "note": "Forty stored result outputs acquired/hash-verified and independently reduced. Original checkpoint/producer linkage remains absent; full native model/data/environment provenance incomplete. Labeled reconstruction components accepted; exact replay remains blocked.",
       "legacy_candidates": "configs/graph/legacy-asset-candidates-2026-10-14.json"
     },
     {
@@ -225,7 +225,7 @@
         "Artifacts satisfy provenance/schema/checksum contracts, and missing/failed replications remain visible."
       ],
       "verified_artifacts": [],
-      "note": "Immediate priority is the original Pdet(2,32) behavior and separate AB/AABB diagnostics; vector results do not constitute a negative graph replication. Resolve archive provenance/code parity and freeze exact reconstruction/source/compute before execution."
+      "note": "Pdet(2,32) behavior remains unrun. Corrected graph component engineering accepted with28synthetic tests; native packages/environment/data conversion/native parity/checkpoint/reporting runner/outer watchdog and compute admission remain required. Stored-array diagnostics accepted independently; no graph collapse finding."
     },
     {
       "node_id": "graph_interpretation_review",
@@ -618,37 +618,8 @@
       "next_gate": "independently review prospective measurement contract before any new implementation or fitting"
     }
   ],
-  "current_handoff": "doc/october/october13/2026-10-13-progress-report.md",
-  "active_allocation": {
-    "cluster": "mila",
-    "host": "cn-f003.server.mila.quebec",
-    "existing_slurm_job_id": 11228391,
-    "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
-    "worker_source_sha256": "8d9e6149f83a91cefdf8cd51c7e38777cdfade4c73cfb42136f104d7ea45a606",
-    "worker_pid": 3244371,
-    "supervisor_pid": 3244355,
-    "continuous": true,
-    "max_total_attempts": null,
-    "max_hours": null,
-    "allocation_expiry_utc": "2026-10-14T08:55:56Z",
-    "model": "Qwen/Qwen3.8-Flash-Next-FP8",
-    "proposal_only": true,
-    "actions_executed": 0,
-    "accepted_scientific_claims": 0,
-    "phase": "qwen-continuous-20261013T093936Z",
-    "owner_explicit_approval": true,
-    "training": false,
-    "race": false,
-    "scientific_acceptance": "coordinator only",
-    "new_allocations": 0,
-    "current_worker_state": "running",
-    "last_verified_at_utc": "2026-10-13T10:12:05.575592+00:00",
-    "last_verified_attempts": 6,
-    "last_verified_reviews": 6,
-    "automatic_replacement_allocation": false,
-    "last_reported_token_total": 29862,
-    "model_task_event_consumption_is_scientific_acceptance": false
-  },
+  "current_handoff": "doc/october/october14/2026-10-14-progress-report.md",
+  "active_allocation": null,
   "historical_allocations": [
     {
       "phase": "periodicity-analysis-v1",
@@ -695,6 +666,39 @@
       "last_verified_at_utc": "2026-10-13T08:28:51.910561+00:00",
       "last_verified_reviews": 16,
       "finished_at_utc": "2026-10-13T00:36:43.388238+00:00"
+    },
+    {
+      "cluster": "mila",
+      "host": "cn-f003.server.mila.quebec",
+      "existing_slurm_job_id": 11228391,
+      "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+      "worker_source_sha256": "8d9e6149f83a91cefdf8cd51c7e38777cdfade4c73cfb42136f104d7ea45a606",
+      "worker_pid": 3244371,
+      "supervisor_pid": 3244355,
+      "continuous": true,
+      "max_total_attempts": null,
+      "max_hours": null,
+      "allocation_expiry_utc": "2026-10-14T08:55:56Z",
+      "model": "Qwen/Qwen3.8-Flash-Next-FP8",
+      "proposal_only": true,
+      "actions_executed": 0,
+      "accepted_scientific_claims": 0,
+      "phase": "qwen-continuous-20261013T093936Z",
+      "owner_explicit_approval": true,
+      "training": false,
+      "race": false,
+      "scientific_acceptance": "coordinator only",
+      "new_allocations": 0,
+      "current_worker_state": "stopped",
+      "last_verified_at_utc": "2026-10-14T12:36:43.275496+00:00",
+      "last_verified_attempts": 9,
+      "last_verified_reviews": 9,
+      "automatic_replacement_allocation": false,
+      "last_reported_token_total": 45061,
+      "model_task_event_consumption_is_scientific_acceptance": false,
+      "allocation_state": "COMPLETED",
+      "allocation_actual_end_utc": "2026-10-14T08:53:38Z",
+      "terminal_receipt_sha256": "08966b58e3472687aa0de54b8787211a5de2f612f02587e882e403482b348f3e"
     }
   ],
   "completed_cpu_continuation": {
@@ -766,23 +770,23 @@
   "day_native_continuation": {
     "deadline_utc": "2026-10-13T20:00:00Z",
     "prepared": true,
-    "armed": true,
+    "armed": false,
     "route": "existing Codex task follow-up, inherited model",
     "control": "runs/ops/day-research-loop-control-20261013.json",
     "first_callback_delivered": true,
     "callbacks_delivered": 1,
-    "state": "firstcallback delivered; secondone-shot armed; app/server dependency",
+    "state": "historical callbacks ended; no native timer currently registered",
     "next_wake_at_utc": "2026-10-13T12:42:13.949830+00:00",
     "registration_receipt_sha256": "83c037ab15cac358059579ac97fec2c5725f054518b777d3100ebe88f7709428"
   },
   "persistent_controller_scope": "proposal client, deterministic metadata/claim observation; no autonomous scheduler submissions or scientific acceptance",
   "continuous_metadata_observer": {
-    "state": "running",
+    "state": "historical normal deadline exit",
     "pid": 3248354,
     "wrapper_pid": 3248325,
     "interval_seconds": 300,
     "deadline_utc": "2026-10-13T20:00:00Z",
-    "observations_verified": 24,
+    "observations_verified": 119,
     "issues": [],
     "full_completed_history_observed_at_check": true,
     "observed_usage_totals_reconciled": true,
@@ -791,14 +795,32 @@
     "receipt_sha256": "8f2de43637577cf6b67e30dd415b6c9c32f7b8ba496d5ac3f8b2bcf742fd9e46",
     "report": "doc/auto/qwen-continuous-monitor-deployment-2026-10-13.md",
     "observed_at_utc": "2026-10-13T12:03:02.425890Z",
-    "fresh_process_certificate_sha256": "4546865d37d7bfc75d2a52ddfa3c5cf7aaac718339d696012ae65fa845078444"
+    "fresh_process_certificate_sha256": "4546865d37d7bfc75d2a52ddfa3c5cf7aaac718339d696012ae65fa845078444",
+    "finished_at_utc": "2026-10-13T20:00:00Z"
   },
   "current_priority": {
-    "updated_at_utc": "2026-10-14T06:16:44.276404+00:00",
-    "work": "Original T-GRAB graph recovery and parity before further vector expansion",
+    "updated_at_utc": "2026-10-14T13:20:34.305995+00:00",
+    "work": "Verified legacy diagnostics; finish native graph environment/data/parity/training runner before one admitted labeled Pdet(2,32) reconstruction",
     "reproduction_audit": "doc/auto/tgrab-reproduction-audit-2026-10-14.md",
     "legacy_candidates": "configs/graph/legacy-asset-candidates-2026-10-14.json",
     "scientific_acceptance": false,
-    "additional_compute_authorized": false
+    "additional_compute_authorized": false,
+    "legacy_results": "doc/auto/legacy-floquet-array-audit-results-2026-10-14.md",
+    "component_review": "doc/auto/tgrab-reconstruction-implementation-independent-review-2026-10-14.md"
+  },
+  "local_qwen_continuation": {
+    "state": "running_at_last_identity_check",
+    "hosting": "local_mac",
+    "source_commit": "351fa688f3333f0e44701d15d2acf9a2553a4b98",
+    "source_sha256": "0f78851940d7f3323fc5cf4408fd0f682a33d93d151c6be4ff6358e1185d8997",
+    "pid": 84719,
+    "observed_at_utc": "2026-10-14T13:24:22.486519+00:00",
+    "verified_replies": 10,
+    "proposal_only": true,
+    "new_allocations": 0,
+    "max_calls": null,
+    "max_hours": null,
+    "report": "doc/auto/local-autoresearch-continuation-2026-10-14.md",
+    "whole_recommendations_accepted": 0
   }
 }

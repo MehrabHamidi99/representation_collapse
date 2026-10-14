@@ -511,3 +511,64 @@ Unlike the ended cluster run, this local worker has no total runtime/call cap;
 it uses semantic evidence/task triggers and retry backoff, not duplicate hourly
 calls. Continued availability depends on the Mac and approved proxy remaining
 available. No independent local observer or native timer is installed.
+
+## 17:20 local / 13:20 UTC — verified archive diagnostics and reviewed graph components
+
+The independently written verifier was published in936600ce2c994d9edacfbd3beca5533aec4a8c07
+and executed once under its exact root admissionf23dc863c80662a8839da7ea27306e20538939f1a4e50d34c91c987296711d17.
+It completed4.147968seconds with11700comparisons/zero mismatches,
+maxfloatingdifference7.771561172376096e-16,19byte-repeatedenvelopes and
+2280normcomparisonspassing at unchanged1e-6/1e-5directedtolerance.
+Its four recorded owned processes exited without cleanup errors. Final
+independent numerical review accepted descriptive integrity, SHA-256
+97e42bb4c791f72dabf948c279ddcdd6a421c936845fce611d632b15a10172c1.
+Fullproduct/orbit/checkpoint/solver lineage and trained-model harm remain unknown.
+Both numerical runs retain20verifiedofflineW&Brecords each; cloudsyncpending.
+
+[Results, scope and plot](../../auto/legacy-floquet-array-audit-results-2026-10-14.md)
+include byte-identical public copies of the aggregate audit and final verification
+receipt, sufficient to regenerate the figure without raw arrays. The three-panel
+PNG/SVG shows six stored eigenvalues, row0norms across prefixfiles and exact
+time-rowrepetition. A first clippedtitle rendering is preserved as
+`runs/graph/legacy-array-audit-20261014T1646Y-attempt001/figure-attempt001/`;
+the corrected rendering was inspected at original size. This is rendering
+existing verified summaries, not another numerical experiment or model run.
+
+The corrected graph component library passed independent engineering review
+after two lifecycle guards were repaired: training cannot reopen after test
+access; walltime/STOP are checked again around selected-checkpoint loading and
+test opening. Original25-test and repaired28-test evidence and source copies
+remain distinct. Final module SHA-256
+89894f8bd3e8574b5b57c777353fe1aac3a1f123f792467a009b04b8a6f9bcdb;
+independent receipt65443bd4a2ab20af59b6f6df0548852165fb6e9f301843b4e0e6716631efb11f.
+No actual nativeGC-LSTM/head/optimizer/generator was executed. Native graph
+packages/lock/data conversion/parity/checkpoint/reporting/outerwatchdog and
+execution admission remain required. The frozen reconstruction config is still
+disabled, not a runnable or admitted trainer.
+
+LocalQwen PID84719/source/start identity was rechecked13:14:45UTC: seven
+exact-model/schema replies, six taskevents,35935reportedtokens,zero provider
+errors and no pendingrequest. Seven whole recommendations remain unaccepted;
+none executed. Three additional distinct algebra/implementation reviews are
+queued for owner-away proposal continuation. The worker remains active locally,
+with own STOP control; no independent observer/native timer is installed.
+Hosting depends on the Mac remaining awake and the approved proxy staying live.
+The living plan now moves the endedMila allocation into history and clears
+active_allocation; historical reports remain intact. No new Slurm/GPU
+submission or compute envelope was created. Other agents' template changes
+remain unstaged and untouched.
+
+## 17:24 local / 13:24 UTC — final local worker reconciliation
+
+Fresh identity/source/immutable-request checks verify local PID 84719 remains
+alive: ten exact-model/schema replies, nine completed tasks, 51,176 reported
+tokens, zero provider errors and no in-flight request at the check. All ten
+whole recommendations are reviewed and unaccepted; later answers include
+explicit arithmetic and readiness errors. Native agents supplied the accepted
+implementation and independent numerical verification. The accepted closeout
+was added to the public feed to allow evidence-driven unattended proposals.
+No repeated unchanged-evidence calls, source deployment change, new cluster
+allocation or automatic native coordinator continuation is claimed.
+Live receipt: `runs/ops/local-qwen-continuation-20261014T1650Y/live-20261014T132422Z.json`.
+The proposal leaf remains active with its separate STOP control; continued
+availability depends on the Mac and approved proxy/backend.

@@ -28,14 +28,18 @@ Legacy graph-analysis source and numerical candidates have now been located in
 the Mila TSA/Floquet archive; checkpoint and producer linkage remain unverified.
 [Original graph reproduction is the next priority](doc/auto/tgrab-reproduction-audit-2026-10-14.md).
 
-A new Qwen proposal worker is running locally: four exact-model replies and
-20,384 reported tokens verified at 12:54 UTC. The former cluster worker and
-monitor stopped when Mila allocation 11228391 ended. No new allocation was
-started. [Local continuation and stop control](doc/auto/local-autoresearch-continuation-2026-10-14.md).
-Forty archived numerical outputs are hash-pinned. One local audit completed in
-3.42 seconds and reports repeated envelope rows and matching saved norms;
-independent raw reconciliation is pending. The corrected GC-LSTM components
-and independent review are underway; no graph training has run. The new
+A Qwen proposal worker is running locally: ten exact-model replies verified
+at 13:24 UTC. Its recommendations remain unaccepted; native agents performed
+the checked implementation and numerical work. The former cluster
+worker ended with Mila allocation 11228391; no new allocation was started.
+[Local continuation and stop control](doc/auto/local-autoresearch-continuation-2026-10-14.md).
+The forty recovered graph-analysis outputs are independently verified:
+11,700 comparisons, zero mismatches. Norms decrease across prefix files, while
+all twenty time rows in each envelope are identical.
+[Verified report and figure](doc/auto/legacy-floquet-array-audit-results-2026-10-14.md).
+Corrected graph components passed independent review and 28 synthetic tests;
+native graph training still requires its environment, data, parity fixtures
+and runner. The new
 [W&B project](https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse)
 has a verified logging-only transport run. Future numerical runs use the
 [reporting contract](doc/auto/wandb-reporting.md); historical runs were not

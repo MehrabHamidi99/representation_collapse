@@ -1,0 +1,139 @@
+{
+  "accepted_metrics": {
+    "adjacent_envelope_comparisons": 18,
+    "adjacent_saved_norm_comparisons": 18,
+    "all_envelope_time_rows_byte_identical": true,
+    "envelopes": 19,
+    "maximum_numeric_reconciliation_error": 7.771561172376096e-16,
+    "mismatches": 0,
+    "norm_comparisons": 2280,
+    "norm_failures": 0,
+    "scalar_comparisons": 11700,
+    "stored_magnitude_maximum": 0.40736972830354434,
+    "stored_magnitude_minimum": 0.3797840201343623,
+    "stored_mode_count": 6,
+    "time_rows_per_envelope": 20
+  },
+  "audit_sha256": "c201ecf6e8451a2aef32c37a69360eccd49dbf376d47bb36472e52b59d6d4fdf",
+  "closeout_operations": {
+    "cluster_operations": 0,
+    "compact_saved_outputs_only": true,
+    "model_calls": 0,
+    "network_operations": 0,
+    "provider_calls": 0,
+    "raw_array_opens": 0,
+    "raw_reductions_rerun": 0,
+    "sdk_initializations": 0,
+    "test_campaigns": 0
+  },
+  "evidence": {
+    "closeout_compact_checks": {
+      "path": "runs/review/legacy-array-results-independent-20261014/final-compact-checks.json",
+      "sha256": "f8f993c1cafe9c12d82b59b3204f0e9827e9c1f1f26b72f4ceccc7e9da25e99e"
+    },
+    "final_report": {
+      "path": "doc/auto/legacy-floquet-array-results-independent-review-2026-10-14.md",
+      "sha256": "cc400fe226ade650863c494d1d910fbf459452faf165054a9078ec62cc902bd6"
+    },
+    "offline_stream_verification": {
+      "path": "runs/review/legacy-array-results-independent-20261014/offline-stream-verification.json",
+      "sha256": "9c21690b8e663c463cd87a411b318e5d5483329d65f1775106e667a877feb43f"
+    },
+    "preparation_handoff": {
+      "path": "runs/review/legacy-array-results-independent-20261014/handoff.json",
+      "sha256": "cc814c7f16fc35d35a3b52f8f1e4c5ff234a46b2cd1b36a0b476419cb5b0fef3"
+    },
+    "reporting": {
+      "path": "runs/review/legacy-array-results-independent-20261014/execution-attempt001/worker/reporting/reporting-receipt.json",
+      "sha256": "1401717d6bed2bf4cc78e5d9547dcd1572a5a831d99cab53cdfece69216ee9a5"
+    },
+    "result": {
+      "path": "runs/review/legacy-array-results-independent-20261014/execution-attempt001/worker/reconciliation.json",
+      "sha256": "6e788fbdc2a8c15843f4de8f01ce45bbe4d4eb5fc9743cedc9473cc2784b495c"
+    },
+    "root_admission": {
+      "path": "runs/review/legacy-array-results-independent-20261014/root-admission.json",
+      "sha256": "f23dc863c80662a8839da7ea27306e20538939f1a4e50d34c91c987296711d17"
+    },
+    "supervisor": {
+      "path": "runs/review/legacy-array-results-independent-20261014/execution-attempt001/supervisor-receipt.json",
+      "sha256": "b7c01da4a1c44277e2864fd2e52629c4667e93461fd1e458a11b41ae61a74f30"
+    },
+    "timing_repair_handoff": {
+      "path": "runs/review/legacy-array-results-independent-20261014/timing-repair-handoff.json",
+      "sha256": "0b58e1da20fe2050c64053c23967554f5a1e200409534b9c8ae47eee702ced9b"
+    },
+    "worker": {
+      "path": "runs/review/legacy-array-results-independent-20261014/execution-attempt001/worker/reconciliation-receipt.json",
+      "sha256": "f986cf09ca19c16adae01689c701f4a73dd35617521a7125fb249e4e9a89f8fd"
+    }
+  },
+  "execution": {
+    "all_owned_original_processes_exited": true,
+    "attempts": 1,
+    "cleanup_errors": [],
+    "elapsed_seconds": 4.147968458011746,
+    "exit_code": 0,
+    "numeric_threads": 1,
+    "outer_seconds": 600,
+    "owned_identities": 4,
+    "retries": 0,
+    "work_seconds": 590
+  },
+  "floquet_certification_accepted": false,
+  "kind": "independent_legacy_floquet_array_results_final_review",
+  "manifest_sha256": "e8299018314cffc6a023b78b60027e1aa979f424ee89c401532993cde5305c7f",
+  "numerical_integrity_accepted": true,
+  "offline_reporting": {
+    "cloud_sync_pending": true,
+    "finished": true,
+    "history_records_verified_by_root_decoder": 20,
+    "initialized_before_input_hash_array_work": true,
+    "remote_delivery_verified": false,
+    "remote_history_verified": false,
+    "run_id": "92f391eee88440f392700990bcc8dc54",
+    "sdk_version": "0.30.0",
+    "steps": "0..19",
+    "transaction_hash_independently_rechecked": true,
+    "transaction_sha256": "e3ab4199490cecf97a8c83259544bfec86c0fa430549c23766c1104544ad1449"
+  },
+  "preserved": "Original preparation/timing handoffs, producer and verifier outputs, pending acceptance fields and earlier review evidence remain unchanged.",
+  "reviewed_at_utc": "2026-10-14T13:08:39.791758+00:00",
+  "schema_version": 1,
+  "scientific_acceptance": false,
+  "scope": "Exact recovered stored-output integrity and descriptive reductions only; no trained graph-model or collapse acceptance",
+  "source_control_verified": {
+    "clean_isolated_worktree": true,
+    "source_commit": "936600ce2c994d9edacfbd3beca5533aec4a8c07",
+    "source_helper_reporter_lock_bytes_equal_published_HEAD": true
+  },
+  "source_identities": {
+    "helper_sha256": "8e1f388d4f5ce72e0bfd9a4b5a4b1f8c98f66f2512841d96875822bfd9bffe09",
+    "lock_sha256": "85304e351feacf6d73326996a202ddc1a7470f3fb5a55b2e212b9747e8ace996",
+    "manifest_sha256": "e8299018314cffc6a023b78b60027e1aa979f424ee89c401532993cde5305c7f",
+    "producer_audit_sha256": "c201ecf6e8451a2aef32c37a69360eccd49dbf376d47bb36472e52b59d6d4fdf",
+    "reporter_sha256": "443c9e89d2eba954ee60cc35e015fe61196fbec2f50331067540b4a8259e8184",
+    "source_commit": "936600ce2c994d9edacfbd3beca5533aec4a8c07",
+    "source_sha256": "3bddfb0c6919d7eea2a0b2dea9d0db53053eadf2e6de6371e234353939ddbc1b"
+  },
+  "state": "descriptive_numerical_integrity_accepted",
+  "thresholds": {
+    "discrete_byte_stat_fields": "exact",
+    "norm_atol": 1e-06,
+    "norm_directed_reference": "saved float32 norms",
+    "norm_rtol": 1e-05,
+    "reported_summary_atol": 1e-12,
+    "reported_summary_rtol": 1e-11
+  },
+  "unavailable": [
+    "original archived producer/checkpoint/data linkage",
+    "full-Jacobian eigenpair residuals",
+    "orbit/Jacobian closure",
+    "fundamental period",
+    "certified Floquet multipliers",
+    "taskperformance",
+    "covariance dimension",
+    "causal memory",
+    "representation-collapse interpretation"
+  ]
+}

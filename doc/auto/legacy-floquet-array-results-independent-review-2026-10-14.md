@@ -1,5 +1,11 @@
 # Independent legacy array result reconciliation
 
+Final closeout, 2026-10-14 after the admitted 13:03 UTC execution:
+**descriptive numerical integrity accepted** for the exact audit and saved
+inputs below. Scientific acceptance remains false. The preparation text that
+follows is retained as the pre-execution dated snapshot; its pending status is
+superseded by the final closeout appended at the end.
+
 2026-10-14. **Raw reconciliation pending; numerical integrity is not yet
 accepted.** The completed producer's compact JSON and receipts were inspected;
 its saved input arrays have not been numerically processed by this reviewer.
@@ -86,3 +92,77 @@ period, graph-task performance, covariance dimension and causal memory remain
 unknown. Nineteen prefixes and twenty time rows belong to one unlinked archived
 run, not independent seeds. Repeated stored rows can diagnose an analysis
 definition; they do not establish representation collapse or its cause.
+
+## Final evidence closeout — 2026-10-14, after 13:03 UTC
+
+Root published the clock-repaired independent verifier at clean source commit
+`936600ce2c994d9edacfbd3beca5533aec4a8c07`, exact source SHA-256
+`3bddfb0c6919d7eea2a0b2dea9d0db53053eadf2e6de6371e234353939ddbc1b`.
+The early process clock includes NumPy import time; the child retains the
+admitted parent's shared deadline. The original preparation handoff and test
+receipt remain unchanged. Source-order and AST checks establish that the
+timing repair changed only that clock binding, with no reducer changes.
+
+The one admitted reconciliation completed in 4.147968 seconds, exit 0, with
+zero retries and no process-cleanup errors. All four recorded PID/start
+identities, including the detached SDK service, were reconciled as exited.
+This reviewer rechecked the clean isolated source, exact published Git blobs,
+root admission, source/helper/reporter/lock identities, producer receipt
+hashes and all compact result/receipt bindings. No raw reduction, raw-array
+opening, SDK initialization, model call, provider call, cluster operation or
+test campaign was repeated during closeout.
+
+Root-admission SHA-256:
+`f23dc863c80662a8839da7ea27306e20538939f1a4e50d34c91c987296711d17`.
+Independent result SHA-256:
+`6e788fbdc2a8c15843f4de8f01ce45bbe4d4eb5fc9743cedc9473cc2784b495c`.
+Both bind the producer audit
+`c201ecf6e8451a2aef32c37a69360eccd49dbf376d47bb36472e52b59d6d4fdf`
+and manifest
+`e8299018314cffc6a023b78b60027e1aa979f424ee89c401532993cde5305c7f`.
+
+The independent raw reconciliation made 11,700 scalar comparisons with zero
+mismatches. The largest difference between independently reconstructed and
+producer-reported floating summaries is `7.771561172376096e-16`, below the
+prospective `1e-12 + 1e-11*abs(claimed)` reconciliation allowance. Exact
+discrete fields, byte identities, failure indices and input stat fields agree.
+The frozen directed norm criterion remains unchanged. All 2,280 norm
+comparisons pass, with zero failed edges retained. Each of all nineteen
+envelopes has twenty byte-identical time rows and zero absolute difference
+from row zero. The eighteen adjacent envelope pairs and eighteen adjacent
+saved-norm pairs are retained separately; their differences are descriptive
+prefix comparisons, not a claim about Jacobian chronology.
+
+The stored six-value spectrum, principal phases, eigenvector norms and Gram
+matrix reconcile. The stored magnitude range is 0.3797840201343623 to
+0.40736972830354434 per the unspecified stored product. This numerical
+acceptance establishes the contents and descriptive reductions of the recovered
+files; it does not identify the old analysis producer or bind those values to
+the inherited manuscript's figures or an original graph checkpoint.
+
+The independent execution initialized pinned SDK 0.30.0 offline reporting
+before input metadata hashing and array work. Its run ID is
+`92f391eee88440f392700990bcc8dc54`. Root's separate transaction decoder verifies
+twenty history records at steps 0–19, nineteen progress records followed by the
+completed/pass record, exact selected configuration/identities, completed
+summary and exit, and absence of automatic environment/code/console payload.
+This reviewer independently hashed and reconciled that compact decoder receipt
+and its 11,824-byte transaction. Decoder receipt SHA-256:
+`9c21690b8e663c463cd87a411b318e5d5483329d65f1775106e667a877feb43f`.
+Transaction SHA-256:
+`e3ab4199490cecf97a8c83259544bfec86c0fa430549c23766c1104544ad1449`.
+Cloud sync and server history remain unverified.
+
+The additive final acceptance record is
+`runs/review/legacy-array-results-independent-20261014/final-review.json`;
+it explicitly binds `audit_sha256` and sets `numerical_integrity_accepted=true`.
+The immutable mechanical result retains its original pending-acceptance field.
+No previous receipt or result was rewritten to carry this later decision.
+
+The repeated stored time rows mean this time axis contains no saved within-file
+variation. That is an accepted descriptive diagnostic, consistent with a
+repeated-prefix construction; it does not prove lineage to the subsequently
+inspected source. Producer/checkpoint/data linkage, full-Jacobian residuals,
+orbit and Jacobian closure, fundamental period, task performance, covariance
+dimension, causal memory and any representation-collapse interpretation remain
+unknown. Scientific and certified-Floquet acceptance are false.

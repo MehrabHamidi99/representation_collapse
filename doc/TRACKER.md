@@ -6,6 +6,27 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Local worker refreshed — October 14 13:24 UTC.** PID/start/source
+  verification confirms ten replies, 51,176 reported tokens, nine completed
+  tasks and zero provider errors. Whole recommendations remain unaccepted;
+  later replies contain explicit arithmetic and readiness errors. Native
+  implementation/independent review completed the concrete milestones below.
+  All nine tasks are consumed. New accepted-result evidence has been published
+  to the leaf's separate feed; it remains active for evidence-driven proposals.
+  No native timer or cluster allocation is running.
+- **Next step complete — October 14 13:15 UTC.** The forty-file archive
+  audit and independent reduction are numerically verified: 11,700 comparisons,
+  zero mismatches, all 2,280 norm checks pass. All nineteen envelopes contain
+  twenty byte-identical rows. Norms decrease across different prefix files;
+  those rows do not establish within-file dynamics or learned-memory collapse.
+  [Report and verified plot](auto/legacy-floquet-array-audit-results-2026-10-14.md).
+  The corrected graph components passed independent engineering review after
+  two lifecycle fixes; 28 synthetic tests pass. Native graph execution remains
+  blocked on environment/data/native parity/checkpoint/reporting/watchdog work
+  and execution admission. [Review](auto/tgrab-reconstruction-implementation-independent-review-2026-10-14.md).
+  Local Qwen PID84719 is source/start verified at13:14UTC with seven replies,
+  35,935 reported tokens and zero provider errors; three more distinct
+  proposal tasks are queued. No new cluster allocation or native graph run.
 - **Live local continuation — October 14 12:54 UTC.** A new Qwen proposal
   worker on the owner's Mac is PID/start/source verified, with four exact-model
   replies and 20,384 reported tokens. No provider errors or request in flight.

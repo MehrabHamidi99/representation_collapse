@@ -76,3 +76,29 @@ Before any replacement, reconcile that worker's terminal status and original
 PID/start identity. Never stop another project's worker or reuse this journal.
 This local continuation starts zero cluster allocations and provides no graph
 training allocation authority.
+
+## Follow-up at 13:14 UTC
+
+Fresh PID/start/source and call-record verification establishes seven replies,
+six completed coordinator tasks, 35,935 reported tokens, zero provider errors
+and no request in flight. All seven whole recommendations remain unaccepted;
+mathematical omissions and native-versus-spy confusion in the later answers are
+recorded in `proposal-review-001-007.json`. Independent native agents completed
+the actual array reduction and component review. Three more distinct reviews
+were queued after that check: complex linearity, node-order invariance and the
+remaining graph-readiness dependencies. These are proposal tasks, not launch
+commands. No source deployment change, native timer or cluster job was created.
+
+## Follow-up at 13:24 UTC
+
+PID/start/source identity again matches; ten model/schema replies, nine completed
+tasks, 51,176 reported tokens and zero provider errors are verified. All nine
+queued tasks were consumed. Whole recommendations remain unaccepted: the
+complex-linearity answer contains explicit arithmetic/rank errors, the
+node-order answer recommends unavailable large inputs, and the readiness
+answer wrongly treats the legacy checkpoint as a prerequisite to a labeled
+new reconstruction. Decisions are in `proposal-review-001-010.json`. Native
+implementation and independent verification supplied the concrete progress.
+The accepted numerical/component closeout was added to the separate public
+feed, which can trigger another proposal. The worker remains active, waiting
+for meaningful evidence, rather than repeatedly generating on unchanged input.
