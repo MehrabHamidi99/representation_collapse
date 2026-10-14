@@ -428,3 +428,48 @@ reconstruction, with complete state, native metric chronology, independent
 review and exact compute admission. Byte-identical old checkpoints cannot be
 promised from incomplete RNG/environment histories. No new cluster budget was
 created by this report. Other agents' template changes remain untouched.
+
+## 16:40 local / 12:40 UTC — recovered arrays and terminal hosting reconciliation
+
+The owner requested the next step and research continuation while away. The
+coordinator froze the [raw-array protocol](../../auto/legacy-floquet-array-audit-v1.md)
+and exact disabled config before numerical inspection. One native implementation
+agent and an independent reviewer developed and checked the safe numeric reader;
+a third agent prepared the [GC-LSTM reconstruction specification](../../auto/tgrab-checkpoint-reconstruction-v1.md).
+No original trained checkpoint was recovered, and the reconstruction trainer is
+not yet implemented. These agents did not run graph models or inspect real arrays.
+
+Result-file acquisition transferred exactly forty `.npy` outputs, 468,187,088
+bytes, from the owner archive. The first 300-second transfer expired after
+26 complete files; partial data remains quarantined. A distinct diagnosed
+600-second continuation revalidated those complete files against source metadata,
+rehash-copied them and fetched the remaining fourteen. No partial file was reused.
+Manifest SHA-256 `e8299018314cffc6a023b78b60027e1aa979f424ee89c401532993cde5305c7f`;
+completed acquisition receipt `4ab1cce4c089e8d5b5c049be2de81f5d0369e52247e239e8ed3b977a7a5a01a4`.
+Inputs: `runs/graph/legacy-array-acquisition-20261014T1628Y/inputs/`.
+No checkpoint/dataset/large Jacobian acquisition or numerical value inspection
+occurred in this transfer.
+
+The final reader handles numeric headers, file identity, signed-zero byte equality,
+chunked norms and directed frozen tolerances. Independent engineering review
+accepted the final source after owned SDK-child cleanup was repaired and four
+focused cleanup tests passed. Earlier synthetic campaigns and their exact source
+identities remain separate. Final review receipt SHA-256
+`bf77b158a280e23949697112bb4e9383f82f1519110a1f28db4018d6bb04fac3`.
+No scientific result is accepted by an implementation review. Next execute one
+source/config/manifest-bound CPU attempt, capped at 600 seconds with offline W&B,
+then independently reconcile its compact results.
+
+A read-only terminal check at 12:36:43 UTC confirms Slurm parent allocation
+11228391 COMPLETED `0:0`, ending 08:53:38 UTC. Qwen stopped at
+08:52:40.398878 UTC after the hosting guard; its nine replies/45,061 tokens
+are unchanged. The observer stopped at 08:50 UTC after 144 checks, maximum
+interval 300.000441 seconds and zero recorded metadata issues. Project cluv
+is 0.1.5; both main-cpu and unkillable-cpu partitions are UP.
+Receipt `runs/ops/after-expiry-status-20261014T1620Y/terminal-reconciled-utc.json`,
+SHA-256 `08966b58e3472687aa0de54b8787211a5de2f612f02587e882e403482b348f3e`.
+The first broader accounting receipt used gateway-local timestamps; the final
+parent-only check explicitly sets UTC and is authoritative for the end time.
+No fresh allocation, provider call, remote mutation or automatic renewal occurred.
+No cluster research worker is currently running; local research continues in
+this session. No usable native scheduler callback is exposed in this session.

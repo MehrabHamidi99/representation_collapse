@@ -2,12 +2,12 @@
   "schema_version": 1,
   "local_date": "2026-10-14",
   "timezone": "Asia/Yerevan",
-  "updated_at_utc": "2026-10-14T06:16:44.276404+00:00",
+  "updated_at_utc": "2026-10-14T12:41:44.539613+00:00",
   "research_has_run": true,
   "uninterrupted_native_coordination_confirmed": false,
   "qwen": {
-    "observed_at_utc": "2026-10-14T05:42:34.549168+00:00",
-    "state": "running_waiting_for_evidence",
+    "observed_at_utc": "2026-10-14T12:36:43.275496+00:00",
+    "state": "stopped_hosting_guard_requested",
     "pid": 3244371,
     "supervisor_pid": 3244355,
     "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
@@ -22,14 +22,16 @@
     "max_hours": null,
     "whole_scientific_answers_accepted": 0,
     "restarted": false,
-    "prompt_repair": "staged; exact live replacement remains pending owner restart response after automatic approval rejection",
+    "prompt_repair": "staged; former worker exited at hosting expiry; no replacement running",
     "new_task_published_at_utc": "2026-10-13T21:43:31.983821+00:00",
     "new_task_id": "approximate-bridge-20261014T0142Y",
     "new_task_state": "response_verified_whole_answer_rejected_as_nonresponsive",
-    "heartbeat_age_seconds": 47.506026,
+    "heartbeat_age_seconds": null,
     "attempts_since_previous_check": 0,
     "additional_replies_since_previous_check": 0,
-    "new_research_overnight_verified": false
+    "new_research_overnight_verified": false,
+    "finished_at_utc": "2026-10-14T08:52:40.398878+00:00",
+    "stop_reason": "stop_file_requested_after_hosting_guard"
   },
   "monitor": {
     "historical_observer": {
@@ -43,7 +45,7 @@
       "both_original_pids_absent": true
     },
     "continuation": {
-      "state": "running_106_observations_verified",
+      "state": "normal_deadline_exit",
       "launched_at_utc": "2026-10-13T20:52:40Z",
       "observer_pid": 3468694,
       "wrapper_pid": 3468674,
@@ -56,35 +58,37 @@
       "output_outside_qwen_evidence_roots": true,
       "second_observation_at_utc": "2026-10-13T20:57:40.757146+00:00",
       "first_interval_seconds": 300.000158,
-      "verified_observations": 106,
-      "last_observation_at_utc": "2026-10-14T05:37:40.772697+00:00",
+      "verified_observations": 144,
+      "last_observation_at_utc": "2026-10-14T08:47:40.777235+00:00",
       "maximum_gap_seconds": 300.000441,
       "metadata_issue_records": 0,
-      "all_owned_process_identities_verified_at_utc": "2026-10-14T05:42:34.549168+00:00"
+      "all_owned_process_identities_verified_at_utc": "2026-10-14T05:42:34.549168+00:00",
+      "finished_at_utc": "2026-10-14T08:50:00.000122+00:00"
     }
   },
   "compute": {
     "existing_mila_job": 11228391,
-    "state": "RUNNING",
+    "state": "COMPLETED",
     "node": "cn-f003.server.mila.quebec",
     "shared_cpus": 2,
     "shared_memory_gib": 4,
     "gpus": 0,
     "purpose": "compact coordination and metadata/model clients",
-    "guard_state": "armed",
+    "guard_state": "triggered_08:52:40_UTC",
     "guard_trigger_utc": "2026-10-14T08:52:40Z",
     "allocation_expiry_utc": "2026-10-14T08:55:56Z",
     "new_slurm_submissions": 0,
     "new_gpu_jobs": 0,
     "cluv_version": "0.1.5",
-    "mila_matching_project_queue": "empty at 05:44 UTC",
+    "mila_matching_project_queue": "empty at 12:14 UTC; no new submissions",
     "full_alliance_scheduler_recheck_this_turn": "all configured targets inspected; only Mila/Tamia queries possible",
     "tamia_matching_project_queue": "empty at 05:44 UTC",
     "other_alliance_connections": "eight targets have no reusable master; freshly rechecked",
     "other_alliance_queues_verified": false,
-    "observed_at_utc": "2026-10-14T05:42:34.549168+00:00",
-    "allocation_remaining_seconds_at_check": 11601.450811,
-    "cluv_observed_at_utc": "2026-10-14T05:44:17.952859+00:00"
+    "observed_at_utc": "2026-10-14T12:36:43.275496+00:00",
+    "allocation_remaining_seconds_at_check": 0,
+    "cluv_observed_at_utc": "2026-10-14T05:44:17.952859+00:00",
+    "allocation_actual_end_utc": "2026-10-14T08:53:38Z"
   },
   "scientific_evidence": {
     "completed_acquisition_fits": 32,
@@ -168,7 +172,7 @@
       "editorial_change": "Only the introductory review-status sentence changed; algebra and remaining content are byte-identical."
     },
     "graph_reproduction": {
-      "state": "not_run_archive_candidates_recovered",
+      "state": "stored_result_files_acquired_reader_reviewed_execution_pending",
       "negative_replication_observed": false,
       "vector_runs_are_graph_replications": false,
       "original_model_checkpoint_identified": false,
@@ -205,7 +209,15 @@
         }
       ],
       "scientific_claim_accepted": false,
-      "current_priority": "Original graph parity/reconstruction before further vector expansion"
+      "current_priority": "Original graph parity/reconstruction before further vector expansion",
+      "legacy_result_files_acquired": 40,
+      "legacy_result_bytes": 468187088,
+      "numerical_payload_audit_executed": false,
+      "legacy_array_manifest_sha256": "e8299018314cffc6a023b78b60027e1aa979f424ee89c401532993cde5305c7f",
+      "legacy_reader_engineering_accepted": true,
+      "legacy_reader_review_sha256": "bf77b158a280e23949697112bb4e9383f82f1519110a1f28db4018d6bb04fac3",
+      "reconstruction_protocol": "doc/auto/tgrab-checkpoint-reconstruction-v1.md",
+      "reconstruction_trainer_implemented": false
     }
   },
   "wandb": {
@@ -250,8 +262,9 @@
     "prior_callback_due_utc": "2026-10-13T16:50:56Z",
     "prior_callback_deadline_utc": "2026-10-13T20:00:00Z",
     "current_pending_timers": 0,
-    "current_work": "T-GRAB manuscript/source/archive audit and seven engineering reproducers completed; graph reproduction prioritized",
-    "automatic_allocation_renewal": false
+    "current_work": "Forty legacy result files acquired, numerical reader independently accepted; publish immutable source then execute one bounded local audit",
+    "automatic_allocation_renewal": false,
+    "persistent_worker_running": false
   },
   "evidence": {
     "live_certificate_path": "runs/ops/status-check-20261014T0044Y/live-certificate.json",
@@ -272,7 +285,11 @@
     "completed_task_reconciliation_path": "runs/ops/completion-inventory-20261014T0950Y/reconciliation.json",
     "completed_task_reconciliation_sha256": "133a3ed30a94958edbee6da0efdf3f44d8dd4ca4f4ccdb752fc595005a7baa74",
     "tgrab_archive_inventory_sha256": "c847ed429110a01707e37adaefac5b97db87c79163e3f30584260f91f8229577",
-    "tgrab_legacy_analysis_review_sha256": "64a3c51b247c0fd883470f5eaec8c8611cae9b357e3089bdfdc32ce484d28264"
+    "tgrab_legacy_analysis_review_sha256": "64a3c51b247c0fd883470f5eaec8c8611cae9b357e3089bdfdc32ce484d28264",
+    "terminal_reconciled_path": "runs/ops/after-expiry-status-20261014T1620Y/terminal-reconciled-utc.json",
+    "terminal_reconciled_sha256": "08966b58e3472687aa0de54b8787211a5de2f612f02587e882e403482b348f3e",
+    "legacy_acquisition_receipt_sha256": "4ab1cce4c089e8d5b5c049be2de81f5d0369e52247e239e8ed3b977a7a5a01a4",
+    "legacy_reader_final_review_sha256": "bf77b158a280e23949697112bb4e9383f82f1519110a1f28db4018d6bb04fac3"
   },
   "published_foundation_commit": "18aa494d734e2d885de4411f899de5c2ade1dea7",
   "published_implementation_commit": "edc47ee8914125b20d9fee9816e3255f194bc462",

@@ -6,6 +6,21 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Continuation — October 14 12:40 UTC.** Forty legacy result files
+  (468,187,088 bytes) are acquired with matching sender/receiver hashes; no
+  checkpoints, datasets or large Jacobians were transferred. The numerical
+  reader passed independent engineering review. Publish its frozen source,
+  then run one local CPU audit capped at 600 seconds with offline W&B.
+  [Array protocol](auto/legacy-floquet-array-audit-v1.md),
+  [implementation review](auto/legacy-floquet-array-audit-implementation-review-2026-10-14.md),
+  [reconstruction specification](auto/tgrab-checkpoint-reconstruction-v1.md).
+  Numerical findings and graph training remain pending.
+- **Hosting ended — terminal reconciliation at 12:36 UTC.** Allocation
+  `11228391` completed `0:0` at 08:53:38 UTC. The guard stopped Qwen at
+  08:52:40 after nine replies; the observer finished at its 08:50 deadline
+  after 144 checks, maximum gap 300.000441 seconds, zero recorded issues.
+  No replacement worker or native timer is running. Historical morning
+  liveness checks below retain their original observation times.
 - **Original graph reproduction — 2026-10-14, priority update.** The current
   vector studies are not graph replications; no negative T-GRAB replication has
   occurred. The owner-directed Mila TSA search recovered archived analysis
@@ -29,7 +44,7 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   and `completed_tasks` in [structured status](auto/research-status-2026-10-14.json).
   No new experiment was run during this inventory; task competence and the main
   harmful-collapse question remain open.
-- **Morning status check — 2026-10-14, current (09:42–09:44 Yerevan).**
+- **Morning status check — 2026-10-14, historical (09:42–09:44 Yerevan).**
   A fresh read-only check at 05:42:34 UTC verifies existing Mila job `11228391`
   is RUNNING and all five owned worker/supervisor/guard/observer process
   identities, source hashes and job cgroups match. Qwen has nine verified
