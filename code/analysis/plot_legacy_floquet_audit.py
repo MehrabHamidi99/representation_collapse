@@ -76,6 +76,9 @@ def main() -> None:
     # Titles and labels deliberately preserve stored axes and partial-spectrum scope.
     for suffix in ("png", "svg"):
         fig.savefig(output / ("legacy-array-audit." + suffix), dpi=200)
+        if suffix == "svg":
+            path = output / "legacy-array-audit.svg"
+            path.write_text("\n".join(line.rstrip() for line in path.read_text().splitlines()) + "\n")
     plt.close(fig)
     manifest = {"kind": "legacy_array_audit_summary_figure", "audit_sha256": args.audit_sha256,
                 "review_sha256": args.review_sha256,
