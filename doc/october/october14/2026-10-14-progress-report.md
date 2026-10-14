@@ -473,3 +473,41 @@ parent-only check explicitly sets UTC and is authoritative for the end time.
 No fresh allocation, provider call, remote mutation or automatic renewal occurred.
 No cluster research worker is currently running; local research continues in
 this session. No usable native scheduler callback is exposed in this session.
+
+## 16:54 local / 12:54 UTC — actual array audit and local Qwen continuation
+
+Published audit/source/protocol commit `351fa688f3333f0e44701d15d2acf9a2553a4b98`
+was verified on GitHub. A detached clean ignored worktree contains exact tracked
+HEAD bytes. Root admission SHA-256
+`f9865692da872e92775a84019c4dbe2535d4549974ced6e8ddd4ec71c9d39014`
+allowed one CPU attempt capped at 600 seconds. At 12:43 UTC it completed in
+3.417342 seconds, all owned processes reconciled exited, no cleanup errors.
+Audit SHA-256 `c201ecf6e8451a2aef32c37a69360eccd49dbf376d47bb36472e52b59d6d4fdf`.
+It reports all nineteen envelopes have twenty byte-identical time rows, all
+2,280 saved-norm comparisons pass, and six stored magnitudes range
+0.379784–0.407370. Adjacent prefix files differ. These are producer summaries
+pending independent raw reconciliation, not model dynamics/collapse acceptance.
+No model/gradient/optimizer/GPU/provider/cluster call occurred in the numerical
+audit. Its contemporaneous offline W&B run `9f99b6068d2f41f5be6325a345f7755e`
+has twenty verified history records, selected config/hash identities and final
+summary; transaction SHA-256
+`9a3da98011bf1866e8db710c3055ffcb984592dedd9bb9d57ce5077c5e0c9b18`.
+Cloud delivery remains pending. A separate agent prepares a numerically
+independent reducer before further raw work.
+
+The already authorized local Cairn proxy lists the expected Qwen model.
+A PID-only check found no local Qwen worker; the old cluster worker and
+allocation were already terminal. A new continuous proposal worker launched
+on the owner's Mac at 12:49:23.965 UTC, PID84719, using the repaired source
+from published351fa68 and the existing environment credential only. No new
+allocation or credential copy was needed. Fresh12:54:45 evidence verifies
+PID/start/source, four actual exact-model/schema replies,20,384reportedtokens,
+zero recorded providererrors and no pendingrequest. Three explicit research
+tasks completed; worker is waitingforevidence. All four whole recommendations
+remain unaccepted, with reasons recorded separately; none was executed.
+Native implementation, result verification and engineeringreview continue.
+See [local worker contract](../../auto/local-autoresearch-continuation-2026-10-14.md).
+Unlike the ended cluster run, this local worker has no total runtime/call cap;
+it uses semantic evidence/task triggers and retry backoff, not duplicate hourly
+calls. Continued availability depends on the Mac and approved proxy remaining
+available. No independent local observer or native timer is installed.

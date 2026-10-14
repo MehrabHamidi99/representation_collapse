@@ -28,14 +28,14 @@ Legacy graph-analysis source and numerical candidates have now been located in
 the Mila TSA/Floquet archive; checkpoint and producer linkage remain unverified.
 [Original graph reproduction is the next priority](doc/auto/tgrab-reproduction-audit-2026-10-14.md).
 
-The cluster-hosted Qwen worker stopped at October 14 08:52:40 UTC when its
-hosting guard fired; allocation 11228391 completed at 08:53:38 UTC. It produced
-nine verified proposals. The overnight monitor finished 144 checks with no
-recorded metadata issues. No replacement worker or automatic renewal is running.
-Forty archived numerical result files (468 MB) are acquired and hash-pinned;
-the independently reviewed reader is ready for one bounded local audit.
-The GC-LSTM reconstruction protocol is prepared; its corrected trainer and
-compute admission remain pending. The new
+A new Qwen proposal worker is running locally: four exact-model replies and
+20,384 reported tokens verified at 12:54 UTC. The former cluster worker and
+monitor stopped when Mila allocation 11228391 ended. No new allocation was
+started. [Local continuation and stop control](doc/auto/local-autoresearch-continuation-2026-10-14.md).
+Forty archived numerical outputs are hash-pinned. One local audit completed in
+3.42 seconds and reports repeated envelope rows and matching saved norms;
+independent raw reconciliation is pending. The corrected GC-LSTM components
+and independent review are underway; no graph training has run. The new
 [W&B project](https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse)
 has a verified logging-only transport run. Future numerical runs use the
 [reporting contract](doc/auto/wandb-reporting.md); historical runs were not

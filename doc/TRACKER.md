@@ -6,6 +6,22 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Live local continuation — October 14 12:54 UTC.** A new Qwen proposal
+  worker on the owner's Mac is PID/start/source verified, with four exact-model
+  replies and 20,384 reported tokens. No provider errors or request in flight.
+  Three explicit tasks completed; it now waits for evidence. Repaired prompt
+  source `351fa68`; separate STOP file and runtime journal. No new allocation.
+  Whole recommendations remain unaccepted. Native agents prepare the independent
+  raw reducer and corrected graph components, with a separate implementation
+  reviewer. [Actual launch, limits and stop control](auto/local-autoresearch-continuation-2026-10-14.md).
+- **Stored-array audit executed — October 14 12:43 UTC.** One admitted CPU
+  run from clean published `351fa68` completed in 3.42 seconds. Producer reports
+  nineteen envelopes with twenty byte-identical rows each; all 2,280 directed
+  norm comparisons pass. Stored six magnitudes range 0.379784–0.407370; exact
+  product, residuals, trajectory and original checkpoint remain unknown.
+  Independent raw reconciliation is pending. Twenty offline W&B metric records
+  and terminal summary are verified; cloud delivery remains pending. No graph
+  forward, optimizer or Jacobian execution occurred.
 - **Continuation — October 14 12:40 UTC.** Forty legacy result files
   (468,187,088 bytes) are acquired with matching sender/receiver hashes; no
   checkpoints, datasets or large Jacobians were transferred. The numerical

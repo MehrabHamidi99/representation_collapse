@@ -2,36 +2,31 @@
   "schema_version": 1,
   "local_date": "2026-10-14",
   "timezone": "Asia/Yerevan",
-  "updated_at_utc": "2026-10-14T12:41:44.539613+00:00",
+  "updated_at_utc": "2026-10-14T12:59:38.749435+00:00",
   "research_has_run": true,
   "uninterrupted_native_coordination_confirmed": false,
   "qwen": {
-    "observed_at_utc": "2026-10-14T12:36:43.275496+00:00",
-    "state": "stopped_hosting_guard_requested",
-    "pid": 3244371,
-    "supervisor_pid": 3244355,
-    "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
-    "source_sha256": "8d9e6149f83a91cefdf8cd51c7e38777cdfade4c73cfb42136f104d7ea45a606",
-    "attempts": 9,
-    "schema_model_verified_replies": 9,
+    "observed_at_utc": "2026-10-14T12:54:45.568029+00:00",
+    "state": "running_waiting_for_evidence",
+    "hosting": "local_mac",
+    "pid": 84719,
+    "source_commit": "351fa688f3333f0e44701d15d2acf9a2553a4b98",
+    "source_sha256": "0f78851940d7f3323fc5cf4408fd0f682a33d93d151c6be4ff6358e1185d8997",
+    "process_start_identity_verified": true,
+    "attempts": 4,
+    "schema_model_verified_replies": 4,
     "errors": 0,
     "request_in_flight": false,
-    "reported_tokens": 45061,
-    "last_reply_at_utc": "2026-10-13T21:43:52.455999+00:00",
+    "reported_tokens": 20384,
+    "completed_coordinator_tasks": 3,
     "max_calls": null,
     "max_hours": null,
     "whole_scientific_answers_accepted": 0,
-    "restarted": false,
-    "prompt_repair": "staged; former worker exited at hosting expiry; no replacement running",
-    "new_task_published_at_utc": "2026-10-13T21:43:31.983821+00:00",
-    "new_task_id": "approximate-bridge-20261014T0142Y",
-    "new_task_state": "response_verified_whole_answer_rejected_as_nonresponsive",
-    "heartbeat_age_seconds": null,
-    "attempts_since_previous_check": 0,
-    "additional_replies_since_previous_check": 0,
-    "new_research_overnight_verified": false,
-    "finished_at_utc": "2026-10-14T08:52:40.398878+00:00",
-    "stop_reason": "stop_file_requested_after_hosting_guard"
+    "new_cluster_allocation": false,
+    "native_fallback": "two active implementation/review agents plus coordinator; no external paid API",
+    "output": "runs/qwen/local-continuous-20261014T1650Y",
+    "stop_file": "runs/qwen/local-continuous-20261014T1650Y/STOP",
+    "documentation": "doc/auto/local-autoresearch-continuation-2026-10-14.md"
   },
   "monitor": {
     "historical_observer": {
@@ -172,7 +167,7 @@
       "editorial_change": "Only the introductory review-status sentence changed; algebra and remaining content are byte-identical."
     },
     "graph_reproduction": {
-      "state": "stored_result_files_acquired_reader_reviewed_execution_pending",
+      "state": "stored_array_producer_complete_independent_reconciliation_pending",
       "negative_replication_observed": false,
       "vector_runs_are_graph_replications": false,
       "original_model_checkpoint_identified": false,
@@ -212,12 +207,21 @@
       "current_priority": "Original graph parity/reconstruction before further vector expansion",
       "legacy_result_files_acquired": 40,
       "legacy_result_bytes": 468187088,
-      "numerical_payload_audit_executed": false,
+      "numerical_payload_audit_executed": true,
       "legacy_array_manifest_sha256": "e8299018314cffc6a023b78b60027e1aa979f424ee89c401532993cde5305c7f",
       "legacy_reader_engineering_accepted": true,
       "legacy_reader_review_sha256": "bf77b158a280e23949697112bb4e9383f82f1519110a1f28db4018d6bb04fac3",
       "reconstruction_protocol": "doc/auto/tgrab-checkpoint-reconstruction-v1.md",
-      "reconstruction_trainer_implemented": false
+      "reconstruction_trainer_implemented": false,
+      "legacy_payload_files_audited": 40,
+      "legacy_audit_elapsed_seconds": 3.417342208995251,
+      "legacy_audit_sha256": "c201ecf6e8451a2aef32c37a69360eccd49dbf376d47bb36472e52b59d6d4fdf",
+      "legacy_audit_source_commit": "351fa688f3333f0e44701d15d2acf9a2553a4b98",
+      "producer_reported_repeated_envelopes": 19,
+      "producer_reported_time_rows_per_envelope": 20,
+      "producer_reported_norm_comparisons": 2280,
+      "producer_reported_norm_failures": 0,
+      "legacy_numerical_integrity_accepted": false
     }
   },
   "wandb": {
@@ -255,6 +259,13 @@
       "history_records_verified": 1,
       "final_summary_verified": true,
       "remote_delivery_verified": false
+    },
+    "legacy_array_audit_offline_run": {
+      "run_id": "9f99b6068d2f41f5be6325a345f7755e",
+      "state": "completed",
+      "history_records_verified": 20,
+      "transaction_sha256": "9a3da98011bf1866e8db710c3055ffcb984592dedd9bb9d57ce5077c5e0c9b18",
+      "remote_delivery_verified": false
     }
   },
   "native_continuation": {
@@ -262,9 +273,10 @@
     "prior_callback_due_utc": "2026-10-13T16:50:56Z",
     "prior_callback_deadline_utc": "2026-10-13T20:00:00Z",
     "current_pending_timers": 0,
-    "current_work": "Forty legacy result files acquired, numerical reader independently accepted; publish immutable source then execute one bounded local audit",
+    "current_work": "Production array audit completed; independent numerical verifier preparing. Corrected graph components and independent implementation review active.",
     "automatic_allocation_renewal": false,
-    "persistent_worker_running": false
+    "persistent_worker_running": true,
+    "persistent_worker_hosting": "local_mac"
   },
   "evidence": {
     "live_certificate_path": "runs/ops/status-check-20261014T0044Y/live-certificate.json",
@@ -289,7 +301,11 @@
     "terminal_reconciled_path": "runs/ops/after-expiry-status-20261014T1620Y/terminal-reconciled-utc.json",
     "terminal_reconciled_sha256": "08966b58e3472687aa0de54b8787211a5de2f612f02587e882e403482b348f3e",
     "legacy_acquisition_receipt_sha256": "4ab1cce4c089e8d5b5c049be2de81f5d0369e52247e239e8ed3b977a7a5a01a4",
-    "legacy_reader_final_review_sha256": "bf77b158a280e23949697112bb4e9383f82f1519110a1f28db4018d6bb04fac3"
+    "legacy_reader_final_review_sha256": "bf77b158a280e23949697112bb4e9383f82f1519110a1f28db4018d6bb04fac3",
+    "local_qwen_live_receipt_path": "runs/ops/local-qwen-continuation-20261014T1650Y/live-20261014T125445Z.json",
+    "local_qwen_live_receipt_sha256": "c38ce98c9c937869b56f5f37ac04974ec0ae48e81fea48ce2a4cc45233aae0bb",
+    "local_qwen_proposal_review_sha256": "84e860a0d09c2868921699008667f6f69a1888e3ffcd695678657717e71b9e23",
+    "legacy_array_root_admission_sha256": "f9865692da872e92775a84019c4dbe2535d4549974ced6e8ddd4ec71c9d39014"
   },
   "published_foundation_commit": "18aa494d734e2d885de4411f899de5c2ade1dea7",
   "published_implementation_commit": "edc47ee8914125b20d9fee9816e3255f194bc462",
@@ -341,5 +357,33 @@
       "evidence": "runs/ops/status-check-20261014T0944Y/sanitized-status-receipt.json",
       "acceptance_scope": "Monitoring health; no additional overnight research reply or experiment."
     }
-  ]
+  ],
+  "historical_qwen_cluster_worker": {
+    "observed_at_utc": "2026-10-14T12:36:43.275496+00:00",
+    "state": "stopped_hosting_guard_requested",
+    "pid": 3244371,
+    "supervisor_pid": 3244355,
+    "source_commit": "999d88d8679c0f353c6bb7fb4f5ab8433a7e730c",
+    "source_sha256": "8d9e6149f83a91cefdf8cd51c7e38777cdfade4c73cfb42136f104d7ea45a606",
+    "attempts": 9,
+    "schema_model_verified_replies": 9,
+    "errors": 0,
+    "request_in_flight": false,
+    "reported_tokens": 45061,
+    "last_reply_at_utc": "2026-10-13T21:43:52.455999+00:00",
+    "max_calls": null,
+    "max_hours": null,
+    "whole_scientific_answers_accepted": 0,
+    "restarted": false,
+    "prompt_repair": "staged; former worker exited at hosting expiry; no replacement running",
+    "new_task_published_at_utc": "2026-10-13T21:43:31.983821+00:00",
+    "new_task_id": "approximate-bridge-20261014T0142Y",
+    "new_task_state": "response_verified_whole_answer_rejected_as_nonresponsive",
+    "heartbeat_age_seconds": null,
+    "attempts_since_previous_check": 0,
+    "additional_replies_since_previous_check": 0,
+    "new_research_overnight_verified": false,
+    "finished_at_utc": "2026-10-14T08:52:40.398878+00:00",
+    "stop_reason": "stop_file_requested_after_hosting_guard"
+  }
 }
