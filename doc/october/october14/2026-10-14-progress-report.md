@@ -329,3 +329,50 @@ timestamps and distinguish a healthy waiting worker from substantive research
 progress. The next scientific step remains a prospectively reviewed complete-state
 measurement map with explicit derivative/training budgets. This status pass
 does not admit it. Other agents' October 13 template changes remain untouched.
+
+## 09:50 local / October 14 05:50 UTC — completed-task inventory
+
+The owner asked for evidence of progress and the tasks completed. This inventory
+covers the October 13 evening / October 14 local continuation. Source, execution,
+review and numerical-summary hashes were reconciled against eleven durable
+files, along with all 32 terminal condition statuses and the successful outer
+exit. No experiment, model call, raw-array reduction or test campaign was rerun.
+
+Completed tasks:
+
+1. **Measurement contract:** froze complete-state calibration v2 and obtained
+   [independent protocol review](../../auto/post-calibration-contract-v2-independent-review-2026-10-14.md).
+2. **Implementation:** built the forward engine/launcher, completed one
+   184-call tiny fixture campaign, and obtained
+   [independent engineering acceptance](../../auto/cached-forward-v2-implementation-independent-review-2026-10-14.md).
+3. **Actual numerical execution:** completed all 32 conditions and 736 native
+   forward calls in 49.663 seconds, exit 0, with immutable outputs and no retry.
+4. **Independent analysis:** built and reviewed a separate NumPy reducer
+   (13 engineering checks), ran it once in 41.057 seconds, and closed the
+   [15,024-comparison audit](../../auto/cached-forward-v2-results-independent-review-2026-10-14.md).
+   Fixed-precision controls passed; four cross-dtype failures were retained.
+   Their eight scalar violations represent one independent input history.
+5. **Theory:** completed exact-bridge criticism and independently reviewed
+   [conditional finite-horizon bounds](../../auto/approximate-bridge-audit-2026-10-14.md),
+   including the additional assumptions needed for intervention transfer.
+6. **Reporting:** created the W&B project, verified an online transport smoke,
+   added the pinned reporter with 13 focused lifecycle tests, and verified
+   offline records from both numerical stages. Numerical cloud sync is pending.
+7. **Operations:** completed the fresh morning worker/source/scheduler
+   reconciliation and confirmed 106 monitor observations. This records continued
+   monitoring; Qwen remains at nine replies, with no additional overnight output.
+
+These are completed implementation, calibration, review, theory and reporting
+milestones. They do not complete the main empirical question. Original
+eight-query competence eligibility remains zero, harmful collapse remains
+inconclusive, and no trained-model Floquet finding is accepted. The next
+scientific milestone is a reviewed complete-state measurement map followed
+by competent-task acquisition and the matched periodic/non-periodic comparison.
+Derivative/training protocols and execution envelopes still precede that work.
+
+Machine-readable task states and evidence paths are in
+[structured status](../../auto/research-status-2026-10-14.json). Reconciliation
+receipt: `runs/ops/completion-inventory-20261014T0950Y/reconciliation.json`, SHA-256
+`133a3ed30a94958edbee6da0efdf3f44d8dd4ca4f4ccdb752fc595005a7baa74`. Current source publication remains `fcaafe5`
+at the beginning of this inventory pass; the inventory will be published
+separately. Existing foreign template edits remain untouched.

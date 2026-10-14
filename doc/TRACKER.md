@@ -6,6 +6,15 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Completed-task inventory — 2026-10-14.** Seven milestones are complete:
+  protocol review, forward-engine implementation, the actual 736-call run,
+  independent numerical reduction, conditional theory review, W&B reporting
+  setup, and morning operational reconciliation. Eleven hash-bound evidence
+  files and all 32 condition statuses were checked. See the
+  [completed tasks in the notebook](october/october14/2026-10-14-progress-report.md)
+  and `completed_tasks` in [structured status](auto/research-status-2026-10-14.json).
+  No new experiment was run during this inventory; task competence and the main
+  harmful-collapse question remain open.
 - **Morning status check — 2026-10-14, current (09:42–09:44 Yerevan).**
   A fresh read-only check at 05:42:34 UTC verifies existing Mila job `11228391`
   is RUNNING and all five owned worker/supervisor/guard/observer process
