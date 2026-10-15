@@ -27,6 +27,44 @@ MODULE = ROOT / "src/representation_collapse/native_graph_calibration_v2.py"
 
 
 class NativeGraphV2PreparationTests(unittest.TestCase):
+    def test_actual_worker_reporter_constructor_accepts_hashes_and_public_paths_without_sdk(self):
+        from representation_collapse.reporting import ExperimentReporter
+        tree = ast.parse(MODULE.read_text(), feature_version=(3, 10))
+        worker = next(node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == "_worker")
+        identity_assignment = next(node for node in ast.walk(worker) if isinstance(node, ast.Assign)
+            and any(isinstance(target, ast.Name) and target.id == "identities" for target in node.targets))
+        constructor = next(node for node in ast.walk(worker) if isinstance(node, ast.Call)
+            and isinstance(node.func, ast.Name) and node.func.id == "ExperimentReporter")
+        # Execute the actual worker's metadata expressions and actual reporting
+        # constructor, excluding its with-body and __enter__/SDK lifecycle.
+        with tempfile.TemporaryDirectory() as temporary:
+            output = Path(temporary) / "worker"
+            namespace = dict(vars(engine), args=SimpleNamespace(config=CONFIG, root=ROOT),
+                admission={"source_commit": "a" * 40, "environment": {"sha256": "b" * 64}},
+                config=frozen_config(CONFIG), output=output, ExperimentReporter=ExperimentReporter)
+            assignment = ast.Module(body=[deepcopy(identity_assignment)], type_ignores=[])
+            exec(compile(assignment, str(MODULE), "exec"), namespace)
+            with mock.patch.object(engine.importlib, "import_module", side_effect=AssertionError("SDK import forbidden")) as imports:
+                reporter = eval(compile(ast.Expression(body=deepcopy(constructor)), str(MODULE), "eval"), namespace)
+                imports.assert_not_called()
+            expected_paths = {"module_path": engine.MODULE_PATH, "config_path": engine.CONFIG_PATH,
+                              "protocol_path": engine.PROTOCOL_PATH}
+            self.assertIsInstance(reporter, ExperimentReporter)
+            self.assertEqual({key: reporter.config[key] for key in expected_paths}, expected_paths)
+            self.assertTrue(all(isinstance(value, str) and len(value) < 256 for value in expected_paths.values()))
+            self.assertTrue(set(expected_paths).isdisjoint(reporter.identities))
+            self.assertEqual(len(reporter.identities), 8)
+            for value in reporter.identities.values():
+                self.assertRegex(value, r"^(?:[0-9a-f]{40}|[0-9a-f]{64})$")
+            self.assertIsNone(reporter._run)
+            self.assertEqual(reporter._state, "new")
+            self.assertFalse(output.exists())
+            # The old placement fails the real scalar contract. This catches
+            # an accidental path-to-identities regression without a fake reporter.
+            with self.assertRaisesRegex(ValueError, "identities must be lowercase"):
+                ExperimentReporter(output / "bad", project=reporter.project, config=reporter.config,
+                    identities={**reporter.identities, "module_path": engine.MODULE_PATH})
+
     def test_import_is_dependency_free(self):
         result = subprocess.run([sys.executable, "-c",
             "import sys; import representation_collapse.native_graph_calibration_v2; "

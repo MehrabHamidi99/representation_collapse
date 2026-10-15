@@ -504,10 +504,10 @@ def _worker(args):
             "source_commit": admission["source_commit"], "protocol_sha256": sha256(args.root / PROTOCOL_PATH),
             "cell_sha256": config["sources"]["cell_sha256"], "reporter_sha256": config["sources"]["reporter"]["sha256"],
             "environment_manifest_sha256": admission["environment"]["sha256"],
-            "graph_import_helper_sha256": config["sources"]["graph_import_helper"]["sha256"],
-            "module_path": MODULE_PATH, "config_path": CONFIG_PATH, "protocol_path": PROTOCOL_PATH}
+            "graph_import_helper_sha256": config["sources"]["graph_import_helper"]["sha256"]}
         with ExperimentReporter(output / "reporting", project=config["reporting"]["project"], entity=None, mode="offline",
-                config={"protocol_id": PROTOCOL_ID, "nodes": 3, "hidden": 2, "joint_dimension": 12, "cpu_threads": 1, "training": False}, identities=identities) as report:
+                config={"protocol_id": PROTOCOL_ID, "nodes": 3, "hidden": 2, "joint_dimension": 12, "cpu_threads": 1, "training": False,
+                    "module_path": MODULE_PATH, "config_path": CONFIG_PATH, "protocol_path": PROTOCOL_PATH}, identities=identities) as report:
             guard(); torch = importlib.import_module("torch")
             import_provenance = {}
             recurrent, head = _load_wrappers(args.source_root, config, root=args.root,
