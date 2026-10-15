@@ -7,6 +7,27 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Native graph calibration accepted — October 15 10:34 Yerevan.**
+  Owner-approved native cluv job **11261627** completed `0:0` in **74 seconds**
+  from reviewed published `3f24d63`: Mila/main-cpu/account mila/QOS normal,
+  one CPU, physical 2 GiB cap, zero GPUs. Before submission, actual-reporter
+  testing caught and fixed a path-versus-hash metadata mismatch; the older
+  approved plan was preserved and superseded without consuming an allocation.
+  Exact planned native counts completed; all 27 engineering checks pass.
+  Independent reduction verified 60 arrays and 1,337 scalar checks with zero
+  mismatches. Source/admission lineage, seven native and one audit offline
+  W&B history records, and both retained owned cleanup sets verify. Root accepts
+  tiny untrained D12 cell/wrapper engineering integrity only; cloud sync and
+  trained-model/Floquet/collapse claims remain unverified. No allocation remains.
+  Original primary T-GRAB CSV is now hash-verified on Mila scratch: 6,907,326
+  bytes; no local payload, parsing or conversion. A source-anchored trainer
+  implementation contract identifies the remaining sealed-store, checkpoint
+  and lifecycle work. Qwen alive at 06:32 UTC: 19 verified replies, zero provider
+  errors; next training-parity/control reviews supplied. No uninterrupted
+  overnight inference or numerical work is inferred from liveness.
+  [Results](auto/native-graph-calibration-v2-results-2026-10-15.md),
+  [primary payload](auto/tgrab-primary-payload-staging-2026-10-15.md),
+  [trainer contract](auto/tgrab-training-runner-implementation-contract-2026-10-15.md).
 - **Correction published and staged; analytic review complete — October 15 02:49 Yerevan.**
   Reviewed v2 source `e4ab463` is clean, pinned and hash-verified on Mila.
   The staged plan is explicitly disabled; fresh one-CPU allocation approval

@@ -210,3 +210,100 @@ Next: on a fresh owner CPU allocation grant, bind that exact record to the
 reviewed e4ab463 source and one v2 attempt, submit through native cluv, verify
 scheduler/physical resources and reconcile outcomes. Otherwise continue local
 analytic review and reconstruction preparation without allocating compute.
+
+## 10:14–10:34 Yerevan / 06:14–06:34 UTC — approved submission and accepted native calibration
+
+The owner replied “submit and continue doing auto research,” approving the
+prepared single Mila CPU1/2GiB/600-second/GPU0 calibration, without retry,
+requeue, race or training. Root recorded that approval and verified no duplicate
+job. Before submission, a native source-review agent found that v2 supplied
+three public paths as identities to the actual hashes-only reporter constructor.
+The previous review/spies missed this cross-component contract. No job, claim,
+admission or output existed for that old plan; a supersession receipt and STOP
+preserve it without allocation consumption.
+
+The narrow correction moves those paths to compact reporting configuration.
+Author and independent reviewer each ran the focused actual-constructor test,
+including rejection of the old placement, without entering the SDK. All other
+20 functions/classes retain exact source and AST; numerical/runtime/chronology,
+config/protocol/tolerances/counts and dependencies are unchanged. Corrected
+engine SHA `eecb96df752fbb5842685cc423e67494758785792302d7c46fa24e2642741156`
+was published as `3f24d63153fdc49a028a59b9cce35120a519e67c`, then staged and
+hash-verified through native cluv. One readiness-staging invocation failed before
+writing any input files; its stderr was not retained and its cause is unknown.
+Fresh read-only checks verified a clean checkout and all ten source pins;
+repeated metadata staging succeeded. Error-output preservation was added.
+These preparation failures were not scheduler submissions or numerical work.
+
+Exact approved plan SHA
+`8dffcfdd3993a98b8e63dab330d8fcc021495260e649e61e6b0a86ac012ffc63`
+binds the new reportingfix source/run paths, source6/resource guards and actual
+owner record. Native cluv0.1.5 library identities and exact sbatch expansion
+were checked. **Mila11261627** was submitted at06:24:48UTC, ran06:25:06–06:26:20,
+and completed **0:0 in74seconds** oncn-f003/main-cpu/accountmila/QOSnormal.
+Actual one-CPU affinity[28] and physical cgroup2147483648bytes verify.
+Supervisor73.098seconds, worker72.196seconds, peakworkerRSS343769088bytes.
+Both retained native worker/SDK identities reconcile as exited, no cleanup errors.
+
+The exact installed GC-LSTM and public wrappers imported with release hashes
+matching, through the declared standalone import scope. Full Temporal package
+API compatibility is not claimed. One wrapper/cell/head constructor each,
+50cell/5head/6nestedhead-sequence forwards,4dense/9JVP/5VJP APIs,
+12fixed finite-difference evaluations and one analytic control completed.
+All27producer engineering checks pass, including complete H+C D12 chronology,
+ordered products, node permutation and complex tangent extension.
+
+Native cluv fetched20selected regular files/97731bytes with matching hashes;
+rawNPZ is32948bytes. One independently frozen verifier
+`911e73f372cbee865572805f5a9a347bf4b829a799855104c90053d3e704291a`
+ran locally once under exact admission, with offlineW&B, in1.155supervisor
+seconds. It verified60arrays/27comparisons/**1337scalarchecks,0mismatches**.
+No native model/gradient evaluation was repeated. FD positive/negative outputs
+were not emitted, so saved central-difference candidates were reconciled against
+saved dense references rather than independently regenerated. Native cell/head
+outputs were not reevaluated. These existing verification limits remain explicit.
+
+Separate read-only closeout verified all transfer/source/admission hashes,
+original counts/tolerances, terminal resources, and both retained local owned
+identities exited/noerrors. Native W&B stream has seven exact history steps0..6;
+the independent audit has one step0. CRC/protobuf, config/source identity,
+privacy and successful terminal summaries verify. Native run ID
+`0a9abf30ca194566b79c9e1f3674a88f`; audit ID
+`88844d491d324cbe95852217ac6e34b3`. Cloud delivery remains unverified.
+Root accepted **engineering/numerical integrity only** at06:34:31UTC in ignored
+`runs/ops/native-graph-reporting-fix-20261015/coordinator-acceptance.json`.
+Closeout verification SHA
+`6095363a6e7200f065e97ff8cf7e045741904cdadf0b43f8405c37abd6e8bf38`.
+One newly approved submission is consumed; no further allocation or training
+authority remains. The failed v1 and superseded unsubmitted v2 evidence remain.
+
+Existing frozen HF tree metadata also identified the primary Pdet(2,32) CSV,
+not only AB/AABB. Through cluv on Mila, root streamed the original public bytes
+from revision603388f332c7756f90bc1702b26053c2bc834654 and verified6907326bytes/SHA
+`5a19f9e7949668473bc61cb59b6215f25f093ea0ee2d45b5e143338ded5523e3`
+at06:30:09UTC. It is under project scratch datasets; no payload on the Mac,
+parsing, conversion, generation, model evaluation or job. Before download,
+whole-project scratch9155355648bytes plus reservation was below20GiB.
+This supersedes only the trainer contract's earlier pending-payload status.
+
+The native agent's frozen trainer implementation contract checks41source
+anchors/signatures and records sealed data conversion, checkpoint/RNG/load
+parity, full versus partial training lifecycle, attempted optimizer counters
+and physical supervision as unfinished. It creates no trainer or training
+allocation. A partial256-update canary must not increment a complete2559-update
+epoch or invoke selection/patience. No new competence cutoff was adopted.
+
+Qwen PID/start/source verified alive06:32:01UTC:19exact-model/schema replies,
+97463reportedtokens,0providererrors, waiting between evidence tasks. Its earlier
+global-folding versus singular-Jacobian error was corrected after direct
+feedback; whole proposals remain unaccepted. New tasks distinguish tiny
+calibration from training parity and partial-canary selection safety. Worker
+liveness or token counts do not establish uninterrupted research. Actual native
+work, independent numerical reduction and source implementation/review above
+are the concrete research-operations progress of this continuation.
+
+Next local work: freeze and implement primary schema/conversion with a sealed
+store, then checkpoint and trainer integration with finite parity checks. Native
+training requires a fully prepared, reviewed packet and a separate allocation.
+No original checkpoint, trained graph reproduction, matched periodic-body
+effect, Floquet certification or harmful-collapse claim is accepted yet.
