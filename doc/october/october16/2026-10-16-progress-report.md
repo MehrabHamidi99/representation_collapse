@@ -892,3 +892,22 @@ is not yet committed or synchronized; the next action is commit/push, bind a
 new review JSON to the updated source commit/tree, refresh the unique plan and
 submit one corrected capture-only attempt via cluv. No native fixture, fit,
 Figure 10 curve or collapse claim exists yet.
+
+### Slurm restart-count field correction — 16:39 UTC
+
+The fresh source-bound attempt reached Mila as job 11279328 and exited in one
+second before capture. Its only allocation was one CPU, 2 GiB, zero GPUs on
+`main-cpu`; the supervisor reported missing `RestartCnt`. The retained Slurm
+record uses `Restarts=0`, not `RestartCnt`, while the job environment exposes
+`SLURM_RESTART_COUNT`. No capture journal or inventory was created and no model
+training occurred. The verifier now requires scheduler `Restarts=0` and
+`Requeue=0`, plus an explicitly present live `SLURM_RESTART_COUNT` equal to the
+literal string `0`; missing, empty, nonzero or noncanonical values fail closed.
+The revised tests cover these cases. Independent review accepted the exact
+supervisor/test hashes (`92beca098a659603e1fbeba98f5b441e765a5a3ea727319ac0c45c5eca1ca680`,
+`55ff079f1ce2aa78b876013944302b13cb3155de2dbebc62df938b9039947299`), and
+all 16 focused tests pass, with Python compilation, Bash syntax and diff checks
+clean. This reviewed revision still needs to be committed, synchronized, and
+bound to a fresh job-specific JSON receipt and plan before one new capture-only
+attempt. The capture sequence remains engineering preparation, not Figure 10
+retraining or collapse evidence.

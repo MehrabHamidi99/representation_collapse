@@ -168,7 +168,7 @@ def verify_slurm(job_id: str, startup_timeout: float = 5.0,
                  poll_interval: float = 0.25) -> dict:
     expected = {"Account": "mila", "QOS": "normal", "Partition": "main-cpu",
         "NumNodes": "1", "NumCPUs": "1", "CPUs/Task": "1", "TimeLimit": "00:10:00",
-        "Requeue": "0", "RestartCnt": "0"}
+        "Requeue": "0", "Restarts": "0"}
     deadline = time.monotonic() + startup_timeout
     while True:
         remaining = deadline - time.monotonic()
@@ -213,6 +213,11 @@ def verify_slurm(job_id: str, startup_timeout: float = 5.0,
         if state not in {"CONFIGURING", "PENDING"}:
             raise SystemExit(f"authoritative Slurm job state is {state!r}; expected CONFIGURING/PENDING or RUNNING")
         time.sleep(min(poll_interval, max(0.0, deadline - time.monotonic())))
+
+
+def require_zero_restart_count(value: str | None) -> None:
+    if value != "0":
+        raise SystemExit(f"SLURM_RESTART_COUNT must be present and exactly '0'; actual={value!r}")
 
 
 def verify_environment_receipt(path: Path, expected_sha: str) -> None:
@@ -360,10 +365,11 @@ def main(argv=None) -> int:
     for key, value in SLURM_FIELDS.items():
         if os.environ.get(key) != value:
             raise SystemExit(f"Slurm allocation mismatch: {key}")
-    if os.environ.get("SLURM_RESTART_COUNT", "0") != "0" or any(
+    require_zero_restart_count(os.environ.get("SLURM_RESTART_COUNT"))
+    if any(
             os.environ.get(key, "") not in ("", "0", "NoDevFiles")
             for key in ("SLURM_GPUS", "SLURM_JOB_GPUS", "SLURM_GPUS_ON_NODE", "CUDA_VISIBLE_DEVICES")):
-        raise SystemExit("restarted or GPU-allocated capture job refused")
+        raise SystemExit("GPU-allocated capture job refused")
     slurm_record = verify_slurm(os.environ["SLURM_JOB_ID"])
     memory_before = cgroup_memory()
     if memory_before["effective_limit_bytes"] != 2 * 1024**3:

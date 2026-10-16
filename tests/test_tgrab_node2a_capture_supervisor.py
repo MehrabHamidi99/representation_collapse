@@ -43,7 +43,7 @@ class CaptureSupervisorContractTests(unittest.TestCase):
         fields = {"JobState": state, "Account": "mila", "QOS": "normal",
             "Partition": "main-cpu", "NumNodes": "1", "NumCPUs": "1",
             "CPUs/Task": "1", "TimeLimit": "00:10:00", "Requeue": "0",
-            "RestartCnt": "0", "ReqTRES": "cpu=1,mem=2G,node=1",
+            "Restarts": "0", "ReqTRES": "cpu=1,mem=2G,node=1",
             "AllocTRES": "cpu=1,mem=2G,node=1"}
         fields.update(changes)
         return "JobId=123 " + " ".join(f"{key}={value}" for key, value in fields.items())
@@ -94,6 +94,26 @@ class CaptureSupervisorContractTests(unittest.TestCase):
             with self.assertRaisesRegex(SystemExit, "Account expected='mila'.*wrong-account"):
                 MODULE.verify_slurm("123")
         command.assert_called_once()
+
+    def test_slurm_uses_restarts_field_and_rejects_nonzero_restart(self):
+        live = self.slurm_record("RUNNING", Restarts="0")
+        with mock.patch.object(MODULE.subprocess, "run", return_value=
+                subprocess.CompletedProcess([], 0, live, "")):
+            result = MODULE.verify_slurm("123")
+        self.assertEqual(result["fields"]["Restarts"], "0")
+
+        restarted = self.slurm_record("RUNNING", Restarts="1")
+        with mock.patch.object(MODULE.subprocess, "run", return_value=
+                subprocess.CompletedProcess([], 0, restarted, "")):
+            with self.assertRaisesRegex(SystemExit, "Restarts expected='0'.*'1'"):
+                MODULE.verify_slurm("123")
+
+    def test_live_slurm_restart_count_must_be_explicit_zero(self):
+        MODULE.require_zero_restart_count("0")
+        for value in (None, "", "1", "00"):
+            with self.subTest(value=value), self.assertRaisesRegex(
+                    SystemExit, "must be present and exactly '0'"):
+                MODULE.require_zero_restart_count(value)
 
     def test_slurm_tres_allows_only_optional_billing_one(self):
         with_billing = self.slurm_record("RUNNING",
