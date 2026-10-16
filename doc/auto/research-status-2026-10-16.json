@@ -18,30 +18,30 @@
     "new_compute_authorization": false
   },
   "qwen": {
-    "verified_at_utc": "2026-10-16T03:35:00.795860+00:00",
+    "verified_at_utc": "2026-10-16T13:10:55.100085+00:00",
     "hosting": "local_mac",
     "pid": 84719,
     "process_start_source_verified": true,
-    "heartbeat_age_seconds_at_check": 9.165054,
+    "heartbeat_age_seconds_at_check": 39.346157,
     "state": "running",
     "activity": "waiting_for_evidence",
-    "schema_and_model_verified_replies": 25,
-    "completed_coordinator_tasks": 22,
-    "reported_tokens": 128596,
+    "schema_and_model_verified_replies": 26,
+    "completed_coordinator_tasks": 23,
+    "reported_tokens": 134026,
     "consecutive_provider_errors": 0,
     "provider_call_in_flight": false,
-    "last_completed_reply_at_utc": "2026-10-16T01:15:32.423420+00:00",
+    "last_completed_reply_at_utc": "2026-10-16T13:10:11.401020+00:00",
     "uninterrupted_overnight_research_confirmed": false,
     "whole_answers_automatically_accepted": 0,
-    "verification_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/live-20261016T033500Z.json",
-    "new_tasks_queued_at_utc": "2026-10-16T01:14:21.220992+00:00",
+    "verification_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/live-resume-latest.json",
+    "new_tasks_queued_at_utc": "2026-10-16T13:09:14.184850+00:00",
     "new_task_ids": [
-      "21-matched-order-estimand-scope",
-      "22-graph-native-required-history-bridge"
+      "23-verified-primary-data-scope-and-next-gate"
     ],
     "new_tasks_completed_at_this_update": true,
-    "new_whole_answers_rejected": 2,
-    "new_answer_review_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/proposal-review-024-025.json"
+    "new_whole_answers_rejected": 3,
+    "new_answer_review_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/review-026.json",
+    "overnight_activity_scope": "One verified project-relevant response completed at 2026-10-16T01:15:32Z (04:15:32 Asia/Qatar); later liveness checks showed worker waiting for evidence until task23 was published at13:09:14Z. Do not claim continuous inference."
   },
   "accepted_progress": {
     "graph_calibration_job_id": 11261627,
@@ -101,7 +101,15 @@
     "primary_data_conversion_scheduler_exit_code": "0:0",
     "primary_data_conversion_elapsed_seconds": 126,
     "primary_data_conversion_worker_reports_verified": true,
-    "primary_data_conversion_final_closeout_accepted": false
+    "primary_data_conversion_final_closeout_accepted": false,
+    "terminal_selected_load_repair_implemented": true,
+    "terminal_selected_load_repair_independent_review_accepted": true,
+    "terminal_selected_load_repair_synthetic_tests": 32,
+    "selected_checkpoint_schema_frozen": true,
+    "selected_checkpoint_schema_artifact_types": 13,
+    "selected_checkpoint_schema_definitions": 21,
+    "selected_checkpoint_schema_author_fixtures": 475,
+    "selected_checkpoint_schema_independent_review_complete": false
   },
   "this_turn": {
     "new_cluster_submissions": 1,
@@ -116,14 +124,18 @@
     "synthetic_unit_tests_in_accepted_modules": 52,
     "new_numerical_runs_definition": "Numerical research experiments; excludes synthetic unit fixtures",
     "new_coordinator_tasks_published": 2,
-    "new_preparation_unit_fixtures_accepted": 32
+    "new_preparation_unit_fixtures_accepted": 32,
+    "new_provider_calls_by_worker": 1,
+    "new_schema_verified_worker_replies": 1,
+    "new_coordinator_tasks_completed": 1,
+    "new_compute_submissions": 0
   },
   "next_work": [
-    "Restore read-only Mila route, rehash exact source/admission/final inventory and decode retained offline W&B transaction; no job retry",
-    "Complete independent closeout of actual primary conversion, preserving completed receipts and pending gaps",
-    "Freeze closed checkpoint schemas against accepted tensorcatalog; local schema author assigned",
-    "Implement/review codec and native state/loader/observer lifecycle, then separately admitted counted parity before training",
-    "Establish graph competence and matched-order confirmation before native cross-modal mechanism claims"
+    "Restore Mila route when available for read-only full closeout of completed job11273685; no retry",
+    "Finish independent review of frozen checkpoint schema, including standards-compliant validation and newline/path edge cases",
+    "Implement and review production codec and observer/parity hooks; no native fitting until required integrity gates pass",
+    "Complete novelty-adjusted Gate B protocol with competence and compute-readiness gates before any training request",
+    "Proceed to native graph reproduction and cross-modal mechanism tests only after validated, competent models"
   ],
   "compute_readiness": {
     "checked_at_utc": "2026-10-16T01:55:41.330510+00:00",
@@ -195,5 +207,5 @@
     "closeout_transport_failure_at_utc": "2026-10-16T03:39:24.863223+00:00",
     "closeout_transport_failure": "Nativecluv freshconnect: network unreachable to Mila port2222; no fresh auth prompt"
   },
-  "updated_at_utc": "2026-10-16T03:41:04.455269+00:00"
+  "updated_at_utc": "2026-10-16T13:11:57.426341+00:00"
 }

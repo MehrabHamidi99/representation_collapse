@@ -485,6 +485,7 @@ class CausalController:
         self.backend, self.layout, self.budget = backend, layout, budget
         self.negative_rng = np.random.default_rng(negative_seed)
         self.period, self.block = period, block
+        self.test_attempted = False
         self.test_opened = False
 
     def _consume(self, state: CompleteState, graph: Snapshot) -> CompleteState:
@@ -504,8 +505,8 @@ class CausalController:
         Partial epochs raise and do not increment complete epochs. The caller
         must never pass their metrics/checkpoint to validation selection.
         """
-        if self.test_opened:
-            raise ContractError("training cannot continue after test opens")
+        if self.test_attempted:
+            raise ContractError("training cannot continue after a test attempt")
         if len(graphs) != expected_updates + 1 or not graphs or graphs[0].timestamp != 0:
             raise ContractError("one conditioning graph plus the complete training target count required")
         self.budget.check_boundary(training=True)
@@ -554,19 +555,29 @@ class CausalController:
         return rows
 
     def validation(self, training_prefix: Sequence[Snapshot], targets: Iterable[Snapshot]) -> list[dict]:
-        if self.test_opened:
-            raise ContractError("validation cannot continue after test opens")
+        if self.test_attempted:
+            raise ContractError("validation cannot continue after a test attempt")
         return self._evaluate(training_prefix, targets)
 
     def test_once(self, selection: ValidationOnlySelection,
                   training_and_validation: Sequence[Snapshot],
                   open_test: Callable[[], Iterable[Snapshot]]) -> list[dict]:
-        if self.test_opened or not selection.finalized or selection.selected is None:
+        """Charge one terminal attempt before loading the selected checkpoint.
+
+        Eligibility and the initial budget check do not charge an attempt.
+        After charging, load failures and all later failures forbid training,
+        validation and another test attempt. ``test_opened`` records invocation
+        of ``open_test``, including a failed invocation; a lazy iterator may
+        still have read no test payload. These are cooperative controller flags,
+        not protection against deliberate mutation or direct backend calls.
+        """
+        if self.test_attempted or not selection.finalized or selection.selected is None:
             raise ContractError("test requires finalized validation-only selection and opens once")
         self.budget.check_boundary()
+        self.test_attempted = True
         self.backend.load_selected(selection.selected)
         self.budget.check_boundary()
-        self.test_opened = True  # Failed reads/evaluation do not permit retries.
+        self.test_opened = True  # Callback attempted; lazy payload may remain unread.
         targets = open_test()
         self.budget.check_boundary()
         return self._evaluate(training_and_validation, targets)

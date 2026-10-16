@@ -102,6 +102,21 @@ class GraphContractTests(unittest.TestCase):
         budget = PilotBudget(clock=lambda: 0, **budget_kwargs)
         return CausalController(backend, layout, budget, period=4, block=2), backend
 
+    def assert_terminal_test_attempt(self, controller, backend, selection, opener):
+        """Even restored budgets cannot resume a charged controller."""
+        prior_events = list(backend.events)
+        prior_updates = controller.budget.updates
+        prior_epochs = controller.budget.epochs
+        with self.assertRaises(ContractError):
+            controller.test_once(selection, [graph(0)], opener)
+        with self.assertRaisesRegex(ContractError, "training cannot continue"):
+            controller.training_epoch([graph(0), graph(1)], expected_updates=1)
+        with self.assertRaisesRegex(ContractError, "validation cannot continue"):
+            controller.validation([graph(0)], [graph(1)])
+        self.assertEqual(backend.events, prior_events)
+        self.assertEqual(controller.budget.updates, prior_updates)
+        self.assertEqual(controller.budget.epochs, prior_epochs)
+
     def test_import_has_no_native_dependency_side_effect(self):
         result = subprocess.run([sys.executable, "-c",
             "import sys; import representation_collapse.graph_reconstruction; "
@@ -268,11 +283,16 @@ class GraphContractTests(unittest.TestCase):
         with self.assertRaises(ContractError):
             controller.test_once(selection, [graph(0), graph(1)], opener)
         self.assertEqual(opened, [])
+        self.assertFalse(controller.test_attempted)
+        self.assertFalse(controller.test_opened)
+        self.assertEqual(backend.events, [])
         selection.consider(reference(1), 0.4, split="validation", epoch_complete=True)
         selection.finalize()
         rows = controller.test_once(selection, [graph(0), graph(1)], opener)
         self.assertEqual(len(rows), 2)
         self.assertEqual(opened, [True])
+        self.assertTrue(controller.test_attempted)
+        self.assertTrue(controller.test_opened)
         self.assertLess(backend.events.index(("load_selected_spy", 1)), backend.events.index(("reset",)))
         with self.assertRaises(ContractError):
             controller.test_once(selection, [graph(0), graph(1)], opener)
@@ -315,6 +335,8 @@ class GraphContractTests(unittest.TestCase):
                 selection.finalize()
                 original_load = backend.load_selected
                 def load(selected):
+                    self.assertTrue(controller.test_attempted)
+                    self.assertFalse(controller.test_opened)
                     original_load(selected)
                     if condition == "walltime":
                         now[0] = 1
@@ -328,7 +350,97 @@ class GraphContractTests(unittest.TestCase):
                     controller.test_once(selection, [graph(0)], opener)
                 self.assertEqual(opened, [])
                 self.assertFalse(controller.test_opened)
+                self.assertTrue(controller.test_attempted)
                 self.assertFalse(any(event[0] == "reset" for event in backend.events))
+                now[0], stopped[0] = 0.0, False
+                self.assert_terminal_test_attempt(controller, backend, selection, opener)
+                self.assertEqual(opened, [])
+                self.assertEqual(backend.events, [("load_selected_spy", 1)])
+
+    def test_failed_or_partial_selected_load_is_terminal_before_opener(self):
+        for partial in (False, True):
+            with self.subTest(partial=partial):
+                controller, backend = self.controller()
+                selection = ValidationOnlySelection()
+                selection.consider(reference(1), 0.4, split="validation", epoch_complete=True)
+                selection.finalize()
+                opened = []
+                original_load = backend.load_selected
+                backend.component_marker = "original"
+                def failing_load(selected):
+                    self.assertTrue(controller.test_attempted)
+                    self.assertFalse(controller.test_opened)
+                    original_load(selected)
+                    if partial:
+                        backend.component_marker = "partially-loaded"
+                    raise RuntimeError("selected load failed")
+                backend.load_selected = failing_load
+                def opener():
+                    opened.append(True)
+                    return [graph(1)]
+                with self.assertRaisesRegex(RuntimeError, "selected load failed"):
+                    controller.test_once(selection, [graph(0)], opener)
+                self.assertTrue(controller.test_attempted)
+                self.assertFalse(controller.test_opened)
+                self.assertEqual(backend.component_marker, "partially-loaded" if partial else "original")
+                self.assertEqual(backend.events, [("load_selected_spy", 1)])
+                backend.load_selected = original_load
+                self.assert_terminal_test_attempt(controller, backend, selection, opener)
+                self.assertEqual(opened, [])
+
+    def test_initial_budget_rejection_does_not_charge_test_attempt(self):
+        for condition in ("walltime", "owner_stop"):
+            with self.subTest(condition=condition):
+                now, stopped, opened = [0.0], [False], []
+                layout = StateLayout(1, 3, 2, (0, 1, 2))
+                backend = SpyBackend(layout)
+                budget = PilotBudget(clock=lambda: now[0], max_seconds=1, owner_stop=lambda: stopped[0])
+                controller = CausalController(backend, layout, budget, period=4, block=2)
+                selection = ValidationOnlySelection()
+                selection.consider(reference(1), 0.4, split="validation", epoch_complete=True)
+                selection.finalize()
+                now[0], stopped[0] = (1.0, False) if condition == "walltime" else (0.0, True)
+                def opener():
+                    opened.append(True)
+                    return [graph(1)]
+                with self.assertRaises(PilotStopped):
+                    controller.test_once(selection, [graph(0)], opener)
+                self.assertFalse(controller.test_attempted)
+                self.assertFalse(controller.test_opened)
+                self.assertEqual(backend.events, [])
+                self.assertEqual(opened, [])
+                now[0], stopped[0] = 0.0, False
+                self.assertEqual(len(controller.test_once(selection, [graph(0)], opener)), 1)
+                self.assertEqual(opened, [True])
+                self.assertEqual(sum(event[0] == "load_selected_spy" for event in backend.events), 1)
+
+    def test_missing_selected_reference_rejection_does_not_charge(self):
+        controller, backend = self.controller()
+        selection = ValidationOnlySelection(finalized=True)
+        def unopened():
+            self.fail("ineligible selection must not reach opener")
+        with self.assertRaises(ContractError):
+            controller.test_once(selection, [graph(0)], unopened)
+        self.assertFalse(controller.test_attempted)
+        self.assertFalse(controller.test_opened)
+        self.assertEqual(backend.events, [])
+
+    def test_failed_test_opener_is_terminal_without_payload_iteration(self):
+        controller, backend = self.controller()
+        selection = ValidationOnlySelection()
+        selection.consider(reference(1), 0.4, split="validation", epoch_complete=True)
+        selection.finalize()
+        calls = []
+        def failed_opener():
+            calls.append(True)
+            raise OSError("test callback failed")
+        with self.assertRaisesRegex(OSError, "test callback failed"):
+            controller.test_once(selection, [graph(0)], failed_opener)
+        self.assertTrue(controller.test_attempted)
+        self.assertTrue(controller.test_opened)
+        self.assertEqual(backend.events, [("load_selected_spy", 1)])
+        self.assert_terminal_test_attempt(controller, backend, selection, failed_opener)
+        self.assertEqual(calls, [True])
 
     def test_test_opener_expiry_or_stop_prevents_reset_and_replay(self):
         for condition in ("walltime", "owner_stop"):
@@ -352,7 +464,11 @@ class GraphContractTests(unittest.TestCase):
                     controller.test_once(selection, [graph(0)], opener)
                 self.assertEqual(opened, [True])
                 self.assertTrue(controller.test_opened)
+                self.assertTrue(controller.test_attempted)
                 self.assertFalse(any(event[0] == "reset" for event in backend.events))
+                now[0], stopped[0] = 0.0, False
+                self.assert_terminal_test_attempt(controller, backend, selection, opener)
+                self.assertEqual(opened, [True])
 
     def test_checkpoint_reference_requires_recurrent_and_head_hashes(self):
         with self.assertRaises(ContractError):

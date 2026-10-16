@@ -24,6 +24,23 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   Local Qwen verified03:35UTC alive/waiting,25replies/22tasks,zeroerrors;
   this does not establish continuous model inference or training.
   [Current structured evidence](auto/research-status-2026-10-16.json).
+- **Checkpoint lifecycle/schema progress and Qwen resumed on new evidence — October16.**
+  The selected-checkpoint terminal-load attempt loophole is repaired and
+  independently accepted; 32 focused synthetic tests pass. A closed six-file
+  checkpoint schema freezes thirteen artifact tags, twenty-one definitions,
+  and all26 catalogued tensors/offsets plus selection transaction rules. Its475
+  author checks passed; independent standards validation remains in progress,
+  including whether anchored regular expressions reject terminal newlines as
+  JSON Schema requires. No codec or native execution exists yet.
+  The verified local Qwen worker completed call26/task23 against the new
+  conversion evidence: 26 model/schema-verified replies,23 completed tasks,
+  134,026 reported tokens,zero provider errors; it returned to
+  waiting-for-evidence. Its correct boundary assessment was retained; its
+  recommendation was rejected because it assumed consumed training allocations
+  and bypassed native checkpoint/parity gates. No compute was authorized.
+  [Checkpoint schema](auto/tgrab-selected-checkpoint-schema-v1.md),
+  [terminal-load review](auto/graph-terminal-load-attempt-independent-review-2026-10-16.md),
+  [Qwen answer audit](../runs/ops/local-qwen-continuation-20261014T1650Y/review-026.json).
 - **Conversion+verification launch packet reviewed — October16 06:03 Yerevan (historical).**
   Integrated wrapper passes28fixtures (22base/root+6independent); nativecluv
   controller passes9author+14independent fixtures. Root rechecked final source,

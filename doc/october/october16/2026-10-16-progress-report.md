@@ -379,3 +379,60 @@ using the reviewed26tensor catalog. That assignment does not implement a codec,
 execute a model or grant compute. Next: finish read-only closeout when access
 returns; independently review the closed schema, then implement codec/lifecycle
 before preparing a separate finite native parity allocation. Goal remains active.
+
+## 16:09–16:11 Asia/Qatar / 13:09–13:11 UTC — overnight activity reconciled; next evidence review queued
+
+The earlier overnight conversion and Qwen activity are now supported by timestamps:
+Slurm submitted the approved conversion at **01:09:34 Qatar time**, then completed
+job11273685/0:0 in126seconds. Qwen call25 completed at **04:15:32 Qatar time**
+with verified model identity/schema for the fixed task `22-graph-native-required-history-bridge`;
+this answer critically distinguished native next-graph performance from arbitrary
+prefix retention. The process remained alive but waiting for evidence on later
+checks. Thus there was real overnight project progress and a substantive overnight
+Qwen contribution, but no evidence of continuous model inference or training
+throughout the night.
+
+After the new conversion result was published into the approved project-evidence
+feed at13:09:14UTC, Qwen completed call26/task23 within the recorded scope. The
+live verifier at13:11:41UTC checked process-start identity, requested=returned
+model identity, response schema/evidence bindings, heartbeat and history:
+**26 verified replies,23 coordinator tasks,134,026 reported tokens,0 consecutive
+provider errors, no in-flight call**, state running/waiting-for-evidence. The new
+reply correctly states that raw-data integrity does not establish trained model
+competence, Floquet behavior, memory loss or collapse. Its recommendation to
+run the vector Gate B study while relying on existing authorized CPU/GPU slots is
+rejected: those earlier slots are consumed and the conversion allocation is
+separate and also consumed. It skips current checkpoint/load/replay-parity gates.
+The review retains its valid scope observations and makes no protocol or compute
+change: `runs/ops/local-qwen-continuation-20261014T1650Y/review-026.json`.
+
+A local terminal selected-load attempt repair is independently accepted. The
+controller charges an eligible test attempt immediately before loading, and
+keeps failures terminal across partial loads, deadlines, STOP and callback errors;
+the lazy test payload-open flag remains distinct. All32 focused synthetic tests
+pass. No native loader/cell/model/data execution occurred. Review:
+`doc/auto/graph-terminal-load-attempt-independent-review-2026-10-16.md`,
+SHA256 `52cb9d07ed5bacb25aee353e68bf993ac6116cc62420710061712960a0e14626`.
+The remaining actual checkpoint codec, observer hooks and native parity are
+unimplemented.
+
+A human/machine-readable selected-checkpoint schema is frozen for review:
+13 artifact tags,21 closed definitions,26 source-catalogued tensors and475
+stdlib author checks. It binds complete H+C, initialization references and an
+atomic history head for every validation decision; validation-score ties retain
+the existing pointer while history still advances. No payload was read or
+written and no codec/native run exists. Independent review found a potentially
+material standards edge case: JSON Schema `pattern` uses search semantics, so
+`^...$` may accept strings containing a terminal newline where Python
+`re.fullmatch` would reject them. Reviewer is checking whether the production
+parser contract closes that gap; schema acceptance is pending. See
+`doc/auto/tgrab-selected-checkpoint-schema-v1.md` and the independent review
+once written.
+
+Qwen task23/evidence status and review receipts are immutable under
+`runs/qwen/local-continuous-20261014T1650Y/` and
+`runs/ops/local-qwen-continuation-20261014T1650Y/`. One new proposal-only task
+was completed; no new numerical experiment, job or model fit occurred. Mila
+full job closeout is still pending because the route was unreachable at the
+last check. Commit `be85cb9` containing the earlier completed-job status is
+confirmed on GitHub main. Current research goal remains active.
