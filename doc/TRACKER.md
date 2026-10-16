@@ -1,12 +1,56 @@
 # Current research state
 
-Updated 2026-10-16. See the [latest notebook entry](october/october16/2026-10-16-progress-report.md),
+Updated 2026-10-16 13:23 UTC. See the [latest notebook entry](october/october16/2026-10-16-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **Overnight progress confirmed; checkpoint schema specification accepted — October16.**
+  The approved Mila conversion job11273685 ran from02:09:36 to02:11:42 UTC on
+  October16 (05:09:36–05:11:42 Qatar), taking126seconds with exit0;
+  independent checks covered337920 raw rows,3072
+  snapshots and all split/manifest comparisons. Qwen call25 completed at01:15:32
+  UTC (04:15:32 Qatar) on the required-history bridge. These establish actual
+  overnight engineering and proposal activity, not uninterrupted inference,
+  training, or a collapse result. Read-only full closeout has now rehashed
+  sources/admission/output inventory and independently decoded the offline W&B
+  transaction; a follow-up read-only hash check matched the pinned
+  evidence-inventory file. Independent review accepted the narrow offline
+  reporting/provenance closeout after107 checks; remote W&B delivery remains
+  unverified. Its single approved allocation is consumed and no retry is
+  authorized.
+  Selected-checkpoint schema revision002 resolved SCHEMA-001 and its exact
+  revision review accepted the **specification only**: 54 focused checks passed,
+  including all three omitted failure stages. A standard JSON Schema validator
+  remains unavailable. The new stdlib canonical JSON utility and its20 focused
+  tests pass; independent review accepted only the primitive parser/helpers,
+  not artifact semantics, file I/O, codec or native parity. The Gate B readiness
+  review found the assigned-order contrast defensible but did not release
+  training; it recommends separating the graph baseline/history task, freezing
+  interpretation scope, and staging discovery/confirmation admission.
+  At13:29 UTC local Qwen PID84719/start/source was verified alive and waiting
+  for evidence:30 identity/schema-verified replies,27 tasks,156106 reported
+  tokens, zero provider errors, no call in flight. Its newest bounded response
+  correctly separates parser fixtures from loader integration but proposes
+  inapplicable 503 author-fixture integration and assumes a legacy loader;
+  those proposals were rejected. No continuous inference is claimed. See
+  [structured status](auto/research-status-2026-10-16.json),
+  [schema review](auto/tgrab-selected-checkpoint-schema-independent-review-2026-10-16.md)
+  [utility review](auto/checkpoint-json-utility-independent-review-2026-10-16.md),
+  [Gate B review](auto/gate-b-readiness-independent-review-2026-10-16.md) and
+  [progress report](october/october16/2026-10-16-progress-report.md).
+
+- **S04 serialized validation checker and conversion closeout — October16.**
+  Root reran the focused JSON/checker suites on Python3.14:35 tests passed after
+  repairing a test witness that relied on pre-3.14 built-in `sum` rounding.
+  Independent S04 review accepted serialized-row consistency only. The offline
+  conversion closeout verifier passed and the narrow closeout is independently
+  accepted. Qwen call32 offered a generic dependency observation, but its
+  proposed audit was rejected as stale/mismatched. No numerical experiment,
+  training, new submission or collapse finding occurred.
 
 - **Approved primary conversion completed — observed October16 02:13 UTC.**
   Native cluv submitted the single approved Mila CPU job **11273685** from
@@ -24,7 +68,7 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   Local Qwen verified03:35UTC alive/waiting,25replies/22tasks,zeroerrors;
   this does not establish continuous model inference or training.
   [Current structured evidence](auto/research-status-2026-10-16.json).
-- **Checkpoint lifecycle/schema progress and Qwen resumed on new evidence — October16.**
+- **Checkpoint lifecycle/schema progress and Qwen resumed on new evidence — October16 (historical status).**
   The selected-checkpoint terminal-load attempt loophole is repaired and
   independently accepted; 32 focused synthetic tests pass. A closed six-file
   checkpoint schema freezes thirteen artifact tags, twenty-one definitions,
@@ -41,6 +85,15 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   [Checkpoint schema](auto/tgrab-selected-checkpoint-schema-v1.md),
   [terminal-load review](auto/graph-terminal-load-attempt-independent-review-2026-10-16.md),
   [Qwen answer audit](../runs/ops/local-qwen-continuation-20261014T1650Y/review-026.json).
+- **Schema independent review found one narrow blocker — October16 13:18 UTC.**
+  3,255 structural assertions and ECMAScript pattern witnesses passed; the
+  schema declares draft2020-12. No standard validator was installed in five
+  checked interpreters, so full metaschema conformance remains unclaimed. The
+  transaction failure `failed_stage` enum cannot represent failures publishing
+  the required immutable intent or applying/verifying GR selection. No codec
+  is approved; an author-owned schema/protocol revision and failure fixtures
+  are in progress.
+  [Independent review](auto/tgrab-selected-checkpoint-schema-independent-review-2026-10-16.md).
 - **Conversion+verification launch packet reviewed — October16 06:03 Yerevan (historical).**
   Integrated wrapper passes28fixtures (22base/root+6independent); nativecluv
   controller passes9author+14independent fixtures. Root rechecked final source,

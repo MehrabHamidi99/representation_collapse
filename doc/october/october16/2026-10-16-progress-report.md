@@ -436,3 +436,242 @@ was completed; no new numerical experiment, job or model fit occurred. Mila
 full job closeout is still pending because the route was unreachable at the
 last check. Commit `be85cb9` containing the earlier completed-job status is
 confirmed on GitHub main. Current research goal remains active.
+
+The schema reviewer directly confirmed the registry declares draft2020-12,
+contains thirteen root tags, twenty-one definitions and fifteen semantic rules,
+including external admission trust, bounded parsing, single atomic history head
+and pre-load terminal test charging. The initial regex concern was tested and
+corrected: in the provided ECMAScript V8 runtime all five tested line terminators
+are rejected by the anchored patterns. A standard JSON Schema validator is not
+installed in the review interpreters. The independent reviewer then found a
+concrete remaining blocker: `transaction_failure.failed_stage` omits failure to
+publish/fsync the immutable transaction intent, even though intent precedes
+receipt in the required protocol. The author has been asked to prepare a narrow
+schema/prose/fixture repair after the review is frozen. No codec will be based on
+the current incomplete failure-stage enum.
+
+Qwen task24's first schema critique asserted missing anchors, bounds, trust rules
+and test authorization after seeing only a short status summary, not the schema.
+Those claims are contradicted by the actual source and were rejected. On task25,
+Qwen retracted the unsupported claims and correctly separated frozen schema from
+missing production codec. That limited correction is retained, but it did not
+validate the JSON Schema or substitute for the independent reviewer. The Qwen
+worker verified13:15:35UTC is live, waiting, at28 model/schema-verified replies,
+25 tasks,144942 reported tokens and zero provider errors. Details:
+`runs/ops/local-qwen-continuation-20261014T1650Y/review-027-028.json`.
+
+Independent schema review is now complete. It passed3,255 structural assertions;
+V8 accepted all five valid regex witnesses and rejected25 terminal-line-terminator
+mutations. It confirmed the draft2020-12 declaration. No standard validator was
+installed in five checked interpreters, so full JSON Schema meta-validation is
+not claimed (this is an unavailable check, not a finding of invalidity). One
+specific blocker remains at
+`/$defs/transaction_failure/properties/failed_stage/enum`: the failure record
+cannot identify immutable intent-publication failure or the required GR selection
+apply/verify failures. These occur at transaction stages described by the same
+schema's protocol. Author was tasked with an exact enum/prose revision and focused
+failure-schema fixtures; codec implementation remains deferred pending repaired
+schema review.
+Review report SHA256 `4b3ed6d742493d12de343576064348b43f36676e316867a76f7bdd0890ed870d`;
+receipt SHA256 `f0c31b9e29888a340ce66b9cd3fe9c5deea73b155cbcb87bb8d66f2d31e5709f`.
+
+Author revision002 closes SCHEMA-001 prospectively: the `failed_stage` enum now
+includes `transaction_intent`, `selection_apply` and `selection_verify`, with
+prose binding intent write/fsync/verification and actual GR selection apply/result
+verification. Author fixture count is503; seven unknown/nonstring stages reject.
+Machine schema SHA256 `db2baaa64f891533f5c2c36229dd250733f675a0a2045d0436fc93d3145f2acc`,
+human spec SHA256 `959287af66b18ae3796ef809b0e71071b576e912f2705920ef8db582c27084ee`,
+revision receipt SHA256 `6853f6f7ddb8c1a613c57c68bbd333d3e6ef6ab1bd32c1cee380c503e59687b3`.
+The independent reviewer was asked to verify only this revision; schema/codec
+acceptance remains pending. A separate evidence-bound Qwen task26 was published
+to critique the failure-stage repair; no answer is accepted until its exact model
+identity, evidence binding and scope are reconciled.
+
+Qwen task26/call29 completed at13:20:26UTC. Model/schema identity verified; its
+limited observation agrees that the three new failure tags address the summarized
+gap and separates metadata fixtures from production behavior. It had only the
+status summary, not source, so its reply is not schema/implementation verification.
+The coordinator retained only this narrow observation in
+`runs/ops/local-qwen-continuation-20261014T1650Y/review-029.json`; independent
+source review remains decisive. Worker was live/waiting at13:21:03UTC with29
+model/schema-verified replies,26 completed tasks, zero provider errors and no
+in-flight call. No compute, model fit, SDK, or numerical experiment occurred.
+
+## 16:22–16:23 Asia/Qatar / 13:22–13:23 UTC — overnight status and schema disposition reconciled
+
+The exact independent revision002 receipt was checked at
+`runs/review/selected-checkpoint-schema-20261016/independent/receipt-revision002.json`.
+It records **54/54 focused checks passed**, the exact accepted schema and prose
+hashes, all three repaired failure-stage tags, and `specification_accepted=true`.
+This accepts the closed schema specification only. The review expressly did not
+rerun all21 definitions or execute a standard JSON Schema validator; parser,
+codec, transaction behavior, observer and native checkpoint parity remain open.
+Earlier report sections preserve the blocker as it stood before this review.
+
+The approved primary conversion ran **22:09:36–22:11:42 UTC on October15**
+(01:09:36–01:11:42 Qatar on October16), and verified Qwen call25 answered the
+required-history bridge at01:15:32 UTC /04:15:32 Qatar. These timestamps support actual overnight engineering and
+proposal activity. They do not show continuous inference or training. The
+conversion's independent data checks passed, but final remote source/admission
+and offline reporting-transaction closeout is pending; its one approved job is
+consumed with no retry authorization. No collapse evidence was generated.
+
+At13:22:45UTC local Qwen PID84719, process-start identity and worker source were
+verified. The worker is live and waiting for evidence with29 model/schema-verified
+replies,26 completed tasks,150463 reported tokens, zero provider errors and no
+call in flight. The verifier made no provider call or action. This confirms
+healthy proposal infrastructure at that instant, not continuing overnight
+inference. Structured receipt:
+`runs/ops/local-qwen-continuation-20261014T1650Y/live-20261016T132245Z.json`.
+
+To make the accepted specification executable without overstating validation,
+the coordinator assigned a bounded stdlib-only canonical JSON/parser utility to
+the implementation worker, with source/schema SHA pinning and positive/negative
+tests. The assignment excludes tensors, filesystem traversal, Torch/PyG, model
+calls, transactions and full JSON Schema validation. The authored utility passes
+20 focused fixtures and has exact source/test hashes in structured status.
+Author reported syntax checks under Python3.10; root reran all20 tests under
+Python3.11.13, which is within this repository's declared `>=3.11,<3.15` range.
+A separate cluster runtime remains environment-specific and has not been validated. An evidence-summary task27 asking Qwen for next-gate ordering was
+published within the approved proposal-only excerpt scope; no response was
+present at13:26:56UTC. At that check the process was live/waiting with29 verified
+replies and no call in flight. Independent code review is pending. No compute or
+numerical experiment was run or submitted.
+
+## 13:28 UTC — local parser utility and Gate B readiness independently reviewed
+
+The independent code reviewer rechecked the exact utility and test hashes,
+reran the20 focused tests, and accepted the **primitive JSON layer only**. No
+concrete bypass was found within its contract. The review explicitly excludes
+full JSON Schema validation, artifact semantics, filesystem/path safety, tensor
+codec, transaction implementation and runtime/native behavior. Report:
+`doc/auto/checkpoint-json-utility-independent-review-2026-10-16.md`; immutable
+receipt: `runs/review/checkpoint-json-utility-independent-20261016/receipt.json`.
+
+A separate read-only Gate B review concludes that the narrow assigned-body-order
+estimand is defensible and the protocol preserves valid negatives. It does not
+release graph training: the selected-checkpoint codec and observed native load
+parity remain absent. It recommends (1) separating next-graph reproduction
+from a graph required-history task, (2) registering the assigned-order scope and
+accepted motif-exposure limitation, and (3) freezing discovery/admission
+separately from confirmation statistics. Review:
+`doc/auto/gate-b-readiness-independent-review-2026-10-16.md` (14 pinned file
+hashes, 27 local anchors).
+
+Qwen task27 on next-gate ordering was published from an evidence summary, within
+the previously authorized proposal-only project excerpt scope. No reply had
+arrived by the prior13:26:56UTC worker check. The two independent reviews caused
+no scientific claim acceptance, code execution beyond the focused fixture
+suite, model call or compute submission.
+
+At13:29:14UTC the actual Qwen PID/start/source and call30 response were verified:
+30 identity/schema-verified replies,27 completed tasks,156106 reported tokens,
+no provider errors and no call in flight; task27 finished at13:27:31UTC. Its
+useful point is that twenty parser fixtures do not imply loader, transaction or
+native tensor compatibility. Its suggested use of all503 schema author fixtures
+as runtime integration tests is unsupported, and its suggested legacy-loader
+parity assumes an unavailable artifact/loader and skips typed codec gates. Root
+retained only the narrow test-scope observation; no implementation or scientific
+claim was accepted from Qwen. Review: `runs/ops/local-qwen-continuation-20261014T1650Y/review-030.json`.
+The next local gate is typed artifact/S01–S15 validation against the accepted
+specification, with independent adversarial fixtures, followed by codec and
+transaction crash/reopen review. No native call or compute was authorized.
+
+After reviewing the independent Gate B readiness report, root published Qwen
+task28 to critique the recommendation ordering against current parser acceptance
+and the preserved estimand. Its exact task/evidence bindings are in
+`runs/ops/local-qwen-continuation-20261014T1650Y/task-publication-010.json`.
+The task is proposal-only; its response does not gate or authorize
+implementation work.
+
+Call31/task28 completed at13:30:35UTC and was checked at13:31UTC against its
+model identity, task/evidence binding, response schema and worker history. The
+limited valid observation is that parser fixtures do not establish native
+parity or collapse. Its proposed ordering was rejected: it used a stale
+"independent review pending" status, placed conversion closeout after native
+parity without evidence, and proposed immediate discovery training while omitting
+protocol and owner resource gates. Root keeps the S04 validation-row checker
+local, while data closeout and later native parity remain separate prerequisite
+threads. Review: `runs/ops/local-qwen-continuation-20261014T1650Y/review-031.json`.
+
+## 13:37 UTC — closeout chronology corrected; S04 tests repaired and rerun
+
+The read-only closeout collector explicitly set `TZ=UTC`; Slurm accounting
+reports job11273685 started at **2026-10-16 02:09:36 UTC** and ended at
+02:11:42 UTC (05:09:36–05:11:42 Asia/Qatar), completed `0:0` in126seconds.
+The offline W&B transaction independently records work during the same UTC
+interval. The SDK directory token `20261015_220944` represented local naming
+time and was previously misread as UTC. This addendum corrects that
+interpretation while retaining the earlier entry as historical evidence. The
+successful job state, conversion counts and engineering-only scientific status
+are unchanged.
+
+The read-only collector rehashed14 source files,6 admission references and20
+regular final-output files (one expected SDK symlink was only `lstat`ed), and
+reconciled Slurm state, exit `0:0`, 126-second elapsed time and the offline
+transaction. No parser rerun, SDK initialization, data/checkpoint transfer or
+new submission occurred. A local independent decoder verified all19 CRC
+records, run identity `f177579e09d943c5917bd68522c478a7`, three history steps
+`[0,1,2]`, terminal summary through step2, and rejection of corrupted and
+truncated probes. Transaction SHA256 is
+`2fb8476387762d191b57809c372056ccdefb9fb3c884045a2581a15968d5573f`.
+This verifies offline transaction integrity, not remote W&B server delivery;
+server delivery remains unverified. Independent closeout disposition is
+pending.
+
+After the reviewer identified that the first collector did not return the
+inventory's own digest, root performed a second read-only Mila check. The
+current regular `attempt001/evidence-inventory.json` is 3,855 bytes with SHA256
+`2b83834d9e739bf5930cf67b4f4882ff1509763d03b09fe4ec7315b63482e61a`, matching
+the prior inspection pin exactly. Receipt:
+`runs/ops/primary-conversion-verified-20261016/closeout-retry002/evidence-inventory-pin-check.json`.
+This binds the 20 output rehashes to the pinned inventory; final reviewer
+disposition remains pending.
+
+Root ran both focused checkpoint suites using available Python3.14 because the
+local test environments lack pytest. An S04 fixture assumed built-in float
+`sum` used naive left-to-right accumulation; Python3.14's compensated
+implementation made the original witness equal `math.fsum`. The test now uses
+varied F1 values and an explicit left fold. All35 focused tests pass. This
+repairs the test witness only; checker source did not change. Independent S04
+review accepted the serialized-consistency checker narrowly against the revised
+test hash and verified its witness-only change. The checker does not establish
+data compatibility, competence, or collapse. Review and receipt:
+`doc/auto/checkpoint-validation-rows-independent-review-2026-10-16.md` and
+`runs/review/checkpoint-validation-rows-independent-20261016/receipt.json`.
+
+The conversion closeout reviewer subsequently accepted the narrow offline
+reporting/provenance closeout after107 independent assertions. The verifier
+confirmed the transaction run ID equals the filename/run receipt, the sole exit
+code is0, all19 CRC/protobuf records align with history steps0/1/2 and the
+configuration/summary fields, and the evidence-inventory digest matches its
+prior pin. This acceptance covers offline transaction integrity and recorded
+provenance only. It does not show delivery to the W&B cloud service, support a
+scientific claim, or authorize a retry. Review and immutable receipt:
+`doc/auto/primary-conversion-offline-closeout-independent-review-2026-10-16.md`
+and `runs/review/primary-conversion-offline-closeout-20261016/receipt.json`.
+The reviewer independently resolved chronology to October16 02:09:36–02:11:42
+UTC; historical mislabeled timestamps are corrected by the preceding addendum.
+
+Qwen call32/task29 answered at13:44:39UTC after receiving the bounded summary
+of the accepted S04 and conversion-closeout evidence. Model/schema identity and
+the evidence binding were verified; the worker was live/waiting at13:45:06UTC
+with32 verified replies,29 completed tasks and zero provider errors. The only
+retained observation is the already-established dependency that checkpoint
+integrity/native parity precedes training. The proposed next audit was rejected:
+it treats503 schema author fixtures as codec runtime tests, compares unrelated
+serialization and human-spec hashes, and labels already accepted reviews as
+pending. No model answer was accepted as code, measurement, or scientific
+evidence. Review: `runs/ops/local-qwen-continuation-20261014T1650Y/review-032.json`.
+Task29 publication and evidence hashes are in
+`runs/ops/local-qwen-continuation-20261014T1650Y/task-publication-011.json`.
+
+The dated tracker and structured status were reconciled at13:47UTC. They now
+record the closeout's narrow independent acceptance, the timezone correction,
+the S04 review receipt and its serialized-consistency-only scope, and Qwen's
+current liveness receipt. This turn reran35 passing focused local tests and one
+proposal-only Qwen response; it added zero numerical experiments, model fits,
+cluster submissions, dataset/checkpoint transfers or scientific findings. The
+next graph-training gate remains closed pending typed artifact/codec validation,
+native parity, a frozen graph baseline/history protocol and separately
+authorized compute.
