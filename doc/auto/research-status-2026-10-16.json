@@ -84,7 +84,18 @@
     "expected_model_FP32_payload_bytes": 931332,
     "native_state_dict_observed": false,
     "conversion_job_technical_config_enabled": true,
-    "current_conversion_verification_integration_review_complete": false
+    "current_conversion_verification_integration_review_complete": true,
+    "conversion_verification_wrapper_current_fixtures": 28,
+    "cluv_submission_controller_review_accepted": true,
+    "cluv_submission_controller_current_fixtures": 23,
+    "conversion_job_source_published_and_staged": false,
+    "paper_ordering_scope_guard_integrated": true,
+    "paper_current_pages": 18,
+    "paper_changed_pages_visual_QA": [
+      4,
+      7,
+      11
+    ]
   },
   "this_turn": {
     "new_cluster_submissions": 0,
@@ -102,14 +113,14 @@
     "new_preparation_unit_fixtures_accepted": 32
   },
   "next_work": [
-    "Complete independent review of conversion+verification job and exact nativecluv controller",
-    "Publish/stage immutable source and request one fresh exact CPU allocation before actual primary conversion/reduction",
+    "Publish and stage the independently reviewed exact conversion+verification/cluv-controller packet",
+    "Obtain one fresh exact CPU allocation, then run and reconcile primary conversion+independent reduction",
     "Freeze closed checkpoint schemas and implement codec using the accepted source-derived catalog",
     "Implement native state/loader/observer lifecycle then counted admitted parity before training",
     "Establish graph competence and matched-order confirmation before native cross-modal mechanism claims"
   ],
   "compute_readiness": {
-    "checked_at_utc": "2026-10-16T01:17:14.734580+00:00",
+    "checked_at_utc": "2026-10-16T01:55:41.330510+00:00",
     "cluster": "mila",
     "native_cluv_version": "0.1.5",
     "project_name_filtered_queue_matches": 0,
@@ -119,10 +130,11 @@
     "wandb_metadata_version": "0.30.0",
     "scratch_used_bytes": 9162264576,
     "scratch_cap_bytes": 21474836480,
-    "receipt": "runs/ops/graph-data-20261016/conversion-readiness-result.json",
+    "receipt": "runs/ops/graph-data-20261016/conversion-readiness-restored-result.json",
     "other_cluster_queues_freshly_verified": false,
     "fresh_allocation_approved": false,
     "access_restored_at_utc": "2026-10-16T01:34:37.753281+00:00",
-    "fresh_authentication_source": "Owner readiness reply; successful nativecluv interactiveconnect receipt"
+    "fresh_authentication_source": "Owner readiness reply; successful nativecluv interactiveconnect receipt",
+    "native_cluv_source_files_single_link_regular": true
   }
 }

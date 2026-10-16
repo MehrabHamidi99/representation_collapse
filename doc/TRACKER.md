@@ -8,6 +8,19 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Conversion+verification launch packet reviewed — October16 06:03 Yerevan.**
+  Integrated wrapper passes28fixtures (22base/root+6independent); nativecluv
+  controller passes9author+14independent fixtures. Root rechecked final source,
+  config and all helper/controller pins. Owner allocation remains absent;
+  no submission or primary body parsing occurred. Exact technical config is
+  enabled for immutable publication/staging; both external approval and an
+  exclusive one-submission claim remain mandatory. Read-only Mila01:55UTC:
+  partitionUP, projectqueueempty, scratch9.16GB, exact existing environment.
+  Paper now states the independently reviewed motif-exposure limitation;
+  build18pages, finalreferencesresolved/nooverfullboxes, changedpages visually
+  inspected. No empirical claim added.
+  [Job review](auto/graph-data-conversion-verification-job-independent-review-2026-10-16.md),
+  [cluv controller review](auto/primary-conversion-cluv-controller-independent-review-2026-10-16.md).
 - **Independent raw-data verifier and exact tensor catalog accepted — October16 05:48 Yerevan.**
   Raw-to-artifact verifier passes11author+18reviewer fixtures and independently
   rebuilds every snapshot/manifest without producer helpers. Source-derived

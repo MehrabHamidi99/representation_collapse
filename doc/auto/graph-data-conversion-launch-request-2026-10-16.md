@@ -1,9 +1,13 @@
 # Prepared primary-data conversion allocation — October 16
 
-**Preparation only. No allocation or conversion is authorized by this file.**
+**Prospective conversion plus independent verification. No allocation is authorized by this file.**
+This revision adds the separately implemented, reviewed raw-to-artifact oracle
+to the previously unexecuted preparation packet. Earlier source/fixture receipts
+refer to their exact older hashes; no earlier allocation is reused.
 All earlier CPU/GPU slots are consumed. Root owns scientific acceptance, source
 freeze, actual scheduler/cluv inspection, staging, owner approval and submission.
 The primary CSV body has not been inspected in this implementation task.
+The accepted verifier protocol is [tgrab-primary-data-verifier-v1.md](tgrab-primary-data-verifier-v1.md).
 
 The requested future allocation is exactly one Mila/native-cluv0.1.5 CPU job:
 account `mila`, QOS `normal`, partition `main-cpu`, one node/task/CPU, physical
@@ -14,7 +18,10 @@ is a valid terminal result; do not edit accepted policy to make the file pass.
 
 Reuse the existing Python3.10.19/W&B0.30.0 environment at
 `/network/scratch/m/mehrab.hamidi/representation-collapse/environments/graph-native-cpu-20261015-calibration01/venv`.
-No environment installation, download or numerical import occurs in this job.
+No environment installation, download, numerical model import or scientific
+array computation belongs to this job. The reporting SDK may load its own
+transitive dependencies; no claim of an empty numerical-package sys.modules
+set is made.
 Original bytes remain at
 `/network/scratch/m/mehrab.hamidi/representation-collapse/datasets/tgrab-603388f332c7756f90bc1702b26053c2bc834654-primary/primary.csv`:
 6,907,326 bytes, SHA256
@@ -26,13 +33,20 @@ and [payload receipt](tgrab-primary-payload-staging-2026-10-15.md) supplying con
 
 ## Freeze and admission before approval
 
-The checked-in `configs/graph/primary-data-conversion-v1.json` has
-`execution_authorized=false`, converter SHA=null and protocol SHA=null. The
-runner refuses it. Root must finish independent review, fill those two exact
-source pins, enable the config, publish the complete source and hash-verify an
-isolated scratch source checkout. The runner's frozen policy accepts only those
-three changes; raw identity, resources, caps, API policy, reporting and all other
-fields remain fixed. No commit ID is embedded in source that would hash itself.
+The checked-in `configs/graph/primary-data-conversion-v1.json` is now a pinned,
+technically enabled candidate (`execution_authorized=true`) so the exact runnable
+source can be independently reviewed, published and staged **before** requesting
+approval. This flag grants no allocation: the runner separately requires an
+exact external owner-approval receipt and exclusive one-submission claim, which
+root may create only after a fresh owner allocation decision. No such receipt
+or submission exists at this freeze.
+
+The four pins are converter, conversion protocol, independent verifier and
+verification protocol. All four match independently accepted exact source bytes.
+The policy hash masks only these four pins and the technical execution flag;
+raw identity, resources, all attempt/output caps, API, reporting and other fields
+remain fixed. Any new source must be independently reviewed and published before
+updating an external plan. No commit ID is embedded in source that hashes itself.
 
 Prepare a new external coordinator plan, not a tracked enabled approval file.
 Its required fields are `kind=primary_data_conversion_single_submission_plan`,
@@ -84,18 +98,48 @@ actual externally supplied plan SHA and records the full actual argv.
  --plan, <inputs>/plan.json, --plan-sha256, {plan_sha256}]
 ```
 
-Proposed unique layout (root must freeze the concrete paths):
+Concrete unique layout; `<scratch>` is exactly
+`/network/scratch/m/mehrab.hamidi/representation-collapse`. No path is reused:
 
 ```text
-<scratch>/sources/primary-conversion-v1-20261016-attempt001/
-<scratch>/runs/primary-conversion-v1-20261016/inputs/plan.json
-<scratch>/runs/primary-conversion-v1-20261016/attempt001/
-<scratch>/runs/primary-conversion-v1-20261016/STOP
+<scratch>/sources/primary-conversion-verified-20261016-attempt001/
+<scratch>/runs/primary-conversion-verified-20261016/inputs/plan.json
+<scratch>/runs/primary-conversion-verified-20261016/attempt001/
+<scratch>/runs/primary-conversion-verified-20261016/STOP
 ```
 
-## Future command and execution boundary
+## Native cluv controller and future execution boundary
 
-After owner approval and native-cluv/source readiness, submit only the reviewed
+The source-bound controller is `code/ops/submit_primary_conversion.py`, with
+[its protocol](primary-conversion-cluv-controller-2026-10-16.md). Both exact hashes
+are fixed source entries in the technical config. It runs on the Mila login host
+using the existing project controller Python, from the isolated published source.
+It checks actual nativecluv0.1.5 library hashes, clean HEAD/origin main, owner
+receipt and complete source/config identity before native submission. It creates
+the hash-bound claim exclusively, records intent/actual native expansion/outcome,
+and never retries an ambiguous result. A returned job ID is not evidence of
+RUNNING; root must inspect the scheduler.
+
+External plan fields additionally bind `claim_id`, `controller_cache`,
+`preview_receipt`, `submission_receipt`, `logs` and `native_cluv_source_sha256`;
+the last mapping is exactly the six audited library pins in the controller.
+The controller cache and evidence paths are new under `inputs/`; logs are exactly
+`<scratch>/logs/primary-conversion-verified-20261016` and must be new or empty.
+Storage reservation is at least1GiB for new source/cache/logs plus conversion and
+reporting output, within the existing20GiB whole-project cap.
+
+Root's future invocation, from the exact source cwd, is:
+
+```text
+<scratch>/source/.venv/bin/python -B code/ops/submit_primary_conversion.py --plan <scratch>/runs/primary-conversion-verified-20261016/inputs/plan.json --plan-sha256 <owner-admitted-plan-SHA256>
+```
+
+The plan hash is finalized only after the owner's approval receipt is retained;
+this changes admission metadata, not the published scientific/source settings.
+No owner receipt or plan authorizing submission is created by this request.
+
+
+After owner approval and native-cluv/source readiness, the controller submits only the reviewed
 `code/ops/graph_data_conversion_job.sh --plan <absolute-plan>
 --plan-sha256 <frozen-SHA256>`. Recheck native cluv0.1.5 and the actual scheduler
 before root materializes the launch. The reviewed native scheduler expansion is:
@@ -149,8 +193,32 @@ The converter checks exactly bounded raw bytes and at most 500,000 rows, 3,072
 timestamps and N=100, according to the frozen protocol. It produces three split
 JSON files and the final manifest; each split is bounded to64 MiB and the
 manifest to2 MiB. The runner accepts exactly those four final files, hashes each,
-verifies the published manifest with `read_manifest`, and records counts and
-identities. It never constructs snapshots/models or opens train/test store APIs.
+checks the published manifest with producer `read_manifest`, and records counts
+and identities. That producer call is self-consistency, not independent reduction.
+
+Within the same original590-second work/600-second physical budget, it then
+charges exactly one independent verifier attempt before entry and calls the
+actual `verify_primary_conversion(raw_path, manifest_path, *,
+expected_raw_sha256, expected_raw_bytes, expected_manifest_sha256,
+expected_converter_sha256, expected_converter_revision, config_path, guard)`.
+Fixture mode/spec are never enabled. The second parser independently rebuilds
+every raw snapshot, all split bytes, all semantic hashes and the entire canonical
+manifest, without producer imports/helpers. It writes no data; the worker
+atomically retains its primitive receipt as `worker/independent-verification.json`.
+Any mismatch is terminal, with conversion artifacts/failure counts retained and
+no retry. This is independent data verification outside model fitting; reading
+the test split here grants no training/selection access.
+
+The caller and supervisor require the production verification kind, exact
+raw/config/converter/verifier/revision/manifest identities, primary-eligible and
+independent flags, all3072 snapshots,3splits,1complete-manifest comparison and
+7stable input files. The closed25-key receipt also requires the exact primary
+spec, all four strictly typed raw counts, successful marker count0, at least6144
+unique offdiagonal occurrences, rows=unique+duplicates and equality with producer
+counts. Every split record has exactly filename/interval/size/fileSHA/semanticSHA
+with fixed boundaries and valid bounded types. Booleans cannot substitute for counts. After owned cleanup, the terminal file inventory must still agree
+with the accepted receipt SHA, manifest SHA and every split size/SHA. It never
+constructs numerical snapshots/models or opens train/test store APIs.
 Output monitoring terminates an attempt above 260 files or 448 MiB;
 conversion files must separately fit192 MiB. Bounds are stopping rules, not a
 promise that partial output cannot briefly exceed an aggregate ceiling between
@@ -179,9 +247,12 @@ files and its failure record; no silent repair or retry follows.
 
 Success requires a completed worker, exactly one conversion attempt, the exact
 primary manifest/file closure and a completed offline reporting receipt with
-finish returned and both metric steps. Exit0 alone is insufficient. Root must
-independently verify hashes, conversion invariants, retained offline transaction
-and scheduler outcome before accepting engineering evidence. Offline durability
+finish returned and all three metric steps (conversion started0/completed1,
+independent verification completed2). Exactly one conversion and one independent
+verification attempt must complete; a missing, fixture-kind, mismatched or
+changed verification receipt is incomplete. Exit0 alone is insufficient. Root must
+reconcile actual independent-verifier results, final hashes, retained offline
+transaction and scheduler outcome before accepting engineering evidence. Offline durability
 does not establish dashboard delivery. Training, task competence, periodic orbit
 closure, Floquet contraction and harmful-collapse claims remain unverified.
 

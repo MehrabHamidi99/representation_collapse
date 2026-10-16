@@ -8,7 +8,7 @@ Current objective: [active research goal](auto/active-research-goal.md), followi
 the charter and novelty audit. Latest engineering work: [primary converter/store
 review](auto/tgrab-primary-data-conversion-independent-review-2026-10-16.md),
 [input diagnostics review](auto/matched-input-statistics-independent-review-2026-10-16.md),
-and [disabled conversion-job review](auto/graph-data-conversion-job-independent-review-2026-10-16.md).
+and [conversion-plus-verification job review](auto/graph-data-conversion-verification-job-independent-review-2026-10-16.md).
 The [independent raw-to-artifact verifier](auto/tgrab-primary-data-verifier-independent-review-2026-10-16.md)
 and [source-derived checkpoint catalog](auto/tgrab-selected-tensor-catalog-independent-review-2026-10-16.md)
 have also passed review. These are synthetic/preparation evidence; real primary

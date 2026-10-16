@@ -28,11 +28,12 @@ class ConversionPreparationTests(unittest.TestCase):
         imports = [n for n in tree.body if isinstance(n, (ast.Import, ast.ImportFrom))]
         self.assertFalse(any(any(a.name in ("numpy", "torch", "wandb") for a in n.names) for n in imports))
 
-    def test_checked_in_config_disabled_unpinned_and_all_policy_fields_frozen(self):
+    def test_pinned_candidate_requires_external_plan_and_all_policy_fields_frozen(self):
         config = job.load_config(CONFIG)
-        self.assertFalse(config["execution_authorized"])
-        self.assertIsNone(config["sources"]["converter"]["sha256"])
-        self.assertIsNone(config["sources"]["conversion_protocol"]["sha256"])
+        self.assertTrue(config["execution_authorized"])
+        for key in job.CONFIG_PIN_FIELDS:
+            record = config["sources"][key]
+            self.assertEqual(record["sha256"], job.sha256(ROOT / record["path"]))
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary).resolve() / "config.json"
             for mutation in (lambda c: c["limits"].update(raw_rows=999999),
@@ -50,8 +51,8 @@ class ConversionPreparationTests(unittest.TestCase):
     def test_real_reporter_constructor_accepts_actual_metadata_without_sdk(self):
         from representation_collapse.reporting import ExperimentReporter
         config = job.load_config(CONFIG)
-        config["sources"]["converter"]["sha256"] = "a" * 64
-        config["sources"]["conversion_protocol"]["sha256"] = "b" * 64
+        for key in job.CONFIG_PIN_FIELDS:
+            config["sources"][key]["sha256"] = "a" * 64
         plan = {"source_commit": "c" * 40, "config_sha256": "d" * 64, "environment": {"sha256": "e" * 64}}
         scalar_config, identities = job.reporter_metadata(plan, config)
         with tempfile.TemporaryDirectory() as temporary, mock.patch("importlib.import_module", side_effect=AssertionError("SDK forbidden")) as sdk:

@@ -262,3 +262,45 @@ compute. A bounded single-Mila nativecluv controller and independent review are
 being prepared. Resources remainCPU1/physical2GiB/600seconds/GPU0/max1/no retry,
 race or requeue. The newly added second parser shares the same original deadline.
 No new allocation has been approved or consumed.
+
+## 05:53–06:03 Yerevan / 01:53–02:03 UTC — launch preparation accepted; paper scope clarified
+
+Accepted verifier/catalog source was committed/pushed as `4c2efda`.
+The integrated conversion+independent-verification wrapper now passes28fixtures
+(22base/root and6new independent). Independent controller review passes9author
+plus14reviewer fixtures. All source bytes are frozen/rechecked. The current
+worker policy explicitly includes both exact controller/protocol hashes and
+accepts the final pinned config; full closure was exercised in the focused
+integration fixtures. The wrapper's raw-count/spec/split-schema gap is repaired.
+No real parser, worker, SDK session, nativecluv submit API or scheduler submission
+was executed by these mocks. Root acceptance:
+`runs/review/goal-progress-20261016/accepted-conversion-verification-launch-preparation.json`.
+
+Fresh nativecluv read-only Mila check01:55:41UTC: main-cpuUP, no project jobname
+matches, Python3.10.19/W&B0.30.0 metadata,9,162,264,576scratchbytes, all six audited
+cluv package members regular/nonsymlink/singlelink. No other cluster queue is
+newly verified. Current staging prepares oneCPU/2GiB/600s/GPU0/max1/no retry,
+race or requeue, within20GiB scratch. Neither owner approval nor claim exists.
+A technical config flag alone is insufficient authority. Pending source/readiness
+staging has no submission branch and will preserve an explicitly disabled
+external plan until a fresh owner decision.
+
+The active manuscript is `paper/main.tex`; changed active includes are
+`sections/05-task-and-design.tex`, `sections/08-limitations.tex` and
+`sections/C-protocol.tex`. Inherited manuscripts remain untouched. The paper
+now includes the accepted registered-boundary exposure counting argument and
+limits attribution of an assigned-order effect to one periodicity mechanism.
+No new trained result or statistical/competence rule was added. `latexmk -pdf
+-interaction=nonstopmode -halt-on-error -outdir=build main.tex` succeeded. The
+final pass has no undefined references or overfull boxes;18pages remain, with
+7main-text pages. Rendered changed pages4,7,11 were visually inspected without
+clipping/overlap/cross-reference defects. Receipt:
+`runs/review/paper-ordering-scope-20261016/receipt.json`; compiled PDF is
+`paper/build/main.pdf` (ignored). The PDF skill's argument-only marker helper was
+evaluated using the provided V8 runtime because Node is unavailable locally.
+
+Next: publish/stage this exact reviewed source, bind actual environment/storage
+and reporter constructor metadata, then request the one concrete fresh allocation.
+Actual primary conversion/reduction and offline lifecycle remain unrun. The
+full scientific goal is active and incomplete; native graph competence, harmful
+collapse and cross-modal transfer remain unaccepted.

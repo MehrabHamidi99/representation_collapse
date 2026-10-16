@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Prepare/supervise one separately admitted primary CSV conversion, never submit.
 
-Stdlib-only import. The disabled checked-in configuration is not admission.
+Stdlib-only import. The pinned technical configuration is not owner admission.
 """
 from __future__ import annotations
 
@@ -30,7 +30,8 @@ SHELL_PATH = "code/ops/graph_data_conversion_job.sh"
 CONFIG_PATH = "configs/graph/primary-data-conversion-v1.json"
 REQUEST_PATH = "doc/auto/graph-data-conversion-launch-request-2026-10-16.md"
 SCRATCH = Path("/network/scratch/m/mehrab.hamidi/representation-collapse")
-POLICY_SHA256 = "b2b426987bbfc8a6766d239c50af94ec4658d9a1630631eed17bc9cc0d1d6534"
+POLICY_SHA256 = "3dbfaf6faa92527b137b83b90177fd4e29f1617d11883b46319bbdb0a700591e"
+CONFIG_PIN_FIELDS = ("converter", "conversion_protocol", "verifier", "verification_protocol")
 
 
 class ConversionJobError(RuntimeError):
@@ -96,7 +97,7 @@ def load_config(path):
     config = read_json(path)
     policy = json.loads(json.dumps(config))
     policy["execution_authorized"] = False
-    for key in ("converter", "conversion_protocol"):
+    for key in CONFIG_PIN_FIELDS:
         policy["sources"][key]["sha256"] = None
     digest = hashlib.sha256(json.dumps(policy, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
     if digest != POLICY_SHA256:
@@ -324,6 +325,8 @@ def reporter_metadata(plan, config):
             {"source_commit": plan["source_commit"], "config_sha256": plan["config_sha256"],
              "converter_sha256": config["sources"]["converter"]["sha256"],
              "protocol_sha256": config["sources"]["conversion_protocol"]["sha256"],
+             "verifier_sha256": config["sources"]["verifier"]["sha256"],
+             "verification_protocol_sha256": config["sources"]["verification_protocol"]["sha256"],
              "reporter_sha256": config["sources"]["reporter"]["sha256"],
              "input_sha256": config["raw"]["sha256"], "environment_sha256": plan["environment"]["sha256"]})
 
@@ -340,6 +343,7 @@ def worker(args, plan, config, root, output):
         raise ConversionJobError("shared clock/job/argv worker binding required")
     worker_output = output / "worker"; worker_output.mkdir(exist_ok=False)
     status = {"state": "initializing", "protocol_id": PROTOCOL_ID, "conversion_attempts": 0,
+              "verification_attempts": 0,
               "scientific_acceptance": False, "remote_delivery_verified": False}
     def persist():
         status["elapsed_seconds"] = time.monotonic() - started
@@ -401,11 +405,89 @@ def worker(args, plan, config, root, output):
             report.log({"conversion/completed": True, "conversion/rows": metadata["counts"]["raw_rows"],
                         "conversion/output_bytes": files["bytes"], "conversion/timestamps": 3072}, step=1)
             guard()
+            verifier = importlib.import_module("representation_collapse.graph_data_verifier")
+            if (Path(verifier.__file__).absolute() != root / config["sources"]["verifier"]["path"]
+                    or sha256(verifier.__file__, guard=guard) != config["sources"]["verifier"]["sha256"]):
+                raise ConversionJobError("actual independent verifier source mismatch")
+            status.update(state="verifying", verification_attempts=1); persist()
+            verification = verifier.verify_primary_conversion(config["raw"]["path"], manifest_path,
+                expected_raw_sha256=config["raw"]["sha256"], expected_raw_bytes=config["raw"]["bytes"],
+                expected_manifest_sha256=manifest_sha,
+                expected_converter_sha256=config["sources"]["converter"]["sha256"],
+                expected_converter_revision=plan["source_commit"],
+                config_path=root / config["reconstruction_config"]["path"], guard=guard)
+            validate_verification(verification, plan, config, manifest_sha, expected_counts=metadata["counts"])
+            atomic_json(worker_output / "independent-verification.json", verification)
+            status["verification_sha256"] = sha256(worker_output / "independent-verification.json", guard=guard)
+            report.log({"verification/completed": True, "verification/snapshots": verification["snapshot_count"],
+                        "verification/splits": verification["split_count"], "verification/attempts": 1}, step=2)
+            guard()
         guard(); status.update(state="completed", manifest_sha256=manifest_sha); persist(); return 0
     except BaseException as error:
         status.update(state="failed", error_type=type(error).__name__); persist(); return 1
     finally:
         signal.setitimer(signal.ITIMER_REAL, 0)
+
+
+def validate_verification(receipt, plan, config, manifest_sha, *, expected_counts):
+    """Require the independent production oracle, never a fixture/self-check."""
+    if not isinstance(manifest_sha, str) or re.fullmatch(r"[0-9a-f]{64}", manifest_sha) is None:
+        raise ConversionJobError("concrete independently verified manifest identity required")
+    expected = {
+        "kind": "tgrab_primary_conversion_independent_verification_v1", "status": "verified",
+        "primary_eligible": True, "independent_of_producer": True, "scientific_acceptance": False,
+        "raw_sha256": config["raw"]["sha256"], "raw_bytes": config["raw"]["bytes"],
+        "manifest_sha256": manifest_sha, "converter_sha256": config["sources"]["converter"]["sha256"],
+        "converter_revision": plan["source_commit"], "config_sha256": config["reconstruction_config"]["sha256"],
+        "verifier_source_sha256": config["sources"]["verifier"]["sha256"],
+        "snapshot_count": 3072, "split_count": 3, "converted_snapshot_comparisons": 3072,
+        "semantic_snapshot_comparisons": 3072, "split_byte_comparisons": 3,
+        "complete_manifest_byte_comparisons": 1, "stable_input_files_checked": 7,
+    }
+    count_fields = {"raw_rows", "identical_duplicate_rows", "source_marker_rows", "unique_offdiagonal_edges"}
+    if (type(receipt) is not dict or set(receipt) != set(expected) | count_fields | {"spec", "split_hashes"}
+            or any(not exact(receipt.get(key), value) for key, value in expected.items())):
+        raise ConversionJobError("independent primary verification receipt mismatch")
+    if not exact(receipt["spec"], {"nodes": 100, "block": 32, "train_periods": 40, "validation_periods": 4, "test_periods": 4}):
+        raise ConversionJobError("independent primary candidate spec mismatch")
+    counts = {key: receipt[key] for key in count_fields}
+    if (any(type(value) is not int or not 0 <= value <= config["limits"]["raw_rows"] for value in counts.values())
+            or counts["source_marker_rows"] != 0 or counts["unique_offdiagonal_edges"] < 6144
+            or counts["raw_rows"] != counts["unique_offdiagonal_edges"] + counts["identical_duplicate_rows"]
+            or type(expected_counts) is not dict or set(expected_counts) != count_fields or not exact(counts, expected_counts)):
+        raise ConversionJobError("independent and producer raw counts disagree")
+    splits = receipt["split_hashes"]
+    if type(splits) is not dict or set(splits) != {"train", "validation", "test"}:
+        raise ConversionJobError("independent split schema mismatch")
+    for name, interval in (("train", [0, 2560]), ("validation", [2560, 2816]), ("test", [2816, 3072])):
+        split = splits[name]
+        if (type(split) is not dict or set(split) != {"filename", "bytes", "sha256", "semantic_sha256", "interval"}
+                or split["filename"] != name + ".json" or not exact(split["interval"], interval)
+                or type(split["bytes"]) is not int or not 0 < split["bytes"] <= 64 * 1024 * 1024
+                or any(type(split[key]) is not str or re.fullmatch(r"[0-9a-f]{64}", split[key]) is None for key in ("sha256", "semantic_sha256"))):
+            raise ConversionJobError("independent split schema mismatch")
+
+
+def validate_terminal_artifacts(records, output, plan, config, guard):
+    """Reconcile final inventoried bytes with the verified oracle after cleanup."""
+    guard()
+    status = read_json(output / "worker/status.json")
+    verification = read_json(output / "worker/independent-verification.json")
+    conversion = read_json(output / "worker/conversion-receipt.json")
+    validate_verification(verification, plan, config, status.get("manifest_sha256"), expected_counts=conversion.get("counts"))
+    by_path = {record["path"]: record for record in records["files"]}
+    if by_path["worker/independent-verification.json"]["sha256"] != status.get("verification_sha256"):
+        raise ConversionJobError("final independent verification receipt changed")
+    if by_path["worker/converted/manifest.json"]["sha256"] != status.get("manifest_sha256"):
+        raise ConversionJobError("final converted manifest changed")
+    splits = verification.get("split_hashes")
+    if not isinstance(splits, dict) or set(splits) != {"train", "validation", "test"}:
+        raise ConversionJobError("final independent split closure mismatch")
+    for name, split in splits.items():
+        guard()
+        actual = by_path["worker/converted/" + name + ".json"]
+        if not exact(split.get("filename"), name + ".json") or any(not exact(actual.get(key), split.get(key)) for key in ("bytes", "sha256")):
+            raise ConversionJobError("final converted split changed")
 
 
 def supervise(args, plan, config, root, output):
@@ -473,11 +555,16 @@ def supervise(args, plan, config, root, output):
         if child.returncode == 0:
             status = read_json(output / "worker/status.json")
             reporting = read_json(output / "worker/reporting/reporting-receipt.json")
-            regular(output / "worker/conversion-receipt.json")
+            conversion = read_json(output / "worker/conversion-receipt.json")
+            verification_path = output / "worker/independent-verification.json"
+            verification = read_json(verification_path)
+            validate_verification(verification, plan, config, status.get("manifest_sha256"), expected_counts=conversion.get("counts"))
             if (status.get("state") != "completed" or status.get("conversion_attempts") != 1
+                    or type(status.get("verification_attempts")) is not int or status["verification_attempts"] != 1
+                    or status.get("verification_sha256") != sha256(verification_path)
                     or reporting.get("state") != "completed" or reporting.get("finish_returned") is not True
-                    or reporting.get("mode") != "offline" or reporting.get("last_completed_step") != 1):
-                raise ConversionJobError("completed conversion and durable offline reporting required")
+                    or reporting.get("mode") != "offline" or reporting.get("last_completed_step") != 2):
+                raise ConversionJobError("completed conversion, independent verification and durable reporting required")
     except BaseException as error:
         receipt.update(state="incomplete", error_type=type(error).__name__)
     finally:
@@ -504,6 +591,8 @@ def supervise(args, plan, config, root, output):
                     raise ConversionJobError("outer inventory deadline")
             records = inventory(output, max_files=config["limits"]["evidence_files"] + 4,
                                 max_bytes=config["limits"]["evidence_bytes"] + config["limits"]["conversion_bytes"], guard=guard, hashes=True, sdk_metadata=True)
+            if receipt["state"] == "completed":
+                validate_terminal_artifacts(records, output, plan, config, guard)
             atomic_json(output / "evidence-inventory.json", records)
         except BaseException as error:
             receipt.update(state="incomplete", inventory_error_type=type(error).__name__); persist()

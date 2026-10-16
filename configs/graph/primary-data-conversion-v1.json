@@ -1,20 +1,94 @@
 {
   "protocol_id": "primary_data_conversion_v1",
-  "execution_authorized": false,
+  "execution_authorized": true,
   "training_authorized": false,
   "scientific_acceptance": false,
-  "resources": {"cpus": 1, "memory_bytes": 2147483648, "gpus": 0, "wall_seconds": 600, "work_seconds": 590},
-  "allocation": {"cluster": "mila", "account": "mila", "qos": "normal", "partition": "main-cpu", "max_submissions": 1, "retries": 0, "requeue": false, "race": false},
-  "python": "/network/scratch/m/mehrab.hamidi/representation-collapse/environments/graph-native-cpu-20261015-calibration01/venv/bin/python",
-  "raw": {"path": "/network/scratch/m/mehrab.hamidi/representation-collapse/datasets/tgrab-603388f332c7756f90bc1702b26053c2bc834654-primary/primary.csv", "bytes": 6907326, "sha256": "5a19f9e7949668473bc61cb59b6215f25f093ea0ee2d45b5e143338ded5523e3"},
-  "limits": {"raw_rows": 500000, "timestamps": 3072, "nodes": 100, "conversion_files": 4, "conversion_bytes": 201326592, "evidence_files": 256, "evidence_bytes": 268435456, "project_scratch_bytes": 21474836480},
-  "reconstruction_config": {"path": "configs/graph/tgrab-reconstruction-v1.json", "sha256": "22bef6bf781c5bfb5493dd5e03169ea0e658b2463ccaa9ba09189af454508f1f"},
-  "sources": {
-    "converter": {"path": "src/representation_collapse/graph_data.py", "sha256": null},
-    "conversion_protocol": {"path": "doc/auto/tgrab-primary-data-conversion-v1.md", "sha256": null},
-    "ownership_helper": {"path": "code/ops/legacy_floquet_audit.py", "sha256": "8e1f388d4f5ce72e0bfd9a4b5a4b1f8c98f66f2512841d96875822bfd9bffe09"},
-    "reporter": {"path": "src/representation_collapse/reporting.py", "sha256": "443c9e89d2eba954ee60cc35e015fe61196fbec2f50331067540b4a8259e8184"}
+  "resources": {
+    "cpus": 1,
+    "memory_bytes": 2147483648,
+    "gpus": 0,
+    "wall_seconds": 600,
+    "work_seconds": 590
   },
-  "reporting": {"project": "representation-collapse", "mode": "offline", "sdk_version": "0.30.0"},
-  "forbidden": ["generation", "model_construction", "optimization", "evaluation", "numpy", "torch", "automatic_upload", "automatic_resume", "retry"]
+  "allocation": {
+    "cluster": "mila",
+    "account": "mila",
+    "qos": "normal",
+    "partition": "main-cpu",
+    "max_submissions": 1,
+    "retries": 0,
+    "requeue": false,
+    "race": false
+  },
+  "python": "/network/scratch/m/mehrab.hamidi/representation-collapse/environments/graph-native-cpu-20261015-calibration01/venv/bin/python",
+  "raw": {
+    "path": "/network/scratch/m/mehrab.hamidi/representation-collapse/datasets/tgrab-603388f332c7756f90bc1702b26053c2bc834654-primary/primary.csv",
+    "bytes": 6907326,
+    "sha256": "5a19f9e7949668473bc61cb59b6215f25f093ea0ee2d45b5e143338ded5523e3"
+  },
+  "limits": {
+    "raw_rows": 500000,
+    "timestamps": 3072,
+    "nodes": 100,
+    "conversion_files": 4,
+    "conversion_bytes": 201326592,
+    "evidence_files": 256,
+    "evidence_bytes": 268435456,
+    "project_scratch_bytes": 21474836480,
+    "independent_verification_attempts": 1
+  },
+  "reconstruction_config": {
+    "path": "configs/graph/tgrab-reconstruction-v1.json",
+    "sha256": "22bef6bf781c5bfb5493dd5e03169ea0e658b2463ccaa9ba09189af454508f1f"
+  },
+  "sources": {
+    "converter": {
+      "path": "src/representation_collapse/graph_data.py",
+      "sha256": "498e60f7be048411c253e4b8cb63e4b907973f969c397bfdfacde949389f057e"
+    },
+    "conversion_protocol": {
+      "path": "doc/auto/tgrab-primary-data-conversion-v1.md",
+      "sha256": "003e6b01d3b090841f623f75ed0648a397fe8afdaeb49dc382fb69a3f0e05584"
+    },
+    "ownership_helper": {
+      "path": "code/ops/legacy_floquet_audit.py",
+      "sha256": "8e1f388d4f5ce72e0bfd9a4b5a4b1f8c98f66f2512841d96875822bfd9bffe09"
+    },
+    "reporter": {
+      "path": "src/representation_collapse/reporting.py",
+      "sha256": "443c9e89d2eba954ee60cc35e015fe61196fbec2f50331067540b4a8259e8184"
+    },
+    "verifier": {
+      "path": "src/representation_collapse/graph_data_verifier.py",
+      "sha256": "14c08e45ba8b0928792322a3cd4d7fff640aaa649e44e7e43dae6596ed5c486b"
+    },
+    "verification_protocol": {
+      "path": "doc/auto/tgrab-primary-data-verifier-v1.md",
+      "sha256": "98433521eedf5dc86c30e54ab08d82b9bacb6fcdd3e37e94f1febfc099eff06c"
+    },
+    "submission_controller": {
+      "path": "code/ops/submit_primary_conversion.py",
+      "sha256": "eda63e23a6c62d21cc008f77af42dd9cbba51f0964cf07fd8dedb014895918fb"
+    },
+    "submission_protocol": {
+      "path": "doc/auto/primary-conversion-cluv-controller-2026-10-16.md",
+      "sha256": "c915d5bdd62920296d4d1d6235fba569f59092724a0bc1196fc86bb9aa763b20"
+    }
+  },
+  "reporting": {
+    "project": "representation-collapse",
+    "mode": "offline",
+    "sdk_version": "0.30.0"
+  },
+  "forbidden": [
+    "generation",
+    "model_construction",
+    "optimization",
+    "evaluation",
+    "numpy",
+    "torch",
+    "automatic_upload",
+    "automatic_resume",
+    "retry"
+  ]
 }

@@ -11,6 +11,14 @@ Each is primitive as a whole-string tiling, contains three A, three B and six X,
 
 For $R>1$, first draw the periodic motif uniformly. Sample a length-$R$ control list of motif identifiers uniformly, overwrite its last identifier with that periodic motif, and reject the draw if the concatenated body tiles a shorter string exactly. Rejection conditions the control distribution on this acceptance rule. Both arms therefore have the same final twelve observations. At $R=1$, use an identical shared motif; at $R=0$, both bodies are empty. A changed order of motif identifiers need not change every trigram statistic. The resulting treatment is this particular higher-order ordering intervention, not periodicity independently of all input statistics.
 
+\subsection{A structural motif-exposure limitation}
+\label{app:motif-exposure}
+Let $M$ be the shared final motif, and let $C_M(B)$ count exact matches to $M$ at the registered twelve-symbol chunk boundaries of body $B$. For $R>1$, the periodic arm $B_{\mathrm p}=M^R$ has $C_M(B_{\mathrm p})=R$, whereas every accepted control satisfies
+\[
+1\le C_M(B_{\mathrm c})\le R-1.
+\]
+The lower bound follows from the shared final chunk. Equality to $R$ would require all $R$ chunks to equal $M$, yielding the rejected tiling $M^R$. Excluding the final chunk subtracts one from both counts and gives the same limitation for prior exposure. This argument concerns registered boundaries, not every overlapping substring or every possible matching design. Consequently the specified ordering contrast also changes this exposure count. A periodicity-specific mechanism requires additional discrimination; input spectra or adjustment for an arm-defined descriptor cannot supply that discrimination alone.
+
 \subsection{Observation layout and references}
 The 38 channels encode five observation types (WRITE, A, B, X, QUERY), sixteen coordinate indicators, sixteen categorical-value indicators and one real-value channel. WRITEs occur in coordinate order: eight required values followed by eight nuisance values. Values are independent uniform categorical labels in $\{0,\ldots,15\}$ or continuous samples in $[-1,1]$. Only the terminal QUERY reveals which required coordinate is requested; it contains an address and no value. Body rows carry neither addresses nor values.
 
