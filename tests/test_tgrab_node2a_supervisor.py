@@ -13,6 +13,10 @@ SPEC.loader.exec_module(MODULE)
 
 
 class RestartMetadataTests(unittest.TestCase):
+    def test_fixture_publishes_under_separate_child_path(self):
+        run = Path("/scratch/runs/figure10-node2a/node2a-test")
+        self.assertEqual(MODULE.fixture_output_path(run), run / "fixture")
+
     def test_mila_may_omit_environment_restart_count(self):
         MODULE.verify_environment_restart_count(None)
 

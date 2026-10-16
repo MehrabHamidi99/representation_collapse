@@ -109,3 +109,52 @@ installed runtime and the pinned source inputs. It does not establish native
 fixture parity, training competence, reproduction of Figure 10, representation
 collapse, or permission to access held-out data. Those require their own frozen
 protocols and admissions.
+
+## Current state — 2026-10-16 18:26 UTC
+
+The capture described above has now completed as Mila job `11280346` (exit
+`0`, 12.14 seconds, `main-cpu`, 1 CPU, 2 GiB, zero GPUs, no requeue/restart).
+The terminal record and locally fetched environment identity inventory agree
+on the plan and inventory hashes. An independent reviewer initially rejected
+the inventory for node2a because this document's former preparation validator
+expected a stale module/schema layout. The validator was updated to accept only
+the exact source-identity pins and runtime module-to-distribution map, with
+mutation tests; independent review accepted that change, and the captured
+inventory now passes validation.
+
+The exact source is commit `58fb20259dfd48d29b3a89cd863e30c85f47fdde`, tree
+`e9d8e11aa0d3450cd6e79d81fdf503c3ab8ff007`. The candidate synthetic node2a
+plan is retained locally at
+`runs/review/figure10-node2a-plan-20261016T182500Z-58fb2025.json`, SHA-256
+`15175738b983e75da68373b158caff4ac6fec0f8705de5c54f0a8fef59fcaa6d`. It
+binds the reviewed bootstrap/importer/supervisor/job wrapper, exact runtime
+receipt and inventory, unique output/STOP paths, and the fixed 570-second
+CPU-only allocation. It invokes synthetic forward/loss/backward parity with
+zero optimizer updates and no primary/validation/test data; “zero-update” does
+not mean zero numerical work. Scientific acceptance is explicitly false.
+
+A fresh read-only Mila check at 18:26 UTC found no queued
+`cluv-rc-calibration` or node2a job and confirmed the unique planned output
+path did not exist. The listed jobs belong to other experiments and remain
+untouched. The independent reviewer accepted the exact plan for a single
+synthetic parity submission. Mila job `11280406` then failed after 1.34 seconds:
+the supervisor created the run journal before starting the bootstrap, while the
+bootstrap required its output path to be absent. No fixture arrays were
+published and no model/data training path ran. Its owner-only
+`supervisor-start.json` and `supervisor-terminal.json` are retained locally in
+ignored `runs/figure10-node2a/node2a-20261016T182500Z-58fb2025/`. The failed
+run ID will not be reused.
+
+The corrective change routes bootstrap atomic publication to the child path
+`<run>/fixture/`, leaving scheduler/supervisor records at `<run>/`. Both the
+preparation helper and supervisor now construct/verify this child path. Focused
+tests pass 30/30, plus compilation, shell syntax and diff checks. Independent
+review accepted the exact path-fix hashes: preparation helper
+`809c0ddfc2a3e4ba9d68ece3155d1761cdf3f13a1066e2635a28516181e74a09`, supervisor
+`a79a96a6235cb9ada038bb19390240a48a29d5aab64778fe672f06f89b1f7ebd`, and
+tests `60d98d1d837c1226758b08e321c3846b6692146e06d816864d980df17b9e0781` /
+`4291b57faf0502009294d35998c38e276c1681366a7be6289b806d9a5302091f`. The next
+attempt must use a new source commit, plan hash, fresh queue/output check and
+unique run ID. The compute waiver applies; it does not waive source, scheduler,
+STOP/deadline, provenance, or scientific interpretation gates. This fixture
+remains engineering evidence only.

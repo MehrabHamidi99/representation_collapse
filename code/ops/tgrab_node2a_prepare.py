@@ -56,6 +56,11 @@ class PreparationError(ValueError):
     pass
 
 
+def fixture_output_path(run_id: str) -> Path:
+    """Reserve the parent run directory for supervisor-owned job records."""
+    return RUN_ROOT / run_id / "fixture"
+
+
 def digest(path: Path) -> str:
     h = hashlib.sha256()
     with path.open("rb") as f:
@@ -220,7 +225,7 @@ def validate(repo: Path, manifest: dict) -> dict:
             "output": str(RUN_ROOT / run_id), "stop_file": str(RUN_ROOT / run_id / "STOP"),
             "deadline_seconds": 570, "fixture": "synthetic-node2a-zero-update-only",
             "argv": [str(INTERPRETER), "-B", "-m", "representation_collapse.tgrab_figure10_bootstrap",
-                     "--source-root", str(SOURCE_ROOT), "--output", str(RUN_ROOT / run_id),
+                     "--source-root", str(SOURCE_ROOT), "--output", str(fixture_output_path(run_id)),
                      "--environment-identity", str(ENV_INVENTORY),
                      "--environment-identity-sha256", manifest["environment_inventory_sha256"]],
             "allocation": FIXED, "scientific_acceptance": False}

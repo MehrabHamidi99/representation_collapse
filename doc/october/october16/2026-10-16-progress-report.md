@@ -1045,3 +1045,35 @@ prepare a fresh exact-source node2a plan, bind its receipts, and obtain the
 independent job-specific review before the one-shot synthetic parity job. This
 fixture must remain zero-update and data-free. No node2a parity, fit, validation
 selection, test access, or Figure 10 retraining has yet occurred.
+
+### Node2a first attempt failed before fixture; output-path fix accepted — 18:31 UTC
+
+The schema fix was committed and pushed as `58fb202` so the captured runtime
+inventory could be validated. The fresh plan for that exact clean source was
+independently accepted for a one-shot synthetic parity job. Mila job `11280406`
+then failed with exit `1` after 1.34 seconds (`cpu=1,mem=2G,node=1`). The Slurm
+log reports `runtime output path must be new and absent`: the supervisor had
+already created the run directory for its own start/terminal journals, while
+the bootstrap expects to atomically publish into a nonexistent directory. No
+fixture outputs were produced; the failure occurred before native model
+construction and before any data access or optimizer update. Start and
+terminal records are locally retained under ignored
+`runs/figure10-node2a/node2a-20261016T182500Z-58fb2025/`, with SHA-256
+`d173843e930791c4e7f772905318ebfe50a7a095fb276e9cbf5db103c1843e44` and
+`c89c9bf94c2e49b21a29c9c988a70958533bdc15e3c301dfc8820048408b54d2`.
+
+The targeted fix sends the bootstrap to a new `<run>/fixture/` child, preserving
+the run root for supervisor records and bootstrap's own absent-path atomic
+publish. The plan helper emits the child path; the supervisor independently
+requires it. The failed directory remains untouched and will not be reused.
+Focused preparation, supervisor and bootstrap checks pass 30/30; compilation,
+shell syntax and diff checks pass. Independent review accepted exact hashes:
+preparation helper `809c0ddfc2a3e4ba9d68ece3155d1761cdf3f13a1066e2635a28516181e74a09`,
+supervisor `a79a96a6235cb9ada038bb19390240a48a29d5aab64778fe672f06f89b1f7ebd`,
+and tests `60d98d1d837c1226758b08e321c3846b6692146e06d816864d980df17b9e0781` /
+`4291b57faf0502009294d35998c38e276c1681366a7be6289b806d9a5302091f`.
+
+The next attempt requires a new source commit and unique run ID, then a fresh
+cluv/source/environment check, updated plan, independent job-specific review,
+and queue/output-absence check. No parity, training, Figure 10 reproduction or
+representation-collapse claim is established.

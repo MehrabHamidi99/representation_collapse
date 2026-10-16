@@ -39,6 +39,11 @@ PINNED_VERSIONS = {"torch": "2.0.0+cpu", "torch-geometric": "2.6.1",
 STOP = False
 
 
+def fixture_output_path(run_output: Path) -> Path:
+    """Keep atomic fixture publication separate from the supervisor journal."""
+    return Path(run_output) / "fixture"
+
+
 def sha(path: Path) -> str:
     h = hashlib.sha256()
     with path.open("rb") as f:
@@ -261,7 +266,7 @@ def main() -> int:
         raise SystemExit("supervisor digest mismatch")
     argv = plan["argv"]
     expected_argv = [str(INTERPRETER), "-B", "-m", "representation_collapse.tgrab_figure10_bootstrap",
-                     "--source-root", str(root), "--output", str(output),
+                     "--source-root", str(root), "--output", str(fixture_output_path(output)),
                      "--environment-identity", str(ENV_INVENTORY),
                      "--environment-identity-sha256", plan["environment_inventory_sha256"]]
     if argv != expected_argv:

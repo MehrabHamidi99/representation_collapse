@@ -17,6 +17,11 @@ SUPERVISOR_SPEC.loader.exec_module(SUPERVISOR)
 
 
 class Node2APreparationTests(unittest.TestCase):
+    def test_fixture_output_is_child_of_supervisor_run_journal(self):
+        run_id = "node2a-20261016T120000Z-1234abcd"
+        self.assertEqual(MODULE.fixture_output_path(run_id),
+                         MODULE.RUN_ROOT / run_id / "fixture")
+
     def manifest(self):
         return {
             "source_commit": "a" * 40, "source_tree": "b" * 40,
