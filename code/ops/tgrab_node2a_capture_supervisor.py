@@ -164,21 +164,55 @@ def terminate_owned_group(child: subprocess.Popen, graceful_seconds: float = 5.0
     raise SystemExit("owned capture process group remains after TERM/KILL cleanup")
 
 
-def verify_slurm(job_id: str) -> dict:
-    result = subprocess.run(["scontrol", "show", "job", "--oneliner", job_id],
-        check=True, capture_output=True, text=True, timeout=5)
-    fields = dict(item.split("=", 1) for item in result.stdout.split() if "=" in item)
-    expected = {"JobState": "RUNNING", "Account": "mila", "QOS": "normal", "Partition": "main-cpu",
+def verify_slurm(job_id: str, startup_timeout: float = 5.0,
+                 poll_interval: float = 0.25) -> dict:
+    expected = {"Account": "mila", "QOS": "normal", "Partition": "main-cpu",
         "NumNodes": "1", "NumCPUs": "1", "CPUs/Task": "1", "TimeLimit": "00:10:00",
         "Requeue": "0", "RestartCnt": "0"}
-    if any(fields.get(key) != value for key, value in expected.items()):
-        raise SystemExit("authoritative Slurm record differs from capture envelope")
-    for key in ("ReqTRES", "AllocTRES"):
-        tres = fields.get(key, "").lower()
-        if not tres or "gpu" in tres:
-            raise SystemExit(f"Slurm {key} missing or includes GPU")
-    return {"job_id": job_id, "fields": {key: fields[key] for key in expected},
-            "requested_tres": fields["ReqTRES"], "allocated_tres": fields["AllocTRES"]}
+    deadline = time.monotonic() + startup_timeout
+    while True:
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            raise SystemExit("Slurm job did not reach RUNNING within the 5-second startup bound")
+        try:
+            result = subprocess.run(["scontrol", "show", "job", "--oneliner", job_id],
+                check=True, capture_output=True, text=True, timeout=min(1.0, remaining))
+        except subprocess.TimeoutExpired as exc:
+            raise SystemExit("scontrol timed out while verifying Slurm allocation") from exc
+        fields = dict(item.split("=", 1) for item in result.stdout.split() if "=" in item)
+        mismatches = [f"{key} expected={value!r} actual={fields.get(key)!r}"
+                      for key, value in expected.items() if fields.get(key) != value]
+        expected_tres = {"cpu": "1", "mem": "2G", "node": "1"}
+        def parse_tres(name: str, required: bool) -> None:
+            raw = fields.get(name)
+            if raw is None and not required:
+                return
+            values = {}
+            for entry in (raw or "").split(","):
+                if "=" not in entry:
+                    values = {}; break
+                key, value = entry.split("=", 1)
+                if not key or not value or key in values:
+                    values = {}; break
+                values[key.lower()] = value
+            valid = (all(values.get(key) == value for key, value in expected_tres.items())
+                     and set(values).issubset(set(expected_tres) | {"billing"})
+                     and values.get("billing", "1") == "1")
+            if not valid:
+                mismatches.append(f"{name} expected={expected_tres!r} with optional billing=1 actual={raw!r}")
+        parse_tres("ReqTRES", required=True)
+        pending = fields.get("JobState") == "PENDING"
+        parse_tres("AllocTRES", required=not pending)
+        if mismatches:
+            raise SystemExit("authoritative Slurm allocation mismatch: " + "; ".join(mismatches))
+        state = fields.get("JobState")
+        if state == "RUNNING":
+            return {"job_id": job_id, "fields": {**{key: fields[key] for key in expected},
+                    "JobState": state}, "requested_tres": fields["ReqTRES"],
+                    "allocated_tres": fields.get("AllocTRES")}
+        if state not in {"CONFIGURING", "PENDING"}:
+            raise SystemExit(f"authoritative Slurm job state is {state!r}; expected CONFIGURING/PENDING or RUNNING")
+        time.sleep(min(poll_interval, max(0.0, deadline - time.monotonic())))
 
 
 def verify_environment_receipt(path: Path, expected_sha: str) -> None:

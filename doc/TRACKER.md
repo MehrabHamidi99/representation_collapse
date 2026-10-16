@@ -36,9 +36,12 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   See [Figure 10 reproduction subgoal](auto/figure-10-reproduction-subgoal.md).
   Latest step: the one-shot node2a runtime-identity capture wrapper passed
   independent review after closing its bootstrap source race; its focused
-  nine-test suite passes. It is not yet committed, synchronized, or submitted.
-  The job-specific JSON review receipt must bind the final committed source
-  tree before the capture job can run. Figure 10 training remains unstarted.
+  review and the subsequent Slurm startup/TRES correction passed 14 focused
+  tests and a second independent review. Two erroneous/failing capture attempts
+  ran for 0 and 1 seconds respectively, with no capture artifact or training;
+  the first exposed cluv's configured job-script-path override, the second a
+  Slurm startup-state admission race now fixed. The current supervisor revision
+  is not yet committed or synchronized. Figure 10 training remains unstarted.
 
 - **Overnight progress confirmed; checkpoint schema specification accepted — October16.**
   The approved Mila conversion job11273685 ran from02:09:36 to02:11:42 UTC on

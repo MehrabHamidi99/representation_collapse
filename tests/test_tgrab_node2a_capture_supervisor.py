@@ -38,6 +38,80 @@ class CaptureSupervisorContractTests(unittest.TestCase):
     def test_fixed_plan_contract(self):
         MODULE.validate_plan_contract(plan())
 
+    @staticmethod
+    def slurm_record(state="RUNNING", **changes):
+        fields = {"JobState": state, "Account": "mila", "QOS": "normal",
+            "Partition": "main-cpu", "NumNodes": "1", "NumCPUs": "1",
+            "CPUs/Task": "1", "TimeLimit": "00:10:00", "Requeue": "0",
+            "RestartCnt": "0", "ReqTRES": "cpu=1,mem=2G,node=1",
+            "AllocTRES": "cpu=1,mem=2G,node=1"}
+        fields.update(changes)
+        return "JobId=123 " + " ".join(f"{key}={value}" for key, value in fields.items())
+
+    def test_slurm_configuration_state_is_polled_until_running(self):
+        responses = [self.slurm_record("CONFIGURING"), self.slurm_record("RUNNING")]
+        with mock.patch.object(MODULE.subprocess, "run", side_effect=[
+                subprocess.CompletedProcess([], 0, responses[0], ""),
+                subprocess.CompletedProcess([], 0, responses[1], "")]) as command, \
+             mock.patch.object(MODULE.time, "sleep") as sleep:
+            admitted = MODULE.verify_slurm("123")
+        self.assertEqual(command.call_count, 2)
+        sleep.assert_called_once()
+        self.assertEqual(admitted["fields"]["JobState"], "RUNNING")
+
+    def test_pending_without_alloc_tres_can_transition_to_running(self):
+        pending = self.slurm_record("PENDING").replace(" AllocTRES=cpu=1,mem=2G,node=1", "")
+        running = self.slurm_record("RUNNING")
+        with mock.patch.object(MODULE.subprocess, "run", side_effect=[
+                subprocess.CompletedProcess([], 0, pending, ""),
+                subprocess.CompletedProcess([], 0, running, "")]) as command, \
+             mock.patch.object(MODULE.time, "sleep"):
+            admitted = MODULE.verify_slurm("123")
+        self.assertEqual(command.call_count, 2)
+        self.assertEqual(admitted["fields"]["JobState"], "RUNNING")
+
+    def test_pending_without_running_state_times_out_within_five_seconds(self):
+        class FakeClock:
+            now = 0.0
+            def monotonic(self): return self.now
+            def sleep(self, duration): self.now += duration
+        clock = FakeClock()
+        pending = self.slurm_record("PENDING").replace(" AllocTRES=cpu=1,mem=2G,node=1", "")
+        response = subprocess.CompletedProcess([], 0, pending, "")
+        with mock.patch.object(MODULE.subprocess, "run", return_value=response) as command, \
+             mock.patch.object(MODULE.time, "monotonic", side_effect=clock.monotonic), \
+             mock.patch.object(MODULE.time, "sleep", side_effect=clock.sleep):
+            with self.assertRaisesRegex(SystemExit, "within the 5-second startup bound"):
+                MODULE.verify_slurm("123")
+        self.assertEqual(clock.now, 5.0)
+        self.assertEqual(command.call_count, 20)
+        self.assertTrue(all(call.kwargs["timeout"] <= 1.0 for call in command.call_args_list))
+
+    def test_invalid_slurm_allocation_fails_immediately_with_field(self):
+        invalid = self.slurm_record("CONFIGURING", Account="wrong-account")
+        with mock.patch.object(MODULE.subprocess, "run", return_value=
+                subprocess.CompletedProcess([], 0, invalid, "")) as command:
+            with self.assertRaisesRegex(SystemExit, "Account expected='mila'.*wrong-account"):
+                MODULE.verify_slurm("123")
+        command.assert_called_once()
+
+    def test_slurm_tres_allows_only_optional_billing_one(self):
+        with_billing = self.slurm_record("RUNNING",
+            ReqTRES="billing=1,cpu=1,mem=2G,node=1",
+            AllocTRES="billing=1,cpu=1,mem=2G,node=1")
+        with mock.patch.object(MODULE.subprocess, "run", return_value=
+                subprocess.CompletedProcess([], 0, with_billing, "")):
+            accepted = MODULE.verify_slurm("123")
+        self.assertIn("billing=1", accepted["requested_tres"])
+
+        wrong_billing = self.slurm_record("RUNNING",
+            ReqTRES="billing=2,cpu=1,mem=2G,node=1",
+            AllocTRES="billing=2,cpu=1,mem=2G,node=1")
+        with mock.patch.object(MODULE.subprocess, "run", return_value=
+                subprocess.CompletedProcess([], 0, wrong_billing, "")):
+            with self.assertRaisesRegex(SystemExit, "ReqTRES expected=.*billing=2"):
+                MODULE.verify_slurm("123")
+
     def test_rehashed_plan_cannot_change_stop_deadline_or_pins(self):
         original = plan()
         for field, value in (("stop_file", "/tmp/STOP"), ("deadline_seconds", 571),

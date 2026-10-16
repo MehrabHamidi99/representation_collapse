@@ -861,3 +861,34 @@ This is implementation/review progress only, not native runtime or scientific
 evidence. Next: commit the reviewed node2a capture and fixture files, obtain the
 source-bound JSON receipt, run the one-shot identity capture through cluv, then
 independently verify its inventory before node2a parity.
+
+### Figure 10 capture submission diagnosis — 16:33 UTC
+
+The first `cluv submit` from the clean `94ecece` clone submitted configured
+`phase1_job.sh` instead of the requested capture script because this project's
+`[tool.cluv].job_script_path` overrides the remote script destination in cluv
+0.1.5. Slurm job 11279173 failed in 0 seconds with `phase1_job: unknown
+argument`; no capture or training ran. The second invocation used a temporary
+local configuration override so Slurm executed the exact committed
+`tgrab_node2a_capture_job.sh`. Job 11279218 failed after 1 second because
+Slurm's live state had not yet reached `RUNNING` when the supervisor made its
+single immediate scheduler query. `sacct` confirms both were one CPU, 2 GiB,
+zero GPUs, 10-minute Mila jobs; neither produced a capture journal or identity
+inventory. Both belong to this project's failed attempts and remain recorded;
+no other jobs were touched.
+
+The supervisor now polls `PENDING`/`CONFIGURING` for at most five seconds,
+revalidating the allocation every time. It requires exact `ReqTRES` for one
+CPU, 2 GiB and one node, tolerates absent `AllocTRES` only while pending, then
+requires the corresponding allocation before proceeding. Based on actual Mila
+Slurm output, optional derived `billing=1` is permitted; other extra TRES,
+wrong billing values and any GPU remain rejected. Fourteen focused supervisor
+tests pass, including pending-to-running, timeout, wrong allocation, and
+billing-format cases. Independent review accepted this exact startup/TRES
+change (code SHA-256
+`94153c68d228c8f803374b8099c827a95cbfa60ee38f1767454145c2b74fa09d`, test SHA-256
+`b9c9b893877d1d910fd01b8b7d52769cd7058c98b7f8b2449ae21725cbfd4872`). This
+is not yet committed or synchronized; the next action is commit/push, bind a
+new review JSON to the updated source commit/tree, refresh the unique plan and
+submit one corrected capture-only attempt via cluv. No native fixture, fit,
+Figure 10 curve or collapse claim exists yet.
