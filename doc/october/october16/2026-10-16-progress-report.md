@@ -51,3 +51,69 @@ sealed test access and complete-state chronology. Prepare any future cluster
 work completely before requesting its allocation. The active goal remains
 unfinished; harmful-collapse, empirical-null and cross-modal mechanism claims
 remain unaccepted.
+
+## 04:55–05:15 Yerevan / 00:55–01:15 UTC — two implementation nodes accepted
+
+The active goal made substantive local progress through bounded native agent
+implementation and independent review, alongside root implementation. No new
+cluster allocation, native model call or trained-model run occurred.
+
+At00:55:32UTC a native cluv0.1.5 Mila header-only inspection read exactly70bytes:
+`src,dst,t,edge_feat,train_mask,val_mask,test_mask,test_inductive_mask`.
+It read zero data rows. Receipt:
+`runs/ops/graph-data-20261016/primary-header-result.json`. This resolves the
+column names only; the actual primary body remains unparsed and unconverted.
+
+**Primary converter/store implemented and accepted for synthetic engineering.**
+`src/representation_collapse/graph_data.py` uses strict lossless lexical/schema
+rules, pinned raw/config/source identity, exact N100/3072/32A32B/40-4-4 checks,
+canonical separate train/validation/test files, semantic and file hashes,
+marker/failure preservation and atomic fresh manifest publication. Train/validation
+opening does not probe the test path. The actual GR typed selection gates a lazy,
+one-shot terminal test callback. Independent review found a gap between callback
+creation and first lazy read; the implementation now rechecks authorization at
+first read before test bytes. Mutable selection and same-user Python/filesystem
+access remain cooperative-policy limitations, not security guarantees or proof
+of historical validation/checkpoint load. Eighteen author and nineteen independent
+synthetic fixtures pass; one independent fixture uses all3072 timestamps with
+synthetic sparse patterns. This is not primary-data conversion or ER reproduction.
+
+**Realized input diagnostics implemented and independently accepted.**
+`input_diagnostics.py` records matched-body low/higher-order counts, final-motif
+exposure, forward wrapped lag covariance with denominator T, and one-sided FFT
+power with Parseval normalization. Eight author plus seven independent fixtures
+pass. Literal Fraction/complex-DFT oracles verify numerical conventions.
+Review reproduced silent rounding of a large integer in a mixed Python input;
+the repaired API requires explicitly typed NumPy arrays before coercion.
+Some matched motif pairs share cyclic trigrams and some differ; non-tiling
+controls can contain repeated local motifs. These measurements do not isolate
+a periodicity-only mechanism or establish memory loss/Floquet behavior.
+
+Root rehashed every source in both independent receipts against current bytes.
+All match. Engineering acceptance is recorded in
+`runs/review/goal-progress-20261016/accepted-converter-and-diagnostics.json`.
+Public protocols and independent review reports are in `doc/auto/`.
+The52 fixtures comprise37 converter/store and15 input diagnostics; they are not
+52 independent empirical observations. No confirmation threshold or frozen task
+was changed, and no positive/negative trained-memory claim is accepted.
+
+A separate author prepared a stdlib CPU conversion runner, shell, disabled
+config and exact launch request. Sixteen mocked preparation fixtures pass;
+independent job review is still pending at this entry. Review caught the fact
+that pinned W&B0.30 emits an SDK debug-log symlink: a strict lstat-only exact
+allowlist preserves SDK compatibility while converted outputs remain link-free.
+The proposed one-CPU/2GiB/600-second Mila allocation is unapproved, with no retry,
+race, GPU, training or model calls. It is not running. Actual dataset compatibility,
+SDK lifecycle, scheduler admission and independent primary reduction remain gates.
+A selected-inference checkpoint codec specification is the next preparation node;
+no checkpoint payload has been created.
+
+At01:13:16UTC root reverified Qwen PID84719/start/source alive, heartbeat age
+52.914seconds,23verified replies/20completed tasks/118041reportedtokens,
+zero consecutive errors, no call in flight, waiting_for_evidence. At01:14:21UTC
+root published two new distinct scientific questions with accepted public
+project diagnostics: scope of total ordering versus periodicity-only mechanisms,
+and the bridge from native graph prediction to required-prefix memory. Publication
+is not response completion; all recommendations still require coordinator review.
+No credentials, datasets, weights or allocation authority were sent. The worker
+remains proposal-only. No uninterrupted overnight research is inferred.

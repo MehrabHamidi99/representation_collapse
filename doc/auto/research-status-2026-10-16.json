@@ -18,11 +18,11 @@
     "new_compute_authorization": false
   },
   "qwen": {
-    "verified_at_utc": "2026-10-16T00:51:27.432409+00:00",
+    "verified_at_utc": "2026-10-16T01:13:16.195195+00:00",
     "hosting": "local_mac",
     "pid": 84719,
     "process_start_source_verified": true,
-    "heartbeat_age_seconds_at_check": 4.402845,
+    "heartbeat_age_seconds_at_check": 52.914317,
     "state": "running",
     "activity": "waiting_for_evidence",
     "schema_and_model_verified_replies": 23,
@@ -33,7 +33,13 @@
     "last_completed_reply_at_utc": "2026-10-15T06:40:15.301452+00:00",
     "uninterrupted_overnight_research_confirmed": false,
     "whole_answers_automatically_accepted": 0,
-    "verification_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/live-20261016T005127Z.json"
+    "verification_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/live-20261016T011316Z.json",
+    "new_tasks_queued_at_utc": "2026-10-16T01:14:21.220992+00:00",
+    "new_task_ids": [
+      "21-matched-order-estimand-scope",
+      "22-graph-native-required-history-bridge"
+    ],
+    "new_tasks_completed_at_this_update": false
   },
   "accepted_progress": {
     "graph_calibration_job_id": 11261627,
@@ -49,7 +55,15 @@
     "primary_graph_payload_parsed_or_converted": false,
     "analytic_folding_measurement_guard_independently_reviewed": true,
     "trained_graph_collapse_accepted": false,
-    "cross_modal_mechanism_accepted": false
+    "cross_modal_mechanism_accepted": false,
+    "primary_conversion_store_synthetic_engineering_accepted": true,
+    "primary_conversion_store_author_tests": 18,
+    "primary_conversion_store_independent_tests": 19,
+    "matched_input_diagnostics_synthetic_engineering_accepted": true,
+    "matched_input_diagnostics_author_tests": 8,
+    "matched_input_diagnostics_independent_tests": 7,
+    "coordinator_source_hash_recheck_receipt": "runs/review/goal-progress-20261016/accepted-converter-and-diagnostics.json",
+    "conversion_job_preparation_independently_accepted": false
   },
   "this_turn": {
     "new_cluster_submissions": 0,
@@ -57,12 +71,19 @@
     "new_numerical_runs": 0,
     "new_native_model_calls": 0,
     "provider_calls_by_worker_verifier": 0,
-    "prior_numerical_runs_rerun": false
+    "prior_numerical_runs_rerun": false,
+    "header_only_remote_inspection": true,
+    "primary_header_bytes": 70,
+    "primary_data_rows_read": 0,
+    "synthetic_unit_tests_in_accepted_modules": 52,
+    "new_numerical_runs_definition": "Numerical research experiments; excludes synthetic unit fixtures",
+    "new_coordinator_tasks_published": 2
   },
   "next_work": [
-    "Freeze and implement primary-data schema/conversion and a sealed split store",
-    "Implement checkpoint codec/load parity and complete-state training lifecycle",
-    "Prepare finite native training-parity checks before requesting a fresh allocation",
-    "Establish competence and matched-order confirmation before cross-modal mechanism claims"
+    "Independently review the guarded conversion runner and materialize its immutable disabled launch packet",
+    "Obtain one fresh exact CPU allocation before primary body conversion; independently verify actual outputs",
+    "Freeze selected-checkpoint codec before implementation and native load-parity checks",
+    "Implement complete-state training lifecycle with attempted-call accounting",
+    "Establish native competence and matched-order confirmation before cross-modal mechanism claims"
   ]
 }

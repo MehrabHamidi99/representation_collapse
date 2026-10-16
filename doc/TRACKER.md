@@ -8,6 +8,20 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Converter and input diagnostics accepted — October 16 05:15 Yerevan.**
+  Implemented primary T-GRAB conversion, separate split serialization and a
+  lazy one-shot test store; 18 author +19 independent synthetic fixtures pass.
+  Added realized motif-exposure, higher-order count, wrapped input covariance
+  and Fourier-power diagnostics; 8 author +7 independent fixtures pass.
+  Root rechecked all review-pinned source hashes and accepted engineering
+  integrity only. Reviews repaired lazy-read authorization and mixed-input
+  precision bugs. The primary body remains unparsed; no trained-model result.
+  The guarded CPU conversion job is prepared for separate review and fresh
+  allocation approval; it has not run. Checkpoint specification is in progress.
+  Qwen identity verified at01:13:16UTC,23 replies/0errors, waiting for evidence;
+  two distinct scientific critiques were queued at01:14UTC. Completion is not
+  yet inferred. [Converter review](auto/tgrab-primary-data-conversion-independent-review-2026-10-16.md),
+  [diagnostic review](auto/matched-input-statistics-independent-review-2026-10-16.md).
 - **Research goal activated and worker rechecked — October 16 04:51 Yerevan.**
   At the owner's explicit request, the session goal is active: novelty-audited
   study of task-required history loss under matched periodic ordering, starting
@@ -18,7 +32,8 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   20completed proposal tasks,0providererrors, currently waiting for evidence.
   Last reply was October15 06:40:15UTC; continuous overnight inference is not
   established. No new trained-model result or allocation accompanies this check.
-  Graph converter/store and trainer/checkpoint integration remain next.
+  Graph converter/store subsequently passed synthetic engineering review below;
+  real conversion and trainer/checkpoint integration remain next.
 - **Native graph calibration accepted — October 15 10:34 Yerevan.**
   Owner-approved native cluv job **11261627** completed `0:0` in **74 seconds**
   from reviewed published `3f24d63`: Mila/main-cpu/account mila/QOS normal,
