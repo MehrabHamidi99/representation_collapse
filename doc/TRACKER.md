@@ -93,6 +93,11 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   pre-step attempt accounting, complete epoch candidate snapshots, binding to
   verified data/runtime/source admissions, and node2b full hidden/cell replay
   parity. No Figure 10 training, curve, or collapse claim exists.
+  The paper itself defines Figure 10 as per-timestep link-prediction F1 on
+  `Pdet(2,32)`; it interprets within-phase dips and post-change recovery as
+  persistence-like behavior. This is a behavioral baseline, not a measurement
+  of representation dimension. The prospective representation analysis must
+  measure state geometry separately.
 
 - **Overnight progress confirmed; checkpoint schema specification accepted — October16.**
   The approved Mila conversion job11273685 ran from02:09:36 to02:11:42 UTC on

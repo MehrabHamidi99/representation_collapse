@@ -1219,3 +1219,17 @@ or training exists. Next: build and independently review the durable selection
 transaction and its crash-stage fixtures, then integrate fit candidates and
 pre-step accounting; do not open test data until node2b succeeds. No Figure 10
 curve or representation-collapse result is established.
+
+### Figure 10 interpretation rechecked against the paper — 19:18 UTC
+
+Re-read Appendix H.1 of the pinned T-GRAB paper
+([arXiv:2507.10183](https://arxiv.org/abs/2507.10183), Figure 10). The caption
+defines the panels as timestep-level F1 over the evaluation period for DTDG
+(left) and CTDG (right) methods on `Pdet(2,32)`. The accompanying text says
+most models lose performance during repetition phases and struggle at change
+points; the sharp immediate post-change rise is interpreted as seeing the new
+snapshot once and behaving in a persistence-like way, though not exactly as the
+persistence heuristic. Figure 10 contains no hidden-state rank, covariance,
+tangent, or recoverability measurement. Reproducing it is therefore a
+behavioral baseline and a source of hypotheses; a representation-collapse
+claim requires separate, paired state-level and causal-memory measurements.
