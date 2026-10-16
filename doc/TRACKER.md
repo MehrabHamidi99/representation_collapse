@@ -53,7 +53,13 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   exposed effective limit. Independent review accepted capture/native hashes
   (`c3035baf…e52a6` / `f82792a6…e882b`, `604f4405…1fea` /
   `afbdbad5…b288a`); focused suites pass 24/24. No inventory or model training
-  resulted. Figure 10 training remains unstarted.
+  resulted. After tightening the run-root mode to 700, job11279383 reached
+  capture-start but failed on a misspelled stop flag before inventory creation.
+  The reviewed correction uses the actual signal flag and retains STOP-file
+  checks (capture supervisor/test `24b201f2…008ac6` / `2971197d…73b794d`);
+  the updated combined suite passes 25/25. The training-readiness audit still
+  finds only component drafts and a 256-update diagnostic, not an integrated
+  fit/replay runner. Figure 10 training remains unstarted.
 
 - **Overnight progress confirmed; checkpoint schema specification accepted — October16.**
   The approved Mila conversion job11273685 ran from02:09:36 to02:11:42 UTC on

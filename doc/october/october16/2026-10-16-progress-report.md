@@ -956,3 +956,30 @@ Focused suites pass 24/24 (capture 19/19, native 5/5); compilation, Bash
 syntax and diff checks pass. This correction remains an engineering prerequisite:
 the runtime identity inventory, synthetic node2a parity, training, and Figure
 10 curves are still absent.
+
+### Capture supervisor stop-flag correction — 16:51 UTC
+
+After the cgroup correction, job 11279380 failed at the private-run-root mode
+check. The root was created earlier with mode 775 by a staging command, while
+the supervisor requires mode 700. I verified the path is owned by
+`mehrab.hamidi`, contains only the empty prior failed-attempt directory, then
+changed this dedicated root to 700. A fresh unique job, 11279383, passed source,
+Slurm and cgroup admission and wrote `capture-start.json`; it then failed in two
+seconds because the child polling loop referenced `_STOP_REQUESTED` while the
+defined signal global is `STOP_REQUESTED`. No environment inventory was
+written, and the synthetic fixture/model/data were not run.
+
+The code now centralizes this check in `stop_requested(stop_file)`, using the
+actual signal global and checking both STOP file existence and symlinks. The
+independent reviewer accepted capture supervisor/test hashes
+`24b201f274860aeb9c40f0b72f7639433fd417db447318761892ad3251008ac6` /
+`2971197df054aadd261a1a57eae8b0320fe5784a2c1188cee8100636b73b794d`.
+Combined capture/native focused suites pass 25/25; compile, shell syntax and
+diff checks pass. Separately, a read-only readiness audit of the current
+Figure 10 implementation concludes the full fit is still unintegrated: the
+repo has lifecycle and native-adapter components plus a train-only 256-update
+diagnostic, but no production fit orchestrator, trusted checkpoint codec,
+selected replay, sealed test, or panel plot pipeline. Audit:
+`runs/review/figure10-current-training-readiness-20261016.md`, SHA-256
+`4a88d0f4cde06b8f5195c2950ead6ad229d646628dc32f4fced78d0fc205f75e`.
+Thus no model fit or Figure 10 curve is available yet.

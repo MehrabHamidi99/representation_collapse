@@ -146,6 +146,10 @@ def _signal(_signum, _frame):
     STOP_REQUESTED = True
 
 
+def stop_requested(stop_file: Path) -> bool:
+    return STOP_REQUESTED or stop_file.exists() or stop_file.is_symlink()
+
+
 def terminate_owned_group(child: subprocess.Popen, graceful_seconds: float = 5.0) -> None:
     """Reap the direct child and ensure no process in its private session survives."""
     try: os.killpg(child.pid, signal.SIGTERM)
@@ -434,7 +438,7 @@ def main(argv=None) -> int:
     deadline = started + plan["deadline_seconds"]
     reason = "exit"
     while child.poll() is None:
-        if _STOP_REQUESTED or stop_file.exists() or stop_file.is_symlink():
+        if stop_requested(stop_file):
             reason = "stop"; break
         if time.monotonic() >= deadline:
             reason = "deadline"; break

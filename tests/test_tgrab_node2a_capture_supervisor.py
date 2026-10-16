@@ -142,6 +142,17 @@ class CaptureSupervisorContractTests(unittest.TestCase):
             with self.assertRaisesRegex(SystemExit, "no finite"):
                 MODULE.read_cgroup_memory_files([leaf], leaf)
 
+    def test_stop_signal_and_stop_file_are_observed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            stop_file = Path(directory) / "STOP"
+            MODULE.STOP_REQUESTED = False
+            self.assertFalse(MODULE.stop_requested(stop_file))
+            MODULE._signal(0, None)
+            self.assertTrue(MODULE.stop_requested(stop_file))
+            MODULE.STOP_REQUESTED = False
+            stop_file.touch()
+            self.assertTrue(MODULE.stop_requested(stop_file))
+
     def test_absent_restart_environment_field_uses_scheduler_restart_guards(self):
         response = self.slurm_record("RUNNING", Restarts="0", Requeue="0")
         with mock.patch.object(MODULE.subprocess, "run", return_value=
