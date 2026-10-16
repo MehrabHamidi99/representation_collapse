@@ -983,3 +983,31 @@ selected replay, sealed test, or panel plot pipeline. Audit:
 `runs/review/figure10-current-training-readiness-20261016.md`, SHA-256
 `4a88d0f4cde06b8f5195c2950ead6ad229d646628dc32f4fced78d0fc205f75e`.
 Thus no model fit or Figure 10 curve is available yet.
+
+### Upstream source-root correction — 16:53 UTC
+
+Job 11279392 passed the corrected memory, source-commit/tree, review, scheduler
+and STOP checks, then the bootstrap failed because the project checkout root
+does not contain `model/node_emb.py`. The upstream T-GRAB wrappers are in the
+ignored, locally pinned source snapshot for commit
+`31293102b065feef7817ff86211427d7594edfdb`; the capture had incorrectly passed
+the project checkout as that separate source root. No identity artifact was
+produced and no model/data computation occurred.
+
+The local pinned source wrapper hashes are verified and their three files plus
+upstream LICENSE are staged on Mila under
+`runs/graph/upstream-pin-20261012/source/`. Remote hashes match the three
+frozen importer pins. The capture supervisor now uses a distinct fixed upstream
+root, binds its revision and all three wrapper hashes into the plan and job
+receipt, rechecks them before/after capture, and passes only that root to the
+bootstrap. The plan can no longer substitute a different upstream path/revision
+or wrapper set. Focused suites pass 27/27; compilation, shell syntax and diff
+checks pass. Independent review accepted supervisor/test hashes
+`8853e541990ec8d317e0eff8fd429e2e966e135c9d257ad6337f0c06bf45541e` /
+`9109b388e94779ab35775e5afb344ab50e83c9bf01a52ae3210903bcec66c903`. Review
+notes the upstream revision is a fixed metadata label, while the three exact
+wrapper byte hashes enforce executable identity; the capture does not claim to
+verify a Git HEAD inside that ignored snapshot. The user restored Mila SSH
+access and I verified the staged source hashes. No further submission has
+occurred. This remains environment identity capture, not node2a parity or
+Figure 10 training.

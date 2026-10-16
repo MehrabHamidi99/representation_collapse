@@ -48,7 +48,8 @@ before the single capture job can be prepared and submitted through cluv.
 | Captured environment | CPython 3.10.19 venv at `/network/scratch/m/mehrab.hamidi/representation-collapse/environments/graph-native-cpu-20261015-calibration01/venv/bin/python` |
 | Install receipt | `/network/scratch/m/mehrab.hamidi/representation-collapse/environments/graph-native-cpu-20261015-calibration01/preparation-receipt.json` |
 | Identity output | `/network/scratch/m/mehrab.hamidi/representation-collapse/environments/graph-native-cpu-20261015-calibration01/node2a-environment-identity.json` |
-| Source | `/network/scratch/m/mehrab.hamidi/representation-collapse/source` |
+| Project source | `/network/scratch/m/mehrab.hamidi/representation-collapse/source` (clean Git worktree pinned by commit/tree) |
+| Pinned upstream model wrappers | `/network/scratch/m/mehrab.hamidi/representation-collapse/runs/graph/upstream-pin-20261012/source` (revision label `31293102b065feef7817ff86211427d7594edfdb`; three executable wrapper files checked against SHA-256 pins in the capture plan/receipt) |
 | Unique journal root | `/network/scratch/m/mehrab.hamidi/representation-collapse/runs/figure10-node2a-capture/<run-id>/` |
 | STOP | `<journal>/<run-id>/STOP`, polled during execution |
 

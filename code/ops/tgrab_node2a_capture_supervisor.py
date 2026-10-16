@@ -18,6 +18,8 @@ from pathlib import PurePosixPath
 
 SCRATCH = Path("/network/scratch/m/mehrab.hamidi/representation-collapse")
 SOURCE = SCRATCH / "source"
+MODEL_SOURCE = SCRATCH / "runs/graph/upstream-pin-20261012/source"
+MODEL_SOURCE_REVISION = "31293102b065feef7817ff86211427d7594edfdb"
 ENV_DIR = SCRATCH / "environments/graph-native-cpu-20261015-calibration01"
 INTERPRETER = ENV_DIR / "venv/bin/python"
 TOOLCHAIN_PYTHON = SCRATCH / "toolchains/python/cpython-3.10.19-linux-x86_64-gnu/bin/python3.10"
@@ -35,6 +37,11 @@ SUPERVISOR_REL = "code/ops/tgrab_node2a_capture_supervisor.py"
 ALLOCATION = {"cluster": "mila", "account": "mila", "qos": "normal", "partition": "main-cpu",
     "nodes": 1, "ntasks": 1, "cpus_per_task": 1, "memory": "2G", "walltime": "00:10:00",
     "gpus": 0, "submissions": 1, "retry": False, "requeue": False, "scientific_acceptance": False}
+MODEL_WRAPPERS = {
+    "model/gclstm.py": "86069a32fced5f09c60cd795e4f0abd82674dafae250ef3673ac8c3650504609",
+    "model/link_predictor.py": "cca12cfc73b8660c92236f530504da08ba0b606ec13a1a681ffabcae43b7ca86",
+    "model/node_emb.py": "4be4450730f33949e0354348b3bd8f69ba0434e4aa911abec0fc5f798e8c2d29",
+}
 SLURM_FIELDS = {"SLURM_JOB_ACCOUNT": "mila", "SLURM_JOB_PARTITION": "main-cpu",
     "SLURM_JOB_QOS": "normal", "SLURM_JOB_NUM_NODES": "1", "SLURM_NTASKS": "1",
     "SLURM_CPUS_PER_TASK": "1", "SLURM_MEM_PER_NODE": "2048"}
@@ -86,11 +93,32 @@ def verify_source_closure(root: Path, plan: dict, bootstrap_bytes: bytes | None 
                   if name == "bootstrap_sha256" and bootstrap_bytes is not None else sha(path))
         if actual != expected:
             raise SystemExit(f"capture source closure mismatch: {name}")
+    model_sources = verify_model_source(plan)
     own_path = Path(__file__)
     if own_path.is_symlink() or sha(own_path) != plan["supervisor_sha256"]:
         raise SystemExit("running supervisor bytes differ from reviewed pin")
     return {"commit": commit, "tree": tree,
-        **{name: digest for name, (_, digest) in files.items()}}
+        **{name: digest for name, (_, digest) in files.items()},
+        "model_source_root": str(MODEL_SOURCE), "model_wrapper_sha256": model_sources}
+
+
+def verify_model_source(plan: dict) -> dict:
+    if (plan["model_source_root"] != str(MODEL_SOURCE)
+            or plan["model_source_revision"] != MODEL_SOURCE_REVISION):
+        raise SystemExit("pinned upstream model source root differs from fixed path")
+    root = MODEL_SOURCE
+    if not root.is_dir() or root.resolve(strict=True) != root:
+        raise SystemExit("pinned upstream model source root is not canonical")
+    observed = {}
+    for relative, expected in MODEL_WRAPPERS.items():
+        path = root / relative
+        if path.is_symlink() or not path.is_file() or path.stat().st_size > 64_000:
+            raise SystemExit("pinned upstream wrapper must be a bounded regular file: " + relative)
+        digest = sha(path)
+        if digest != expected or plan["model_wrapper_sha256"].get(relative) != digest:
+            raise SystemExit("pinned upstream wrapper digest mismatch: " + relative)
+        observed[relative] = digest
+    return observed
 
 
 def atomic_json(path: Path, value: dict) -> None:
@@ -110,7 +138,7 @@ def atomic_json(path: Path, value: dict) -> None:
 def validate_plan_contract(plan: dict) -> None:
     required = {"schema", "run_id", "source_commit", "source_tree", "bootstrap_sha256",
         "pinned_graph_import_sha256", "job_sha256", "supervisor_sha256", "environment_receipt_sha256",
-        "review_receipt_path", "review_receipt_sha256", "inventory_path", "run_dir", "stop_file",
+        "model_source_root", "model_source_revision", "model_wrapper_sha256", "review_receipt_path", "review_receipt_sha256", "inventory_path", "run_dir", "stop_file",
         "deadline_seconds", "allocation"}
     if type(plan) is not dict or set(plan) != required or plan.get("schema") != "tgrab-node2a-capture-plan-v1":
         raise SystemExit("capture plan schema mismatch")
@@ -135,6 +163,10 @@ def validate_plan_contract(plan: dict) -> None:
         raise SystemExit("capture STOP path must be exactly run_dir/STOP")
     if plan["inventory_path"] != str(INVENTORY):
         raise SystemExit("capture inventory path differs from the unique fixed output")
+    if (plan["model_source_root"] != str(MODEL_SOURCE)
+            or plan["model_source_revision"] != MODEL_SOURCE_REVISION
+            or plan["model_wrapper_sha256"] != MODEL_WRAPPERS):
+        raise SystemExit("capture plan upstream model source or wrapper pins differ")
     if type(plan["deadline_seconds"]) is not int or plan["deadline_seconds"] != 570:
         raise SystemExit("capture deadline differs from reviewed bound")
     if plan["allocation"] != ALLOCATION:
@@ -270,6 +302,9 @@ def verify_review(plan: dict) -> None:
         "source_commit": plan["source_commit"], "source_tree": plan["source_tree"],
         "bootstrap_sha256": BOOTSTRAP_SHA256, "pinned_graph_import_sha256": IMPORTER_SHA256,
         "job_sha256": plan["job_sha256"], "supervisor_sha256": plan["supervisor_sha256"],
+        "model_source_root": plan["model_source_root"],
+        "model_source_revision": plan["model_source_revision"],
+        "model_wrapper_sha256": MODEL_WRAPPERS,
         "environment_receipt_sha256": ENV_RECEIPT_SHA256, "allocation": ALLOCATION}
     if review != expected:
         raise SystemExit("independent capture review does not bind this exact source/job/environment envelope")
@@ -431,7 +466,7 @@ def main(argv=None) -> int:
         "{'__name__':'__main__','__package__':'representation_collapse','__file__':p})")
     child_argv = [str(INTERPRETER), "-B", "-c", bootstrap_code, str(bootstrap), str(root / "src"),
         bootstrap_b64,
-        "--source-root", str(root), "--capture-environment-identity", str(out)]
+        "--source-root", str(MODEL_SOURCE), "--capture-environment-identity", str(out)]
     child = subprocess.Popen(child_argv, cwd=root,
         env=dict(os.environ, PYTHONPATH=str(root / "src"), PYTHONDONTWRITEBYTECODE="1",
                  PYTHONPYCACHEPREFIX=str(pycache)), start_new_session=True, stdin=subprocess.DEVNULL)

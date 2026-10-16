@@ -59,7 +59,15 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   checks (capture supervisor/test `24b201f2…008ac6` / `2971197d…73b794d`);
   the updated combined suite passes 25/25. The training-readiness audit still
   finds only component drafts and a 256-update diagnostic, not an integrated
-  fit/replay runner. Figure 10 training remains unstarted.
+  fit/replay runner. Job11279392 then reached the bootstrap and found the
+  upstream model files were staged under a separate pinned snapshot rather
+  than the project checkout. The exact three wrapper hashes and revision
+  `31293102…4edfdb` are now staged on Mila; the capture plan and receipt bind
+  that source root/revision/hash set and the supervisor rechecks it at both
+  boundaries. Independent review accepted the exact capture supervisor/test
+  hashes (`8853e541…45541e` / `9109b388…6c903c`), noting the revision is a
+  fixed metadata label while executable identity is enforced by wrapper bytes.
+  Figure 10 training remains unstarted.
 
 - **Overnight progress confirmed; checkpoint schema specification accepted — October16.**
   The approved Mila conversion job11273685 ran from02:09:36 to02:11:42 UTC on

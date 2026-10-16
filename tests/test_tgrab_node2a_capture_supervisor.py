@@ -27,6 +27,9 @@ def plan():
         "pinned_graph_import_sha256": MODULE.IMPORTER_SHA256,
         "job_sha256": "c" * 64, "supervisor_sha256": "d" * 64,
         "environment_receipt_sha256": MODULE.ENV_RECEIPT_SHA256,
+        "model_source_root": str(MODULE.MODEL_SOURCE),
+        "model_source_revision": MODULE.MODEL_SOURCE_REVISION,
+        "model_wrapper_sha256": dict(MODULE.MODEL_WRAPPERS),
         "review_receipt_path": str(MODULE.REVIEW_RECEIPT), "review_receipt_sha256": "e" * 64,
         "inventory_path": str(MODULE.INVENTORY), "run_dir": run_dir,
         "stop_file": run_dir + "/STOP", "deadline_seconds": 570,
@@ -37,6 +40,33 @@ def plan():
 class CaptureSupervisorContractTests(unittest.TestCase):
     def test_fixed_plan_contract(self):
         MODULE.validate_plan_contract(plan())
+
+    def test_plan_cannot_change_upstream_source_path_or_wrapper_pins(self):
+        candidate = plan()
+        candidate["model_source_root"] += "/alternate"
+        with self.assertRaisesRegex(SystemExit, "upstream model source"):
+            MODULE.validate_plan_contract(candidate)
+        candidate = plan()
+        candidate["model_source_revision"] = "0" * 40
+        with self.assertRaisesRegex(SystemExit, "upstream model source"):
+            MODULE.validate_plan_contract(candidate)
+
+    def test_upstream_wrapper_files_are_hash_and_path_pinned(self):
+        candidate = plan()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve() / "source"
+            (root / "model").mkdir(parents=True)
+            for relative in MODULE.MODEL_WRAPPERS:
+                (root / relative).write_text("bounded fixture")
+            old_root = MODULE.MODEL_SOURCE
+            try:
+                MODULE.MODEL_SOURCE = root
+                candidate["model_source_root"] = str(root)
+                expected_hashes = dict(MODULE.MODEL_WRAPPERS)
+                with mock.patch.object(MODULE, "sha", side_effect=lambda path: expected_hashes[str(path.relative_to(root))]):
+                    self.assertEqual(MODULE.verify_model_source(candidate), expected_hashes)
+            finally:
+                MODULE.MODEL_SOURCE = old_root
 
     @staticmethod
     def slurm_record(state="RUNNING", **changes):
@@ -252,7 +282,7 @@ class CaptureSupervisorContractTests(unittest.TestCase):
 
     def test_post_capture_source_closure_rejects_mutated_bootstrap(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp); old_file = MODULE.__file__
+            root = Path(tmp).resolve(); old_file = MODULE.__file__
             files = {
                 "src/representation_collapse/tgrab_figure10_bootstrap.py": b"bootstrap",
                 "src/representation_collapse/pinned_graph_import.py": b"importer",
@@ -273,7 +303,8 @@ class CaptureSupervisorContractTests(unittest.TestCase):
                     subprocess.CompletedProcess([], 0, candidate["source_commit"] + "\n", ""),
                     subprocess.CompletedProcess([], 0, candidate["source_tree"] + "\n", "")]
                 with mock.patch.object(MODULE, "__file__", str(root / "code/ops/tgrab_node2a_capture_supervisor.py")), \
-                     mock.patch.object(MODULE.subprocess, "run", side_effect=completed):
+                     mock.patch.object(MODULE.subprocess, "run", side_effect=completed), \
+                     mock.patch.object(MODULE, "verify_model_source", return_value=dict(MODULE.MODEL_WRAPPERS)):
                     baseline = MODULE.verify_source_closure(root, candidate)
                 self.assertEqual(baseline["bootstrap_sha256"], MODULE.BOOTSTRAP_SHA256)
                 (root / "src/representation_collapse/tgrab_figure10_bootstrap.py").write_bytes(b"mutated")
@@ -281,7 +312,8 @@ class CaptureSupervisorContractTests(unittest.TestCase):
                     subprocess.CompletedProcess([], 0, candidate["source_commit"] + "\n", ""),
                     subprocess.CompletedProcess([], 0, candidate["source_tree"] + "\n", "")]
                 with mock.patch.object(MODULE, "__file__", str(root / "code/ops/tgrab_node2a_capture_supervisor.py")), \
-                     mock.patch.object(MODULE.subprocess, "run", side_effect=completed):
+                     mock.patch.object(MODULE.subprocess, "run", side_effect=completed), \
+                     mock.patch.object(MODULE, "verify_model_source", return_value=dict(MODULE.MODEL_WRAPPERS)):
                     with self.assertRaisesRegex(SystemExit, "bootstrap_sha256"):
                         MODULE.verify_source_closure(root, candidate)
             finally:
@@ -294,6 +326,9 @@ class CaptureSupervisorContractTests(unittest.TestCase):
             "bootstrap_sha256": MODULE.BOOTSTRAP_SHA256,
             "pinned_graph_import_sha256": MODULE.IMPORTER_SHA256,
             "job_sha256": candidate["job_sha256"], "supervisor_sha256": candidate["supervisor_sha256"],
+            "model_source_root": candidate["model_source_root"],
+            "model_source_revision": candidate["model_source_revision"],
+            "model_wrapper_sha256": MODULE.MODEL_WRAPPERS,
             "environment_receipt_sha256": MODULE.ENV_RECEIPT_SHA256,
             "allocation": MODULE.ALLOCATION}
         with tempfile.TemporaryDirectory() as tmp:
