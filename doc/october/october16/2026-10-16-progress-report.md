@@ -1184,3 +1184,38 @@ full-HC replay parity (node2b) before any sealed-test opening. The existing
 fit lifecycle/native adapter remain components only; no production fit or plot
 path is admitted. Full Figure 10 roster, source aggregation and original
 checkpoint lineage remain unresolved.
+
+### Selected-checkpoint data codec independently accepted — 19:12 UTC
+
+Implemented the data-only six-file v1 codec in
+`src/representation_collapse/tgrab_selected_checkpoint.py` and its synthetic
+tests. It pins the accepted schema/catalog bytes, enforces canonical closed
+metadata schemas, tensor order/shape/offset/digests and finite float32-le bytes,
+validation formulas and cross-file identities, and rejects unsafe paths,
+links,
+replacements and overwrites. It performs no model construction or tensor
+object deserialization. The synthetic bundle round-trip preserves bytes.
+Independent reviewer accepted exact module/test hashes
+`23cf6dffc9ca7db3e14d379e010dbaf3729fe8cd8e3b8621909016195b8727bc` /
+`2869c86f68a7641de7f4fb764b35d29658e6c85791b4b9c8eed4b274ced2db84` for this
+limited role. Focused tests pass 13/13; the combined Figure 10 draft suite
+passes 54 tests with three Linux `/proc`/process-group tests skipped on macOS.
+
+The reviewer notes publication is create-only, fsyncs files, and publishes the
+manifest last, but does not use a staging-directory atomic rename. A crash can
+leave a visible incomplete directory; the reader rejects it and the writer
+will not reuse/overwrite it. The frozen protocol requires manifest-last
+dependency publication and a sole atomic selection-head commit point, so this
+codec is compatible with the former but does not implement the latter.
+`write_candidate` must not be described as atomically publishing a directory.
+
+Read-only fit integration review confirms the current lifecycle still lacks
+durable pre-step optimizer-attempt accounting and complete per-epoch candidate
+events (both component weights, 256 validation rows, and terminal H/C at
+`s[2816]`). The native adapter does not yet bind to the verified dataset
+manifest, environment/source receipts, or node2a evidence. No selected
+checkpoint transaction, node2b reload/replay, test bridge, production plotting,
+or training exists. Next: build and independently review the durable selection
+transaction and its crash-stage fixtures, then integrate fit candidates and
+pre-step accounting; do not open test data until node2b succeeds. No Figure 10
+curve or representation-collapse result is established.

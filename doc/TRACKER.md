@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-16 18:31 UTC. See the [latest notebook entry](october/october16/2026-10-16-progress-report.md),
+Updated 2026-10-16 19:12 UTC. See the [latest notebook entry](october/october16/2026-10-16-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
@@ -80,6 +80,19 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   hashes (`8853e541…45541e` / `9109b388…6c903c`), noting the revision is a
   fixed metadata label while executable identity is enforced by wrapper bytes.
   Figure 10 training remains unstarted.
+
+  Latest update: node2a synthetic zero-update native parity passed on Mila as
+  job11280629 and was independently accepted as an engineering gate only. The
+  observed-transition metric guard is fixed and reviewed. The pure-data
+  six-file selected-checkpoint codec is now implemented and independently
+  accepted for integrity/serialization only; 13 focused and 54 combined
+  Figure 10 tests pass (three Linux-only skips on macOS). Its create-only,
+  manifest-last publication is fail-closed but does not provide atomic
+  directory visibility. No scientific selection authority is implemented.
+  Production training is still blocked on durable selection transaction,
+  pre-step attempt accounting, complete epoch candidate snapshots, binding to
+  verified data/runtime/source admissions, and node2b full hidden/cell replay
+  parity. No Figure 10 training, curve, or collapse claim exists.
 
 - **Overnight progress confirmed; checkpoint schema specification accepted — October16.**
   The approved Mila conversion job11273685 ran from02:09:36 to02:11:42 UTC on
