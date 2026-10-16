@@ -304,3 +304,78 @@ and reporter constructor metadata, then request the one concrete fresh allocatio
 Actual primary conversion/reduction and offline lifecycle remain unrun. The
 full scientific goal is active and incomplete; native graph competence, harmful
 collapse and cross-modal transfer remain unaccepted.
+
+## 06:07–07:39 Yerevan / 02:07–03:39 UTC — approved primary conversion completed; closeout pending
+
+Nativecluv source synchronization staged the exact published commit
+`0fe14aa7e8433da5a019e3e80952742cb0e551e7` in a new scratch checkout. At
+02:07:51UTC, all14 source hashes, clean HEAD, six cluv library pins, existing
+Python3.10.19/W&B0.30.0 metadata and the actual reporter constructor dictionaries
+were verified. No SDK entry or primary body read occurred during preparation.
+Scratch used9236346880bytes with a separate1GiB reservation below20GiB.
+
+The owner then explicitly answered **Approve this CPU job** to the exact
+source/resource/output-bound question `call_c81e19338b544b5e8a88e33cd840bc3f`.
+Root recorded that approval in ignored `configs/approval.local.json`, created the
+external owner receipt and admitted plan, and invoked the reviewed nativecluv
+controller once. Final plan SHA256:
+`b17364f2d746dab6087599142e850e3b3bebc06379179e04151700fc241f9dcb`.
+The exclusive claim and native outcome bind **Mila11273685**, accountmila,
+QOSnormal, main-cpu, CPU1/2GiB/600s/GPU0, max1/no retry/requeue/race/training.
+The original intent receipt remains historical; scheduler reconciliation resolves
+its ambiguous pre-submit state. The envelope is consumed, remaining0.
+
+Actual scheduler inspection **02:13:21UTC** reports COMPLETED/0:0 in126seconds,
+cn-h001, Requeue0/Restarts0, requested/allocated cpu1/mem2G/node1, no GPU.
+Batch MaxRSS226.50M. Supervisor reports125.754seconds, physical cgroup2GiB and
+one-CPU affinity[60]; worker125.429seconds/peak205946880bytes. The scheduler's
+unqualified local date/time fields are not relabeled UTC: the attempted subsequent
+explicit-TZ accounting collection did not execute because transport failed.
+
+The completed worker reports one conversion and one independently implemented
+verification attempt. The verifier reread/reconstructed the pinned raw source:
+337920raw rows/unique offdiagonal edge records, zero duplicates, zero markers,
+3072N100 snapshots, train[0,2560), validation[2560,2816), test[2816,3072).
+It reports3072converted-snapshot and3072semantic comparisons, three split byte
+comparisons, one complete manifest byte comparison and seven stable input files.
+The four outputs total2997959bytes and remain on scratch; no target data or model
+weights were transferred to the Mac. Manifest SHA256:
+`a6ff50183de570ff17cfbe92b3f1976bac9d2d85557ecc11379e24b2c737d1ce`.
+Independent receipt SHA256:
+`9e279518ab997e8a7596a3a23f67fd3d9ea0362d761d814149fb5eec8e88e2c8`.
+
+Saved supervisor/worker/reporting/final-inventory receipts are coherent. They show
+completed offline W&B0.30.0, finish returned true, last completed step2 and
+runf177579e09d943c5917bd68522c478a7. Remote dashboard delivery remains false.
+Retained worker/SDK identities2057660/2057939 are reconciled original_process_exited,
+with no cleanup errors/signals. This covers retained identities only. Independent
+review is checking the saved records, not rerunning conversion or raw verification.
+
+**Full engineering closeout is pending**, despite the successful worker and
+scheduler. A read-only collector was prepared to rehash source/admission/final
+files on Mila and retrieve only compact JSON admission metadata plus the3472byte
+offline transaction for local CRC/protobuf history/exit/privacy verification.
+It failed before remote execution because the master had expired; this first
+failure is preserved. A nativecluv freshconnect at03:39:24UTC then failed with
+network unreachable to Mila2222, before an authentication prompt. No submission,
+parser, SDK session or model call was repeated. The completed evidence remains
+valid observed output, while exact final rehash/transaction checks are unfinished.
+This is data-preparation evidence only: native checkpoint/load parity, graph
+competence, useful-history loss and representation collapse remain unaccepted.
+
+Runtime records: `runs/ops/primary-conversion-verified-20261016/`, particularly
+`preparation-tool-result.json`, `owner-admission-tool-result.json`,
+`native-submission-tool-result.json`, `inspection-20261016T021321Z.json`,
+`closeout-collection-result.json`, `interactive-login-closeout-result.json`.
+Local approval bookkeeping now records consumed1/remaining0; no retry authorized.
+
+At03:35UTC the independent local Qwen worker still matches pinned source and
+PID/start identity84719, heartbeat age9.165seconds,25verified replies/22completed
+tasks/128596reportedtokens/zero errors/no in-flight request. It is waiting for
+evidence; no new answer or continuous inference is claimed. Receipt:
+`runs/ops/local-qwen-continuation-20261014T1650Y/live-20261016T033500Z.json`.
+Root assigned a native agent the next disjoint local checkpoint-schema freeze,
+using the reviewed26tensor catalog. That assignment does not implement a codec,
+execute a model or grant compute. Next: finish read-only closeout when access
+returns; independently review the closed schema, then implement codec/lifecycle
+before preparing a separate finite native parity allocation. Goal remains active.

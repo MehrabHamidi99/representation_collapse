@@ -8,7 +8,23 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
-- **Conversion+verification launch packet reviewed — October16 06:03 Yerevan.**
+- **Approved primary conversion completed — observed October16 02:13 UTC.**
+  Native cluv submitted the single approved Mila CPU job **11273685** from
+  `0fe14aa`; scheduler reports **COMPLETED/0:0 in126seconds**. The worker's
+  independent raw-data verifier reports **337920rows,3072snapshots,N100**,
+  all three split byte comparisons and the complete manifest comparison passing;
+  zero duplicates/markers. Four converted files total2997959bytes on scratch.
+  Physical CPU1/2GiB/GPU0, one conversion and one verification attempt;
+  the one-submission envelope is consumed, with no retry authorized.
+  Final closeout remains pending: source/admission rehash and independent offline
+  SDK transaction decoding. Existing receipts show completed reporting through
+  step2 and two retained owned identities exited without cleanup errors.
+  Mila's master subsequently expired; nativecluv freshconnect at03:39UTC failed
+  with network unreachable, before authentication. No job or worker was restarted.
+  Local Qwen verified03:35UTC alive/waiting,25replies/22tasks,zeroerrors;
+  this does not establish continuous model inference or training.
+  [Current structured evidence](auto/research-status-2026-10-16.json).
+- **Conversion+verification launch packet reviewed — October16 06:03 Yerevan (historical).**
   Integrated wrapper passes28fixtures (22base/root+6independent); nativecluv
   controller passes9author+14independent fixtures. Root rechecked final source,
   config and all helper/controller pins. Owner allocation remains absent;
