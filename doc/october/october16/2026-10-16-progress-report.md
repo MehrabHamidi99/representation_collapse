@@ -194,3 +194,71 @@ in parallel inspect the pinned PyG catalog and freeze selected-checkpoint schema
 before implementing the codec/lifecycle hooks. The overall research goal remains
 active and incomplete. No trained graph collapse, native competence, empirical
 null or cross-modal mechanism is accepted by this milestone.
+
+## 05:25–05:48 Yerevan / 01:25–01:48 UTC — independent verification and exact catalog
+
+Classification of the preceding goal turn: **progress**, demonstrated by published
+`fd58fc3` and `ee9b47a`, accepted converter/diagnostics and bounded source reviews.
+This continuation advances the same full objective; it does not redefine success
+around infrastructure or treat the existing untrained calibration as a result.
+
+A separate author implemented `graph_data_verifier.py`, with no producer-helper
+imports/calls. It independently reads every raw CSV row, reconstructs all actual
+snapshots, split canonical bytes/semantic hashes and the entire expected manifest,
+then compares them with converted artifacts. Eleven author and eighteen reviewer
+synthetic fixtures pass. Fully rehashed producer corruption is rejected against
+raw semantics. A full3072/N100 synthetic fixture remains visibly fixture-kind.
+Reviewer disclosure is explicit: the reviewer authored the converter, while a
+different agent authored this verifier; literal oracle fixtures mitigate shared
+assumptions without claiming complete personnel independence. Actual primary
+compatibility/reduction remains unrun. Root rechecked source/review hashes and
+accepted prospective engineering only.
+
+The previous Mila SSH master had expired. Read-only acquisition failed, with the
+initial wrapper retaining incomplete diagnostics; a compact recheck showed no
+socket. The old master-only adapter's ProxyCommand=false prevents fallback and
+was inappropriate for opening a fresh connection. Correcting that option to
+none exposed real keyboard-interactive authentication denial. At the owner's
+explicit readiness reply, a nativecluv interactive connection succeeded at
+01:34:37UTC to login-2. No worker/job was restarted and no new allocation occurred.
+Receipts are in `runs/ops/catalog-source-20261016/`. A fresh source-only acquisition
+then succeeded; prior failures were preserved.
+
+To continue while authentication was pending, root acquired the frozen1,135,632B
+PyG2.6.1 wheel, checked its full8faeb...427 SHA and member RECORDs, and read six
+small PyTorch files at the official v2.0.0 commit
+`c263bd43e8e8502d4726643bc6fd046f0130ac0e`. No environment or large Torch wheel
+was installed/downloaded. After access restoration, all15public source hashes
+matched the exact installed-source RECORD-verified files. Additional selected
+Inspector/template/collect/initializer sources close the structural path.
+Total21installed source files/384318bytes were inspected without importing Torch,
+NumPy or the SDK. Source bytes and receipts remain ignored under
+`runs/review/selected-tensor-catalog-20261016/`.
+
+The source-derived selected-checkpoint catalog is now independently accepted:
+20recurrent+6head tensors,232833FP32values/931332payloadbytes, exact native traversal,
+lexicographic serialization/optimizer ordering, shapes, parameter/buffer classes
+and offsets.477structural checks pass against a separately frozen source oracle;
+zero expected persistent buffers/extra-state tensor keys. This is an expected
+catalog, **not an observed state_dict, alias check, initialization result or load
+parity run**. Those runtime gates remain required. Root's acceptance receipt is
+`runs/review/goal-progress-20261016/accepted-verifier-and-tensor-catalog.json`.
+
+Root integrated independent verification into the still-unexecuted conversion
+worker: one charged verifier attempt after conversion, mandatory production
+receipt identity and step2reporting, plus final manifest/split/receipt hash
+reconciliation after cleanup. Twenty-two local mocked/base fixtures pass. Review
+found incomplete raw-count/spec/split receipt validation; the repair now requires
+the exact25-key schema, four typed count fields, rawsum/marker/primaryspec rules,
+producer-count equality and closed typed split records. Review remains in progress
+until final controller/source/config binding. No target rows, actual parser/SDK
+session, worker process, native model or cluster submission was executed by these
+wrapper fixtures. Earlier source-specific receipts remain historical.
+
+The technical conversion config is now exactly pinned and enabled for publication
+before requesting approval; **external owner allocation approval and exclusive
+submission claim remain absent and mandatory**. This local flag does not grant
+compute. A bounded single-Mila nativecluv controller and independent review are
+being prepared. Resources remainCPU1/physical2GiB/600seconds/GPU0/max1/no retry,
+race or requeue. The newly added second parser shares the same original deadline.
+No new allocation has been approved or consumed.

@@ -1,0 +1,1009 @@
+{
+  "alias_policy": {
+    "native_identity_and_storage_checks_required": true,
+    "overlapping_storage_allowed": false,
+    "parameter_object_aliases_allowed": false,
+    "source_construction": "fresh Parameter/Linear instances per gate/layer; source-derived expectation only"
+  },
+  "bounds": {
+    "full_bundle_max_bytes": 12582912,
+    "link_head_max_bytes": 1048576,
+    "max_dimension": 256,
+    "max_model_tensors": 128,
+    "max_tensor_bytes": 1048576,
+    "parameter_rank_allowed": [
+      1,
+      2
+    ],
+    "recurrent_max_bytes": 8388608
+  },
+  "components": {
+    "link_head": {
+      "backend_key": "link_pred",
+      "native_state_dict_order": [
+        "seq.1.weight",
+        "seq.1.bias",
+        "seq.3.weight",
+        "seq.3.bias",
+        "seq.5.weight",
+        "seq.5.bias"
+      ],
+      "nbytes": 198148,
+      "numel": 49537,
+      "parameter_count": 6,
+      "payload_filename": "link-head.f32le",
+      "persistent_buffer_count": 0,
+      "persistent_buffers": [],
+      "serialization_order": [
+        "seq.1.bias",
+        "seq.1.weight",
+        "seq.3.bias",
+        "seq.3.weight",
+        "seq.5.bias",
+        "seq.5.weight"
+      ],
+      "tensor_count": 6,
+      "tensors": [
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "seq.1.bias",
+          "native_dtype": "torch.float32",
+          "native_index": 1,
+          "nbytes": 512,
+          "numel": 128,
+          "order": "C",
+          "payload_offset": 0,
+          "rank": 1,
+          "serialization_index": 0,
+          "shape": [
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "seq.1.weight",
+          "native_dtype": "torch.float32",
+          "native_index": 0,
+          "nbytes": 131072,
+          "numel": 32768,
+          "order": "C",
+          "payload_offset": 512,
+          "rank": 2,
+          "serialization_index": 1,
+          "shape": [
+            128,
+            256
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "seq.3.bias",
+          "native_dtype": "torch.float32",
+          "native_index": 3,
+          "nbytes": 512,
+          "numel": 128,
+          "order": "C",
+          "payload_offset": 131584,
+          "rank": 1,
+          "serialization_index": 2,
+          "shape": [
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "seq.3.weight",
+          "native_dtype": "torch.float32",
+          "native_index": 2,
+          "nbytes": 65536,
+          "numel": 16384,
+          "order": "C",
+          "payload_offset": 132096,
+          "rank": 2,
+          "serialization_index": 3,
+          "shape": [
+            128,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "seq.5.bias",
+          "native_dtype": "torch.float32",
+          "native_index": 5,
+          "nbytes": 4,
+          "numel": 1,
+          "order": "C",
+          "payload_offset": 197632,
+          "rank": 1,
+          "serialization_index": 4,
+          "shape": [
+            1
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "seq.5.weight",
+          "native_dtype": "torch.float32",
+          "native_index": 4,
+          "nbytes": 512,
+          "numel": 128,
+          "order": "C",
+          "payload_offset": 197636,
+          "rank": 2,
+          "serialization_index": 5,
+          "shape": [
+            1,
+            128
+          ]
+        }
+      ]
+    },
+    "recurrent": {
+      "backend_key": "node_emb",
+      "native_state_dict_order": [
+        "units.0.W_i",
+        "units.0.b_i",
+        "units.0.W_f",
+        "units.0.b_f",
+        "units.0.W_c",
+        "units.0.b_c",
+        "units.0.W_o",
+        "units.0.b_o",
+        "units.0.conv_i.bias",
+        "units.0.conv_i.lins.0.weight",
+        "units.0.conv_i.lins.1.weight",
+        "units.0.conv_f.bias",
+        "units.0.conv_f.lins.0.weight",
+        "units.0.conv_f.lins.1.weight",
+        "units.0.conv_c.bias",
+        "units.0.conv_c.lins.0.weight",
+        "units.0.conv_c.lins.1.weight",
+        "units.0.conv_o.bias",
+        "units.0.conv_o.lins.0.weight",
+        "units.0.conv_o.lins.1.weight"
+      ],
+      "nbytes": 733184,
+      "numel": 183296,
+      "parameter_count": 20,
+      "payload_filename": "recurrent.f32le",
+      "persistent_buffer_count": 0,
+      "persistent_buffers": [],
+      "serialization_order": [
+        "units.0.W_c",
+        "units.0.W_f",
+        "units.0.W_i",
+        "units.0.W_o",
+        "units.0.b_c",
+        "units.0.b_f",
+        "units.0.b_i",
+        "units.0.b_o",
+        "units.0.conv_c.bias",
+        "units.0.conv_c.lins.0.weight",
+        "units.0.conv_c.lins.1.weight",
+        "units.0.conv_f.bias",
+        "units.0.conv_f.lins.0.weight",
+        "units.0.conv_f.lins.1.weight",
+        "units.0.conv_i.bias",
+        "units.0.conv_i.lins.0.weight",
+        "units.0.conv_i.lins.1.weight",
+        "units.0.conv_o.bias",
+        "units.0.conv_o.lins.0.weight",
+        "units.0.conv_o.lins.1.weight"
+      ],
+      "tensor_count": 20,
+      "tensors": [
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.W_c",
+          "native_dtype": "torch.float32",
+          "native_index": 4,
+          "nbytes": 51200,
+          "numel": 12800,
+          "order": "C",
+          "payload_offset": 0,
+          "rank": 2,
+          "serialization_index": 0,
+          "shape": [
+            100,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.W_f",
+          "native_dtype": "torch.float32",
+          "native_index": 2,
+          "nbytes": 51200,
+          "numel": 12800,
+          "order": "C",
+          "payload_offset": 51200,
+          "rank": 2,
+          "serialization_index": 1,
+          "shape": [
+            100,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.W_i",
+          "native_dtype": "torch.float32",
+          "native_index": 0,
+          "nbytes": 51200,
+          "numel": 12800,
+          "order": "C",
+          "payload_offset": 102400,
+          "rank": 2,
+          "serialization_index": 2,
+          "shape": [
+            100,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.W_o",
+          "native_dtype": "torch.float32",
+          "native_index": 6,
+          "nbytes": 51200,
+          "numel": 12800,
+          "order": "C",
+          "payload_offset": 153600,
+          "rank": 2,
+          "serialization_index": 3,
+          "shape": [
+            100,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.b_c",
+          "native_dtype": "torch.float32",
+          "native_index": 5,
+          "nbytes": 512,
+          "numel": 128,
+          "order": "C",
+          "payload_offset": 204800,
+          "rank": 2,
+          "serialization_index": 4,
+          "shape": [
+            1,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.b_f",
+          "native_dtype": "torch.float32",
+          "native_index": 3,
+          "nbytes": 512,
+          "numel": 128,
+          "order": "C",
+          "payload_offset": 205312,
+          "rank": 2,
+          "serialization_index": 5,
+          "shape": [
+            1,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.b_i",
+          "native_dtype": "torch.float32",
+          "native_index": 1,
+          "nbytes": 512,
+          "numel": 128,
+          "order": "C",
+          "payload_offset": 205824,
+          "rank": 2,
+          "serialization_index": 6,
+          "shape": [
+            1,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.b_o",
+          "native_dtype": "torch.float32",
+          "native_index": 7,
+          "nbytes": 512,
+          "numel": 128,
+          "order": "C",
+          "payload_offset": 206336,
+          "rank": 2,
+          "serialization_index": 7,
+          "shape": [
+            1,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.conv_c.bias",
+          "native_dtype": "torch.float32",
+          "native_index": 14,
+          "nbytes": 512,
+          "numel": 128,
+          "order": "C",
+          "payload_offset": 206848,
+          "rank": 1,
+          "serialization_index": 8,
+          "shape": [
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.conv_c.lins.0.weight",
+          "native_dtype": "torch.float32",
+          "native_index": 15,
+          "nbytes": 65536,
+          "numel": 16384,
+          "order": "C",
+          "payload_offset": 207360,
+          "rank": 2,
+          "serialization_index": 9,
+          "shape": [
+            128,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.conv_c.lins.1.weight",
+          "native_dtype": "torch.float32",
+          "native_index": 16,
+          "nbytes": 65536,
+          "numel": 16384,
+          "order": "C",
+          "payload_offset": 272896,
+          "rank": 2,
+          "serialization_index": 10,
+          "shape": [
+            128,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.conv_f.bias",
+          "native_dtype": "torch.float32",
+          "native_index": 11,
+          "nbytes": 512,
+          "numel": 128,
+          "order": "C",
+          "payload_offset": 338432,
+          "rank": 1,
+          "serialization_index": 11,
+          "shape": [
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.conv_f.lins.0.weight",
+          "native_dtype": "torch.float32",
+          "native_index": 12,
+          "nbytes": 65536,
+          "numel": 16384,
+          "order": "C",
+          "payload_offset": 338944,
+          "rank": 2,
+          "serialization_index": 12,
+          "shape": [
+            128,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.conv_f.lins.1.weight",
+          "native_dtype": "torch.float32",
+          "native_index": 13,
+          "nbytes": 65536,
+          "numel": 16384,
+          "order": "C",
+          "payload_offset": 404480,
+          "rank": 2,
+          "serialization_index": 13,
+          "shape": [
+            128,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.conv_i.bias",
+          "native_dtype": "torch.float32",
+          "native_index": 8,
+          "nbytes": 512,
+          "numel": 128,
+          "order": "C",
+          "payload_offset": 470016,
+          "rank": 1,
+          "serialization_index": 14,
+          "shape": [
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.conv_i.lins.0.weight",
+          "native_dtype": "torch.float32",
+          "native_index": 9,
+          "nbytes": 65536,
+          "numel": 16384,
+          "order": "C",
+          "payload_offset": 470528,
+          "rank": 2,
+          "serialization_index": 15,
+          "shape": [
+            128,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.conv_i.lins.1.weight",
+          "native_dtype": "torch.float32",
+          "native_index": 10,
+          "nbytes": 65536,
+          "numel": 16384,
+          "order": "C",
+          "payload_offset": 536064,
+          "rank": 2,
+          "serialization_index": 16,
+          "shape": [
+            128,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.conv_o.bias",
+          "native_dtype": "torch.float32",
+          "native_index": 17,
+          "nbytes": 512,
+          "numel": 128,
+          "order": "C",
+          "payload_offset": 601600,
+          "rank": 1,
+          "serialization_index": 17,
+          "shape": [
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.conv_o.lins.0.weight",
+          "native_dtype": "torch.float32",
+          "native_index": 18,
+          "nbytes": 65536,
+          "numel": 16384,
+          "order": "C",
+          "payload_offset": 602112,
+          "rank": 2,
+          "serialization_index": 18,
+          "shape": [
+            128,
+            128
+          ]
+        },
+        {
+          "classification": "parameter",
+          "device": "cpu",
+          "dtype": "float32_le",
+          "name": "units.0.conv_o.lins.1.weight",
+          "native_dtype": "torch.float32",
+          "native_index": 19,
+          "nbytes": 65536,
+          "numel": 16384,
+          "order": "C",
+          "payload_offset": 667648,
+          "rank": 2,
+          "serialization_index": 19,
+          "shape": [
+            128,
+            128
+          ]
+        }
+      ]
+    }
+  },
+  "direct_sources": {
+    "cell": {
+      "bytes": 7737,
+      "path": "runs/graph/upstream-pin-20261012/gclstm-v0.54.0.py",
+      "sha256": "c3568d2c1ba8926ab43e11c840213f90ebe782ad158dd76809d1dc1c255797af"
+    },
+    "head": {
+      "bytes": 781,
+      "path": "runs/graph/upstream-pin-20261012/source/model/link_predictor.py",
+      "sha256": "cca12cfc73b8660c92236f530504da08ba0b606ec13a1a681ffabcae43b7ca86"
+    },
+    "node_base": {
+      "bytes": 283,
+      "path": "runs/graph/upstream-pin-20261012/source/model/node_emb.py",
+      "sha256": "4be4450730f33949e0354348b3bd8f69ba0434e4aa911abec0fc5f798e8c2d29"
+    },
+    "wrapper": {
+      "bytes": 1475,
+      "path": "runs/graph/upstream-pin-20261012/source/model/gclstm.py",
+      "sha256": "86069a32fced5f09c60cd795e4f0abd82674dafae250ef3673ac8c3650504609"
+    }
+  },
+  "execution_authorized": false,
+  "expected_non_tensor_parameter_slots": [
+    "units.0.conv_i.lins.0.bias",
+    "units.0.conv_i.lins.1.bias",
+    "units.0.conv_f.lins.0.bias",
+    "units.0.conv_f.lins.1.bias",
+    "units.0.conv_c.lins.0.bias",
+    "units.0.conv_c.lins.1.bias",
+    "units.0.conv_o.lins.0.bias",
+    "units.0.conv_o.lins.1.bias"
+  ],
+  "extra_state_keys": [],
+  "kind": "tgrab_selected_tensor_catalog_v1",
+  "named_optimizer_parameter_order": [
+    "node_emb.units.0.W_c",
+    "node_emb.units.0.W_f",
+    "node_emb.units.0.W_i",
+    "node_emb.units.0.W_o",
+    "node_emb.units.0.b_c",
+    "node_emb.units.0.b_f",
+    "node_emb.units.0.b_i",
+    "node_emb.units.0.b_o",
+    "node_emb.units.0.conv_c.bias",
+    "node_emb.units.0.conv_c.lins.0.weight",
+    "node_emb.units.0.conv_c.lins.1.weight",
+    "node_emb.units.0.conv_f.bias",
+    "node_emb.units.0.conv_f.lins.0.weight",
+    "node_emb.units.0.conv_f.lins.1.weight",
+    "node_emb.units.0.conv_i.bias",
+    "node_emb.units.0.conv_i.lins.0.weight",
+    "node_emb.units.0.conv_i.lins.1.weight",
+    "node_emb.units.0.conv_o.bias",
+    "node_emb.units.0.conv_o.lins.0.weight",
+    "node_emb.units.0.conv_o.lins.1.weight",
+    "link_pred.seq.1.bias",
+    "link_pred.seq.1.weight",
+    "link_pred.seq.3.bias",
+    "link_pred.seq.3.weight",
+    "link_pred.seq.5.bias",
+    "link_pred.seq.5.weight"
+  ],
+  "native_load_verified": false,
+  "native_state_dict_observed": false,
+  "proposal_sha256": "bfa4548956c23ef6e3819ed015053ac68e939fa076b2ae1675cd582c61368f8f",
+  "public_cross_check": {
+    "all_equal": true,
+    "files_compared": 15,
+    "path": "runs/review/selected-tensor-catalog-20261016/public-source/receipt.json",
+    "sha256": "6d2871643fa92c660d7cc4cf7402bf9b9ee8c6bbbaedca27e11304fe29c0953b"
+  },
+  "reader_rule": "source expectation only; root admission must pin this catalog and separately verified native observation before production native checkpoint work",
+  "requirements_lock_sha256": "ea2f58d2a12f5d8562b31d5fa7b5c646121784867c134afd4a5cf6a8108b8c06",
+  "runtime_preconditions": [
+    "exact source/class identity and target architecture",
+    "no external module/parameter/buffer registration hooks",
+    "no state_dict save/load hooks or extra state beyond pinned source behavior",
+    "positive known input channels; no lazy/uninitialized parameters",
+    "no pruning, parametrization, quantization, wrappers or module replacement",
+    "full state_dict keys and parameter/buffer classification must match",
+    "actual FP32 CPU finite dense strided tensors; no dtype cast",
+    "native observed catalog and load parity require separate admitted finite fixture"
+  ],
+  "schema_version": 1,
+  "scientific_acceptance": false,
+  "source_anchors": [
+    {
+      "class": "MultiLayerGCLSTM",
+      "end_line": 32,
+      "line": 16,
+      "method": "__init__",
+      "source": "runs/graph/upstream-pin-20261012/source/model/gclstm.py"
+    },
+    {
+      "class": "LinkPredictor",
+      "end_line": 18,
+      "line": 5,
+      "method": "__init__",
+      "source": "runs/graph/upstream-pin-20261012/source/model/link_predictor.py"
+    },
+    {
+      "class": "GCLSTM",
+      "end_line": 114,
+      "line": 110,
+      "method": "_create_parameters_and_layers",
+      "source": "runs/graph/upstream-pin-20261012/gclstm-v0.54.0.py"
+    },
+    {
+      "class": "ChebConv",
+      "end_line": 101,
+      "line": 73,
+      "method": "__init__",
+      "source": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch_geometric/nn/conv/cheb_conv.py"
+    },
+    {
+      "class": "Linear",
+      "end_line": 115,
+      "line": 89,
+      "method": "__init__",
+      "source": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch_geometric/nn/dense/linear.py"
+    },
+    {
+      "class": "Linear",
+      "end_line": 168,
+      "line": 158,
+      "method": "_save_to_state_dict",
+      "source": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch_geometric/nn/dense/linear.py"
+    },
+    {
+      "class": "Module",
+      "end_line": 1674,
+      "line": 1617,
+      "method": "__setattr__",
+      "source": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch/nn/modules/module.py"
+    },
+    {
+      "class": "Module",
+      "end_line": 1732,
+      "line": 1708,
+      "method": "_save_to_state_dict",
+      "source": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch/nn/modules/module.py"
+    },
+    {
+      "class": "Module",
+      "end_line": 1823,
+      "line": 1748,
+      "method": "state_dict",
+      "source": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch/nn/modules/module.py"
+    }
+  ],
+  "source_catalog_complete": true,
+  "source_files": {
+    "torch/nn/init.py": {
+      "bytes": 20261,
+      "distribution": "torch",
+      "installed_link_count": 1,
+      "member": "torch/nn/init.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-initializers/torch/nn/init.py",
+      "record_sha256_matches": true,
+      "sha256": "913f8cac248f100de634b6beae389f81512e699a9ebc3008edd7b42bf997ac40",
+      "version": "2.0.0+cpu"
+    },
+    "torch/nn/modules/activation.py": {
+      "bytes": 53618,
+      "distribution": "torch",
+      "installed_link_count": 1,
+      "member": "torch/nn/modules/activation.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch/nn/modules/activation.py",
+      "public_origin": "official_release_source_commit",
+      "record_sha256_matches": true,
+      "sha256": "c8e886a47523a1a9e5d2065e794645e3bd4f1e4fa0572dc118b286f33f8f9837",
+      "version": "2.0.0+cpu"
+    },
+    "torch/nn/modules/container.py": {
+      "bytes": 34400,
+      "distribution": "torch",
+      "installed_link_count": 1,
+      "member": "torch/nn/modules/container.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch/nn/modules/container.py",
+      "public_origin": "official_release_source_commit",
+      "record_sha256_matches": true,
+      "sha256": "8eb33e985093cf74cbbd493f19581d91ab4d922a69bc1408f0032455cda44eb6",
+      "version": "2.0.0+cpu"
+    },
+    "torch/nn/modules/dropout.py": {
+      "bytes": 11090,
+      "distribution": "torch",
+      "installed_link_count": 1,
+      "member": "torch/nn/modules/dropout.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch/nn/modules/dropout.py",
+      "public_origin": "official_release_source_commit",
+      "record_sha256_matches": true,
+      "sha256": "34572c64947e1d32cd6bd28b13bddd8e544f37d6be0b5368bfbf65b11f2c5fb3",
+      "version": "2.0.0+cpu"
+    },
+    "torch/nn/modules/linear.py": {
+      "bytes": 10561,
+      "distribution": "torch",
+      "installed_link_count": 1,
+      "member": "torch/nn/modules/linear.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch/nn/modules/linear.py",
+      "public_origin": "official_release_source_commit",
+      "record_sha256_matches": true,
+      "sha256": "5a1098d83ce1883eea6b7da27d755cb45986d52bd3c74aeba2faa089d029b6e5",
+      "version": "2.0.0+cpu"
+    },
+    "torch/nn/modules/module.py": {
+      "bytes": 104213,
+      "distribution": "torch",
+      "installed_link_count": 1,
+      "member": "torch/nn/modules/module.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch/nn/modules/module.py",
+      "public_origin": "official_release_source_commit",
+      "record_sha256_matches": true,
+      "sha256": "f66c99d53e81301aec8bf8b89a5e41a86e79c58d25c606a1fca5ba1d8546107e",
+      "version": "2.0.0+cpu"
+    },
+    "torch/nn/parameter.py": {
+      "bytes": 9257,
+      "distribution": "torch",
+      "installed_link_count": 1,
+      "member": "torch/nn/parameter.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch/nn/parameter.py",
+      "public_origin": "official_release_source_commit",
+      "record_sha256_matches": true,
+      "sha256": "c5348e694228d5303ced2af5d82279b816b971b3d668381dd3f6d6a448334adb",
+      "version": "2.0.0+cpu"
+    },
+    "torch_geometric/inspector.py": {
+      "bytes": 19267,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/inspector.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-extra/torch_geometric/inspector.py",
+      "record_sha256_matches": true,
+      "sha256": "f4ceb54fdaee4a2779fabd9a7a5440797f60ffb019d553276000762a8cccef51",
+      "version": "2.6.1"
+    },
+    "torch_geometric/nn/aggr/__init__.py": {
+      "bytes": 1645,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/nn/aggr/__init__.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch_geometric/nn/aggr/__init__.py",
+      "public_origin": "exact_frozen_PyG_wheel",
+      "record_sha256_matches": true,
+      "sha256": "fdad351ae8d5ca845213afb676b8a874c842f3e8c9b2ce1634885a8ab6268476",
+      "version": "2.6.1"
+    },
+    "torch_geometric/nn/aggr/base.py": {
+      "bytes": 8218,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/nn/aggr/base.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch_geometric/nn/aggr/base.py",
+      "public_origin": "exact_frozen_PyG_wheel",
+      "record_sha256_matches": true,
+      "sha256": "b5d19547ca3884fa5e18efe236405a0304b4b6f0984f63a74e8786536d5e5b94",
+      "version": "2.6.1"
+    },
+    "torch_geometric/nn/aggr/basic.py": {
+      "bytes": 11011,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/nn/aggr/basic.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch_geometric/nn/aggr/basic.py",
+      "public_origin": "exact_frozen_PyG_wheel",
+      "record_sha256_matches": true,
+      "sha256": "e42457a66d155596f6d9f30f6cc31da90821f7b45888a8948191aade1afb19bc",
+      "version": "2.6.1"
+    },
+    "torch_geometric/nn/aggr/multi.py": {
+      "bytes": 8170,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/nn/aggr/multi.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch_geometric/nn/aggr/multi.py",
+      "public_origin": "exact_frozen_PyG_wheel",
+      "record_sha256_matches": true,
+      "sha256": "b6179221a0e52e3194c80b6a0ef38539146923d818a1931752dca95f53d5e4d4",
+      "version": "2.6.1"
+    },
+    "torch_geometric/nn/conv/cheb_conv.py": {
+      "bytes": 6423,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/nn/conv/cheb_conv.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch_geometric/nn/conv/cheb_conv.py",
+      "public_origin": "exact_frozen_PyG_wheel",
+      "record_sha256_matches": true,
+      "sha256": "e6c9039a7511906934a9860ac1e7deea4923fd94a88af52093f510cfdb221c85",
+      "version": "2.6.1"
+    },
+    "torch_geometric/nn/conv/collect.jinja": {
+      "bytes": 5752,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/nn/conv/collect.jinja",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-extra002/torch_geometric/nn/conv/collect.jinja",
+      "record_sha256_matches": true,
+      "sha256": "7a42629d53c35e2b20e149cfee360e8bdc946ea85feff31c80f8209e4eaacd42",
+      "version": "2.6.1"
+    },
+    "torch_geometric/nn/conv/message_passing.py": {
+      "bytes": 44346,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/nn/conv/message_passing.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch_geometric/nn/conv/message_passing.py",
+      "public_origin": "exact_frozen_PyG_wheel",
+      "record_sha256_matches": true,
+      "sha256": "3ede583d7ae3461f012f1d7a22d7b002c7caf9bd134593d53213f0fc2ce9caf9",
+      "version": "2.6.1"
+    },
+    "torch_geometric/nn/conv/propagate.jinja": {
+      "bytes": 7374,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/nn/conv/propagate.jinja",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-extra/torch_geometric/nn/conv/propagate.jinja",
+      "record_sha256_matches": true,
+      "sha256": "b0c6eb39a67bfe917c4d11217e359fdee279cd839a00d95c64d1c79ec69b87ed",
+      "version": "2.6.1"
+    },
+    "torch_geometric/nn/dense/linear.py": {
+      "bytes": 17773,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/nn/dense/linear.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch_geometric/nn/dense/linear.py",
+      "public_origin": "exact_frozen_PyG_wheel",
+      "record_sha256_matches": true,
+      "sha256": "058b2c1d29fc2a7502d3f37fc010c05df9db1d16012149071a673ed1b1d5f1bc",
+      "version": "2.6.1"
+    },
+    "torch_geometric/nn/inits.py": {
+      "bytes": 2457,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/nn/inits.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-initializers/torch_geometric/nn/inits.py",
+      "record_sha256_matches": true,
+      "sha256": "ffc16a69c08b3f3e45b76cc1e6ce9db4a193296b5facbc822cbbafd50bf22a39",
+      "version": "2.6.1"
+    },
+    "torch_geometric/nn/resolver.py": {
+      "bytes": 6152,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/nn/resolver.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch_geometric/nn/resolver.py",
+      "public_origin": "exact_frozen_PyG_wheel",
+      "record_sha256_matches": true,
+      "sha256": "2d0150b7a1552fb4ea48910cf5130c932fa444b088df8c0a5add40d2185c2633",
+      "version": "2.6.1"
+    },
+    "torch_geometric/resolver.py": {
+      "bytes": 1270,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/resolver.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/torch_geometric/resolver.py",
+      "public_origin": "exact_frozen_PyG_wheel",
+      "record_sha256_matches": true,
+      "sha256": "7e7fbfea60a9236c6fede0d99c815c62b1ce9f422bc1b91614b0dbf65690ad62",
+      "version": "2.6.1"
+    },
+    "torch_geometric/template.py": {
+      "bytes": 1060,
+      "distribution": "torch-geometric",
+      "installed_link_count": 1,
+      "member": "torch_geometric/template.py",
+      "origin": "actual_installed_pinned_source_RECORD_verified",
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-extra/torch_geometric/template.py",
+      "record_sha256_matches": true,
+      "sha256": "aea8c35a07120204c2895e1b90e8d644f68ee0fa54742fd15e2833c7106a02ef",
+      "version": "2.6.1"
+    }
+  },
+  "source_receipts": [
+    {
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-attempt002/receipt.json",
+      "sha256": "708142700461cf8dca622d0c55336aff96abb7c8b073a0ea1f06014489af72c9"
+    },
+    {
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-extra/receipt.json",
+      "sha256": "10998630f7a684341987cf261f11d97faa7e3e95ea06a9815fd17c21a12deb01"
+    },
+    {
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-extra002/receipt.json",
+      "sha256": "42a139a42fcfd6058eab29e1e8cbcd5c02eda402104e20c4994ae3b6d3e5a5f7"
+    },
+    {
+      "path": "runs/review/selected-tensor-catalog-20261016/source-acquisition-initializers/receipt.json",
+      "sha256": "0e6838415f0c6c035af46aeeb1b15f14ccdf7d63003f71f7fc42ead05f10ca13"
+    }
+  ],
+  "source_scope": "selected constructors, registration, initializer structural behavior, state_dict and generated-method template closure; not complete import/math or initialization-value execution closure",
+  "state_dict_metadata_policy": "Module._metadata version side mapping is not a tensor key; only trusted primitive class versions may be reconstructed; no object serialization",
+  "status": "source_derived_expected_catalog_frozen_for_independent_review",
+  "target": {
+    "chebyshev_order": 2,
+    "convolution_bias": true,
+    "device": "cpu",
+    "dtype": "float32_le",
+    "head_dropout": 0.2,
+    "head_hidden_layers": 2,
+    "hidden_channels": 128,
+    "input_channels": 100,
+    "laplacian_normalization": "sym",
+    "layers": 1,
+    "nodes": 100,
+    "recurrent_dropout": 0.0
+  },
+  "total_model_nbytes": 931332,
+  "total_model_numel": 232833,
+  "total_model_tensor_count": 26,
+  "wheel_manifest": {
+    "path": "environments/graph-native-cpu/wheel-manifest.json",
+    "sha256": "67e27963f2166f8a7e26dba301c9020d2bd7d4c012010fb859e6e43b15ce9842"
+  }
+}

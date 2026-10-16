@@ -74,7 +74,17 @@
     "ordering_scope_review": "doc/auto/ordering-mechanism-scope-independent-review-2026-10-16.md",
     "selected_checkpoint_codec_implemented": false,
     "native_selected_checkpoint_load_parity_verified": false,
-    "selected_checkpoint_codec_design_direction_reviewed": true
+    "selected_checkpoint_codec_design_direction_reviewed": true,
+    "independent_primary_verifier_engineering_accepted": true,
+    "independent_primary_verifier_author_tests": 11,
+    "independent_primary_verifier_reviewer_tests": 18,
+    "selected_checkpoint_tensor_catalog_source_accepted": true,
+    "selected_checkpoint_tensor_catalog_structural_checks": 477,
+    "expected_model_tensors": 26,
+    "expected_model_FP32_payload_bytes": 931332,
+    "native_state_dict_observed": false,
+    "conversion_job_technical_config_enabled": true,
+    "current_conversion_verification_integration_review_complete": false
   },
   "this_turn": {
     "new_cluster_submissions": 0,
@@ -92,11 +102,11 @@
     "new_preparation_unit_fixtures_accepted": 32
   },
   "next_work": [
-    "Prepare an independent primary-conversion reducer and freeze immutable source/launch packet before fresh owner allocation approval",
-    "Obtain one fresh exact CPU allocation before primary body conversion; independently verify actual outputs",
-    "Inspect pinned PyG tensor catalog and freeze closed selected-checkpoint schemas, then implement codec and replay/load lifecycle hooks",
-    "Implement complete-state training lifecycle with attempted-call accounting",
-    "Establish native competence and matched-order confirmation before cross-modal mechanism claims"
+    "Complete independent review of conversion+verification job and exact nativecluv controller",
+    "Publish/stage immutable source and request one fresh exact CPU allocation before actual primary conversion/reduction",
+    "Freeze closed checkpoint schemas and implement codec using the accepted source-derived catalog",
+    "Implement native state/loader/observer lifecycle then counted admitted parity before training",
+    "Establish graph competence and matched-order confirmation before native cross-modal mechanism claims"
   ],
   "compute_readiness": {
     "checked_at_utc": "2026-10-16T01:17:14.734580+00:00",
@@ -111,6 +121,8 @@
     "scratch_cap_bytes": 21474836480,
     "receipt": "runs/ops/graph-data-20261016/conversion-readiness-result.json",
     "other_cluster_queues_freshly_verified": false,
-    "fresh_allocation_approved": false
+    "fresh_allocation_approved": false,
+    "access_restored_at_utc": "2026-10-16T01:34:37.753281+00:00",
+    "fresh_authentication_source": "Owner readiness reply; successful nativecluv interactiveconnect receipt"
   }
 }

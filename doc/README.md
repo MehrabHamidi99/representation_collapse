@@ -9,8 +9,10 @@ the charter and novelty audit. Latest engineering work: [primary converter/store
 review](auto/tgrab-primary-data-conversion-independent-review-2026-10-16.md),
 [input diagnostics review](auto/matched-input-statistics-independent-review-2026-10-16.md),
 and [disabled conversion-job review](auto/graph-data-conversion-job-independent-review-2026-10-16.md).
-These are synthetic/preparation evidence; real primary conversion and trained
-collapse remain unverified. [Selected checkpoint proposal](auto/tgrab-selected-checkpoint-codec-proposal-2026-10-16.md)
+The [independent raw-to-artifact verifier](auto/tgrab-primary-data-verifier-independent-review-2026-10-16.md)
+and [source-derived checkpoint catalog](auto/tgrab-selected-tensor-catalog-independent-review-2026-10-16.md)
+have also passed review. These are synthetic/preparation evidence; real primary
+conversion, native checkpoint load and trained collapse remain unverified. [Selected checkpoint proposal](auto/tgrab-selected-checkpoint-codec-proposal-2026-10-16.md)
 records the next format and lifecycle decisions without claiming implementation.
 
 ## Canonical documents (read in this order)

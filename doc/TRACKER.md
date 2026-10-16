@@ -8,6 +8,18 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Independent raw-data verifier and exact tensor catalog accepted — October16 05:48 Yerevan.**
+  Raw-to-artifact verifier passes11author+18reviewer fixtures and independently
+  rebuilds every snapshot/manifest without producer helpers. Source-derived
+  checkpoint catalog passes477structural checks:26tensors/931332FP32bytes.
+  Actual target reduction, native dictionary/load parity and trained claims remain
+  unverified. Mila interactive nativecluv access restored01:34UTC after master
+  expiry;21installed source files hash/RECORD-verified,15match public source.
+  Conversion+verification integration and single-submission controller are under
+  review. Technical config is pinned/enabled; a fresh external owner allocation
+  receipt is still absent and mandatory. No job submitted.
+  [Verifier review](auto/tgrab-primary-data-verifier-independent-review-2026-10-16.md),
+  [catalog review](auto/tgrab-selected-tensor-catalog-independent-review-2026-10-16.md).
 - **Scientific scope guard and checkpoint direction reviewed — October 16 05:22 Yerevan.**
   Independent source review accepts the registered-boundary exposure counting
   argument: equal full motif exposure would force forbidden control tiling.
