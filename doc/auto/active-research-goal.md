@@ -63,10 +63,13 @@ Current accepted progress is the
 [tiny native graph engineering calibration](native-graph-calibration-v2-results-2026-10-15.md),
 the [primary graph payload acquisition](tgrab-primary-payload-staging-2026-10-15.md),
 the [legacy-array audit](legacy-floquet-array-audit-results-2026-10-14.md),
-and the [analytic folding guard](folding-memory-counterexample-independent-review-2026-10-15.md).
+the [analytic folding guard](folding-memory-counterexample-independent-review-2026-10-15.md),
+and synthetic engineering acceptance of the
+[sealed primary converter/store](tgrab-primary-data-conversion-independent-review-2026-10-16.md)
+and [input diagnostics](matched-input-statistics-independent-review-2026-10-16.md).
 These do not establish trained graph collapse or cross-modal transfer.
 
-The next implementation work is the sealed primary-data converter/store and
+The next work is actual primary-data conversion and independent reduction, then
 the [trainer/checkpoint integration](tgrab-training-runner-implementation-contract-2026-10-15.md),
 followed by reviewed, finite native training-parity checks. This graph recovery
 priority is compatible with the charter's competence-first Gate A–D program;

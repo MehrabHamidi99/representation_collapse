@@ -8,6 +8,28 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Scientific scope guard and checkpoint direction reviewed — October 16 05:22 Yerevan.**
+  Independent source review accepts the registered-boundary exposure counting
+  argument: equal full motif exposure would force forbidden control tiling.
+  This limits periodicity-only mechanism attribution; frozen Gate B is unchanged.
+  [Scope review](auto/ordering-mechanism-scope-independent-review-2026-10-16.md).
+  The selected-checkpoint design direction passes independent review, with
+  concrete catalog/schema, codec, observer and terminal-load/parity work still
+  required. It identifies the actual existing load-before-terminal-flag gap;
+  no checkpoint writer/loader or payload was produced.
+  [Checkpoint proposal review](auto/tgrab-selected-checkpoint-codec-independent-review-2026-10-16.md).
+- **Conversion-job review and actual Qwen continuation — October 16 05:18 Yerevan.**
+  The disabled launcher passes16author +16independent preparation fixtures;
+  root rechecked final source hashes. Actual SDK/job execution and independent
+  primary reduction remain unverified. Nativecluv0.1.5 read-only Mila check at
+  01:17UTC found main-cpu UP, no project-name queue matches, existing
+  Python3.10.19/W&B0.30.0 metadata,9,162,264,576bytes scratch used below20GiB.
+  No allocation was submitted or approved. Qwen completed both newly assigned
+  scientific critiques, reaching25verified replies/22tasks/0errors. Whole replies
+  were rejected: they confuse input spectra with recoverability and invent a
+  native accuracy result. Native review extracts only defensible design limits.
+  [Launcher review](auto/graph-data-conversion-job-independent-review-2026-10-16.md),
+  [ordering scope assessment](auto/ordering-mechanism-scope-review-2026-10-16.md).
 - **Converter and input diagnostics accepted — October 16 05:15 Yerevan.**
   Implemented primary T-GRAB conversion, separate split serialization and a
   lazy one-shot test store; 18 author +19 independent synthetic fixtures pass.

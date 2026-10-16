@@ -4,6 +4,15 @@ The canonical current state is [TRACKER.md](TRACKER.md); reusable protocols,
 reviews and evidence records are under `auto/`; the literature library is under
 `literature/`; dated reports are under `<month>/<month><day>/`.
 
+Current objective: [active research goal](auto/active-research-goal.md), following
+the charter and novelty audit. Latest engineering work: [primary converter/store
+review](auto/tgrab-primary-data-conversion-independent-review-2026-10-16.md),
+[input diagnostics review](auto/matched-input-statistics-independent-review-2026-10-16.md),
+and [disabled conversion-job review](auto/graph-data-conversion-job-independent-review-2026-10-16.md).
+These are synthetic/preparation evidence; real primary conversion and trained
+collapse remain unverified. [Selected checkpoint proposal](auto/tgrab-selected-checkpoint-codec-proposal-2026-10-16.md)
+records the next format and lifecycle decisions without claiming implementation.
+
 ## Canonical documents (read in this order)
 
 1. [Research charter](auto/research-charter.md): question, sub-questions mapped
@@ -55,7 +64,7 @@ Evidence records: [initial-phase report](auto/initial-phase-report.md),
 [corrected graph component review](auto/tgrab-reconstruction-implementation-independent-review-2026-10-14.md),
 [causal-bridge scope audit](auto/causal-bridge-audit-2026-10-14.md),
 [conditional approximate-bridge bounds](auto/approximate-bridge-audit-2026-10-14.md),
-and [current research/worker status](auto/research-status-2026-10-14.json).
+and [current research/worker status](auto/research-status-2026-10-16.json).
 
 Operations: [compute plan](auto/compute-plan.md),
 [cluster access](auto/cluster-access.md), [agent protocol](auto/agent-protocol.md),

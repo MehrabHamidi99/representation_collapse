@@ -117,3 +117,80 @@ and the bridge from native graph prediction to required-prefix memory. Publicati
 is not response completion; all recommendations still require coordinator review.
 No credentials, datasets, weights or allocation authority were sent. The worker
 remains proposal-only. No uninterrupted overnight research is inferred.
+
+## 05:17–05:20 Yerevan / 01:17–01:20 UTC — launcher review and proposal audit
+
+Published accepted converter/diagnostic code, tests and reviews as `fd58fc3`
+(`code: validate graph split conversion and matched input diagnostics`); GitHub
+push succeeded. Unrelated Oct13 notebook edits and template files remain untouched.
+
+The conversion launcher independently passed16new reviewer fixtures and16replayed
+author fixtures, plus shell syntax/Python3.10 AST checks. Root rechecked every
+receipt-pinned file against current bytes. Preparation acceptance is recorded in
+`runs/review/goal-progress-20261016/accepted-conversion-job-preparation.json`.
+Actual reporter constructor metadata was exercised with SDK entry forbidden;
+fake worker/scheduler/cleanup fixtures do not establish native operation. Config
+remains disabled with null source pins. The producer's read_manifest call is
+self-consistency only, not independent primary reduction. That reduction must
+be prepared before requesting an execution packet that can yield fully accepted
+data evidence. No job was submitted and no current numerical job is claimed.
+
+At01:17:14UTC, nativecluv0.1.5 read-only inspection verifies Mila main-cpu UP,
+no matching project-name jobs, exact existing CPython3.10.19/W&B0.30.0 package
+metadata and whole-project scratch9,162,264,576bytes below20GiB. This is an
+inspection, not an allocation or SDK session. Other clusters were not rechecked.
+Receipt: `runs/ops/graph-data-20261016/conversion-readiness-result.json`.
+
+At01:18:32UTC, actual Qwen process/start/source and all25schema/model-matched
+responses verify:22completed tasks/128596reportedtokens/0consecutive errors,
+heartbeat age59.788seconds, waiting_for_evidence, no call in flight. New calls24
+and25 answer the two assigned questions and completed by01:15:32UTC. Root rejected
+both whole answers: call24 confuses input covariance/FFT with required-history
+recoverability, invents1%/spectral cutoffs and overstates mechanism/covariate
+identification; call25 invents high native accuracy in the untrained calibration
+and substitutes a vector GRU/unspecified information estimator. Rejection receipt:
+`runs/ops/local-qwen-continuation-20261014T1650Y/proposal-review-024-025.json`.
+No proposed experiment was authorized or executed. This is verified actual
+proposal participation; it is not continuous numerical research or accepted
+scientific progress merely because another reply arrived.
+
+The coordinator's ordering-scope assessment retains a concrete source-derived
+constraint: at R>1, matching all R registered-boundary occurrences of the final
+motif in the current R-slot control forces every slot equal and violates the
+non-tiling rule. An independent native agent is checking this counting argument.
+A future multiset/superperiod intervention needs its own preregistration; frozen
+Gate B remains unchanged. Native next-graph reproduction and arbitrary-prefix
+memory remain separate tasks. The selected-checkpoint proposal now explicitly
+identifies the actual GR load-before-terminal-flag gap and missing observer/parity
+hooks; it is under independent design review, without codec/payload/native work.
+
+## 05:22 Yerevan / 01:22 UTC — analytical scope guard accepted
+
+Independent source-only review accepts the coordinator's motif-exposure counting
+argument and rejects the two Qwen whole answers. All pinned source/reply hashes
+were rechecked by root. No constructor, numerical or model call was needed for
+this proof. Review: `doc/auto/ordering-mechanism-scope-independent-review-2026-10-16.md`.
+Root acceptance: `runs/review/goal-progress-20261016/accepted-ordering-scope.json`.
+This is a design-identifiability guard, not a novelty certificate or empirical
+collapse result. The total assigned-order contrast remains the frozen estimand;
+a periodicity-only attribution needs further intervention evidence.
+
+The selected-inference checkpoint proposal also passed independent source-only
+review for **design direction only**. Root checked the exact proposal, review,
+criteria, author/source-inspection receipts and all source hashes. Six-file raw
+f32le encoding, both full state dictionaries, fixed-weight validation H+C s[2816],
+strict validation history and load/replay-before-test are proposed requirements.
+Full pinned ChebConv tensor catalog, closed schemas, codec implementation,
+state observers and terminal-load/parity hooks remain unfinished. Existing GR
+preflight/load stubs were preserved. No checkpoint payload, codec test or native
+parity run occurred. Review:
+`doc/auto/tgrab-selected-checkpoint-codec-independent-review-2026-10-16.md`;
+root receipt:
+`runs/review/goal-progress-20261016/accepted-selected-codec-direction.json`.
+
+Next bounded nodes: independently implement primary-data reduction, materialize
+a complete immutable conversion packet and request its fresh exact allocation;
+in parallel inspect the pinned PyG catalog and freeze selected-checkpoint schemas
+before implementing the codec/lifecycle hooks. The overall research goal remains
+active and incomplete. No trained graph collapse, native competence, empirical
+null or cross-modal mechanism is accepted by this milestone.

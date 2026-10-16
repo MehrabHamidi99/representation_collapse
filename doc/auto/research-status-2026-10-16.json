@@ -18,28 +18,30 @@
     "new_compute_authorization": false
   },
   "qwen": {
-    "verified_at_utc": "2026-10-16T01:13:16.195195+00:00",
+    "verified_at_utc": "2026-10-16T01:18:32.239721+00:00",
     "hosting": "local_mac",
     "pid": 84719,
     "process_start_source_verified": true,
-    "heartbeat_age_seconds_at_check": 52.914317,
+    "heartbeat_age_seconds_at_check": 59.788047,
     "state": "running",
     "activity": "waiting_for_evidence",
-    "schema_and_model_verified_replies": 23,
-    "completed_coordinator_tasks": 20,
-    "reported_tokens": 118041,
+    "schema_and_model_verified_replies": 25,
+    "completed_coordinator_tasks": 22,
+    "reported_tokens": 128596,
     "consecutive_provider_errors": 0,
     "provider_call_in_flight": false,
-    "last_completed_reply_at_utc": "2026-10-15T06:40:15.301452+00:00",
+    "last_completed_reply_at_utc": "2026-10-16T01:15:32.423420+00:00",
     "uninterrupted_overnight_research_confirmed": false,
     "whole_answers_automatically_accepted": 0,
-    "verification_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/live-20261016T011316Z.json",
+    "verification_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/live-20261016T011832Z.json",
     "new_tasks_queued_at_utc": "2026-10-16T01:14:21.220992+00:00",
     "new_task_ids": [
       "21-matched-order-estimand-scope",
       "22-graph-native-required-history-bridge"
     ],
-    "new_tasks_completed_at_this_update": false
+    "new_tasks_completed_at_this_update": true,
+    "new_whole_answers_rejected": 2,
+    "new_answer_review_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/proposal-review-024-025.json"
   },
   "accepted_progress": {
     "graph_calibration_job_id": 11261627,
@@ -63,11 +65,20 @@
     "matched_input_diagnostics_author_tests": 8,
     "matched_input_diagnostics_independent_tests": 7,
     "coordinator_source_hash_recheck_receipt": "runs/review/goal-progress-20261016/accepted-converter-and-diagnostics.json",
-    "conversion_job_preparation_independently_accepted": false
+    "conversion_job_preparation_independently_accepted": true,
+    "conversion_job_author_fixtures": 16,
+    "conversion_job_independent_fixtures": 16,
+    "conversion_job_execution_authorized": false,
+    "conversion_job_actually_run": false,
+    "registered_motif_exposure_matching_impossibility_independently_reviewed": true,
+    "ordering_scope_review": "doc/auto/ordering-mechanism-scope-independent-review-2026-10-16.md",
+    "selected_checkpoint_codec_implemented": false,
+    "native_selected_checkpoint_load_parity_verified": false,
+    "selected_checkpoint_codec_design_direction_reviewed": true
   },
   "this_turn": {
     "new_cluster_submissions": 0,
-    "fresh_scheduler_inspection": false,
+    "fresh_scheduler_inspection": true,
     "new_numerical_runs": 0,
     "new_native_model_calls": 0,
     "provider_calls_by_worker_verifier": 0,
@@ -77,13 +88,29 @@
     "primary_data_rows_read": 0,
     "synthetic_unit_tests_in_accepted_modules": 52,
     "new_numerical_runs_definition": "Numerical research experiments; excludes synthetic unit fixtures",
-    "new_coordinator_tasks_published": 2
+    "new_coordinator_tasks_published": 2,
+    "new_preparation_unit_fixtures_accepted": 32
   },
   "next_work": [
-    "Independently review the guarded conversion runner and materialize its immutable disabled launch packet",
+    "Prepare an independent primary-conversion reducer and freeze immutable source/launch packet before fresh owner allocation approval",
     "Obtain one fresh exact CPU allocation before primary body conversion; independently verify actual outputs",
-    "Freeze selected-checkpoint codec before implementation and native load-parity checks",
+    "Inspect pinned PyG tensor catalog and freeze closed selected-checkpoint schemas, then implement codec and replay/load lifecycle hooks",
     "Implement complete-state training lifecycle with attempted-call accounting",
     "Establish native competence and matched-order confirmation before cross-modal mechanism claims"
-  ]
+  ],
+  "compute_readiness": {
+    "checked_at_utc": "2026-10-16T01:17:14.734580+00:00",
+    "cluster": "mila",
+    "native_cluv_version": "0.1.5",
+    "project_name_filtered_queue_matches": 0,
+    "partition": "main-cpu",
+    "partition_state": "UP",
+    "python": "3.10.19",
+    "wandb_metadata_version": "0.30.0",
+    "scratch_used_bytes": 9162264576,
+    "scratch_cap_bytes": 21474836480,
+    "receipt": "runs/ops/graph-data-20261016/conversion-readiness-result.json",
+    "other_cluster_queues_freshly_verified": false,
+    "fresh_allocation_approved": false
+  }
 }
