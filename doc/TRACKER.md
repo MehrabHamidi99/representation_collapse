@@ -1,12 +1,44 @@
 # Current research state
 
-Updated 2026-10-16 13:23 UTC. See the [latest notebook entry](october/october16/2026-10-16-progress-report.md),
+Updated 2026-10-16 16:14 UTC. See the [latest notebook entry](october/october16/2026-10-16-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **Immediate graph-baseline subgoal — reproduce T-GRAB Figure 10.** The
+  target is `Pdet(2,32)` per-timestep F1, with a GC-LSTM-first DTDG-panel
+  milestone and full two-panel reproduction tracked separately. Historical
+  replay, source-faithful reconstruction, and corrected prospective
+  reconstruction have distinct evidence labels. The converted primary data is
+  independently verified. Native engineering calibration job11261627 and its
+  independent saved-array audit passed (60 arrays, 27 comparisons, zero
+  mismatches); this is not trained-model evidence. Original model checkpoints/
+  plot inputs remain unresolved. A 256-update CPU prefix-canary draft has nine
+  focused tests, but independent review rejected launch pending an outer
+  resource/source/admission wrapper, reliable optimizer-step accounting and the
+  frozen timing schedule. Separately, the full train/validation epoch lifecycle
+  core passed independent review and seven spy tests; it is not integrated with
+  model/data/checkpoint/test handling. The fit lifecycle core independently passed seven spy tests. The native adapter
+  remains under revision for enforced seed-0 construction and epoch-keyed rows.
+  No Figure 10 retraining has started. Before any fit, the release map requires
+  node2a synthetic native checkpoint/forward/loss/gradient parity; the selected
+  checkpoint must later pass node2b before test access. The owner
+  explicitly authorized Compute Canada retraining for this subgoal without
+  additional approval or resource limits on 2026-10-16. Figure 10 is a
+  behavioral target; no collapse claim follows from its F1 plot. See both dated
+  wrapper review receipts in the latest report.
+  Independent local-asset audit and subgoal review passed the target pin and
+  execution-gate wording; both report original raw curves/checkpoint absent in
+  bounded searched scopes.
+  See [Figure 10 reproduction subgoal](auto/figure-10-reproduction-subgoal.md).
+  Latest step: the one-shot node2a runtime-identity capture wrapper passed
+  independent review after closing its bootstrap source race; its focused
+  nine-test suite passes. It is not yet committed, synchronized, or submitted.
+  The job-specific JSON review receipt must bind the final committed source
+  tree before the capture job can run. Figure 10 training remains unstarted.
 
 - **Overnight progress confirmed; checkpoint schema specification accepted — October16.**
   The approved Mila conversion job11273685 ran from02:09:36 to02:11:42 UTC on

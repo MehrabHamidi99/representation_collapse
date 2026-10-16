@@ -710,3 +710,154 @@ review report SHA256
 This resolves only the release-order ambiguity. It does not provide the
 codec, native parity, original checkpoint, model competence, training approval
 or collapse evidence.
+
+# 2026-10-16 — Figure 10 reproduction subgoal
+
+Mehrab explicitly set reproducing T-GRAB Figure 10 as the immediate subgoal.
+The target is the two-panel per-test-timestep F1 figure on `Pdet(2,32)`; the
+GC-LSTM-first DTDG panel and full two-panel figure are separate milestones.
+Historical replay, source-faithful reconstruction and corrected prospective
+reconstruction are explicitly distinguished. F1 agreement will establish
+behavioral reproduction only, not representational collapse.
+
+Local audit confirmed the Figure 10 TeX include points to the inherited
+`(2,32)DTDG_avg_f1.pdf` and `(2,32)CTDG_avg_f1.pdf` files, with a shared legend;
+the appendix interpretation describes transition degradation and subsequent
+adaptation to the new snapshot. The upstream primary dataset has now been
+converted and independently checked in the already approved Mila job 11273685
+(337,920 rows; 3,072 snapshots; all split and manifest comparisons passed).
+That CPU conversion allocation is consumed and contains no training authority.
+Prior bounded TSA search found no original GC-LSTM plus link-head checkpoint in
+its searched scope; paper plot source arrays/per-seed reduction inputs also
+remain to be pinned. Existing reconstruction readiness notes still report an
+import-time failure before model construction and no released training runner.
+Therefore, no Figure 10 replay/reconstruction has started and no cluster job was
+submitted for this subgoal.
+
+Created the acceptance sequence and stop conditions in
+[`figure-10-reproduction-subgoal.md`](../auto/figure-10-reproduction-subgoal.md),
+linked it from the tracker and updated the active research goal's next step.
+Two bounded, independent read-only subagents reviewed the asset inventory and
+protocol. The asset audit independently hashed the two panel PDFs and legend,
+found the shared 11-method legend and visible DTDG ticks 0–224 at spacing 32,
+but could not recover the number of plotted observations, per-seed arrays or
+aggregation rule. It found no original GC-LSTM/recurrent-plus-head checkpoint
+in the audited local scope; the earlier bounded TSA search remains limited and
+does not prove global absence. The protocol review passed with execution gates
+and no scientific overclaim. Receipts are
+`runs/review/figure10-assets-20261016/evidence-report.md` (SHA-256
+`0c5bd7ae96d7f9883b6df26ba14a709fa9b201e25d233f7f4566f5c915987824`) and
+`runs/review/figure10-plan-review-20261016/receipt.md` (SHA-256
+`00da2ddba53e9eba1b605b4b7c301d850a4e9eac555aa98d5c16b31d413c735c`).
+Next: recover raw plot inputs and historical weights/run lineage from
+owner-controlled sources; independently reconcile the primary conversion
+receipt with exact split boundaries; then finish runner/native parity review
+and prepare a new, exact compute request before training. Existing source
+snapshots remain untouched. No scientific claim or compute authorization
+changed.
+
+The subgoal was updated with the bounded asset audit's exact PDF/TeX hashes and
+visible tick/legend findings, then independently reviewed again. Revision 002
+passes with the existing execution gates; the updated subgoal SHA-256 is
+`8dd6fd4f938e93af9b3f104fd3a5b53ad7a1a5739a97257b0251dcb21f3f0dfd`, and the
+review receipt is
+`runs/review/figure10-plan-review-20261016/receipt-revision002.md` (SHA-256
+`facd635ee84302c388bc45a872faa9341f50b817a959439f7775f7dffdac0b5c`).
+
+## Figure 10 continuation — execution and source audit
+
+The owner explicitly authorized the compute needed to retrain/reproduce Figure
+10 and waived separate compute approval and limits for this subgoal. This
+supersedes the earlier statement that completed conversion allocation
+11273685 blocked new training. It does not convert a behavioral F1 result into
+representation-collapse evidence.
+
+Read-only Mila checks found the converted primary data and splits intact and
+no Figure 10 training job in the live project queue. Existing unrelated project
+jobs were left untouched. I reconciled already-completed native GC-LSTM
+engineering job 11261627: Slurm reports `COMPLETED`, exit `0:0`, 74 seconds,
+one CPU, 2 GiB, zero GPUs on `main-cpu`; the worker recorded 50 cell forwards,
+one each of the exact pinned wrapper/cell/head constructors, and completed
+its v2 engineering controls. The accepted independent verifier/closeout in
+`runs/review/native-graph-reporting-path-fix-20261015/` reports 60 arrays,
+27 comparisons, 1,337 scalar checks and zero mismatches. Scientific acceptance
+is false. An earlier stale verifier was identified and not run against this
+bundle.
+
+The candidate architecture is source-supported: 128 hidden units and K=2
+produce 232,833 parameters for the pinned GC-LSTM plus link head, consistent
+with the paper's table rounded to 233k. The paper also says its results average
+five seeds and training stops after 100 non-improving training-loss epochs,
+without a fixed epoch cap. The current candidate has one seed and a bounded
+200-epoch/3600-second cap, so a successful first fit would be a corrected
+prospective reconstruction, not reproduction of the paper's five-seed aggregate.
+The original per-seed commands/checkpoints and raw plotted curves remain
+unrecovered.
+
+A separate read-only source audit found why these labels matter. The pinned
+launcher currently enables only CTDG DyGFormer and contains one seed value, so
+it does not establish which five seeds produced Figure 10's GC-LSTM series.
+Its dormant GC-LSTM branch supports the 128-unit/K=2 setting, while its shell
+sets a 100,000-epoch ceiling despite the paper saying no fixed maximum. More
+seriously, the pinned executable periodically evaluates test data on
+validation improvements, can stop on perfect test F1, and carries an
+evaluation-mutated predecessor into subsequent training. That is source-level
+behavior, not verified lineage for the published plot. Reproducing that
+pipeline would reproduce test-dependent selection/contamination; the corrected
+validation-only path answers a cleaner prospective question and must be
+reported separately. Audit: `runs/review/figure10-source-reconstruction-audit-20261016/report.md`
+(SHA-256 `e686af249c326cb44a056201d60360a6d2ad2a60e00651faa8f12d0f0adf7a70`).
+
+Agent implementation added a tested Figure 10 readiness CLI and reducer; it
+still intentionally refuses native training because the reviewed durable
+checkpoint, selected-history, terminal replay-parity and sealed-test runner is
+not implemented. Focused tests pass (5/5); no test split was opened and no
+Figure 10 model was trained. The next step is completing and independently
+reviewing that runner, then using the pinned Mila CPU runtime for a bounded
+N=100 training/throughput and competence canary. For subsequent GPU scale-up,
+retain per-GPU useful-throughput telemetry under this project's GPU-efficiency
+skill.
+
+### Live Figure 10 execution check — 15:33 UTC
+
+Authenticated read-only Mila inspection at 15:33 UTC found no Figure 10 training job. The project scratch contains the verified converted split manifest at `runs/primary-conversion-verified-20261016/attempt001/worker/converted/manifest.json` and the previously installed CPython 3.10 CPU environment. Unrelated queue entries were observed and left untouched. The current Figure 10 runner remains under implementation and review; its 256-update prefix is an engineering/throughput canary only, not a valid fit or figure reproduction. No Figure 10 job has been submitted and no model has been trained in this continuation.
+
+The owner waived compute approval and limits for this Figure 10 subgoal on 2026-10-16. I recorded this waiver in the active goal and tracker; source integrity, implementation review, environment/data binding and scientific labeling still apply. The remote Mila queue check used the authenticated `mehrab.hamidi` account; a preliminary `mehrab` username probe was invalid and is not scheduler evidence.
+
+The independent review of the 256-update CPU prefix canary passed its nine fake-backend contract tests but **rejected launch**. It identified four P1 gaps: no import-inclusive owned-child/resource supervisor, no external source/argv/admission binding, ambiguous optimizer mutation accounting if an exception follows `optimizer.step()`, and a shorter-than-frozen runtime schedule. Two P2 findings cover thread-limit ordering and incomplete chronology tests; STOP symlink handling is a P3 hardening item. Review receipt: `runs/review/figure10-canary-engineering-review-20261016.md`. I assigned the implementation fixes to the canary owner and a disjoint full-epoch train/validation core to another worker. Neither has submitted compute. Existing tests are contract tests with fakes, not native execution. The explicit compute waiver remains in force; it does not waive these execution and provenance gates.
+
+The separate complete-epoch lifecycle core, `src/representation_collapse/tgrab_figure10_fit.py` (SHA-256 `1dbc7c1674ecd3d417d13a1427f2acfb5a707f2822d9eeac95fb6db0be90869b`), passed independent lifecycle review and seven spy-backend tests. The core validates exact train/validation chronology, 2,559 updates per complete epoch, fresh evaluation replay, score-before-consume validation, earliest-tie selection, training-loss patience, and no retry/ambiguous optimizer-step accounting. It deliberately accepts no test split. Model/data/backend integration, durable selected-checkpoint save/reload, sealed final test pass, and outer launch admission remain open. This is an implementation result, not trained-model evidence.
+
+A second independent wrapper review confirmed that the canary's protocol scope is now explicitly restricted to a 256-update prefix diagnostic, but again rejected launch. Remaining P1 items: bind the complete authoritative Slurm allocation rather than request-time environment fallbacks; resolve cgroup-v2 mount/effective ancestor limits and capture peak memory; prove all owned process-group descendants exit on normal and interrupted paths; and bind the job script, supervisor and source commit while preventing stale bytecode/TOCTOU. The reviewer also requires temporary-process tests for cleanup, deadline and journal behavior. Receipt: `runs/review/figure10-canary-wrapper-review-20261016.md`. This review does not block the separately reviewed train/validation lifecycle core. No model training or canary job has run.
+
+Independent review of the native fit adapter found its fake mechanics and 2,559-update integration tests pass, including deterministic negatives, ordered-pair F1, optimizer-step witnesses, and validation-only inputs. It did not accept production integration yet: model seed 0 and canonical parameter order are only demonstrated by a helper, not enforced at the adapter boundary; validation rows also need epoch identifiers. Manifest/source provenance remains the full runner's responsibility. Review: `runs/review/figure10-native-fit-adapter-review-20261016.md`. These findings are assigned for correction. No native Torch model or scheduler job was used.
+
+The adapter implementation now routes model construction through a seed-0 factory, verifies the returned backend/model/optimizer identity and canonical named-parameter order, and tags validation rows by epoch. The revised adapter SHA is `250ddc72381a9e4e6fa369ceb7c4b1a76a0da19bfad064d85b705daa3d15b2a7` and tests SHA `acc675637938a7712c83608eac6ef18ed8ea837da1e01d790bd3c821ed96ab99`; focused adapter tests pass 8/8 locally. Independent re-review is pending. This remains fake-backend engineering only.
+
+Protocol reconciliation surfaced a release-map prerequisite that the Figure 10 sequence must state explicitly: no fit or validation-only checkpoint selection before node2a, the deterministic synthetic pre-fit checkpoint/parity fixture. It must verify the observed native state-dictionary catalog, dual-component and complete H/C round trip, forward/loss/gradient equivalence, modes/dropout and transaction crash/reopen, with zero optimizer updates and no primary/validation/test payload. This is required engineering evidence, not a trained result. Node2b will still be required on the selected checkpoint before any test bytes open. The Figure 10 work sequence now records both gates; the compute waiver does not bypass them.
+
+### Node2a capture wrapper review closeout — 16:40 UTC
+
+The independent reviewer initially rejected the one-shot runtime-identity
+capture wrapper because the supervisor hashed the bootstrap file, then the
+child reopened it for execution. The implementation now reads the bootstrap
+once, checks that byte buffer against its pin, passes the same bytes to the
+child for compilation, and rechecks Git cleanliness, commit/tree, bootstrap,
+importer, job and supervisor identities after child exit. New tests verify
+pre-execution and post-capture mutation failures. The independent reviewer
+accepted the exact revised capture job/supervisor for the single CPU-only
+identity-capture envelope; receipt:
+`runs/review/figure10-node2a-capture-job-review-revision003-20261016.md`
+(SHA-256 `71e2236d6651ac78a7a0f1c03b4e16d21ba864cda0cba18246c5dbb3093f5c0e`).
+The broader focused suite passes 32 tests, including nine capture-supervisor
+tests; Python compilation, Bash syntax and `git diff --check` pass.
+
+The owner explicitly waived compute approval and limits for this Figure 10
+subgoal. Still outstanding before capture are a clean committed source tree,
+cluv synchronization to Mila, and a job-specific accepted JSON review receipt
+that binds that exact source commit/tree and the capture hashes. No capture,
+node2a fixture, model fit, or Figure 10 training job has run or been submitted.
+This is implementation/review progress only, not native runtime or scientific
+evidence. Next: commit the reviewed node2a capture and fixture files, obtain the
+source-bound JSON receipt, run the one-shot identity capture through cluv, then
+independently verify its inventory before node2a parity.

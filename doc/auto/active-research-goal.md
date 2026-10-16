@@ -69,10 +69,15 @@ and synthetic engineering acceptance of the
 and [input diagnostics](matched-input-statistics-independent-review-2026-10-16.md).
 These do not establish trained graph collapse or cross-modal transfer.
 
-The next work is actual primary-data conversion and independent reduction, then
-the [trainer/checkpoint integration](tgrab-training-runner-implementation-contract-2026-10-15.md),
-followed by reviewed, finite native training-parity checks. This graph recovery
-priority is compatible with the charter's competence-first Gate A–D program;
-it does not bypass the matched-order study or transfer gates. Existing allocation
-limits still apply. Qwen proposes and native agents implement/review bounded
-tasks; the coordinator owns integration and scientific acceptance.
+The immediate graph-baseline subgoal is now the staged reproduction of T-GRAB
+Figure 10 in [`figure-10-reproduction-subgoal.md`](figure-10-reproduction-subgoal.md).
+The primary CSV conversion and independent verification have completed, so the
+next dependency is the reviewed training/replay path and then exact run/plot
+reconstruction. This graph recovery priority is compatible with the charter's
+competence-first Gate A–D program; it does not bypass the matched-order study or
+transfer gates. For this Figure 10 subgoal only, the owner explicitly waived
+separate compute approval and resource limits on 2026-10-16. This does not waive
+implementation, source, data, scientific review or GPU-efficiency gates. Figure
+10 remains a behavioral target; no collapse result is accepted from its F1
+curves alone. Qwen proposes and native agents implement/review bounded tasks;
+the coordinator owns integration and scientific acceptance.
