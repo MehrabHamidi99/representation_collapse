@@ -675,3 +675,38 @@ cluster submissions, dataset/checkpoint transfers or scientific findings. The
 next graph-training gate remains closed pending typed artifact/codec validation,
 native parity, a frozen graph baseline/history protocol and separately
 authorized compute.
+
+Qwen call33/task30 returned a proposal grounded in the corrected post-closeout
+packet. Identity and evidence binding were verified. Root retained two limited
+observations: baseline reproduction/reconstruction and required-history testing
+need separate protocols, and a negative assigned-order result is scoped to that
+contrast. Its immediate recommendation to finalize schema review was stale
+(revision002 was already accepted); its suggested analytic-falsification task
+lacked a specified theorem or bounded acceptance test. No scientific claim or
+implementation was accepted. Review: `runs/ops/local-qwen-continuation-20261014T1650Y/review-033.json`.
+
+To turn the independent Gate B recommendations into a usable dependency
+contract, a bounded native agent drafted
+`doc/auto/graph-baseline-history-release-map-v1.md`. It distinguishes exact
+T-GRAB reproduction from reconstruction, requires native checkpoint parity,
+keeps unchanged vector Gate B separate from a later graph-history task, and
+states acceptance, stop and claim limits for each. Root corrected an ambiguous
+“Gate 2” label to refer to this map's checkpoint-parity stage. The draft clears
+no data/checkpoint/runtime gate; its independent review is pending. No code,
+model/data access, training or compute was used.
+
+The map reviewer found RELEASE-001: the original text did not specify how a
+selected-checkpoint parity gate could precede the fit that creates that
+checkpoint. Revision now splits node2 into (a) a deterministic synthetic
+pre-fit parity bootstrap and (b) instance-specific parity on either the
+freshly selected checkpoint or a recovered original checkpoint with verified
+lineage. Fresh fitting and validation-only selection require node2a; held-out
+test access requires node2b. The map also requires a separate multi-seed plan
+for fresh reconstruction. Independent follow-up accepted the resolution. Map
+SHA256 `ef9dde2e079f362e77993f6194f69220793707017e6538d5af581307876fbb91`;
+review report SHA256
+`0c31bf4943a0bac0da2ba809913755666d2e610235f40c8cf46493078e03bc05`, receipt
+`runs/review/graph-baseline-history-release-map-20261016/receipt.json`.
+This resolves only the release-order ambiguity. It does not provide the
+codec, native parity, original checkpoint, model competence, training approval
+or collapse evidence.

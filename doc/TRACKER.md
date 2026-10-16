@@ -52,6 +52,20 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   proposed audit was rejected as stale/mismatched. No numerical experiment,
   training, new submission or collapse finding occurred.
 
+- **Graph release map drafted; corrected Qwen critical-path proposal reviewed — October16.**
+  The release map separates original T-GRAB baseline reproduction/reconstruction,
+  native checkpoint parity, unchanged vector Gate B, and later graph
+  required-history intervention. Independent review accepted the map after
+  resolving RELEASE-001's pre-fit/bootstrap and selected-checkpoint sequencing
+  ambiguity. Qwen call33
+  supported protocol separation and scoped negative interpretation; its proposed
+  schema review was stale and its analytic alternative was underspecified. No
+  scientific conclusion or training release follows. See
+  [release map](auto/graph-baseline-history-release-map-v1.md),
+  [independent review](auto/graph-baseline-history-release-map-independent-review-2026-10-16.md),
+  [Qwen review](../runs/ops/local-qwen-continuation-20261014T1650Y/review-033.json)
+  and current [structured status](auto/research-status-2026-10-16.json).
+
 - **Approved primary conversion completed — observed October16 02:13 UTC.**
   Native cluv submitted the single approved Mila CPU job **11273685** from
   `0fe14aa`; scheduler reports **COMPLETED/0:0 in126seconds**. The worker's

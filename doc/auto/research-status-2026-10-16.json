@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "local_date": "2026-10-16",
-  "timezone": "Asia/Yerevan",
+  "timezone": "Asia/Qatar",
   "prior_status": "doc/auto/research-status-2026-10-15.json",
   "goal": {
     "status": "active",
@@ -18,29 +18,29 @@
     "new_compute_authorization": false
   },
   "qwen": {
-    "verified_at_utc": "2026-10-16T13:45:06.504942+00:00",
+    "verified_at_utc": "2026-10-16T13:53:35.181480+00:00",
     "hosting": "local_mac",
     "pid": 84719,
     "process_start_source_verified": true,
-    "heartbeat_age_seconds_at_check": 27.251099,
+    "heartbeat_age_seconds_at_check": 51.79224,
     "state": "running",
     "activity": "waiting_for_evidence",
-    "schema_and_model_verified_replies": 32,
-    "completed_coordinator_tasks": 29,
-    "reported_tokens": 167147,
+    "schema_and_model_verified_replies": 33,
+    "completed_coordinator_tasks": 30,
+    "reported_tokens": 172748,
     "consecutive_provider_errors": 0,
     "provider_call_in_flight": false,
-    "last_completed_reply_at_utc": "2026-10-16T13:44:39.253443+00:00",
+    "last_completed_reply_at_utc": "2026-10-16T13:47:43.241827+00:00",
     "uninterrupted_overnight_research_confirmed": false,
     "whole_answers_automatically_accepted": 0,
-    "verification_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/live-20261016T134506Z.json",
+    "verification_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/live-20261016T135335Z.json",
     "new_tasks_queued_at_utc": "2026-10-16T13:29:57.531270+00:00",
     "new_task_ids": [
-      "29-post-closeout-next-graph-gate"
+      "30-reconciled-post-closeout-research-critical-path"
     ],
     "new_tasks_completed_at_this_update": true,
-    "new_whole_answers_rejected": 5,
-    "new_answer_review_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/review-032.json",
+    "new_whole_answers_rejected": 6,
+    "new_answer_review_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/review-033.json",
     "overnight_activity_scope": "One verified project-relevant response completed at 2026-10-16T01:15:32Z (04:15:32 Asia/Qatar); later checks showed the worker waiting for evidence until subsequent tasks were published. Do not claim continuous inference."
   },
   "accepted_progress": {
@@ -145,7 +145,15 @@
     "primary_conversion_final_closeout_review_sha256": "707e66a057fb092597c9e063064bbc5bf8cbaa4fcc5eedbcb9aaa0a6bf549d53",
     "primary_conversion_final_closeout_receipt": "runs/review/primary-conversion-offline-closeout-20261016/receipt.json",
     "primary_conversion_final_closeout_receipt_sha256": "7dd15a2c49c1288d58699c2b7504e40cbba73333f507466fcba6fe802870448a",
-    "primary_conversion_evidence_inventory_hash": "2b83834d9e739bf5930cf67b4f4882ff1509763d03b09fe4ec7315b63482e61a"
+    "primary_conversion_evidence_inventory_hash": "2b83834d9e739bf5930cf67b4f4882ff1509763d03b09fe4ec7315b63482e61a",
+    "graph_baseline_history_release_map_draft": "doc/auto/graph-baseline-history-release-map-v1.md",
+    "graph_baseline_history_release_map_sha256": "ef9dde2e079f362e77993f6194f69220793707017e6538d5af581307876fbb91",
+    "graph_baseline_history_release_map_independent_review": "doc/auto/graph-baseline-history-release-map-independent-review-2026-10-16.md",
+    "graph_baseline_history_release_map_review_sha256": "0c31bf4943a0bac0da2ba809913755666d2e610235f40c8cf46493078e03bc05",
+    "graph_baseline_history_release_map_receipt": "runs/review/graph-baseline-history-release-map-20261016/receipt.json",
+    "graph_baseline_history_release_map_receipt_sha256": "ce5c2422b177df6fcc0d546b4ad3c80ac57c7c28f6f9790c1d296a9e8a2f4c0d",
+    "graph_baseline_history_release_map_status": "independently_accepted_after_RELEASE-001_resolution",
+    "graph_baseline_history_release_map_independent_review_pending": false
   },
   "this_turn": {
     "new_cluster_submissions": 0,
@@ -161,9 +169,9 @@
     "new_numerical_runs_definition": "Numerical research experiments; excludes synthetic unit fixtures",
     "new_coordinator_tasks_published": 4,
     "new_preparation_unit_fixtures_accepted": 32,
-    "new_provider_calls_by_worker": 1,
-    "new_schema_verified_worker_replies": 1,
-    "new_coordinator_tasks_completed": 1,
+    "new_provider_calls_by_worker": 2,
+    "new_schema_verified_worker_replies": 2,
+    "new_coordinator_tasks_completed": 2,
     "new_compute_submissions": 0,
     "new_local_utility_tests_passed": 20,
     "schema_revision002_exact_confirmation_independent": true,
@@ -180,14 +188,19 @@
     "new_remote_wandb_delivery_verified": false,
     "evidence_inventory_pin_rechecked": true,
     "qwen_task29_limited_dependency_observation_only": true,
-    "qwen_task29_proposed_audit_accepted": false
+    "qwen_task29_proposed_audit_accepted": false,
+    "qwen_task30_limited_protocol_and_negative_scope_observations": true,
+    "qwen_task30_schema_review_proposal_accepted": false,
+    "graph_baseline_history_release_map_drafted": true,
+    "graph_baseline_history_release_map_independent_review_pending": false,
+    "graph_baseline_history_release_map_independently_accepted": true
   },
   "next_work": [
-    "Complete independent review of the read-only conversion closeout, including transaction run identity and corrected UTC chronology",
-    "Implement typed selected-checkpoint artifacts and remaining S01-S15 cross-artifact validators against the accepted schema, with adversarial fixtures and independent review",
-    "Implement/review tensor codec and transaction crash-reopen hooks while preserving native source and catalog pins",
-    "Freeze Gate B discovery/admission separately from confirmation statistics; no training until runtime readiness and a distinct owner resource envelope",
-    "Proceed to competent graph reproduction/history tests and cross-modal mechanism tests only after validated native checkpoints and separate compute approval"
+    "Complete independent review of the graph baseline/history release map and revise only concrete findings",
+    "Implement typed selected-checkpoint artifact semantics and codec under the accepted schema, with adversarial fixtures and independent review",
+    "Establish native selected-checkpoint load/replay/loss/gradient parity; do not infer checkpoint availability or model competence",
+    "Freeze graph baseline/reconstruction and required-history protocols separately from vector Gate B confirmation statistics",
+    "Request a new exact compute envelope only after scientific/runtime readiness; no training currently released"
   ],
   "compute_readiness": {
     "checked_at_utc": "2026-10-16T01:55:41.330510+00:00",
@@ -288,7 +301,7 @@
     "evidence_inventory_pin_sha256": "2b83834d9e739bf5930cf67b4f4882ff1509763d03b09fe4ec7315b63482e61a",
     "evidence_inventory_pin_check": "runs/ops/primary-conversion-verified-20261016/closeout-retry002/evidence-inventory-pin-check.json"
   },
-  "updated_at_utc": "2026-10-16T13:47:00+00:00",
+  "updated_at_utc": "2026-10-16T13:54:00+00:00",
   "selected_checkpoint_schema_review": {
     "source_sha256": "db2baaa64f891533f5c2c36229dd250733f675a0a2045d0436fc93d3145f2acc",
     "declared_json_schema_dialect": "draft2020-12",
