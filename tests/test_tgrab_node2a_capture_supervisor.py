@@ -110,10 +110,20 @@ class CaptureSupervisorContractTests(unittest.TestCase):
 
     def test_live_slurm_restart_count_must_be_explicit_zero(self):
         MODULE.require_zero_restart_count("0")
-        for value in (None, "", "1", "00"):
+        MODULE.require_zero_restart_count(None)
+        for value in ("", "1", "00"):
             with self.subTest(value=value), self.assertRaisesRegex(
-                    SystemExit, "must be present and exactly '0'"):
+                    SystemExit, "when present, must be exactly '0'"):
                 MODULE.require_zero_restart_count(value)
+
+    def test_absent_restart_environment_field_uses_scheduler_restart_guards(self):
+        response = self.slurm_record("RUNNING", Restarts="0", Requeue="0")
+        with mock.patch.object(MODULE.subprocess, "run", return_value=
+                subprocess.CompletedProcess([], 0, response, "")):
+            record = MODULE.verify_slurm("123")
+        MODULE.require_zero_restart_count(None)
+        self.assertEqual(record["fields"]["Restarts"], "0")
+        self.assertEqual(record["fields"]["Requeue"], "0")
 
     def test_slurm_tres_allows_only_optional_billing_one(self):
         with_billing = self.slurm_record("RUNNING",

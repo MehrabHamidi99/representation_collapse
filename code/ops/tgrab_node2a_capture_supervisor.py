@@ -216,8 +216,8 @@ def verify_slurm(job_id: str, startup_timeout: float = 5.0,
 
 
 def require_zero_restart_count(value: str | None) -> None:
-    if value != "0":
-        raise SystemExit(f"SLURM_RESTART_COUNT must be present and exactly '0'; actual={value!r}")
+    if value is not None and value != "0":
+        raise SystemExit(f"SLURM_RESTART_COUNT, when present, must be exactly '0'; actual={value!r}")
 
 
 def verify_environment_receipt(path: Path, expected_sha: str) -> None:

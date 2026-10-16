@@ -92,13 +92,19 @@ def verify_scheduler_record(job_id: str) -> None:
     expected = {"JobState": "RUNNING", "Account": "mila", "QOS": "normal",
                 "Partition": "main-cpu", "NumNodes": "1", "NumCPUs": "1",
                 "CPUs/Task": "1", "TimeLimit": "00:10:00", "Requeue": "0",
-                "RestartCnt": "0"}
+                "Restarts": "0"}
     if any(fields.get(key) != value for key, value in expected.items()):
         raise SystemExit("authoritative Slurm job record differs from the one-shot envelope")
     for key in ("ReqTRES", "AllocTRES"):
         tres = fields.get(key, "").lower()
         if not tres or "gpu" in tres:
             raise SystemExit(f"Slurm {key} is missing or includes a GPU allocation")
+
+
+def verify_environment_restart_count(value: str | None) -> None:
+    """Mila may omit this variable; authoritative scheduler fields are mandatory."""
+    if value not in (None, "0"):
+        raise SystemExit("restarted/requeued job is not accepted")
 
 
 def cgroup_memory() -> dict:
@@ -166,8 +172,7 @@ def main() -> int:
     for key, value in EXPECTED.items():
         if os.environ.get(key) != value:
             raise SystemExit(f"Slurm allocation mismatch: {key}")
-    if os.environ.get("SLURM_RESTART_COUNT", "0") != "0":
-        raise SystemExit("restarted/requeued job is not accepted")
+    verify_environment_restart_count(os.environ.get("SLURM_RESTART_COUNT"))
     if any(os.environ.get(key, "") not in ("", "0", "NoDevFiles")
            for key in ("SLURM_GPUS", "SLURM_JOB_GPUS", "SLURM_GPUS_ON_NODE", "CUDA_VISIBLE_DEVICES")):
         raise SystemExit("GPU allocation/environment detected")

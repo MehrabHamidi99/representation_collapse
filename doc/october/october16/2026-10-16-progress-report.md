@@ -911,3 +911,24 @@ clean. This reviewed revision still needs to be committed, synchronized, and
 bound to a fresh job-specific JSON receipt and plan before one new capture-only
 attempt. The capture sequence remains engineering preparation, not Figure 10
 retraining or collapse evidence.
+
+### Figure 10 restart metadata correction — 16:47 UTC
+
+Independent review accepted the capture wrapper's current source/test hashes
+`eb2744a26f9b73f41035949857cd9573c3e3e12b6df10971e3658f40848a31cd` and
+`ba1dfad8fde09715649538bc4ac4bcfd014fb9cbed5c8ef490a2bc0ef9618dad`.
+Mila's observed batch environment may omit `SLURM_RESTART_COUNT`; the wrapper
+requires authoritative `Restarts=0` and `Requeue=0` from Slurm and, when
+present, accepts only the literal environment value `0`.
+
+The same stale `RestartCnt` assumption existed in the native node2a fixture
+supervisor. It is corrected to the observed `Restarts` field, with both
+`Restarts=0` and `Requeue=0` enforced and absent/zero-only environment metadata.
+Independent review first requested tests of those authoritative scheduler
+fields. The suite now tests the valid record and independently rejects
+`Restarts=1` and `Requeue=1`; combined capture/native focused suites pass 21/21.
+The exact native supervisor/test hashes are
+`eae8f330bf15216fac8b35a7608e4ffae8dd2b1ec060ee17306f9e3932212b24` and
+`22266cad7bb3d233854f8fb69eda5b51d7dd1c3fcafefc40b95b7503904378be`;
+independent review accepted this exact pair. This is still pre-fit systems work:
+no identity inventory, node2a parity fixture or retraining has run in this update.

@@ -40,8 +40,13 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   focused tests and independent review. Three submitted capture attempts failed
   in 0, 1 and 1 seconds, with no capture artifact or training. They exposed the
   configured cluv job-script-path override, Slurm startup-state race, and
-  observed `Restarts` field name. All are corrected in the current uncommitted
-  supervisor revision. Figure 10 training remains unstarted.
+  observed `Restarts` field name. The capture wrapper now passes independent
+  review at its current hashes (`eb2744a2…a31cd` / `ba1dfad8…18dad`), backed by
+  17 tests; authoritative `Restarts=0`/`Requeue=0` are required while Mila may
+  omit `SLURM_RESTART_COUNT`. The same correction is applied to the native
+  node2a runner; independent review accepted exact hashes
+  (`eae8f330…12b24` / `22266cad…378be`) after scheduler-field tests were added.
+  The combined focused suites pass 21/21. Figure 10 training remains unstarted.
 
 - **Overnight progress confirmed; checkpoint schema specification accepted — October16.**
   The approved Mila conversion job11273685 ran from02:09:36 to02:11:42 UTC on
