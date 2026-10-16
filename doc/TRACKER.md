@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-16 16:14 UTC. See the [latest notebook entry](october/october16/2026-10-16-progress-report.md),
+Updated 2026-10-16 18:23 UTC. See the [latest notebook entry](october/october16/2026-10-16-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
@@ -34,7 +34,17 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   execution-gate wording; both report original raw curves/checkpoint absent in
   bounded searched scopes.
   See [Figure 10 reproduction subgoal](auto/figure-10-reproduction-subgoal.md).
-  Latest step: the one-shot node2a runtime-identity capture wrapper passed
+  Latest step: Mila job11280346 completed the one-shot runtime-identity capture
+  (12 seconds, 1 CPU/2 GiB/zero GPUs). Its records and inventory form a
+  hash-consistent chain, but the independent reviewer found the local
+  preparation validator's schema stale: it rejects the captured
+  `source_identity` and current module names. A local fix now pins the source
+  identity and exact observed module/distribution map; eight preparation tests
+  and the captured-inventory check pass. Independent review of this schema fix
+  is pending. No node2a parity or Figure 10 training has run. The inventory is
+  not released to parity until that review accepts it and a fresh committed
+  node2a plan passes.
+  Latest step before the capture: the one-shot node2a runtime-identity capture wrapper passed
   independent review after closing its bootstrap source race; its focused
   review and subsequent Slurm startup/TRES/restart-field corrections passed 16
   focused tests and independent review. Three submitted capture attempts failed

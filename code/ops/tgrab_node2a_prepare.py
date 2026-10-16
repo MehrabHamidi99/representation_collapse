@@ -28,6 +28,22 @@ JOB = "code/ops/tgrab_node2a_job.sh"
 BOOTSTRAP = "src/representation_collapse/tgrab_figure10_bootstrap.py"
 PINNED_IMPORT = "src/representation_collapse/pinned_graph_import.py"
 PINNED_IMPORT_SHA256 = "2f14b3683f67d33f4a5f6325b5b204aee3a086e1fad1966acb9810a302d04344"
+PINNED_CELL_SHA256 = "c3568d2c1ba8926ab43e11c840213f90ebe782ad158dd76809d1dc1c255797af"
+PINNED_GRAPH_RECONSTRUCTION_SHA256 = "1e8212b9589709d1d4654d0ebfe98179a41ea5a307dbc2083fe84f06c1aead13"
+PINNED_WRAPPER_SHA256 = {
+    "model/gclstm.py": "86069a32fced5f09c60cd795e4f0abd82674dafae250ef3673ac8c3650504609",
+    "model/link_predictor.py": "cca12cfc73b8660c92236f530504da08ba0b606ec13a1a681ffabcae43b7ca86",
+    "model/node_emb.py": "4be4450730f33949e0354348b3bd8f69ba0434e4aa911abec0fc5f798e8c2d29",
+}
+EXPECTED_MODULE_DISTRIBUTIONS = {
+    "numpy": "numpy", "numpy.core._multiarray_umath": "numpy",
+    "torch": "torch", "torch._C": "torch", "torch.nn": "torch",
+    "torch.nn.functional": "torch", "torch.optim": "torch",
+    "torch_geometric": "torch-geometric", "torch_geometric.nn": "torch-geometric",
+    "torch_geometric_temporal.nn.recurrent.gc_lstm": "torch-geometric-temporal",
+    "torch_cluster": "torch-cluster", "torch_scatter": "torch-scatter",
+    "torch_sparse": "torch-sparse", "torch_spline_conv": "torch-spline-conv",
+}
 FIXED = {
     "cluster": "mila", "account": "mila", "qos": "normal", "partition": "main-cpu",
     "nodes": 1, "ntasks": 1, "cpus_per_task": 1, "memory": "2G",
@@ -103,7 +119,7 @@ def validate_staged_environment_inventory(path: Path, expected_sha256: str) -> N
             or type(identity) is not dict
             or set(identity) != {"python", "python_version", "platform", "machine", "prefix",
                                  "lock_sha256", "wheel_manifest_sha256", "installed_versions",
-                                 "installed_module_files"}
+                                 "installed_module_files", "source_identity"}
             or identity.get("python_version") != [3, 10, 19]
             or "3.10.19" not in str(identity.get("python", ""))
             or "Linux" not in str(identity.get("platform", ""))
@@ -112,18 +128,25 @@ def validate_staged_environment_inventory(path: Path, expected_sha256: str) -> N
             or identity.get("lock_sha256") != "ea2f58d2a12f5d8562b31d5fa7b5c646121784867c134afd4a5cf6a8108b8c06"
             or identity.get("wheel_manifest_sha256") != "67e27963f2166f8a7e26dba301c9020d2bd7d4c012010fb859e6e43b15ce9842"):
         raise PreparationError("environment identity inventory does not match the closed pinned runtime schema")
+    source = identity["source_identity"]
+    if (type(source) is not dict
+            or set(source) != {"wrappers", "cell_sha256", "graph_reconstruction_sha256",
+                               "pinned_graph_import_sha256"}
+            or source.get("wrappers") != PINNED_WRAPPER_SHA256
+            or source.get("cell_sha256") != PINNED_CELL_SHA256
+            or source.get("graph_reconstruction_sha256") != PINNED_GRAPH_RECONSTRUCTION_SHA256
+            or source.get("pinned_graph_import_sha256") != PINNED_IMPORT_SHA256):
+        raise PreparationError("environment inventory source identity differs from pinned graph sources")
     module_files = identity["installed_module_files"]
-    required_modules = {"torch", "torch._C", "torch_geometric", "torch_geometric.nn",
-        "torch_geometric_temporal", "torch_geometric_temporal.nn.recurrent", "torch_cluster",
-        "torch_scatter", "torch_sparse", "torch_spline_conv"}
-    if type(module_files) is not dict or set(module_files) != required_modules:
+    if type(module_files) is not dict or set(module_files) != set(EXPECTED_MODULE_DISTRIBUTIONS):
         raise PreparationError("environment inventory has incomplete native module coverage")
     if type(identity.get("installed_versions")) is not dict or not identity["installed_versions"]:
         raise PreparationError("environment inventory lacks installed package versions")
-    for record in module_files.values():
+    for module_name, record in module_files.items():
         if (type(record) is not dict or set(record) != {"path", "sha256", "distribution", "record_sha256"}
                 or type(record["path"]) is not str
                 or not record["path"].startswith(str(INTERPRETER.parent.parent) + "/")
+                or record["distribution"] != EXPECTED_MODULE_DISTRIBUTIONS[module_name]
                 or not re.fullmatch(r"[0-9a-f]{64}", str(record["sha256"]))
                 or not re.fullmatch(r"[0-9a-f]{64}", str(record["record_sha256"]))):
             raise PreparationError("environment inventory contains invalid module/RECORD identity")

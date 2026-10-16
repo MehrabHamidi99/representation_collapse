@@ -1011,3 +1011,37 @@ verify a Git HEAD inside that ignored snapshot. The user restored Mila SSH
 access and I verified the staged source hashes. No further submission has
 occurred. This remains environment identity capture, not node2a parity or
 Figure 10 training.
+
+### Runtime capture completed and schema reconciliation reviewed — 18:23 UTC
+
+After the user restored the Mila SSH session, I submitted the reviewed one-shot
+CPU capture through cluv. Job `11280346` completed with exit `0` in 12.14
+seconds on `main-cpu` (`account=mila`, `qos=normal`, 1 CPU, 2 GiB, zero GPUs,
+`Restarts=0`, `Requeue=0`). The reviewed plan hash is
+`60be4f969a8994b540af2061a7aa8be7ccc4516b1530ec3a2ea4b20f04466ac6`; the job
+record binds commit `23c78952759ee6e7606e734d78c803f59474e45d`, the pinned
+upstream wrapper hashes, and stable pre/post source identity. Terminal exit,
+inventory size/digest, and plan/source bindings agree. The outputs are retained
+locally in ignored `runs/figure10-node2a-capture/node2a-capture-20261016T165800Z-23c78952/`.
+This is environment identity evidence only; both capture records explicitly
+leave `scientific_acceptance=false`.
+
+Independent audit initially rejected the captured inventory for node2a
+preparation because the local validator expected an obsolete identity schema:
+it omitted the captured source-identity field and expected package initializer
+modules that the pinned standalone importer intentionally bypasses. I updated
+the validator to require exact pinned cell/importer/reconstruction/wrapper
+hashes and the exact module-to-distribution set produced by the runtime
+inventory routine. Mutation tests reject changed wrapper hashes and missing
+module entries. The captured inventory now passes the updated validator.
+Independent review accepted the exact preparation/test hashes
+`94bfdbbb1730806812c4fa439b731830883f40cff8fa2a95bd516d958ce9110b` /
+`a2bf45a22f6e20f2d135ded6938dd1b949b04a6991b96a660bf26203c5b10f81`.
+The focused preparation/capture/native-runner suites pass 35/35; compilation
+and `git diff --check` pass.
+
+**Next gate:** commit and stage the reviewed schema fix and capture inventory,
+prepare a fresh exact-source node2a plan, bind its receipts, and obtain the
+independent job-specific review before the one-shot synthetic parity job. This
+fixture must remain zero-update and data-free. No node2a parity, fit, validation
+selection, test access, or Figure 10 retraining has yet occurred.

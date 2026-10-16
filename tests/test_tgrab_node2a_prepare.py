@@ -79,18 +79,24 @@ class Node2APreparationTests(unittest.TestCase):
                 MODULE.validate_staged_environment_receipt(path, MODULE.digest(path))
 
     def test_staged_environment_identity_uses_bootstrap_closed_schema(self):
-        modules = {name: {"path": str(MODULE.INTERPRETER.parent.parent / "lib/module.py"),
-                          "sha256": "a" * 64, "distribution": "torch",
-                          "record_sha256": "b" * 64} for name in {
-            "torch", "torch._C", "torch_geometric", "torch_geometric.nn",
-            "torch_geometric_temporal", "torch_geometric_temporal.nn.recurrent",
-            "torch_cluster", "torch_scatter", "torch_sparse", "torch_spline_conv"}}
+        modules = {
+            name: {"path": str(MODULE.INTERPRETER.parent.parent / "lib/module.py"),
+                   "sha256": "a" * 64, "distribution": distribution,
+                   "record_sha256": "b" * 64}
+            for name, distribution in MODULE.EXPECTED_MODULE_DISTRIBUTIONS.items()
+        }
         identity = {"python": "3.10.19 (main, Jan 1 2026)", "python_version": [3, 10, 19],
             "platform": "Linux-6.x", "machine": "x86_64",
             "prefix": str(MODULE.INTERPRETER.parent.parent),
             "lock_sha256": "ea2f58d2a12f5d8562b31d5fa7b5c646121784867c134afd4a5cf6a8108b8c06",
             "wheel_manifest_sha256": "67e27963f2166f8a7e26dba301c9020d2bd7d4c012010fb859e6e43b15ce9842",
-            "installed_versions": {"torch": "2.0.0+cpu"}, "installed_module_files": modules}
+            "installed_versions": {"torch": "2.0.0+cpu"}, "installed_module_files": modules,
+            "source_identity": {
+                "wrappers": dict(MODULE.PINNED_WRAPPER_SHA256),
+                "cell_sha256": MODULE.PINNED_CELL_SHA256,
+                "graph_reconstruction_sha256": MODULE.PINNED_GRAPH_RECONSTRUCTION_SHA256,
+                "pinned_graph_import_sha256": MODULE.PINNED_IMPORT_SHA256,
+            }}
         raw = json.dumps({"schema": "tgrab-node2a-environment-identity-v1", "identity": identity},
                          sort_keys=True).encode()
         with tempfile.TemporaryDirectory() as tmp:
@@ -98,6 +104,17 @@ class Node2APreparationTests(unittest.TestCase):
             MODULE.validate_staged_environment_inventory(path, hashlib.sha256(raw).hexdigest())
             with self.assertRaisesRegex(MODULE.PreparationError, "digest mismatch"):
                 MODULE.validate_staged_environment_inventory(path, "0" * 64)
+            identity["source_identity"]["wrappers"]["model/gclstm.py"] = "0" * 64
+            path.write_text(json.dumps({"schema": "tgrab-node2a-environment-identity-v1", "identity": identity},
+                                       sort_keys=True))
+            with self.assertRaisesRegex(MODULE.PreparationError, "source identity"):
+                MODULE.validate_staged_environment_inventory(path, hashlib.sha256(path.read_bytes()).hexdigest())
+            identity["source_identity"]["wrappers"] = dict(MODULE.PINNED_WRAPPER_SHA256)
+            identity["installed_module_files"].pop("torch_geometric_temporal.nn.recurrent.gc_lstm")
+            path.write_text(json.dumps({"schema": "tgrab-node2a-environment-identity-v1", "identity": identity},
+                                       sort_keys=True))
+            with self.assertRaisesRegex(MODULE.PreparationError, "module coverage"):
+                MODULE.validate_staged_environment_inventory(path, hashlib.sha256(path.read_bytes()).hexdigest())
 
     def test_rehashed_plan_cannot_weaken_stop_or_deadline(self):
         run_id = "node2a-20261016T120000Z-1234abcd"
