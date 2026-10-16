@@ -874,3 +874,30 @@ additional GPU training follows automatically.
   sealed-test/plot pipeline. Do not start a fit or open test data until that
   pipeline is integrated, audited and frozen. See the dated report and
   `doc/auto/tgrab-node2a-job-preparation-2026-10-16.md` for the detailed record.
+- **T-GRAB Figure 10 node2a parity — passed as engineering evidence, 2026-10-16.**
+  Mila job `11280629` completed in 14 seconds with exit 0, 1 CPU/2 GiB/zero
+  GPUs, no restart/requeue. The synthetic fixture verifies forward/loss/gradient
+  and mode/dropout parity, both model components and complete hidden/cell state
+  round-trip, and crash/reopen transaction handling. It made zero optimizer
+  updates and opened no primary, validation, or test payload. Local/remote hashes
+  for all six artifacts and all plan/source/runtime bindings match. The receipt
+  explicitly sets `scientific_acceptance=false`; this does not reproduce Figure
+  10 or support a representation-collapse claim. Run archive:
+  `runs/figure10-node2a/node2a-20261016T184800Z-40942e57/` (ignored). The three
+  failed infrastructure submissions (11280406, 11280432, 11280586) are retained
+  with causes and were not interpreted as model evidence. Next gate remains the
+  reviewed T-GRAB fit/replay/held-out metric/plot workflow; the readiness audit
+  says that production workflow is not yet integrated.
+- The node2a receipt has now received an independent artifact audit: plan/source/
+  environment/job bindings, complete transaction manifest and payload byte
+  hashes, closed shape/order catalog, full hidden/cell and both-component state
+  round-trip, exact parity flags, zero updates, and unopened split flags all
+  reconcile. Audit scope is engineering only; the bootstrap itself emits the
+  flags, so this is not an independent scientific replication.
+- A draft Figure 10 metric reducer was corrected after independent code audit:
+  phase-transition flags must be booleans and must equal actual adjacent-graph
+  inequality; transition summaries use observed `change_point`. Focused tests
+  pass 7/7. Exact changed-file hashes are recorded in the October 16 report.
+- Next local implementation gate: versioned object-free selected-inference
+  checkpoint codec/transaction and trusted reload, then selected-checkpoint
+  replay/node2b before opening test. No fit has run.

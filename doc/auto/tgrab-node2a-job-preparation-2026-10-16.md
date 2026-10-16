@@ -179,3 +179,37 @@ No fixture parity has passed. The next attempt requires a committed clean
 source, newly prepared unique plan/run ID, independent job-specific review,
 and fresh queue/output checks. This zero-update CPU fixture is the only job
 admitted at this point; it cannot establish scientific collapse.
+
+### Follow-up — cluv script selection and successful node2a fixture (2026-10-16)
+
+A v3 plan attempt was rejected because its review bundle's STOP path omitted the
+last character of the unique run ID; the bundle and plan were corrected and
+rebound before submission. A v4-reviewed attempt then exposed a cluv 0.1.5
+configuration detail: `get_cluster_job_script_path` uses configured
+`job_script_path`, overriding an explicit local script argument. Job `11280586`
+ran default `phase1_job.sh`, failed immediately with `unknown argument` (exit
+2:0, zero elapsed), and did not create the node2a output directory. Its failure
+is retained; that run ID was not reused.
+
+For the fresh v4 run, an isolated controller copy at committed main
+`40942e5642c02b7098263dfe1294f907a71d2d16` changed only its local
+`job_script_path` to `code/ops/tgrab_node2a_job.sh`. Cluv 0.1.5's resolved
+remote script path was checked and independently reviewed. The project source
+and remote checkout stayed clean and exact; `SKIP_CLEAN_GIT_CHECK=1` applied
+only to this local controller config override, while `GIT_COMMIT` remained the
+reviewed committed SHA. The exact cluv sbatch record names the node2a wrapper.
+
+Job `11280629`, unique run
+`node2a-20261016T184800Z-40942e57`, completed exit 0 in 14 seconds with 1 CPU,
+2 GiB and zero GPUs. Its start and terminal receipts bind plan SHA
+`b0ca7527f5809394444953370488d8eb0628af84fa346e04d2c9dbaf58c231c4`, source
+commit/tree, runtime inventory and three pinned upstream wrapper bytes. The
+synthetic fixture reports component and complete hidden/cell-state
+round-tripping, forward/loss/gradient and mode/dropout parity, transaction
+crash/reopen, zero optimizer updates, and no primary/validation/test payloads.
+All six local artifact digests match Mila and their receipt bindings. This is
+engineering parity only, with `scientific_acceptance=false`; it does not
+reproduce Figure 10 or establish collapse. Independent artifact review is
+pending. Before any data-bearing fit or held-out access, integrate and review
+the missing production fit/replay/metric/plot workflow noted in the readiness
+audit.

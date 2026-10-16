@@ -1114,3 +1114,73 @@ Consequently no fit is admitted yet, and no Figure 10 curve or collapse claim
 is established. Next, commit only the reviewed source/tests and relevant docs,
 then prepare a new unique plan and obtain independent review before one new
 zero-update synthetic parity attempt.
+
+### Node2a parity passed on Mila; engineering gate only — 18:51 UTC
+
+The independently reviewed v4 plan (`b0ca7527f5809394444953370488d8eb0628af84fa346e04d2c9dbaf58c231c4`)
+was submitted through cluv after a fresh queue/output check. The first cluv
+invocation for this package exposed that the project-level `job_script_path`
+overrides an explicit script positional argument. Job `11280586` therefore ran
+the default `phase1_job.sh`, failed immediately with `unknown argument` (exit
+`2:0`, zero elapsed), and produced no Figure 10 run directory. I preserved this
+failed attempt and changed only an isolated local cluv controller copy's
+`job_script_path` to `code/ops/tgrab_node2a_job.sh`; the committed source and
+Mila checkout remained clean at `40942e5642c02b7098263dfe1294f907a71d2d16`.
+The exact resolved remote wrapper was independently reviewed before resubmission.
+
+Fresh plan v4 used new run ID `node2a-20261016T184800Z-40942e57`, retained all
+prior failure records, and bound the exact script selection, source tree,
+runtime receipt/inventory, upstream wrapper hashes, output/STOP path and
+one-shot envelope. Independent review accepted it (bundle SHA
+`320116d2b26770722c4441e12ca0b5ae2989d982ca8c7e9e2976de0c6058c88a`). The
+staged plan SHA matched locally/remotely. Cluv's recorded sbatch command used
+`code/ops/tgrab_node2a_job.sh` with that exact plan hash. Job `11280629`
+completed with exit `0` in 14 seconds (`main-cpu`, `mila`/`normal`, 1 CPU, 2
+GiB, no GPU, 0 restarts). The supervisor start/terminal receipts bind job ID,
+plan hash, source commit, runtime inventory and upstream wrapper hashes; wrapper
+hashes match before and after the fixture, and observed memory stayed within
+the 2-GiB cgroup allocation.
+
+The fetched fixture receipt passes local assertions: both model components and
+full hidden/cell state round-trip; forward/loss/gradient, mode/dropout and
+crash/reopen parity pass; optimizer updates are 0; primary, validation and test
+payload flags are all false. The transaction manifest, payload and evidence
+hashes match their receipt, and every fetched file hash matches Mila. This is a
+synthetic no-data engineering validation with `scientific_acceptance=false`—it
+is not a trained model, a Figure 10 curve, or evidence of representation
+collapse. Independent artifact audit is requested. The next substantive gate is
+completing and reviewing the production fit/replay/metrics/plot path identified
+as missing by the fit-readiness audit before any data-bearing fit or held-out
+access.
+
+### Independent node2a artifact audit and transition-metric guard fix — 18:53 UTC
+
+Independent review of the fetched node2a artifacts accepted the job as a
+synthetic engineering parity pass. It independently verified the plan SHA,
+run/output/STOP bindings, source commit, environment hashes, Slurm envelope,
+terminal exit, receipt-to-bootstrap evidence digest, receipt-to-transaction
+manifest/payload digests, actual payload length, exact state descriptors, and
+closed manifest semantics. The receipt reports complete H/C and both-component
+round-trip, exact forward/loss/gradient and train/eval dropout parity,
+crash/reopen, zero updates, and no primary/validation/test payload access. The
+review explicitly notes these flags originate in the bootstrap process; the
+artifacts make that evidence auditable as engineering, not an independent
+scientific replication. No Figure 10 training or collapse result follows.
+
+The independent draft-code audit found that `test_reduction` grouped boundary
+means from `phase_transition_expected` without checking whether that matched
+actual adjacent-snapshot inequality. I changed it to require both transition
+fields are booleans, fail closed on disagreement, and group by observed
+`change_point`. Mutation tests cover both mismatch and nonboolean flags. Focused
+metric suite passes 7/7; independent review accepted the exact changed hashes:
+source `e2bec43363ca110c6b33adf171eaac247ac864400dcc47bf0d6cce41a43da3be`,
+tests `2aa8647b49e3615fcc41bdbdc6f376edcc5b5c1b37c840f56f2019d2d9c5130e`.
+These are local draft bytes pending source commit; this metric guard is not an
+observed Figure 10 result.
+
+The next implementation target is the frozen selected-inference checkpoint
+codec and durable transaction, followed by actual selected-checkpoint reload/
+full-HC replay parity (node2b) before any sealed-test opening. The existing
+fit lifecycle/native adapter remain components only; no production fit or plot
+path is admitted. Full Figure 10 roster, source aggregation and original
+checkpoint lineage remain unresolved.
