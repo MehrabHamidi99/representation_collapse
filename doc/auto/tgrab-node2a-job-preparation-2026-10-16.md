@@ -158,3 +158,24 @@ attempt must use a new source commit, plan hash, fresh queue/output check and
 unique run ID. The compute waiver applies; it does not waive source, scheduler,
 STOP/deadline, provenance, or scientific interpretation gates. This fixture
 remains engineering evidence only.
+
+### Follow-up — second fixture attempt and source-root correction (2026-10-16)
+
+Job `11280432` failed in 7.35 seconds before model construction because the
+supervisor routed `--source-root` to the project checkout, which lacks
+`model/node_emb.py`. No data or optimizer path ran. Its retained start and
+terminal records are under ignored
+`runs/figure10-node2a/node2a-20261016T183200Z-3168e941/`.
+
+The reviewed fix uses the separate pinned scratch source
+`runs/graph/upstream-pin-20261012/source`, label
+`31293102b065feef7817ff86211427d7594edfdb`, and exact SHA-256 pins for the
+three wrappers. Supervisor validation checks those files before and after the
+fixture; byte hashes, rather than an unavailable Git HEAD in that ignored
+snapshot, establish executable identity. Independent review accepted the
+preparation, supervisor and test changes (hashes recorded in the dated report).
+
+No fixture parity has passed. The next attempt requires a committed clean
+source, newly prepared unique plan/run ID, independent job-specific review,
+and fresh queue/output checks. This zero-update CPU fixture is the only job
+admitted at this point; it cannot establish scientific collapse.

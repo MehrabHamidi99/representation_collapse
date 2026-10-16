@@ -20,6 +20,40 @@ class RestartMetadataTests(unittest.TestCase):
     def test_mila_may_omit_environment_restart_count(self):
         MODULE.verify_environment_restart_count(None)
 
+    def test_pinned_upstream_wrappers_are_hashed_and_revalidated(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory).resolve()
+            plan = {"model_source_root": str(root),
+                    "model_source_revision": MODULE.MODEL_SOURCE_REVISION,
+                    "model_wrapper_sha256": dict(MODULE.MODEL_WRAPPERS)}
+            for relative in MODULE.MODEL_WRAPPERS:
+                path = root / relative
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b"fixture source\n")
+            with mock.patch.object(MODULE, "MODEL_SOURCE", root):
+                with mock.patch.object(MODULE, "sha", side_effect=lambda path: MODULE.MODEL_WRAPPERS[path.relative_to(root).as_posix()]):
+                    self.assertEqual(MODULE.verify_model_source(plan), plan["model_wrapper_sha256"])
+                with mock.patch.object(MODULE, "sha", side_effect=lambda path: "0" * 64 if path.name == "node_emb.py" else MODULE.MODEL_WRAPPERS[path.relative_to(root).as_posix()]):
+                    with self.assertRaisesRegex(SystemExit, "wrapper digest"):
+                        MODULE.verify_model_source(plan)
+
+    def test_pinned_upstream_source_plan_rejects_revision_and_wrapper_substitution(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            plan = {"run_id": "node2a-20261016T120000Z-1234abcd",
+                "output": str(MODULE.SCRATCH / "runs/figure10-node2a/node2a-20261016T120000Z-1234abcd"),
+                "stop_file": str(MODULE.SCRATCH / "runs/figure10-node2a/node2a-20261016T120000Z-1234abcd/STOP"),
+                "deadline_seconds": 570, "allocation": dict(MODULE.EXPECTED_PLAN_ALLOCATION),
+                "model_source_root": str(MODULE.MODEL_SOURCE),
+                "model_source_revision": MODULE.MODEL_SOURCE_REVISION,
+                "model_wrapper_sha256": dict(MODULE.MODEL_WRAPPERS),
+                "fixture": "synthetic-node2a-zero-update-only", "scientific_acceptance": False}
+            for field, replacement in (("model_source_revision", "0" * 40),
+                                       ("model_wrapper_sha256", {"model/node_emb.py": "0" * 64})):
+                altered = dict(plan); altered[field] = replacement
+                with self.assertRaisesRegex(SystemExit, "upstream model source"):
+                    MODULE.validate_plan_contract(altered)
+
     def test_explicit_zero_is_accepted(self):
         MODULE.verify_environment_restart_count("0")
 

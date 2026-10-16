@@ -852,3 +852,25 @@ cluster monitoring and substantive research are reported separately. Complete
 the confirmation statistics freeze and outstanding intervention/sham controls,
 then recover the remaining graph data/checkpoint provenance. No broad sweep or
 additional GPU training follows automatically.
+
+### Figure 10 reproduction — 2026-10-16
+
+- Runtime identity capture job `11280346` completed and was independently
+  checked; it is environment provenance only.
+- Node2a job `11280406` failed before model/data work due to a supervisor versus
+  bootstrap output-path collision. Job `11280432` failed before model/data
+  work because the supervisor passed the project checkout instead of the
+  separate pinned T-GRAB source snapshot. Both failed run directories and
+  terminal receipts are retained; neither run ID may be reused.
+- The upstream-source-root correction was independently reviewed. It pins the
+  scratch source path, revision label, and all three wrapper byte hashes, and
+  verifies them before and after the fixture. The revision label is provenance
+  metadata; wrapper hashes enforce executable identity. It does not verify a
+  Git HEAD inside the ignored snapshot.
+- Validation: preparation 10/10, supervisor 8/8, bootstrap 15/15 (33 focused
+  tests total); Python compilation, shell syntax and diff checks pass. No
+  node2a result or representation-collapse finding exists yet.
+- The independent fit-readiness audit found no production Figure 10 fit/replay/
+  sealed-test/plot pipeline. Do not start a fit or open test data until that
+  pipeline is integrated, audited and frozen. See the dated report and
+  `doc/auto/tgrab-node2a-job-preparation-2026-10-16.md` for the detailed record.

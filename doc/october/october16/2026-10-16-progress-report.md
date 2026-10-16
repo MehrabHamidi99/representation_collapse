@@ -1077,3 +1077,40 @@ The next attempt requires a new source commit and unique run ID, then a fresh
 cluv/source/environment check, updated plan, independent job-specific review,
 and queue/output-absence check. No parity, training, Figure 10 reproduction or
 representation-collapse claim is established.
+
+### Node2a second attempt failed; pinned upstream-root fix independently accepted — 18:40 UTC
+
+The fresh reviewed node2a plan used source commit `58fb202` and plan SHA-256
+`e959d42a46876910f1128a9c8a176bf15777e72d087ee48ec5047376b331b758`. Mila
+job `11280432` failed with exit `1` after about 7.35 seconds. The traceback
+identified `FileNotFoundError` for `model/node_emb.py`: the supervisor had
+passed the project checkout to the upstream wrapper, although those wrappers
+live in the separate pinned source snapshot. No model was constructed, no data
+were opened, and no optimizer update occurred. The failed run is retained in
+ignored `runs/figure10-node2a/node2a-20261016T183200Z-3168e941/`; start and
+terminal receipt hashes are `92ca0d62dd281121640242ec8b6d9cc2484d1f22b54f95aa86a96d153b941672`
+and `4a4a34d202baa93dc70de5c2d9948a104186d4c0634e5e589ddcbb667b53c9ab`.
+
+The targeted correction now binds the distinct scratch source root,
+`31293102b065feef7817ff86211427d7594edfdb` revision label, and exact hashes
+for the three upstream wrappers into the plan. The supervisor checks this
+closed pin set before and after execution and routes the bootstrap only to that
+root. This source snapshot does not contain a verified Git HEAD; the revision
+string is a fixed provenance label and wrapper byte hashes are the executable
+identity check. Independent review accepted the exact changed-file hashes:
+preparation helper `80012719f47a977ddddcfdbae643a62c88a3e666022091fa25a5bc40fe131a7f`,
+supervisor `b113d1cb81c4463aff2b201907d119c75ebcb3d874d374e6de80bc6c410aaa01`,
+preparation tests `0d0dc5a4675134a9d13450ddb6a3954e64459636ee093c632ba46e6aa47be2a8`,
+and supervisor tests `9792c2cc9cfcf5511d7150da988c896b2433bdf9d1f923edc8a22627a598cdd5`.
+The focused preparation/supervisor/bootstrap suites pass 33/33; Python
+compilation, shell syntax, and diff checks pass.
+
+This is the third infrastructure-stage node2a attempt including the successful
+runtime capture; the two fixture attempts both failed before parity. The
+separate fit-readiness audit also found that a production Figure 10 workflow
+is not integrated: checkpoint writing/loading, selected replay, sealed-test
+bridge, F1/confusion outputs and plotting still need completion and review.
+Consequently no fit is admitted yet, and no Figure 10 curve or collapse claim
+is established. Next, commit only the reviewed source/tests and relevant docs,
+then prepare a new unique plan and obtain independent review before one new
+zero-update synthetic parity attempt.

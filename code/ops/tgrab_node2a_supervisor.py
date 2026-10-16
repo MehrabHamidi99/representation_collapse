@@ -16,6 +16,13 @@ import sys
 import time
 
 SCRATCH = Path("/network/scratch/m/mehrab.hamidi/representation-collapse")
+MODEL_SOURCE = SCRATCH / "runs/graph/upstream-pin-20261012/source"
+MODEL_SOURCE_REVISION = "31293102b065feef7817ff86211427d7594edfdb"
+MODEL_WRAPPERS = {
+    "model/gclstm.py": "86069a32fced5f09c60cd795e4f0abd82674dafae250ef3673ac8c3650504609",
+    "model/link_predictor.py": "cca12cfc73b8660c92236f530504da08ba0b606ec13a1a681ffabcae43b7ca86",
+    "model/node_emb.py": "4be4450730f33949e0354348b3bd8f69ba0434e4aa911abec0fc5f798e8c2d29",
+}
 INTERPRETER = SCRATCH / "environments/graph-native-cpu-20261015-calibration01/venv/bin/python"
 RECEIPT = SCRATCH / "environments/graph-native-cpu-20261015-calibration01/preparation-receipt.json"
 ENV_INVENTORY = SCRATCH / "environments/graph-native-cpu-20261015-calibration01/node2a-environment-identity.json"
@@ -42,6 +49,26 @@ STOP = False
 def fixture_output_path(run_output: Path) -> Path:
     """Keep atomic fixture publication separate from the supervisor journal."""
     return Path(run_output) / "fixture"
+
+
+def verify_model_source(plan: dict) -> dict:
+    """Require the separate pinned upstream model wrappers, not project source."""
+    if (plan.get("model_source_root") != str(MODEL_SOURCE)
+            or plan.get("model_source_revision") != MODEL_SOURCE_REVISION
+            or plan.get("model_wrapper_sha256") != MODEL_WRAPPERS):
+        raise SystemExit("upstream model source plan differs from fixed pins")
+    if not MODEL_SOURCE.is_dir() or MODEL_SOURCE.is_symlink() or MODEL_SOURCE.resolve(strict=True) != MODEL_SOURCE:
+        raise SystemExit("pinned upstream model source root is unavailable or noncanonical")
+    observed = {}
+    for relative, expected in MODEL_WRAPPERS.items():
+        path = MODEL_SOURCE / relative
+        if path.is_symlink() or not path.is_file() or path.stat().st_size > 64_000:
+            raise SystemExit("pinned upstream wrapper is not a bounded regular file: " + relative)
+        digest = sha(path)
+        if digest != expected:
+            raise SystemExit("pinned upstream wrapper digest mismatch: " + relative)
+        observed[relative] = digest
+    return observed
 
 
 def sha(path: Path) -> str:
@@ -86,6 +113,10 @@ def validate_plan_contract(plan: dict) -> None:
         raise SystemExit("plan deadline differs from the reviewed 570-second bound")
     if plan.get("allocation") != EXPECTED_PLAN_ALLOCATION:
         raise SystemExit("plan allocation differs from the reviewed one-shot CPU envelope")
+    if (plan.get("model_source_root") != str(MODEL_SOURCE)
+            or plan.get("model_source_revision") != MODEL_SOURCE_REVISION
+            or plan.get("model_wrapper_sha256") != MODEL_WRAPPERS):
+        raise SystemExit("plan upstream model source differs from fixed pins")
     if plan.get("fixture") != "synthetic-node2a-zero-update-only" or plan.get("scientific_acceptance") is not False:
         raise SystemExit("plan is not the synthetic-only fixture")
 
@@ -203,6 +234,7 @@ def main() -> int:
     memory_before = cgroup_memory()
     if memory_before["effective_limit_bytes"] != 2 * 1024**3:
         raise SystemExit("effective physical cgroup memory limit differs from 2 GiB")
+    model_source_before = verify_model_source(plan)
     root = Path(plan["source_root"]).resolve(strict=True)
     if root != (SCRATCH / "source").resolve():
         raise SystemExit("unexpected source root")
@@ -266,7 +298,7 @@ def main() -> int:
         raise SystemExit("supervisor digest mismatch")
     argv = plan["argv"]
     expected_argv = [str(INTERPRETER), "-B", "-m", "representation_collapse.tgrab_figure10_bootstrap",
-                     "--source-root", str(root), "--output", str(fixture_output_path(output)),
+                     "--source-root", str(MODEL_SOURCE), "--output", str(fixture_output_path(output)),
                      "--environment-identity", str(ENV_INVENTORY),
                      "--environment-identity-sha256", plan["environment_inventory_sha256"]]
     if argv != expected_argv:
@@ -277,6 +309,8 @@ def main() -> int:
         "source_commit": plan["source_commit"], "environment_receipt_sha256": plan["environment_receipt_sha256"],
         "pinned_graph_import_sha256": PINNED_IMPORT_SHA256,
         "environment_inventory_sha256": plan["environment_inventory_sha256"],
+        "model_source_root": str(MODEL_SOURCE), "model_source_revision": MODEL_SOURCE_REVISION,
+        "model_wrapper_sha256": model_source_before,
         "interpreter": sys.executable, "allocation": {k: os.environ[k] for k in EXPECTED},
         "memory_before": memory_before,
         "scientific_acceptance": False})
@@ -307,9 +341,20 @@ def main() -> int:
             except ProcessLookupError: pass
             child.wait()
     code = child.wait()
-    receipt = {"schema": "tgrab-node2a-job-terminal-v1", "state": "completed" if code == 0 and reason == "exit" else "failed",
+    model_source_error = None
+    try:
+        model_source_after = verify_model_source(plan)
+        if model_source_after != model_source_before:
+            raise SystemExit("pinned upstream model source changed during fixture")
+    except SystemExit as exc:
+        model_source_after = None
+        model_source_error = str(exc)
+    completed = code == 0 and reason == "exit" and model_source_error is None
+    receipt = {"schema": "tgrab-node2a-job-terminal-v1", "state": "completed" if completed else "failed",
                "reason": reason, "exit_code": code, "job_id": os.environ["SLURM_JOB_ID"],
                "elapsed_seconds": time.monotonic() - started, "plan_sha256": args.plan_sha256,
+               "model_source_before": model_source_before, "model_source_after": model_source_after,
+               "model_source_error": model_source_error,
                "memory_after": cgroup_memory(),
                "scientific_acceptance": False}
     atomic_json(output / "supervisor-terminal.json", receipt)

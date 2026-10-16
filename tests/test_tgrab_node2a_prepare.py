@@ -22,6 +22,14 @@ class Node2APreparationTests(unittest.TestCase):
         self.assertEqual(MODULE.fixture_output_path(run_id),
                          MODULE.RUN_ROOT / run_id / "fixture")
 
+    def test_model_source_plan_uses_separate_pinned_snapshot(self):
+        self.assertEqual(MODULE.MODEL_SOURCE,
+                         MODULE.SCRATCH / "runs/graph/upstream-pin-20261012/source")
+        self.assertEqual(MODULE.MODEL_SOURCE_REVISION,
+                         "31293102b065feef7817ff86211427d7594edfdb")
+        self.assertEqual(set(MODULE.PINNED_WRAPPER_SHA256),
+                         {"model/gclstm.py", "model/link_predictor.py", "model/node_emb.py"})
+
     def manifest(self):
         return {
             "source_commit": "a" * 40, "source_tree": "b" * 40,
@@ -127,9 +135,14 @@ class Node2APreparationTests(unittest.TestCase):
             "output": str(SUPERVISOR.SCRATCH / "runs/figure10-node2a" / run_id),
             "stop_file": str(SUPERVISOR.SCRATCH / "runs/figure10-node2a" / run_id / "STOP"),
             "deadline_seconds": 570, "allocation": dict(SUPERVISOR.EXPECTED_PLAN_ALLOCATION),
+            "model_source_root": str(SUPERVISOR.MODEL_SOURCE),
+            "model_source_revision": SUPERVISOR.MODEL_SOURCE_REVISION,
+            "model_wrapper_sha256": dict(SUPERVISOR.MODEL_WRAPPERS),
             "fixture": "synthetic-node2a-zero-update-only", "scientific_acceptance": False}
         SUPERVISOR.validate_plan_contract(valid)
-        for field, value in (("stop_file", "/tmp/STOP"), ("deadline_seconds", 571)):
+        for field, value in (("stop_file", "/tmp/STOP"), ("deadline_seconds", 571),
+                             ("model_source_root", "/tmp/unpinned"),
+                             ("model_wrapper_sha256", {"model/node_emb.py": "0" * 64})):
             altered = dict(valid); altered[field] = value
             # A caller can recompute the plan digest; fixed policy must still reject it.
             self.assertEqual(len(hashlib.sha256(json.dumps(altered, sort_keys=True).encode()).hexdigest()), 64)

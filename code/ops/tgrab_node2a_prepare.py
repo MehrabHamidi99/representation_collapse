@@ -18,6 +18,8 @@ import subprocess
 import sys
 
 SCRATCH = Path("/network/scratch/m/mehrab.hamidi/representation-collapse")
+MODEL_SOURCE = SCRATCH / "runs/graph/upstream-pin-20261012/source"
+MODEL_SOURCE_REVISION = "31293102b065feef7817ff86211427d7594edfdb"
 INTERPRETER = SCRATCH / "environments/graph-native-cpu-20261015-calibration01/venv/bin/python"
 ENV_RECEIPT = SCRATCH / "environments/graph-native-cpu-20261015-calibration01/preparation-receipt.json"
 ENV_INVENTORY = SCRATCH / "environments/graph-native-cpu-20261015-calibration01/node2a-environment-identity.json"
@@ -224,8 +226,11 @@ def validate(repo: Path, manifest: dict) -> dict:
             "independent_review_sha256": manifest["independent_review_sha256"],
             "output": str(RUN_ROOT / run_id), "stop_file": str(RUN_ROOT / run_id / "STOP"),
             "deadline_seconds": 570, "fixture": "synthetic-node2a-zero-update-only",
+            "model_source_root": str(MODEL_SOURCE),
+            "model_source_revision": MODEL_SOURCE_REVISION,
+            "model_wrapper_sha256": PINNED_WRAPPER_SHA256,
             "argv": [str(INTERPRETER), "-B", "-m", "representation_collapse.tgrab_figure10_bootstrap",
-                     "--source-root", str(SOURCE_ROOT), "--output", str(fixture_output_path(run_id)),
+                     "--source-root", str(MODEL_SOURCE), "--output", str(fixture_output_path(run_id)),
                      "--environment-identity", str(ENV_INVENTORY),
                      "--environment-identity-sha256", manifest["environment_inventory_sha256"]],
             "allocation": FIXED, "scientific_acceptance": False}
