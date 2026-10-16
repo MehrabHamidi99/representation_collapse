@@ -98,6 +98,12 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   persistence-like behavior. This is a behavioral baseline, not a measurement
   of representation dimension. The prospective representation analysis must
   measure state geometry separately.
+  The fit lifecycle now has an independently accepted pre-update attempt
+  barrier, exact production-policy enforcement and truthful completed-step
+  accounting for invalid returned losses (12 focused synthetic tests). The
+  attempt hook only provides durable charging when its production caller
+  durably commits before returning. Integration with that journal, complete
+  epoch checkpoint candidates and verified data/source receipts remains open.
 
 - **Overnight progress confirmed; checkpoint schema specification accepted — October16.**
   The approved Mila conversion job11273685 ran from02:09:36 to02:11:42 UTC on

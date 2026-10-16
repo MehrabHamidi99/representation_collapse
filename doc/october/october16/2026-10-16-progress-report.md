@@ -1233,3 +1233,25 @@ persistence heuristic. Figure 10 contains no hidden-state rank, covariance,
 tangent, or recoverability measurement. Reproducing it is therefore a
 behavioral baseline and a source of hypotheses; a representation-collapse
 claim requires separate, paired state-level and causal-memory measurements.
+
+### Fit-core attempt accounting and policy guard accepted — 19:24 UTC
+
+The public fit entry point now requires the exact frozen policy (200 complete
+epochs maximum, 100 nonimproving complete-epoch patience, 2,559 updates per
+epoch, and relative loss tolerance `1e-6`). An `on_attempt` event runs directly
+before every native update; if it raises, the corresponding update is never
+entered. The API documents that persistence depends on the caller committing
+the event before callback return. After a successful backend update call, the
+core now records the optimizer step as completed before validating its loss;
+invalid returned diagnostics fail closed without misclassifying a completed
+step. Reduced policy tests use a private lifecycle helper only.
+
+Independent review accepted exact module/test hashes
+`f94b8eeba543599ea26146e8e93150852109a06bceef8939c36654396eeb086a` /
+`184c2ee94b891309bfa569b0d69408faac9fd0a5161cd3dfa0cf7f317df66c5f`; focused
+tests pass 12/12. This remains a lifecycle component: no durable caller journal,
+checkpoint candidate callback, verified data/source/runtime binding, or fit
+launch is integrated. A caller using the private helper would bypass the
+production policy; repository production adapters must only call the public
+entry point. No data or test split was opened, and there is no Figure 10 curve
+or collapse result.
