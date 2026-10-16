@@ -46,7 +46,14 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   omit `SLURM_RESTART_COUNT`. The same correction is applied to the native
   node2a runner; independent review accepted exact hashes
   (`eae8f330…12b24` / `22266cad…378be`) after scheduler-field tests were added.
-  The combined focused suites pass 21/21. Figure 10 training remains unstarted.
+  A new capture-only attempt (Mila job11279364) passed source, receipt and
+  scheduler admission, then failed before capture because a cgroup ancestor
+  lacked `memory.max`. The fix skips ancestors where the kernel exposes no
+  memory controller file, while requiring the job leaf files and a finite
+  exposed effective limit. Independent review accepted capture/native hashes
+  (`c3035baf…e52a6` / `f82792a6…e882b`, `604f4405…1fea` /
+  `afbdbad5…b288a`); focused suites pass 24/24. No inventory or model training
+  resulted. Figure 10 training remains unstarted.
 
 - **Overnight progress confirmed; checkpoint schema specification accepted — October16.**
   The approved Mila conversion job11273685 ran from02:09:36 to02:11:42 UTC on

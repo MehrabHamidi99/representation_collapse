@@ -315,14 +315,33 @@ def cgroup_memory() -> dict:
         ancestors.append(current)
         if current == mount: break
         current = current.parent
+    return read_cgroup_memory_files(ancestors, leaf)
+
+
+def read_cgroup_memory_files(ancestors: list[Path], leaf: Path) -> dict:
+    """Use every exposed ancestor limit; some Mila cgroup roots omit memory.max."""
     limits = []
     for ancestor in ancestors:
-        value = (ancestor / "memory.max").read_text().strip()
-        if value != "max": limits.append((int(value), str(ancestor / "memory.max")))
-    if not limits: raise SystemExit("no finite effective cgroup memory limit")
+        path = ancestor / "memory.max"
+        if not path.is_file():
+            continue
+        value = path.read_text().strip()
+        if value != "max":
+            try:
+                limits.append((int(value), str(path)))
+            except ValueError as exc:
+                raise SystemExit("invalid cgroup memory.max") from exc
+    leaf_limit = leaf / "memory.max"
+    if not leaf_limit.is_file():
+        raise SystemExit("job cgroup memory.max unavailable")
+    if not limits:
+        raise SystemExit("no finite effective cgroup memory limit")
     current_file, peak_file = leaf / "memory.current", leaf / "memory.peak"
-    return {"effective_limit_bytes": min(value for value, _ in limits),
-        "limiting_ancestors": [path for value, path in limits if value == min(v for v, _ in limits)],
+    if not current_file.is_file():
+        raise SystemExit("job cgroup memory.current unavailable")
+    minimum = min(value for value, _ in limits)
+    return {"effective_limit_bytes": minimum,
+        "limiting_ancestors": [path for value, path in limits if value == minimum],
         "memory_current_bytes": int(current_file.read_text().strip()),
         "memory_peak_bytes": int(peak_file.read_text().strip()) if peak_file.is_file() else None}
 

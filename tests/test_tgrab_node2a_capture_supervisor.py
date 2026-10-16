@@ -116,6 +116,32 @@ class CaptureSupervisorContractTests(unittest.TestCase):
                     SystemExit, "when present, must be exactly '0'"):
                 MODULE.require_zero_restart_count(value)
 
+    def test_cgroup_memory_ignores_ancestors_without_memory_controller_files(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "root"
+            parent = root / "user.slice"
+            leaf = parent / "job.scope"
+            leaf.mkdir(parents=True)
+            (parent / "memory.max").write_text(str(4 * 1024**3))
+            (leaf / "memory.max").write_text(str(2 * 1024**3))
+            (leaf / "memory.current").write_text("1024")
+            (leaf / "memory.peak").write_text("2048")
+            result = MODULE.read_cgroup_memory_files([leaf, parent, root], leaf)
+        self.assertEqual(result["effective_limit_bytes"], 2 * 1024**3)
+        self.assertEqual(result["memory_current_bytes"], 1024)
+        self.assertEqual(result["memory_peak_bytes"], 2048)
+
+    def test_cgroup_memory_requires_leaf_limit_and_finite_ancestor(self):
+        with tempfile.TemporaryDirectory() as directory:
+            leaf = Path(directory) / "job.scope"
+            leaf.mkdir()
+            (leaf / "memory.current").write_text("1")
+            with self.assertRaisesRegex(SystemExit, "memory.max unavailable"):
+                MODULE.read_cgroup_memory_files([leaf], leaf)
+            (leaf / "memory.max").write_text("max")
+            with self.assertRaisesRegex(SystemExit, "no finite"):
+                MODULE.read_cgroup_memory_files([leaf], leaf)
+
     def test_absent_restart_environment_field_uses_scheduler_restart_guards(self):
         response = self.slurm_record("RUNNING", Restarts="0", Requeue="0")
         with mock.patch.object(MODULE.subprocess, "run", return_value=

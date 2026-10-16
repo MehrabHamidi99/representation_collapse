@@ -2,6 +2,7 @@
 import importlib.util
 from pathlib import Path
 import subprocess
+import tempfile
 import unittest
 from unittest import mock
 
@@ -43,6 +44,21 @@ class RestartMetadataTests(unittest.TestCase):
         for field in ("Restarts", "Requeue"):
             with self.subTest(field=field), self.assertRaisesRegex(SystemExit, "authoritative Slurm"):
                 self.verify_record(self.slurm_record(**{field: "1"}))
+
+    def test_cgroup_memory_uses_available_ancestor_limits(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "root"
+            parent = root / "user.slice"
+            leaf = parent / "job.scope"
+            leaf.mkdir(parents=True)
+            (parent / "memory.max").write_text(str(4 * 1024**3))
+            (leaf / "memory.max").write_text(str(2 * 1024**3))
+            (leaf / "memory.current").write_text("1024")
+            (leaf / "memory.peak").write_text("2048")
+            result = MODULE.read_cgroup_memory_files([leaf, parent, root], leaf)
+        self.assertEqual(result["effective_limit_bytes"], 2 * 1024**3)
+        self.assertEqual(result["memory_current_bytes"], 1024)
+        self.assertEqual(result["memory_peak_bytes"], 2048)
 
 
 if __name__ == "__main__":

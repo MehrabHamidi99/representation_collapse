@@ -932,3 +932,27 @@ The exact native supervisor/test hashes are
 `22266cad7bb3d233854f8fb69eda5b51d7dd1c3fcafefc40b95b7503904378be`;
 independent review accepted this exact pair. This is still pre-fit systems work:
 no identity inventory, node2a parity fixture or retraining has run in this update.
+
+### Cgroup v2 memory mount correction — 16:48 UTC
+
+Mila job 11279364 passed source-commit/tree, job receipt, one-CPU/2-GiB/zero-GPU
+allocation, `Restarts=0` and `Requeue=0` admission. It failed in one second
+before writing capture artifacts when the cgroup walker attempted to read
+`memory.max` at an ancestor where that file is not exposed. Slurm confirms the
+job used one CPU, 2 GiB, zero GPUs; the unique run directory is empty and the
+fixed identity inventory remains absent. No dataset or model code ran.
+
+The capture and future node2a supervisors now skip ancestors without
+`memory.max`, but require the job leaf's `memory.max` and `memory.current`, at
+least one finite exposed limit, valid integer limits, and use the minimum
+finite exposed ancestor value. Both retain the exact 2-GiB effective-limit
+admission. Independent review accepted capture supervisor/tests at
+`c3035baf3975f715f36953e8f6f780b7c718406c3200239964fa31496a4e52a6` /
+`f82792a6f4099585070a843e5c86129cd45119851cfd0bb1a67b2d1c1afe882b` and
+native supervisor/tests at
+`604f4405605d0a24beec73c02239853ae9815b9998068296a0f748397cf51fea` /
+`afbdbad5547696b44572ae772924f47c20d863041e375f66b130465f253b288a`.
+Focused suites pass 24/24 (capture 19/19, native 5/5); compilation, Bash
+syntax and diff checks pass. This correction remains an engineering prerequisite:
+the runtime identity inventory, synthetic node2a parity, training, and Figure
+10 curves are still absent.
