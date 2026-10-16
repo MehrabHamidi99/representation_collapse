@@ -203,3 +203,27 @@ each milestone was historically replayed, reconstructed, or remains open.
 Only after those pass may a separate report assess representation geometry or
 causal memory. A positive behavioral reproduction is a prerequisite for
 interpreting Figure 10's phenomenon, not evidence of representation collapse.
+
+## Progress update — 2026-10-16 18:53 UTC
+
+**Node2a passed as engineering parity only.** Mila job `11280629` completed exit
+0 in 14 seconds under 1 CPU/2 GiB/zero GPU with no restart. Its accepted plan
+SHA is `b0ca7527f5809394444953370488d8eb0628af84fa346e04d2c9dbaf58c231c4`;
+source is commit `40942e5642c02b7098263dfe1294f907a71d2d16`. Independent audit
+matched local/remote artifact hashes and verified both model components and
+complete H/C round-trip, forward/loss/gradient and mode/dropout parity,
+crash/reopen, zero optimizer updates and unopened primary/validation/test
+payloads. The process-generated receipt is auditable engineering evidence;
+`scientific_acceptance=false`. Retain prior failed attempts 11280406, 11280432
+and 11280586 with their unique run directories/job logs; none involved Figure
+10 fitting or data-bearing computation.
+
+A follow-up audit fixed and independently reviewed the reducer's use of actual
+graph inequality, requiring it to agree with the expected phase boundary.
+The source/test commit is `98f48d7` and is pushed. Seven focused tests pass.
+The full training runner remains blocked: selected-inference codec, durable
+selection transaction, selected reload and final replay/node2b are absent.
+Those are now the next local implementation gates. No training, validation
+selection, test access, Figure 10 curve, or representation-collapse claim has
+occurred. The target is still one corrected prospective GC-LSTM DTDG series at
+first; that is not the full multi-model, two-panel figure.
