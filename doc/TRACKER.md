@@ -101,7 +101,9 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   The fit lifecycle now has an independently accepted pre-update attempt
   barrier, exact production-policy enforcement and truthful completed-step
   accounting for invalid returned losses (12 focused synthetic tests). The
-  attempt hook only provides durable charging when its production caller
+  native adapter validates that policy before calling model factories and
+  forwards the attempt hook; shortened test policies are confined to the test
+  module. The hook only provides durable charging when a production caller
   durably commits before returning. Integration with that journal, complete
   epoch checkpoint candidates and verified data/source receipts remains open.
 

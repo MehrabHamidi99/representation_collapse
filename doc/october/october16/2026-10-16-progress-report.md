@@ -1255,3 +1255,20 @@ launch is integrated. A caller using the private helper would bypass the
 production policy; repository production adapters must only call the public
 entry point. No data or test split was opened, and there is no Figure 10 curve
 or collapse result.
+
+### Native adapter policy binding and attempt-hook forwarding accepted — 19:32 UTC
+
+The Figure 10 native adapter now validates the exact frozen fit policy at the
+builder boundary before seed/model/optimizer/backend factory calls, stores it
+as the adapter policy, and rechecks any `fit()` override. It forwards
+`on_attempt` through the production public runner. Short policy execution was
+removed from the production adapter; reduced-policy chronology tests use a
+test-module-only synthetic helper. Independent review accepted exact
+module/test hashes
+`46b5b43b5d1ddc0284a6540715dab118c360a5c375137ba92994496cb5eddfa1` /
+`e3d30b28ac0ffd1872f7a22a734905b2ce36c5c518af733d73887969d7264615`.
+Combined adapter and fit-core suites pass 25/25. This closes a test regression
+introduced by correctly hardening the fit policy, and removes the shortened
+policy bypass. It does not yet implement a durable caller for attempt events,
+candidate serialization, or selected-checkpoint transaction integration.
+No data, training, or test split was opened.
