@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "local_date": "2026-10-16",
+  "timezone": "Asia/Yerevan",
+  "prior_status": "doc/auto/research-status-2026-10-15.json",
+  "goal": {
+    "status": "active",
+    "owner_explicitly_requested": true,
+    "document": "doc/auto/active-research-goal.md",
+    "governing_documents": [
+      "doc/auto/research-charter.md",
+      "doc/literature/novelty-review.md"
+    ],
+    "scope": "Controlled periodic-order effects on task-required history in temporal recurrent models, starting with graphs and extending to a native non-graph modality",
+    "positive_collapse_outcome_required": false,
+    "negative_and_preservation_results_allowed": true,
+    "independent_scope_review_completed": true,
+    "new_compute_authorization": false
+  },
+  "qwen": {
+    "verified_at_utc": "2026-10-16T00:51:27.432409+00:00",
+    "hosting": "local_mac",
+    "pid": 84719,
+    "process_start_source_verified": true,
+    "heartbeat_age_seconds_at_check": 4.402845,
+    "state": "running",
+    "activity": "waiting_for_evidence",
+    "schema_and_model_verified_replies": 23,
+    "completed_coordinator_tasks": 20,
+    "reported_tokens": 118041,
+    "consecutive_provider_errors": 0,
+    "provider_call_in_flight": false,
+    "last_completed_reply_at_utc": "2026-10-15T06:40:15.301452+00:00",
+    "uninterrupted_overnight_research_confirmed": false,
+    "whole_answers_automatically_accepted": 0,
+    "verification_receipt": "runs/ops/local-qwen-continuation-20261014T1650Y/live-20261016T005127Z.json"
+  },
+  "accepted_progress": {
+    "graph_calibration_job_id": 11261627,
+    "graph_calibration_scheduler_state_at_prior_closeout": "COMPLETED",
+    "graph_calibration_scheduler_exit_code": "0:0",
+    "graph_calibration_elapsed_seconds": 74,
+    "verified_arrays": 60,
+    "verified_comparisons": 27,
+    "scalar_checks": 1337,
+    "mismatches": 0,
+    "engineering_integrity_accepted": true,
+    "primary_graph_payload_acquired_and_hash_verified": true,
+    "primary_graph_payload_parsed_or_converted": false,
+    "analytic_folding_measurement_guard_independently_reviewed": true,
+    "trained_graph_collapse_accepted": false,
+    "cross_modal_mechanism_accepted": false
+  },
+  "this_turn": {
+    "new_cluster_submissions": 0,
+    "fresh_scheduler_inspection": false,
+    "new_numerical_runs": 0,
+    "new_native_model_calls": 0,
+    "provider_calls_by_worker_verifier": 0,
+    "prior_numerical_runs_rerun": false
+  },
+  "next_work": [
+    "Freeze and implement primary-data schema/conversion and a sealed split store",
+    "Implement checkpoint codec/load parity and complete-state training lifecycle",
+    "Prepare finite native training-parity checks before requesting a fresh allocation",
+    "Establish competence and matched-order confirmation before cross-modal mechanism claims"
+  ]
+}

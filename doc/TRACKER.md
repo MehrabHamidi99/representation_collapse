@@ -1,12 +1,24 @@
 # Current research state
 
-Updated 2026-10-15. See the [latest notebook entry](october/october15/2026-10-15-progress-report.md),
+Updated 2026-10-16. See the [latest notebook entry](october/october16/2026-10-16-progress-report.md),
+the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **Research goal activated and worker rechecked — October 16 04:51 Yerevan.**
+  At the owner's explicit request, the session goal is active: novelty-audited
+  study of task-required history loss under matched periodic ordering, starting
+  with graphs then a native non-graph modality. Positive collapse findings are
+  conditional; preservation and valid negatives remain legitimate outcomes.
+  [Durable goal and completion criteria](auto/active-research-goal.md).
+  Qwen PID/start/source verified alive at00:51:27UTC:23verified replies,
+  20completed proposal tasks,0providererrors, currently waiting for evidence.
+  Last reply was October15 06:40:15UTC; continuous overnight inference is not
+  established. No new trained-model result or allocation accompanies this check.
+  Graph converter/store and trainer/checkpoint integration remain next.
 - **Native graph calibration accepted — October 15 10:34 Yerevan.**
   Owner-approved native cluv job **11261627** completed `0:0` in **74 seconds**
   from reviewed published `3f24d63`: Mila/main-cpu/account mila/QOS normal,
