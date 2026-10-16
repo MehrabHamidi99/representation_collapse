@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-16 19:12 UTC. See the [latest notebook entry](october/october16/2026-10-16-progress-report.md),
+Updated 2026-10-16 23:01 UTC. See the [latest notebook entry](october/october17/2026-10-17-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
@@ -106,6 +106,11 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   module. The hook only provides durable charging when a production caller
   durably commits before returning. Integration with that journal, complete
   epoch checkpoint candidates and verified data/source receipts remains open.
+  The durable pure-data S07/S08 selection ledger is now independently
+  accepted after fixing a stale-alias/no-head bypass. Its 11 synthetic tests
+  cover strict improvement/ties, finalization, pinned-head reopen, corruption,
+  owner locking and injected failure terminality. Actual model selection
+  callbacks remain unintegrated; no training or selected checkpoint exists.
 
 - **Overnight progress confirmed; checkpoint schema specification accepted — October16.**
   The approved Mila conversion job11273685 ran from02:09:36 to02:11:42 UTC on
