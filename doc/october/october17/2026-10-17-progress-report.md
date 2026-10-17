@@ -1,5 +1,31 @@
 # Progress report — 2026-10-17
 
+## 12:33 UTC / 15:33 Qatar — enforce frozen CPU policy before fitting
+
+An independent protocol audit found that the epoch-evidence adapter could
+accept CUDA source tensors and clone them to CPU, even though selected-checkpoint
+v1 pins CPU/FP32 training and rejects device migration. This was a real release
+gate: the old guard ran only after a complete epoch, so an incompatible fit
+could have performed up to 2,559 updates before failing.
+
+The native adapter now validates the backend device and every initial
+state-dictionary tensor against the pinned names, order, shapes, dtype and CPU
+device during construction, then repeats the check at `fit()` entry before any
+update. Focused tests reject a CUDA backend and a post-construction mixed-device
+mutation with zero optimizer updates. Independent review accepted source SHA
+`4c2a50c140d39f80c728b3c1e4bb277c511bd989d1956725cb604d08637d68d0` and test
+SHA `a0e644b74a4a2a84b895e8793601eb274a67e8c458483ed82b351de7d4587b47`.
+The native fit, selected-checkpoint codec and selection-transaction suites pass
+39/39; `git diff --check` passes.
+
+This is protocol enforcement and synthetic engineering evidence only. The
+epoch-to-bundle assembler and production selection callback remain missing;
+source/data/runtime admission and selected-checkpoint load/replay parity also
+remain unreleased. No primary fit, test access, cluster operation, submission,
+Figure 10 reproduction or representation-collapse finding occurred. Next local
+gate: build the typed epoch-evidence-to-six-file candidate encoder, keeping all
+externally trusted provenance inputs explicit and refusing absent receipts.
+
 ## 23:01 UTC / 02:01 Qatar — durable selection transaction gate
 
 Continued the Figure 10 reproduction subgoal after Mila access was restored.

@@ -445,25 +445,20 @@ class NativeFitAdapterTests(unittest.TestCase):
         with self.assertRaises(TypeError):
             evidence[0].validation_rows[0]["epoch"] = 99
 
-    def test_cuda_source_tensors_are_cloned_to_cpu_and_mixed_device_fails_closed(self):
+    def test_cuda_source_is_rejected_by_frozen_cpu_policy_and_mixed_device_fails_closed(self):
         train = [graph(t) for t in range(2560)]
         val = [graph(t) for t in range(2560, 2816)]
         backend = FakeNativeBackend(device="cuda:0")
-        adapter = make_adapter(train, val, backend)
-        evidence = []
-        run_synthetic_adapter_fit(adapter, policy=FitPolicy(max_complete_epochs=1),
-                                  on_epoch_complete=evidence.append)
-        self.assertEqual(evidence[0].terminal_state.hidden.device, "cpu")
-        self.assertTrue(all(tensor.device == "cpu"
-                            for tensors in evidence[0].model_state_dicts.values()
-                            for tensor in tensors.values()))
-        source_name = next(iter(backend.models["link_pred"].state_dict()))
-        backend = FakeNativeBackend(device="cuda:0")
+        with self.assertRaisesRegex(ValueError, "requires a CPU backend"):
+            make_adapter(train, val, backend)
+        self.assertEqual(backend.update_count, 0)
+        source_name = _expected_state_dict_specs()["link_pred"][0][0]
+        backend = FakeNativeBackend(device="cpu")
         adapter = make_adapter(train, val, backend)
         backend.models["link_pred"].state_dict()[source_name].device = "cuda:1"
-        with self.assertRaisesRegex(ValueError, "pinned tensor catalog"):
-            run_synthetic_adapter_fit(adapter, policy=FitPolicy(max_complete_epochs=1),
-                                      on_epoch_complete=lambda _: None)
+        with self.assertRaisesRegex(ValueError, "pinned CPU tensor catalog"):
+            adapter.fit()
+        self.assertEqual(backend.update_count, 0)
 
     def test_f1_adapter_scores_exact_ordered_pair_fixture(self):
         train = [graph(t) for t in range(2560)]

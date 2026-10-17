@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-17 12:29 UTC. See the [latest notebook entry](october/october17/2026-10-17-progress-report.md),
+Updated 2026-10-17 12:33 UTC. See the [latest notebook entry](october/october17/2026-10-17-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
@@ -118,6 +118,11 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   cover strict improvement/ties, finalization, pinned-head reopen, corruption,
   owner locking and injected failure terminality. Actual model selection
   callbacks remain unintegrated; no training or selected checkpoint exists.
+  Frozen CPU/FP32 execution is now enforced during adapter construction and
+  rechecked at fit entry. Independent review accepted both early CUDA/mixed-
+  device rejection paths; 39 focused native-fit/codec/selection tests pass.
+  This closes a protocol guard only. The next local gate is the externally
+  pinned epoch-evidence-to-six-file candidate encoder.
 
 - **Overnight progress confirmed; checkpoint schema specification accepted — October16.**
   The approved Mila conversion job11273685 ran from02:09:36 to02:11:42 UTC on

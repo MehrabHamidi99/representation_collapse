@@ -260,6 +260,7 @@ class Figure10NativeFitAdapter:
         if not isinstance(backend, gr.NativeGCLSTMBackend):
             raise FitProtocolError("adapter requires the guarded NativeGCLSTMBackend")
         self._verify_construction_receipt(backend, construction_receipt)
+        self._validate_frozen_cpu_backend(backend)
         if type(negative_seed) is not int or negative_seed != 1:
             raise FitProtocolError("the frozen negative-sampling seed is 1")
         if type(period) is not int or period != 64 or type(block) is not int or block != 32:
@@ -289,6 +290,25 @@ class Figure10NativeFitAdapter:
         self._phase: str | None = None
         self._evaluation_epoch = 0
         self._step_lock = threading.Lock()
+
+    @staticmethod
+    def _validate_frozen_cpu_backend(backend) -> None:
+        if str(getattr(backend, "device", "")) != "cpu":
+            raise FitProtocolError(
+                "frozen Figure 10 checkpoint policy requires a CPU backend")
+        expected = _expected_state_dict_specs()
+        for component, model in backend.models.items():
+            state_dict = model.state_dict()
+            if not isinstance(state_dict, Mapping):
+                raise FitProtocolError(f"{component} state_dict is unavailable")
+            specs = expected[component]
+            if tuple(state_dict) != tuple(name for name, _, _ in specs):
+                raise FitProtocolError(f"{component} state_dict differs from pinned CPU catalog")
+            for name, shape, dtype in specs:
+                if _tensor_shape_dtype_device(state_dict[name], f"{component}.{name}") != (
+                        shape, dtype, "cpu"):
+                    raise FitProtocolError(
+                        f"{component}.{name} differs from pinned CPU tensor catalog")
 
     @staticmethod
     def _verify_construction_receipt(backend, receipt: FitConstructionReceipt) -> None:
@@ -362,15 +382,16 @@ class Figure10NativeFitAdapter:
                 or terminal_state.node_ids != tuple(range(100))):
             raise FitProtocolError("terminal validation state must be canonical s[2816]")
         source_device = str(getattr(self.backend, "device", ""))
-        if not source_device:
-            raise FitProtocolError("native backend device identity is unavailable")
+        if source_device != "cpu":
+            raise FitProtocolError(
+                "frozen Figure 10 checkpoint policy requires CPU training tensors")
         hidden_shape, hidden_dtype, hidden_device = _tensor_shape_dtype_device(
             terminal_state.hidden, "terminal hidden")
         cell_shape, cell_dtype, cell_device = _tensor_shape_dtype_device(
             terminal_state.cell, "terminal cell")
         if (hidden_shape != (1, 100, 128) or cell_shape != hidden_shape
                 or hidden_dtype != "torch.float32" or cell_dtype != hidden_dtype
-                or hidden_device != source_device or cell_device != source_device):
+                or hidden_device != "cpu" or cell_device != "cpu"):
             raise FitProtocolError("terminal hidden/cell tensors differ from backend FP32 state")
         hidden = _clone_cpu_tensor(terminal_state.hidden, "terminal hidden")
         cell = _clone_cpu_tensor(terminal_state.cell, "terminal cell")
@@ -395,7 +416,7 @@ class Figure10NativeFitAdapter:
                 value = state_dict[name]
                 shape, dtype, device = _tensor_shape_dtype_device(value, f"{backend_key}.{name}")
                 if (shape != expected_shape or dtype != expected_dtype
-                        or device != source_device):
+                        or device != "cpu"):
                     raise FitProtocolError(f"{backend_key}.{name} differs from pinned tensor catalog")
                 clone = _clone_cpu_tensor(value, f"{backend_key}.{name}")
                 clone_shape, clone_dtype, clone_device = _tensor_shape_dtype_device(
@@ -523,6 +544,7 @@ class Figure10NativeFitAdapter:
         policy = self.policy if policy is None else policy
         if type(policy) is not FitPolicy or policy != FitPolicy():
             raise FitProtocolError("production adapter fit requires the exact frozen FitPolicy")
+        self._validate_frozen_cpu_backend(self.backend)
         if self._used:
             raise FitProtocolError("fit adapter instances are single-use")
         self._used = True
