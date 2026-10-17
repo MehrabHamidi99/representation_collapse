@@ -18,8 +18,10 @@ from representation_collapse.tgrab_figure10_fit import (  # noqa: E402
     _run_figure10_fit_lifecycle,
 )
 from representation_collapse.tgrab_figure10_native_fit import (  # noqa: E402
+    Figure10EpochEvidence,
     Figure10NativeFitAdapter,
     SeedApplicationReceipt,
+    _expected_state_dict_specs,
     build_figure10_fit_adapter,
     make_seeded_components,
 )
@@ -30,12 +32,35 @@ class Parameter:
         self.name = name
 
 
+class SyntheticTensor:
+    """Metadata-only tensor shim; never used by model or optimizer math."""
+
+    def __init__(self, shape, *, dtype="torch.float32", device="cpu", value=0):
+        self.shape = tuple(shape)
+        self.dtype = dtype
+        self.device = device
+        self.value = value
+
+    def detach(self):
+        return self
+
+    def cpu(self):
+        return SyntheticTensor(self.shape, dtype=self.dtype, device="cpu", value=self.value)
+
+    def clone(self):
+        return SyntheticTensor(self.shape, dtype=self.dtype, device=self.device, value=self.value)
+
+
 class Model:
-    def __init__(self, names):
+    def __init__(self, names, state_tensors=None):
         self.parameters = {name: Parameter(name) for name in names}
+        self._state_tensors = dict(state_tensors or {})
 
     def named_parameters(self):
         return iter(self.parameters.items())
+
+    def state_dict(self):
+        return dict(self._state_tensors)
 
 
 class FakeOptimizer:
@@ -53,9 +78,10 @@ class FakeOptimizer:
 class FakeNativeBackend(gr.NativeGCLSTMBackend):
     """Native-backend-shaped fixture with no Torch/model imports."""
 
-    def __init__(self, *, update_failure=None, optimizer_failure=False):
+    def __init__(self, *, update_failure=None, optimizer_failure=False, device="cpu"):
         self.optimizer = FakeOptimizer([], raises=optimizer_failure)
         self.models = None
+        self.device = device
         self.optimizer_failure = optimizer_failure
         self.update_failure = update_failure
         self.mode = None
@@ -65,6 +91,7 @@ class FakeNativeBackend(gr.NativeGCLSTMBackend):
         self.negatives = []
         self.last_pairs = None
         self.score_calls = 0
+        self.terminal_validation_states = []
 
     @contextlib.contextmanager
     def training_mode(self):
@@ -86,7 +113,8 @@ class FakeNativeBackend(gr.NativeGCLSTMBackend):
             self.mode = previous
 
     def reset(self):
-        return gr.CompleteState(np.zeros((1, 100, 1)), np.zeros((1, 100, 1)),
+        return gr.CompleteState(SyntheticTensor((1, 100, 128), device=self.device),
+                                SyntheticTensor((1, 100, 128), device=self.device),
                                 0, tuple(range(100)))
 
     def detach(self, state):
@@ -96,8 +124,13 @@ class FakeNativeBackend(gr.NativeGCLSTMBackend):
         if state.next_target_t != snapshot.timestamp:
             raise AssertionError("unexpected consume order")
         self.consumed.append((self.mode, snapshot.timestamp))
-        return gr.CompleteState(state.hidden, state.cell, snapshot.timestamp + 1,
-                                state.node_ids)
+        state.hidden.value = snapshot.timestamp + 1
+        state.cell.value = -(snapshot.timestamp + 1)
+        result = gr.CompleteState(state.hidden, state.cell, snapshot.timestamp + 1,
+                                  state.node_ids)
+        if self.mode == "eval" and snapshot.timestamp == 2815:
+            self.terminal_validation_states.append(result)
+        return result
 
     def loss_and_update(self, state, target, negatives):
         if state.next_target_t != target.timestamp:
@@ -107,6 +140,10 @@ class FakeNativeBackend(gr.NativeGCLSTMBackend):
         if self.update_failure == "before":
             raise RuntimeError("pre-step failure")
         self.optimizer.step()
+        if self.models is not None:
+            for model in self.models.values():
+                for tensor in model.state_dict().values():
+                    tensor.value += 1
         if self.update_failure == "after":
             raise RuntimeError("post-step failure")
         return 0.25
@@ -130,8 +167,14 @@ def make_adapter(train, val, backend=None, *, model_seed=0, negative_seed=1,
     backend = backend or FakeNativeBackend()
 
     def model_factory():
-        return {"node_emb": Model(["state", "gate"]),
-                "link_pred": Model(["readout", "bias"])}
+        states = {}
+        for component in ("node_emb", "link_pred"):
+            states[component] = {
+                name: SyntheticTensor(shape, dtype=dtype, device=backend.device)
+                for name, shape, dtype in _expected_state_dict_specs()[component]
+            }
+        return {"node_emb": Model(["state", "gate"], states["node_emb"]),
+                "link_pred": Model(["readout", "bias"], states["link_pred"])}
 
     def optimizer_factory(models):
         params = [models[component].parameters[name]
@@ -156,7 +199,8 @@ def make_adapter(train, val, backend=None, *, model_seed=0, negative_seed=1,
 
 
 def run_synthetic_adapter_fit(adapter, *, policy, on_attempt=lambda _: None,
-                              on_update=lambda _: None, on_selection=lambda _: None):
+                              on_update=lambda _: None, on_selection=lambda _: None,
+                              on_epoch_complete=None):
     """Test-only short-run harness; production adapter has no such route."""
     policy.validate()
     if adapter._used:
@@ -169,7 +213,11 @@ def run_synthetic_adapter_fit(adapter, *, policy, on_attempt=lambda _: None,
             backend=adapter, training_graphs=adapter.training_graphs,
             validation_graphs=adapter.validation_graphs, policy=policy,
             on_attempt=on_attempt, on_update=on_update,
-            on_selection=on_selection)
+            on_selection=on_selection,
+            on_epoch_complete=(
+                (lambda record, state: on_epoch_complete(
+                    adapter._snapshot_epoch_evidence(record, state)))
+                if on_epoch_complete is not None else lambda *_: None))
     finally:
         adapter._fit_active = False
         adapter._fit_thread_id = None
@@ -349,6 +397,73 @@ class NativeFitAdapterTests(unittest.TestCase):
         self.assertEqual(seen[0][0]["target_timestamp"], 1)
         self.assertEqual(seen[0][0]["consumed_timestamp"], 0)
         self.assertEqual(backend.update_count, 0)
+
+    def test_epoch_evidence_clones_catalog_state_and_keeps_each_epoch_rows(self):
+        train = [graph(t) for t in range(2560)]
+        val = [graph(t) for t in range(2560, 2816)]
+        backend = FakeNativeBackend()
+        adapter = make_adapter(train, val, backend)
+        evidence = []
+        selections = []
+        run_synthetic_adapter_fit(
+            adapter, policy=FitPolicy(max_complete_epochs=2),
+            on_epoch_complete=evidence.append,
+            on_selection=lambda record: selections.append(record.epoch))
+
+        self.assertEqual([item.record.epoch for item in evidence], [1, 2])
+        self.assertEqual([item.record.validation_selected for item in evidence], [True, False])
+        self.assertEqual(selections, [1])
+        for epoch, item in enumerate(evidence, start=1):
+            self.assertIsInstance(item, Figure10EpochEvidence)
+            self.assertEqual(item.terminal_state.next_target_t, 2816)
+            self.assertEqual(item.terminal_state.node_ids, tuple(range(100)))
+            self.assertEqual(item.terminal_state.hidden.value, 2816)
+            self.assertEqual(item.terminal_state.cell.value, -2816)
+            self.assertEqual(len(item.validation_rows), 256)
+            self.assertEqual([row["epoch"] for row in item.validation_rows], [epoch] * 256)
+            self.assertEqual([row["target_timestamp"] for row in item.validation_rows],
+                             list(range(2560, 2816)))
+            self.assertIsNot(item.terminal_state.hidden,
+                             backend.terminal_validation_states[epoch - 1].hidden)
+            self.assertEqual(set(item.model_state_dicts), {"node_emb", "link_pred"})
+            for backend_key, tensors in item.model_state_dicts.items():
+                self.assertEqual(tuple(tensors), tuple(
+                    name for name, _, _ in _expected_state_dict_specs()[backend_key]))
+                for name, shape, dtype in _expected_state_dict_specs()[backend_key]:
+                    tensor = tensors[name]
+                    self.assertEqual(tuple(tensor.shape), shape)
+                    self.assertEqual(tensor.dtype, dtype)
+                    self.assertEqual(tensor.device, "cpu")
+                    self.assertEqual(tensor.value, epoch * 2559)
+        # The first evidence owns independent values despite later optimizer
+        # mutations; nested mappings are also read-only.
+        first_name = next(iter(evidence[0].model_state_dicts["node_emb"]))
+        self.assertEqual(evidence[0].model_state_dicts["node_emb"][first_name].value, 2559)
+        self.assertEqual(adapter.backend.models["node_emb"].state_dict()[first_name].value, 5118)
+        with self.assertRaises(TypeError):
+            evidence[0].model_state_dicts["node_emb"]["injected"] = SyntheticTensor(())
+        with self.assertRaises(TypeError):
+            evidence[0].validation_rows[0]["epoch"] = 99
+
+    def test_cuda_source_tensors_are_cloned_to_cpu_and_mixed_device_fails_closed(self):
+        train = [graph(t) for t in range(2560)]
+        val = [graph(t) for t in range(2560, 2816)]
+        backend = FakeNativeBackend(device="cuda:0")
+        adapter = make_adapter(train, val, backend)
+        evidence = []
+        run_synthetic_adapter_fit(adapter, policy=FitPolicy(max_complete_epochs=1),
+                                  on_epoch_complete=evidence.append)
+        self.assertEqual(evidence[0].terminal_state.hidden.device, "cpu")
+        self.assertTrue(all(tensor.device == "cpu"
+                            for tensors in evidence[0].model_state_dicts.values()
+                            for tensor in tensors.values()))
+        source_name = next(iter(backend.models["link_pred"].state_dict()))
+        backend = FakeNativeBackend(device="cuda:0")
+        adapter = make_adapter(train, val, backend)
+        backend.models["link_pred"].state_dict()[source_name].device = "cuda:1"
+        with self.assertRaisesRegex(ValueError, "pinned tensor catalog"):
+            run_synthetic_adapter_fit(adapter, policy=FitPolicy(max_complete_epochs=1),
+                                      on_epoch_complete=lambda _: None)
 
     def test_f1_adapter_scores_exact_ordered_pair_fixture(self):
         train = [graph(t) for t in range(2560)]

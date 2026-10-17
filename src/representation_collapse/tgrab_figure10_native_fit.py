@@ -8,6 +8,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from contextlib import contextmanager
+from functools import lru_cache
+from types import MappingProxyType
 import threading
 from typing import Any, Callable, Mapping, Sequence
 
@@ -15,6 +17,7 @@ import numpy as np
 
 from . import graph_reconstruction as gr
 from .tgrab_figure10_fit import (
+    EpochRecord,
     FitPolicy,
     FitProtocolError,
     OptimizerAttemptError,
@@ -53,6 +56,74 @@ class FitConstructionReceipt:
     seed_state_sha256: str
     seed_streams: tuple[str, ...]
     _token: Any
+
+
+@dataclass(frozen=True)
+class Figure10EpochEvidence:
+    """Detached evidence snapshot for one complete validation replay.
+
+    Mappings and rows are read-only containers. Tensor values are independent
+    detached CPU clones, so later optimizer steps cannot change this snapshot.
+    """
+
+    record: EpochRecord
+    terminal_state: gr.CompleteState
+    model_state_dicts: Mapping[str, Mapping[str, Any]]
+    validation_rows: tuple[Mapping[str, Any], ...]
+
+
+@lru_cache(maxsize=1)
+def _expected_state_dict_specs():
+    # This is a source-derived, independently pinned expectation. It does not
+    # claim that native state_dict bytes or load behavior have been observed.
+    from .tgrab_selected_checkpoint import _schema_and_catalog
+
+    _, catalog = _schema_and_catalog()
+    expected = {}
+    for component in catalog["components"].values():
+        backend_key = component["backend_key"]
+        descriptors = {item["name"]: item for item in component["tensors"]}
+        order = tuple(component["native_state_dict_order"])
+        if set(order) != set(descriptors) or len(order) != len(descriptors):
+            raise FitProtocolError("pinned state_dict catalog order and descriptors disagree")
+        expected[backend_key] = tuple(
+            (name, tuple(descriptors[name]["shape"]),
+             descriptors[name]["native_dtype"])
+            for name in order)
+    if set(expected) != {"node_emb", "link_pred"}:
+        raise FitProtocolError("pinned catalog does not contain both native components")
+    return expected
+
+
+def _tensor_shape_dtype_device(value: Any, name: str):
+    shape = getattr(value, "shape", None)
+    dtype = getattr(value, "dtype", None)
+    device = getattr(value, "device", None)
+    if shape is None or dtype is None or device is None:
+        raise FitProtocolError(f"{name} lacks tensor shape/dtype/device metadata")
+    try:
+        shape_tuple = tuple(int(dim) for dim in shape)
+    except (TypeError, ValueError, OverflowError) as exc:
+        raise FitProtocolError(f"{name} has invalid tensor shape") from exc
+    if any(dim < 0 for dim in shape_tuple):
+        raise FitProtocolError(f"{name} has invalid tensor shape")
+    return shape_tuple, str(dtype), str(device)
+
+
+def _clone_cpu_tensor(value: Any, name: str):
+    """Return an independent detached CPU tensor clone or fail closed."""
+    if not all(callable(getattr(value, method, None))
+               for method in ("detach", "cpu", "clone")):
+        raise FitProtocolError(f"{name} does not support detached CPU tensor cloning")
+    try:
+        clone = value.detach().cpu().clone()
+    except BaseException as exc:
+        raise FitProtocolError(f"could not clone {name} for epoch evidence") from exc
+    if clone is value:
+        raise FitProtocolError(f"{name} clone aliases its source tensor")
+    if _tensor_shape_dtype_device(clone, name)[2] != "cpu":
+        raise FitProtocolError(f"{name} clone is not on CPU")
+    return clone
 
 
 def _ordered_named_parameters(models: Mapping[str, Any]) -> tuple[tuple[str, Any], ...]:
@@ -277,6 +348,82 @@ class Figure10NativeFitAdapter:
     def consume(self, state, graph):
         return self.backend.consume(state, graph)
 
+    def _snapshot_epoch_evidence(self, record: EpochRecord,
+                                 terminal_state: gr.CompleteState) -> Figure10EpochEvidence:
+        if (not isinstance(record, EpochRecord)
+                or record.epoch != self._evaluation_epoch
+                or record.attempted_updates != 2559
+                or record.completed_updates != 2559):
+            raise FitProtocolError("epoch evidence requires the matching complete epoch record")
+        if not isinstance(terminal_state, gr.CompleteState):
+            raise FitProtocolError("terminal evidence requires the complete hidden/cell state type")
+        if (type(terminal_state.next_target_t) is not int
+                or terminal_state.next_target_t != 2816
+                or terminal_state.node_ids != tuple(range(100))):
+            raise FitProtocolError("terminal validation state must be canonical s[2816]")
+        source_device = str(getattr(self.backend, "device", ""))
+        if not source_device:
+            raise FitProtocolError("native backend device identity is unavailable")
+        hidden_shape, hidden_dtype, hidden_device = _tensor_shape_dtype_device(
+            terminal_state.hidden, "terminal hidden")
+        cell_shape, cell_dtype, cell_device = _tensor_shape_dtype_device(
+            terminal_state.cell, "terminal cell")
+        if (hidden_shape != (1, 100, 128) or cell_shape != hidden_shape
+                or hidden_dtype != "torch.float32" or cell_dtype != hidden_dtype
+                or hidden_device != source_device or cell_device != source_device):
+            raise FitProtocolError("terminal hidden/cell tensors differ from backend FP32 state")
+        hidden = _clone_cpu_tensor(terminal_state.hidden, "terminal hidden")
+        cell = _clone_cpu_tensor(terminal_state.cell, "terminal cell")
+        if any(_tensor_shape_dtype_device(value, name) !=
+               ((1, 100, 128), "torch.float32", "cpu")
+               for value, name in ((hidden, "terminal hidden clone"),
+                                   (cell, "terminal cell clone"))):
+            raise FitProtocolError("terminal evidence clones must be CPU FP32 tensors")
+        terminal = gr.CompleteState(hidden, cell, 2816, tuple(range(100)))
+
+        expected = _expected_state_dict_specs()
+        copied_components = {}
+        for backend_key in ("node_emb", "link_pred"):
+            model = self.backend.models[backend_key]
+            state_dict = model.state_dict()
+            expected_items = expected[backend_key]
+            expected_names = tuple(name for name, _, _ in expected_items)
+            if not isinstance(state_dict, Mapping) or tuple(state_dict) != expected_names:
+                raise FitProtocolError(f"{backend_key} state_dict keys/order differ from pinned catalog")
+            copied_tensors = {}
+            for name, expected_shape, expected_dtype in expected_items:
+                value = state_dict[name]
+                shape, dtype, device = _tensor_shape_dtype_device(value, f"{backend_key}.{name}")
+                if (shape != expected_shape or dtype != expected_dtype
+                        or device != source_device):
+                    raise FitProtocolError(f"{backend_key}.{name} differs from pinned tensor catalog")
+                clone = _clone_cpu_tensor(value, f"{backend_key}.{name}")
+                clone_shape, clone_dtype, clone_device = _tensor_shape_dtype_device(
+                    clone, f"{backend_key}.{name} clone")
+                if (clone_shape, clone_dtype, clone_device) != (expected_shape, expected_dtype, "cpu"):
+                    raise FitProtocolError(f"{backend_key}.{name} clone differs from pinned tensor catalog")
+                copied_tensors[name] = clone
+            copied_components[backend_key] = MappingProxyType(copied_tensors)
+
+        rows = tuple(row for row in self.validation_rows
+                     if row.get("epoch") == record.epoch)
+        if len(rows) != 256:
+            raise FitProtocolError("complete epoch evidence requires exactly 256 validation rows")
+        copied_rows = []
+        for offset, row in enumerate(rows):
+            target_t = 2560 + offset
+            if (row.get("target_timestamp") != target_t
+                    or row.get("source_timestamp") != target_t - 1
+                    or row.get("target_phase") != target_t % 64
+                    or row.get("source_phase") != (target_t - 1) % 64
+                    or row.get("pairs") != 9900):
+                raise FitProtocolError("validation evidence rows are incomplete or out of order")
+            copied_rows.append(MappingProxyType(dict(row)))
+        return Figure10EpochEvidence(
+            record=record, terminal_state=terminal,
+            model_state_dicts=MappingProxyType(copied_components),
+            validation_rows=tuple(copied_rows))
+
     def _tracked_loss_update(self, state, target, negatives) -> float:
         optimizer = getattr(self.backend, "optimizer", None)
         if optimizer is None or not callable(getattr(optimizer, "step", None)):
@@ -370,7 +517,8 @@ class Figure10NativeFitAdapter:
             policy: FitPolicy | None = None,
             on_attempt: Callable[[dict[str, Any]], None] = lambda _: None,
             on_update: Callable[[dict], None] = lambda _: None,
-            on_selection: Callable[[Any], None] = lambda _: None):
+            on_selection: Callable[[Any], None] = lambda _: None,
+            on_epoch_complete: Callable[[Figure10EpochEvidence], None] | None = None):
         """Run with the exact frozen production policy and adapter inputs."""
         policy = self.policy if policy is None else policy
         if type(policy) is not FitPolicy or policy != FitPolicy():
@@ -380,6 +528,9 @@ class Figure10NativeFitAdapter:
         self._used = True
         self._fit_active = True
         self._fit_thread_id = threading.get_ident()
+        def capture_epoch(record, terminal_state):
+            if on_epoch_complete is not None:
+                on_epoch_complete(self._snapshot_epoch_evidence(record, terminal_state))
         try:
             result = run_figure10_fit(backend=self,
                                       training_graphs=self.training_graphs,
@@ -387,7 +538,8 @@ class Figure10NativeFitAdapter:
                                       guard=guard, policy=policy,
                                       on_attempt=on_attempt,
                                       on_update=on_update,
-                                      on_selection=on_selection)
+                                      on_selection=on_selection,
+                                      on_epoch_complete=capture_epoch)
         finally:
             self._fit_active = False
             self._fit_thread_id = None

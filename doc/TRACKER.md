@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-16 23:01 UTC. See the [latest notebook entry](october/october17/2026-10-17-progress-report.md),
+Updated 2026-10-17 12:29 UTC. See the [latest notebook entry](october/october17/2026-10-17-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
@@ -106,6 +106,13 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   module. The hook only provides durable charging when a production caller
   durably commits before returning. Integration with that journal, complete
   epoch checkpoint candidates and verified data/source receipts remains open.
+  Complete-epoch evidence capture is independently accepted: after all 256
+  validation scores/consumptions and the complete-epoch guard, it snapshots
+  `s[2816]`, both catalogued component state dictionaries, and the ordered
+  validation rows before selection application. The Boolean is computed in
+  memory before this hook; durable transaction/application follows it. This is
+  evidence capture only, not serialization or a trained candidate. Its CUDA
+  test uses a synthetic device shim.
   The durable pure-data S07/S08 selection ledger is now independently
   accepted after fixing a stale-alias/no-head bypass. Its 11 synthetic tests
   cover strict improvement/ties, finalization, pinned-head reopen, corruption,

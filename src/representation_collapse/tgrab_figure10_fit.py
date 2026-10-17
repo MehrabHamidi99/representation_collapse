@@ -168,14 +168,16 @@ def run_figure10_fit(*, backend: FitBackend, training_graphs: Sequence[Any],
                      policy: FitPolicy = FitPolicy(),
                      on_attempt: Callable[[dict[str, Any]], None] = lambda _: None,
                      on_update: Callable[[dict[str, Any]], None] = lambda _: None,
-                     on_selection: Callable[[EpochRecord], None] = lambda _: None) -> FitResult:
+                     on_selection: Callable[[EpochRecord], None] = lambda _: None,
+                     on_epoch_complete: Callable[[EpochRecord, Any], None] = lambda *_: None) -> FitResult:
     """Production entry point; accepts only the exact frozen Figure 10 policy."""
     if type(policy) is not FitPolicy or policy != FitPolicy():
         raise FitProtocolError("production Figure 10 fit requires the exact frozen FitPolicy")
     return _run_figure10_fit_lifecycle(
         backend=backend, training_graphs=training_graphs,
         validation_graphs=validation_graphs, guard=guard, policy=policy,
-        on_attempt=on_attempt, on_update=on_update, on_selection=on_selection)
+        on_attempt=on_attempt, on_update=on_update, on_selection=on_selection,
+        on_epoch_complete=on_epoch_complete)
 
 
 def _run_figure10_fit_lifecycle(*, backend: FitBackend,
@@ -184,9 +186,9 @@ def _run_figure10_fit_lifecycle(*, backend: FitBackend,
                      policy: FitPolicy = FitPolicy(),
                      on_attempt: Callable[[dict[str, Any]], None] = lambda _: None,
                      on_update: Callable[[dict[str, Any]], None] = lambda _: None,
-                     on_selection: Callable[[EpochRecord], None] = lambda _: None) -> FitResult:
-    """Private lifecycle core; reduced policies are for synthetic unit tests only."""
-    """Run complete training epochs and validation-only model selection.
+                     on_selection: Callable[[EpochRecord], None] = lambda _: None,
+                     on_epoch_complete: Callable[[EpochRecord, Any], None] = lambda *_: None) -> FitResult:
+    """Private lifecycle core; reduced policies are for synthetic tests only.
 
     The function intentionally accepts no held-out graph sequence and contains
     no loader/opener for one. At epoch boundaries it resets recurrent state,
@@ -205,6 +207,11 @@ def _run_figure10_fit_lifecycle(*, backend: FitBackend,
     its step status is `unknown` unless the exception explicitly supplies
     `step_status`. If the call succeeds, the returned update counts as
     completed before callbacks or subsequent stop/deadline checks.
+
+    `on_epoch_complete` receives the immutable record and final state after
+    the 256th validation target has been consumed, only after the complete
+    epoch guard succeeds. It runs before the selection callback and does not
+    imply durable persistence unless its caller implements that guarantee.
     """
     policy.validate()
     _check_sequence(training_graphs, TRAIN_START, TRAIN_STOP, "training_graphs")
@@ -364,6 +371,10 @@ def _run_figure10_fit_lifecycle(*, backend: FitBackend,
                              validation_selected=selected,
                              nonimproving_loss_epochs=stale_loss_epochs)
         history.append(record)
+        # `state` is s[2816]: validation target 2815 has been consumed under
+        # the frozen epoch-final weights. This hook runs only after all 256
+        # rows and the complete-epoch guard succeed, before selection callback.
+        on_epoch_complete(record, state)
         if selected:
             on_selection(record)
         if stale_loss_epochs >= policy.loss_patience:

@@ -219,6 +219,28 @@ class Figure10FitLifecycleTests(unittest.TestCase):
         self.assertEqual(selected, [1, 2])
         self.assertFalse(result.history[2].validation_selected)
 
+    def test_epoch_complete_callback_runs_for_each_full_replay_before_selection(self):
+        train, val = sequences()
+        backend = SpyBackend(validation_scores=[0.8, 0.7])
+        events = []
+
+        def epoch_complete(record, terminal_state):
+            events.append(("complete", record.epoch, terminal_state.next_timestamp,
+                           len(backend.scored), record.validation_selected))
+
+        def selection(record):
+            events.append(("selection", record.epoch))
+
+        _run_figure10_fit_lifecycle(backend=backend,
+            training_graphs=train, validation_graphs=val,
+            policy=FitPolicy(max_complete_epochs=2),
+            on_epoch_complete=epoch_complete, on_selection=selection)
+        self.assertEqual(events, [
+            ("complete", 1, 2816, 256, True),
+            ("selection", 1),
+            ("complete", 2, 2816, 512, False),
+        ])
+
     def test_loss_patience_uses_complete_training_losses_only_and_resets_on_improvement(self):
         train, val = sequences()
         backend = SpyBackend(losses=[1.0, 0.9999995, 0.999998, 0.9999981, 0.9999982],
@@ -239,6 +261,7 @@ class Figure10FitLifecycleTests(unittest.TestCase):
         train, val = sequences()
         backend = SpyBackend()
         records = []
+        completed_epochs = []
 
         def guard():
             if len(records) >= 2:
@@ -248,6 +271,7 @@ class Figure10FitLifecycleTests(unittest.TestCase):
             _run_figure10_fit_lifecycle(backend=backend, training_graphs=train,
                 validation_graphs=val, guard=guard,
                 on_update=records.append,
+                on_epoch_complete=lambda record, state: completed_epochs.append(record.epoch),
                 policy=FitPolicy(max_complete_epochs=1))
         exc = caught.exception
         self.assertEqual(exc.reason, "STOP")
@@ -257,6 +281,7 @@ class Figure10FitLifecycleTests(unittest.TestCase):
         self.assertEqual(exc.optimizer_steps_confirmed, 2)
         self.assertEqual(len(backend.scored), 0)
         self.assertEqual(backend.resets, ["train"])
+        self.assertEqual(completed_epochs, [])
 
     def test_failed_attempt_is_not_retried_and_step_status_is_not_assumed(self):
         train, val = sequences()

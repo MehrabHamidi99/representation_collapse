@@ -38,3 +38,31 @@ inputs to verified data/source/environment admissions; and pass node2b reload
 plus full hidden/cell replay before any test split is opened. Figure 10 remains
 unreproduced, and it is a behavioral F1 figure rather than evidence of
 representation-dimension collapse.
+
+## 12:29 UTC / 15:29 Qatar — complete-epoch candidate evidence handoff
+
+Added `on_epoch_complete(record, terminal_state)` to the fit lifecycle and a
+native-adapter evidence snapshot. The hook fires once per complete epoch only
+after all 256 validation rows have been scored and consumed and the final
+epoch guard succeeds; it receives state after consuming validation timestamp
+2815 (`next_target_t=2816`, the full hidden and cell state). It runs before the
+selection callback/application, although the core has already calculated the
+validation-selection Boolean and updated its in-memory best fields.
+
+The adapter validates terminal chronology, canonical node order/shape, exact
+state_dict names/order/shapes/dtypes against the pinned 20-recurrent/6-head
+tensor catalog, consistent source device, and all 256 ordered validation
+rows. It returns read-only containers and independent detached CPU FP32 clones
+of H/C and both component state dictionaries. Tests show those snapshots stay
+unchanged after later synthetic optimizer mutation. The synthetic CUDA-device
+shim exercises transfer behavior; no actual GPU or native model was run.
+
+Independent review accepted exact core/adapter/test hashes:
+`2c771a13eada794aecb14d740b8cc0dccffd0501db6fffa533f3170039e8cae0`,
+`63f707dbf9c1b2a0b38647dfb990fe638f1836b1174c53d312c600fbd1cbd184`,
+`debf456c488236e1c3a9aec7b85fb4a4027776d9dc54d54f85c684779da5d4d8`, and
+`ad40cc2f1582cbecbb8956e7bf1fd5312fcb3e0d4b28913bb90453a73e96b536`.
+Focused synthetic suites pass 13 fit-core + 15 adapter tests. This supplies a
+candidate-evidence handoff only; it does not encode/write the six-file bundle,
+commit selection, establish external trust, or load/replay a selected model.
+No data or test split was opened, and no training or cluster work occurred.
