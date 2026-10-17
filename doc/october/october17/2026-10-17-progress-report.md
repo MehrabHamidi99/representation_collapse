@@ -71,6 +71,41 @@ failure terminal, commit a candidate only after read-back verification, and
 require explicit trusted admission inputs; then independently review and
 exercise failure/reopen behavior before considering a fit.
 
+## 12:43 UTC / 15:43 Qatar — candidate publication/selection callback reviewed
+
+Added `Figure10SelectionSink` and isolated tests. A fresh sink requires an
+empty S07/S08 ledger with explicit run/admission context and a pristine
+`ValidationOnlySelection`; this implementation rejects nonempty/recovery state
+rather than guessing. For each epoch it checks the lifecycle's strict
+improvement flag, creates and reads back the six-file candidate, commits the
+ledger transaction, and applies GR selection once inside the ledger callback.
+The fit `on_selection` callback is only a verification barrier, preventing a
+second `consider()` call. First-epoch zero F1 selects; ties retain the earliest
+checkpoint. The sink freezes manifest identity pins and all stable provenance
+across epochs, excluding only the timestamp and epoch counters; malformed
+provenance, failed publication, or failed transaction poisons the sink with no
+retry. UTC `Z` timestamps are normalized to the schema-required `+00:00` form.
+
+Independent review accepted sink SHA
+`d8bf627ea4f38e968259d417cea9d22e970258582b345e7877917623dbb0dcf8` and test
+SHA `4b7d3978727d029fe66cd55ec1008cf31d8e3b05099d806eeb3d106d71653ef7`.
+The full focused Figure 10, fit, adapter, encoder, sink, canary, checkpoint,
+and transaction suites pass 91 tests (3 platform-specific skips). The tests
+publish synthetic bundles through the actual codec writer/reader and ledger;
+no graph model or primary dataset is loaded.
+
+This does not yet provide durable pre-step update accounting, a trusted
+provenance/admission verifier, selected-ledger recovery, finalization, native
+checkpoint loading, node2b replay parity, offline reporting integration, or a
+complete production supervisor. The local readiness gate remains blocked by
+the frozen disabled config, incompatible local dependencies and missing
+receipts/runner. Read-only SSH probes from this environment could not resolve
+Mila or Tamia hostnames; current scheduler state is unknown. No fit, cluster
+submission, test access, reproduced Figure 10 curve, or collapse finding
+occurred. The next step is to integrate this sink with a reviewed durable
+attempt journal and the external source/data/environment/admission receipt
+checks; only then can a valid CPU fit be prepared.
+
 ## 23:01 UTC / 02:01 Qatar — durable selection transaction gate
 
 Continued the Figure 10 reproduction subgoal after Mila access was restored.
