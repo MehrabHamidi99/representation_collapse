@@ -23,8 +23,53 @@ epoch-to-bundle assembler and production selection callback remain missing;
 source/data/runtime admission and selected-checkpoint load/replay parity also
 remain unreleased. No primary fit, test access, cluster operation, submission,
 Figure 10 reproduction or representation-collapse finding occurred. Next local
-gate: build the typed epoch-evidence-to-six-file candidate encoder, keeping all
-externally trusted provenance inputs explicit and refusing absent receipts.
+gate: independently review the typed epoch-evidence-to-six-file candidate
+encoder, then connect verified candidate publication to the durable selection
+ledger while preserving the external trust boundary.
+
+After the owner confirmed Mila access, read-only BatchMode SSH probes for Mila
+and Tamia from this local environment failed at hostname resolution, before
+authentication. No cluv version or live scheduler state was obtained; this
+does not establish that the owner's restored interactive session is unavailable.
+
+## 12:38 UTC / 15:38 Qatar — epoch-candidate encoder accepted synthetically
+
+Implemented `encode_epoch_candidate` in
+`src/representation_collapse/tgrab_figure10_candidate_encoder.py`, consuming a
+complete epoch snapshot plus explicit caller-supplied provenance and manifest
+identity pins. It emits the frozen six canonical file payloads after checking
+exact epoch/update counters, catalog names/order/shapes, CPU FP32 tensors,
+terminal H/C chronology, 256 ordered validation rows and recomputed time-mean
+F1. It validates the metadata against the pinned schema and verifies
+cross-file identities. A regression discovered in independent review—schema
+identity was not tied to `provenance.source_sha256.schema`—is fixed and has a
+mutation-rejection fixture.
+
+Independent review accepted current exact hashes: encoder
+`08381a63be5d8c271d7cae70088c098516cb2e7a734441e5ea24aa28c5986b32`; tests
+`8ee97a15548e63994f67e13558f31a8021334a9f2f4f88e0d83acefaa4cb9081`. Reviewer
+found no other internal cross-binding defect. The synthetic bundle is accepted
+by the existing create-only writer and `read_candidate`; the test preserves
+signed-zero and subnormal FP32 bits. Combined Figure 10, fit, adapter, encoder,
+canary, checkpoint and transaction suites pass 82 tests (3 platform-specific
+skips); diff checks pass.
+
+This builder checks consistency but cannot authenticate its caller's provenance
+or admission. Split-data hashes and the conversion receipt still require
+authentication by an external trusted admission path. The builder is not yet
+wired into a production fit callback or the S07/S08 ledger. No trained candidate
+was produced, no primary data or test targets were opened, and no training or
+cluster job ran. The local readiness test still correctly reports launch
+blocked by the frozen disabled config, missing runtime/dependency receipts and
+the absent native checkpoint/reporting runner. A fresh read-only SSH probe could
+not resolve Mila or Tamia hostnames from this execution environment, so current
+cluv/scheduler state remains unverified here.
+
+Next local gate: integrate complete-epoch evidence encoding, candidate
+publication and durable selection as one production callback. Keep transaction
+failure terminal, commit a candidate only after read-back verification, and
+require explicit trusted admission inputs; then independently review and
+exercise failure/reopen behavior before considering a fit.
 
 ## 23:01 UTC / 02:01 Qatar — durable selection transaction gate
 

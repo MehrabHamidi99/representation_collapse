@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-17 12:33 UTC. See the [latest notebook entry](october/october17/2026-10-17-progress-report.md),
+Updated 2026-10-17 12:38 UTC. See the [latest notebook entry](october/october17/2026-10-17-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
@@ -121,8 +121,15 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   Frozen CPU/FP32 execution is now enforced during adapter construction and
   rechecked at fit entry. Independent review accepted both early CUDA/mixed-
   device rejection paths; 39 focused native-fit/codec/selection tests pass.
-  This closes a protocol guard only. The next local gate is the externally
-  pinned epoch-evidence-to-six-file candidate encoder.
+  The complete-epoch-to-six-file candidate encoder has now passed independent
+  synthetic review; its artifact round-trips through the writer/reader and its
+  provenance/schema cross-bindings pass mutation checks. Full Figure 10 focused
+  suites pass 82 checks (3 platform-specific skips). This still does not
+  authenticate caller provenance/admission or connect a production selection
+  callback. No fit, selected candidate, test access, cluster submission, or
+  scientific result exists. Current next gate: wire the encoder, verified
+  candidate publication, and durable S07/S08 selection into one production
+  callback with terminal failure/reopen handling.
 
 - **Overnight progress confirmed; checkpoint schema specification accepted — October16.**
   The approved Mila conversion job11273685 ran from02:09:36 to02:11:42 UTC on
