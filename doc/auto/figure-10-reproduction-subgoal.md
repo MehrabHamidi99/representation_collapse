@@ -1,8 +1,10 @@
 # Subgoal: reproduce T-GRAB Figure 10
 
-Set on 2026-10-16. Status: **active; Figure 10 retraining has not started**.
-Native engineering prerequisites have passed, but no trained reconstruction
-exists. This is the immediate graph-baseline subgoal of the broader
+Set on 2026-10-16. Status updated 2026-10-19: **active; seed-0 GC-LSTM
+retraining is running on Mila through cluv, job11321105**.
+Native engineering prerequisites passed; complete-epoch selection and held-out
+evaluation remain pending. See [fit admission](figure10-full-fit-2026-10-19.md).
+This is the immediate graph-baseline subgoal of the broader
 representation-collapse project. A successful behavioral reproduction will
 not by itself establish representation collapse.
 

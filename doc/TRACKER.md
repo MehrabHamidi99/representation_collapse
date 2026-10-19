@@ -1,12 +1,26 @@
 # Current research state
 
-Updated 2026-10-19 20:59 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
+Updated 2026-10-19 21:12 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **2026-10-19 21:12 UTC — complete-epoch fit launched through cluv.**
+  Mila job **11321105** is RUNNING on cn-f004 from reviewed source `6d89c657`.
+  Run `full-20261019T211030Z-6d89c657` uses the unchanged v1 CPU/FP32 seed-0
+  configuration: one CPU, 2 GiB, zero GPUs, one-hour capped fit, no retry or
+  requeue. Complete validation epochs alone can create selected candidates;
+  this worker has no held-out test opener. Initial supervisor admission and
+  worker ownership are recorded; optimizer progress and fit outcome remain
+  to be checked. Thirty-one focused tests and independent review passed.
+  Native selected replay/evaluation and plotting are being integrated in
+  separate files while the admitted source stays immutable on Mila.
+  The local Qwen heartbeat at21:10:31 UTC reports35 completed reviews,
+  no in-flight request and waiting for new evidence; no cluster Qwen service
+  is claimed. See [fit admission](auto/figure10-full-fit-2026-10-19.md).
 
 - **2026-10-19 20:59 UTC — native training progress independently verified.**
   Cluv-submitted Mila job11320665 completed `0:0` in 156 seconds on cn-f002:

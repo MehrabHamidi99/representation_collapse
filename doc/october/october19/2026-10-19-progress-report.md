@@ -192,3 +192,41 @@ Native selected loading and the s[2816] H/C observer are later node2b work;
 they must precede held-out test access, and do not require another redundant
 pre-fit synthetic training gate. No Figure 10 curve, competence or collapse
 claim is accepted by this diagnostic.
+
+## 21:12 UTC — complete-epoch Figure 10 fit launched
+
+User asked to reproduce; the authorized next actual training job was submitted
+through cluv0.1.5 rather than stopping at the prefix diagnostic. Native full-fit
+runner, selected loader/replay evaluator and cadenced durable attempt journal
+passed independent review. Coordinator ran31focused unittest cases. A mistaken
+pytest invocation found no pytest in the local controller environment; running
+the repository's unittest cases directly passed. No environment was modified.
+Source committed/pushed as `6d89c657c41cf38ff3dd074a1e886b4bd2b26c4c`.
+
+Mila remote clean checkout was advanced to that exact source after confirming
+no representation-collapse job was active. The independent conversion receipt
+was rehashed at its actual path, matching
+`9e279518ab997e8a7596a3a23f67fd3d9ea0362d761d814149fb5eec8e88e2c8`.
+A fresh create-only admission bound complete package source bytes, protocol,
+config, existing environment/node2a/conversion receipts and arguments. Admission
+SHA `e31d22396f77c86715cff7a39416df092b7fe61e1d8e0a317ebdcc7cac19d0c7`.
+The isolated controller preview resolved exactly one full-fit wrapper and a
+one-CPU/2GiB/zeroGPU, main-cpu, normal QOS/account mila, one-hour Slurm request.
+The pre-submission intent and cluv result are retained under ignored
+`runs/ops/figure10-full-20261019/full-20261019T211030Z-6d89c657/`.
+
+Cluv returned **11321105**. Scheduler independently showed RUNNING on cn-f004
+at21:11:21UTC. Remote output is scratch
+`representation-collapse/runs/figure10-full/full-20261019T211030Z-6d89c657/`;
+supervisor receipt and journal are adjacent hidden control files. Its sibling
+`.STOP` control (run ID followed by `.STOP`) stops this job. No requeue, retry,
+race or unrelated allocation is used. Source remains immutable while it runs.
+
+This is seed0 corrected capped GC-LSTM reconstruction under existing v1, not
+the paper's completed multi-model/five-seed Figure10. Optimizer/epoch outcomes
+are pending, and held-out data remains sealed. A separate native evaluation
+CLI and explicit receipt contract are being prepared locally; complete H/C
+replay from zero is mandatory before test. A separate plotter will consume
+only independently accepted evaluation artifacts. No empirical collapse claim.
+The existing local continuous Qwen heartbeat remains current at21:10:31UTC,
+35reviews, idle awaiting evidence, zero current requests; it is not restarted.
