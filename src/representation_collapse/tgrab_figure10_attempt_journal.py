@@ -58,7 +58,9 @@ class Figure10AttemptJournal:
     """
 
     def __init__(self, attempts_dir: str | os.PathLike[str],
-                 context: SelectionContext):
+                 context: SelectionContext, *, namespace_audit_interval: int = 1):
+        if type(namespace_audit_interval) is not int or not 1 <= namespace_audit_interval <= _MAX_SEQUENCE:
+            raise AttemptJournalError("namespace audit interval must be a bounded positive integer")
         if not isinstance(context, SelectionContext):
             raise AttemptJournalError("explicit SelectionContext is required")
         if (type(context.run_id) is not str or _ID.fullmatch(context.run_id) is None
@@ -109,6 +111,11 @@ class Figure10AttemptJournal:
         self._poisoned = False
         self._terminal = False
         self._closed = False
+        self.namespace_audit_interval = namespace_audit_interval
+        self._namespace_checks = 0
+        self._digests: dict[str, str] = {_LOCK: hashlib.sha256(b"").hexdigest()}
+        self._directory_identity = (dst.st_dev, dst.st_ino)
+        self._lock_identity = (lock_st.st_dev, lock_st.st_ino)
 
     @property
     def poisoned(self) -> bool:
@@ -159,19 +166,49 @@ class Figure10AttemptJournal:
             if names != expected:
                 raise OSError("journal namespace differs from its expected create-only contents")
             for name in names:
-                fd = os.open(name, os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0), dir_fd=self._dir_fd)
-                try:
-                    st = os.fstat(fd)
-                    if not stat.S_ISREG(st.st_mode) or st.st_nlink != 1:
-                        raise OSError("journal entry is not a regular single-link file")
-                finally:
-                    os.close(fd)
+                if hashlib.sha256(self._read_file(name)).hexdigest() != self._digests.get(name):
+                    raise OSError("prior journal record bytes changed after durable commit")
             if self._pending is not None:
                 raw = self._read_file(f"{self._last_sequence:08d}.intent.json")
                 if hashlib.sha256(raw).hexdigest() != self._pending_sha or _parse(raw) != self._pending:
                     raise OSError("pending attempt intent changed after durable commit")
         except BaseException as exc:
             self._fail("journal namespace or prior intent integrity check failed", exc)
+
+    def _check_integrity(self) -> None:
+        """Constant-sized owner/pending checks, with explicitly cadenced scans."""
+        try:
+            directory = os.lstat(self.path)
+            lock = os.stat(_LOCK, dir_fd=self._dir_fd, follow_symlinks=False)
+            if (not stat.S_ISDIR(directory.st_mode)
+                    or (directory.st_dev, directory.st_ino) != self._directory_identity
+                    or not stat.S_ISREG(lock.st_mode) or lock.st_nlink != 1
+                    or (lock.st_dev, lock.st_ino) != self._lock_identity):
+                raise OSError("journal directory/lock ownership changed")
+            if self._pending is not None:
+                raw = self._read_file(f"{self._last_sequence:08d}.intent.json")
+                if hashlib.sha256(raw).hexdigest() != self._pending_sha or _parse(raw) != self._pending:
+                    raise OSError("pending intent changed")
+            if self._namespace_checks % self.namespace_audit_interval == 0:
+                self._verify_namespace()
+            self._namespace_checks += 1
+        except BaseException as exc:
+            self._fail("journal ownership/pending integrity check failed", exc)
+
+    def audit(self) -> None:
+        """Force full namespace and committed-byte audit before publishing evidence.
+
+        With interval >1 the runner MUST invoke this before every epoch
+        candidate publication and finalization. Audits never repair or resume.
+        """
+        self._live()
+        # Include current ownership/pending checks; a due cadence scan may
+        # already cover this boundary, so do not repeat a complete scan.
+        due = self._namespace_checks % self.namespace_audit_interval == 0
+        self._check_integrity()
+        if due:
+            return
+        self._verify_namespace()
 
     def _read_file(self, name: str) -> bytes:
         fd = os.open(name, os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0), dir_fd=self._dir_fd)
@@ -205,6 +242,7 @@ class Figure10AttemptJournal:
                 view = view[count:]
             os.fsync(fd)
             os.fsync(self._dir_fd)
+            self._digests[name] = hashlib.sha256(raw).hexdigest()
             return raw
         finally:
             os.close(fd)
@@ -230,7 +268,7 @@ class Figure10AttemptJournal:
                     or record.get("training_order_index") != target_t - 1
                     or record.get("consumed_timestamp") != target_t - 1):
                 raise ValueError("attempt chronology differs from the frozen fit callback")
-            self._verify_namespace()
+            self._check_integrity()
             intent = {
                 "kind": "tgrab_figure10_optimizer_intent_v1",
                 "run_id": self.context.run_id,
@@ -296,7 +334,7 @@ class Figure10AttemptJournal:
             expected_steps = seq if status == "completed" else seq - 1
             if record["optimizer_steps_confirmed"] != expected_steps:
                 raise ValueError("optimizer step counter differs from exact outcome semantics")
-            self._verify_namespace()
+            self._check_integrity()
             outcome = {
                 "kind": "tgrab_figure10_optimizer_outcome_v1",
                 "run_id": self.context.run_id,

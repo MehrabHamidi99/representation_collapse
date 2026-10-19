@@ -67,6 +67,46 @@ def _read(root: Path, seq: int, suffix: str):
 
 
 class Figure10AttemptJournalTests(unittest.TestCase):
+    def test_cadenced_audit_preserves_pending_integrity_and_forced_prior_audit(self):
+        with tempfile.TemporaryDirectory() as td:
+            with Figure10AttemptJournal(td, _context(), namespace_audit_interval=256) as journal:
+                journal.on_attempt(_attempt(1))
+                journal.on_update(_update(1))
+                prior = Path(td) / "00000001.outcome.json"
+                prior.write_bytes(prior.read_bytes().replace(b'"completed_return":true', b'"completed_return":false'))
+                # A pending intent is still protected immediately off cadence.
+                journal.on_attempt(_attempt(2))
+                with self.assertRaises(AttemptJournalError):
+                    journal.audit()
+                self.assertTrue(journal.poisoned)
+
+    def test_off_cadence_pending_intent_mutation_prevents_outcome(self):
+        with tempfile.TemporaryDirectory() as td:
+            with Figure10AttemptJournal(td, _context(), namespace_audit_interval=256) as journal:
+                journal.on_attempt(_attempt(1))
+                path = Path(td) / "00000001.intent.json"
+                path.write_bytes(path.read_bytes() + b" ")
+                with self.assertRaises(AttemptJournalError):
+                    journal.on_update(_update(1))
+                self.assertFalse((Path(td) / "00000001.outcome.json").exists())
+
+    def test_full_namespace_work_is_amortized_and_forced_audit_catches_extra_file(self):
+        with tempfile.TemporaryDirectory() as td:
+            with Figure10AttemptJournal(td, _context(), namespace_audit_interval=256) as journal:
+                with mock.patch.object(journal, "_verify_namespace", wraps=journal._verify_namespace) as scans, mock.patch.object(journal, "_read_file", wraps=journal._read_file) as reads:
+                    for sequence in range(1, 513):
+                        journal.on_attempt(_attempt(sequence))
+                        journal.on_update(_update(sequence))
+                    journal.audit()
+                    # 1024 callbacks require four cadence scans + boundary.
+                    self.assertLessEqual(scans.call_count, 5)
+                    # Bound total historical+pending reads, rather than timing
+                    # flaky filesystem performance or mirroring name generation.
+                    self.assertLess(reads.call_count, 5000)
+                (Path(td) / "unexpected").write_text("tampered")
+                with self.assertRaises(AttemptJournalError):
+                    journal.audit()
+
     def test_attempt_is_fsynced_before_callback_returns_and_pairs_with_outcome(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td) / "attempts"
