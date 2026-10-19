@@ -1,12 +1,23 @@
 # Current research state
 
-Updated 2026-10-17 12:43 UTC. See the [latest notebook entry](october/october17/2026-10-17-progress-report.md),
+Updated 2026-10-19 19:56 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **2026-10-19 update — local reproduction engineering advanced; remote
+  autoresearch liveness unverified.** The durable pre-step Figure 10 attempt
+  journal and callback orchestration helper are implemented and independently
+  reviewed, including counter validation, terminal-after-error behavior,
+  context binding and fail-closed cleanup. The focused suite passes 107 tests
+  (3 platform-specific skips); no training, test access or cluster job
+  occurred. The last Qwen liveness evidence is Oct16 13:54 UTC (33 verified
+  replies); today's Mila
+  session still needs interactive email OTP, so no current worker, queue, cluv
+  or shared-allocation state is claimed. See the [Oct19 report](october/october19/2026-10-19-progress-report.md).
 
 - **Immediate graph-baseline subgoal — reproduce T-GRAB Figure 10.** The
   target is `Pdet(2,32)` per-timestep F1, with a GC-LSTM-first DTDG-panel
