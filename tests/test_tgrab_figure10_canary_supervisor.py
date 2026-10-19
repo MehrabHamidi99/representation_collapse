@@ -80,6 +80,66 @@ class AdmissionTests(unittest.TestCase):
                 with self.subTest(admission=admission), self.assertRaises(s.AdmissionError):
                     s.validate_admission(admission, actual=actual, memory=memory)
 
+class ReceiptIntegrationTests(unittest.TestCase):
+    def test_run_publishes_child_required_identity_and_exact_executed_argv(self):
+        """Exercise actual receipt publication rather than hand-building a receipt."""
+        import contextlib
+        import json
+        from unittest.mock import Mock
+        from representation_collapse.tgrab_figure10_canary import validate_supervisor_runtime
+        admission, actual, memory = AdmissionTests().fixture()
+        # This ns value distinguishes integer-division and float-division
+        # rounding, so the child/supervisor deadline agreement is deterministic.
+        started = 1792442634000000123
+        self.assertNotEqual(started / 1e9, started / 1_000_000_000)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); run_dir = root / 'prefix01'
+            current = root / 'memory.current'; current.write_text('123')
+            memory.update(current_path=str(current), peak_path=None)
+            actual.update(slurm_environment={'SLURM_JOB_ID':'123'}, scheduler_record={'Restarts':'0','Requeue':'0'})
+            env_receipt = {'path': '/pinned/env.json', 'sha256':'b'*64}
+            node_receipt = {'path': '/pinned/node.json', 'sha256':'c'*64}
+            admission['canary_args'].extend(['--run-dir',str(run_dir),'--stop-file',str(run_dir/'STOP'),
+                '--environment-receipt',env_receipt['path'],'--environment-receipt-sha256',env_receipt['sha256'],
+                '--node2a-receipt',node_receipt['path'],'--node2a-receipt-sha256',node_receipt['sha256']])
+            admission.update(environment_receipt=env_receipt, node2a_receipt=node_receipt)
+            closure = {'src/representation_collapse/tgrab_figure10_canary.py':'d'*64}
+            admission['closure_sha256'] = closure
+            child = Mock(pid=456)
+            with contextlib.ExitStack() as stack:
+                stack.enter_context(patch.object(s.time, 'time', return_value=started / 1e9 + 1))
+                stack.enter_context(patch.dict(os.environ, {'RC_WALL_START_EPOCH_NS':str(started),
+                    'RC_JOB_WALL_SECONDS':'570','SLURM_JOB_ID':'123'}, clear=True))
+                stack.enter_context(patch.object(s,'regular_bytes',return_value=json.dumps(admission).encode()))
+                stack.enter_context(patch.object(s,'_git_identity',return_value=admission['source_commit']))
+                stack.enter_context(patch.object(s,'source_closure',return_value=closure))
+                stack.enter_context(patch.object(s,'_verify_interpreter'))
+                stack.enter_context(patch.object(s,'_verify_environment_receipt',return_value=env_receipt))
+                stack.enter_context(patch.object(s,'_verify_node2a',return_value=node_receipt))
+                stack.enter_context(patch.object(s,'validate_admission',return_value=(actual,memory)))
+                stack.enter_context(patch.object(s,'enable_child_subreaper',return_value=False))
+                popen = stack.enter_context(patch.object(s.subprocess,'Popen',return_value=child))
+                stack.enter_context(patch.object(s,'supervise_child',return_value=(0,None)))
+                self.assertEqual(s.run('/reviewed/admission.json','e'*64),0)
+            receipt_path = root / '.prefix01.supervisor-receipt.json'
+            receipt = json.loads(receipt_path.read_text())
+            self.assertEqual(receipt['run_id'], admission['run_id'])
+            self.assertEqual(receipt['job_id'], '123')
+            self.assertEqual(receipt['schema'],'tgrab-figure10-supervisor-receipt-v2')
+            self.assertEqual(receipt['protocol_id'],s.PROTOCOL_ID)
+            self.assertEqual(receipt['source_sha256'],closure['src/representation_collapse/tgrab_figure10_canary.py'])
+            self.assertEqual(receipt['sys_executable'],sys.executable)
+            executed = popen.call_args.args[0]
+            self.assertEqual(receipt['child_argv'],executed)
+            self.assertEqual(receipt['canary_args'],executed[4:])
+            self.assertEqual(receipt['admitted_canary_args'],admission['canary_args'])
+            self.assertEqual(receipt['argv_sha256'],s.sha256_bytes(json.dumps(executed,separators=(',',':')).encode()))
+            self.assertEqual(popen.call_args.kwargs['env']['RC_SUPERVISOR_RECEIPT_SHA256'],s.sha256_path(receipt_path))
+            self.assertEqual(receipt['environment_receipt'],env_receipt)
+            self.assertEqual(receipt['node2a_receipt'],node_receipt)
+            validate_supervisor_runtime(receipt,runtime_seconds=540,
+                deadline_unix=float(executed[-1]),environ={'SLURM_JOB_ID':'123'})
+
 class CgroupTests(unittest.TestCase):
     def test_controllerless_ancestors_allowed_but_leaf_required(self):
         with tempfile.TemporaryDirectory() as root:

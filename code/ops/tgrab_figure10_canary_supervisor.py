@@ -574,8 +574,8 @@ def run(admission_path, admission_sha):
         fail("physical memory admission mismatch")
     canary = repo / "src/representation_collapse/tgrab_figure10_canary.py"
     run_id = admission["run_id"]
-    deadline_unix = wall_started_ns / 1_000_000_000 + admission["work_seconds"]
-    if not math.isfinite(deadline_unix) or not 0 <= time.time() - wall_started_ns / 1_000_000_000 < admission["work_seconds"]:
+    deadline_unix = wall_started_ns / 1e9 + admission["work_seconds"]
+    if not math.isfinite(deadline_unix) or not 0 <= time.time() - wall_started_ns / 1e9 < admission["work_seconds"]:
         fail("invalid or exhausted job-start-relative wall clock")
     arglist = [*admission["canary_args"], "--deadline-unix", str(deadline_unix)]
     for flag in ("--run-dir", "--stop-file"):
@@ -587,7 +587,7 @@ def run(admission_path, admission_sha):
     child_argv = [sys.executable, "-B", "-c", BOOTSTRAP, *arglist]
     argv_hash = sha256_bytes(json.dumps(child_argv, separators=(",", ":")).encode())
     receipt = {"schema": "tgrab-figure10-supervisor-receipt-v2", "protocol_id": PROTOCOL_ID,
-               "admission_sha256": admission_sha,
+               "admission_sha256": admission_sha, "run_id": run_id,
                "source_commit": admission["source_commit"], "closure_sha256": closure,
                "source_sha256": closure["src/representation_collapse/tgrab_figure10_canary.py"],
                "job_id": actual["job_id"],

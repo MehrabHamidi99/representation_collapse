@@ -114,3 +114,8 @@ test, checkpoint or selection. This scope is covered by the owner's existing
 Figure 10 compute authorization. Source commit, exact admission and actual
 job/outcome will be recorded below after staging and submission; no numerical
 result is accepted at this preparation stage.
+
+A final pre-submission integrated receipt test found and corrected an omitted
+`run_id` in the actual emitted supervisor receipt and a nanosecond-to-seconds
+rounding discrepancy in supervisor/child deadline comparison. These fixes
+were made before any submission and preserve the same numerical protocol.
