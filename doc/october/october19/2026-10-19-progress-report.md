@@ -88,3 +88,29 @@ No new Qwen request or currently active project autoresearch worker is
 confirmed. Alliance queues and current native cluv version were not verified
 in this check. The preceding OTP blocker is superseded by this successful
 Mila authentication check.
+
+## 20:35 UTC — native training-prefix diagnostic prepared and reviewed
+
+Adopted and repaired the previously untracked canary module, supervisor, job
+wrapper and tests; added focused supervisor tests. Independent review accepted
+the resulting source for the separately frozen train-only diagnostic in
+`doc/auto/figure10-prefix-diagnostic-2026-10-19.md`. Repairs include durable
+pre-update intents, explicit optimizer-step witnesses, conservative failure
+reconciliation, compatible scheduler receipt keys, authoritative Slurm/cgroup
+admission and a job-start-relative deadline. The wrapper accepts explicit
+cluv program arguments and retains process-group cleanup and source-only
+bootstrap loading. Combined canary/supervisor/journal/orchestration tests pass
+52 checks (4 platform-specific skips); shell syntax passes.
+
+Fresh Mila inspection found no project job, a clean remote checkout, the
+verified conversion manifest SHA `a6ff50183de570ff17cfbe92b3f1976bac9d2d85557ecc11379e24b2c737d1ce`,
+node2a receipt SHA `550fa0aa5810819c8f154bbc5edb2ea8b4cd7345dcc8681394295279c7109a96`,
+and the pinned native CPU environment. Native cluv 0.1.5 and uv 0.9.18 are
+installed in the local controller environment. The planned single Mila
+submission requests account mila/QOS normal/main-cpu, 1 CPU, 2 GiB, 600 seconds
+and zero GPUs, with a 540-second job-start-relative work deadline and
+570-second outer guard. It attempts 256 training targets with no validation,
+test, checkpoint or selection. This scope is covered by the owner's existing
+Figure 10 compute authorization. Source commit, exact admission and actual
+job/outcome will be recorded below after staging and submission; no numerical
+result is accepted at this preparation stage.
