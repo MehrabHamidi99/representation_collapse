@@ -5,15 +5,24 @@ reviews and evidence records are under `auto/`; the literature library is under
 `literature/`; dated reports are under `<month>/<month><day>/`.
 
 Current objective: [active research goal](auto/active-research-goal.md), following
-the charter and novelty audit. Latest engineering work: [primary converter/store
+the charter and novelty audit. Figure 10 work now includes a verified native
+[256-update prefix](auto/figure10-prefix-results-2026-10-19.md), a running
+[complete-epoch GC-LSTM fit](auto/figure10-full-fit-2026-10-19.md), independently
+verified [analytic controls](auto/figure10-deterministic-controls-results-2026-10-19.md),
+and an explicit [coverage and next-fit audit](auto/figure10-coverage-and-next-fit-2026-10-19.md).
+The tracker records live outcomes; older review documents describe their
+dated state. Relevant engineering reviews: [primary converter/store
 review](auto/tgrab-primary-data-conversion-independent-review-2026-10-16.md),
 [input diagnostics review](auto/matched-input-statistics-independent-review-2026-10-16.md),
 and [conversion-plus-verification job review](auto/graph-data-conversion-verification-job-independent-review-2026-10-16.md).
 The [independent raw-to-artifact verifier](auto/tgrab-primary-data-verifier-independent-review-2026-10-16.md)
 and [source-derived checkpoint catalog](auto/tgrab-selected-tensor-catalog-independent-review-2026-10-16.md)
-have also passed review. These are synthetic/preparation evidence; real primary
-conversion, native checkpoint load and trained collapse remain unverified. [Selected checkpoint proposal](auto/tgrab-selected-checkpoint-codec-proposal-2026-10-16.md)
-records the next format and lifecycle decisions without claiming implementation.
+have also passed review. Primary conversion and the small native node2a
+fixture have since been independently verified. Selected trained-checkpoint
+loading, held-out reconstruction and trained collapse evidence remain pending.
+The [selected checkpoint proposal](auto/tgrab-selected-checkpoint-codec-proposal-2026-10-16.md)
+records the original format decisions; current implementations and execution
+evidence are indexed by the tracker.
 
 ## Canonical documents (read in this order)
 

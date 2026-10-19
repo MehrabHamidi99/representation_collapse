@@ -14,6 +14,7 @@ import os
 from pathlib import Path, PurePosixPath
 import random
 import signal
+import stat
 import sys
 import time
 
@@ -24,6 +25,134 @@ PROTOCOL = "tgrab_figure10_selected_evaluation_diagnostic_v2"
 
 class EvaluationJobError(RuntimeError):
     pass
+
+
+class TrajectoryWriter:
+    """Single-use streaming pre-target H/C capture; preserve partial on failure."""
+    def __init__(self, root):
+        self.root = Path(root)
+        self.partial = self.root / "test-state-trajectory.f32le.partial"
+        self.final = self.root / "test-state-trajectory.f32le"
+        if os.path.lexists(self.final):
+            raise FileExistsError("trajectory output already exists")
+        self.stream = self.partial.open("xb")
+        opened = os.fstat(self.stream.fileno())
+        self.file_identity = (opened.st_dev, opened.st_ino)
+        directory = os.open(self.root, os.O_RDONLY | os.O_DIRECTORY)
+        try:
+            os.fsync(directory)
+        except BaseException:
+            self.stream.close()
+            raise
+        finally:
+            os.close(directory)
+        self.count = 0
+        self.bytes = 0
+        self.hasher = hashlib.sha256()
+        self.closed = False
+        self.poisoned = False
+
+    def __call__(self, state, t):
+        from .tgrab_figure10_candidate_encoder import _cpu_f32_bytes
+        if self.closed or self.poisoned:
+            raise EvaluationJobError("trajectory writer is terminal")
+        try:
+            if (type(t) is not int or t != 2816 + self.count or self.count >= 256
+                    or state.next_target_t != t or state.node_ids != tuple(range(100))):
+                raise EvaluationJobError("trajectory timestamp/node ordering mismatch")
+            raw = b"".join(_cpu_f32_bytes(getattr(state, name), name=name, shape=(1, 100, 128))
+                           for name in ("hidden", "cell"))
+            written = self.stream.write(raw)
+            if written != len(raw):
+                raise OSError("short trajectory write")
+            self.hasher.update(raw)
+            self.bytes += len(raw)
+            self.count += 1
+        except BaseException:
+            self.poisoned = True
+            raise
+
+    def close(self):
+        if not self.closed:
+            try:
+                self.stream.flush()
+                os.fsync(self.stream.fileno())
+            except BaseException:
+                self.poisoned = True
+                raise
+            finally:
+                self.closed = True
+                try:
+                    self.stream.close()
+                except BaseException:
+                    self.poisoned = True
+                    raise
+
+    def _verify_persisted_payload(self):
+        """Bounded independent readback of the exact originally opened inode."""
+        fd = os.open(self.partial, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
+        try:
+            before = os.fstat(fd)
+            if (not stat.S_ISREG(before.st_mode) or before.st_nlink != 1
+                    or (before.st_dev, before.st_ino) != self.file_identity
+                    or before.st_size != self.bytes):
+                raise EvaluationJobError("partial trajectory identity/size changed")
+            hasher, size = hashlib.sha256(), 0
+            while True:
+                chunk = os.read(fd, min(1048576, self.bytes + 1 - size))
+                if not chunk:
+                    break
+                size += len(chunk)
+                if size > self.bytes:
+                    raise EvaluationJobError("partial trajectory grew during readback")
+                hasher.update(chunk)
+            after = os.fstat(fd)
+            path = self.partial.lstat()
+            identity = lambda info: (info.st_dev, info.st_ino, info.st_size, info.st_mtime_ns, info.st_ctime_ns)
+            if (identity(before) != identity(after) or identity(after) != identity(path)
+                    or size != self.bytes or hasher.hexdigest() != self.hasher.hexdigest()):
+                raise EvaluationJobError("persisted trajectory changed or byte hash mismatch")
+        finally:
+            os.close(fd)
+
+    def finish(self):
+        if self.closed or self.poisoned or self.count != 256 or self.bytes != 26214400:
+            self.poisoned = True
+            raise EvaluationJobError("complete 256-state trajectory required")
+        self.close()
+        try:
+            self._verify_persisted_payload()
+        except BaseException:
+            self.poisoned = True
+            raise
+        # Same-filesystem link publishes atomically without overwriting a
+        # preexisting final entry. Any failure remains spent and preserves data.
+        directory = os.open(self.root, os.O_RDONLY | os.O_DIRECTORY)
+        try:
+            os.link(self.partial, self.final, follow_symlinks=False)
+            linked = self.final.lstat()
+            if (linked.st_dev, linked.st_ino) != self.file_identity:
+                raise EvaluationJobError("trajectory identity changed during publication")
+            os.fsync(directory)
+            self.partial.unlink()
+            os.fsync(directory)
+        except BaseException:
+            self.poisoned = True
+            # Preserve clearly partial data on a publication barrier failure.
+            # No recovery/retry is attempted; cleanup is best effort only.
+            if not self.partial.exists() and self.final.exists():
+                try:
+                    os.link(self.final, self.partial, follow_symlinks=False)
+                except OSError:
+                    pass
+            raise
+        finally:
+            os.close(directory)
+        return {"filename": self.final.name, "bytes": self.bytes, "sha256": self.hasher.hexdigest(),
+                "shape": [256, 2, 1, 100, 128], "dtype": "float32_le", "order": "C",
+                "components": ["hidden", "cell"], "node_ids": list(range(100)),
+                "target_interval": [2816, 3072], "state_timing": "s[t]_before_target_score",
+                "observations": 256, "centered_time_cloud_rank_ceiling": 255}
 
 
 def read_json(path, sha256, limit=2_000_000):
@@ -186,10 +315,16 @@ def run_native(args, owner, guard, reporter, config, conversion, summary):
             "source_module_sha256": common.sha256_file(Path(__file__)),
             "evaluation_module_sha256": common.sha256_file(Path(__file__).with_name("tgrab_figure10_evaluate.py")),
             "optimizer_created": False, "rng_restored": False, "terminal_state_restored": False})
-        result = run_selected_evaluation(ledger=ledger, expected_context=context,
-            expected_final_head_sha256=args.final_head_sha256, backend=backend,
-            train=store.train(), validation=store.validation(), test_opener=store.sealed_test_opener(selection),
-            output_dir=owner.run_dir / "selected-evaluation", report=report, guard=guard)
+        trajectory = TrajectoryWriter(owner.run_dir)
+        try:
+            result = run_selected_evaluation(ledger=ledger, expected_context=context,
+                expected_final_head_sha256=args.final_head_sha256, backend=backend,
+                train=store.train(), validation=store.validation(), test_opener=store.sealed_test_opener(selection),
+                output_dir=owner.run_dir / "selected-evaluation", report=report, guard=guard,
+                observe_state=trajectory)
+            result["state_trajectory"] = trajectory.finish()
+        finally:
+            trajectory.close()
         for row in result["rows"]:
             reporter.log({"test/" + key: row[key] for key in ("target_timestamp", "source_timestamp", "f1", "precision", "recall", "tp", "fp", "fn", "tn")}, step=step[0])
             step[0] += 1
@@ -270,7 +405,8 @@ def main(argv=None):
                 identities={"config_sha256": args.config_sha256, "data_manifest_sha256": args.data_manifest_sha256,
                             "fit_summary_sha256": args.fit_summary_sha256, "final_head_sha256": args.final_head_sha256}) as reporter:
             result = run_native(args, owner, guard, reporter, config, conversion, summary)
-            final.update(status="evaluation_complete", reduction=result["reduction"], checkpoint_sha256=result["checkpoint_sha256"])
+            final.update(status="evaluation_complete", reduction=result["reduction"], checkpoint_sha256=result["checkpoint_sha256"],
+                         state_trajectory=result["state_trajectory"])
     except BaseException as exc:
         final.update(error_type=type(exc).__name__, error=str(exc)[:2000])
     finally:

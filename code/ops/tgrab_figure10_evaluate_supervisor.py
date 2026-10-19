@@ -39,7 +39,8 @@ def source_closure(repo: Path) -> dict[str, str]:
              "configs/graph/tgrab-selected-checkpoint-schema-v1.json",
              "configs/graph/tgrab-selected-tensor-catalog-v1.json"]
     paths.extend(["doc/auto/tgrab-primary-data-conversion-v1.md",
-                  "doc/auto/figure10-selected-evaluation-v2.md"])
+                  "doc/auto/figure10-selected-evaluation-v2.md",
+                  "doc/auto/figure10-state-observer-2026-10-19.md"])
     paths += [str(p.relative_to(repo)) for p in
               sorted((repo / "src/representation_collapse").glob("*.py"))]
     h = helper()

@@ -260,3 +260,43 @@ also explicitly describes F1 decreasing between change points; that within-motif
 effect is distinct from cumulative decline across periods. Deterministic
 persistence controls are being prepared from known generator metadata before
 test; they do not alter the fit.
+
+## 21:29 UTC — analytic controls verified; second validation improves
+
+Epoch 2 completed with training mean loss 0.3152378972688193 and validation
+mean F1 0.1687550041233902, selecting epoch 2 over epoch 1. All 2,559 updates for epoch 3 have also completed (7,677 total across the
+three epochs); its validation is pending at this observation.
+Job 11321105 remains RUNNING. No held-out model data has been opened.
+
+Before any model test access, committed `0139fbd` froze analytic controls.
+The actual metadata-only run then produced persistence F1 0.96875 overall,
+0 at eight transitions and 1 at the other 248 targets; known-phase oracle
+F1 is 1 and always-negative F1 is 0. Its graph metadata contains 100 and
+120 ordered positive edges with zero overlap. Independent reduction verified
+all 768 control rows and 771 actual offline W&B rows, CRCs, protobuf sequence,
+compact artifact and completed reporting receipt. The public results report
+and JSON distinguish these analytic controls from learned-model evidence.
+No data split or weight file was accessed. Online delivery remains unverified.
+
+Source commit `81715b3` froze within-motif descriptive windows before any
+actual per-phase model curve: phases 1–8 versus 24–31, excluding transition
+phase 0, for A/B separately and balanced pooled values. The new three-panel
+plotter passed seven synthetic tests and visual QA. These correlated cycles
+supply no inferential uncertainty or independent model replication.
+
+Rechecked published arXiv PDF text and visually rendered page 17 from the
+retained local copy `literature/papers/dizaji2025tgrab.pdf` (SHA
+`16e117520457a0541efa729cc4cbc06e851833191b72f4f896b011c0e265ff25`).
+Published Figure 10 has the same Pdet(2,32) behavioral target and explicitly
+describes a decline between change points. This supports phase-aligned
+inspection, not a representation-collapse conclusion. Web PDF screenshot
+failed with cache miss; local PyMuPDF rendering provided the visual check.
+The local draft/public PDF are not claimed byte-equivalent.
+
+Qwen call 36 completed with verified model/schema identity, proposal only and
+zero actions. Its general distinction between F1 and memory loss is useful;
+its unregistered untrained-model overlay and extra acceptance gates were not
+adopted. A verified analytic-control summary was added to the existing approved
+evidence feed. Native agents are preparing single-pass complete H/C capture
+and a separate frozen descriptive trajectory analysis; neither changes model
+updates, held-out selection or the one-test-read restriction.

@@ -1,0 +1,45 @@
+{
+  "control_reductions": {
+    "always_negative": {
+      "nontransition_time_mean_f1": 0.0,
+      "primary_time_mean_f1": 0.0,
+      "transition_time_mean_f1": 0.0
+    },
+    "known_generator_phase_counter": {
+      "nontransition_time_mean_f1": 1.0,
+      "primary_time_mean_f1": 1.0,
+      "transition_time_mean_f1": 1.0
+    },
+    "previous_graph_persistence": {
+      "nontransition_time_mean_f1": 1.0,
+      "primary_time_mean_f1": 0.96875,
+      "transition_time_mean_f1": 0.0
+    }
+  },
+  "controls_sha256": "ec1f8defe423188c106b6ee90181fab3db5a85239690117b4016d2c1682c60ff",
+  "date": "2026-10-19",
+  "manifest_sha256": "a6ff50183de570ff17cfbe92b3f1976bac9d2d85557ecc11379e24b2c737d1ce",
+  "metadata_artifact_sha256": "5b1072ecc38ca4f7fdfdde0f4915eaa03624930a76d4df3cc76c54215471f0e9",
+  "native_weights_read": false,
+  "offline_history_rows_decoded_verified": 771,
+  "offline_stream_sha256": "616135f49a8db3d2af3a513975c625e5c724217a808cd8a8138c055a058ea8c4",
+  "pattern_edge_counts": [
+    100,
+    120
+  ],
+  "pattern_intersection_edges": 0,
+  "physical_fragments_crc_verified": 2344,
+  "protobuf_records": 2324,
+  "remote_delivery_verified": false,
+  "remote_history_verified": false,
+  "reporting_receipt_sha256": "75c05af4a3e3d3daf69ea3d59028fabad09f0c29088b6c27f9cb70dd94c5b154",
+  "rows_independently_reduced": 768,
+  "scientific_collapse_claim": false,
+  "scope": "known-generator metadata controls; no learned model or split-payload execution",
+  "source_commit": "0139fbd",
+  "source_sha256": "4efd652da1a2ee0f1a1d1d8a6d7af0f9762f4a460cafd16286a120fa225e820a",
+  "split_payloads_opened_by_verifier": false,
+  "status": "analytic_controls_accepted",
+  "verification_sha256": "052a60e9825c54b9dd4794b1788bc18a8a29a78d03a8cb1a2f186b360f095172",
+  "verifier_sha256": "b1758d0ee981351135321df244740aafde49fecd4202167e0169a53ac1aa0097"
+}

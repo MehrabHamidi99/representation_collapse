@@ -17,6 +17,11 @@ from tests.test_tgrab_figure10_candidate_encoder import TensorFixture, _inputs
 
 
 class Tensor(TensorFixture):
+    def detach(self):
+        return self
+
+    def clone(self):
+        return Tensor(self.data.copy())
     def untyped_storage(self):
         return SimpleNamespace(data_ptr=lambda: self.data.ctypes.data, nbytes=lambda: self.data.nbytes)
 
@@ -73,6 +78,7 @@ class Backend:
 
     def score_pairs(self, state, pairs):
         assert self.calls[-1] == state.next_target_t - 1
+        assert not state.hidden.data.any() and not state.cell.data.any()
         return np.zeros(len(pairs))
 
 
@@ -127,7 +133,7 @@ class EvaluationTests(unittest.TestCase):
         with self.assertRaisesRegex(ev.EvaluationError, "ordering"):
             ev.verify_terminal(gr.CompleteState(state.hidden, state.cell, 2816, tuple(reversed(state.node_ids))), verified)
 
-    def _run(self, root, *, load_fail=False, parity_fail=False):
+    def _run(self, root, *, load_fail=False, parity_fail=False, observe=False, observe_fail=False):
         backend = Backend()
         context = SelectionContext("r", "a", "b" * 64, ev.codec.SCHEMA_SHA256, "c" * 64)
         ledger = Ledger(root, context)
@@ -146,20 +152,37 @@ class EvaluationTests(unittest.TestCase):
             if load_fail:
                 raise RuntimeError("load failed")
         reports = []
+        observed = []
+        def observer(state, t):
+            self.assertEqual(len(opened), 1)
+            self.assertEqual(backend.calls[-1], t - 1)
+            self.assertEqual(state.next_target_t, t)
+            self.assertEqual(state.node_ids, tuple(range(100)))
+            observed.append(t)
+            state.hidden.data.fill(4)
+            state.cell.data.fill(5)
+            if observe_fail:
+                raise RuntimeError("observer failure")
         kwargs = dict(ledger=ledger, expected_context=context, expected_final_head_sha256="c" * 64,
                       backend=backend, train=snapshots[:2560], validation=snapshots[2560:2816],
-                      test_opener=opener, output_dir=output, report=reports.append)
+                      test_opener=opener, output_dir=output, report=reports.append,
+                      observe_state=observer if observe or observe_fail else None)
         with patch.object(ev, "SelectionLedger", Ledger), patch.object(ev.codec, "read_candidate", return_value=verified), patch.object(ev, "load_native_weights", side_effect=loader):
-            if load_fail or parity_fail:
+            if load_fail or parity_fail or observe_fail:
                 with self.assertRaises((RuntimeError, ev.EvaluationError)):
                     ev.run_selected_evaluation(**kwargs)
-                self.assertFalse(opened)
+                self.assertEqual(len(opened), 1 if observe_fail else 0)
+                if observe_fail:
+                    self.assertEqual(backend.calls, list(range(2816)))
+                    self.assertEqual(observed, [2816])
                 self.assertTrue(list(output.glob("*-failed.json")))
             else:
                 result = ev.run_selected_evaluation(**kwargs)
                 self.assertEqual(result["reduction"]["targets"], 256)
                 self.assertEqual(backend.calls, list(range(3072)))
                 self.assertEqual(len(opened), 1)
+                if observe:
+                    self.assertEqual(observed, list(range(2816, 3072)))
             with self.assertRaises(FileExistsError):
                 ev.run_selected_evaluation(**kwargs)
         self.assertEqual(reports[0]["event"], "evaluation_reporting_initialized")
@@ -175,6 +198,14 @@ class EvaluationTests(unittest.TestCase):
     def test_replay_then_single_charged_open_then_score_before_consume(self):
         with tempfile.TemporaryDirectory() as td:
             self._run(Path(td))
+
+    def test_observer_is_before_score_cloned_and_does_not_change_modelcalls(self):
+        with tempfile.TemporaryDirectory() as td:
+            self._run(Path(td), observe=True)
+
+    def test_observer_failure_is_terminal_no_extra_score_consume_or_opener(self):
+        with tempfile.TemporaryDirectory() as td:
+            self._run(Path(td), observe_fail=True)
 
     def test_real_finalized_ledger_codec_pointer_integration(self):
         from tests.test_tgrab_figure10_selection_sink import _new_sink, _evidence, _context

@@ -1,12 +1,24 @@
 # Current research state
 
-Updated 2026-10-19 21:18 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
+Updated 2026-10-19 21:33 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **2026-10-19 21:33 UTC — three complete native epochs; controls verified.**
+  Job11321105 remains running. Validation F1 by complete epoch is
+  **0.07925, 0.16876, 0.21682**; mean training loss is
+  **0.63142, 0.31524, 0.23680**. Selection is not finalized and test remains
+  sealed. Independently verified [analytic controls](auto/figure10-deterministic-controls-results-2026-10-19.md)
+  show persistence F1 **0.96875** overall, **0** at transitions and **1**
+  elsewhere. All 768 control rows and 771 actual offline W&B rows were
+  reconciled. Known-phase oracle is 1, always-negative 0; these are generator
+  controls, not trained-model results. Passive complete H/C capture and
+  descriptive covariance/closure analysis passed review for the future
+  single evaluation pass, without an additional test read or model replay.
 
 - **2026-10-19 21:12 UTC — complete-epoch fit launched through cluv.**
   Mila job **11321105** is RUNNING on cn-f004 from reviewed source `6d89c657`.

@@ -6,11 +6,85 @@ import tempfile
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
+import numpy as np
 
 from representation_collapse import tgrab_figure10_evaluate_job as job
 
 
 class EvaluationJobTests(unittest.TestCase):
+    def test_trajectory_full_hc_bytes_order_signedzero_and_no_mutation(self):
+        from tests.test_tgrab_figure10_evaluate import Tensor
+        from representation_collapse.graph_reconstruction import CompleteState
+        hidden = Tensor(np.zeros((1, 100, 128), dtype=np.float32))
+        hidden.data.flat[0] = -0.0
+        cell = Tensor(np.full((1, 100, 128), 2, dtype=np.float32))
+        expected = hidden.data.tobytes() + cell.data.tobytes()
+        with tempfile.TemporaryDirectory() as td:
+            writer = job.TrajectoryWriter(Path(td))
+            for t in range(2816, 3072):
+                writer(CompleteState(hidden, cell, t, tuple(range(100))), t)
+            descriptor = writer.finish()
+            payload = writer.final.read_bytes()
+            self.assertEqual(len(payload), 26214400)
+            self.assertEqual(payload, expected * 256)
+            self.assertEqual(payload[:4], bytes.fromhex("00000080"))
+            self.assertEqual(descriptor["sha256"], hashlib.sha256(payload).hexdigest())
+            self.assertEqual(descriptor["shape"], [256, 2, 1, 100, 128])
+            self.assertEqual(hidden.data.tobytes() + cell.data.tobytes(), expected)
+            self.assertFalse(writer.partial.exists())
+
+    def test_trajectory_order_failure_preserves_partial_and_is_terminal(self):
+        from tests.test_tgrab_figure10_evaluate import Backend
+        from representation_collapse.graph_reconstruction import CompleteState
+        zero = Backend().reset()
+        with tempfile.TemporaryDirectory() as td:
+            writer = job.TrajectoryWriter(Path(td))
+            state = CompleteState(zero.hidden, zero.cell, 2816, zero.node_ids)
+            writer(state, 2816)
+            with self.assertRaises(job.EvaluationJobError):
+                writer(state, 2816)
+            with self.assertRaises(job.EvaluationJobError):
+                writer.finish()
+            writer.close()
+            self.assertEqual(writer.partial.stat().st_size, 102400)
+            self.assertFalse(writer.final.exists())
+
+    def test_trajectory_rejects_wrong_cell_shape_or_node_order(self):
+        from tests.test_tgrab_figure10_evaluate import Backend, Tensor
+        from representation_collapse.graph_reconstruction import CompleteState
+        zero = Backend().reset()
+        for cell, nodes in ((Tensor(np.zeros((100, 128), dtype=np.float32)), zero.node_ids),
+                            (zero.cell, tuple(reversed(zero.node_ids)))):
+            with tempfile.TemporaryDirectory() as td:
+                writer = job.TrajectoryWriter(Path(td))
+                try:
+                    with self.assertRaises(Exception):
+                        writer(CompleteState(zero.hidden, cell, 2816, nodes), 2816)
+                    self.assertTrue(writer.poisoned)
+                finally:
+                    writer.close()
+
+    def test_trajectory_replaced_or_corrupted_partial_cannot_publish(self):
+        from tests.test_tgrab_figure10_evaluate import Backend
+        from representation_collapse.graph_reconstruction import CompleteState
+        zero = Backend().reset()
+        for replaced in (False, True):
+            with self.subTest(replaced=replaced), tempfile.TemporaryDirectory() as td:
+                writer = job.TrajectoryWriter(Path(td))
+                for t in range(2816, 3072):
+                    writer(CompleteState(zero.hidden, zero.cell, t, zero.node_ids), t)
+                writer.stream.flush()
+                if replaced:
+                    writer.partial.unlink()
+                    writer.partial.write_bytes(bytes(26214400))
+                else:
+                    with writer.partial.open("r+b") as handle:
+                        handle.write(b"\x01")
+                with self.assertRaises(job.EvaluationJobError):
+                    writer.finish()
+                self.assertTrue(writer.poisoned)
+                self.assertFalse(writer.final.exists())
+                self.assertTrue(writer.partial.exists())
     def test_supervisor_receipt_binds_actual_run_arguments(self):
         args = SimpleNamespace(run_id="evaluation01", deadline_unix=123.0)
         receipt = {"schema":"tgrab-figure10-evaluation-supervisor-receipt-v2",

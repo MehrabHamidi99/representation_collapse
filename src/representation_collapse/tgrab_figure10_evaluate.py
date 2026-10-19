@@ -114,7 +114,8 @@ def run_selected_evaluation(*, ledger: SelectionLedger, expected_context: Select
                             expected_final_head_sha256: str, backend: Any,
                             train, validation, test_opener: Callable,
                             output_dir: Path, report: Callable,
-                            guard: Callable = lambda: None) -> dict:
+                            guard: Callable = lambda: None,
+                            observe_state: Callable | None = None) -> dict:
     """Consume one finalized selection and one lazy graph-data test capability.
 
     ``report`` must durably log reporting identity before this call returns from
@@ -181,6 +182,12 @@ def run_selected_evaluation(*, ledger: SelectionLedger, expected_context: Select
                 target = next(iterator)
                 if target.timestamp != t or state.next_target_t != t:
                     raise EvaluationError("held-out score-before-consume chronology mismatch")
+                if observe_state is not None:
+                    # Observers receive independent data, never writable live
+                    # recurrent storage. Cloning uses no RNG or model calls.
+                    observed = gr.CompleteState(state.hidden.detach().clone(), state.cell.detach().clone(),
+                                                state.next_target_t, state.node_ids)
+                    observe_state(observed, t)
                 probabilities = backend.score_pairs(state, gr.ordered_offdiagonal_pairs(100))
                 row = gr.snapshot_metrics(target, probabilities, previous)
                 rows.append(row)
