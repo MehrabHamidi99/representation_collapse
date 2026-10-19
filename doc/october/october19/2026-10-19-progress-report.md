@@ -230,3 +230,33 @@ replay from zero is mandatory before test. A separate plotter will consume
 only independently accepted evaluation artifacts. No empirical collapse claim.
 The existing local continuous Qwen heartbeat remains current at21:10:31UTC,
 35reviews, idle awaiting evidence, zero current requests; it is not restarted.
+
+
+## 21:18 UTC — first complete validation epoch and native checkpoint
+
+Job 11321105 is RUNNING. The first complete epoch stored 2,559 real updates,
+training mean loss 0.631418777460137, and 256-target validation mean F1
+0.07924821123094206. `validation-001.json` and a committed, nonfinal selection
+head exist; the candidate is epoch 1. Epoch 2 has started. This validation
+result is neither held-out evidence nor competence or collapse acceptance.
+The fit-run admission identity is the actual supervisor receipt SHA
+`5085efc15dc87c7ea981a924a6c5443d3cd9b216e62f3f71d4f93990d4fedb32`,
+which differs intentionally from prequeue admission SHA `e31d2239…`.
+
+Selected-evaluation CLI, independently reviewed diagnostic-v2 contract, source
+supervisor and hash-bound plotter are committed/pushed as `fa4ba04`. Twenty-four
+combined evaluation/supervisor/plot tests pass. These source changes remain
+local; the active remote checkout stays `6d89c657` until fit exit. The evaluator
+now embeds and validates its live supervisor receipt identity. No evaluator was
+submitted and no held-out split was opened. An explicit proposal-only Qwen
+task asks for scientific F1 interpretation controls using verified fit facts.
+
+The coverage audit confirmed eleven distinct methods and two panels. Five
+seeds is a paper fact, but historical seed values 0–4 are unverified. Paper
+stopping has patience 100 without an epoch cap; retained public wrapper maximum
+100,000 differs from the corrected v1 pilot cap of 200 and one hour. Future
+longer runs require a versioned contract, not relabelled v1 results. The source
+also explicitly describes F1 decreasing between change points; that within-motif
+effect is distinct from cumulative decline across periods. Deterministic
+persistence controls are being prepared from known generator metadata before
+test; they do not alter the fit.

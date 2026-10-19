@@ -17,7 +17,9 @@ deterministic 100-node ER condition `Pdet(2,32)`. The sequence is A repeated 32
 updates followed by B repeated 32 updates (period 64). The source appendix says
 performance drops at the start of repetition phases and recovers after models
 consume the new snapshot; it interprets that pattern as persistence-like
-behavior and imperfect counting.
+behavior and imperfect counting. It also explicitly reports decreasing F1
+between change points: within-motif decline is part of the target, distinct
+from cumulative deterioration across successive periods.
 
 The immediate model of interest is GC-LSTM in the DTDG panel. The literal
 Figure 10 target includes both panels and every plotted series. Track completion

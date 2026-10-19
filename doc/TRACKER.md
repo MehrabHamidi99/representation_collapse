@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-19 21:12 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
+Updated 2026-10-19 21:18 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
@@ -14,8 +14,10 @@ and [dependency plan](../configs/research-plan.json) (revision v2).
   configuration: one CPU, 2 GiB, zero GPUs, one-hour capped fit, no retry or
   requeue. Complete validation epochs alone can create selected candidates;
   this worker has no held-out test opener. Initial supervisor admission and
-  worker ownership are recorded; optimizer progress and fit outcome remain
-  to be checked. Thirty-one focused tests and independent review passed.
+  worker ownership are recorded. At 21:18 UTC the first complete epoch
+  committed a candidate: 2,559 updates, mean training loss 0.631418777460137,
+  validation temporal mean F1=0.07924821123094206. Epoch 2 is running; selection
+  is not finalized and the fit outcome remains pending. Thirty-one focused tests and independent review passed.
   Native selected replay/evaluation and plotting are being integrated in
   separate files while the admitted source stays immutable on Mila.
   The local Qwen heartbeat at21:10:31 UTC reports35 completed reviews,
