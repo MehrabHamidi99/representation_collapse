@@ -119,3 +119,21 @@ A final pre-submission integrated receipt test found and corrected an omitted
 `run_id` in the actual emitted supervisor receipt and a nanosecond-to-seconds
 rounding discrepancy in supervisor/child deadline comparison. These fixes
 were made before any submission and preserve the same numerical protocol.
+
+## First prefix submission — job11320580 failed before numerical startup
+
+Native cluv 0.1.5 submitted source `7dadf7e` with admission SHA
+`e27e91751e6dee8368f71ccdc79591d1d6791d39213a7120a944da8aff896c1a`.
+The exact sbatch receipt identifies Mila job11320580. Cluv's polling API returned
+no winning job because it failed rapidly; fresh accounting and the retained
+native submission log reconcile the outcome: FAILED, exit `2:0`, one second.
+Slurm copied the shell job into its spool directory, so `dirname($0)` resolved
+the Python supervisor under `/var/spool/slurmd/job11320580/` rather than project
+scratch. Python failed to open that file; no supervisor, model or optimizer
+update ran. The admission/run ID and submission/reconciliation records are
+preserved under ignored
+`runs/ops/figure10-prefix-20261019/prefix-20261019T204002Z-7dadf7e1/`.
+The correction uses the fixed admitted scratch source path and a regression
+that runs a wrapper copied to an unrelated spool directory. Any subsequent
+attempt uses a new source commit, admission and run ID under the existing
+compute authorization; this failed run is never reused.

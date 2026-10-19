@@ -30,7 +30,9 @@ export RC_WALL_START_EPOCH_NS="$(date +%s%N)"
 export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
 export NUMEXPR_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1
 PINNED_PYTHON=/network/scratch/m/mehrab.hamidi/representation-collapse/environments/graph-native-cpu-20261015-calibration01/venv/bin/python
+# sbatch executes a spool copy of this script; $0 is not the checkout path.
+PINNED_SUPERVISOR=/network/scratch/m/mehrab.hamidi/representation-collapse/source/code/ops/tgrab_figure10_canary_supervisor.py
 [[ -x "$PINNED_PYTHON" ]] || { echo 'pinned environment interpreter missing' >&2; exit 2; }
 exec timeout --signal=TERM --kill-after=10 "${RC_JOB_WALL_SECONDS}s" \
-  "$PINNED_PYTHON" -B "$(dirname "$0")/tgrab_figure10_canary_supervisor.py" \
+  "$PINNED_PYTHON" -B "$PINNED_SUPERVISOR" \
   --admission "$RC_ADMISSION" --sha256 "$RC_ADMISSION_SHA256"

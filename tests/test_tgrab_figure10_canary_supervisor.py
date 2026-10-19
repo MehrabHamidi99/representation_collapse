@@ -228,6 +228,44 @@ class WrapperTests(unittest.TestCase):
         self.assertIn('pinned environment interpreter missing', result.stderr)
         self.assertNotIn('set admission', result.stderr)
 
+    def test_spooled_wrapper_executes_supervisor_from_admitted_checkout(self):
+        """Run a Slurm-style script copy; intercept only interpreter and timeout."""
+        import json
+        wrapper = PATH.with_name('tgrab_figure10_canary_job.sh')
+        expected = ('/network/scratch/m/mehrab.hamidi/representation-collapse/'
+                    'source/code/ops/tgrab_figure10_canary_supervisor.py')
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); spool = root/'var/spool/slurmd/job123'; spool.mkdir(parents=True)
+            bindir = root/'bin'; bindir.mkdir()
+            output = root/'executed.json'
+            interpreter = bindir/'pinned-python'
+            interpreter.write_text(f'#!{sys.executable}\nimport json,os,sys\n'
+                'from pathlib import Path\n'
+                'Path(os.environ["WRAPPER_TEST_OUTPUT"]).write_text(json.dumps('
+                '{"argv":sys.argv[1:],"wall":os.environ.get("RC_JOB_WALL_SECONDS"),'
+                '"admission":os.environ.get("RC_ADMISSION")}))\n')
+            interpreter.chmod(0o700)
+            timeout = bindir/'timeout'
+            timeout.write_text('#!/bin/bash\nset -euo pipefail\n'
+                '[[ "$1" = --signal=TERM && "$2" = --kill-after=10 && "$3" = 570s ]]\n'
+                'shift 3\nexec "$@"\n')
+            timeout.chmod(0o700)
+            # Replace only the immutable cluster interpreter assignment with the
+            # local recorder. The supervisor path expression remains production code.
+            original = wrapper.read_text()
+            pinned_line = next(line for line in original.splitlines() if line.startswith('PINNED_PYTHON='))
+            copied = spool/'slurm_script'
+            copied.write_text(original.replace(pinned_line, f'PINNED_PYTHON={interpreter}'))
+            result = subprocess.run(['bash',str(copied),'--admission','/reviewed/admission.json',
+                '--sha256','a'*64,'--wall-seconds','570'],capture_output=True,text=True,
+                env={'PATH':str(bindir)+os.pathsep+os.environ['PATH'],'WRAPPER_TEST_OUTPUT':str(output)})
+            self.assertEqual(result.returncode,0,result.stderr)
+            observed = json.loads(output.read_text())
+            self.assertEqual(observed['argv'],['-B',expected,'--admission','/reviewed/admission.json','--sha256','a'*64])
+            self.assertEqual(observed['wall'],'570')
+            self.assertEqual(observed['admission'],'/reviewed/admission.json')
+            self.assertNotIn(str(spool),observed['argv'][1])
+
     def test_unknown_duplicate_or_malformed_arguments_rejected(self):
         wrapper = PATH.with_name('tgrab_figure10_canary_job.sh')
         for args in [['--unknown'], ['--admission','/tmp/a','--admission','/tmp/b'],
