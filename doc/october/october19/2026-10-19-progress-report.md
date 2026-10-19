@@ -59,3 +59,32 @@ hidden/cell replay parity (node2b) before any
 test split access. The original Figure 10 curves/checkpoints also remain
 unresolved in the audited scopes. No Figure 10 curve or representation-collapse
 finding is accepted.
+
+## 20:21 UTC — live cluster progress check; Mila access restored
+
+Read-only SSH now succeeds to `login-3.server.mila.quebec`. Mila's current
+`squeue --me` contains no representation-collapse jobs. Its running
+`radius-coordinator-20261019` (11319082) and pending `si-observer` are other
+projects' entries and do not establish this project's research progress.
+Shared metadata identifies the current radius coordinator and Tamia socket;
+no allocation entry, route use, source synchronization, submission, or remote
+mutation was performed.
+
+Fresh `sacct` records reconfirm primary-conversion job11273685 completed with
+exit `0:0` in 126 seconds, runtime capture job11280346 completed in 12 seconds,
+the first node2a attempt11280406 failed in one second, and corrected synthetic
+native parity job11280629 completed with exit `0:0` in 14 seconds. These are
+the previously documented engineering results; no new training result appeared.
+The remote source checkout remains `40942e5`, behind pushed local commit
+`d4fee98`, so the new journal and orchestration helper are not deployed there.
+
+The remote legacy worker at `qwen-continuous-20261013T093936Z` has explicit
+terminal status: stopped by its STOP file at 2026-10-14 08:52:40 UTC after nine
+provider attempts. A login-host process probe found no `qwen_worker.py` PID;
+that probe alone does not inspect processes on every compute node. This
+legacy worker is distinct from the newer Qwen evidence recorded locally on
+October16 (33 verified replies), whose current liveness was not established.
+No new Qwen request or currently active project autoresearch worker is
+confirmed. Alliance queues and current native cluv version were not verified
+in this check. The preceding OTP blocker is superseded by this successful
+Mila authentication check.

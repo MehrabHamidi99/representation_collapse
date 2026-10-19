@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-19 19:56 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
+Updated 2026-10-19 20:21 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
@@ -8,7 +8,18 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
-- **2026-10-19 update — local reproduction engineering advanced; remote
+- **2026-10-19 20:21 UTC — live Mila status verified.** SSH now succeeds.
+  Scheduler accounting reconfirms primary conversion job11273685 and corrected
+  node2a parity job11280629 completed with exit `0:0`. The current Mila queue
+  contains no representation-collapse jobs; the running radius coordinator is
+  another project's allocation. The deployed project checkout is `40942e5`,
+  behind pushed local source `d4fee98`; today's code is not running there.
+  The old cluster Qwen worker's terminal status records a STOP-file shutdown
+  on Oct14; the newer Oct16 Qwen record has not been revalidated. No current
+  Qwen activity, Alliance queues, or Figure 10 training is confirmed. No
+  submission or remote mutation occurred during this check.
+
+- **2026-10-19 19:56 UTC update — local reproduction engineering advanced; remote
   autoresearch liveness unverified.** The durable pre-step Figure 10 attempt
   journal and callback orchestration helper are implemented and independently
   reviewed, including counter validation, terminal-after-error behavior,
