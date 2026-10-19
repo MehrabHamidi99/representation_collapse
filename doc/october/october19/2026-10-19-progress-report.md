@@ -300,3 +300,43 @@ adopted. A verified analytic-control summary was added to the existing approved
 evidence feed. Native agents are preparing single-pass complete H/C capture
 and a separate frozen descriptive trajectory analysis; neither changes model
 updates, held-out selection or the one-test-read restriction.
+
+
+## 22:02 UTC — six completed epochs; fresh 48-hour fit admitted and held
+
+The pilot job11321105 is still running on cn-f004. Six complete epochs
+are retained; epoch6 training mean loss is0.13442240720458296 and validation
+mean F1 is0.34604334968252604. Epoch7 is in progress. No model test payload
+has been opened. All first256 pilot losses exactly match the independently
+accepted native prefix, with matching chronology; the local parity record is
+under the ignored full-fit operations directory. Selection remains provisional.
+
+Committed/pushed source1891bdd adds the separately versioned long-fit v2,
+chunked durable journal, CPU admission supervisor, compact evaluation W&B
+artifact and the v1 normal-completion tuple-return correction. The active v1
+checkout stays6d89c657: the one-hour deadline path does not exercise that
+normal-completion bug. Combined focused validation passed89tests. The
+new long fit preserves numerical parameters, CPU FP32, chronology, seeds and
+validation-only selection. It has a fresh run/contract, 200-epoch cap, patience100
+and 48-hour operational maximum; it is not an extension or relabeling of v1.
+Its first256 losses must exactly match the already accepted reference before
+update257. See the frozen long-fit protocol.
+
+Cluv0.1.5 submitted long job11322268 from immutable source1891bdd in a separate
+scratch source-long checkout. Resources: accountmila, normal QOS/main-cpu,
+cn-f004, oneCPU/2GiB/zeroGPU, 48hours, no retry/requeue/race. Scheduler
+initially reported PENDING/Resources. The coordinator deliberately applied
+` scontrol hold 11322268 ` so the next free CPU slot can finish the pilot's
+short selected-evaluation and descriptive state analysis before the 48-hour
+fit occupies it. This is currently JobHeldUser, not running or failed. Release
+the same job after these short steps; do not submit a duplicate. Unique run:
+long-20261019T215117Z-1891bdd5, admission SHA
+3169ac25bc98beb153a331f74823617c4b7f6a63add940fc8d51ae3194e5673d.
+
+A separate read-only local long-job monitor was independently reviewed:
+9tests pass, BatchMode-only bounded SSH, five-minute polling with backoff,
+owner-scoped atomic journals/status and monitor-only STOP. Held PENDING jobs
+are not called failures; there is no release/cancel/submit code or direct model
+call. Optional already-authorized Qwen tasks occur only at prefix parity, ten
+complete-candidate-epoch milestones or terminal evidence, with bounded project
+excerpts and no scientific acceptance. Actual monitor launch is still pending.

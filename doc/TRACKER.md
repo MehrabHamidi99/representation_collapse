@@ -1,12 +1,22 @@
 # Current research state
 
-Updated 2026-10-19 21:33 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
+Updated 2026-10-19 22:02 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **2026-10-19 22:02 UTC — six completed epochs; long reconstruction queued.**
+  Pilot11321105 is RUNNING; latest complete validation F1 is **0.34604**
+  at epoch6, with epoch7 in progress. Test is still sealed. Fresh cluv long-fit
+  job**11322268** (source1891bdd, separate source-long checkout, 1CPU/2GiB/
+  zeroGPU/48hours) is deliberately **PENDING/JobHeldUser** until the pilot's
+  short selected replay/evaluation and state analysis finish. Release this same
+  job afterward, rather than duplicating it. The v2 fit pins exact first256-loss
+  parity and has a new executed contract, 200-epoch cap and patience100.
+  A reviewed read-only monitor passes9tests; actual launch is pending.
 
 - **2026-10-19 21:33 UTC — three complete native epochs; controls verified.**
   Job11321105 remains running. Validation F1 by complete epoch is
