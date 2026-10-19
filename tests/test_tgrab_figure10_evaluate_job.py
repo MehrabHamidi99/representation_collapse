@@ -12,6 +12,28 @@ from representation_collapse import tgrab_figure10_evaluate_job as job
 
 
 class EvaluationJobTests(unittest.TestCase):
+    def test_result_artifact_binds_actual_retained_json_without_payload_upload(self):
+        calls = []
+        class Reporter:
+            def log_manifest(self, name, *, metadata, identities):
+                self_test.assertTrue((root / "evaluation-result.json").exists())
+                calls.append((name, metadata, identities))
+        self_test = self
+        result = {"checkpoint_sha256": "a" * 64, "state_trajectory": {"sha256": "b" * 64}, "rows": []}
+        args = SimpleNamespace(final_head_sha256="c" * 64, config_sha256="d" * 64, data_manifest_sha256="e" * 64)
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td).resolve()
+            reference = job.publish_evaluation_result(root, result, args, Reporter())
+            actual = hashlib.sha256((root / "evaluation-result.json").read_bytes()).hexdigest()
+            self.assertEqual(reference["sha256"], actual)
+            self.assertEqual(calls[0][2]["evaluation_result_sha256"], actual)
+            self.assertEqual(calls[0][2]["checkpoint_sha256"], "a" * 64)
+            self.assertEqual(calls[0][2]["trajectory_sha256"], "b" * 64)
+            self.assertEqual(calls[0][2]["final_head_sha256"], "c" * 64)
+            self.assertFalse(calls[0][1]["payload_upload"])
+            self.assertFalse(calls[0][1]["model_upload"])
+            self.assertEqual(calls[0][1]["trajectory_bytes"], 26214400)
+
     def test_trajectory_full_hc_bytes_order_signedzero_and_no_mutation(self):
         from tests.test_tgrab_figure10_evaluate import Tensor
         from representation_collapse.graph_reconstruction import CompleteState

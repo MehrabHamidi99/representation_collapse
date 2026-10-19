@@ -30,6 +30,16 @@ class Reporter:
 
 
 class FullFitTests(unittest.TestCase):
+    def test_native_adapter_tuple_at_both_normal_stopping_conditions(self):
+        from representation_collapse.tgrab_figure10_fit import FitResult
+        for native_reason, expected in (("training_loss_patience", "loss_patience"),
+                                        ("complete_epoch_cap", "complete_epoch_cap")):
+            result = FitResult(native_reason, 2, 5118, 5118, 5118, 1, 0.5, 2, 0.7)
+            reason, summary = full.summarize_completed_fit((result, ({"epoch": 2},)))
+            self.assertEqual(reason, expected)
+            self.assertEqual(summary["epochs_completed"], 2)
+            self.assertEqual(summary["selected_validation_mean_f1"], 0.7)
+
     def test_event_sequence_is_independent_of_optimizer_count(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)

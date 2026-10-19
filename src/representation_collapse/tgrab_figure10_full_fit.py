@@ -175,6 +175,14 @@ def finalize_selection(ledger, selection, reason):
                            apply_selection=apply, verify_selection=verify, created_at_utc=utcnow())
 
 
+def summarize_completed_fit(adapter_return):
+    """The native adapter returns the fit result plus retained validation rows."""
+    result, _validation_rows = adapter_return
+    reason = {"training_loss_patience": "loss_patience",
+              "complete_epoch_cap": "complete_epoch_cap"}[result.stop_reason]
+    return reason, asdict(result)
+
+
 def run_native(args, owner, guard, reporter, config_raw, admission_hash, conversion, report_identity):
     # Numerical/native imports occur only after mandatory reporter admission.
     import numpy as np
@@ -340,10 +348,9 @@ def run_native(args, owner, guard, reporter, config_raw, admission_hash, convers
                     "epoch/train_loss": record["mean_training_loss"], "epoch/validation_f1": record["validation_mean_f1"],
                     "epoch/selected": record["validation_selected"]})
             try:
-                result = adapter.fit(guard=guard, on_attempt=journal.on_attempt, on_update=update,
-                    on_epoch_complete=epoch, on_selection=sink.on_selection)
-                stop_reason = {"training_loss_patience": "loss_patience", "complete_epoch_cap": "complete_epoch_cap"}[result.stop_reason]
-                summary = asdict(result)
+                stop_reason, summary = summarize_completed_fit(adapter.fit(
+                    guard=guard, on_attempt=journal.on_attempt, on_update=update,
+                    on_epoch_complete=epoch, on_selection=sink.on_selection))
                 journal.audit()
             except FitInterrupted as exc:
                 if not isinstance(exc.__cause__, FitStop):

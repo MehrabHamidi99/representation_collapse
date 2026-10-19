@@ -213,6 +213,24 @@ def charge_fit_evaluation(fit_root, identity):
         "selected_load_attempts_charged": 1, "retry_allowed": False})
 
 
+def publish_evaluation_result(root, result, args, reporter):
+    """Retain numerical JSON, then report only its compact identity artifact."""
+    from .tgrab_figure10_full_fit import write_record
+    reference = write_record(Path(root), "evaluation-result.json", result)
+    reporter.log_manifest("figure10-selected-evaluation-result", metadata={
+        "targets": 256, "state_observations": 256, "trajectory_bytes": 26214400,
+        "passive_capture": True, "payload_upload": False, "model_upload": False,
+        "reporting_mode": "offline"}, identities={
+        "evaluation_result_sha256": reference["sha256"],
+        "checkpoint_sha256": result["checkpoint_sha256"],
+        "final_head_sha256": args.final_head_sha256,
+        "config_sha256": args.config_sha256, "data_manifest_sha256": args.data_manifest_sha256,
+        "evaluator_source_sha256": common.sha256_file(Path(__file__)),
+        "evaluation_core_sha256": common.sha256_file(Path(__file__).with_name("tgrab_figure10_evaluate.py")),
+        "trajectory_sha256": result["state_trajectory"]["sha256"]})
+    return reference
+
+
 def run_native(args, owner, guard, reporter, config, conversion, summary):
     # Mandatory offline reporter is already entered; no top-level NumPy/Torch.
     import numpy as np
@@ -328,7 +346,7 @@ def run_native(args, owner, guard, reporter, config, conversion, summary):
         for row in result["rows"]:
             reporter.log({"test/" + key: row[key] for key in ("target_timestamp", "source_timestamp", "f1", "precision", "recall", "tp", "fp", "fn", "tn")}, step=step[0])
             step[0] += 1
-        write_record(owner.run_dir, "evaluation-result.json", result)
+        result["evaluation_result_record"] = publish_evaluation_result(owner.run_dir, result, args, reporter)
         return result
 
 
@@ -406,7 +424,7 @@ def main(argv=None):
                             "fit_summary_sha256": args.fit_summary_sha256, "final_head_sha256": args.final_head_sha256}) as reporter:
             result = run_native(args, owner, guard, reporter, config, conversion, summary)
             final.update(status="evaluation_complete", reduction=result["reduction"], checkpoint_sha256=result["checkpoint_sha256"],
-                         state_trajectory=result["state_trajectory"])
+                         state_trajectory=result["state_trajectory"], evaluation_result_record=result["evaluation_result_record"])
     except BaseException as exc:
         final.update(error_type=type(exc).__name__, error=str(exc)[:2000])
     finally:

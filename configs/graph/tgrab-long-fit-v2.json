@@ -1,0 +1,158 @@
+{
+  "allocation": {
+    "account": "mila",
+    "cluster": "mila",
+    "cpus": 1,
+    "gpus": 0,
+    "memory_bytes": 2147483648,
+    "nodes": 1,
+    "partition": "main-cpu",
+    "qos": "normal",
+    "tasks": 1
+  },
+  "architecture": {
+    "amp": false,
+    "chebyshev_order": 2,
+    "device": "cpu",
+    "head_dropout": 0.2,
+    "head_layers": 2,
+    "hidden_channels": 128,
+    "input_channels": 100,
+    "laplacian_normalization": "sym",
+    "layers": 1,
+    "precision": "float32",
+    "recurrent_dropout": 0.0
+  },
+  "artifacts": {
+    "bundle_schema_version": 2,
+    "candidate_kind": "tgrab_complete_epoch_candidate_v2",
+    "complete_state_components": [
+      "hidden",
+      "cell"
+    ],
+    "optimizer_state_included": false,
+    "terminal_state_shape": [
+      2,
+      1,
+      100,
+      128
+    ],
+    "test_payload_opened": false,
+    "weight_encoding": "finite_float32_le_catalog_order"
+  },
+  "chronology": {
+    "pairs_per_validation_target": 9900,
+    "probability_threshold_ge": 0.5,
+    "terminal_validation_next_target": 2816,
+    "train_predecessor_before_target": true,
+    "train_targets_interval": [
+      1,
+      2560
+    ],
+    "validation_fresh_zero_eval_replay_interval": [
+      0,
+      2560
+    ],
+    "validation_score_before_consume": true,
+    "validation_targets_interval": [
+      2560,
+      2816
+    ]
+  },
+  "data": {
+    "block_steps": 32,
+    "condition": "primary_Pdet_2_32",
+    "conversion_config_sha256": "22bef6bf781c5bfb5493dd5e03169ea0e658b2463ccaa9ba09189af454508f1f",
+    "conversion_protocol_sha256": "003e6b01d3b090841f623f75ed0648a397fe8afdaeb49dc382fb69a3f0e05584",
+    "num_nodes": 100,
+    "period_steps": 64,
+    "raw_sha256": "5a19f9e7949668473bc61cb59b6215f25f093ea0ee2d45b5e143338ded5523e3",
+    "shuffle": false,
+    "test_interval_metadata_only": [
+      2816,
+      3072
+    ],
+    "train_interval": [
+      0,
+      2560
+    ],
+    "validation_interval": [
+      2560,
+      2816
+    ]
+  },
+  "initialization": {
+    "fresh_optimizer": true,
+    "fresh_recurrent_and_head": true,
+    "model_seed": 0,
+    "negative_seed": 1,
+    "seed_before_construction": true
+  },
+  "input_pins": {
+    "environment_lock_sha256": "ea2f58d2a12f5d8562b31d5fa7b5c646121784867c134afd4a5cf6a8108b8c06",
+    "source_files_sha256": {
+      "graph_data.py": "498e60f7be048411c253e4b8cb63e4b907973f969c397bfdfacde949389f057e",
+      "graph_reconstruction.py": "1e8212b9589709d1d4654d0ebfe98179a41ea5a307dbc2083fe84f06c1aead13",
+      "pinned_graph_import.py": "2f14b3683f67d33f4a5f6325b5b204aee3a086e1fad1966acb9810a302d04344",
+      "reporting.py": "443c9e89d2eba954ee60cc35e015fe61196fbec2f50331067540b4a8259e8184",
+      "tgrab_figure10_bootstrap.py": "37a0c0839e167d3a71cc4e1186f97a9d91c211cf006ad2df00dcc64652e62253",
+      "tgrab_figure10_candidate_encoder.py": "08381a63be5d8c271d7cae70088c098516cb2e7a734441e5ea24aa28c5986b32",
+      "tgrab_figure10_fit.py": "2c771a13eada794aecb14d740b8cc0dccffd0501db6fffa533f3170039e8cae0",
+      "tgrab_figure10_native_fit.py": "4c2a50c140d39f80c728b3c1e4bb277c511bd989d1956725cb604d08637d68d0",
+      "tgrab_selected_checkpoint.py": "23cf6dffc9ca7db3e14d379e010dbaf3729fe8cd8e3b8621909016195b8727bc"
+    },
+    "tensor_catalog_sha256": "2dcaff589cdfd48f2d5426fabab3dae8f229dde7b2bff27ab7ed7d1815db4268",
+    "wheel_manifest_sha256": "67e27963f2166f8a7e26dba301c9020d2bd7d4c012010fb859e6e43b15ce9842"
+  },
+  "kind": "tgrab_corrected_long_fit_contract_v2",
+  "numerical_template": {
+    "path": "configs/graph/tgrab-reconstruction-v1.json",
+    "role": "numerical_and_conversion_template_only_not_executed_training_contract",
+    "sha256": "22bef6bf781c5bfb5493dd5e03169ea0e658b2463ccaa9ba09189af454508f1f"
+  },
+  "optimization": {
+    "amsgrad": false,
+    "backpropagation_window": 1,
+    "batch_snapshots": 1,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "kind": "Adam",
+    "learning_rate": 0.0001,
+    "updates_per_complete_epoch": 2559,
+    "weight_decay": 0.0
+  },
+  "prefix_parity": {
+    "accepted_reference_sha256": "825f11e7c7d7e1c2e246666859133c822137da3d3551cf344a837776e9aecc9f",
+    "accepted_v1_prefix_updates": 256,
+    "loss_comparison": "exact_python_float_equality_after_each_confirmed_update",
+    "reference_bytes_supplied_by_independent_admission": true,
+    "stop_on_first_mismatch": true
+  },
+  "protocol_id": "tgrab_figure10_long_fit_v2",
+  "schema_version": 2,
+  "scope": "fresh seed-0 corrected GC-LSTM; 200-epoch capped fit; no evaluation or held-out opener",
+  "selection": {
+    "complete_epoch_only": true,
+    "earliest_tie": true,
+    "metric": "validation_time_mean_f1",
+    "selected_inference_only_no_optimizer_rng_resume": true,
+    "strict_improvement": true
+  },
+  "stopping": {
+    "loss_patience": 100,
+    "max_complete_epochs": 200,
+    "max_optimizer_updates": 511800,
+    "no_resume": true,
+    "no_retry": true,
+    "outer_seconds": 172770,
+    "relative_loss_tolerance": 1e-06,
+    "slurm_seconds": 172800,
+    "test_access": false,
+    "test_metrics_affect_selection_or_stopping": false,
+    "walltime_scope": "entire fresh fit attempt",
+    "work_seconds": 172680
+  }
+}
