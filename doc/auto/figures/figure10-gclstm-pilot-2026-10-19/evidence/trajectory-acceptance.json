@@ -1,0 +1,204 @@
+{
+  "accepted_evaluation_receipt_sha256": "65bcc3cdfddc82389604c4f9b9a1b5c682bda21888075ff9b7c0fa01813220fb",
+  "analysis_result_path": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/figure10-trajectory/trajectory-20261019T221357Z-1891bdd5/trajectory-analysis.json",
+  "analysis_result_sha256": "1722d1b2165a704124bdb05305dfb654e7702a7aa24a5da459551a9723920f38",
+  "causal_retention_claim": false,
+  "cloud_summaries": {
+    "A_early": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 9,
+        "samples": 32,
+        "trace": 8008.501175211665
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 7,
+        "samples": 32,
+        "trace": 137.77467748804725
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 9,
+        "samples": 32,
+        "trace": 8146.27585269971
+      }
+    },
+    "A_late": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 11,
+        "samples": 32,
+        "trace": 447.6741286594583
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 9,
+        "samples": 32,
+        "trace": 4.96976556919893
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 10,
+        "samples": 32,
+        "trace": 452.6438942286573
+      }
+    },
+    "B_early": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 9,
+        "samples": 32,
+        "trace": 6532.426086895035
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 9,
+        "samples": 32,
+        "trace": 131.7157004621554
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 9,
+        "samples": 32,
+        "trace": 6664.141787357184
+      }
+    },
+    "B_late": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 7,
+        "samples": 32,
+        "trace": 516.293314543649
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 8,
+        "samples": 32,
+        "trace": 3.101323486304166
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 7,
+        "samples": 32,
+        "trace": 519.3946380299532
+      }
+    },
+    "all_targets": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 41,
+        "samples": 256,
+        "trace": 31306.710648149907
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 48,
+        "samples": 256,
+        "trace": 481.1287913698997
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 41,
+        "samples": 256,
+        "trace": 31787.839439519765
+      }
+    },
+    "pooled_early": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 17,
+        "samples": 64,
+        "trace": 16856.68983605906
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 16,
+        "samples": 64,
+        "trace": 382.90713921313136
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 17,
+        "samples": 64,
+        "trace": 17239.596975272205
+      }
+    },
+    "pooled_late": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 12,
+        "samples": 64,
+        "trace": 49578.6205477359
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 13,
+        "samples": 64,
+        "trace": 466.8452132611131
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 11,
+        "samples": 64,
+        "trace": 50045.46576099701
+      }
+    }
+  },
+  "clouds_verified": 21,
+  "collected_metadata_sha256": {
+    "analysis-manifest.json": "664ea4d51b5d4b095e0d57d77bd67af159153bb8f278fde12d1e8a537d19d5f5",
+    "trajectory-analysis.json": "1722d1b2165a704124bdb05305dfb654e7702a7aa24a5da459551a9723920f38",
+    "wandb/metadata-artifacts/trajectory-analysis-result.json": "3c3098a5e212f33b91921d79aff0cc3b21fc875716ddbb48f88e325da7221054",
+    "wandb/reporting-receipt.json": "88df1bb6b99447b8be076b3b418be4ca2e5eacd5a5985a811c635e3acedeb59b"
+  },
+  "compact_spectral_arithmetic_verified": true,
+  "evaluation_result_sha256": "8acc39f47225e53f0b5b208c32460505687340dcf1ab1aaae646b1860c9d0091",
+  "floquet_claim": false,
+  "job_id": "11322422",
+  "kind": "figure10_compact_trajectory_execution_acceptance_v1",
+  "offline_transaction_audit": {
+    "decoded_history_rows": 22,
+    "exit_code": 0,
+    "remote_delivery_verified": false,
+    "result_artifact_verified": true,
+    "sha256": "656da89576f2df8e30acd1c055e022fef66e1c807a59c4cae7875abb376c18c0"
+  },
+  "period64_comparisons_verified": 192,
+  "protobuf_helper_sha256": "c51ad31e7d6e948074e0e37046b14ab84602ba7f9d056e01d0a6e5ca84fe24ea",
+  "remote_delivery_verified": false,
+  "run_id": "trajectory-20261019T221357Z-1891bdd5",
+  "scheduler_sha256": "abc6f463a1da5ef43db8117bd19e074b3a6f1208b1034f894d06e321e10aeb7d",
+  "scientific_acceptance": false,
+  "scientific_collapse_claim": false,
+  "scope": "Compact output arithmetic/provenance and real offline protobuf only; no independent state-array reanalysis or graph/weight/state binary read.",
+  "source_closure_git_verified": true,
+  "source_commit": "1891bdd59bf47b944c8799ae345ebb26b9a4e497",
+  "state_arrays_independently_reanalyzed": false,
+  "status": "accepted",
+  "supervisor_journal_sha256": "3c96d941286c6a3dc960403a8224917a47b8050fcee88181590054e01a4677e8",
+  "supervisor_receipt_sha256": "f850192e66187d7b37afba503a86452a4ee0640a6ca93652e6bcc01664d8dab7",
+  "trajectory_sha256": "0ca92fd2bec39e587926238a49270a78d4def28b4f41eb9e337caf6106adb036",
+  "verifier_sha256": "edd212abbeb9e2693f2982e5560da03f49249fc3a4d9894552d66bff8327350a"
+}

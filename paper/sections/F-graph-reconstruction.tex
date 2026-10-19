@@ -1,0 +1,94 @@
+\section{A corrected temporal-graph reconstruction}
+\label{app:graph-reconstruction}
+
+We separately examine the within-repetition behavior motivating the
+$\mathcal{P}^{\mathrm{det}}_{2,32}$ analysis in T-GRAB
+\citep{dizaji2025tgrab}. This is a new, corrected GC-LSTM reconstruction,
+not a historical checkpoint replay or reproduction of all methods in the
+original figure. One seed-0 model uses CPU FP32, 100 nodes, hidden width 128,
+one recurrent layer, Chebyshev order 2 and Adam at $10^{-4}$. Chronological
+training, validation and test splits contain 40, 4 and 4 complete 64-step
+periods. The one-hour deadline ends training after seven complete epochs;
+validation selects epoch 7. A later partial epoch does not enter selection.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.90\linewidth]{figures/figure10-reconstruction.pdf}
+\caption{\textbf{A capped single-model behavioral reconstruction.}
+The selected model predicts all 9,900 ordered off-diagonal pairs for each
+of 256 held-out targets, with probability threshold $\geq0.5$.
+(a) Chronological F1; orange points mark actual graph changes, including
+the first test target. (b) Means of the eight successive 32-target motif
+presentations. (c) Motifs A and B aligned by within-motif phase across four
+correlated cycles. The fixed early window is phases 1--8 and the late window
+24--31; both exclude transition phase zero. No training-seed confidence
+interval or original-paper numeric curve is shown.}
+\label{fig:graph-behavior}
+\end{figure}
+
+\clearpage
+\paragraph{Behavioral decline is within motifs, not cumulative across cycles.}
+The held-out temporal mean F1 is 0.459277; transition and nontransition means
+are 0.188305 and 0.468018. The independently verified previous-graph
+persistence control averages 0.968750; the pilot curve shape therefore does
+not establish strong task competence. The frozen contrast compares equal eight-phase
+windows, with 32 targets per motif/window or 64 when pooling motifs.
+Early and late mean F1 are 0.477737 and 0.394132 overall
+(late minus early $=-0.083605$). Both motifs decline:
+A, $0.488950\rightarrow0.364600$; B, $0.466524\rightarrow0.423664$.
+These are descriptive window contrasts, not monotonicity claims.
+The four cycles have identical per-phase confusion counts: the observed
+behavior repeats rather than deteriorates cumulatively across cycles.
+There is one graph realization and one trained model, not four independent
+replications or evidence for an effect of periodic versus matched ordering.
+
+\paragraph{The complete state changes the geometric interpretation.}
+For the same windows, we analyze the retained pre-score states
+$s_t=(h_t,c_t)\in\R^{25600}$, with canonical node order and no model rerun.
+For each window we center its time cloud separately and compute FP64
+sample-covariance spectra via its Gram matrix. The per-motif windows have
+32 correlated rows and rank ceiling 31; pooled windows have 64 rows and
+ceiling 63. Hidden-only PR falls from 1.401 to 1.053 for A and 1.397 to
+1.052 for B. In contrast, \emph{complete} H+C PR rises from 1.100 to 1.292
+and 1.108 to 1.231, respectively (\cref{fig:graph-state}).
+Hidden-only dimensional concentration therefore does not establish a
+reduction of complete-state normalized dimension.
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/figure10-state-diagnostics.pdf}
+\caption{\textbf{State choice and centering qualify the behavioral observation.}
+The windows and counts match \cref{fig:graph-behavior}. Hidden-only and
+complete H+C participation ratios move in different directions within each
+motif. Absolute covariance traces attenuate within motifs, whereas pooling
+motifs mixes their different means and can increase total variance.
+Late-to-early trace ratios are a post hoc display of the frozen trace
+measurements, not a newly selected hypothesis test. These time-cloud
+summaries have no independent-cycle confidence intervals and do not measure
+causal memory or a Floquet spectrum.}
+\label{fig:graph-state}
+\end{figure}
+
+Absolute covariance trace also matters: within-motif complete-state traces
+fall from 8,146.28 to 452.64 for A and from 6,664.14 to 519.39 for B.
+Pooling A and B instead produces a PR decrease
+$1.919\rightarrow1.013$ while trace \emph{increases}
+$17{,}239.60\rightarrow50{,}045.47$. The pooled cloud includes between-motif
+mean separation; it is a different estimand, not corroboration of uniformly
+shrinking state variance. Neither low PR nor attenuation proves loss of
+useful history-dependent information.
+
+\paragraph{Closure, verification and scope.}
+Across 192 adjacent-cycle comparisons at lag 64, the maximum relative
+complete-state residual is 0.005059; states are not bitwise periodic.
+Identical confusion counts therefore do not imply identical states.
+No periodic Jacobian or Floquet operator is certified. The runtime strictly
+loads both selected weight components and verifies exact fresh train-plus-
+validation H/C replay before the single held-out pass. Independent checks
+verify compact metadata, spectral arithmetic, source identities and offline
+W\&B transaction histories; they do not independently rerun native inference
+or reanalyze the binary states. Remote dashboard delivery is unverified.
+This evidence supports a within-motif behavioral decline and conditional
+state-geometry diagnostics for one capped corrected GC-LSTM. It establishes
+neither harmful causal retention loss, a universal collapse mechanism nor
+the full multi-model, five-seed T-GRAB figure.

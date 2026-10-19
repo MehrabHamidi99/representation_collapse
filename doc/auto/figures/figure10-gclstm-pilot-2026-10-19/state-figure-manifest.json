@@ -1,0 +1,66 @@
+{
+  "caption": "Early phases 1\u20138 and late phases 24\u201331, excluding phase zero. Each per-motif window has 32 correlated targets; pooled windows have64. Each cloud is centered independently. Hidden and complete H+C PR answer different questions. Pooling also mixes motif means. Variance ratios are a posthoc display of the frozen covariance traces. One model seed/graph; no confidence intervals, causal memory or Floquet inference.",
+  "files": {
+    "figure10-state-diagnostics.pdf": "1500a27460c76f8425750c8a0d96748387b531a4153d04c1f1963e2f3606c77f",
+    "figure10-state-diagnostics.png": "b1314d16f24f661e3ac044fdcd78d38914154c31839cf61b3e98107da5d3c5a2"
+  },
+  "identities": {
+    "acceptance_sha256": "d8e9bf16beb9d9537d8adcaca84c40c454afff268755d0c06b702af3e1716975",
+    "analysis_sha256": "1722d1b2165a704124bdb05305dfb654e7702a7aa24a5da459551a9723920f38",
+    "renderer_sha256": "9db20d48d06af472d7d6daf40c8f53d6ceb304ecffc8ad15a14f117193607899"
+  },
+  "kind": "figure10_state_summary_plot_v1",
+  "model_seeds": 1,
+  "original_state_arrays_independently_reanalyzed": false,
+  "scientific_collapse_claim": false,
+  "summaries": {
+    "A": {
+      "hidden": {
+        "early_covariance_trace": 137.77467748804725,
+        "early_pr": 1.4010516674718168,
+        "late_covariance_trace": 4.96976556919893,
+        "late_pr": 1.053128393310519,
+        "late_to_early_trace_ratio": 0.03607169082018055
+      },
+      "hidden_and_cell": {
+        "early_covariance_trace": 8146.27585269971,
+        "early_pr": 1.0998350067473373,
+        "late_covariance_trace": 452.6438942286573,
+        "late_pr": 1.2919391306188723,
+        "late_to_early_trace_ratio": 0.055564518365609876
+      }
+    },
+    "B": {
+      "hidden": {
+        "early_covariance_trace": 131.7157004621554,
+        "early_pr": 1.3972071242419424,
+        "late_covariance_trace": 3.101323486304166,
+        "late_pr": 1.0515177342402793,
+        "late_to_early_trace_ratio": 0.023545587013715494
+      },
+      "hidden_and_cell": {
+        "early_covariance_trace": 6664.141787357184,
+        "early_pr": 1.1082690144166223,
+        "late_covariance_trace": 519.3946380299532,
+        "late_pr": 1.2312832096005903,
+        "late_to_early_trace_ratio": 0.07793871358129234
+      }
+    },
+    "pooled": {
+      "hidden": {
+        "early_covariance_trace": 382.90713921313136,
+        "early_pr": 1.8179692199558557,
+        "late_covariance_trace": 466.8452132611131,
+        "late_pr": 1.017165736260436,
+        "late_to_early_trace_ratio": 1.2192126117587498
+      },
+      "hidden_and_cell": {
+        "early_covariance_trace": 17239.596975272205,
+        "early_pr": 1.919033277666604,
+        "late_covariance_trace": 50045.46576099701,
+        "late_pr": 1.0134661490994903,
+        "late_to_early_trace_ratio": 2.9029371065217036
+      }
+    }
+  }
+}

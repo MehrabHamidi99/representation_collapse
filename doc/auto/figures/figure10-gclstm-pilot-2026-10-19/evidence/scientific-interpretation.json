@@ -1,0 +1,370 @@
+{
+  "additional_descriptive_findings": [
+    "All four cycle-level confusion/F1 curves repeat exactly at reported precision; this is no evidence of cumulative behavioral degradation across test cycles.",
+    "Each motif curve contains both adjacent increases and decreases, so the decline is a window contrast rather than a monotonic temporal claim.",
+    "Within-motif hidden-only participation ratios decrease; complete H+C participation ratios increase despite lower within-motif temporal variance.",
+    "Pooled H+C participation ratio decreases while pooled variance increases; the growing between-motif centroid contribution prevents interpreting pooling as universal complete-state dimension collapse.",
+    "Complete states are not bitwise period-64 closed, despite exactly repeated thresholded confusion counts/F1."
+  ],
+  "allowed_claim": "Qualitative within-motif F1 decline reproduced for capped seed-0 GC-LSTM: fixed late-minus-early differences are negative for both motifs.",
+  "behavior": {
+    "all_192_period64_comparisons_have_exactly_equal_reported_confusion_counts_and_f1": true,
+    "contrasts": {
+      "A": {
+        "early_mean_f1": 0.48895042950975737,
+        "early_targets": 32,
+        "late_mean_f1": 0.3646004862615956,
+        "late_minus_early_f1": -0.12434994324816179,
+        "late_targets": 32
+      },
+      "B": {
+        "early_mean_f1": 0.46652368908488284,
+        "early_targets": 32,
+        "late_mean_f1": 0.42366398629459967,
+        "late_minus_early_f1": -0.04285970279028317,
+        "late_targets": 32
+      },
+      "overall": {
+        "early_mean_f1": 0.4777370592973201,
+        "early_targets": 64,
+        "late_mean_f1": 0.3941322362780976,
+        "late_minus_early_f1": -0.08360482301922245,
+        "late_targets": 64
+      }
+    },
+    "fixed_windows": {
+      "early": [
+        1,
+        8
+      ],
+      "late": [
+        24,
+        31
+      ],
+      "transition_phase_excluded": 0
+    },
+    "presentations": [
+      {
+        "adjacent_decreases": 19,
+        "adjacent_increases": 12,
+        "cycle": 1,
+        "early_mean_f1": 0.48895042950975737,
+        "early_targets": 8,
+        "late_mean_f1": 0.3646004862615956,
+        "late_minus_early_f1": -0.12434994324816179,
+        "late_targets": 8,
+        "motif": "A",
+        "presentation": 1,
+        "whole_presentation_mean_f1": 0.44318302350828337
+      },
+      {
+        "adjacent_decreases": 18,
+        "adjacent_increases": 13,
+        "cycle": 1,
+        "early_mean_f1": 0.46652368908488284,
+        "early_targets": 8,
+        "late_mean_f1": 0.42366398629459967,
+        "late_minus_early_f1": -0.04285970279028317,
+        "late_targets": 8,
+        "motif": "B",
+        "presentation": 2,
+        "whole_presentation_mean_f1": 0.47537183928833926
+      },
+      {
+        "adjacent_decreases": 19,
+        "adjacent_increases": 12,
+        "cycle": 2,
+        "early_mean_f1": 0.48895042950975737,
+        "early_targets": 8,
+        "late_mean_f1": 0.3646004862615956,
+        "late_minus_early_f1": -0.12434994324816179,
+        "late_targets": 8,
+        "motif": "A",
+        "presentation": 3,
+        "whole_presentation_mean_f1": 0.44318302350828337
+      },
+      {
+        "adjacent_decreases": 18,
+        "adjacent_increases": 13,
+        "cycle": 2,
+        "early_mean_f1": 0.46652368908488284,
+        "early_targets": 8,
+        "late_mean_f1": 0.42366398629459967,
+        "late_minus_early_f1": -0.04285970279028317,
+        "late_targets": 8,
+        "motif": "B",
+        "presentation": 4,
+        "whole_presentation_mean_f1": 0.47537183928833926
+      },
+      {
+        "adjacent_decreases": 19,
+        "adjacent_increases": 12,
+        "cycle": 3,
+        "early_mean_f1": 0.48895042950975737,
+        "early_targets": 8,
+        "late_mean_f1": 0.3646004862615956,
+        "late_minus_early_f1": -0.12434994324816179,
+        "late_targets": 8,
+        "motif": "A",
+        "presentation": 5,
+        "whole_presentation_mean_f1": 0.44318302350828337
+      },
+      {
+        "adjacent_decreases": 18,
+        "adjacent_increases": 13,
+        "cycle": 3,
+        "early_mean_f1": 0.46652368908488284,
+        "early_targets": 8,
+        "late_mean_f1": 0.42366398629459967,
+        "late_minus_early_f1": -0.04285970279028317,
+        "late_targets": 8,
+        "motif": "B",
+        "presentation": 6,
+        "whole_presentation_mean_f1": 0.47537183928833926
+      },
+      {
+        "adjacent_decreases": 19,
+        "adjacent_increases": 12,
+        "cycle": 4,
+        "early_mean_f1": 0.48895042950975737,
+        "early_targets": 8,
+        "late_mean_f1": 0.3646004862615956,
+        "late_minus_early_f1": -0.12434994324816179,
+        "late_targets": 8,
+        "motif": "A",
+        "presentation": 7,
+        "whole_presentation_mean_f1": 0.44318302350828337
+      },
+      {
+        "adjacent_decreases": 18,
+        "adjacent_increases": 13,
+        "cycle": 4,
+        "early_mean_f1": 0.46652368908488284,
+        "early_targets": 8,
+        "late_mean_f1": 0.42366398629459967,
+        "late_minus_early_f1": -0.04285970279028317,
+        "late_targets": 8,
+        "motif": "B",
+        "presentation": 8,
+        "whole_presentation_mean_f1": 0.47537183928833926
+      }
+    ],
+    "primary_mean_f1": 0.4592774313983113
+  },
+  "closure": {
+    "any_bitwise_equal": false,
+    "comparisons": 192,
+    "maximum_relative_l2_residual": 0.005058522627692528
+  },
+  "inputs": {
+    "runs/ops/figure10-evaluation-20261019/evaluation-20261019T221012Z-1891bdd5/acceptance.json": "65bcc3cdfddc82389604c4f9b9a1b5c682bda21888075ff9b7c0fa01813220fb",
+    "runs/ops/figure10-evaluation-20261019/evaluation-20261019T221012Z-1891bdd5/plot-acceptance.json": "4f77151f4ae875cbff92f7289140c5a9bbb37147cf2d625803d414175fe6ee34",
+    "runs/ops/figure10-evaluation-20261019/evaluation-20261019T221012Z-1891bdd5/plots/figure-manifest.json": "d18b0a93a70dbc2914463c7ff5e3334692fe5350081f79e8504d852e9f7ee34c",
+    "runs/ops/figure10-evaluation-20261019/evaluation-20261019T221012Z-1891bdd5/returned/bundle/evaluation-result.json": "8acc39f47225e53f0b5b208c32460505687340dcf1ab1aaae646b1860c9d0091",
+    "runs/ops/figure10-trajectory-20261019/trajectory-20261019T221357Z-1891bdd5/acceptance.json": "d8e9bf16beb9d9537d8adcaca84c40c454afff268755d0c06b702af3e1716975",
+    "runs/ops/figure10-trajectory-20261019/trajectory-20261019T221357Z-1891bdd5/returned/bundle/trajectory-analysis.json": "1722d1b2165a704124bdb05305dfb654e7702a7aa24a5da459551a9723920f38"
+  },
+  "joint_trace_pooling_decomposition": {
+    "early": {
+      "between_motif_contribution_to_pooled_trace": 9951.931152387067,
+      "pooled_trace": 17239.596975272205,
+      "within_motif_contribution_to_pooled_trace": 7287.6658228851375
+    },
+    "late": {
+      "between_motif_contribution_to_pooled_trace": 49567.161086393564,
+      "pooled_trace": 50045.46576099701,
+      "within_motif_contribution_to_pooled_trace": 478.30467460344323
+    }
+  },
+  "kind": "figure10_independent_descriptive_scientific_interpretation_v1",
+  "next_steps": [
+    "Evaluate the separately frozen longer seed-0 fit after verified numerical prefix parity; retain pilot as immutable exploratory evidence.",
+    "Obtain independent seeds/graphs and predeclared competence criteria before broader performance claims.",
+    "Develop matched motif-order causal memory tests, separate covariance and tangent estimands, and Jacobian-periodicity checks only under an appropriate frozen protocol."
+  ],
+  "not_established": [
+    "Full Figure 10 across models or five seeds",
+    "Historical bit-exact or raw-curve reproduction",
+    "Converged or uncapped training: seed 0 selected epoch 7 at deadline",
+    "Harmful erasure of task-required information",
+    "Universal complete-state dimension collapse",
+    "Monotonic within-motif degradation",
+    "Cumulative degradation across repeated cycles",
+    "Causal periodicity effect relative to matched nonperiodic ordering",
+    "Certified periodic hidden trajectory, Jacobians, Floquet multipliers or tangent contraction",
+    "Independent graph/model replications, confidence intervals or hypothesis tests",
+    "Independently reanalyzed raw state arrays or independently executed native replay",
+    "Remote W&B delivery"
+  ],
+  "plot_acceptance_bound_hash": "4f77151f4ae875cbff92f7289140c5a9bbb37147cf2d625803d414175fe6ee34",
+  "plot_acceptance_current_hash_matches": true,
+  "scientific_acceptance": "Narrow descriptive behavioral observation accepted; harmful representation-collapse mechanism remains unresolved.",
+  "scope": "Compact output and CSV arithmetic only; no state, graph, weight, native model or independent replay reads. Existing execution acceptances are inputs, not independently rerun here.",
+  "state_geometry": {
+    "A": {
+      "cell": {
+        "early": {
+          "pr": 1.0951042782057545,
+          "rank": 9,
+          "samples": 32,
+          "trace": 8008.501175211665
+        },
+        "late": {
+          "pr": 1.2946687200111517,
+          "rank": 11,
+          "samples": 32,
+          "trace": 447.6741286594583
+        },
+        "pr_change": 0.19956444180539723,
+        "trace_change": -7560.827046552207
+      },
+      "hidden": {
+        "early": {
+          "pr": 1.4010516674718163,
+          "rank": 7,
+          "samples": 32,
+          "trace": 137.77467748804725
+        },
+        "late": {
+          "pr": 1.053128393310519,
+          "rank": 9,
+          "samples": 32,
+          "trace": 4.96976556919893
+        },
+        "pr_change": -0.3479232741612972,
+        "trace_change": -132.80491191884832
+      },
+      "hidden_and_cell": {
+        "early": {
+          "pr": 1.0998350067473373,
+          "rank": 9,
+          "samples": 32,
+          "trace": 8146.27585269971
+        },
+        "late": {
+          "pr": 1.291939130618872,
+          "rank": 10,
+          "samples": 32,
+          "trace": 452.6438942286573
+        },
+        "pr_change": 0.19210412387153464,
+        "trace_change": -7693.631958471053
+      }
+    },
+    "B": {
+      "cell": {
+        "early": {
+          "pr": 1.1027442463800712,
+          "rank": 9,
+          "samples": 32,
+          "trace": 6532.426086895035
+        },
+        "late": {
+          "pr": 1.2323812555187743,
+          "rank": 7,
+          "samples": 32,
+          "trace": 516.293314543649
+        },
+        "pr_change": 0.12963700913870313,
+        "trace_change": -6016.132772351386
+      },
+      "hidden": {
+        "early": {
+          "pr": 1.3972071242419426,
+          "rank": 9,
+          "samples": 32,
+          "trace": 131.7157004621554
+        },
+        "late": {
+          "pr": 1.0515177342402788,
+          "rank": 8,
+          "samples": 32,
+          "trace": 3.101323486304166
+        },
+        "pr_change": -0.34568939000166377,
+        "trace_change": -128.61437697585126
+      },
+      "hidden_and_cell": {
+        "early": {
+          "pr": 1.1082690144166223,
+          "rank": 9,
+          "samples": 32,
+          "trace": 6664.141787357184
+        },
+        "late": {
+          "pr": 1.23128320960059,
+          "rank": 7,
+          "samples": 32,
+          "trace": 519.3946380299532
+        },
+        "pr_change": 0.12301419518396761,
+        "trace_change": -6144.7471493272305
+      }
+    },
+    "pooled": {
+      "cell": {
+        "early": {
+          "pr": 1.8997017817184796,
+          "rank": 17,
+          "samples": 64,
+          "trace": 16856.68983605906
+        },
+        "late": {
+          "pr": 1.013370104416545,
+          "rank": 12,
+          "samples": 64,
+          "trace": 49578.6205477359
+        },
+        "pr_change": -0.8863316773019345,
+        "trace_change": 32721.930711676843
+      },
+      "hidden": {
+        "early": {
+          "pr": 1.8179692199558557,
+          "rank": 16,
+          "samples": 64,
+          "trace": 382.90713921313136
+        },
+        "late": {
+          "pr": 1.0171657362604365,
+          "rank": 13,
+          "samples": 64,
+          "trace": 466.8452132611131
+        },
+        "pr_change": -0.8008034836954192,
+        "trace_change": 83.93807404798173
+      },
+      "hidden_and_cell": {
+        "early": {
+          "pr": 1.9190332776666041,
+          "rank": 17,
+          "samples": 64,
+          "trace": 17239.596975272205
+        },
+        "late": {
+          "pr": 1.01346614909949,
+          "rank": 11,
+          "samples": 64,
+          "trace": 50045.46576099701
+        },
+        "pr_change": -0.9055671285671141,
+        "trace_change": 32805.8687857248
+      }
+    }
+  },
+  "statistical_units": {
+    "cycles": 4,
+    "graph_realizations": 1,
+    "independent_cycle_replicates": false,
+    "inferential_tests": false,
+    "matched_windows_per_motif": 32,
+    "model_seeds": 1,
+    "pooled_windows": 64
+  },
+  "status": "descriptive_arithmetic_verified",
+  "unresolved_mechanisms": [
+    "Undertraining, graph-conditioned readout calibration/threshold effects, saturation, and dynamical adaptation can produce the observed behavior without harmful information loss.",
+    "Temporal covariance shape and scale depend on centering, component units and motif pooling; raw joint H+C covariance is dominated by cell-state scale.",
+    "Task-required memory must be isolated with equal-retention matched ordering interventions and causal probes before claiming harmful collapse."
+  ]
+}

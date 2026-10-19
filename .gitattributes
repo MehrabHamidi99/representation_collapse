@@ -1,0 +1,2 @@
+# Keep hash-pinned CSV exports byte-exact, including RFC 4180 CRLF endings.
+doc/auto/figures/figure10-gclstm-pilot-2026-10-19/*.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

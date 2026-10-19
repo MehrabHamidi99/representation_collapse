@@ -340,3 +340,140 @@ are not called failures; there is no release/cancel/submit code or direct model
 call. Optional already-authorized Qwen tasks occur only at prefix parity, ten
 complete-candidate-epoch milestones or terminal evidence, with bounded project
 excerpts and no scientific acceptance. Actual monitor launch is still pending.
+
+
+## 22:09–22:16 UTC — pilot, selected test and state diagnostics verified
+
+Pilot **11321105** completed `0:0`, elapsed00:58:26. Independent compact
+verification accepted seven complete epochs, 18,429 confirmed updates including
+partial epoch8, strict earliest-max validation selection of epoch7, and actual
+registered deadline stopping. Selected validation F1 is0.4592774313983113.
+Actual offline W&B decoding verified20,228 history rows plus exit records;
+no online delivery or independent native model replay is claimed. Compact
+metadata collection contains67 files/21,094,951 bytes, with no model weights
+or graph payloads. The source6d89 checkout remained immutable until this exit.
+
+Only after completion, advanced the clean main scratch source to reviewed
+**1891bdd59bf47b944c8799ae345ebb26b9a4e497**, preserving the separate long-fit
+checkout. Staged hash-bound evaluator admission/fit acceptance create-only;
+verified all56 source-closure files. Cluv preview resolved exactly one CPU
+job; submitted **11322413**, unique run
+`evaluation-20261019T221012Z-1891bdd5`, admission SHA
+`d5209046e645b38ce6804bb194059298da91c5c38e732031562e196590677e02`.
+
+Evaluation11322413 completed `0:0`, elapsed00:02:45. Strict dual-component
+load and exact complete H/C train/validation-prefix replay preceded the single
+held-out opener. Independent compact audit accepted all256 confusion-derived
+scores, chronology, selected provenance, fit-bound claim, state descriptor and
+remote state SHA, actual258 W&B history rows and result metadata artifact.
+This verification did not independently execute native inference. Mean test F1
+is0.4592774313983113; transition mean0.18830546713230523 and nontransition
+mean0.46801846250366635. Evaluation result SHA
+`8acc39f47225e53f0b5b208c32460505687340dcf1ab1aaae646b1860c9d0091`.
+
+The frozen early1–8 versus late24–31 contrast excludes transition phase0:
+A−0.12434994324816179, B−0.04285970279028317, balanced−0.08360482301922245.
+All192 phase-matched cross-cycle confusion/F1 comparisons are identical;
+curves are nonmonotone within motifs. Accepted scientific scope: qualitative
+within-motif F1 decline for this capped corrected seed-0 GC-LSTM. It is not
+cumulative behavioral decay, full multi-method Figure10, historical bitwise
+replay or a causal memory-erasure result. Analytic Persistence F1 remains
+0.96875, so the capped pilot is still substantially weaker than that baseline.
+
+Retained complete state is25MiB on scratch, shape[256,2,1,100,128], FP32LE,
+hidden then cell, canonical ordered100 nodes, observed before each target score.
+SHA `0ca92fd2bec39e587926238a49270a78d4def28b4f41eb9e337caf6106adb036`.
+The binary was neither copied locally nor sent to Qwen.
+
+Cluv submitted one frozen compact-analysis job **11322422**, unique run
+`trajectory-20261019T221357Z-1891bdd5`, admission SHA
+`de81782bde10da8f24da788cb82d1d02e7f94e43bf1390ef4a52d266b53dc8f9`.
+It completed `0:0`, without another model/test evaluation. Independent compact
+verification checked21 spectra/reductions,192 closure comparisons, source/job/
+input hashes and22 actual offline W&B history rows. This is not independent
+reanalysis of binary states. Analysis result SHA
+`1722d1b2165a704124bdb05305dfb654e7702a7aa24a5da459551a9723920f38`.
+
+Hidden PR falls A1.40105→1.05313 and B1.39721→1.05152. Complete H+C PR
+instead rises within A1.09984→1.29194 and B1.10827→1.23128. Centered
+within-motif variance shrinks sharply, while pooling increases between-motif
+variance and changes the apparent PR direction. Complete period64 closure
+is not exact: maxrelative L2=0.00505852. No Jacobian/Floquet certification or
+causal useful-memory claim. The explicitly posthoc covariance-trace pooling
+identity was rechecked under an entered offline reporter, with between-motif
+contribution9951.931→49567.161 and within contribution7287.666→478.305.
+All public compact artifacts/receipts and plots are indexed in
+`doc/auto/figure10-gclstm-pilot-results-2026-10-19.md` and its JSON.
+
+## 22:16–22:22 UTC — long fit released, prefix parity and monitoring verified
+
+Released the SAME existing cluv job11322268 using `scontrol release 11322268`
+after both short analyses completed; no duplicate submission. Scheduler showed
+RUNNING on cn-f004 from22:16:21 UTC. Its exact first256-loss gate passed and
+real optimizer updates continued beyond365 at22:18:13 UTC. A separate compact
+comparison also verified all256 losses and chronology against the accepted
+pilot prefix; provenance binds source1891bdd and actual job11322268. This
+comparison had its own offline reporting lifecycle. Source-long remains
+immutable. Stopping is max200 complete epochs, patience100,48hours, integrity/
+numerical/reporting failure or owner STOP; no retry/requeue/test opener.
+
+Read-only monitor PID97799 launched22:02 UTC from committed c8b2d74; actual
+status first showed JobHeldUser and then RUNNING. Ownership/STOP/backoff
+behavior passed9 independently reviewed tests. Its control is
+`runs/ops/figure10-long-monitor-20261019/worker/STOP` (monitor only, not job
+cancellation). It polls every300seconds and sends bounded proposal-only
+milestone tasks to the existing approved Qwen inbox. Existing local Qwen
+PID84719 remains live with unbounded owner-authorized evidence-driven calls;
+it is not a cluster-hosted service. Call37 was schema/model-valid but stale
+and rejected. Call38 completed after a targeted verified-pilot task; scientific
+review of that response is pending. Heartbeat reports zero current provider
+errors. No direct external OpenAI credentials or paid fallback were inferred;
+native agents performed implementation and independent scientific review.
+
+Verified plots were generated under offline reporting, visually checked in PNG
+and rendered PDF, copied with SHA checks into the public compact evidence
+folder and manuscript appendix. The PDF skill's optional Node marker command
+was attempted but Node is absent; no PDF operation was falsely reported as
+marked. Matplotlib/PyMuPDF and the actual LaTeX build/visual checks completed.
+The new state plot is an explicitly descriptive display of frozen summaries.
+The manuscript now builds to21pages, with8main-text pages and a two-page graph
+appendix; the final log has no over/underfull or undefined-reference warnings.
+Inherited source snapshots remain untouched.
+
+Next: keep long-fit monitoring active; implement/review a true v2 primitive
+selected-inference decoder and replay gate before its future single test pass.
+Do not relabel v2 as v1 or resume from inference-only weights. Then freeze the
+larger seed cohort/aggregation and model-specific T-GCN reconstruction. The
+matched-order causal-memory question remains separate from this graph behavior.
+
+
+## 22:23 UTC — first long-fit epoch complete; Qwen response reviewed
+
+Long job11322268 is still RUNNING and has entered epoch2:2,794 updates were
+recorded at22:23 UTC. Its first complete epoch has exactly the same reported
+training mean loss0.631418777460137 and validation F1
+0.07924821123094206 as v1 epoch1. The active monitor observed2,559 updates,
+RUNNING status and the passed256-loss parity receipt on its22:22 poll. Its
+next poll remains automatic; no repeated scheduler submission is involved.
+
+Qwen call38 completed22:21:42 UTC with the exact requested model/task identity
+and zero actions. It addresses the verified epoch7/−0.0836048 behavioral
+contrast and hidden/complete-state distinction. Independent native review
+rejected its claim of improved local recall, unsupported retention-fragmentation
+mechanism and proposed significance gate. Only the already verified descriptive
+geometry/behavior distinction is retained. The decision is preserved under
+`runs/review/qwen-figure10-progress-20261019/call38-decision.json` with SHA
+`fd7fbae5e647697e63397139d4db3565d8bca03de61777dc55980d6ab0235cfb`.
+The subsequent monitor parity milestone also triggered a separate proposal
+call; its existence does not imply acceptance. The worker remains local,
+proposal-only and evidence-driven; no new tests, gates or jobs were delegated.
+
+Independent final review matched all seven public compact-evidence hashes and
+all21 public cloud summaries to accepted sources. The paper now also discloses
+the analytic Persistence mean0.96875 versus pilot0.459277. Its corrected21-page
+build has no final warnings, and the changed page passed another visual check.
+
+The published CSVs retain the renderer's RFC4180 CRLF bytes so their pinned
+SHA values remain exact. A path-specific `.gitattributes` entry disables text
+normalization and permits carriage returns at line endings in whitespace checks.
+No evidence bytes were normalized or their accepted hashes rewritten.

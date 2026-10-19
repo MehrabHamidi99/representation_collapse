@@ -1,0 +1,14 @@
+{
+  "evaluation_sha256": "8acc39f47225e53f0b5b208c32460505687340dcf1ab1aaae646b1860c9d0091",
+  "execution_acceptance_sha256": "65bcc3cdfddc82389604c4f9b9a1b5c682bda21888075ff9b7c0fa01813220fb",
+  "kind": "figure10_evaluation_plot_acceptance_v1",
+  "model_seed": 0,
+  "run_id": "evaluation-20261019T221012Z-1891bdd5",
+  "scientific_acceptance": false,
+  "selected_epoch": 7,
+  "status": "accepted",
+  "terminal_replay_verified": true,
+  "test_rows_verified": true,
+  "training_stop_reason": "deadline",
+  "validation_selection_finalized": true
+}

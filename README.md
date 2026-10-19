@@ -13,38 +13,38 @@ and cannot explain. "Dimension collapse across modalities" is the motivating
 umbrella, not the claim. The program began with temporal graphs (GC-LSTM on the
 public T-GRAB benchmark) and currently runs on controlled vector memory tasks.
 
-**Status (2026-10-14):** harmful collapse remains inconclusive. The original
-four pilots failed competence; subsequent acquisition work completed 32 local
-fits and stopped one fit after 114,200 total updates. No checkpoint has passed
-the original eight-coordinate gate. A 120,000-call numerical audit is independently
-verified, with strict execution-path agreement failing at a trained GRU checkpoint.
-A new label-free, complete-state calibration completed 32 conditions and 736
-forward calls in 50 seconds. Independent review accepts the audit's integrity:
-fixed-precision checks pass, while four FP32/FP64 perturbation-logit comparisons
-fail at one independent history. See the [reviewed results](doc/auto/cached-forward-v2-results-independent-review-2026-10-14.md).
-The experiment and reduction have verified offline W&B records; cloud sync is
-pending.
-Legacy graph-analysis source and numerical candidates have now been located in
-the Mila TSA/Floquet archive; checkpoint and producer linkage remain unverified.
-[Original graph reproduction is the next priority](doc/auto/tgrab-reproduction-audit-2026-10-14.md).
+**Status (2026-10-19):** a corrected seed-0 GC-LSTM pilot now reproduces the
+qualitative within-motif F1 decline in T-GRAB Figure 10. Frozen early/late mean
+F1 decreases **0.4777 → 0.3941** (8.36 percentage points). The selected native
+checkpoint, exact complete-state replay before the single test pass, 256
+held-out scores and 21 descriptive state spectra have verified compact evidence
+and actual offline W&B history. [Report, plots, CSVs and provenance](doc/auto/figure10-gclstm-pilot-results-2026-10-19.md).
 
-A Qwen proposal worker is running locally: ten exact-model replies verified
-at 13:24 UTC. Its recommendations remain unaccepted; native agents performed
-the checked implementation and numerical work. The former cluster
-worker ended with Mila allocation 11228391; no new allocation was started.
-[Local continuation and stop control](doc/auto/local-autoresearch-continuation-2026-10-14.md).
-The forty recovered graph-analysis outputs are independently verified:
-11,700 comparisons, zero mismatches. Norms decrease across prefix files, while
-all twenty time rows in each envelope are identical.
-[Verified report and figure](doc/auto/legacy-floquet-array-audit-results-2026-10-14.md).
-Corrected graph components passed independent review and 28 synthetic tests;
-native graph training still requires its environment, data, parity fixtures
-and runner. The new
-[W&B project](https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse)
-has a verified logging-only transport run. Future numerical runs use the
-[reporting contract](doc/auto/wandb-reporting.md); historical runs were not
-tracked from their beginning. See [doc/TRACKER.md](doc/TRACKER.md) for evidence
-and limits.
+The interpretation depends on the state and conditioning: hidden PR falls
+within both motifs, complete hidden-plus-cell PR rises within both, and pooled
+PR mixes between-motif separation with within-motif variation. The four cycles
+repeat their reported F1 pattern; they do not show cumulative behavioral decay.
+This is one deadline-capped model, below the Persistence baseline, rather than
+the complete multi-method/five-seed figure or demonstrated useful-memory erasure.
+The original controlled-memory pilots still fail their joint competence gate.
+
+Fresh long fit **11322268 is running on Mila**, one CPU/2 GiB/zero GPUs,
+48-hour maximum, 200-epoch cap/patience 100. Its first 256 losses exactly match
+the accepted reference, independently rechecked; it has progressed into epoch 2.
+A read-only local monitor and the existing proposal-only Qwen worker are live.
+Qwen cannot submit jobs or accept claims; native agents provide implementation
+and independent review. [Current tracker and stop controls](doc/TRACKER.md).
+The [manuscript](paper/README.md) includes both new graph figures and builds
+successfully to 21 pages. Source snapshots remain preserved.
+
+The [coverage plan](doc/auto/figure10-coverage-and-next-fit-2026-10-19.md)
+separates this first GC-LSTM case from remaining seeds, T-GCN and other graph
+methods. A reviewed v2 selected-inference reader and replay gate are needed
+before evaluating the long fit; no new v2 test has been opened. Earlier
+[legacy-array checks](doc/auto/legacy-floquet-array-audit-results-2026-10-14.md)
+remain attributed infrastructure evidence. Numerical runs use the
+[reporting contract](doc/auto/wandb-reporting.md); verified offline history does
+not establish cloud delivery.
 
 ## Start here
 

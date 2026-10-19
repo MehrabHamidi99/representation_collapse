@@ -1,12 +1,21 @@
 # Subgoal: reproduce T-GRAB Figure 10
 
-Set on 2026-10-16. Status updated 2026-10-19: **active; seed-0 GC-LSTM
-retraining is running on Mila through cluv, job11321105**.
-Native engineering prerequisites passed; complete-epoch selection and held-out
-evaluation remain pending. See [fit admission](figure10-full-fit-2026-10-19.md).
-This is the immediate graph-baseline subgoal of the broader
-representation-collapse project. A successful behavioral reproduction will
-not by itself establish representation collapse.
+Set on 2026-10-16. Status updated 2026-10-19: **active; the first corrected
+GC-LSTM behavioral case is verified, and the longer fit is running**.
+Pilot fit11321105, selected native replay/test11322413 and descriptive state
+analysis11322422 completed `0:0`. Frozen within-motif F1 falls by8.36 percentage
+points; hidden PR decreases but complete H+C PR increases within each motif.
+[Verified report, figures and evidence](figure10-gclstm-pilot-results-2026-10-19.md).
+This resolves the first trained-graph curve, not the full Figure10 or harmful
+useful-memory erasure. Fresh long job**11322268** is RUNNING through cluv;
+exact first256-loss parity passed and epoch2 is in progress. Its v2 inference
+reader/replay and final acceptance remain to be completed before test.
+
+The [coverage audit](figure10-coverage-and-next-fit-2026-10-19.md) now confirms
+the eleven-method roster,256 targets, within-motif decline target and five-seed
+paper statement; historical seed identities, plotted run roster and uncertainty
+band rule remain unresolved. Later paragraphs retain the original source-audit
+context; the tracker and verified report are authoritative for current execution.
 
 ## Target and scientific boundary
 

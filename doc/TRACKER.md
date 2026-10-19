@@ -1,12 +1,36 @@
 # Current research state
 
-Updated 2026-10-19 22:02 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
+Updated 2026-10-19 22:22 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **2026-10-19 22:22 UTC — Figure 10 behavioral pilot reproduced; long fit running.**
+  [Verified report and figures](auto/figure10-gclstm-pilot-results-2026-10-19.md):
+  seed-0 GC-LSTM fit **11321105**, selected replay/test **11322413**, and
+  state analysis **11322422** all completed `0:0`; independent compact audits
+  passed, including actual offline W&B history. Seven full epochs and 18,429
+  updates; epoch 7 selected; deadline-capped. Held-out mean F1 **0.459277**.
+  Frozen early/late within-motif F1 is **0.477737 → 0.394132** (−8.3605 pp);
+  both motifs decline. Phase-matched confusion/F1 curves repeat across four
+  cycles, so this is recurring within-motif deterioration, not cumulative
+  behavioral decline. Hidden PR decreases in both motifs; complete H+C PR
+  increases within each while centered variance shrinks. Pooled PR reverses
+  direction as between-motif separation grows. No useful-memory-erasure or
+  Floquet claim follows. This is one corrected capped seed, not full Figure 10.
+  The report preserves all compact inputs, CSVs, spectra and linked receipts.
+  Both figures are in the manuscript appendix; its 21-page build passes.
+  Fresh **long job 11322268 is RUNNING on cn-f004**, released at 22:16 UTC;
+  first 256 losses and chronology exactly match the accepted pilot prefix,
+  independently rechecked. One CPU/2 GiB/zero GPUs, 48-hour maximum, 200-epoch
+  cap/patience 100, source `1891bdd`, separate immutable `source-long`.
+  Read-only local monitor **PID 97799** and existing local Qwen worker
+  **PID 84719** are live. They do not autonomously accept claims or submit jobs.
+  The long fit still needs a reviewed v2 selected-inference reader and final
+  acceptance before any new test evaluation. No v2 test has been opened.
 
 - **2026-10-19 22:02 UTC — six completed epochs; long reconstruction queued.**
   Pilot11321105 is RUNNING; latest complete validation F1 is **0.34604**
