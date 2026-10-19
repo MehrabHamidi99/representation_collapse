@@ -102,16 +102,18 @@ separate estimands.
   on 2026-10-16 and waived separate compute approval and limits for this
   subgoal. This supersedes the earlier consumed-conversion-job restriction for
   this subgoal only. The trainer/checkpoint/reporting path remains incomplete
-  and no trained run has started. This authorization does not waive source
+  and no complete-epoch reconstruction fit has started. This authorization does not waive source
   review, native training parity or GPU-throughput measurement.
-- A local 256-update, train-only CPU prefix-canary draft has nine passing
-  fake-backend contract tests, but independent engineering review rejected
-  launch. It lacks an outer import-inclusive supervisor and physical resource
-  attestation, external source/command/admission binding, unambiguous
-  post-optimizer-step accounting, and the frozen canary's conditional timing
-  schedule. It is not competence training and cannot size the full fit as
-  currently implemented. Review:
-  [`figure10-canary-engineering-review-20261016.md`](../../runs/review/figure10-canary-engineering-review-20261016.md).
+- The revised, separately frozen train-only prefix diagnostic ran on Mila as
+  job11320665 on October19 and passed independent engineering verification:
+  256 real optimizer steps, exact durable accounting and 256 matching offline
+  W&B history rows, exit `0:0` in156seconds. The preceding job11320580 failed
+  before numerical startup and is preserved. This supersedes the old draft's
+  launch rejection; source/admission/resource/cleanup/receipt defects were
+  repaired before the successful attempt. There is no complete epoch,
+  validation, test or selected checkpoint. It cannot size the separate full
+  fit or establish competence/collapse. See the
+  [verified prefix results](figure10-prefix-results-2026-10-19.md).
 - The complete-epoch train/validation lifecycle core is implemented separately
   in `src/representation_collapse/tgrab_figure10_fit.py`. Independent review
   found no lifecycle defect and its seven spy-backend tests pass. This core

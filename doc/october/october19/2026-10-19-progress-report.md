@@ -137,3 +137,58 @@ The correction uses the fixed admitted scratch source path and a regression
 that runs a wrapper copied to an unrelated spool directory. Any subsequent
 attempt uses a new source commit, admission and run ID under the existing
 compute authorization; this failed run is never reused.
+
+## 20:59 UTC — real optimizer progress verified; autoresearch participation refreshed
+
+The corrected unique run `prefix-20261019T204605Z-c72323cd` was submitted via
+native cluv 0.1.5 as **Mila job11320665**, from source
+`c72323cd36a3aafd4d7f6cc22e4a1d81bf36bc3e`, admission SHA
+`262bfcffee21f2e7b2a2c4caedfedcec6408d769c8b3a7a2d8852f5f3c0d72b4`.
+It ran on cn-f002 and completed `0:0` in **156 seconds**, with one CPU, 2 GiB
+and zero GPUs. It performed **256 actual optimizer updates**. The update
+loop took 46.886 seconds; worker total was 148.597 seconds. No validation,
+test, checkpoint selection or complete epoch occurred.
+
+An independent verifier accepted all 256 durable intent/outcome pairs, exact
+target/predecessor chronology, confirmed optimizer-step counts, and all raw
+losses; recomputed mean loss is **1.2817290551029146**. The actual offline W&B
+transaction has 784 CRC-checked fragments and 781 decoded protobuf records;
+all **256 history rows** match losses/steps, and terminal summary/exit records
+complete correctly. The owned process group was empty. Largest sampled cgroup
+memory was 482,934,784 bytes; true peak is unavailable. Offline reporting is
+accepted; remote dashboard delivery is unverified. The bounded metadata
+collection comprises 520 files/486,497 bytes plus the separately hashed
+1,324-byte result artifact, with no raw dataset/weights transfer. Verification
+JSON SHA: `a78c4c87756b302af07e45f9697897f3491f83802a23cd39a40ce01fd26c8948`.
+See [the verified results](../../auto/figure10-prefix-results-2026-10-19.md)
+for paths, exact identities, limitations and the next implementation task.
+
+Fresh local process and heartbeat checks also recovered the newer continuous
+Qwen worker: PID84719, start October14, in the legacy-audit isolated Python
+environment, output `runs/qwen/local-continuous-20261014T1650Y/`. Its heartbeat
+is current and it has not been restarted or duplicated. The old remote cohort
+is a separate stopped worker. A 1,483-byte public verified-result summary was
+added to its existing approved evidence root. Call34 completed at20:56:26 UTC
+with matching requested/returned `Qwen/Qwen3.8-Flash-Next-FP8`, valid schema,
+5431 reported tokens and zero actions. The context budget omitted the new
+result despite triggering on the change; its stale GRU-codec proposal was
+rejected. An explicit immutable 1,245-character coordinator task then
+foregrounded the actual Figure 10 next step without changing excerpt scope.
+
+Call35 completed at20:58:31 UTC, bound to
+`figure10-fit-only-next-20261019`, matching the required model, valid schema,
+5721 reported tokens, and zero actions. It identified the missing factories,
+seed receipt, reporting fanout and finalization reason mapping. Its assertion
+that the prefix result alone releases a full fit is incorrect: production
+runner/admission integration must still pass review. The narrow checklist is
+advisory; no scientific result or submission authority follows. The worker
+is alive locally with35 attempts and no in-flight call at the check; it is
+not a cluster-hosted service. Its existing STOP file is the control for future
+provider requests. No API credentials or endpoint configuration were copied.
+
+The next implementation is a fit-only runner joining the already implemented
+adapter, selected-candidate sink/ledger, journal, data opener and reporter.
+Native selected loading and the s[2816] H/C observer are later node2b work;
+they must precede held-out test access, and do not require another redundant
+pre-fit synthetic training gate. No Figure 10 curve, competence or collapse
+claim is accepted by this diagnostic.

@@ -1,12 +1,31 @@
 # Current research state
 
-Updated 2026-10-19 20:21 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
+Updated 2026-10-19 20:59 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **2026-10-19 20:59 UTC — native training progress independently verified.**
+  Cluv-submitted Mila job11320665 completed `0:0` in 156 seconds on cn-f002:
+  **256 real GC-LSTM optimizer steps**, 256 paired durable intents/outcomes,
+  zero unresolved attempts, finite mean training loss **1.2817290551029146**.
+  Independent decoding verified all 256 offline W&B loss/history rows. The
+  first job11320580 failed before model startup due to a Slurm spool-path
+  error; it is preserved separately and its reviewed correction ran from
+  source `c72323c`. No complete epoch, validation/test, selected checkpoint,
+  Figure 10 curve or collapse finding exists yet. Next direct step: the thin
+  admitted fit-only runner and reporting/finalization integration, followed
+  by selected-checkpoint native loading/node2b before test. See the
+  [verified results](auto/figure10-prefix-results-2026-10-19.md).
+  The newer **local** Qwen worker PID84719 has a fresh 20:58:31 UTC heartbeat
+  and completed identity-verified calls34/35 today. Call34 was stale and
+  rejected; an explicit task made call35 address the fit-only integration.
+  Its checklist is advisory; its premature fit-release assertion is rejected.
+  The old cluster Qwen worker remains stopped. No continuous cluster Qwen
+  service or remote W&B delivery is claimed.
 
 - **2026-10-19 20:21 UTC — live Mila status verified.** SSH now succeeds.
   Scheduler accounting reconfirms primary conversion job11273685 and corrected
