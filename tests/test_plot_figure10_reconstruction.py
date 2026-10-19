@@ -79,6 +79,41 @@ class Figure10PlotTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             plot.validate_evaluation(evaluation)
 
+    def test_phase_alignment_counts_and_fixed_window_contrasts(self):
+        evaluation = synthetic_evaluation()
+        for row in evaluation["rows"]:
+            t = row["target_timestamp"]
+            phase, motif = t % 32, "A" if t % 64 < 32 else "B"
+            low = (motif == "A" and 24 <= phase <= 31) or (motif == "B" and 1 <= phase <= 8)
+            tp, fp, fn, tn = (5, 5, 5, 9885) if low else (10, 0, 0, 9890)
+            row.update(tp=tp, fp=fp, fn=fn, tn=tn, precision=tp/(tp+fp), recall=tp/(tp+fn),
+                       f1=2*tp/(2*tp+fp+fn), accuracy=(tp+tn)/9900)
+        rows = evaluation["rows"]
+        evaluation["reduction"] = {"targets": 256, "per_target_f1": [r["f1"] for r in rows],
+            "primary_time_mean_f1": sum(r["f1"] for r in rows)/256,
+            "transition_time_mean_f1": sum(r["f1"] for r in rows if r["change_point"])/8,
+            "nontransition_time_mean_f1": sum(r["f1"] for r in rows if not r["change_point"])/248}
+        validated, _ = plot.validate_evaluation(evaluation)
+        aligned, contrast = plot.within_motif_summary(validated)
+        self.assertEqual(len(aligned), 64)
+        self.assertTrue(all(row["observations"] == 4 for row in aligned))
+        self.assertEqual(aligned[0]["contributing_target_timestamps"], [2816, 2880, 2944, 3008])
+        self.assertEqual(contrast["motifs"]["A"]["late_minus_early_f1"], -.5)
+        self.assertEqual(contrast["motifs"]["B"]["late_minus_early_f1"], .5)
+        self.assertEqual(contrast["overall"]["late_minus_early_f1"], 0)
+        self.assertEqual(contrast["overall"]["early_targets"], 64)
+        self.assertEqual(contrast["overall"]["late_targets"], 64)
+        self.assertFalse(contrast["independent_replicates"])
+        # Phase zero contributes to the aligned curve, but never either window.
+        changed = copy.deepcopy(validated)
+        for row in changed:
+            if row["target_timestamp"] % 32 == 0:
+                row["f1"] = 0.0
+        _, changed_contrast = plot.within_motif_summary(changed)
+        self.assertEqual(changed_contrast, contrast)
+        with self.assertRaises(ValueError):
+            plot.within_motif_summary(validated[:-1])
+
     def test_independent_acceptance_is_required_and_bound_to_evaluation(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td)
@@ -119,8 +154,10 @@ class Figure10PlotTests(unittest.TestCase):
             manifest = plot.render(evaluation_path=path, evaluation_hash=digest, acceptance_path=accepted,
                 acceptance_hash=accepted_hash, output=output)
             self.assertEqual({p.name for p in output.iterdir()}, {"figure10-reconstruction.pdf", "figure10-reconstruction.png",
-                "figure10-reconstruction.csv", "figure-manifest.json"})
+                "figure10-reconstruction.csv", "figure10-within-motif.csv", "figure-manifest.json"})
             self.assertEqual(len((output / "figure10-reconstruction.csv").read_text().splitlines()), 257)
+            self.assertEqual(len((output / "figure10-within-motif.csv").read_text().splitlines()), 65)
+            self.assertEqual(manifest["within_motif_descriptive"]["overall"]["early_targets"], 64)
             self.assertTrue((output / "figure10-reconstruction.pdf").read_bytes().startswith(b"%PDF"))
             self.assertFalse(manifest["scientific_collapse_claim"])
             self.assertFalse(manifest["independent_motif_replicates"])

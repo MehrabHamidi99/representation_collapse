@@ -133,13 +133,55 @@ def validate_evaluation(evaluation):
     return validated, recomputed
 
 
+
+def within_motif_summary(rows):
+    """Fixed descriptive windows; cycles/phases are correlated observations."""
+    groups = {(motif, phase): [] for motif in ("A", "B") for phase in range(32)}
+    for row in rows:
+        timestamp = row["target_timestamp"]
+        motif = "A" if timestamp % 64 < 32 else "B"
+        groups[motif, timestamp % 32].append(row)
+    aligned = []
+    for (motif, phase), group in groups.items():
+        if len(group) != 4 or len({row["target_timestamp"] for row in group}) != 4:
+            raise ValueError("four distinct target observations per motif/phase required")
+        aligned.append({"motif": motif, "within_motif_phase": phase, "observations": 4,
+                        "mean_f1": math.fsum(_number(row["f1"], "f1") for row in group) / 4,
+                        "contributing_target_timestamps": [row["target_timestamp"] for row in group]})
+    contrast = {"definition": "late_minus_early_f1", "early_phases_inclusive": [1, 8],
+                "late_phases_inclusive": [24, 31], "transition_phase_excluded": 0,
+                "independent_replicates": False, "uncertainty_intervals": False, "motifs": {}}
+    windows = {}
+    for motif in ("A", "B"):
+        early = [row["f1"] for row in rows if ("A" if row["target_timestamp"] % 64 < 32 else "B") == motif
+                 and 1 <= row["target_timestamp"] % 32 <= 8]
+        late = [row["f1"] for row in rows if ("A" if row["target_timestamp"] % 64 < 32 else "B") == motif
+                and 24 <= row["target_timestamp"] % 32 <= 31]
+        if len(early) != 32 or len(late) != 32:
+            raise ValueError("fixed per-motif windows require 32 early and 32 late observations")
+        early_mean, late_mean = math.fsum(early) / 32, math.fsum(late) / 32
+        contrast["motifs"][motif] = {"early_targets": 32, "late_targets": 32,
+            "early_mean_f1": early_mean, "late_mean_f1": late_mean,
+            "late_minus_early_f1": late_mean - early_mean}
+        windows[motif] = (early, late)
+    early = windows["A"][0] + windows["B"][0]
+    late = windows["A"][1] + windows["B"][1]
+    contrast["overall"] = {"early_targets": 64, "late_targets": 64,
+        "early_mean_f1": math.fsum(early) / 64, "late_mean_f1": math.fsum(late) / 64,
+        "late_minus_early_f1": math.fsum(late) / 64 - math.fsum(early) / 64}
+    return aligned, contrast
+
+
 def render(*, evaluation_path, evaluation_hash, acceptance_path, acceptance_hash, output):
     evaluation = read_pinned_json(evaluation_path, evaluation_hash)
     acceptance = read_pinned_json(acceptance_path, acceptance_hash)
     validate_acceptance(acceptance, evaluation_hash)
     rows, reduction = validate_evaluation(evaluation)
+    aligned, contrast = within_motif_summary(rows)
     if "run_id" in evaluation and evaluation["run_id"] != acceptance["run_id"]:
         raise ValueError("acceptance/evaluation run mismatch")
+    protocol_path = Path(__file__).resolve().parents[1] / "doc/auto/figure10-within-motif-descriptive-2026-10-19.md"
+    protocol_sha256 = hashlib.sha256(protocol_path.read_bytes()).hexdigest()
     output = Path(output)
     # Validation precedes any output directory publication or plotting import.
     output.mkdir(parents=True, exist_ok=False)
@@ -150,8 +192,8 @@ def render(*, evaluation_path, evaluation_hash, acceptance_path, acceptance_hash
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10,
                          "axes.spines.top": False, "axes.spines.right": False,
                          "pdf.fonttype": 42, "ps.fonttype": 42})
-    fig, (timeline, motifs) = plt.subplots(2, 1, figsize=(7.4, 5.0),
-                                         gridspec_kw={"height_ratios": [1.7, 1]}, layout="constrained")
+    fig, (timeline, motifs, phases) = plt.subplots(3, 1, figsize=(7.4, 7.8),
+                                         gridspec_kw={"height_ratios": [1.5, .85, 1.1]}, layout="constrained")
     times = [row["target_timestamp"] for row in rows]
     f1 = [row["f1"] for row in rows]
     for block in range(8):
@@ -173,7 +215,23 @@ def render(*, evaluation_path, evaluation_hash, acceptance_path, acceptance_hash
                xlabel="Motif presentation within held-out sequence", title="b  Successive repeated motifs",
                xticks=list(range(1, 9)), xticklabels=[f"{i}\n{'A' if i % 2 else 'B'}" for i in range(1, 9)],
                yticks=[0, .5, 1])
-    for axis in (timeline, motifs):
+    phases.axvspan(.5, 8.5, color="#e4f0e5", lw=0, label="Early: phases 1–8")
+    phases.axvspan(23.5, 31.5, color="#f6ecd9", lw=0, label="Late: phases 24–31")
+    for motif, color in (("A", "#215b8f"), ("B", "#b56f21")):
+        points = [row for row in aligned if row["motif"] == motif]
+        delta = contrast["motifs"][motif]["late_minus_early_f1"]
+        phases.plot([row["within_motif_phase"] for row in points], [row["mean_f1"] for row in points],
+                    color=color, lw=1.3, ls="-" if motif == "A" else "--", label=f"Motif {motif} (late − early: {delta:+.3f})")
+    phases.axvline(0, color=".55", ls=":", lw=.8)
+    phases.set(xlim=(-.5, 31.5), ylim=(-.035, 1.055), ylabel="Phase-aligned mean F1",
+               xlabel="Phase within a 32-step motif (0 = graph transition)",
+               title="c  Within-motif behavior (four correlated cycles)",
+               xticks=[0, 1, 8, 16, 24, 31], yticks=[0, .5, 1])
+    handles, labels = phases.get_legend_handles_labels()
+    order = [2, 3, 0, 1]
+    phases.legend([handles[i] for i in order], [labels[i] for i in order], frameon=False,
+                  fontsize=8, ncol=2, loc="upper center", bbox_to_anchor=(.5, -.28))
+    for axis in (timeline, motifs, phases):
         axis.grid(axis="y", color="0.87", lw=.6)
         axis.set_axisbelow(True)
     fig.suptitle("Seed 0 · capped corrected GC-LSTM reconstruction\n"
@@ -192,18 +250,28 @@ def render(*, evaluation_path, evaluation_hash, acceptance_path, acceptance_hash
         writer = csv.DictWriter(stream, fieldnames=columns, extrasaction="ignore")
         writer.writeheader(); writer.writerows(rows)
     paths.append(csv_path)
+    aligned_path = output / "figure10-within-motif.csv"
+    with aligned_path.open("x", newline="", encoding="ascii") as stream:
+        writer = csv.DictWriter(stream, fieldnames=["motif", "within_motif_phase", "observations",
+                                                   "mean_f1", "contributing_target_timestamps"])
+        writer.writeheader()
+        writer.writerows({**row, "contributing_target_timestamps": ";".join(map(str, row["contributing_target_timestamps"]))}
+                         for row in aligned)
+    paths.append(aligned_path)
     manifest = {"kind": "figure10_behavioral_reconstruction_plot_v1", "evaluation_sha256": evaluation_hash,
-        "acceptance_sha256": acceptance_hash, "renderer_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "acceptance_sha256": acceptance_hash, "analysis_protocol_sha256": protocol_sha256, "renderer_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "run_id": acceptance["run_id"], "model_seed": 0, "selected_epoch": acceptance["selected_epoch"],
         "training_stop_reason": acceptance["training_stop_reason"],
         "checkpoint_sha256": evaluation["checkpoint_sha256"], "final_head_sha256": evaluation["final_head_sha256"],
-        "reduction": reduction,
+        "reduction": reduction, "within_motif_descriptive": contrast,
         "model_replicates": 1, "targets": 256, "motif_presentations": 8, "independent_motif_replicates": False,
         "scientific_collapse_claim": False, "original_paper_curve_included": False,
         "caption": "Per-target F1 over all 9900 ordered off-diagonal pairs at threshold >=0.5; "
                    "unweighted temporal means. Shading identifies alternating 32-step motifs A and B. "
                    "Orange points mark eight actual adjacent-graph transitions, including the first held-out target. "
-                   "The lower panel averages each successive 32-target motif presentation. "
+                   "The middle panel averages each successive 32-target motif presentation. "
+                   "The bottom panel aligns four cycles for each motif, without inferential uncertainty bands. "
+                   "Its fixed descriptive contrast compares phases 24–31 with phases 1–8, excluding transition phase zero. "
                    "One seed and one contiguous sequence; motif presentations are not independent replications. "
                    "This capped corrected reconstruction measures behavior and does not establish representation collapse.",
         "files": {path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}}
