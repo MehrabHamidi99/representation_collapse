@@ -169,5 +169,66 @@ class Figure10PlotTests(unittest.TestCase):
                             acceptance_hash=accepted_hash, output=output)
 
 
+    def test_primitive_v2_pointer_acceptance_and_identity_rejections(self):
+        evaluation=synthetic_evaluation()
+        pointer=evaluation.pop("final_head_sha256")
+        evaluation.update(checkpoint_format="primitive_v2", selected_pointer_sha256=pointer,
+                          executed_long_contract_sha256=plot.LONG_CONTRACT_SHA256)
+        rows,reduction=plot.validate_evaluation(evaluation)
+        self.assertEqual(len(rows),256)
+        self.assertEqual(reduction,plot.validate_evaluation(synthetic_evaluation())[1])
+        for key,value in (("final_head_sha256",pointer),("checkpoint_format","v1"),
+                          ("executed_long_contract_sha256","f"*64),("selected_pointer_sha256","bad")):
+            with self.subTest(key=key),self.assertRaises(ValueError):
+                plot.validate_evaluation({**evaluation,key:value})
+        for key in ("checkpoint_format","selected_pointer_sha256","executed_long_contract_sha256"):
+            bad=copy.deepcopy(evaluation);bad.pop(key)
+            with self.subTest(missing=key),self.assertRaises(ValueError):plot.validate_evaluation(bad)
+
+    def test_v2_render_has_genuine_manifest_and_unchanged_legacy_reductions(self):
+        with tempfile.TemporaryDirectory() as td:
+            root=Path(td)
+            path,digest,accepted,accepted_hash=write_inputs(root)
+            legacy=plot.render(evaluation_path=path,evaluation_hash=digest,acceptance_path=accepted,
+                acceptance_hash=accepted_hash,output=root/"legacy")
+            self.assertEqual(legacy["kind"],"figure10_behavioral_reconstruction_plot_v1")
+            self.assertIn("final_head_sha256",legacy)
+            self.assertTrue({"checkpoint_format","selected_pointer_sha256","executed_long_contract_sha256"}.isdisjoint(legacy))
+            evaluation=json.loads(path.read_text());pointer=evaluation.pop("final_head_sha256")
+            identity=dict(checkpoint_format="primitive_v2",selected_pointer_sha256=pointer,
+                          executed_long_contract_sha256=plot.LONG_CONTRACT_SHA256)
+            evaluation.update(identity);path.write_text(json.dumps(evaluation))
+            digest=hashlib.sha256(path.read_bytes()).hexdigest()
+            acceptance=json.loads(accepted.read_text())
+            acceptance.update(kind=plot.ACCEPTANCE_KIND_V2,selected_epoch=160,training_stop_reason="loss_patience",
+                              evaluation_sha256=digest,**identity)
+            accepted.write_text(json.dumps(acceptance));accepted_hash=hashlib.sha256(accepted.read_bytes()).hexdigest()
+            current=plot.render(evaluation_path=path,evaluation_hash=digest,acceptance_path=accepted,
+                acceptance_hash=accepted_hash,output=root/"v2")
+            self.assertEqual(current["kind"],"figure10_behavioral_reconstruction_plot_v2")
+            self.assertEqual(current["schema_version"],2)
+            for key,value in identity.items():self.assertEqual(current[key],value)
+            self.assertNotIn("final_head_sha256",current)
+            self.assertEqual(current["selected_epoch"],160)
+            self.assertEqual(current["reduction"],legacy["reduction"])
+            self.assertEqual(current["within_motif_descriptive"],legacy["within_motif_descriptive"])
+            self.assertEqual((root/"legacy/figure10-reconstruction.csv").read_bytes(),(root/"v2/figure10-reconstruction.csv").read_bytes())
+            self.assertEqual((root/"legacy/figure10-within-motif.csv").read_bytes(),(root/"v2/figure10-within-motif.csv").read_bytes())
+            for field,value in (("kind",plot.ACCEPTANCE_KIND),("kind","wrong"),("final_head_sha256",pointer),
+                                ("selected_pointer_sha256","bad"),("checkpoint_format","v1"),
+                                ("executed_long_contract_sha256","f"*64)):
+                with self.subTest(field=field,value=value),self.assertRaises(ValueError):
+                    plot.validate_acceptance({**acceptance,field:value},digest)
+            for field in identity:
+                bad=copy.deepcopy(acceptance);bad.pop(field)
+                with self.subTest(missing=field),self.assertRaises(ValueError):plot.validate_acceptance(bad,digest)
+            acceptance["selected_pointer_sha256"]="f"*64
+            accepted.write_text(json.dumps(acceptance));accepted_hash=hashlib.sha256(accepted.read_bytes()).hexdigest()
+            with self.assertRaises(ValueError):
+                plot.render(evaluation_path=path,evaluation_hash=digest,acceptance_path=accepted,
+                    acceptance_hash=accepted_hash,output=root/"mismatch")
+            self.assertFalse((root/"mismatch").exists())
+
+
 if __name__ == "__main__":
     unittest.main()

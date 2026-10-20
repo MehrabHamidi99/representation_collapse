@@ -18,6 +18,30 @@ import stat
 MAX_INPUT_BYTES = 2_000_000
 EXPECTED_TIMESTAMPS = tuple(range(2816, 3072))
 ACCEPTANCE_KIND = "figure10_evaluation_plot_acceptance_v1"
+ACCEPTANCE_KIND_V2 = "figure10_evaluation_plot_acceptance_v2"
+LONG_CONTRACT_SHA256 = "aec185fe544bf94a1dc0ea5e952d27b0d335c3653d815f7c0796d97b747ea381"
+
+
+def _hash(value):
+    return type(value) is str and re.fullmatch(r"[0-9a-f]{64}", value) is not None
+
+
+def checkpoint_identity(evaluation):
+    """Retain genuine v1 head or primitive-v2 pointer semantics, never both."""
+    if not _hash(evaluation.get("checkpoint_sha256")):
+        raise ValueError("verified evaluator checkpoint required")
+    new_keys = {"selected_pointer_sha256", "checkpoint_format", "executed_long_contract_sha256"}
+    if new_keys.intersection(evaluation):
+        if ("final_head_sha256" in evaluation
+                or evaluation.get("checkpoint_format") != "primitive_v2"
+                or evaluation.get("executed_long_contract_sha256") != LONG_CONTRACT_SHA256
+                or not _hash(evaluation.get("selected_pointer_sha256"))):
+            raise ValueError("unambiguous frozen primitive-v2 checkpoint identity required")
+        return {"checkpoint_format": "primitive_v2", "selected_pointer_sha256": evaluation["selected_pointer_sha256"],
+                "executed_long_contract_sha256": LONG_CONTRACT_SHA256}
+    if not _hash(evaluation.get("final_head_sha256")):
+        raise ValueError("verified evaluator final head required")
+    return {"final_head_sha256": evaluation["final_head_sha256"]}
 
 
 def _unique_pairs(pairs):
@@ -48,7 +72,7 @@ def read_pinned_json(path, expected_hash):
 
 
 def validate_acceptance(record, evaluation_hash):
-    if (record.get("kind") != ACCEPTANCE_KIND or record.get("status") != "accepted"
+    if (record.get("kind") not in {ACCEPTANCE_KIND, ACCEPTANCE_KIND_V2} or record.get("status") != "accepted"
             or record.get("evaluation_sha256") != evaluation_hash
             or type(record.get("model_seed")) is not int or record["model_seed"] != 0
             or type(record.get("selected_epoch")) is not int or not 1 <= record["selected_epoch"] <= 200
@@ -60,6 +84,13 @@ def validate_acceptance(record, evaluation_hash):
     for key in ("validation_selection_finalized", "terminal_replay_verified", "test_rows_verified"):
         if record.get(key) is not True:
             raise ValueError("independent acceptance missing gate: " + key)
+    if record["kind"] == ACCEPTANCE_KIND_V2:
+        if (record.get("checkpoint_format") != "primitive_v2"
+                or record.get("executed_long_contract_sha256") != LONG_CONTRACT_SHA256
+                or not _hash(record.get("selected_pointer_sha256")) or "final_head_sha256" in record):
+            raise ValueError("primitive-v2 acceptance contract/pointer required")
+    elif {"selected_pointer_sha256", "checkpoint_format", "executed_long_contract_sha256"}.intersection(record):
+        raise ValueError("legacy acceptance cannot carry primitive-v2 identity")
 
 
 def _number(value, name):
@@ -127,9 +158,7 @@ def validate_evaluation(evaluation):
     if (type(reduced_f1) is not list or len(reduced_f1) != 256
             or [_number(value, "per_target_f1") for value in reduced_f1] != f1):
         raise ValueError("reduction per-target F1 differs from rows")
-    for key in ("checkpoint_sha256", "final_head_sha256"):
-        if type(evaluation.get(key)) is not str or re.fullmatch(r"[0-9a-f]{64}", evaluation[key]) is None:
-            raise ValueError("verified evaluator checkpoint/final head required")
+    checkpoint_identity(evaluation)
     return validated, recomputed
 
 
@@ -177,6 +206,16 @@ def render(*, evaluation_path, evaluation_hash, acceptance_path, acceptance_hash
     acceptance = read_pinned_json(acceptance_path, acceptance_hash)
     validate_acceptance(acceptance, evaluation_hash)
     rows, reduction = validate_evaluation(evaluation)
+    identity = checkpoint_identity(evaluation)
+    is_v2 = acceptance["kind"] == ACCEPTANCE_KIND_V2
+    if is_v2:
+        if any(acceptance[key] != identity.get(key) for key in
+               ("checkpoint_format", "executed_long_contract_sha256", "selected_pointer_sha256")):
+            raise ValueError("acceptance/evaluation primitive-v2 identity mismatch")
+    elif "final_head_sha256" not in identity:
+        raise ValueError("legacy acceptance requires original final-head evaluation")
+    elif "final_head_sha256" in acceptance and acceptance["final_head_sha256"] != identity["final_head_sha256"]:
+        raise ValueError("acceptance/evaluation final-head identity mismatch")
     aligned, contrast = within_motif_summary(rows)
     if "run_id" in evaluation and evaluation["run_id"] != acceptance["run_id"]:
         raise ValueError("acceptance/evaluation run mismatch")
@@ -258,11 +297,12 @@ def render(*, evaluation_path, evaluation_hash, acceptance_path, acceptance_hash
         writer.writerows({**row, "contributing_target_timestamps": ";".join(map(str, row["contributing_target_timestamps"]))}
                          for row in aligned)
     paths.append(aligned_path)
-    manifest = {"kind": "figure10_behavioral_reconstruction_plot_v1", "evaluation_sha256": evaluation_hash,
+    manifest = {"kind": "figure10_behavioral_reconstruction_plot_v2" if is_v2 else "figure10_behavioral_reconstruction_plot_v1",
+        **({"schema_version": 2} if is_v2 else {}), "evaluation_sha256": evaluation_hash,
         "acceptance_sha256": acceptance_hash, "analysis_protocol_sha256": protocol_sha256, "renderer_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "run_id": acceptance["run_id"], "model_seed": 0, "selected_epoch": acceptance["selected_epoch"],
         "training_stop_reason": acceptance["training_stop_reason"],
-        "checkpoint_sha256": evaluation["checkpoint_sha256"], "final_head_sha256": evaluation["final_head_sha256"],
+        "checkpoint_sha256": evaluation["checkpoint_sha256"], **identity,
         "reduction": reduction, "within_motif_descriptive": contrast,
         "model_replicates": 1, "targets": 256, "motif_presentations": 8, "independent_motif_replicates": False,
         "scientific_collapse_claim": False, "original_paper_curve_included": False,

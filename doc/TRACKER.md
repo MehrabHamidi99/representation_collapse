@@ -1,12 +1,27 @@
 # Current research state
 
-Updated 2026-10-19 22:22 UTC. See the [latest notebook entry](october/october19/2026-10-19-progress-report.md),
+Updated 2026-10-20 15:11 UTC. See the [latest notebook entry](october/october20/2026-10-20-progress-report.md),
+the [October 19 notebook](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
 the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **2026-10-20 15:11 UTC — long fit completed and independently verified.**
+  Job **11322268 completed `0:0` in 09:12:16**, reaching **200 epochs /
+  511,800 updates**, stopping at the registered epoch cap. Strict validation
+  selection chose **epoch 160, F1 0.891879**. The streaming independent audit
+  reconciled every update/journal seal, all validation/selection metadata and
+  **563,200 actual offline W&B history rows**. No new model test was opened.
+  A true primitive-v2 codec passes nine checks; the new CPU evaluator supervisor
+  passes eleven. Native v3 evaluation/replay integration and review are active.
+  The prior monitor had a connection-error gap; direct access and its probe now
+  succeed. It was stopped locally after verifying terminal success, without
+  changing the cluster job. Qwen remains alive and proposal-only, with42
+  completed reviews; no uninterrupted monitoring or automatic claim acceptance
+  is asserted. See today's notebook for receipts and pending steps.
 
 - **2026-10-19 22:22 UTC — Figure 10 behavioral pilot reproduced; long fit running.**
   [Verified report and figures](auto/figure10-gclstm-pilot-results-2026-10-19.md):
