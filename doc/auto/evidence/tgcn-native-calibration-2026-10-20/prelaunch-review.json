@@ -1,0 +1,52 @@
+{
+  "decision": "implementation_and_protocol_ready_for_one_native_synthetic_calibration",
+  "empirical_training_admitted": false,
+  "fixed_controls": [
+    "TGCN, notTGCN2",
+    "hidden-only state; no cell",
+    "selfloopsFalse/cachedFalse/improvedFalse/normalizeTrue/source_to_target",
+    "A/B topology, nonuniform C weights; emptyedges",
+    "warmA->trackedB->D score-before-consume; fixed negatives",
+    "training-only head fill0.1 and pairedTorchseed73",
+    "nonzero reset-gate gradient",
+    "strict component preflight and native byte roundtrip",
+    "signed-zero positive reset and capture mutation isolation",
+    "independent seed0 construction bytes/RNG",
+    "Adam parameter-group/state equivalence",
+    "production native parameter count/catalog/versions"
+  ],
+  "heldout_test_admitted": false,
+  "kind": "tgcn_native_calibration_independent_prelaunch_review_v1",
+  "local_tests": {
+    "backend": 14,
+    "calibration_cli": 7,
+    "passed": 27,
+    "supervisor": 6
+  },
+  "native_calibration_completed": false,
+  "reviewed_sha256": {
+    "code/analysis/tgrab_tgcn_native_calibration.py": "049ec6e0514f0681500fba49c2e10b00524c051ffe9a019d1440aa121bf18ef9",
+    "code/ops/tgrab_tgcn_calibration_job.sh": "bc61d55111a2618b8e6b3c9d824a2e87fe3a4fdad53e894f643e066f9265d06d",
+    "code/ops/tgrab_tgcn_calibration_supervisor.py": "a38f8d7740dbc652e603fc318c9a2e1be6cf82ad7bf6136bc572bc66954e575d",
+    "doc/auto/tgcn-native-calibration-protocol-2026-10-20.md": "1767592c362d3d5113715d001cf54c70e52b4a4944788f2232a3c81520c33265",
+    "src/representation_collapse/tgrab_tgcn_backend.py": "0b03219543c0cce16e77c69cf7350a403e2d492134742bb1ec23aaf03dea512f"
+  },
+  "runtime_envelope": {
+    "account": "mila",
+    "automatic_retry": false,
+    "cluster": "mila",
+    "cpus": 1,
+    "gpus": 0,
+    "memory_bytes": 2147483648,
+    "partition": "main-cpu",
+    "qos": "normal",
+    "shell_seconds": 570,
+    "slurm_seconds": 600,
+    "submissions": 1,
+    "supervisor_seconds": 560,
+    "worker_seconds": 540
+  },
+  "scientific_acceptance": false,
+  "scope": "Read-only source review, pinned public wheel/source-byte verification and27 local pure/stub tests; no native model or empirical data execution.",
+  "source_wheel_verification": "gcn-wheel-verification.json"
+}

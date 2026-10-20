@@ -1,0 +1,14 @@
+{
+  "identities": {
+    "admission_sha256": "90a5c843ba32fef731f83650a254fa98d10443854172a360c4801d94a5df698a",
+    "result_sha256": "23b68f8c78e0f4b1fd00959c812463318cb687d8b9b95404c709c6ade5001619",
+    "source_commit": "e0e6c20a72a98134aa1f2a2450f9eeb011718ab2",
+    "supervisor_receipt_sha256": "9fc282110b946012839cb5cb8a04a89e3aace8e3e19dd85c7551afc24a8b737b",
+    "worker_source_sha256": "049ec6e0514f0681500fba49c2e10b00524c051ffe9a019d1440aa121bf18ef9"
+  },
+  "metadata": {
+    "scientific_acceptance": false,
+    "synthetic_only": true
+  },
+  "schema_version": 1
+}

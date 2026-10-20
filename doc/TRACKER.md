@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-20 15:41 UTC. See the [latest notebook entry](october/october20/2026-10-20-progress-report.md),
+Updated 2026-10-20 19:40 UTC. See the [latest notebook entry](october/october20/2026-10-20-progress-report.md),
 the [October 19 notebook](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
@@ -8,6 +8,16 @@ the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **2026-10-20 19:35 UTC — native T-GCN implementation calibration accepted.**
+  Cluv job **11332092** completed `0:0` in38s oncn-f002. Independent compact
+  acceptance verifies248 synthetic checks,161 byte-exact tensor comparisons,
+  nonzero reset-gate gradients, source/runtime/scheduler lineage and actual
+  offline history. Production parameter inventory137472recurrent+49537head.
+  [Report and evidence](auto/tgcn-native-calibration-results-2026-10-20.md).
+  This is engineering calibration, not a trained benchmark/competence/collapse
+  finding. A separate first256-update train-only T-GCN prefix is in preparation;
+  no new validation/test opened. The Qwen worker remains current, proposal-only.
 
 - **2026-10-20 15:41 UTC — long-fit behavioral and state analyses accepted.**
   Fit **11322268**, selected evaluation **11330003** and retained-state analysis

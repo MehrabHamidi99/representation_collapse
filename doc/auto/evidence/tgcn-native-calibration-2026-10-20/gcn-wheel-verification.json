@@ -1,0 +1,13 @@
+{
+  "kind": "tgcn_pyg_wheel_source_pin_review_v1",
+  "matches_coordinator_installed_source_hash": true,
+  "member_bytes": 10415,
+  "member_path": "torch_geometric/nn/conv/gcn_conv.py",
+  "member_sha256": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6",
+  "native_imports_or_execution": false,
+  "wheel_bytes": 1135632,
+  "wheel_filename": "torch_geometric-2.6.1-py3-none-any.whl",
+  "wheel_manifest_sha256": "67e27963f2166f8a7e26dba301c9020d2bd7d4c012010fb859e6e43b15ce9842",
+  "wheel_sha256": "8faeb353f9655f7dbec44c5e0b44c721773bdfb279994da96b9b8b12fd30f427",
+  "wheel_url": "https://files.pythonhosted.org/packages/03/9f/157e913626c1acfb3b19ce000b1a6e4e4fb177c0bc0ea0c67ca5bd714b5a/torch_geometric-2.6.1-py3-none-any.whl"
+}

@@ -1,0 +1,56 @@
+{
+  "files": {
+    "acceptance.json": {
+      "bytes": 813,
+      "sha256": "45ef2dd57b60ed0746967f042eaf8574915b53b612434628736775974a0054e2",
+      "source": "runs/ops/tgcn-native-20261020/tgcn-cal-20261020T193150Z-e0e6c20a/acceptance.json"
+    },
+    "calibration-result.json": {
+      "bytes": 27558,
+      "sha256": "23b68f8c78e0f4b1fd00959c812463318cb687d8b9b95404c709c6ade5001619",
+      "source": "runs/ops/tgcn-native-20261020/tgcn-cal-20261020T193150Z-e0e6c20a/returned/bundle/calibration-result.json"
+    },
+    "gcn-wheel-verification.json": {
+      "bytes": 746,
+      "sha256": "08bedf2b53827e6f25391e32c19bcbd389de7f18b8be785ad685d9b86bf3dda6",
+      "source": "runs/review/tgcn-native-20261020/gcn-wheel-verification.json"
+    },
+    "independent-reporting-receipt.json": {
+      "bytes": 2562,
+      "sha256": "13437b664a082709fc8d9a07ad212fd4c08bf141fdc57ccaab466b33e739690b",
+      "source": "runs/ops/tgcn-native-20261020/tgcn-cal-20261020T193150Z-e0e6c20a/independent-verification-001/wandb/reporting-receipt.json"
+    },
+    "manifest.json": {
+      "bytes": 272,
+      "sha256": "834acc7686c8262a8854baa956843fa7da679f3b0408238bd98df29300117118",
+      "source": "runs/ops/tgcn-native-20261020/tgcn-cal-20261020T193150Z-e0e6c20a/returned/bundle/manifest.json"
+    },
+    "prelaunch-review.json": {
+      "bytes": 2271,
+      "sha256": "f1bd25e5350d7cae5e2e9c40b1a3d924b04c6e70b207d353c7e3e86e90c77ff0",
+      "source": "runs/review/tgcn-native-20261020/prelaunch-review.json"
+    },
+    "reporting-receipt.json": {
+      "bytes": 2469,
+      "sha256": "75cfbe7de0e431dd182fe63f9081b2fb435d88c83bbb7d5f991d474909656efc",
+      "source": "runs/ops/tgcn-native-20261020/tgcn-cal-20261020T193150Z-e0e6c20a/returned/bundle/wandb/reporting-receipt.json"
+    },
+    "result-artifact.json": {
+      "bytes": 575,
+      "sha256": "aedaca94c4e8994a1b65a726aa1ecc63b846e45173e56934930ce3da5d1d4322",
+      "source": "runs/ops/tgcn-native-20261020/tgcn-cal-20261020T193150Z-e0e6c20a/returned/bundle/wandb/metadata-artifacts/tgcn-native-calibration-result.json"
+    },
+    "scheduler.json": {
+      "bytes": 339,
+      "sha256": "75b4f08bce651ce1b1fc11c7dbb2107263996e5e1c01306eda034a39684b1328",
+      "source": "runs/ops/tgcn-native-20261020/tgcn-cal-20261020T193150Z-e0e6c20a/returned/scheduler.json"
+    },
+    "supervisor-receipt.json": {
+      "bytes": 17371,
+      "sha256": "9fc282110b946012839cb5cb8a04a89e3aace8e3e19dd85c7551afc24a8b737b",
+      "source": "runs/ops/tgcn-native-20261020/tgcn-cal-20261020T193150Z-e0e6c20a/returned/control/supervisor-receipt.json"
+    }
+  },
+  "kind": "tgcn_native_calibration_public_compact_inventory_v1",
+  "scope": "Exact original compact JSON bytes only; no W&B stream, dataset, model weights, raw tensor/state arrays, optimizer payloads, credentials or provider configuration."
+}

@@ -1,0 +1,17 @@
+{
+  "actual_offline_history_rows": 1,
+  "checks_verified": 248,
+  "job_id": "11332092",
+  "kind": "tgcn_native_calibration_compact_acceptance_v1",
+  "native_model_reexecuted_independently": false,
+  "remote_delivery_verified": false,
+  "result_sha256": "23b68f8c78e0f4b1fd00959c812463318cb687d8b9b95404c709c6ade5001619",
+  "scientific_acceptance": false,
+  "source_closure_git_verified": true,
+  "source_commit": "e0e6c20a72a98134aa1f2a2450f9eeb011718ab2",
+  "status": "accepted_synthetic_execution",
+  "supervisor_receipt_sha256": "9fc282110b946012839cb5cb8a04a89e3aace8e3e19dd85c7551afc24a8b737b",
+  "training_admitted": false,
+  "verifier_sha256": "2eb0c905f8767188a1009e4d3d304293f6bf6199635cfed0e2482e010eb60d3d",
+  "wandb_stream_sha256": "f215173abdc0caf87ae4635a8bb5a3e41d11983356e1bcfdc1d548e41e162197"
+}

@@ -284,3 +284,26 @@ matching the installed source read on Mila (10,415bytes). No native code was
 executed to verify this pin. Three public wrapper/base/head files were staged
 create-only/hashverified on scratch. Qwen heartbeat remains current with43
 valid reviews, zero provider errors and waiting for evidence.
+
+### 19:35 UTC — actual native T-GCN calibration accepted
+
+Single cluv job **11332092** completed `0:0` in **38s** on `cn-f002`, source
+`e0e6c20a72a98134aa1f2a2450f9eeb011718ab2`. The independent Reporter-wrapped
+compact audit accepts **248 checks**, **161 byte-exact tensor comparisons**
+(maximum absolute error0), four nonzero reset-gate gradient tensors, native
+production inventory137472+49537, source closure, actual scheduler/cgroup/argv,
+process-group cleanup and actual offline protobuf history/artifact/exit.
+The worker reported one chronological W&B history row. Native operations were
+not independently repeated by the compact verifier; cloud delivery is unknown.
+
+Result SHA23b68f8c78e0f4b1fd00959c812463318cb687d8b9b95404c709c6ade5001619;
+verifier SHA2eb0c905f8767188a1009e4d3d304293f6bf6199635cfed0e2482e010eb60d3d.
+This accepts synthetic implementation evidence, not a trained T-GCN benchmark,
+competence, causal collapse or Floquet result. Public report and ten exact
+compact evidence files are under `doc/auto/tgcn-native-calibration-results-2026-10-20.*`
+and `doc/auto/evidence/tgcn-native-calibration-2026-10-20/`.
+
+Next isolated production prefix:256 real chronological training updates on the
+same accepted primary conversion, one CPU/2GiB/zeroGPU/30minutes through cluv,
+no validation/test/selection/checkpoint. Its own protocol/admission/source are
+being reviewed; the calibration itself does not admit that training run.
