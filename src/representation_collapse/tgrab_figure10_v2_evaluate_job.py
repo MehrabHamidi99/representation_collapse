@@ -150,7 +150,10 @@ def verify_selection(root, *, acceptance, summary, pointer_sha256):
 
 
 class EvaluationEvents:
+    RESERVED_FIELDS = frozenset({"kind", "event", "sequence", "previous_event_sha256"})
+
     def __init__(self, root, identity):
+        require(not self.RESERVED_FIELDS.intersection(identity), "reserved evaluation event identity field")
         self.root = Path(root)
         self.root.mkdir(mode=0o700)
         self.identity = dict(identity)
@@ -159,6 +162,8 @@ class EvaluationEvents:
         self.last_event = None
 
     def emit(self, event, **fields):
+        require(not (self.RESERVED_FIELDS | self.identity.keys()).intersection(fields),
+                "reserved evaluation event field")
         raw = canonical({"kind": "figure10_primitive_v2_evaluation_event_v3", **self.identity,
                          "event": event, "sequence": self.sequence, "previous_event_sha256": self.previous, **fields})
         path = self.root / f"{self.sequence:03d}-{event}.json"
@@ -235,7 +240,7 @@ def run_verified_candidate(*, verified, selected, pointer_sha256, backend, train
                   "selected_pointer_sha256": pointer_sha256,
                   "claim": "descriptive corrected single-seed reconstruction; no causal memory or Floquet claim"}
         report({"event": "evaluation_complete", **reduction})
-        events.emit("metrics_complete", **result)
+        events.emit("metrics_complete", result=result)
         return result
     except BaseException as exc:
         events.emit("failed", error_type=type(exc).__name__)

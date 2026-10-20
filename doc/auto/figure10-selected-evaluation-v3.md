@@ -110,7 +110,11 @@ interpretation are introduced.
 New hash-chained event kind is `figure10_primitive_v2_evaluation_event_v3`.
 The successful sequence is charged -> loaded -> replay_verified -> test_read
 -> metrics_complete -> complete. Events bind the actual fit admission/pointer
-and evaluation identity. Decoder/initialization failure may leave only the
+and evaluation identity.
+The `metrics_complete` event retains its numerical result under `result`,
+including the result's distinct protocol `kind`. Event schema and identity
+fields cannot be overwritten by event payloads.
+Decoder/initialization failure may leave only the
 charged prefix plus a failed outer manifest. A load/replay/test/observer failure
 records failed. A later capture/publication/report failure leaves retained
 partial evidence and a failed outer manifest; it cannot become accepted by

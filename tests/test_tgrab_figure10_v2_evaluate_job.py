@@ -38,6 +38,19 @@ def selection_fixture(root):
 
 
 class V2EvaluationTests(unittest.TestCase):
+    def test_event_schema_and_identity_cannot_be_overwritten(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            with self.assertRaises(Exception):
+                job.EvaluationEvents(root / "bad", {"kind": "foreign"})
+            self.assertFalse((root / "bad").exists())
+            events = job.EvaluationEvents(root / "events", {"fit_run_id": "original"})
+            for field in ("kind", "sequence", "previous_event_sha256", "fit_run_id"):
+                with self.subTest(field=field), self.assertRaises(Exception):
+                    events.emit("charged", **{field: "foreign"})
+            self.assertEqual(events.sequence, 0)
+            self.assertEqual(list(events.root.iterdir()), [])
+
     def test_real_v2_finalized_selection_earliest_tie_and_authoritative_sha(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td).resolve() / "fit"
@@ -102,6 +115,12 @@ class V2EvaluationTests(unittest.TestCase):
                 self.assertEqual(backend.calls, list(range(3072)))
                 self.assertEqual(observed, list(range(2816, 3072)))
                 self.assertEqual(len(opened), 1)
+                metrics_event = json.loads((root / "events/004-metrics_complete.json").read_bytes())
+                self.assertEqual(metrics_event["kind"], "figure10_primitive_v2_evaluation_event_v3")
+                self.assertEqual(metrics_event["event"], "metrics_complete")
+                self.assertEqual(metrics_event["fit_run_id"], "synthetic-v2")
+                self.assertEqual(metrics_event["result"], result)
+                self.assertEqual(metrics_event["result"]["kind"], job.PROTOCOL)
                 with self.assertRaises(Exception):
                     job.run_verified_candidate(**kwargs)
                 self.assertEqual(len(opened), 1)

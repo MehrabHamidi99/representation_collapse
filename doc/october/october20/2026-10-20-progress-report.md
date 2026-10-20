@@ -96,3 +96,21 @@ launched. The intended allocation is Mila/main-cpu, accountmila/QOSnormal,
 cn-f004, oneCPU/2GiB/zeroGPU/10minutes, work540seconds, shell570seconds,
 one submission/no retry/requeue/race. Root will stage a clean immutable source
 and create-only admission before the cluv submission.
+
+## 15:20 UTC — pre-launch event-schema regression fixed
+
+Independent compact-verifier construction exposed a lifecycle receipt collision:
+`metrics_complete` spread the numerical result's `kind` over the event schema's
+`kind`. This was found before any native v3 launch, selected-load claim or test
+opener. The event now nests the result, and schema/identity fields cannot be
+overwritten. A regression checks the actual successful event sequence. The
+numerical/model/data path is unchanged. All35focused tests pass; an independent
+review reran five worker tests and the six compact-verifier checks and accepted
+the corrected source. Commit f2f2523 was never deployed as an evaluation source;
+a new immutable revision will bind the actual launch.
+
+The next-model source audit also recovered five official T-GCN blobs at the
+pinned public T-GRAB revision and verified their Git blob IDs. Its documented
+complete state is hidden-only, with12,800 coordinates; it needs its own backend,
+catalog and native parity checks rather than GC-LSTM's H/C codec. No T-GCN
+training or test was performed. See the readiness report dated today.
