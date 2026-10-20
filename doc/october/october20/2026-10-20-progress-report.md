@@ -307,3 +307,21 @@ Next isolated production prefix:256 real chronological training updates on the
 same accepted primary conversion, one CPU/2GiB/zeroGPU/30minutes through cluv,
 no validation/test/selection/checkpoint. Its own protocol/admission/source are
 being reviewed; the calibration itself does not admit that training run.
+
+### 19:44 UTC — production T-GCN prefix source frozen
+
+Independent prelaunch review passes18 prefix/outer tests. The new T-GCN journal
+has parent-directory fsync, fd/path/size/prior-byte checks, checked writes,
+terminal callback failures and a512-record canonical/hashchain readback.
+Model/data boundaries are explicit: production100×128 random initialization,
+modelseed0/negative1, exactly256witnessed Adam steps, train payload only,
+zero complete epochs, no validation/test/checkpoint/selection/inference admission.
+The shell/supervisor/work clocks are1770/1760/1740seconds under Slurm1800.
+One new cluv CPU submission is prepared under this separate envelope.
+
+Qwen call44 completed schema-validly, heartbeat current/no provider errors.
+Its production-path caution is reasonable; its suggested selected-TGCN-checkpoint
+replay is rejected because calibration did not create such a checkpoint.
+Its suggested1e-6 parity threshold does not change the frozen exact-byte gates.
+Native OpenAI implementation/review workers remain the fallback and scientific
+acceptance owners; no unavailable external OpenAI API was assumed or called.
