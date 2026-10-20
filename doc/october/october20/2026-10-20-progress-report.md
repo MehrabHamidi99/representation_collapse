@@ -114,3 +114,53 @@ pinned public T-GRAB revision and verified their Git blob IDs. Its documented
 complete state is hidden-only, with12,800 coordinates; it needs its own backend,
 catalog and native parity checks rather than GC-LSTM's H/C codec. No T-GCN
 training or test was performed. See the readiness report dated today.
+
+## 15:29–15:32 UTC — long-fit native evaluation accepted
+
+Reviewed evaluation source **052b660fe776862764880261dffaa6d323b0cfaf** was
+staged in the clean main scratch checkout; the completed long-fit source-long
+snapshot stayed1891bdd. All59 closure files matched. The large accepted fit
+receipt initially exceeded the SSH mux command transport: no files were created
+and no job ran. After a read-only reconciliation, the staging helper streamed
+metadata through stdin; both create-only pins then verified.
+
+Cluv request11329984 was PENDING/ReqNodeNotAvail on exact nodecn-f004, with no
+start estimate. It was canceled using a pending-state-only filter; sacct confirms
+CANCELLED, zero elapsed time, Start=None, and the fit-bound evaluation claim did
+not exist. It is a retained unexecuted submission, not a failed numerical run.
+A fresh admission restricted the replacement to the same Rome CPU family,
+with no exact node. Two scheduler submissions are recorded, with only one
+worker execution. Numerical source, FP32/thread/model/data controls and exact
+H/C replay gate were unchanged. No retry after model/test execution occurred.
+
+Replacement job **11330003** ran on **cn-f003**, accountmila/QOSnormal/main-cpu,
+oneCPU/2GiB/zeroGPU/10minutes maximum. It completed **0:0 in56seconds**.
+Actual run `evaluation-v3-20261020T152554Z-052b660f`, admission SHA
+`75d9f15fd8cbb429d06a30eae911cc4faf3bcdd5158b06c4ebf91712e74cd593`.
+The original v2 selected components loaded strictly, and fresh-zero replay
+matched every selected terminal H/C byte before the single held-out opener.
+All256 targets were scored once, with the passive complete-state capture.
+
+Independent execution acceptance verified the six-event chain, charged unique
+fit claim, actual source/selection/contract bindings, all confusion-derived
+scores, retained-state descriptor and remote SHA, finished reporter and all258
+actual offline W&B history rows. No independent native replay or binary-state
+reaudit is claimed. New evaluation result SHA is
+`5dda0b134ac5961a6c145e60eb825cd5e4d91d6187a9037b64c7a9ba3cc657f3`;
+trajectory SHA is
+`efa3a9faf5655230dc8fa3f97b5fd8c63d6fb6f8f1323b7cb37f50ff282c9a6d`.
+The25MiB binary stays on scratch and was not copied locally or sent to Qwen.
+
+Test time-mean F1 is **0.8918999850286112**. Frozen early phases1–8 versus
+late24–31, excluding transition phase0: balanced **0.9592968674867655 →
+0.8187707665977763**, difference **−0.1405261008889892** (−14.0526pp).
+Motif A difference−0.1665281480287064, motif B−0.11452405374927199.
+Transition/nontransition means are0.6531746997538121/0.899600800682637.
+This stronger behavioral reconstruction remains one model seed/graph and
+below the analytic Persistence mean0.96875. No causal erasure or full Figure10
+claim is accepted. The shared phase/window analysis was frozen before this test.
+
+The version-aware plotter produced the new curve under its own offline reporter;
+PNG visual QA passed. Original v2 pointer/contract identity is retained in its
+version2 manifest without a v1 head alias. Complete-state analysis is next,
+using the same frozen numerical worker and explicitly accepted v3 provenance.

@@ -18,6 +18,56 @@ import types
 PROTOCOL_ID = "figure10_descriptive_state_trajectory_v1"
 HELPER_SHA256 = "3023286daa4d9142fe43c6c1c8898fc7d7cc1060ddd8e191a440f8f6c0638e1d"
 WORKER = "src/representation_collapse/tgrab_figure10_trajectory_analysis.py"
+LONG_CONTRACT_SHA256 = "aec185fe544bf94a1dc0ea5e952d27b0d335c3653d815f7c0796d97b747ea381"
+LEGACY_ACCEPTANCE = "figure10_selected_evaluation_execution_acceptance_v2"
+PRIMITIVE_V2_ACCEPTANCE = "figure10_primitive_v2_selected_evaluation_execution_acceptance_v3"
+
+
+def validate_evaluation_acceptance(acceptance, h):
+    """Dispatch actual receipt versions without inventing legacy identities."""
+    if (type(acceptance) is not dict
+            or acceptance.get("kind") not in (LEGACY_ACCEPTANCE, PRIMITIVE_V2_ACCEPTANCE)
+            or acceptance.get("status") != "accepted"
+            or acceptance.get("terminal_replay_verified") is not True
+            or acceptance.get("test_rows_verified") is not True):
+        h.fail("independent selected evaluation acceptance required")
+    for key in ("evaluation_result_sha256", "trajectory_sha256"):
+        if not re.fullmatch(r"[0-9a-f]{64}", str(acceptance.get(key, ""))):
+            h.fail("invalid accepted evaluation hash: " + key)
+    for key in ("evaluation_result_path", "trajectory_path"):
+        if type(acceptance.get(key)) is not str or not Path(acceptance[key]).is_absolute():
+            h.fail("absolute accepted evaluation path required: " + key)
+    if acceptance["kind"] == PRIMITIVE_V2_ACCEPTANCE:
+        if (acceptance.get("checkpoint_format") != "primitive_v2"
+                or acceptance.get("executed_long_contract_sha256") != LONG_CONTRACT_SHA256
+                or "final_head_sha256" in acceptance):
+            h.fail("primitive-v2 acceptance identity mismatch")
+        keys = ("candidate_manifest_sha256", "selected_pointer_sha256")
+    else:
+        if any(key in acceptance for key in ("checkpoint_format", "selected_pointer_sha256", "executed_long_contract_sha256")):
+            h.fail("mixed legacy and primitive-v2 acceptance identities")
+        keys = ("checkpoint_sha256", "final_head_sha256")
+    for key in keys:
+        if not re.fullmatch(r"[0-9a-f]{64}", str(acceptance.get(key, ""))):
+            h.fail("invalid accepted checkpoint hash: " + key)
+
+
+def validate_result_binding(result, acceptance, h):
+    descriptor = result.get("state_trajectory", {})
+    if (type(descriptor) is not dict or descriptor.get("sha256") != acceptance["trajectory_sha256"]
+            or descriptor.get("filename") != Path(acceptance["trajectory_path"]).name
+            or Path(acceptance["trajectory_path"]).parent != Path(acceptance["evaluation_result_path"]).parent):
+        h.fail("accepted result trajectory binding differs")
+    keys = (("checkpoint_format", "executed_long_contract_sha256", "selected_pointer_sha256", "candidate_manifest_sha256")
+            if acceptance["kind"] == PRIMITIVE_V2_ACCEPTANCE else ("checkpoint_sha256", "final_head_sha256"))
+    # The legacy result has no head field; that identity remains in its pinned receipt.
+    for key in keys:
+        if key == "final_head_sha256":
+            continue
+        if result.get(key) != acceptance[key]:
+            h.fail("accepted evaluation result identity differs: " + key)
+    if acceptance["kind"] == PRIMITIVE_V2_ACCEPTANCE and "final_head_sha256" in result:
+        h.fail("primitive-v2 result cannot carry a legacy final head")
 
 
 def helper():
@@ -82,16 +132,13 @@ def validate_admission(d, h, *, actual=None, memory=None):
         h._require_arg_pair(argv, flag, value)
     h.regular_bytes(d["environment_receipt"]["path"], d["environment_receipt"]["sha256"])
     acceptance = json.loads(h.regular_bytes(d["evaluation_acceptance"]["path"], d["evaluation_acceptance"]["sha256"]))
-    if (acceptance.get("kind") != "figure10_selected_evaluation_execution_acceptance_v2"
-            or acceptance.get("status") != "accepted"
-            or acceptance.get("terminal_replay_verified") is not True
-            or acceptance.get("test_rows_verified") is not True):
-        h.fail("independent selected evaluation acceptance required")
+    validate_evaluation_acceptance(acceptance, h)
     for key, flag in (("evaluation_result_path", "--evaluation-result"),
                       ("evaluation_result_sha256", "--evaluation-result-sha256"),
                       ("trajectory_path", "--trajectory"), ("trajectory_sha256", "--trajectory-sha256")):
         h._require_arg_pair(argv, flag, acceptance[key])
-    h.regular_bytes(acceptance["evaluation_result_path"], acceptance["evaluation_result_sha256"])
+    result = json.loads(h.regular_bytes(acceptance["evaluation_result_path"], acceptance["evaluation_result_sha256"]))
+    validate_result_binding(result, acceptance, h)
     # Numerical trajectory bytes are first opened/hashed inside the entered
     # mandatory reporter. This supervisor authenticates compact metadata only.
     return actual, memory
