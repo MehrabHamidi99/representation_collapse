@@ -1,0 +1,23 @@
+{
+  "status": "verified",
+  "job_id": "11332452",
+  "source_commit": "3541ae02441357664a9328fcfebd515a472d9668",
+  "result_sha256": "92242b8ad720a3e42b512eceb64f75e4798d0a79a1969d180e932787c517a60f",
+  "actual_offline_history_rows": 384,
+  "offline_stream_sha256": "98680e1be7240612bc0521668ac6edbae956e008c13850133292d6ff0ae6be08",
+  "reporter_finished": true,
+  "remote_delivery_verified": false,
+  "scheduler": {
+    "job_id": "11332452",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:11:26",
+    "node": "cn-f003",
+    "raw": [
+      "11332452|COMPLETED|0:0|00:11:26|cn-f003|",
+      "11332452.batch|COMPLETED|0:0|00:11:26|cn-f003|614352K",
+      "11332452.extern|COMPLETED|0:0|00:11:26|cn-f003|"
+    ]
+  },
+  "scope": "scheduler, source bindings, actual offline history and artifact; separate reducer checks metric arithmetic; native states not independently reexecuted"
+}

@@ -9,16 +9,19 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
-- **2026-10-20 20:11 UTC — repetition-length diagnostic running.**
-  User-directed subgoal: longer repetition and task-required memorization.
-  Cluv job **11332452** runs source **3541ae0** on Mila cn-f003,
-  1CPU/4GiB/zeroGPU/two-hour maximum. Fixed accepted epoch160 GC-LSTM,
-  train-derived A/B motifs, dwell8..256, both starts, 2048targets each.
-  [Frozen protocol](auto/repetition-dwell-protocol-2026-10-20.md) and
-  [goal](auto/repetition-memory-goal-2026-10-20.md). Offline reporting and
-  first condition rows exist; no completed trend or memory-capacity claim yet.
-  Independent reducer/plots are under review; original held-out evaluation
-  and completed training source remain unchanged.
+- **2026-10-20 — repetition-length sweep completed and independently verified.**
+  Cluv Mila job **11332452**, source **3541ae0**, completed`0:0` in11min26s.
+  All12conditions/24576targets and384actualoffline W&B histories verified.
+  Balanced mean F1 at dwell32/64/128/256 is **.8894/.7665/.6975/.6565**;
+  persistence improves. Primary early-late drop grows through128, then is
+  nonmonotone/startup-sensitive at256. H+C PR rises early-to-late in every
+  condition through128; neither dimension nor memory-capacity collapse follows.
+  [Report and plots](auto/repetition-dwell-results-2026-10-20.md),
+  [independent review](auto/repetition-dwell-scientific-review-2026-10-20.md),
+  [next memory-task candidate](auto/repetition-memory-next-experiment-2026-10-20.md).
+  No job remains from this sweep. Next: discriminate learned timing from useful
+  memory loss with matched training periods and competent independent-WRITE tasks.
+  The broad research goal remains unfinished; this diagnostic subgoal is done.
 
 - **2026-10-20 — production T-GCN training prefix independently accepted.**
   Cluv job **11332237** completed `0:0` in30s oncn-f003, source`371aba99`.

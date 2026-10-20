@@ -1,0 +1,81 @@
+{
+  "files": {
+    "reporting-verification.json": {
+      "bytes": 901,
+      "sha256": "a499772ca2d48a1c7fd89887623fb11a04c15589b1e16a915772fc3f7407eb3b"
+    },
+    "worker-collection-inventory.json": {
+      "bytes": 3690,
+      "sha256": "22a9102819a9f6ed3462e357df069739933e9fc52d1dc7ea82ca150ff98665f2"
+    },
+    "results.json": {
+      "bytes": 471245,
+      "sha256": "7b9d0d432c8c50e627de12377c1852916eb54c23afdaf7b2c14ca9912a9bb8d5"
+    },
+    "worker-result.json": {
+      "bytes": 254143,
+      "sha256": "92242b8ad720a3e42b512eceb64f75e4798d0a79a1969d180e932787c517a60f"
+    },
+    "target-metrics.csv": {
+      "bytes": 4867279,
+      "sha256": "e7a585f2b71388ef959903534bfb0566eb2b617af6b70405db132b9b42ca80d7"
+    },
+    "dwell-phase.png": {
+      "bytes": 372316,
+      "sha256": "a3d4c55740daedfe0e47621813de48fad54df563d34d1a535b9bf6286afc76ea"
+    },
+    "dwell-absolute-phase-errors.pdf": {
+      "bytes": 49454,
+      "sha256": "90fe712494b8cb29fd0ef07f0da9908e5bc4421f84f2255c2a9b098698477ff0"
+    },
+    "dwell-phase.pdf": {
+      "bytes": 35008,
+      "sha256": "508fffcf32abe6aee70d75a3b6db124ea0c901adfb3e81af6d22eab9092eeb47"
+    },
+    "dwell-absolute-phase-errors.png": {
+      "bytes": 377100,
+      "sha256": "d47f3a0c800913f5a86645b6f7cc73960e659a09bcecc18f265ccc39545927f4"
+    },
+    "dwell-geometry.pdf": {
+      "bytes": 19836,
+      "sha256": "7be9fd64fbc17e62bbc310cb655ecd41a984945158371e82be866ed3d9d38ec3"
+    },
+    "scheduler.json": {
+      "bytes": 298,
+      "sha256": "68e8a0bf804f157ebc0ad6fa6fd9b72c0ae628b01f0978ec9d6e511d1ee296bf"
+    },
+    "dwell-behavior.pdf": {
+      "bytes": 23868,
+      "sha256": "cd0e2ba6c74708a8a5ce073fd68a88db8ff01cd3ab74219321f8bb02eefb3339"
+    },
+    "dwell-behavior.png": {
+      "bytes": 145557,
+      "sha256": "0872f71ba03140abaae49dd577300f17001620e544ea023f682557885b05304e"
+    },
+    "dwell-geometry.png": {
+      "bytes": 162014,
+      "sha256": "0c1b94071a0abacec2840fd0c7d8f405b844d44288a12be7a15bf40a292a0f11"
+    },
+    "launch.json": {
+      "bytes": 926,
+      "sha256": "99571a3d404d42f1a75b1d3fd8301197e8ff658e22a919b09e9dde7b9c8fbacb"
+    },
+    "worker-inputs.json": {
+      "bytes": 3238,
+      "sha256": "d75c64d7ae2f288e1d938abc0cd234d9342e2260750042a75285b2612c4b123f"
+    },
+    "plot-manifest.json": {
+      "bytes": 973,
+      "sha256": "1ae3f5a05a7c5946580a991701794685d00676e63fbecaef5ad7bdee32ae1ca4"
+    },
+    "numbers.md": {
+      "bytes": 1303,
+      "sha256": "0e507a93097b7747367d3b5270dbbf8550e66517d2b3689135a4400ae1da9927"
+    },
+    "descriptive-summary.json": {
+      "bytes": 16571,
+      "sha256": "16f7ee70c17ab80fede29e45b12d3aeb779cf677082d41a065dfab3f6a34be55"
+    }
+  },
+  "scope": "compact numerical evidence and derived plots; no graph data, checkpoint weights, binary recurrent states or provider configuration"
+}

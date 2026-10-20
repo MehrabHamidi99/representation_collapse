@@ -1,0 +1,26 @@
+{
+  "coordinator_repo": "/Users/mehrabhamidi/Desktop/phd/paper/representation_collapse",
+  "source_commit": "3541ae02441357664a9328fcfebd515a472d9668",
+  "run_id": "dwell-20261020T200909Z-3541ae02",
+  "cluv_version": "0.1.5",
+  "job_script": "code/ops/tgrab_dwell_job.sh",
+  "sbatch_args": [
+    "--nodes=1",
+    "--ntasks=1",
+    "--cpus-per-task=1",
+    "--mem=4G",
+    "--time=02:00:00",
+    "--account=mila",
+    "--qos=normal",
+    "--partition=main-cpu",
+    "--no-requeue",
+    "--constraint=rome",
+    "--job-name=rc-repetition-dwell"
+  ],
+  "program_args": [
+    "3541ae02441357664a9328fcfebd515a472d9668",
+    "dwell-20261020T200909Z-3541ae02"
+  ],
+  "output_remote": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/repetition-dwell/dwell-20261020T200909Z-3541ae02",
+  "source_remote": "/network/scratch/m/mehrab.hamidi/representation-collapse/source-dwell-3541ae02441357664a9328fcfebd515a472d9668"
+}

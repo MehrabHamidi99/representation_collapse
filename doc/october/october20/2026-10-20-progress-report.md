@@ -393,3 +393,29 @@ The run keeps selected state clouds on scratch. Independent compact reduction
 and plots are being reviewed. A postfreeze suggested prose clarification of
 last1024 supplemental windows was reverted; executed protocol remains exact.
 No sweep results have been accepted at this point.
+
+### Repetition sweep completion — independently accepted descriptive evidence
+
+Cluv11332452 completed0:0 in11min26s oncn-f003, MaxRSS614352K. All12conditions
+and24576rows were collected with matching remote hashes. Source3541ae0/result
+92242b8ad720a3e42b512eceb64f75e4798d0a79a1969d180e932787c517a60f.
+Independent row reduction verifies chronology, confusion/F1, fixed windows,
+controls and compact spectral arithmetic. A separate actualprotobuf audit
+verifies384offlinehistories, artifact, terminalexit and source/scheduleridentity;
+its acceptance is published only after its own reporter finishes successfully.
+Online delivery unknown; binary state clouds not independently reanalyzed.
+
+Local reducer001 failed before numericalwork because sandbox denied W&BIPC.
+Its receipt remains; distinct authorizedreducer002 completed. No clusterretry.
+FourPNG/fourPDFplots rendered and visually checked. Exactmarker was validated
+throughV8 because noNodeCLI wasavailable. Compactpublicmetrics/CSV/plots,
+verified source/reporting/schedulerprovenance and hashes are under
+`doc/auto/figures/repetition-dwell-2026-10-20/`.
+
+Scientific acceptance: meanF1 falls .8894→.7665→.6975→.6565 overL32..256,
+whilepersistenceimproves. Primarydrop is nonmonotone at256/startup-sensitive.
+H+C PR rises early-to-late in everyL8..128condition; lowertrace is not equivalent
+tolowerdimension. No memorycapacity, harmfulcausalcollapse orFloquet claim.
+Report `doc/auto/repetition-dwell-results-2026-10-20.md` preserves allconditions,
+limitations and independentcritique. One-bitmemorycandidate documented butnotrun.
+Currentfixedcheckpoint diagnosticcompleted; broaderresearchgoalunfinished.
