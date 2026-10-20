@@ -32,7 +32,7 @@ class AdmissionTests(unittest.TestCase):
         def read(path,digest):
             reads.append((str(path),digest))
             accepted=dict(kind='tgcn_native_calibration_compact_acceptance_v1',status='accepted_synthetic_execution',checks_verified=248,source_commit='e0e6c20a72a98134aa1f2a2450f9eeb011718ab2',result_sha256='23b68f8c78e0f4b1fd00959c812463318cb687d8b9b95404c709c6ade5001619',actual_offline_history_rows=1)
-            return json.dumps(accepted).encode() if str(path)=='/accepted-calibration.json' else b'{}' 
+            return json.dumps(accepted).encode() if str(path)=='/accepted-calibration.json' else b'{}'
         h=SimpleNamespace(fail=fail,regular_bytes=read,_require_arg_pair=M.helper()._require_arg_pair)
         with patch.dict(os.environ,{'RC_JOB_WALL_SECONDS':'1770'}):
             M.validate_admission(d,h,actual=actual,memory={'effective_limit_bytes':memory})
