@@ -362,3 +362,16 @@ hidden-only codec/selection, exact2816-graph replay and subsequent controlled
 held-out pass. First256loss/init identity is now a concrete parity reference.
 All calibration/prefixcode, protocols and verified reports are committed;
 unrelated owner changes remain untouched.
+
+### New owner-directed subgoal — repetition length and memorization
+
+The owner requested longer A/B dwell experiments and a representation-collapse
+and memorization research goal. The existing tool-level broad goal is unfinished
+and paused, so create_goal refused replacement; no completion/status change was
+invented. The immediate subgoal is recorded in
+`doc/auto/repetition-memory-goal-2026-10-20.md`.
+Mila SSH and a successful queue read show no current representation-collapse
+jobs. A new generated-forcing diagnostic is being prepared with fixed accepted
+GC-LSTM epoch160 weights, train-only A/B motifs, dwell8..256, both starts and
+2048 steps each. Native implementation/protocol/review have separate owners.
+No new numerical result or launch is claimed at this preparation stage.
