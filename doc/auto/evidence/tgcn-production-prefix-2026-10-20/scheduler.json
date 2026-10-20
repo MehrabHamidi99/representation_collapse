@@ -1,0 +1,1 @@
+{"elapsed": "00:00:30", "exit_code": "0:0", "job_id": "11332237", "max_rss": "", "node_list": "cn-f003", "raw_sacct": ["11332237|COMPLETED|0:0|00:00:30|cn-f003|", "11332237.batch|COMPLETED|0:0|00:00:30|cn-f003|207488K", "11332237.extern|COMPLETED|0:0|00:00:30|cn-f003|"], "scheduler_success": true, "state": "COMPLETED", "terminal": true}

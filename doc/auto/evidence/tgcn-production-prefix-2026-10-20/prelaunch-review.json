@@ -1,0 +1,30 @@
+{
+  "kind": "tgcn_training_prefix_prelaunch_source_review_v1",
+  "status": "pass_for_one_isolated_prefix_attempt",
+  "protocol_id": "tgrab_tgcn_training_prefix_v1",
+  "protocol_sha256": "14c5b2755a835096d18681c651812bc44e595480fb090a36a3faaf4885a7b256",
+  "worker_sha256": "de02784d2f61696eaa50161f246d50c164bfcad3d228423bdf7085ceaaae85b9",
+  "supervisor_sha256": "dfb801b83907be90434cab3655a3ee0d41da05a5ba799caea80350754569559c",
+  "shell_sha256": "57c47244cea8b937587618574f050e2db69c85c68785a906b5b457e932189c80",
+  "independently_executed_pure_tests": 18,
+  "test_command": "PYTHONPATH=src .venv/bin/python -m unittest tests.test_tgrab_tgcn_prefix tests.test_tgrab_tgcn_prefix_supervisor -q",
+  "reviewed_gates": [
+    "mandatory_offline_reporter_before_native_or_training_payload",
+    "exact_calibration_data_runtime_source_and_supervisor_bindings",
+    "train_only_payload_loader_no_validation_test_opener",
+    "production_native_seed0_hidden_only_100_by128_no_synthetic_head_override",
+    "causal_targets1_to256_consumes0_to255_balanced_source_preserving_negatives",
+    "intent_file_and_parent_directory_fsync_before_first_update",
+    "journal_path_fd_link_size_priorbytes_and_full_success_readback",
+    "failure_terminal_ambiguous_fsync_never_promoted",
+    "actual_native_inventory_and_zero_complete_epochs",
+    "fresh_scratch_single_1CPU_2GiB_zeroGPU_30minute_attempt",
+    "work1740_supervisor1760_shell1770_Slurm1800"
+  ],
+  "actual_cluster_operations_performed_by_reviewer": false,
+  "native_model_or_dataset_execution_performed_by_reviewer": false,
+  "actual_prefix_execution_accepted": false,
+  "full_fit_or_test_admitted": false,
+  "scientific_acceptance": false,
+  "remaining_gate": "Independently audit actual scheduler, source closure, all update and journal rows, terminal artifacts and actual offline W&B transactions under an ExperimentReporter before accepting execution."
+}

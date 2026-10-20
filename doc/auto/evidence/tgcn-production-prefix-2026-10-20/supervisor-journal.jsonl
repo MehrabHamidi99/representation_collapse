@@ -1,0 +1,32 @@
+{"argv_sha256": "71b51130d3c32594d174c3dc0052ef073653a1eac5873a21935985aad0f83b89", "event": "child_started", "pid": 1942657, "time_epoch_ns": 1792525592528027196}
+{"cgroup_memory_current_bytes": 15560704, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525592532038982}
+{"cgroup_memory_current_bytes": 51470336, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525593534522235}
+{"cgroup_memory_current_bytes": 74805248, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525594538525938}
+{"cgroup_memory_current_bytes": 79753216, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525595543213587}
+{"cgroup_memory_current_bytes": 85839872, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525596548230615}
+{"cgroup_memory_current_bytes": 88064000, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525597551124355}
+{"cgroup_memory_current_bytes": 90402816, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525598557295433}
+{"cgroup_memory_current_bytes": 93810688, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525599561434141}
+{"cgroup_memory_current_bytes": 186511360, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525600565364201}
+{"cgroup_memory_current_bytes": 299515904, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525601568762313}
+{"cgroup_memory_current_bytes": 315383808, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525602573111110}
+{"cgroup_memory_current_bytes": 321933312, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525603578529920}
+{"cgroup_memory_current_bytes": 338767872, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525604591854192}
+{"cgroup_memory_current_bytes": 344023040, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525605595571943}
+{"cgroup_memory_current_bytes": 375824384, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525606599829710}
+{"cgroup_memory_current_bytes": 405454848, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525607604719414}
+{"cgroup_memory_current_bytes": 415350784, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525608609402778}
+{"cgroup_memory_current_bytes": 427610112, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525609613210239}
+{"cgroup_memory_current_bytes": 460099584, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525610617527286}
+{"cgroup_memory_current_bytes": 473333760, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525611621181297}
+{"cgroup_memory_current_bytes": 477716480, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525612625059906}
+{"cgroup_memory_current_bytes": 478240768, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525613627928342}
+{"cgroup_memory_current_bytes": 478633984, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525614659099195}
+{"cgroup_memory_current_bytes": 479027200, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525615662329639}
+{"cgroup_memory_current_bytes": 479338496, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525616665283184}
+{"cgroup_memory_current_bytes": 479731712, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525617668659937}
+{"cgroup_memory_current_bytes": 479989760, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525618671959470}
+{"cgroup_memory_current_bytes": 480907264, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525619675437572}
+{"cgroup_memory_current_bytes": 481038336, "cgroup_memory_peak_bytes": null, "event": "resource_sample", "time_epoch_ns": 1792525620680390986}
+{"event": "process_group_empty", "pgid": 1942657, "time_epoch_ns": 1792525621805768873}
+{"event": "child_finished", "pid": 1942657, "returncode": 0, "stop_reason": null, "time_epoch_ns": 1792525621809150353}

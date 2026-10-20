@@ -35,15 +35,17 @@ Mila jobs **11322268** (fit), **11330003** (selected replay/evaluation), and
 source identities, exact selected complete-state replay, numerical summaries
 and actual offline W&B history; cloud delivery remains unverified. The previous
 monitor had an overnight connection-error gap despite training continuing.
-The local proposal-only Qwen worker is live; a new evidence-specific review has
-been queued. Native agents implement and independently review changes.
+The local proposal-only Qwen worker is live with 44 completed reviews. Native agents implement and independently review changes.
 [Current tracker and stop controls](doc/TRACKER.md).
 
 The [manuscript](paper/README.md) separates the behavioral reconstruction from
 its geometric and causal limits. The
 [coverage plan](doc/auto/figure10-coverage-and-next-fit-2026-10-19.md) and
 [T-GCN readiness audit](doc/auto/tgcn-reconstruction-readiness-2026-10-20.md)
-identify remaining models, seeds and source-parity gates. Source snapshots remain
+identify remaining models, seeds and source-parity gates. T-GCN now has an accepted
+[native calibration](doc/auto/tgcn-native-calibration-results-2026-10-20.md) and
+a verified [256-update production training prefix](doc/auto/tgcn-production-prefix-results-2026-10-20.md).
+Its full fit, checkpoint selection/replay and held-out curve remain pending. Source snapshots remain
 preserved. Numerical runs follow the [reporting contract](doc/auto/wandb-reporting.md).
 
 ## Start here

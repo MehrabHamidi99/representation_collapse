@@ -1,0 +1,23 @@
+{
+  "kind": "tgcn_prefix_independent_reporting_repair_lineage_v1",
+  "promotion_rule": "Canonical acceptance copied only after verification002 exited successfully and its offline reporter completed with finish_returned=true. Same collected training artifacts; no model, optimizer, dataset or cluster training rerun.",
+  "repair": "Only the final W&B metric key changed to training/loss_rows_verified; canonical acceptance field raw_loss_rows_verified and numerical checks remained unchanged. A regression exercised the actual metric expression through the real reporting._scalars guard.",
+  "training_job_id": "11332237",
+  "training_rerun": false,
+  "verification_001": {
+    "accepted_for_promotion": false,
+    "failure": "ValueError from reporting privacy guard: final metric raw_loss_rows_verified contains prohibited raw-data key; all compact execution checks had completed before this reporting error.",
+    "reporting_receipt": "verification-001-reporting-receipt.json",
+    "run_id": "tgcn-prefix-review-11332237",
+    "state": "failed",
+    "unpromoted_numerical_receipt": "verification-001-unpromoted.json"
+  },
+  "verification_002": {
+    "accepted_for_promotion": true,
+    "finish_returned": true,
+    "reporting_receipt": "verification-002-reporting-receipt.json",
+    "run_id": "tgcn-prefix-review-11332237-independent-verification-002",
+    "state": "completed",
+    "verifier_sha256": "dd077db2f4c854953010b3c0340ba5a77a160d96d7a0d1b08208ed7954b6d60d"
+  }
+}

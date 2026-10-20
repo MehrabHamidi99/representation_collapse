@@ -1,0 +1,101 @@
+{
+  "files": {
+    "acceptance.json": {
+      "bytes": 3239,
+      "sha256": "2af9c71d82266c1a0d824a7e27eb594e5ae7557621007c3ab5f36933f253705a",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/acceptance.json"
+    },
+    "admission.json": {
+      "bytes": 9712,
+      "sha256": "489ca19f4c5262cd5dca8b3fee7bb0ba5d769cc3f731612b8254655e3596483a",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/admission.json"
+    },
+    "calibration-acceptance.json": {
+      "bytes": 813,
+      "sha256": "45ef2dd57b60ed0746967f042eaf8574915b53b612434628736775974a0054e2",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/calibration-acceptance.json"
+    },
+    "launch.json": {
+      "bytes": 1610,
+      "sha256": "31cd6d65a6608d451a4120c65933cbec8dc7095dfe37b5c110039aed84f6d26b",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/launch.json"
+    },
+    "manifest.json": {
+      "bytes": 269,
+      "sha256": "3ef85306ed8dd4819b516e260f09b2ab29d106a92dc1ea120b134a65e4aa11ba",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/returned/bundle/manifest.json"
+    },
+    "optimizer-journal.jsonl": {
+      "bytes": 401078,
+      "sha256": "fb27fb733843159d6145bc0d52ee528cc98c7039cd79440ce9a9fee1051e4df9",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/returned/bundle/optimizer-journal.jsonl"
+    },
+    "prefix-result.json": {
+      "bytes": 15427,
+      "sha256": "279906f88d367802ff2c7161a82574e4685f0a54fb5a9ef467d2c5d96e4b6348",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/returned/bundle/prefix-result.json"
+    },
+    "prelaunch-review.json": {
+      "bytes": 1906,
+      "sha256": "d082d906a95687b1a5110cc3eb5bed3332b99fdd76e09730a40bab528ec95231",
+      "source": "runs/review/tgcn-prefix-20261020/prelaunch-review.json"
+    },
+    "reporting-receipt.json": {
+      "bytes": 2777,
+      "sha256": "8098454604e5af353c00c25d710e060b8cde8457fb617bdd9238a7544a971a36",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/returned/bundle/wandb/reporting-receipt.json"
+    },
+    "reporting-repair-lineage.json": {
+      "bytes": 1476,
+      "sha256": "93ee79bb742834b4ceb4a2ca603a5ae8840f79c53d213ac55354f50403034261",
+      "source": "coordinator interpretation of exact retained verification receipts and metric-only fix"
+    },
+    "result-artifact.json": {
+      "bytes": 648,
+      "sha256": "170d7a30bfc75a494a0b8ec00303410f554f4c5d5373270f42c80ccfeaa36c3b",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/returned/bundle/wandb/metadata-artifacts/tgcn-training-prefix-result.json"
+    },
+    "scheduler.json": {
+      "bytes": 339,
+      "sha256": "8de74dc350647bacf069d14837000b1027e494e65a736202b0b00b5b8e7fb846",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/returned/scheduler.json"
+    },
+    "supervisor-journal.jsonl": {
+      "bytes": 4511,
+      "sha256": "de281687617972f28699748944323f71750753e455eee885193a8bb38ca8775f",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/returned/control/supervisor-journal.jsonl"
+    },
+    "supervisor-receipt.json": {
+      "bytes": 19880,
+      "sha256": "9dc7bb54d6aed11f70e96ec03167484d0a49c2b9e731ab712d8a12e5a5d2bfc2",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/returned/control/supervisor-receipt.json"
+    },
+    "updates.jsonl": {
+      "bytes": 93718,
+      "sha256": "e47ecab681b82401213318ce8ff8a4bc09deb2cf161242376947067e44225023",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/returned/bundle/updates.jsonl"
+    },
+    "verification-001-reporting-receipt.json": {
+      "bytes": 2277,
+      "sha256": "95526ad47e6423e049bf99a1c8ac85691015631d0ceed6974e72ba83c918ce7b",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/independent-verification-001/verification.wandb/reporting-receipt.json"
+    },
+    "verification-001-unpromoted.json": {
+      "bytes": 3239,
+      "sha256": "c3e8a4e75cd87831975a9d253e04e6f8e801ea4490330e036b125a7d7291747f",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/independent-verification-001/verification.json"
+    },
+    "verification-002-artifact.json": {
+      "bytes": 325,
+      "sha256": "8dd37cd43b5a4fc65b7cbb69ac7d1b2b5f8b7a4a1aa864d7b7f4c3c754df3c84",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/independent-verification-002/verification.wandb/metadata-artifacts/tgcn-prefix-independent-acceptance.json"
+    },
+    "verification-002-reporting-receipt.json": {
+      "bytes": 2831,
+      "sha256": "06dcee2a2ee47a991996827d43a743c32960df2538283432c96c99a0c65ef9da",
+      "source": "runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/independent-verification-002/verification.wandb/reporting-receipt.json"
+    }
+  },
+  "kind": "tgcn_production_prefix_public_compact_inventory_v1",
+  "scope": "Exact original compact metadata and scalar loss/optimizer chronology; reporting repair note is explicitly derived. No graph payload, model weights, recurrent or RNG state payload, W&B stream, credentials or provider configuration."
+}

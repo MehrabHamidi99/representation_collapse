@@ -1,0 +1,63 @@
+{
+  "allowed_statement": "The calibrated native production T-GCN seed-0 training path completed one isolated causal 256-update prefix with accepted optimizer accounting and offline reporting.",
+  "canonical_acceptance_sha256": "2af9c71d82266c1a0d824a7e27eb594e5ae7557621007c3ab5f36933f253705a",
+  "competence_claim": false,
+  "full_fit_admitted": false,
+  "heldout_admitted": false,
+  "independent_numeric_reduction_performed": false,
+  "job_id": "11332237",
+  "kind": "tgcn_training_prefix_independent_interpretation_review_v1",
+  "native_model_or_payload_access_by_reviewer": false,
+  "next_required_gates": [
+    "Freeze a separate full-fit execution and validation-only selection contract, with complete-epoch validation and partial-epoch exclusion.",
+    "Implement and calibrate a T-GCN-specific native dual-component checkpoint codec, hidden-only state catalog, storage/byte integrity and source/runtime identities.",
+    "Finalize selection receipts and publish an externally pinned selected tuple only after accepted fit metadata and reporting.",
+    "On a genuinely fresh model, strictly load both selected components and replay the training-plus-validation prefix at fixed selected weights; require exact complete-H parity before a single charged held-out opener.",
+    "Freeze the held-out behavioral and state observation protocol before access; use matched controls for any later harmful-collapse or causal-memory claim."
+  ],
+  "prohibited_claims": [
+    "complete training epoch",
+    "trained competence or held-out F1",
+    "validation-only selected checkpoint",
+    "Figure 10 reproduction",
+    "representation dimension collapse",
+    "causal useful-memory loss",
+    "periodic hidden states or Jacobians",
+    "fixed-weight replay parity",
+    "independent native numerical replication"
+  ],
+  "protocol": "tgrab_tgcn_training_prefix_v1",
+  "remote_dashboard_delivery_verified": false,
+  "reported_execution": {
+    "attempted_updates": 256,
+    "complete_epochs": 0,
+    "completed_updates": 256,
+    "confirmed_optimizer_steps": 256,
+    "durable_optimizer_records": 512,
+    "offline_history_rows": 256,
+    "scheduler_elapsed": "00:00:30",
+    "scheduler_exit_code": "0:0",
+    "scheduler_state": "COMPLETED"
+  },
+  "review_method": "Read-only inspection of already reported compact execution receipts, source-reviewed verifier, terminal scope metadata and acceptance publication wrapper; no new numerical reduction.",
+  "reviewed_receipt_sha256": {
+    "acceptance.json": "2af9c71d82266c1a0d824a7e27eb594e5ae7557621007c3ab5f36933f253705a",
+    "independent-verification-001/verification.wandb/reporting-receipt.json": "95526ad47e6423e049bf99a1c8ac85691015631d0ceed6974e72ba83c918ce7b",
+    "independent-verification-002/verification.wandb/reporting-receipt.json": "06dcee2a2ee47a991996827d43a743c32960df2538283432c96c99a0c65ef9da",
+    "returned/bundle/prefix-result.json": "279906f88d367802ff2c7161a82574e4685f0a54fb5a9ef467d2c5d96e4b6348",
+    "returned/scheduler.json": "8de74dc350647bacf069d14837000b1027e494e65a736202b0b00b5b8e7fb846"
+  },
+  "scientific_acceptance": false,
+  "source_commit": "371aba996af02826df5fee03abb8a5223b9849b5",
+  "status": "pass_engineering_execution_scope_only",
+  "terminal_hidden_interpretation": "Hidden-only H[1,100,128] carries training history across changing weights. It follows consumption of G255 and scoring of G256; its value predates the final update and is not a fixed-selected-weight replay state. No state payload was retained or independently verified.",
+  "verification_repair": {
+    "attempt_002_finished": true,
+    "canonical_acceptance_matches_attempt_002_bytes": true,
+    "cause": "Audit reporting metric raw_loss_rows_verified rejected by privacy key guard after core audit; not a training failure.",
+    "failed_attempt_001_retained": true,
+    "repair": "Only reporting metric renamed training/loss_rows_verified; unique verifier run ID distinguishes attempts.",
+    "training_resubmission_required": false,
+    "verifier_sha256": "dd077db2f4c854953010b3c0340ba5a77a160d96d7a0d1b08208ed7954b6d60d"
+  }
+}

@@ -1,0 +1,583 @@
+{
+  "admission_sha256": "489ca19f4c5262cd5dca8b3fee7bb0ba5d769cc3f731612b8254655e3596483a",
+  "competence_claim": false,
+  "complete_epochs": 0,
+  "counts": {
+    "actual_offline_history_rows": 256,
+    "attempted_updates": 256,
+    "completed_updates": 256,
+    "durable_optimizer_records_verified": 512,
+    "optimizer_steps_confirmed": 256,
+    "raw_loss_rows_verified": 256
+  },
+  "data": {
+    "computed_prefix_interval": [
+      0,
+      257
+    ],
+    "manifest_sha256": "a6ff50183de570ff17cfbe92b3f1976bac9d2d85557ecc11379e24b2c737d1ce",
+    "raw_sha256": "5a19f9e7949668473bc61cb59b6215f25f093ea0ee2d45b5e143338ded5523e3",
+    "train_interval": [
+      0,
+      2560
+    ],
+    "train_split_semantic_sha256": "5b05b012f5a538e356dad54333d1eadcaae2527f4f789ef627fcd9c21f0fbad7",
+    "train_split_sha256": "1bc8a28a44ff30048a6633855435f19b0ed293a3ff9dcfc4a4dd89994cb83a64"
+  },
+  "date_utc": "2026-10-20",
+  "evidence_directory": "evidence/tgcn-production-prefix-2026-10-20/",
+  "first_target": 1,
+  "full_fit": false,
+  "heldout_evaluation": false,
+  "independent_audit": {
+    "native_model_reexecuted_independently": false,
+    "scope": "Compact empirical training-prefix loss/counter/journal arithmetic and source/runtime/reporting provenance only; no native replay, weights, hidden state binaries or graph payload read.",
+    "source_closure_git_verified": true,
+    "training_carry_binary_independently_verified": false,
+    "verifier_sha256": "dd077db2f4c854953010b3c0340ba5a77a160d96d7a0d1b08208ed7954b6d60d"
+  },
+  "initialization_metadata_references": {
+    "initial_component_semantic_sha256": {
+      "link_head": "55c4c3b05a308628ae449336d2c60b18659aa09a0a10446f79c214d0e46abdb6",
+      "recurrent": "b67e5d5ff113018e7e8ee375ac07ad603f52bbafd6e140bb7ac6fc25915394e4"
+    },
+    "negative_generator_record": {
+      "bytes": 177,
+      "relative_path": "negative-generator.json",
+      "sha256": "e48b017782bc6959a8de349de99cddc4ad652a4f008eaf95327df13c18fe011b"
+    },
+    "optimizer_parameter_order": [
+      "node_emb.units.0.conv_h.bias",
+      "node_emb.units.0.conv_h.lin.weight",
+      "node_emb.units.0.conv_r.bias",
+      "node_emb.units.0.conv_r.lin.weight",
+      "node_emb.units.0.conv_z.bias",
+      "node_emb.units.0.conv_z.lin.weight",
+      "node_emb.units.0.linear_h.bias",
+      "node_emb.units.0.linear_h.weight",
+      "node_emb.units.0.linear_r.bias",
+      "node_emb.units.0.linear_r.weight",
+      "node_emb.units.0.linear_z.bias",
+      "node_emb.units.0.linear_z.weight",
+      "link_pred.seq.1.bias",
+      "link_pred.seq.1.weight",
+      "link_pred.seq.3.bias",
+      "link_pred.seq.3.weight",
+      "link_pred.seq.5.bias",
+      "link_pred.seq.5.weight"
+    ],
+    "post_model_rng_record": {
+      "bytes": 23739,
+      "relative_path": "post-model-rng.json",
+      "sha256": "008f0e8f01f5de3f2067b6f8953b40a6370316e7d0a337c2d467a5b3fe29e51b"
+    },
+    "seeding_record": {
+      "bytes": 23739,
+      "relative_path": "seeding.json",
+      "sha256": "01b1f67c9a10797c1ca72ae6e183ef1a552cb34370e0386667dee7aa888af9e3"
+    },
+    "terminal_component_semantic_sha256": {
+      "link_head": "c9fdc9c3118306083c3ae978dc072301fe94f9ed6b9df3ac0287ed1be56b7f43",
+      "recurrent": "3f9ac1c9d9a8299af2d7ed82605e107034151ea2c59702753164aa49c7fc76bd"
+    }
+  },
+  "interpretation": "One empirical production TGCN training prefix executed256 optimizer updates with durable chronology and verified offline reporting. It completed zero epochs and establishes neither competence nor held-out performance, F1 behavior, representation collapse or a full Figure10 reconstruction.",
+  "inventory_sha256": "69666061a039072a3245dd970ea7e9cfeee7e329650a7eb18e1acfd7e73009a1",
+  "job": {
+    "cluster": "mila",
+    "cpus": 1,
+    "elapsed": "00:00:30",
+    "exit_code": "0:0",
+    "gpus": 0,
+    "job_id": "11332237",
+    "memory_bytes": 2147483648,
+    "node_list": "cn-f003",
+    "state": "COMPLETED",
+    "submitted_via": "cluv"
+  },
+  "journal_accounting": {
+    "ambiguous_journal_boundary": null,
+    "durable_attempted_updates": 256,
+    "durable_completed_updates": 256,
+    "durable_optimizer_steps_confirmed": 256,
+    "full_readback_verified": true,
+    "journal_bytes": 401078,
+    "journal_failed_or_terminal": false,
+    "journal_records": 512,
+    "journal_sha256": "fb27fb733843159d6145bc0d52ee528cc98c7039cd79440ce9a9fee1051e4df9",
+    "last_record_sha256": "66fb4f83b9121ab0cc2493955d71f6a186356185c15702f9586517369291410e",
+    "pending": null
+  },
+  "kind": "tgcn_production_prefix_results_summary_v1",
+  "last_target": 256,
+  "model_seed": 0,
+  "module_modes": {
+    "eval": {
+      "flags": {
+        "link_pred": {
+          "": false,
+          "seq": false,
+          "seq.0": false,
+          "seq.1": false,
+          "seq.2": false,
+          "seq.3": false,
+          "seq.4": false,
+          "seq.5": false
+        },
+        "node_emb": {
+          "": false,
+          "units": false,
+          "units.0": false,
+          "units.0.conv_h": false,
+          "units.0.conv_h.aggr_module": false,
+          "units.0.conv_h.lin": false,
+          "units.0.conv_r": false,
+          "units.0.conv_r.aggr_module": false,
+          "units.0.conv_r.lin": false,
+          "units.0.conv_z": false,
+          "units.0.conv_z.aggr_module": false,
+          "units.0.conv_z.lin": false,
+          "units.0.linear_h": false,
+          "units.0.linear_r": false,
+          "units.0.linear_z": false
+        }
+      },
+      "grad_enabled": false
+    },
+    "train": {
+      "flags": {
+        "link_pred": {
+          "": true,
+          "seq": true,
+          "seq.0": true,
+          "seq.1": true,
+          "seq.2": true,
+          "seq.3": true,
+          "seq.4": true,
+          "seq.5": true
+        },
+        "node_emb": {
+          "": true,
+          "units": true,
+          "units.0": true,
+          "units.0.conv_h": true,
+          "units.0.conv_h.aggr_module": true,
+          "units.0.conv_h.lin": true,
+          "units.0.conv_r": true,
+          "units.0.conv_r.aggr_module": true,
+          "units.0.conv_r.lin": true,
+          "units.0.conv_z": true,
+          "units.0.conv_z.aggr_module": true,
+          "units.0.conv_z.lin": true,
+          "units.0.linear_h": true,
+          "units.0.linear_r": true,
+          "units.0.linear_z": true
+        }
+      },
+      "grad_enabled": true
+    }
+  },
+  "native_inventory": {
+    "link_head": {
+      "numel": 49537,
+      "state_dict_versions": {
+        "": 1,
+        "seq": 1,
+        "seq.0": 1,
+        "seq.1": 1,
+        "seq.2": 1,
+        "seq.3": 1,
+        "seq.4": 1,
+        "seq.5": 1
+      },
+      "tensor_count": 6,
+      "tensors": [
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "seq.1.weight",
+          "nbytes": 131072,
+          "shape": [
+            128,
+            256
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "seq.1.bias",
+          "nbytes": 512,
+          "shape": [
+            128
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "seq.3.weight",
+          "nbytes": 65536,
+          "shape": [
+            128,
+            128
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "seq.3.bias",
+          "nbytes": 512,
+          "shape": [
+            128
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "seq.5.weight",
+          "nbytes": 512,
+          "shape": [
+            1,
+            128
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "seq.5.bias",
+          "nbytes": 4,
+          "shape": [
+            1
+          ]
+        }
+      ]
+    },
+    "recurrent": {
+      "numel": 137472,
+      "state_dict_versions": {
+        "": 1,
+        "units": 1,
+        "units.0": 1,
+        "units.0.conv_h": 1,
+        "units.0.conv_h.aggr_module": 1,
+        "units.0.conv_h.lin": 1,
+        "units.0.conv_r": 1,
+        "units.0.conv_r.aggr_module": 1,
+        "units.0.conv_r.lin": 1,
+        "units.0.conv_z": 1,
+        "units.0.conv_z.aggr_module": 1,
+        "units.0.conv_z.lin": 1,
+        "units.0.linear_h": 1,
+        "units.0.linear_r": 1,
+        "units.0.linear_z": 1
+      },
+      "tensor_count": 12,
+      "tensors": [
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "units.0.conv_z.bias",
+          "nbytes": 512,
+          "shape": [
+            128
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "units.0.conv_z.lin.weight",
+          "nbytes": 51200,
+          "shape": [
+            128,
+            100
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "units.0.linear_z.weight",
+          "nbytes": 131072,
+          "shape": [
+            128,
+            256
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "units.0.linear_z.bias",
+          "nbytes": 512,
+          "shape": [
+            128
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "units.0.conv_r.bias",
+          "nbytes": 512,
+          "shape": [
+            128
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "units.0.conv_r.lin.weight",
+          "nbytes": 51200,
+          "shape": [
+            128,
+            100
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "units.0.linear_r.weight",
+          "nbytes": 131072,
+          "shape": [
+            128,
+            256
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "units.0.linear_r.bias",
+          "nbytes": 512,
+          "shape": [
+            128
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "units.0.conv_h.bias",
+          "nbytes": 512,
+          "shape": [
+            128
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "units.0.conv_h.lin.weight",
+          "nbytes": 51200,
+          "shape": [
+            128,
+            100
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "units.0.linear_h.weight",
+          "nbytes": 131072,
+          "shape": [
+            128,
+            256
+          ]
+        },
+        {
+          "device": "cpu",
+          "dtype": "torch.float32",
+          "name": "units.0.linear_h.bias",
+          "nbytes": 512,
+          "shape": [
+            128
+          ]
+        }
+      ]
+    }
+  },
+  "negative_seed": 1,
+  "next_steps": [
+    "Freeze a TGCN-specific primitive checkpoint, tensor catalog and finalized validation-selection contract without reusing LSTM H+C formats.",
+    "Verify fresh seeded construction, strict dual-component restore and complete hidden-only replay at fixed selected weights before any held-out opener.",
+    "Freeze a separately admitted full-fit stopping/training-budget policy and model-seed cohort; prefix throughput alone is not a full-fit cost guarantee.",
+    "Only after competence and execution gates, evaluate each finalized checkpoint once and apply fixed descriptive phases and persistence controls; retain separate matched-order/causal-memory research."
+  ],
+  "prefix_result_sha256": "279906f88d367802ff2c7161a82574e4685f0a54fb5a9ef467d2c5d96e4b6348",
+  "reported_mean_training_loss": 1.3214061078615487,
+  "reporting": {
+    "actual_training_history_rows_verified": 256,
+    "mode": "offline",
+    "remote_delivery_verified": false,
+    "remote_history_verified": false,
+    "training_finish_returned": true,
+    "training_reporter_completed": true,
+    "verification_repair": {
+      "kind": "tgcn_prefix_independent_reporting_repair_lineage_v1",
+      "promotion_rule": "Canonical acceptance copied only after verification002 exited successfully and its offline reporter completed with finish_returned=true. Same collected training artifacts; no model, optimizer, dataset or cluster training rerun.",
+      "repair": "Only the final W&B metric key changed to training/loss_rows_verified; canonical acceptance field raw_loss_rows_verified and numerical checks remained unchanged. A regression exercised the actual metric expression through the real reporting._scalars guard.",
+      "training_job_id": "11332237",
+      "training_rerun": false,
+      "verification_001": {
+        "accepted_for_promotion": false,
+        "failure": "ValueError from reporting privacy guard: final metric raw_loss_rows_verified contains prohibited raw-data key; all compact execution checks had completed before this reporting error.",
+        "reporting_receipt": "verification-001-reporting-receipt.json",
+        "run_id": "tgcn-prefix-review-11332237",
+        "state": "failed",
+        "unpromoted_numerical_receipt": "verification-001-unpromoted.json"
+      },
+      "verification_002": {
+        "accepted_for_promotion": true,
+        "finish_returned": true,
+        "reporting_receipt": "verification-002-reporting-receipt.json",
+        "run_id": "tgcn-prefix-review-11332237-independent-verification-002",
+        "state": "completed",
+        "verifier_sha256": "dd077db2f4c854953010b3c0340ba5a77a160d96d7a0d1b08208ed7954b6d60d"
+      }
+    }
+  },
+  "run_id": "tgcn-prefix-20261020T194503Z-371aba99",
+  "runtime": {
+    "cpu_threads": 1,
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "interop_threads": 1,
+    "machine": "x86_64",
+    "precision": "float32",
+    "python": "3.10.19",
+    "system": "Linux",
+    "versions": {
+      "numpy": "1.24.4",
+      "torch": "2.0.0+cpu",
+      "torch-cluster": "1.6.3+pt20cpu",
+      "torch-geometric": "2.6.1",
+      "torch-geometric-temporal": "0.54.0",
+      "torch-scatter": "2.1.2+pt20cpu",
+      "torch-sparse": "0.6.18+pt20cpu",
+      "torch-spline-conv": "1.2.2+pt20cpu",
+      "wandb": "0.30.0"
+    }
+  },
+  "scientific_acceptance": false,
+  "source_commit": "371aba996af02826df5fee03abb8a5223b9849b5",
+  "sources": {
+    "backend_sha256": "0b03219543c0cce16e77c69cf7350a403e2d492134742bb1ec23aaf03dea512f",
+    "cell_sha256": "1f417ad10b1fb3ed6af24731efb0e80b614495a3e4df3fc16254e631c3c8819e",
+    "gcn_sha256": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6",
+    "head_sha256": "cca12cfc73b8660c92236f530504da08ba0b606ec13a1a681ffabcae43b7ca86",
+    "node_base_sha256": "4be4450730f33949e0354348b3bd8f69ba0434e4aa911abec0fc5f798e8c2d29",
+    "wrapper_sha256": "028a85f0527833a7e62099e8bb826ac144df29738ee120795d205d96a8c6f78c"
+  },
+  "status": "accepted_training_prefix_execution",
+  "supervisor_receipt_sha256": "9dc7bb54d6aed11f70e96ec03167484d0a49c2b9e731ab712d8a12e5a5d2bfc2",
+  "synthetic_execution": false,
+  "terminal_hidden": {
+    "construction": "training_carry_after_predecessor255_before_target256_update_not_fixed_weight_replay",
+    "dtype": "float32_le",
+    "last_consumed_t": 255,
+    "next_target_t": 256,
+    "node_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99
+    ],
+    "payload_written": false,
+    "semantic_sha256": "d089e6427bca4da259422580ce711fa1b75dd44390e1fe3b3dfc9a217800b25e",
+    "sha256": "4c7334a2e13a3a66d9deaea1eacfe912b5832d91a9d1e699d5b341aaec1ea61a",
+    "shape": [
+      1,
+      100,
+      128
+    ]
+  }
+}

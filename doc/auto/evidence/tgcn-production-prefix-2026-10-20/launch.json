@@ -1,0 +1,34 @@
+{
+  "admission_local": "/Users/mehrabhamidi/Desktop/phd/paper/representation_collapse/runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/admission.json",
+  "admission_remote": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/review/tgcn-training-prefix/tgcn-prefix-20261020T194503Z-371aba99.admission.json",
+  "admission_sha256": "489ca19f4c5262cd5dca8b3fee7bb0ba5d769cc3f731612b8254655e3596483a",
+  "cluv_version": "0.1.5",
+  "coordinator_repo": "/Users/mehrabhamidi/Desktop/phd/paper/representation_collapse",
+  "job_script": "code/ops/tgrab_tgcn_prefix_job.sh",
+  "local_dir": "/Users/mehrabhamidi/Desktop/phd/paper/representation_collapse/runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99",
+  "output_remote": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/tgcn-training-prefix/tgcn-prefix-20261020T194503Z-371aba99",
+  "program_args": [
+    "--admission",
+    "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/review/tgcn-training-prefix/tgcn-prefix-20261020T194503Z-371aba99.admission.json",
+    "--sha256",
+    "489ca19f4c5262cd5dca8b3fee7bb0ba5d769cc3f731612b8254655e3596483a",
+    "--wall-seconds",
+    "1770"
+  ],
+  "run_id": "tgcn-prefix-20261020T194503Z-371aba99",
+  "sbatch_args": [
+    "--nodes=1",
+    "--ntasks=1",
+    "--cpus-per-task=1",
+    "--mem=2G",
+    "--time=00:30:00",
+    "--account=mila",
+    "--qos=normal",
+    "--partition=main-cpu",
+    "--no-requeue",
+    "--constraint=rome",
+    "--job-name=rc-tgcn-prefix"
+  ],
+  "skip_sync": true,
+  "source_commit": "371aba996af02826df5fee03abb8a5223b9849b5"
+}

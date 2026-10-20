@@ -325,3 +325,40 @@ replay is rejected because calibration did not create such a checkpoint.
 Its suggested1e-6 parity threshold does not change the frozen exact-byte gates.
 Native OpenAI implementation/review workers remain the fallback and scientific
 acceptance owners; no unavailable external OpenAI API was assumed or called.
+
+### 19:51 UTC — real T-GCN training prefix accepted
+
+Job **11332237** completed`0:0` in **30s** on`cn-f003`, source
+`371aba996af02826df5fee03abb8a5223b9849b5`. Independent compact verification
+accepts256 real optimizer updates/lossrows,512 durable paired journal records,
+256 actual offline W&B histories, source/data/nativeinventory/scheduler bindings
+and reporting artifact/exit. Mean balanced BCE-sum training loss is
+**1.3214061078615487**. This is zero complete epochs and no validation/test,
+selection, checkpoint or competence/collapse result. TransientH is training
+carry produced before the final weight update, not frozen-weight replay.
+
+Verification001 passed its core audit and wrote a provisional result, then
+its final logging metric`raw_loss_rows_verified` was rejected by the existing
+privacy guard. That failed reporting receipt was retained, and canonical
+acceptance was NOT promoted. A metric-only repair (`training/loss_rows_verified`)
+plus unique offline verification runID passed7pure tests/peerreview.
+Verification002 reused the identical collected artifacts, completed SDK finish,
+and only then promoted acceptance. **No cluster/model/training retry occurred.**
+Final verifier SHA`dd077db2f4c854953010b3c0340ba5a77a160d96d7a0d1b08208ed7954b6d60d`.
+An earlier sourcefreeze check caught whitespace in one test; it was corrected
+in371aba99 before source staging/submission. Numerical/protocol bytes unchanged.
+
+Public prefix report/evidence and independent interpretation are being integrated.
+The next bounded implementation node is a dedicated hidden-only T-GCN
+checkpoint/catalog+fit adapter with validation-only selection and exact fresh
+train-plus-validation replay; the full-fit allocation is not yet submitted.
+
+Public calibration/prefix evidence inventories now independently reconcile all
+10 and19 listed file hashes, respectively. The final independent engineering
+review is public; no source, graph, weight, recurrent/RNG payload or W&Bstream
+was copied into the prefix evidence. The full-fit readiness audit names the
+reusable opaque-state epoch core and required dedicated T-GCN fit adapter,
+hidden-only codec/selection, exact2816-graph replay and subsequent controlled
+held-out pass. First256loss/init identity is now a concrete parity reference.
+All calibration/prefixcode, protocols and verified reports are committed;
+unrelated owner changes remain untouched.

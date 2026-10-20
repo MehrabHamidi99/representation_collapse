@@ -1,0 +1,69 @@
+{
+  "config": {
+    "native_model_execution": false,
+    "scope": "compact empirical prefix verification"
+  },
+  "elapsed_seconds": 1.7881924999528565,
+  "entity_actual": "",
+  "entity_requested": null,
+  "finish_error_type": null,
+  "finish_returned": true,
+  "identities": {
+    "expected_admission_sha256": "489ca19f4c5262cd5dca8b3fee7bb0ba5d769cc3f731612b8254655e3596483a",
+    "expected_source_commit": "371aba996af02826df5fee03abb8a5223b9849b5",
+    "verifier_sha256": "dd077db2f4c854953010b3c0340ba5a77a160d96d7a0d1b08208ed7954b6d60d"
+  },
+  "last_attempted_step": 0,
+  "last_completed_step": 0,
+  "metadata_artifacts": [
+    {
+      "name": "tgcn-prefix-independent-acceptance",
+      "path": "/Users/mehrabhamidi/Desktop/phd/paper/representation_collapse/runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/independent-verification-002/verification.wandb/metadata-artifacts/tgcn-prefix-independent-acceptance.json",
+      "remote_delivery_verified": false,
+      "sha256": "8dd37cd43b5a4fc65b7cbb69ac7d1b2b5f8b7a4a1aa864d7b7f4c3c754df3c84"
+    }
+  ],
+  "mode": "offline",
+  "privacy_settings": {
+    "capture_loggers": {},
+    "config_paths": [],
+    "console": "off",
+    "disable_code": true,
+    "disable_git": true,
+    "disable_job_creation": true,
+    "host": "not-collected",
+    "ignore_globs": [
+      "*",
+      "**/*"
+    ],
+    "launch": false,
+    "sagemaker_disable": true,
+    "save_code": false,
+    "symlink": false,
+    "x_disable_machine_info": true,
+    "x_disable_meta": true,
+    "x_disable_stats": true,
+    "x_save_requirements": false
+  },
+  "project": "representation-collapse",
+  "remote_delivery_verified": false,
+  "remote_history_verified": false,
+  "run_id": "tgcn-prefix-review-11332237-independent-verification-002",
+  "run_url": null,
+  "schema_version": 1,
+  "sdk_version": "0.30.0",
+  "sdk_version_required": "0.30.0",
+  "started_at_utc": "2026-10-20T19:49:46.658787+00:00",
+  "state": "completed",
+  "summary": {
+    "reporting/elapsed_seconds": 1.7852097919676453,
+    "reporting/last_step": 0,
+    "reporting/state": "completed"
+  },
+  "sync_required": true,
+  "terminal_intent": "completed",
+  "updated_at_utc": "2026-10-20T19:49:48.446889+00:00",
+  "wandb_files_dir": "/Users/mehrabhamidi/Desktop/phd/paper/representation_collapse/runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/independent-verification-002/verification.wandb/wandb/offline-run-20261020_154947-tgcn-prefix-review-11332237-independent-verification-002/files",
+  "wandb_run_dir": "/Users/mehrabhamidi/Desktop/phd/paper/representation_collapse/runs/ops/tgcn-prefix-20261020/tgcn-prefix-20261020T194503Z-371aba99/independent-verification-002/verification.wandb/wandb/offline-run-20261020_154947-tgcn-prefix-review-11332237-independent-verification-002",
+  "work_may_start": false
+}

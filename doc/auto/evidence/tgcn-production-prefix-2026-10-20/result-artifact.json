@@ -1,0 +1,16 @@
+{
+  "identities": {
+    "calibration_acceptance_sha256": "45ef2dd57b60ed0746967f042eaf8574915b53b612434628736775974a0054e2",
+    "result_sha256": "279906f88d367802ff2c7161a82574e4685f0a54fb5a9ef467d2c5d96e4b6348",
+    "source_commit": "371aba996af02826df5fee03abb8a5223b9849b5",
+    "supervisor_receipt_sha256": "9dc7bb54d6aed11f70e96ec03167484d0a49c2b9e731ab712d8a12e5a5d2bfc2",
+    "worker_source_sha256": "de02784d2f61696eaa50161f246d50c164bfcad3d228423bdf7085ceaaae85b9"
+  },
+  "metadata": {
+    "completed_updates": 256,
+    "scientific_acceptance": false,
+    "test_access": false,
+    "validation_access": false
+  },
+  "schema_version": 1
+}

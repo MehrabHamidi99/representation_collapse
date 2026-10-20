@@ -114,5 +114,6 @@ Speculative ideas remain labeled hypotheses until measured.
 T-GCN implementation now has an independently accepted
 [native synthetic calibration](auto/tgcn-native-calibration-results-2026-10-20.md).
 Its separate [production training-prefix protocol](auto/tgcn-production-prefix-protocol-2026-10-20.md)
-prepares the first256 chronological updates without validation/test access;
-actual execution status belongs to the tracker, not the prospective protocol.
+has a verified [first256-update training result](auto/tgcn-production-prefix-results-2026-10-20.md)
+without validation/test access. Actual execution status belongs to the tracker,
+not the prospective protocol.

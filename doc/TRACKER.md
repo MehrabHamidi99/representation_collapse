@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-20 19:40 UTC. See the [latest notebook entry](october/october20/2026-10-20-progress-report.md),
+Updated 2026-10-20 19:51 UTC. See the [latest notebook entry](october/october20/2026-10-20-progress-report.md),
 the [October 19 notebook](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
@@ -8,6 +8,22 @@ the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **2026-10-20 — production T-GCN training prefix independently accepted.**
+  Cluv job **11332237** completed `0:0` in30s oncn-f003, source`371aba99`.
+  Verified **256 actual training updates**, **512 durable optimizer records**,
+  **256 actual offline W&B histories**, mean BCE-sum loss **1.321406**.
+  No complete epoch, validation/test, checkpoint or selection was performed.
+  First audit passed core checks but its final metric name hit the privacy
+  guard; failed verification001 was retained. Metric-only repair and a fresh
+  verification002 completed reporting before acceptance was promoted. No model
+  or job retry. [Result and lineage](auto/tgcn-production-prefix-results-2026-10-20.md).
+  Next: dedicated hidden-only checkpoint/selection and exact fresh-prefix replay,
+  then a separately frozen corrected full fit. The
+  [implementation readiness audit](auto/tgcn-full-fit-readiness-2026-10-20.md)
+  defines the next adapter/codec work. Qwen has44 completed proposals;
+  native agents own implementation and independent acceptance. No trained T-GCN
+  Figure10 curve or representation-collapse claim exists yet.
 
 - **2026-10-20 19:35 UTC — native T-GCN implementation calibration accepted.**
   Cluv job **11332092** completed `0:0` in38s oncn-f002. Independent compact

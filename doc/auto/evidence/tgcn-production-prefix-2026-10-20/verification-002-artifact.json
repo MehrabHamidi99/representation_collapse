@@ -1,0 +1,11 @@
+{
+  "identities": {
+    "acceptance_sha256": "2af9c71d82266c1a0d824a7e27eb594e5ae7557621007c3ab5f36933f253705a",
+    "verifier_sha256": "dd077db2f4c854953010b3c0340ba5a77a160d96d7a0d1b08208ed7954b6d60d"
+  },
+  "metadata": {
+    "native_model_execution": false,
+    "scientific_acceptance": false
+  },
+  "schema_version": 1
+}

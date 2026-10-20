@@ -1,0 +1,75 @@
+{
+  "config": {
+    "device": "cpu",
+    "max_updates": 256,
+    "model_seed": 0,
+    "negative_seed": 1,
+    "precision": "float32",
+    "protocol": "tgrab_tgcn_training_prefix_v1",
+    "test_access": false,
+    "validation_access": false
+  },
+  "elapsed_seconds": 28.044380496256053,
+  "entity_actual": "",
+  "entity_requested": null,
+  "finish_error_type": null,
+  "finish_returned": true,
+  "identities": {
+    "calibration_acceptance_sha256": "45ef2dd57b60ed0746967f042eaf8574915b53b612434628736775974a0054e2",
+    "data_manifest_sha256": "a6ff50183de570ff17cfbe92b3f1976bac9d2d85557ecc11379e24b2c737d1ce",
+    "worker_source_sha256": "de02784d2f61696eaa50161f246d50c164bfcad3d228423bdf7085ceaaae85b9"
+  },
+  "last_attempted_step": 255,
+  "last_completed_step": 255,
+  "metadata_artifacts": [
+    {
+      "name": "tgcn-training-prefix-result",
+      "path": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/tgcn-training-prefix/tgcn-prefix-20261020T194503Z-371aba99/wandb/metadata-artifacts/tgcn-training-prefix-result.json",
+      "remote_delivery_verified": false,
+      "sha256": "170d7a30bfc75a494a0b8ec00303410f554f4c5d5373270f42c80ccfeaa36c3b"
+    }
+  ],
+  "mode": "offline",
+  "privacy_settings": {
+    "capture_loggers": {},
+    "config_paths": [],
+    "console": "off",
+    "disable_code": true,
+    "disable_git": true,
+    "disable_job_creation": true,
+    "host": "not-collected",
+    "ignore_globs": [
+      "*",
+      "**/*"
+    ],
+    "launch": false,
+    "sagemaker_disable": true,
+    "save_code": false,
+    "symlink": false,
+    "x_disable_machine_info": true,
+    "x_disable_meta": true,
+    "x_disable_stats": true,
+    "x_save_requirements": false
+  },
+  "project": "representation-collapse",
+  "remote_delivery_verified": false,
+  "remote_history_verified": false,
+  "run_id": "tgcn-prefix-20261020T194503Z-371aba99",
+  "run_url": null,
+  "schema_version": 1,
+  "sdk_version": "0.30.0",
+  "sdk_version_required": "0.30.0",
+  "started_at_utc": "2026-10-20T19:46:32.849638+00:00",
+  "state": "completed",
+  "summary": {
+    "reporting/elapsed_seconds": 28.03293824661523,
+    "reporting/last_step": 255,
+    "reporting/state": "completed"
+  },
+  "sync_required": true,
+  "terminal_intent": "completed",
+  "updated_at_utc": "2026-10-20T19:47:00.892147+00:00",
+  "wandb_files_dir": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/tgcn-training-prefix/tgcn-prefix-20261020T194503Z-371aba99/wandb/wandb/offline-run-20261020_154639-tgcn-prefix-20261020T194503Z-371aba99/files",
+  "wandb_run_dir": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/tgcn-training-prefix/tgcn-prefix-20261020T194503Z-371aba99/wandb/wandb/offline-run-20261020_154639-tgcn-prefix-20261020T194503Z-371aba99",
+  "work_may_start": false
+}
