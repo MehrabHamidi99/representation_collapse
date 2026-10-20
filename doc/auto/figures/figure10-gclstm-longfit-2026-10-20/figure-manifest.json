@@ -1,0 +1,71 @@
+{
+  "acceptance_sha256": "a3e66a5a7e087bd06638b1dbb3c3176850125aaeec6d388e48136c69d596280e",
+  "analysis_protocol_sha256": "53ddde5227773439b4e685b0ba26db9d5361c4bb4925a2ca5af267ae29ec2aa8",
+  "caption": "Per-target F1 over all 9900 ordered off-diagonal pairs at threshold >=0.5; unweighted temporal means. Shading identifies alternating 32-step motifs A and B. Orange points mark eight actual adjacent-graph transitions, including the first held-out target. The middle panel averages each successive 32-target motif presentation. The bottom panel aligns four cycles for each motif, without inferential uncertainty bands. Its fixed descriptive contrast compares phases 24\u201331 with phases 1\u20138, excluding transition phase zero. One seed and one contiguous sequence; motif presentations are not independent replications. This capped corrected reconstruction measures behavior and does not establish representation collapse.",
+  "checkpoint_format": "primitive_v2",
+  "checkpoint_sha256": "4abeba2b64261468c8844ee302570d6c5d48cec873a51f9eafd1e6010f75db61",
+  "evaluation_sha256": "5dda0b134ac5961a6c145e60eb825cd5e4d91d6187a9037b64c7a9ba3cc657f3",
+  "executed_long_contract_sha256": "aec185fe544bf94a1dc0ea5e952d27b0d335c3653d815f7c0796d97b747ea381",
+  "files": {
+    "figure10-reconstruction.csv": "b9af4eb14dc12c8a68dc413c45f77ed40d170b6a7694207571b8620a4017be8a",
+    "figure10-reconstruction.pdf": "76ff8a203d6de165403ad9fc87582083a45c0771720e91c98f2d95ccbe5634de",
+    "figure10-reconstruction.png": "d041d4eaf5f6d9e646b7875bad00afd8d3937d6920eef5813e2515226dbd9188",
+    "figure10-within-motif.csv": "613da21c73b0c566030d3a984af9b8786fc2f438d05b127b7ba22aafb024bb4f"
+  },
+  "independent_motif_replicates": false,
+  "kind": "figure10_behavioral_reconstruction_plot_v2",
+  "model_replicates": 1,
+  "model_seed": 0,
+  "motif_presentations": 8,
+  "original_paper_curve_included": false,
+  "reduction": {
+    "nontransition_time_mean_f1": 0.899600800682637,
+    "primary_time_mean_f1": 0.8918999850286112,
+    "transition_time_mean_f1": 0.6531746997538121
+  },
+  "renderer_sha256": "84bbc1706835a4294588d67b75c919a475df9744a9dbe8aa03d67c5352c2d486",
+  "run_id": "evaluation-v3-20261020T152554Z-052b660f",
+  "schema_version": 2,
+  "scientific_collapse_claim": false,
+  "selected_epoch": 160,
+  "selected_pointer_sha256": "b40bde9b67af8cc5b1c32e8f043886fd75eb6649196588e7fc0b70d3b644662c",
+  "targets": 256,
+  "training_stop_reason": "complete_epoch_cap",
+  "within_motif_descriptive": {
+    "definition": "late_minus_early_f1",
+    "early_phases_inclusive": [
+      1,
+      8
+    ],
+    "independent_replicates": false,
+    "late_phases_inclusive": [
+      24,
+      31
+    ],
+    "motifs": {
+      "A": {
+        "early_mean_f1": 0.964195689739727,
+        "early_targets": 32,
+        "late_mean_f1": 0.7976675417110206,
+        "late_minus_early_f1": -0.1665281480287064,
+        "late_targets": 32
+      },
+      "B": {
+        "early_mean_f1": 0.9543980452338039,
+        "early_targets": 32,
+        "late_mean_f1": 0.8398739914845319,
+        "late_minus_early_f1": -0.11452405374927199,
+        "late_targets": 32
+      }
+    },
+    "overall": {
+      "early_mean_f1": 0.9592968674867655,
+      "early_targets": 64,
+      "late_mean_f1": 0.8187707665977763,
+      "late_minus_early_f1": -0.1405261008889892,
+      "late_targets": 64
+    },
+    "transition_phase_excluded": 0,
+    "uncertainty_intervals": false
+  }
+}

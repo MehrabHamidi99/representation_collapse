@@ -1,0 +1,17 @@
+{
+  "checkpoint_format": "primitive_v2",
+  "evaluation_sha256": "5dda0b134ac5961a6c145e60eb825cd5e4d91d6187a9037b64c7a9ba3cc657f3",
+  "executed_long_contract_sha256": "aec185fe544bf94a1dc0ea5e952d27b0d335c3653d815f7c0796d97b747ea381",
+  "execution_acceptance_sha256": "0719767b17c071998200f07addb81234bc1dc153348bf1e044244b517fc46c8b",
+  "kind": "figure10_evaluation_plot_acceptance_v2",
+  "model_seed": 0,
+  "run_id": "evaluation-v3-20261020T152554Z-052b660f",
+  "scientific_acceptance": false,
+  "selected_epoch": 160,
+  "selected_pointer_sha256": "b40bde9b67af8cc5b1c32e8f043886fd75eb6649196588e7fc0b70d3b644662c",
+  "status": "accepted",
+  "terminal_replay_verified": true,
+  "test_rows_verified": true,
+  "training_stop_reason": "complete_epoch_cap",
+  "validation_selection_finalized": true
+}

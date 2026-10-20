@@ -1,0 +1,82 @@
+{
+  "cycle_mean_f1": [
+    0.8918476391429598,
+    0.8919292316750946,
+    0.8919292316750946,
+    0.8918938376212957
+  ],
+  "identities": {
+    "acceptance_sha256": "0719767b17c071998200f07addb81234bc1dc153348bf1e044244b517fc46c8b",
+    "analysis_source_sha256": "7ab6763934391ed27610895a6d27eca14b70d3019d629d71dc31dab80a6437c1",
+    "evaluation_result_sha256": "5dda0b134ac5961a6c145e60eb825cd5e4d91d6187a9037b64c7a9ba3cc657f3"
+  },
+  "independent_cycle_replicates": false,
+  "independent_model_replicates": 1,
+  "inferential_tests": false,
+  "kind": "figure10_v3_independent_compact_frozen_window_interpretation_v1",
+  "max_phase_aligned_f1_range": 0.002748511223087502,
+  "model_seed": 0,
+  "nonexact_phases": [
+    {
+      "confusion_exact_across_four_cycles": false,
+      "f1_exact_across_four_cycles": false,
+      "f1_range": 0.002748511223087502,
+      "phase": 61
+    },
+    {
+      "confusion_exact_across_four_cycles": false,
+      "f1_exact_across_four_cycles": false,
+      "f1_range": 0.002473410833539358,
+      "phase": 62
+    },
+    {
+      "confusion_exact_across_four_cycles": false,
+      "f1_exact_across_four_cycles": false,
+      "f1_range": 0.002265219443133626,
+      "phase": 63
+    }
+  ],
+  "nontransition_time_mean_f1": 0.899600800682637,
+  "phase_confusion_exact_count": 61,
+  "phase_f1_exact_count": 61,
+  "phase_windows": {
+    "early": [
+      1,
+      8
+    ],
+    "excluded_transition_phase": 0,
+    "late": [
+      24,
+      31
+    ]
+  },
+  "primary_time_mean_f1": 0.8918999850286112,
+  "run_id": "evaluation-v3-20261020T152554Z-052b660f",
+  "scope": "Descriptive row-based arithmetic for one selected model and graph; no state-periodicity, monotonicity, causal retention or dimension-collapse inference.",
+  "selected_epoch": 160,
+  "targets": 256,
+  "transition_time_mean_f1": 0.6531746997538121,
+  "windows": {
+    "A": {
+      "early_mean_f1": 0.964195689739727,
+      "early_targets": 32,
+      "late_mean_f1": 0.7976675417110206,
+      "late_minus_early_f1": -0.1665281480287064,
+      "late_targets": 32
+    },
+    "B": {
+      "early_mean_f1": 0.9543980452338039,
+      "early_targets": 32,
+      "late_mean_f1": 0.8398739914845319,
+      "late_minus_early_f1": -0.11452405374927199,
+      "late_targets": 32
+    },
+    "pooled": {
+      "early_mean_f1": 0.9592968674867655,
+      "early_targets": 64,
+      "late_mean_f1": 0.8187707665977763,
+      "late_minus_early_f1": -0.1405261008889892,
+      "late_targets": 64
+    }
+  }
+}

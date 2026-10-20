@@ -1,12 +1,22 @@
 # Subgoal: reproduce T-GRAB Figure 10
 
+Current update (2026-10-20): corrected seed-0 GC-LSTM fit 11322268 completed
+200 epochs / 511,800 updates, validation selected epoch 160. Evaluation 11330003 and
+complete-state analysis 11330070 independently accepted. Frozen within-motif F1
+falls 14.05 pp, with modest complete H+C PR decreases and strong within-motif
+variance attenuation. This advances the behavioral GC-LSTM reconstruction;
+full multi-method/five-seed Figure 10 and causal memory-loss claims remain open.
+[Verified long-fit report](figure10-gclstm-longfit-results-2026-10-20.md).
+Historical entries below retain their dated state.
+
+
 Set on 2026-10-16. Status updated 2026-10-19: **active; the first corrected
 GC-LSTM behavioral case is verified, and the longer fit is running**.
 Pilot fit11321105, selected native replay/test11322413 and descriptive state
 analysis11322422 completed `0:0`. Frozen within-motif F1 falls by8.36 percentage
 points; hidden PR decreases but complete H+C PR increases within each motif.
 [Verified report, figures and evidence](figure10-gclstm-pilot-results-2026-10-19.md).
-This resolves the first trained-graph curve, not the full Figure10 or harmful
+This resolves the first trained-graph curve, not the full Figure 10 or harmful
 useful-memory erasure. Fresh long job**11322268** is RUNNING through cluv;
 exact first256-loss parity passed and epoch2 is in progress. Its v2 inference
 reader/replay and final acceptance remain to be completed before test.

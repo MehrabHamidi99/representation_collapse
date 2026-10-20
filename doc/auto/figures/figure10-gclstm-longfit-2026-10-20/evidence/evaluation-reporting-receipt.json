@@ -1,0 +1,74 @@
+{
+  "config": {
+    "candidate_schema": "primitive_v2",
+    "device": "cpu",
+    "optimizer_created": false,
+    "precision": "float32",
+    "protocol": "tgrab_figure10_primitive_v2_selected_evaluation_v3"
+  },
+  "elapsed_seconds": 53.76579237636179,
+  "entity_actual": "",
+  "entity_requested": null,
+  "finish_error_type": null,
+  "finish_returned": true,
+  "identities": {
+    "data_manifest_sha256": "a6ff50183de570ff17cfbe92b3f1976bac9d2d85557ecc11379e24b2c737d1ce",
+    "fit_acceptance_sha256": "d5c6be87daa0923136b4a22cc7c8c9a8c2700a78142875c249f14f5d7c39d3de",
+    "long_contract_sha256": "aec185fe544bf94a1dc0ea5e952d27b0d335c3653d815f7c0796d97b747ea381",
+    "numerical_template_sha256": "22bef6bf781c5bfb5493dd5e03169ea0e658b2463ccaa9ba09189af454508f1f",
+    "selected_pointer_sha256": "b40bde9b67af8cc5b1c32e8f043886fd75eb6649196588e7fc0b70d3b644662c"
+  },
+  "last_attempted_step": 257,
+  "last_completed_step": 257,
+  "metadata_artifacts": [
+    {
+      "name": "figure10-primitive-v2-evaluation-result",
+      "path": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/figure10-v2-evaluation/evaluation-v3-20261020T152554Z-052b660f/wandb/metadata-artifacts/figure10-primitive-v2-evaluation-result.json",
+      "remote_delivery_verified": false,
+      "sha256": "37d3adbc8231b2585e7fd3513b8ed2e080ff6551e71d43542045f0a8b2824383"
+    }
+  ],
+  "mode": "offline",
+  "privacy_settings": {
+    "capture_loggers": {},
+    "config_paths": [],
+    "console": "off",
+    "disable_code": true,
+    "disable_git": true,
+    "disable_job_creation": true,
+    "host": "not-collected",
+    "ignore_globs": [
+      "*",
+      "**/*"
+    ],
+    "launch": false,
+    "sagemaker_disable": true,
+    "save_code": false,
+    "symlink": false,
+    "x_disable_machine_info": true,
+    "x_disable_meta": true,
+    "x_disable_stats": true,
+    "x_save_requirements": false
+  },
+  "project": "representation-collapse",
+  "remote_delivery_verified": false,
+  "remote_history_verified": false,
+  "run_id": "evaluation-v3-20261020T152554Z-052b660f",
+  "run_url": null,
+  "schema_version": 1,
+  "sdk_version": "0.30.0",
+  "sdk_version_required": "0.30.0",
+  "started_at_utc": "2026-10-20T15:26:34.581731+00:00",
+  "state": "completed",
+  "summary": {
+    "reporting/elapsed_seconds": 53.75001917779446,
+    "reporting/last_step": 257,
+    "reporting/state": "completed"
+  },
+  "sync_required": true,
+  "terminal_intent": "completed",
+  "updated_at_utc": "2026-10-20T15:27:28.345974+00:00",
+  "wandb_files_dir": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/figure10-v2-evaluation/evaluation-v3-20261020T152554Z-052b660f/wandb/wandb/offline-run-20261020_112642-evaluation-v3-20261020T152554Z-052b660f/files",
+  "wandb_run_dir": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/figure10-v2-evaluation/evaluation-v3-20261020T152554Z-052b660f/wandb/wandb/offline-run-20261020_112642-evaluation-v3-20261020T152554Z-052b660f",
+  "work_may_start": false
+}

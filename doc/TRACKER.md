@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-20 15:11 UTC. See the [latest notebook entry](october/october20/2026-10-20-progress-report.md),
+Updated 2026-10-20 15:41 UTC. See the [latest notebook entry](october/october20/2026-10-20-progress-report.md),
 the [October 19 notebook](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
@@ -8,6 +8,23 @@ the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **2026-10-20 15:41 UTC — long-fit behavioral and state analyses accepted.**
+  Fit **11322268**, selected evaluation **11330003** and retained-state analysis
+  **11330070** all completed `0:0`. Epoch160 mean test F1 **0.891900**;
+  frozen within-motif contrast **0.959297 → 0.818771** (−14.0526 pp).
+  Complete H+C PR decreases modestly in A/B (**1.1327→1.1070**,
+  **1.1280→1.0981**); within-motif covariance trace ratios are **0.1127/0.1069**.
+  Hidden PR slightly rises in A and falls in B. Pooled complete-state PR falls
+  while trace increases **2.343×**, mixing motif means. Across192 lag64
+  comparisons max relative state residual is **0.0116793**: no periodic-state
+  certification or Floquet claim. Independent compact audits accept21 spectra,
+  192 comparisons and actual offline history. Binary states were not separately
+  reanalyzed. [Report and artifacts](auto/figure10-gclstm-longfit-results-2026-10-20.md).
+  Single corrected seed/graph; below Persistence; full Figure10 and harmful causal
+  retention loss remain open. Local Qwen heartbeat is current with42 valid reviews,
+  no provider errors, and a new accepted-evidence review queued. Historical entries
+  below preserve their original dated states; the long fit is now completed.
 
 - **2026-10-20 15:11 UTC — long fit completed and independently verified.**
   Job **11322268 completed `0:0` in 09:12:16**, reaching **200 epochs /

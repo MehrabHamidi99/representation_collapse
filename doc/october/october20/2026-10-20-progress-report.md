@@ -164,3 +164,75 @@ The version-aware plotter produced the new curve under its own offline reporter;
 PNG visual QA passed. Original v2 pointer/contract identity is retained in its
 version2 manifest without a v1 head alias. Complete-state analysis is next,
 using the same frozen numerical worker and explicitly accepted v3 provenance.
+
+### 15:38 UTC — complete-state analysis completed
+
+Cluv job **11330070** completed `0:0` in **40 seconds** on `cn-f002`,
+source `3a1a297bc84fb96c66ddd34df7aa4ff62e46716d`, one CPU/2 GiB/zero
+GPUs. This reads the accepted retained H/C trajectory only: no retraining,
+weights/dataset access or new test opener. A premature compact collection
+returned an empty archive before terminal status; that failure was retained,
+the scheduler reconciled, and a new terminal collection initiated. No job
+resubmission occurred. Independent numerical acceptance is pending.
+
+Independent behavioral reduction confirms the 14.0526 pp frozen-window F1
+loss. Confusion counts/F1 agree exactly across four cycles at **61/64 phases**;
+phases 61–63 differ slightly (maximum phase F1 range 0.00274851). This is
+approximately recurring within-motif deterioration, not exact periodicity
+or a demonstrated cumulative decline. The interpretation receipt is
+`b5b44374ae69b442737d6a27d5da0d9682f16baf5349e7cbc243a17e39c98b9b`.
+
+### 15:41 UTC — long-fit complete-state diagnostics independently accepted
+
+Job11330070 compact audit accepts21 spectra and192 lag64 comparisons, source
+closure, scheduler success, actual22 W&B history rows/artifact/exit. The binary
+state array remains on scratch and was not independently reanalyzed locally.
+Complete H+C PR changes A **1.132672→1.107023**, B **1.128029→1.098119**;
+within-motif covariance trace ratios are **0.112735/0.106876**. Hidden-only PR
+slightly rises for A and slightly falls for B. Pooled H+C PR drops
+**1.830506→1.027825** while trace increases **2.343351×**: between-motif
+mean separation affects that pooled estimand. Maximum lag64 relative state
+residual **0.01167929** does not certify periodic states/Jacobians.
+The hash-bound epoch160 state figure rendered successfully and its PDF was
+visually inspected. No causal retention-loss or Floquet claim is accepted.
+
+The Qwen continuous worker heartbeat at15:39:45UTC is current, with42 verified
+reviews, no provider error/backoff, waiting for evidence. A new authorized
+project-summary task was published at15:40:34UTC for proposal-only critique of
+these accepted results; no datasets, weights or credentials were supplied.
+No external OpenAI service is assumed; native agents handle implementation
+and independent review. Public report and manuscript integration are active.
+
+### 15:42 UTC — proposal review and manuscript integration
+
+Qwen call43 completed with a schema-valid proposal; heartbeat reports43reviews,
+zero provider errors, waiting for new evidence. Its caution about mixed geometry
+is reasonable, but two statements are rejected: an old October16 engineering-only
+status does not describe today's trained-model execution, and its assertion of
+missing selected-checkpoint replay contradicts accepted exact native H/C replay.
+A generator-phase oracle cannot identify an ordering effect without a matched
+ordering intervention. The proposed phase decomposition is exploratory, not
+scientific acceptance. Native independent review remains authoritative.
+
+The manuscript now contains the preserved pilot plus the accepted long-fit
+behavior/state figures and distinct interpretations. LaTeX builds to23pages
+(eightmaintext; graphappendix19–22). All four changed graph pages were rendered
+and visually checked; no clipping or final build warnings. Public compact
+evidence/report and final scientific review are being reconciled before commit.
+
+### 15:44 UTC — independent scientific review and final publication checks
+
+The independent scientific review accepts descriptive execution with scientific
+limitations: actual fit/selection,256confusion rows, fixedwindow reductions,
+21spectra/192closure reductions, source/input bindings and plotted bytes pass.
+No native inference or statebinary reanalysis is claimed. The reviewer confirms
+that the fit stopped at200epochs rather than convergence and that Persistence
+still exceeds its overallF1. The report distinguishes PR decrease from
+thresholdnumericalrank, which rises within both motifs.
+
+All30published evidence files were hashverified byteexact. No credentials or
+tracked symlinks were found. Seven stateplot metadata/display tests pass;
+previous codec/evaluator/supervisor checks remain recorded above. Large weights,
+arrays,journals and W&Bstreams stay in ignored localruns/cluster scratch.
+Next: preregister additional model/seedcoverage, implement TGCNsourceparity, and
+complete matchedordering causalretention controls before a collapseclaim.

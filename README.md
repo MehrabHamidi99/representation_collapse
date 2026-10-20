@@ -13,38 +13,38 @@ and cannot explain. "Dimension collapse across modalities" is the motivating
 umbrella, not the claim. The program began with temporal graphs (GC-LSTM on the
 public T-GRAB benchmark) and currently runs on controlled vector memory tasks.
 
-**Status (2026-10-19):** a corrected seed-0 GC-LSTM pilot now reproduces the
-qualitative within-motif F1 decline in T-GRAB Figure 10. Frozen early/late mean
-F1 decreases **0.4777 → 0.3941** (8.36 percentage points). The selected native
-checkpoint, exact complete-state replay before the single test pass, 256
-held-out scores and 21 descriptive state spectra have verified compact evidence
-and actual offline W&B history. [Report, plots, CSVs and provenance](doc/auto/figure10-gclstm-pilot-results-2026-10-19.md).
+**Status (2026-10-20):** the corrected seed-0 GC-LSTM long fit completed
+**200 epochs / 511,800 updates**; validation selected epoch **160**. Its single
+held-out pass gives mean F1 **0.891900** and a frozen early-to-late decline
+**0.959297 → 0.818771** (14.05 percentage points) within repeated motifs.
+[Verified report, plots, compact spectra and provenance](doc/auto/figure10-gclstm-longfit-results-2026-10-20.md).
 
-The interpretation depends on the state and conditioning: hidden PR falls
-within both motifs, complete hidden-plus-cell PR rises within both, and pooled
-PR mixes between-motif separation with within-motif variation. The four cycles
-repeat their reported F1 pattern; they do not show cumulative behavioral decay.
-This is one deadline-capped model, below the Persistence baseline, rather than
-the complete multi-method/five-seed figure or demonstrated useful-memory erasure.
-The original controlled-memory pilots still fail their joint competence gate.
+Complete hidden-plus-cell variance falls sharply within both motifs, while
+participation ratio decreases modestly. Hidden-only dimension moves in different
+directions between motifs. Pooling motifs produces a much larger PR decrease
+while variance increases, so conditioning changes the interpretation. States
+are not exactly periodic; no Floquet mechanism or causal memory loss is established.
+This is one corrected model/graph, below Persistence F1 **0.968750**, rather than
+the full multi-method/five-seed Figure 10. The earlier
+[seven-epoch pilot](doc/auto/figure10-gclstm-pilot-results-2026-10-19.md)
+is preserved; the two budgets are not independent replications. Controlled-memory
+pilots still fail their joint competence gate.
 
-Fresh long fit **11322268 is running on Mila**, one CPU/2 GiB/zero GPUs,
-48-hour maximum, 200-epoch cap/patience 100. Its first 256 losses exactly match
-the accepted reference, independently rechecked; it has progressed into epoch 2.
-A read-only local monitor and the existing proposal-only Qwen worker are live.
-Qwen cannot submit jobs or accept claims; native agents provide implementation
-and independent review. [Current tracker and stop controls](doc/TRACKER.md).
-The [manuscript](paper/README.md) includes both new graph figures and builds
-successfully to 21 pages. Source snapshots remain preserved.
+Mila jobs **11322268** (fit), **11330003** (selected replay/evaluation), and
+**11330070** (state analysis) completed successfully. Independent audits verified
+source identities, exact selected complete-state replay, numerical summaries
+and actual offline W&B history; cloud delivery remains unverified. The previous
+monitor had an overnight connection-error gap despite training continuing.
+The local proposal-only Qwen worker is live; a new evidence-specific review has
+been queued. Native agents implement and independently review changes.
+[Current tracker and stop controls](doc/TRACKER.md).
 
-The [coverage plan](doc/auto/figure10-coverage-and-next-fit-2026-10-19.md)
-separates this first GC-LSTM case from remaining seeds, T-GCN and other graph
-methods. A reviewed v2 selected-inference reader and replay gate are needed
-before evaluating the long fit; no new v2 test has been opened. Earlier
-[legacy-array checks](doc/auto/legacy-floquet-array-audit-results-2026-10-14.md)
-remain attributed infrastructure evidence. Numerical runs use the
-[reporting contract](doc/auto/wandb-reporting.md); verified offline history does
-not establish cloud delivery.
+The [manuscript](paper/README.md) separates the behavioral reconstruction from
+its geometric and causal limits. The
+[coverage plan](doc/auto/figure10-coverage-and-next-fit-2026-10-19.md) and
+[T-GCN readiness audit](doc/auto/tgcn-reconstruction-readiness-2026-10-20.md)
+identify remaining models, seeds and source-parity gates. Source snapshots remain
+preserved. Numerical runs follow the [reporting contract](doc/auto/wandb-reporting.md).
 
 ## Start here
 

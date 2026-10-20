@@ -1,0 +1,78 @@
+{
+  "config": {
+    "device": "cpu",
+    "loss_patience": 100,
+    "max_complete_epochs": 200,
+    "model_seed": 0,
+    "negative_seed": 1,
+    "precision": "float32",
+    "protocol": "tgrab_figure10_long_fit_v2",
+    "test_access": false,
+    "work_seconds": 172680
+  },
+  "elapsed_seconds": 33132.7413638914,
+  "entity_actual": "",
+  "entity_requested": null,
+  "finish_error_type": null,
+  "finish_returned": true,
+  "identities": {
+    "actual_supervisor_receipt_sha256": "efbef6041c944ad4af26415e6be7f057f0017e0d0412df44c6024a213946cd60",
+    "data_manifest_sha256": "a6ff50183de570ff17cfbe92b3f1976bac9d2d85557ecc11379e24b2c737d1ce",
+    "executed_long_contract_sha256": "aec185fe544bf94a1dc0ea5e952d27b0d335c3653d815f7c0796d97b747ea381",
+    "numerical_template_sha256": "22bef6bf781c5bfb5493dd5e03169ea0e658b2463ccaa9ba09189af454508f1f",
+    "prefix_reference_sha256": "825f11e7c7d7e1c2e246666859133c822137da3d3551cf344a837776e9aecc9f"
+  },
+  "last_attempted_step": 563199,
+  "last_completed_step": 563199,
+  "metadata_artifacts": [
+    {
+      "name": "long-fit-result",
+      "path": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/figure10-long/long-20261019T215117Z-1891bdd5/wandb/metadata-artifacts/long-fit-result.json",
+      "remote_delivery_verified": false,
+      "sha256": "ec89444c7655d18f1b4e3909d799f93ee2bc223de942b7a933053e02bce5c1da"
+    }
+  ],
+  "mode": "offline",
+  "privacy_settings": {
+    "capture_loggers": {},
+    "config_paths": [],
+    "console": "off",
+    "disable_code": true,
+    "disable_git": true,
+    "disable_job_creation": true,
+    "host": "not-collected",
+    "ignore_globs": [
+      "*",
+      "**/*"
+    ],
+    "launch": false,
+    "sagemaker_disable": true,
+    "save_code": false,
+    "symlink": false,
+    "x_disable_machine_info": true,
+    "x_disable_meta": true,
+    "x_disable_stats": true,
+    "x_save_requirements": false
+  },
+  "project": "representation-collapse",
+  "remote_delivery_verified": false,
+  "remote_history_verified": false,
+  "run_id": "long-20261019T215117Z-1891bdd5",
+  "run_url": null,
+  "schema_version": 1,
+  "sdk_version": "0.30.0",
+  "sdk_version_required": "0.30.0",
+  "started_at_utc": "2026-10-19T22:16:23.923795+00:00",
+  "state": "completed",
+  "summary": {
+    "reporting/elapsed_seconds": 33132.722966174595,
+    "reporting/last_step": 563199,
+    "reporting/state": "completed"
+  },
+  "sync_required": true,
+  "terminal_intent": "completed",
+  "updated_at_utc": "2026-10-20T07:28:36.661125+00:00",
+  "wandb_files_dir": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/figure10-long/long-20261019T215117Z-1891bdd5/wandb/wandb/offline-run-20261019_181657-long-20261019T215117Z-1891bdd5/files",
+  "wandb_run_dir": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/figure10-long/long-20261019T215117Z-1891bdd5/wandb/wandb/offline-run-20261019_181657-long-20261019T215117Z-1891bdd5",
+  "work_may_start": false
+}

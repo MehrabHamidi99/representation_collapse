@@ -1,0 +1,159 @@
+{
+  "checks": {
+    "256_chronological_targets": "pass",
+    "accepted_execution_lineage": "pass",
+    "actual_source_artifact_hashes": "pass",
+    "compact_spectral_verifier_pin": "pass",
+    "complete_capped_fit": "pass",
+    "controls_same_converted_graph": "pass",
+    "cycle_means": "pass",
+    "frozen_window_A": "pass",
+    "frozen_window_B": "pass",
+    "frozen_window_pooled": "pass",
+    "global_and_plot_reduction": "pass",
+    "hash_and_pointer_binding": "pass",
+    "independent_confusion_f1_arithmetic": "pass",
+    "independently_verified_21_compact_spectra_and_192_closure_reductions": "pass",
+    "plot_file_hashes_figure10_behavioral_reconstruction_plot_v2": "pass",
+    "plot_file_hashes_figure10_state_summary_plot_v2": "pass",
+    "plot_state_A_hidden": "pass",
+    "plot_state_A_hidden_and_cell": "pass",
+    "plot_state_B_hidden": "pass",
+    "plot_state_B_hidden_and_cell": "pass",
+    "plot_state_pooled_hidden": "pass",
+    "plot_state_pooled_hidden_and_cell": "pass",
+    "primitive_v2_no_legacy_head": "pass",
+    "validation_only_earliest_maximum": "pass"
+  },
+  "closure": {
+    "all_complete_states_bitwise_equal": false,
+    "comparison_count": 192,
+    "cycle_pairs": 3,
+    "floquet_or_jacobian_periodicity_certified": false,
+    "maximum_absolute_l2_residual": 7.906618134057294,
+    "maximum_relative_l2_residual": 0.011679290725007632,
+    "period_steps": 64,
+    "phase_count": 64,
+    "rms_absolute_l2_residual": 6.808126171603967
+  },
+  "complete_epochs": 200,
+  "concerns": [
+    "This is one seed and one generated graph sequence, with correlated phases and repeated cycles; there is no paired multi-seed uncertainty or independent graph replication.",
+    "The 200-epoch cap was reached with only42 nonimproving loss epochs since best loss epoch158. This is a capped corrected reconstruction, not evidence of convergence or an exact historical five-seed Figure10 reproduction.",
+    "Behavior decays within fixed motif windows but cycle-mean F1 stays approximately constant. This supports recurrent phase-local degradation, not cumulative erasure across repetitions.",
+    "Complete H+C PR falls modestly within motifs; hidden-only PR rises slightly in A and falls slightly in B. Neither hidden-only dimension nor joint covariance is a causal memory test.",
+    "Within-motif covariance trace falls strongly; pooled trace increases while pooled PR falls. Pooling includes between-motif mean separation, and every window is centered independently. Amplitude contraction, normalized dimension and separation must remain distinct.",
+    "Centered cloud rank ceilings are31 for each32-target motif window,63 pooled,255 all-targets. These are descriptive finite-time clouds, not population dimensions; repeated phases are not independent samples.",
+    "Nonzero period64 complete-state closure residual precludes an exact periodic-orbit certification. No Jacobian, Floquet multiplier or tangent contraction has been measured.",
+    "Previous-graph persistence exceeds mean model F1 despite failing transitions. Report both total and transition/nontransition behavior; the known-generator phase counter is an oracle, not a learned competitor.",
+    "No matched periodic/nonperiodic retention intervention or shams were executed here, so periodicity-caused loss of task-required memory and cross-modal generalization remain open.",
+    "Compact arithmetic and metadata hashes were independently checked; raw state arrays, model weights and native replay were not independently reexecuted in this review. Offline W&B delivery remains unverified online."
+  ],
+  "confirmed_updates": 511800,
+  "cycle_mean_f1": [
+    0.8918476391429598,
+    0.8919292316750946,
+    0.8919292316750946,
+    0.8918938376212957
+  ],
+  "exact_paper_reproduction": false,
+  "input_sha256": {
+    "doc/auto/figure10-deterministic-controls-results-2026-10-19.json": "0ad5eb51478847347aacc8972af39b53e2389821006039efd8b41d5d812e995f",
+    "doc/auto/figures/figure10-gclstm-longfit-2026-10-20/evidence/behavioral-interpretation.json": "b5b44374ae69b442737d6a27d5da0d9682f16baf5349e7cbc243a17e39c98b9b",
+    "doc/auto/figures/figure10-gclstm-longfit-2026-10-20/evidence/evaluation-acceptance.json": "0719767b17c071998200f07addb81234bc1dc153348bf1e044244b517fc46c8b",
+    "doc/auto/figures/figure10-gclstm-longfit-2026-10-20/evidence/evaluation-result.json": "5dda0b134ac5961a6c145e60eb825cd5e4d91d6187a9037b64c7a9ba3cc657f3",
+    "doc/auto/figures/figure10-gclstm-longfit-2026-10-20/evidence/fit-acceptance.json": "d5c6be87daa0923136b4a22cc7c8c9a8c2700a78142875c249f14f5d7c39d3de",
+    "doc/auto/figures/figure10-gclstm-longfit-2026-10-20/evidence/fit-summary.json": "147908d8cdb37526fbdeb35e4259b06d1bbaf3be41ecbe2b2bc114466c77ee24",
+    "doc/auto/figures/figure10-gclstm-longfit-2026-10-20/evidence/trajectory-acceptance.json": "f97e45b827db9ab0727f57c9fa30cb9e9fa0e3227ec4df433e233bc3f25687d9",
+    "doc/auto/figures/figure10-gclstm-longfit-2026-10-20/evidence/trajectory-analysis.json": "0c980c3503d292912b8f419b6e531a156921b8703a164124dbc8b9ea3e154abf",
+    "doc/auto/figures/figure10-gclstm-longfit-2026-10-20/figure-manifest.json": "a32c849c0e88d605b00610e6724bfcdf13cc287e1a62bb8b0275287021ddef87",
+    "doc/auto/figures/figure10-gclstm-longfit-2026-10-20/state-figure-manifest.json": "d3700b556f7689aadbe4b059ca39d3dcc6b8b70b36c0a28245b853a879768d99"
+  },
+  "kind": "figure10_longfit_independent_scientific_review_v1",
+  "native_replay_independently_executed": false,
+  "next_step": "Preserve this corrected Figure10 reconstruction as descriptive behavioral and full-state evidence; next freeze a paired multi-seed, matched ordering intervention with complete-state causal retention controls and shams before any collapse claim. Training-budget replication should use a new predeclared run, never reselect this held-out checkpoint.",
+  "persistence_comparison": {
+    "model_mean_f1": 0.8918999850286112,
+    "model_minus_persistence_mean_f1": -0.07685001497138877,
+    "model_transition_f1": 0.6531746997538121,
+    "persistence_mean_f1": 0.96875,
+    "persistence_transition_f1": 0.0
+  },
+  "review_source_sha256": "1a918b52980aa851af935f46e22484faa8f6b86f930a917a79f2a33dbb09470b",
+  "scientific_collapse_claim": false,
+  "scope": "Independent compact JSON/F1/spectral arithmetic, plot file hashes and acceptance lineage only; no state/weight/data payload access.",
+  "selected_epoch": 160,
+  "selected_validation_f1": 0.8918793674179636,
+  "state_arrays_independently_reanalyzed": false,
+  "state_plot_summaries": {
+    "A": {
+      "hidden": {
+        "early_covariance_trace": 120.59978389573837,
+        "early_pr": 1.4394862576631724,
+        "late_covariance_trace": 15.152449993160447,
+        "late_pr": 1.4472784779784895,
+        "late_to_early_trace_ratio": 0.12564243072160172
+      },
+      "hidden_and_cell": {
+        "early_covariance_trace": 3759.7879634350556,
+        "early_pr": 1.132672328518859,
+        "late_covariance_trace": 423.8589274550757,
+        "late_pr": 1.1070226704904862,
+        "late_to_early_trace_ratio": 0.11273479557284007
+      }
+    },
+    "B": {
+      "hidden": {
+        "early_covariance_trace": 127.63908254274843,
+        "early_pr": 1.4279739739191812,
+        "late_covariance_trace": 14.335263557366678,
+        "late_pr": 1.419178514629423,
+        "late_to_early_trace_ratio": 0.112310926025072
+      },
+      "hidden_and_cell": {
+        "early_covariance_trace": 3765.7289246580813,
+        "early_pr": 1.128029275884677,
+        "late_covariance_trace": 402.46751309447734,
+        "late_pr": 1.0981192420135684,
+        "late_to_early_trace_ratio": 0.10687638997568588
+      }
+    },
+    "pooled": {
+      "hidden": {
+        "early_covariance_trace": 339.72993765800015,
+        "early_pr": 1.9826087075205807,
+        "late_covariance_trace": 391.2304168682532,
+        "late_pr": 1.076652174527256,
+        "late_to_early_trace_ratio": 1.1515924076791184
+      },
+      "hidden_and_cell": {
+        "early_covariance_trace": 11095.624359707102,
+        "early_pr": 1.830505887928883,
+        "late_covariance_trace": 26000.94333112226,
+        "late_pr": 1.0278253170659202,
+        "late_to_early_trace_ratio": 2.343351080408117
+      }
+    }
+  },
+  "status": "accepted_descriptive_execution_with_scientific_limitations",
+  "windows": {
+    "A": {
+      "early_mean_f1": 0.964195689739727,
+      "late_mean_f1": 0.7976675417110206,
+      "late_minus_early_f1": -0.1665281480287064,
+      "targets_per_window": 32
+    },
+    "B": {
+      "early_mean_f1": 0.9543980452338039,
+      "late_mean_f1": 0.8398739914845319,
+      "late_minus_early_f1": -0.11452405374927199,
+      "targets_per_window": 32
+    },
+    "pooled": {
+      "early_mean_f1": 0.9592968674867655,
+      "late_mean_f1": 0.8187707665977763,
+      "late_minus_early_f1": -0.1405261008889892,
+      "targets_per_window": 64
+    }
+  }
+}

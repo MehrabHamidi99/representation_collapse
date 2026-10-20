@@ -20,7 +20,8 @@ and [source-derived checkpoint catalog](auto/tgrab-selected-tensor-catalog-indep
 have also passed review. Primary conversion and the small native node2a
 fixture have since been independently verified. Selected trained-checkpoint loading and the seed-0 held-out reconstruction are
 verified. Harmful useful-memory erasure and the full multi-method Figure 10
-remain unresolved. The longer cluv fit is running; see the tracker.
+remain unresolved. The longer cluv fit and its selected evaluation/state analysis completed; see the
+[long-fit report](auto/figure10-gclstm-longfit-results-2026-10-20.md) and tracker.
 The [selected checkpoint proposal](auto/tgrab-selected-checkpoint-codec-proposal-2026-10-16.md)
 records the original format decisions; current implementations and execution
 evidence are indexed by the tracker.

@@ -1,0 +1,74 @@
+{
+  "config": {
+    "analysis_precision": "float64",
+    "inferential_tests": false,
+    "model_seeds": 1,
+    "protocol": "figure10_descriptive_state_trajectory_v1",
+    "source_dtype": "float32_le",
+    "time_rows": 256
+  },
+  "elapsed_seconds": 38.128507181070745,
+  "entity_actual": "",
+  "entity_requested": null,
+  "finish_error_type": null,
+  "finish_returned": true,
+  "identities": {
+    "analysis_source_sha256": "883b984c5754f1d251b4ba99a9851ebe32000cba08d01cf3c40c7eedb99dbacc",
+    "evaluation_result_sha256": "5dda0b134ac5961a6c145e60eb825cd5e4d91d6187a9037b64c7a9ba3cc657f3",
+    "protocol_sha256": "b0503dad7a939f56f333990c47f038abba966918883e2540c8eb1b709dd59527",
+    "trajectory_sha256": "efa3a9faf5655230dc8fa3f97b5fd8c63d6fb6f8f1323b7cb37f50ff282c9a6d"
+  },
+  "last_attempted_step": 21,
+  "last_completed_step": 21,
+  "metadata_artifacts": [
+    {
+      "name": "trajectory-analysis-result",
+      "path": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/figure10-trajectory/trajectory-20261020T153626Z-3a1a297b/wandb/metadata-artifacts/trajectory-analysis-result.json",
+      "remote_delivery_verified": false,
+      "sha256": "bb5c9b9303c127962be7975fcc94a6cc04b2f08b13db54f591018c2a25dadcef"
+    }
+  ],
+  "mode": "offline",
+  "privacy_settings": {
+    "capture_loggers": {},
+    "config_paths": [],
+    "console": "off",
+    "disable_code": true,
+    "disable_git": true,
+    "disable_job_creation": true,
+    "host": "not-collected",
+    "ignore_globs": [
+      "*",
+      "**/*"
+    ],
+    "launch": false,
+    "sagemaker_disable": true,
+    "save_code": false,
+    "symlink": false,
+    "x_disable_machine_info": true,
+    "x_disable_meta": true,
+    "x_disable_stats": true,
+    "x_save_requirements": false
+  },
+  "project": "representation-collapse",
+  "remote_delivery_verified": false,
+  "remote_history_verified": false,
+  "run_id": "trajectory-20261020T153626Z-3a1a297b",
+  "run_url": null,
+  "schema_version": 1,
+  "sdk_version": "0.30.0",
+  "sdk_version_required": "0.30.0",
+  "started_at_utc": "2026-10-20T15:37:21.486878+00:00",
+  "state": "completed",
+  "summary": {
+    "reporting/elapsed_seconds": 38.119269916787744,
+    "reporting/last_step": 21,
+    "reporting/state": "completed"
+  },
+  "sync_required": true,
+  "terminal_intent": "completed",
+  "updated_at_utc": "2026-10-20T15:37:59.614865+00:00",
+  "wandb_files_dir": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/figure10-trajectory/trajectory-20261020T153626Z-3a1a297b/wandb/wandb/offline-run-20261020_113729-trajectory-20261020T153626Z-3a1a297b/files",
+  "wandb_run_dir": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/figure10-trajectory/trajectory-20261020T153626Z-3a1a297b/wandb/wandb/offline-run-20261020_113729-trajectory-20261020T153626Z-3a1a297b",
+  "work_may_start": false
+}

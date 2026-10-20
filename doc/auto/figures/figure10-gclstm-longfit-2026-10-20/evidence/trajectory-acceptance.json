@@ -1,0 +1,209 @@
+{
+  "accepted_evaluation_kind": "figure10_primitive_v2_selected_evaluation_execution_acceptance_v3",
+  "accepted_evaluation_receipt_sha256": "0719767b17c071998200f07addb81234bc1dc153348bf1e044244b517fc46c8b",
+  "analysis_result_path": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/figure10-trajectory/trajectory-20261020T153626Z-3a1a297b/trajectory-analysis.json",
+  "analysis_result_sha256": "0c980c3503d292912b8f419b6e531a156921b8703a164124dbc8b9ea3e154abf",
+  "candidate_manifest_sha256": "4abeba2b64261468c8844ee302570d6c5d48cec873a51f9eafd1e6010f75db61",
+  "causal_retention_claim": false,
+  "checkpoint_format": "primitive_v2",
+  "cloud_summaries": {
+    "A_early": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 18,
+        "samples": 32,
+        "trace": 3639.1881795393183
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 19,
+        "samples": 32,
+        "trace": 120.59978389573837
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 18,
+        "samples": 32,
+        "trace": 3759.7879634350556
+      }
+    },
+    "A_late": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 18,
+        "samples": 32,
+        "trace": 408.70647746191537
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 20,
+        "samples": 32,
+        "trace": 15.152449993160447
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 19,
+        "samples": 32,
+        "trace": 423.8589274550757
+      }
+    },
+    "B_early": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 17,
+        "samples": 32,
+        "trace": 3638.089842115333
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 19,
+        "samples": 32,
+        "trace": 127.63908254274843
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 18,
+        "samples": 32,
+        "trace": 3765.7289246580813
+      }
+    },
+    "B_late": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 19,
+        "samples": 32,
+        "trace": 388.1322495371106
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 20,
+        "samples": 32,
+        "trace": 14.335263557366678
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 20,
+        "samples": 32,
+        "trace": 402.46751309447734
+      }
+    },
+    "all_targets": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 67,
+        "samples": 256,
+        "trace": 17810.4641241787
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 75,
+        "samples": 256,
+        "trace": 439.98609769481374
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 66,
+        "samples": 256,
+        "trace": 18250.45022187353
+      }
+    },
+    "pooled_early": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 25,
+        "samples": 64,
+        "trace": 10755.894422049096
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 27,
+        "samples": 64,
+        "trace": 339.72993765800015
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 26,
+        "samples": 64,
+        "trace": 11095.624359707102
+      }
+    },
+    "pooled_late": {
+      "cell": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 23,
+        "samples": 64,
+        "trace": 25609.71291425399
+      },
+      "hidden": {
+        "features": 12800,
+        "normalized_dimension_defined": true,
+        "rank": 27,
+        "samples": 64,
+        "trace": 391.2304168682532
+      },
+      "hidden_and_cell": {
+        "features": 25600,
+        "normalized_dimension_defined": true,
+        "rank": 23,
+        "samples": 64,
+        "trace": 26000.94333112226
+      }
+    }
+  },
+  "clouds_verified": 21,
+  "collected_metadata_sha256": {
+    "analysis-manifest.json": "6fe0d807f52096d8bb97e9e4e51d3fa952fe87f12853434553e3c20d846bfc13",
+    "trajectory-analysis.json": "0c980c3503d292912b8f419b6e531a156921b8703a164124dbc8b9ea3e154abf",
+    "wandb/metadata-artifacts/trajectory-analysis-result.json": "bb5c9b9303c127962be7975fcc94a6cc04b2f08b13db54f591018c2a25dadcef",
+    "wandb/reporting-receipt.json": "0bee2c1229fbb16780a2e85ac384f99d409c210852ff33fde87401b6cd870f67"
+  },
+  "compact_spectral_arithmetic_verified": true,
+  "evaluation_result_sha256": "5dda0b134ac5961a6c145e60eb825cd5e4d91d6187a9037b64c7a9ba3cc657f3",
+  "executed_long_contract_sha256": "aec185fe544bf94a1dc0ea5e952d27b0d335c3653d815f7c0796d97b747ea381",
+  "floquet_claim": false,
+  "job_id": "11330070",
+  "kind": "figure10_compact_trajectory_execution_acceptance_v1",
+  "offline_transaction_audit": {
+    "decoded_history_rows": 22,
+    "exit_code": 0,
+    "remote_delivery_verified": false,
+    "result_artifact_verified": true,
+    "sha256": "ee442e71396c336d232ad5028f2abe718f8e568ec50aa445ea4e1f1a25589262"
+  },
+  "period64_comparisons_verified": 192,
+  "protobuf_helper_sha256": "c51ad31e7d6e948074e0e37046b14ab84602ba7f9d056e01d0a6e5ca84fe24ea",
+  "remote_delivery_verified": false,
+  "run_id": "trajectory-20261020T153626Z-3a1a297b",
+  "scheduler_sha256": "077646c9fc64e7f50fb23242a41749dec7c32d0f8324d22c861af4da9c31de34",
+  "scientific_acceptance": false,
+  "scientific_collapse_claim": false,
+  "scope": "Compact output arithmetic/provenance and real offline protobuf only; no independent state-array reanalysis or graph/weight/state binary read.",
+  "selected_pointer_sha256": "b40bde9b67af8cc5b1c32e8f043886fd75eb6649196588e7fc0b70d3b644662c",
+  "source_closure_git_verified": true,
+  "source_commit": "3a1a297bc84fb96c66ddd34df7aa4ff62e46716d",
+  "state_arrays_independently_reanalyzed": false,
+  "status": "accepted",
+  "supervisor_journal_sha256": "d3e13a050cdd16e9bcd9d6c0dc0f4e3102e48011a23a4c42ca0147ea1c5a40f5",
+  "supervisor_receipt_sha256": "f3263919c2923ef5900496f369111faf4f1d2ca8a09e95461af76e9171eb26e6",
+  "trajectory_sha256": "efa3a9faf5655230dc8fa3f97b5fd8c63d6fb6f8f1323b7cb37f50ff282c9a6d",
+  "verifier_sha256": "5196b94cd412cb40f0bc223ab6b30953e578f751feb689cebefb1090f940d8e8"
+}
