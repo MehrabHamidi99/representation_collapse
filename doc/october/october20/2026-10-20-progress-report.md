@@ -236,3 +236,51 @@ previous codec/evaluator/supervisor checks remain recorded above. Large weights,
 arrays,journals and W&Bstreams stay in ignored localruns/cluster scratch.
 Next: preregister additional model/seedcoverage, implement TGCNsourceparity, and
 complete matchedordering causalretention controls before a collapseclaim.
+
+### 19:23 UTC — next Figure 10 model: T-GCN engineering gate
+
+Resumed the remaining model coverage using the recovered official T-GCN
+wrapper/dependency sources. Bounded disjoint native workers own the hidden-only
+backend, synthetic calibration, and independent protocol/code review. The
+coordinator owns source integration and a single cluv CPU calibration job.
+No new empirical fit or held-out evaluation has run in this continuation.
+
+The dedicated backend preserves `add_self_loops=False`, `cached=False`,
+`improved=False`, complete hidden state [1,N,H], canonical nodes, strict dual
+component weights and source-derived parameter expectations. GC-LSTM formats
+and accepted results remain untouched. Calibration will test a tiny dynamic
+weighted graph and production tensor inventory before any T-GCN fit.
+
+Actual local cluv is0.1.5. Mila project-filtered scheduler inspection finds no
+matching project jobs. Remote `rg` is absent; the inspection was repeated using
+available Python rather than treating the failed filter as an empty queue.
+Prepared resource envelope: one Mila cluv submission, accountmila/QOSnormal,
+main-cpu/Rome,1CPU/2GiB/zeroGPU/10minutes,540swork/570sphysicaltimeout,
+no retry/requeue/race, synthetic inputs only. This follows the owner's explicit
+Figure10 retraining/reproduction authorization without repeated compute approval.
+Exact committed source, admission, output and command will be pinned before launch.
+Six pure supervisor admission checks pass; native numerical gates remain pending.
+
+### 19:30 UTC — T-GCN prelaunch review corrections
+
+Independent review and coordinator inspection caught a calibration gap before
+native execution: a first update from H=0 cannot test reset-gate gradients.
+The frozen synthetic branch now warms A at t0 without gradients, detaches its
+nonzero H, consumes B at t1 with gradients, and scores matching targetD at t2.
+Both branches use the same explicit0.1 head-parameter fixture to avoid dead
+ReLUs, paired dropout RNG and one Adam update. A nonzero reset-gate gradient
+is required. This is deliberately synthetic engineering evidence, not a fit.
+
+Backend safeguards now reject parameter/payload aliases before mutation, compare
+FP32 readback bytes including signedzero, and enforce normalization/source-to-target
+flow as well as no cache/selfloops. The independent supervisor stops by560s,
+worker guard by540s and shell by570s. Fourteen backend, seven calibration and
+six supervisor tests pass, without native models. Repeated seed0 constructor
+byte/RNG checks are being added before source freeze.
+
+The independently downloaded lockedPyG2.6.1 wheel SHA8faeb353f9655f7dbec44c5e0b44c721773bdfb279994da96b9b8b12fd30f427
+contains GCNConv SHA036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6,
+matching the installed source read on Mila (10,415bytes). No native code was
+executed to verify this pin. Three public wrapper/base/head files were staged
+create-only/hashverified on scratch. Qwen heartbeat remains current with43
+valid reviews, zero provider errors and waiting for evidence.
