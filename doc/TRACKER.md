@@ -9,6 +9,17 @@ the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
 
+- **2026-10-20 20:11 UTC — repetition-length diagnostic running.**
+  User-directed subgoal: longer repetition and task-required memorization.
+  Cluv job **11332452** runs source **3541ae0** on Mila cn-f003,
+  1CPU/4GiB/zeroGPU/two-hour maximum. Fixed accepted epoch160 GC-LSTM,
+  train-derived A/B motifs, dwell8..256, both starts, 2048targets each.
+  [Frozen protocol](auto/repetition-dwell-protocol-2026-10-20.md) and
+  [goal](auto/repetition-memory-goal-2026-10-20.md). Offline reporting and
+  first condition rows exist; no completed trend or memory-capacity claim yet.
+  Independent reducer/plots are under review; original held-out evaluation
+  and completed training source remain unchanged.
+
 - **2026-10-20 — production T-GCN training prefix independently accepted.**
   Cluv job **11332237** completed `0:0` in30s oncn-f003, source`371aba99`.
   Verified **256 actual training updates**, **512 durable optimizer records**,

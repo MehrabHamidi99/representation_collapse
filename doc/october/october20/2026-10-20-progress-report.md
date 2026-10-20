@@ -375,3 +375,21 @@ jobs. A new generated-forcing diagnostic is being prepared with fixed accepted
 GC-LSTM epoch160 weights, train-only A/B motifs, dwell8..256, both starts and
 2048 steps each. Native implementation/protocol/review have separate owners.
 No new numerical result or launch is claimed at this preparation stage.
+
+### 20:11 UTC — repetition sweep launched and running
+
+Reviewed source3541ae02441357664a9328fcfebd515a472d9668 was pushed and staged
+in its own scratch worktree. Native cluv0.1.5 submitted exactly one job11332452;
+actual scheduler reports RUNNING oncn-f003. OneCPU/4GiB/zeroGPU/twohours,
+worker7080s/shell7140s, no retry/requeue/race. Offline reporter and first
+condition rows exist. An initial local cluv preview failed because its isolated
+controller lacked the local jobscript; copied reviewed script before preview
+and submission. No failed cluster job or numerical retry resulted.
+
+The worker/protocol/source review and14focused tests passed. Exact immutable
+preview, launch, create-only submission intent and returnedjob are under ignored
+`runs/ops/repetition-dwell-20261020/dwell-20261020T200909Z-3541ae02/`.
+The run keeps selected state clouds on scratch. Independent compact reduction
+and plots are being reviewed. A postfreeze suggested prose clarification of
+last1024 supplemental windows was reverted; executed protocol remains exact.
+No sweep results have been accepted at this point.
