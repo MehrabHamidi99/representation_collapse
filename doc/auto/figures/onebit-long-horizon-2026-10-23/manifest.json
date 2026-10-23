@@ -1,0 +1,26 @@
+{
+  "onebit-long-horizon.png": {
+    "sha256": "f5d2e06a41ad12be3f774671d4a3fcabc2d055914c7f94ade131991c324ce92f",
+    "bytes": 74302
+  },
+  "reduction-results.json": {
+    "sha256": "446eb034e24dac137a11579f70246e5ef949dd805a0d6b8879383958a9306231",
+    "bytes": 5805
+  },
+  "scheduler.json": {
+    "sha256": "f9d4e5a608011b61695622105b9e6a4f6a37578ad226f7e2bff979c808ad0eaf",
+    "bytes": 290
+  },
+  "reporting-verification.json": {
+    "sha256": "7e616696efe96766161c18297e57da841b7516ab675a14b0a3aa5dd6da548638",
+    "bytes": 849
+  },
+  "identity.json": {
+    "sha256": "89a2e03ccb57436fa66cd941bae69fa7e0c70e289938a2710424087430aabc6f",
+    "bytes": 624
+  },
+  "reporting-receipt.json": {
+    "sha256": "41592172ff2c88a86a9e7f44ae354bef34c95010046d9a00073de28ef26b3130",
+    "bytes": 2595
+  }
+}

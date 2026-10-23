@@ -1,0 +1,12 @@
+{
+  "job_id": "639080",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed": "00:00:55",
+  "node": "tc11101",
+  "raw": [
+    "639080|COMPLETED|0:0|00:00:55|tc11101|",
+    "639080.batch|COMPLETED|0:0|00:00:55|tc11101|484184K",
+    "639080.extern|COMPLETED|0:0|00:00:55|tc11101|"
+  ]
+}

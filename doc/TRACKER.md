@@ -1,6 +1,6 @@
 # Current research state
 
-Updated 2026-10-23 15:48 UTC. See the [latest notebook entry](october/october23/2026-10-23-progress-report.md),
+Updated 2026-10-23 15:57 UTC. See the [latest notebook entry](october/october23/2026-10-23-progress-report.md),
 the [October 20 notebook](october/october20/2026-10-20-progress-report.md),
 the [October 19 notebook](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
@@ -9,6 +9,16 @@ the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **2026-10-23 — frozen one-bit checkpoint retains memory through 6,144 steps.**
+  Cluv Tamia job **639080**, source **37f9952**, completed `0:0` in 55 seconds.
+  Independent reduction verifies all six frozen conditions and 12,288 held-out
+  rows; actual offline W&B audit verifies seven histories and completed report.
+  Both arms score **1.0** at R64/128/256/512 q1 and equal-length R256q2/R128q4;
+  primary δ512 and all other paired error differences are zero. Raw complete
+  H+C PR remains near one while cue separation and useful recall persist.
+  [Verified report and plot](auto/onebit-long-horizon-results-2026-10-23.md).
+  One seed/bit; next discriminating node is higher independent memory load.
 
 - **2026-10-23 — competent one-bit memory discovery accepted as a negative result.**
   Cluv Tamia job **633041**, frozen source **790fb94**, completed `0:0` in one

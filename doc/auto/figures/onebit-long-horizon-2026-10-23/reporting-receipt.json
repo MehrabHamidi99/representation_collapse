@@ -1,0 +1,72 @@
+{
+  "config": {
+    "condition_count": 6,
+    "forcing_draws_per_condition": 512,
+    "task": "onebit-long-horizon",
+    "test_rng_seed": 4000,
+    "trained_seed": 0
+  },
+  "elapsed_seconds": 44.17339225509204,
+  "entity_actual": "",
+  "entity_requested": null,
+  "finish_error_type": null,
+  "finish_returned": true,
+  "identities": {
+    "checkpoint_sha256": "1af080a2cef09b68d627ef4389f2b2a1d03983098b10f8e08d38063d2e281c9e",
+    "protocol_sha256": "658bb06b4276b87d8d7ea63653ce2012c727728c11ae0d2fdda551ea12ceda1f",
+    "worker_sha256": "5759dc5fa9f9919bc580cffa9913ae48b6117fe71c62a72d2b0c17f915104808"
+  },
+  "last_attempted_step": 7,
+  "last_completed_step": 7,
+  "metadata_artifacts": [
+    {
+      "name": "result",
+      "path": "/scratch/m/mehrab/representation-collapse/runs/onebit-long-horizon/onebit-long-20261023T155355Z-37f9952a/reporting/metadata-artifacts/result.json",
+      "remote_delivery_verified": false,
+      "sha256": "9719ccb2b42e15b9c7aad79034dcc1882ef7d4fe2c1a75b725a3d1a56a00ed6f"
+    }
+  ],
+  "mode": "offline",
+  "privacy_settings": {
+    "capture_loggers": {},
+    "config_paths": [],
+    "console": "off",
+    "disable_code": true,
+    "disable_git": true,
+    "disable_job_creation": true,
+    "host": "not-collected",
+    "ignore_globs": [
+      "*",
+      "**/*"
+    ],
+    "launch": false,
+    "sagemaker_disable": true,
+    "save_code": false,
+    "symlink": false,
+    "x_disable_machine_info": true,
+    "x_disable_meta": true,
+    "x_disable_stats": true,
+    "x_save_requirements": false
+  },
+  "project": "representation-collapse",
+  "remote_delivery_verified": false,
+  "remote_history_verified": false,
+  "run_id": "onebit-long-20261023T155355Z-37f9952a",
+  "run_url": null,
+  "schema_version": 1,
+  "sdk_version": "0.30.0",
+  "sdk_version_required": "0.30.0",
+  "started_at_utc": "2026-10-23T15:56:05.032305+00:00",
+  "state": "completed",
+  "summary": {
+    "reporting/elapsed_seconds": 44.166139618027955,
+    "reporting/last_step": 7,
+    "reporting/state": "completed"
+  },
+  "sync_required": true,
+  "terminal_intent": "completed",
+  "updated_at_utc": "2026-10-23T15:56:49.205539+00:00",
+  "wandb_files_dir": "/scratch/m/mehrab/representation-collapse/runs/onebit-long-horizon/onebit-long-20261023T155355Z-37f9952a/reporting/wandb/offline-run-20261023_115607-onebit-long-20261023T155355Z-37f9952a/files",
+  "wandb_run_dir": "/scratch/m/mehrab/representation-collapse/runs/onebit-long-horizon/onebit-long-20261023T155355Z-37f9952a/reporting/wandb/offline-run-20261023_115607-onebit-long-20261023T155355Z-37f9952a",
+  "work_may_start": false
+}

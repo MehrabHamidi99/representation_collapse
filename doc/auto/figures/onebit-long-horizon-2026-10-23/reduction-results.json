@@ -1,0 +1,250 @@
+{
+  "status": "verified_compact",
+  "conditions": [
+    {
+      "condition": "R64-q1",
+      "forcing_units": 512,
+      "counts": {
+        "bit0_arm0": 512,
+        "bit0_arm1": 512,
+        "bit1_arm0": 512,
+        "bit1_arm1": 512
+      },
+      "accuracy": {
+        "bit0_arm0": 1.0,
+        "bit0_arm1": 1.0,
+        "bit1_arm0": 1.0,
+        "bit1_arm1": 1.0
+      },
+      "arm_accuracy": {
+        "0": 1.0,
+        "1": 1.0
+      },
+      "mean_accuracy": 1.0,
+      "cross_entropy": {
+        "0": 1.304732427853325e-07,
+        "1": 1.3047323222520335e-07
+      },
+      "paired_error_difference": 0.0,
+      "swap_donor_accuracy": 1.0,
+      "intervention_accuracy_against_original": {
+        "same_cue_copy": 1.0,
+        "zero": 0.5,
+        "swap": 0.0,
+        "self_copy": 1.0,
+        "native": 1.0
+      },
+      "R": 64,
+      "q": 1,
+      "body_steps": 768
+    },
+    {
+      "condition": "R128-q1",
+      "forcing_units": 512,
+      "counts": {
+        "bit0_arm0": 512,
+        "bit0_arm1": 512,
+        "bit1_arm0": 512,
+        "bit1_arm1": 512
+      },
+      "accuracy": {
+        "bit0_arm0": 1.0,
+        "bit0_arm1": 1.0,
+        "bit1_arm0": 1.0,
+        "bit1_arm1": 1.0
+      },
+      "arm_accuracy": {
+        "0": 1.0,
+        "1": 1.0
+      },
+      "mean_accuracy": 1.0,
+      "cross_entropy": {
+        "0": 1.304734858495818e-07,
+        "1": 1.3047347662605707e-07
+      },
+      "paired_error_difference": 0.0,
+      "swap_donor_accuracy": 1.0,
+      "intervention_accuracy_against_original": {
+        "same_cue_copy": 1.0,
+        "zero": 0.5,
+        "swap": 0.0,
+        "self_copy": 1.0,
+        "native": 1.0
+      },
+      "R": 128,
+      "q": 1,
+      "body_steps": 1536
+    },
+    {
+      "condition": "R256-q1",
+      "forcing_units": 512,
+      "counts": {
+        "bit0_arm0": 512,
+        "bit0_arm1": 512,
+        "bit1_arm0": 512,
+        "bit1_arm1": 512
+      },
+      "accuracy": {
+        "bit0_arm0": 1.0,
+        "bit0_arm1": 1.0,
+        "bit1_arm0": 1.0,
+        "bit1_arm1": 1.0
+      },
+      "arm_accuracy": {
+        "0": 1.0,
+        "1": 1.0
+      },
+      "mean_accuracy": 1.0,
+      "cross_entropy": {
+        "0": 1.3047019813746535e-07,
+        "1": 1.3047018750534517e-07
+      },
+      "paired_error_difference": 0.0,
+      "swap_donor_accuracy": 1.0,
+      "intervention_accuracy_against_original": {
+        "same_cue_copy": 1.0,
+        "zero": 0.5,
+        "swap": 0.0,
+        "self_copy": 1.0,
+        "native": 1.0
+      },
+      "R": 256,
+      "q": 1,
+      "body_steps": 3072
+    },
+    {
+      "condition": "R512-q1",
+      "forcing_units": 512,
+      "counts": {
+        "bit0_arm0": 512,
+        "bit0_arm1": 512,
+        "bit1_arm0": 512,
+        "bit1_arm1": 512
+      },
+      "accuracy": {
+        "bit0_arm0": 1.0,
+        "bit0_arm1": 1.0,
+        "bit1_arm0": 1.0,
+        "bit1_arm1": 1.0
+      },
+      "arm_accuracy": {
+        "0": 1.0,
+        "1": 1.0
+      },
+      "mean_accuracy": 1.0,
+      "cross_entropy": {
+        "0": 1.3046715982827778e-07,
+        "1": 1.3046714812062904e-07
+      },
+      "paired_error_difference": 0.0,
+      "swap_donor_accuracy": 1.0,
+      "intervention_accuracy_against_original": {
+        "same_cue_copy": 1.0,
+        "zero": 0.5,
+        "swap": 0.0,
+        "self_copy": 1.0,
+        "native": 1.0
+      },
+      "R": 512,
+      "q": 1,
+      "body_steps": 6144
+    },
+    {
+      "condition": "R256-q2",
+      "forcing_units": 512,
+      "counts": {
+        "bit0_arm0": 512,
+        "bit0_arm1": 512,
+        "bit1_arm0": 512,
+        "bit1_arm1": 512
+      },
+      "accuracy": {
+        "bit0_arm0": 1.0,
+        "bit0_arm1": 1.0,
+        "bit1_arm0": 1.0,
+        "bit1_arm1": 1.0
+      },
+      "arm_accuracy": {
+        "0": 1.0,
+        "1": 1.0
+      },
+      "mean_accuracy": 1.0,
+      "cross_entropy": {
+        "0": 1.0856906628711402e-06,
+        "1": 1.085473483354582e-06
+      },
+      "paired_error_difference": 0.0,
+      "swap_donor_accuracy": 1.0,
+      "intervention_accuracy_against_original": {
+        "same_cue_copy": 1.0,
+        "zero": 0.5,
+        "swap": 0.0,
+        "self_copy": 1.0,
+        "native": 1.0
+      },
+      "R": 256,
+      "q": 2,
+      "body_steps": 6144
+    },
+    {
+      "condition": "R128-q4",
+      "forcing_units": 512,
+      "counts": {
+        "bit0_arm0": 512,
+        "bit0_arm1": 512,
+        "bit1_arm0": 512,
+        "bit1_arm1": 512
+      },
+      "accuracy": {
+        "bit0_arm0": 1.0,
+        "bit0_arm1": 1.0,
+        "bit1_arm0": 1.0,
+        "bit1_arm1": 1.0
+      },
+      "arm_accuracy": {
+        "0": 1.0,
+        "1": 1.0
+      },
+      "mean_accuracy": 1.0,
+      "cross_entropy": {
+        "0": 9.68549026128876e-07,
+        "1": 9.685288937522074e-07
+      },
+      "paired_error_difference": 0.0,
+      "swap_donor_accuracy": 1.0,
+      "intervention_accuracy_against_original": {
+        "same_cue_copy": 1.0,
+        "zero": 0.5,
+        "swap": 0.0,
+        "self_copy": 1.0,
+        "native": 1.0
+      },
+      "R": 128,
+      "q": 4,
+      "body_steps": 6144
+    }
+  ],
+  "contrasts": {
+    "delta512": 0.0,
+    "delta64": 0.0,
+    "delta512_minus_delta64": 0.0
+  },
+  "episode_rows_verified": 12288,
+  "forcing_draws_per_condition": 512,
+  "compact_files_verified": 15,
+  "uncollected_state_payloads": [
+    "R128-q1-states.npz",
+    "R128-q4-states.npz",
+    "R256-q1-states.npz",
+    "R256-q2-states.npz",
+    "R512-q1-states.npz",
+    "R64-q1-states.npz"
+  ],
+  "input_result_sha256": "8b2f56d993215adb4ea71910b033d9b1fe50ea2d566e31e0c1234246ce829b09",
+  "limitations": [
+    "one trained seed and one stored bit",
+    "state arrays/model not independently reexecuted",
+    "scheduler and actual W&B audit separate",
+    "no capacity, erasure or Floquet conclusion"
+  ]
+}
