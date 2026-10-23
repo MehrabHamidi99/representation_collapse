@@ -1,0 +1,71 @@
+{
+  "config": {
+    "dtype": "float32",
+    "hidden_size": 32,
+    "seed": 0,
+    "task": "onebit-memory",
+    "updates": 5000
+  },
+  "elapsed_seconds": 48.21976141980849,
+  "entity_actual": "",
+  "entity_requested": null,
+  "finish_error_type": null,
+  "finish_returned": true,
+  "identities": {
+    "protocol_sha256": "1b97d6b019f835d9d27d533597adde75573deace21df29398be90df429a03baf",
+    "source_sha256": "92d855488b675f82d318e646f9811a0d65d36aa0786f555c5f8cc0c592d50535"
+  },
+  "last_attempted_step": 5001,
+  "last_completed_step": 5001,
+  "metadata_artifacts": [
+    {
+      "name": "result",
+      "path": "/scratch/m/mehrab/representation-collapse/runs/onebit-memory/onebit-20261020T204921Z-790fb944/reporting/metadata-artifacts/result.json",
+      "remote_delivery_verified": false,
+      "sha256": "ed58ad5c21d68c7f2499c69702c922bf8cd9e78f534861a8629b2db91852ce1e"
+    }
+  ],
+  "mode": "offline",
+  "privacy_settings": {
+    "capture_loggers": {},
+    "config_paths": [],
+    "console": "off",
+    "disable_code": true,
+    "disable_git": true,
+    "disable_job_creation": true,
+    "host": "not-collected",
+    "ignore_globs": [
+      "*",
+      "**/*"
+    ],
+    "launch": false,
+    "sagemaker_disable": true,
+    "save_code": false,
+    "symlink": false,
+    "x_disable_machine_info": true,
+    "x_disable_meta": true,
+    "x_disable_stats": true,
+    "x_save_requirements": false
+  },
+  "project": "representation-collapse",
+  "remote_delivery_verified": false,
+  "remote_history_verified": false,
+  "run_id": "onebit-20261020T204921Z-790fb944",
+  "run_url": null,
+  "schema_version": 1,
+  "sdk_version": "0.30.0",
+  "sdk_version_required": "0.30.0",
+  "started_at_utc": "2026-10-20T20:51:33.277890+00:00",
+  "state": "completed",
+  "summary": {
+    "reporting/elapsed_seconds": 48.20881754299626,
+    "reporting/last_step": 5001,
+    "reporting/state": "completed"
+  },
+  "sync_required": true,
+  "terminal_intent": "completed",
+  "updated_at_utc": "2026-10-20T20:52:21.497420+00:00",
+  "wandb_files_dir": "/scratch/m/mehrab/representation-collapse/runs/onebit-memory/onebit-20261020T204921Z-790fb944/reporting/wandb/offline-run-20261020_165136-onebit-20261020T204921Z-790fb944/files",
+  "wandb_run_dir": "/scratch/m/mehrab/representation-collapse/runs/onebit-memory/onebit-20261020T204921Z-790fb944/reporting/wandb/offline-run-20261020_165136-onebit-20261020T204921Z-790fb944",
+  "work_may_start": false
+}

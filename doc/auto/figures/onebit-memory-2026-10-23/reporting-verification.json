@@ -1,0 +1,23 @@
+{
+  "status": "verified",
+  "job_id": "633041",
+  "source_commit": "790fb9443565941a3cff9cd01c5a034d24480c18",
+  "result_sha256": "ab36f689f337d57ebfe165a523c772c4a6dd7404155781dadf3b5e92270886ba",
+  "actual_offline_history_rows": 201,
+  "offline_stream_sha256": "fcc3d3a2153fe71686d48be470d4e2dbc7775e564e698d026c09a455ce9c90e7",
+  "reporter_finished": true,
+  "remote_delivery_verified": false,
+  "scheduler": {
+    "job_id": "633041",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed": "00:01:00",
+    "node": "tc11103",
+    "raw": [
+      "633041|COMPLETED|0:0|00:01:00|tc11103|",
+      "633041.batch|COMPLETED|0:0|00:01:00|tc11103|476828K",
+      "633041.extern|COMPLETED|0:0|00:01:00|tc11103|"
+    ]
+  },
+  "scope": "scheduler, source/runtime, actual offline histories and artifact; compact reducer separately checks scientific arithmetic"
+}

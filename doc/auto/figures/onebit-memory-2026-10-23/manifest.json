@@ -1,0 +1,30 @@
+{
+  "onebit-retention.png": {
+    "sha256": "4df30c9f80bc1c13ae06fca9e34243204493f761253eb716bf34aeefcf19d4c3",
+    "bytes": 84481
+  },
+  "reduction-results.json": {
+    "sha256": "45a07a5cb5492bee022c9d530a46fb022fee1138f5c93b226227f3d999b3cd27",
+    "bytes": 13074
+  },
+  "scheduler.json": {
+    "sha256": "1280f6244a7e23619dad4871b7af02054bb47aabe12d28d391df6b258b93234a",
+    "bytes": 290
+  },
+  "reporting-verification.json": {
+    "sha256": "5e19756b3483261a335e1e1c62eab5217691f11f07ff28cc452b6c6cb4512bad",
+    "bytes": 862
+  },
+  "identity.json": {
+    "sha256": "127cbbcea3f5939bf174975239fd35c2f41e07fe9191180a6a7ec0bf0ba221a4",
+    "bytes": 604
+  },
+  "pre-evaluation-checkpoint.json": {
+    "sha256": "adcd790dc487b222dd8463004b20286244e98cf9d43e354873d7d172a2310efc",
+    "bytes": 201
+  },
+  "reporting-receipt.json": {
+    "sha256": "16441e426077f81c402879a17e6d6f704c27c603eb1f01c028d08726ce9858fe",
+    "bytes": 2423
+  }
+}

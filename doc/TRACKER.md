@@ -1,6 +1,7 @@
 # Current research state
 
-Updated 2026-10-20 19:51 UTC. See the [latest notebook entry](october/october20/2026-10-20-progress-report.md),
+Updated 2026-10-23 15:48 UTC. See the [latest notebook entry](october/october23/2026-10-23-progress-report.md),
+the [October 20 notebook](october/october20/2026-10-20-progress-report.md),
 the [October 19 notebook](october/october19/2026-10-19-progress-report.md),
 the [October 15 notebook](october/october15/2026-10-15-progress-report.md),
 the [October 14 notebook](october/october14/2026-10-14-progress-report.md),
@@ -8,6 +9,18 @@ the [October 13 notebook](october/october13/2026-10-13-progress-report.md),
 the [prior-day notebook](october/october12/2026-10-12-progress-report.md),
 the [setup notebook](october/october11/2026-10-11-progress-report.md)
 and [dependency plan](../configs/research-plan.json) (revision v2).
+
+- **2026-10-23 — competent one-bit memory discovery accepted as a negative result.**
+  Cluv Tamia job **633041**, frozen source **790fb94**, completed `0:0` in one
+  minute. All three competence boundaries passed at 512/512 per required cell.
+  Independent reduction verifies 5,000 updates and all 36,864 held-out rows;
+  an actual offline W&B audit verifies 201 histories and terminal reporting.
+  Both arms have **100% bit accuracy** for R0,1,2,4,8,16,32 at q1 and the two
+  equal-384-step dwell conditions. Primary δ16, anchor δ2 and DID are all zero.
+  Raw pooled H+C PR is about one while cue separation grows; low pooled PR is
+  compatible with perfect task memory here. Single seed/bit; no capacity,
+  erasure or Floquet claim. [Verified report and plot](auto/onebit-memory-results-2026-10-23.md).
+  Next: a frozen higher-load, independently queried memory task.
 
 - **2026-10-20 — repetition-length sweep completed and independently verified.**
   Cluv Mila job **11332452**, source **3541ae0**, completed`0:0` in11min26s.
