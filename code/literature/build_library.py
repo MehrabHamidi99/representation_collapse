@@ -174,7 +174,18 @@ def build_outputs(refs, manifest):
         else:
             lines += [f"**Local PDF:** {m.get('status', 'not_attempted')}; see retrieval attempts in the manifest.", ""]
     (DOC / "references.bib").write_text("\n".join(bib))
-    (DOC / "bibliography.md").write_text("\n".join(lines))
+    # Keep machine-readable bibliography assets at their established locations.
+    # Human-readable output follows the shared dated documentation convention.
+    from zoneinfo import ZoneInfo
+    day = datetime.now(ZoneInfo("America/Toronto"))
+    destination = ROOT / "docs" / day.strftime("%B") / day.date().isoformat() / "local" / "literature" / "bibliography.md"
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("documentation", ROOT / "scripts/documentation.py")
+    layout = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(layout)
+    index = ROOT / "documentation-index.json"
+    mapping = {m["old"]: m["new"] for record in json.loads(index.read_text()).get("migrations", []) for m in record["moves"]} if index.exists() else {}
+    layout.write(destination, layout.rewrite_links("\n".join(lines), DOC / "bibliography.md", destination, ROOT, mapping))
 
 
 def main():

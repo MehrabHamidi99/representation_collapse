@@ -1,0 +1,1458 @@
+{
+  "schema_version": 1,
+  "migrations": [
+    {
+      "date": "2026-10-26",
+      "moves": [
+        {
+          "old": "doc/README.md",
+          "new": "docs/October/2026-10-26/local/report/README.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "5e9156629ced6ca144c02c214ba58df3356ec4689211825771f6b69e52a56b74",
+          "legacy": "redirect",
+          "sha256_after": "d31b93c9ade3a32314fc717620f0ca6515a82d656be0a16363779aeb26e6f884"
+        },
+        {
+          "old": "doc/TRACKER.md",
+          "new": "docs/October/2026-10-26/local/report/TRACKER.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "338139f76dcdd1985300d1ce195bbeaf2e59c7fc92d7321e6da884a5d591bd42",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "01e7a4de3d7cc6b252af65dce9d2282a525c23bd55b9c833866efd7c09de1419"
+        },
+        {
+          "old": "doc/auto/active-research-goal.md",
+          "new": "docs/October/2026-10-26/local/auto-research/active-research-goal.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "e2039f0d4a374bcdc6386dbce360854ec7d89befa17f26a275832e0619d3b7f3",
+          "legacy": "redirect",
+          "sha256_after": "c4e02f759ea58c81abf7e0a035572cf28207cacc9669c872608d00fc5e59678d"
+        },
+        {
+          "old": "doc/auto/address-acquisition-discovery-v4.md",
+          "new": "docs/October/2026-10-26/local/auto-research/address-acquisition-discovery-v4.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "2232689fea45602807914748731fa97c5613ef71c5185e84f8f7b967f745fccd",
+          "legacy": "redirect",
+          "sha256_after": "2bbc26bffdcacbba5d38d3ed71f42ec4a946235716a8358797c94b751522035e"
+        },
+        {
+          "old": "doc/auto/address-acquisition-v4-independent-results-review-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/address-acquisition-v4-independent-results-review-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "a1dffe9693dc7b75faa40b1f02d536f9c3bec933af7e5d8465a5316d9e43eabd",
+          "legacy": "redirect",
+          "sha256_after": "a1dffe9693dc7b75faa40b1f02d536f9c3bec933af7e5d8465a5316d9e43eabd"
+        },
+        {
+          "old": "doc/auto/address-acquisition-v4-results-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/address-acquisition-v4-results-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "f27f5b45a43f37bd084f2fdbed3d4cfe5d4e4f17370d381336b291a1adefce1c",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "ccfdfd1ca04f8fae28b9336bc012263a8afde22eae9b29960b15ece19e98ef66"
+        },
+        {
+          "old": "doc/auto/address-acquisition-v4-review-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/address-acquisition-v4-review-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "57abb737cc4b224ad74fd49eb4b2f679cccf55813c82c99e1ec1961179882de7",
+          "legacy": "redirect",
+          "sha256_after": "10bc1a0ca2bfcff2a1d614b49d5a09d5d022ecc0799773555fd458a818af0878"
+        },
+        {
+          "old": "doc/auto/agent-protocol.md",
+          "new": "docs/October/2026-10-26/local/auto-research/agent-protocol.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "6f3439505bbc4ac413a5a40569776e295a4b19dbb09d16630ad7008b8d28b89f",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "dfd68d4c3c78c4204da6a567bbdcbc8d6b3124103be34368358d7cc21bca65fa"
+        },
+        {
+          "old": "doc/auto/approximate-bridge-audit-2026-10-14.md",
+          "new": "docs/October/2026-10-14/local/auto-research/approximate-bridge-audit-2026-10-14.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "ac702dea1c72a920fb6a10a21bad7e2a7d2434a3d2c33fff00878194e50659b2",
+          "legacy": "redirect",
+          "sha256_after": "ac702dea1c72a920fb6a10a21bad7e2a7d2434a3d2c33fff00878194e50659b2"
+        },
+        {
+          "old": "doc/auto/cached-forward-v2-implementation-independent-review-2026-10-14.md",
+          "new": "docs/October/2026-10-14/local/auto-research/cached-forward-v2-implementation-independent-review-2026-10-14.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "81afc10ab44a76180197c3d9f6da34e63d9269aceae98cf276fac0727319c2cc",
+          "legacy": "redirect",
+          "sha256_after": "81afc10ab44a76180197c3d9f6da34e63d9269aceae98cf276fac0727319c2cc"
+        },
+        {
+          "old": "doc/auto/cached-forward-v2-results-independent-review-2026-10-14.md",
+          "new": "docs/October/2026-10-14/local/auto-research/cached-forward-v2-results-independent-review-2026-10-14.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "29e84e097c2499715a108d3653f97ec73a3f17d0f6d2f216e845ec9f8ae5ecb8",
+          "legacy": "redirect",
+          "sha256_after": "0ab0db01979512bb04c91b59ef08213ea8afe13f95a901357b68232617bad73b"
+        },
+        {
+          "old": "doc/auto/causal-bridge-audit-2026-10-14.md",
+          "new": "docs/October/2026-10-14/local/auto-research/causal-bridge-audit-2026-10-14.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "45e4defe2b9ed7649b269b4981058332afa6f37507cae9b1d93f6aa912cca220",
+          "legacy": "redirect",
+          "sha256_after": "45e4defe2b9ed7649b269b4981058332afa6f37507cae9b1d93f6aa912cca220"
+        },
+        {
+          "old": "doc/auto/checkpoint-json-utility-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/checkpoint-json-utility-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "50af796f173b7fcb3a151b9ae3e648db3a04ff438430b9b32ed4d4ce18aacfda",
+          "legacy": "redirect",
+          "sha256_after": "50af796f173b7fcb3a151b9ae3e648db3a04ff438430b9b32ed4d4ce18aacfda"
+        },
+        {
+          "old": "doc/auto/checkpoint-validation-rows-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/checkpoint-validation-rows-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "b8d01fd5490b4e28078e72283098608a7527a8a7ad90077936ee0ab4972b2f9d",
+          "legacy": "redirect",
+          "sha256_after": "b8d01fd5490b4e28078e72283098608a7527a8a7ad90077936ee0ab4972b2f9d"
+        },
+        {
+          "old": "doc/auto/cluster-access-2026-10-11.md",
+          "new": "docs/October/2026-10-11/cross-cluster/auto-research/cluster-access-2026-10-11.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "85bafae1bdfa07895c646990b66d00fe319b2cb9fc7756ce33582cb21980581b",
+          "legacy": "redirect",
+          "sha256_after": "85bafae1bdfa07895c646990b66d00fe319b2cb9fc7756ce33582cb21980581b"
+        },
+        {
+          "old": "doc/auto/cluster-access.md",
+          "new": "docs/October/2026-10-26/cross-cluster/auto-research/cluster-access.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "385a4ed3bec6b723644e185c5bbfa470e878bc7a3017dfb61086a5d7b404c163",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "2295806fb5168cc38e46ddcfa304d2065711c34bcce68c11e1cfbcff0721ba55"
+        },
+        {
+          "old": "doc/auto/competence-recovery-plan.md",
+          "new": "docs/October/2026-10-26/local/auto-research/competence-recovery-plan.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "6ae214dce60746337ab9682b8bd70bcb0ad877bd22b9d9c046cc81963fba54ef",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "88292bcbd92494bd722e79296d3f3cb06a997e158362626ebbf19bac798c5eca"
+        },
+        {
+          "old": "doc/auto/competence-training-v2.md",
+          "new": "docs/October/2026-10-26/local/auto-research/competence-training-v2.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "df0484fa0b801569b9c297f35c0bcb273ee236ce1a1af2352734cea0ce28bc47",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "ee1244e7bf5dabf409d355f53800300a8b5a93251e38b5c140fee6366f38fec7"
+        },
+        {
+          "old": "doc/auto/compute-plan.md",
+          "new": "docs/October/2026-10-26/local/auto-research/compute-plan.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "5cc783c310886eecf46a8e05b1f2ad9b46dc1d37f8003422e322346f80a37eec",
+          "legacy": "redirect",
+          "sha256_after": "df918ba89d4c2a5a9b10cbe0cb35a8e4f2550da561c118df3c1a3901fec3f434"
+        },
+        {
+          "old": "doc/auto/compute-resubmission-envelope-audit-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/submitted-jobs/compute-resubmission-envelope-audit-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "4946ba237f70b8ec08e8aacedefd78b0501425034cd504977b8c930b827623f2",
+          "legacy": "redirect",
+          "sha256_after": "4946ba237f70b8ec08e8aacedefd78b0501425034cd504977b8c930b827623f2"
+        },
+        {
+          "old": "doc/auto/continuous-monitor-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/continuous-monitor-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "47d9efa60d5261f4d80796277f9040d6d0e965abde09b260fa0d6144136101f3",
+          "legacy": "redirect",
+          "sha256_after": "2103ff6223b98fd63dc84f1a1a87dded3a452a3ddd0f4d61f877dcdff4b31d1f"
+        },
+        {
+          "old": "doc/auto/day-research-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/day-research-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "635027a831e1ac5093926a84278c683d03c5cbad18f38c05c053f28348a9a87c",
+          "legacy": "redirect",
+          "sha256_after": "7f709fd3f5e4c550d1a1d2cd2d98f6ac9568f722bc1ef147ead219642e44c220"
+        },
+        {
+          "old": "doc/auto/diagnostics-implementation.md",
+          "new": "docs/October/2026-10-26/local/auto-research/diagnostics-implementation.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "72a9627ec0f03bdb1013d3bf812c492857546454212c8b70596ccea8ddd19388",
+          "legacy": "redirect",
+          "sha256_after": "efa7b2e4bd4546baf9720420e43561d726d33217631a8c4324765c20b90d7ce5"
+        },
+        {
+          "old": "doc/auto/experimental-design-v2.md",
+          "new": "docs/October/2026-10-26/local/auto-research/experimental-design-v2.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "65451640b7ecf38e81307c576a16bc1ad488b7a4bfec9fcb5de387a5ced453e5",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "f3947927fce3ae9f2389420749d83ee48e54fd4872352ff3e036a7ba4f4ceeec"
+        },
+        {
+          "old": "doc/auto/figure-10-reproduction-subgoal.md",
+          "new": "docs/October/2026-10-26/local/auto-research/figure-10-reproduction-subgoal.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "11d7940d310087476c6cebcb3e6108d4e94b56e530fe77ae131558478e6c3191",
+          "legacy": "redirect",
+          "sha256_after": "62a18c6c0203bb8da761754647cc9eb8592a43b22a8e9d9c58193bd44a410930"
+        },
+        {
+          "old": "doc/auto/figure10-coverage-and-next-fit-2026-10-19.md",
+          "new": "docs/October/2026-10-19/local/auto-research/figure10-coverage-and-next-fit-2026-10-19.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "70108a1fa41bbe96ce75da15d507c4e6171471cb50ee036918986e98b0b7da3e",
+          "legacy": "redirect",
+          "sha256_after": "4711a10b4f166e242b955841f5ea9dca6fc37cbd368d3c8a48ef2ab626e92d53"
+        },
+        {
+          "old": "doc/auto/figure10-deterministic-controls-2026-10-19.md",
+          "new": "docs/October/2026-10-19/local/auto-research/figure10-deterministic-controls-2026-10-19.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "e84ba6c62bebfcdbc332b8eb981b2d375cde568a5899e139180c090fe79fe0d6",
+          "legacy": "redirect",
+          "sha256_after": "e84ba6c62bebfcdbc332b8eb981b2d375cde568a5899e139180c090fe79fe0d6"
+        },
+        {
+          "old": "doc/auto/figure10-deterministic-controls-results-2026-10-19.md",
+          "new": "docs/October/2026-10-19/local/auto-research/figure10-deterministic-controls-results-2026-10-19.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "bd9416816a570dfaaf555b05ef8760837894f5453ddfd2d4881ebd1694176376",
+          "legacy": "redirect",
+          "sha256_after": "bd9416816a570dfaaf555b05ef8760837894f5453ddfd2d4881ebd1694176376"
+        },
+        {
+          "old": "doc/auto/figure10-full-fit-2026-10-19.md",
+          "new": "docs/October/2026-10-19/local/auto-research/figure10-full-fit-2026-10-19.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "2a9dc3812df92e24a1a4ee461cdac2714a841a1745f5e5e4e36bc353b87c4333",
+          "legacy": "redirect",
+          "sha256_after": "2a9dc3812df92e24a1a4ee461cdac2714a841a1745f5e5e4e36bc353b87c4333"
+        },
+        {
+          "old": "doc/auto/figure10-gclstm-longfit-results-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/figure10-gclstm-longfit-results-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "e861061cb69469e401d281eb79b64e6bf75917280b8a4c0264d21ce7f7c09393",
+          "legacy": "redirect",
+          "sha256_after": "179c7be742efefc309974520f87a31659ed9be5a1c7a5e4ff269f20f9fc8df9c"
+        },
+        {
+          "old": "doc/auto/figure10-gclstm-pilot-results-2026-10-19.md",
+          "new": "docs/October/2026-10-19/local/auto-research/figure10-gclstm-pilot-results-2026-10-19.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "36a27fee5d48faae60867d2ea8417235ef19b819473cb2fb01bb2f13218449bd",
+          "legacy": "redirect",
+          "sha256_after": "d917c155ff0c802d6c37d4997a7119d985808014fa0f96af4445a5e1bee0c8c6"
+        },
+        {
+          "old": "doc/auto/figure10-long-fit-v2-2026-10-19.md",
+          "new": "docs/October/2026-10-19/local/auto-research/figure10-long-fit-v2-2026-10-19.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "e41b6931e709251a17d7ee867480c8f402bcb9b0f639d535ad60b974a234c814",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "e41b6931e709251a17d7ee867480c8f402bcb9b0f639d535ad60b974a234c814"
+        },
+        {
+          "old": "doc/auto/figure10-longfit-independent-scientific-review-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/figure10-longfit-independent-scientific-review-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "d0fb38a309b79e61798353e810fc48dd9981e5104cbd7da5e54d99c4560174d5",
+          "legacy": "redirect",
+          "sha256_after": "d0fb38a309b79e61798353e810fc48dd9981e5104cbd7da5e54d99c4560174d5"
+        },
+        {
+          "old": "doc/auto/figure10-prefix-diagnostic-2026-10-19.md",
+          "new": "docs/October/2026-10-19/local/auto-research/figure10-prefix-diagnostic-2026-10-19.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "824b72f006483e68f507ebfe24327aa618cbeede85c8e7f420ddde0d6404aa9c",
+          "legacy": "redirect",
+          "sha256_after": "824b72f006483e68f507ebfe24327aa618cbeede85c8e7f420ddde0d6404aa9c"
+        },
+        {
+          "old": "doc/auto/figure10-prefix-results-2026-10-19.md",
+          "new": "docs/October/2026-10-19/local/auto-research/figure10-prefix-results-2026-10-19.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "e918b0ffcb4e323b5360165b5ea8f098fe1589188962e0b9370bf341d9b348f5",
+          "legacy": "redirect",
+          "sha256_after": "e918b0ffcb4e323b5360165b5ea8f098fe1589188962e0b9370bf341d9b348f5"
+        },
+        {
+          "old": "doc/auto/figure10-selected-evaluation-v2.md",
+          "new": "docs/October/2026-10-26/local/auto-research/figure10-selected-evaluation-v2.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "4da1828297ee4eab5c1893526ad165d4378e2804089fe2396ede88919f0496e7",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "4da1828297ee4eab5c1893526ad165d4378e2804089fe2396ede88919f0496e7"
+        },
+        {
+          "old": "doc/auto/figure10-selected-evaluation-v3.md",
+          "new": "docs/October/2026-10-26/local/auto-research/figure10-selected-evaluation-v3.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "171a1b3ae1f50e1b88348cd6c3a0efa234388cab7bb9ad7ded1ff87bddebd948",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "171a1b3ae1f50e1b88348cd6c3a0efa234388cab7bb9ad7ded1ff87bddebd948"
+        },
+        {
+          "old": "doc/auto/figure10-state-observer-2026-10-19.md",
+          "new": "docs/October/2026-10-19/local/auto-research/figure10-state-observer-2026-10-19.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "501f7a6f928a8051702d90f25a0af5d76ad4078172983424a84c2a518d0651f1",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "501f7a6f928a8051702d90f25a0af5d76ad4078172983424a84c2a518d0651f1"
+        },
+        {
+          "old": "doc/auto/figure10-trajectory-diagnostics-2026-10-19.md",
+          "new": "docs/October/2026-10-19/local/auto-research/figure10-trajectory-diagnostics-2026-10-19.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "b0503dad7a939f56f333990c47f038abba966918883e2540c8eb1b709dd59527",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "b0503dad7a939f56f333990c47f038abba966918883e2540c8eb1b709dd59527"
+        },
+        {
+          "old": "doc/auto/figure10-within-motif-descriptive-2026-10-19.md",
+          "new": "docs/October/2026-10-19/local/auto-research/figure10-within-motif-descriptive-2026-10-19.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "53ddde5227773439b4e685b0ba26db9d5361c4bb4925a2ca5af267ae29ec2aa8",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "53ddde5227773439b4e685b0ba26db9d5361c4bb4925a2ca5af267ae29ec2aa8"
+        },
+        {
+          "old": "doc/auto/folding-memory-counterexample-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/folding-memory-counterexample-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "e1e26fb0e59a744506a247ace04ba7cacbf49b8efdf79678de43d71ca1895d99",
+          "legacy": "redirect",
+          "sha256_after": "e1e26fb0e59a744506a247ace04ba7cacbf49b8efdf79678de43d71ca1895d99"
+        },
+        {
+          "old": "doc/auto/folding-memory-counterexample-independent-review-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/folding-memory-counterexample-independent-review-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "a08693ea53921a4686655fd2d8cac185ca9dff845ed8deff54f0eb8de0affcce",
+          "legacy": "redirect",
+          "sha256_after": "a08693ea53921a4686655fd2d8cac185ca9dff845ed8deff54f0eb8de0affcce"
+        },
+        {
+          "old": "doc/auto/gate-b-readiness-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/gate-b-readiness-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "a612a029a71ce3db7811a39485c98cbfaff102b45c52a1a26ddb4df18fe540c7",
+          "legacy": "redirect",
+          "sha256_after": "e06e465d19a597e01b2b45952a0569643e852c19be0652ecc45ef74eede5b2c5"
+        },
+        {
+          "old": "doc/auto/gpu-efficiency-adoption-2026-10-12.md",
+          "new": "docs/October/2026-10-12/local/auto-research/gpu-efficiency-adoption-2026-10-12.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "8c3bb996531b4e05bcf3ddf3b7400a9ecf1c844fb06b48a3874210e1e4f65613",
+          "legacy": "redirect",
+          "sha256_after": "845ceba1408b345f40530ff7dc7f20006301e653d5875fa9955c15c02c59fa4d"
+        },
+        {
+          "old": "doc/auto/graph-baseline-history-release-map-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/graph-baseline-history-release-map-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "0c31bf4943a0bac0da2ba809913755666d2e610235f40c8cf46493078e03bc05",
+          "legacy": "redirect",
+          "sha256_after": "fe9c1420344752637397ffe6621ac2f2432d121ea44706f8037eacb8c01bcfa3"
+        },
+        {
+          "old": "doc/auto/graph-baseline-history-release-map-v1.md",
+          "new": "docs/October/2026-10-26/local/auto-research/graph-baseline-history-release-map-v1.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "ef9dde2e079f362e77993f6194f69220793707017e6538d5af581307876fbb91",
+          "legacy": "redirect",
+          "sha256_after": "3937f91e189ca83759c9db6219c0a665d3b8d37b7e7cf8aaf301794b075edeb5"
+        },
+        {
+          "old": "doc/auto/graph-data-conversion-job-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/graph-data-conversion-job-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "3270dbc4f15086116b91b0aad9555eeb2e8893dd8ebfb70eddffb723fa1f0dff",
+          "legacy": "redirect",
+          "sha256_after": "3270dbc4f15086116b91b0aad9555eeb2e8893dd8ebfb70eddffb723fa1f0dff"
+        },
+        {
+          "old": "doc/auto/graph-data-conversion-launch-request-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/graph-data-conversion-launch-request-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "2fde65c182d2c67882a5cebeb3551d91823ae1be664b88014ec5e8baaae47ce0",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "2c62d8f632ea9c534f535c9c2b3ac2b59f975eb9050ebe3f1e0800dd83228de2"
+        },
+        {
+          "old": "doc/auto/graph-data-conversion-verification-job-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/graph-data-conversion-verification-job-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "8b40b80baa670f7e65ba8e547be8a2a73f26d60bda5dbbe12b4041f380cea662",
+          "legacy": "redirect",
+          "sha256_after": "8b40b80baa670f7e65ba8e547be8a2a73f26d60bda5dbbe12b4041f380cea662"
+        },
+        {
+          "old": "doc/auto/graph-reproduction.md",
+          "new": "docs/October/2026-10-26/local/auto-research/graph-reproduction.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "2daed7958e8429ff4459f0fc9ea5e29f94997bb26a0b62124352fc24cbdff727",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "5b860ab096045715cb2d4547b1bad9bf0e0b6642fbbcf91ed824de368749bfbc"
+        },
+        {
+          "old": "doc/auto/graph-terminal-load-attempt-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/graph-terminal-load-attempt-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "52cb9d07ed5bacb25aee353e68bf993ac6116cc62420710061712960a0e14626",
+          "legacy": "redirect",
+          "sha256_after": "52cb9d07ed5bacb25aee353e68bf993ac6116cc62420710061712960a0e14626"
+        },
+        {
+          "old": "doc/auto/graph-terminal-load-attempt-repair-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/graph-terminal-load-attempt-repair-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "b544c6f957b975fb48dc036bc20bdabe3f74f0aea53f4abdce89935e14d87489",
+          "legacy": "redirect",
+          "sha256_after": "b544c6f957b975fb48dc036bc20bdabe3f74f0aea53f4abdce89935e14d87489"
+        },
+        {
+          "old": "doc/auto/implementation-audit.md",
+          "new": "docs/October/2026-10-26/local/auto-research/implementation-audit.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "88eab63c4ca153edcceadfd6048f69feb0d9bad2896b1e0221d5c3e009bbb974",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "230fbad832550ea6db36e386b90c9e664f6a6ac39f8b89bf11814d97a6703a22"
+        },
+        {
+          "old": "doc/auto/initial-phase-report.md",
+          "new": "docs/October/2026-10-26/local/auto-research/initial-phase-report.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "45d0b542b2a5378a48d9f8ebaabb6dfce1d470135a07c1c8182a49aabbf018e2",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "7f46daa2671829141169964370aedc84de3c6c9b6c0e1f115a16d2264d46a728"
+        },
+        {
+          "old": "doc/auto/initial-phase-scientific-review.md",
+          "new": "docs/October/2026-10-26/local/auto-research/initial-phase-scientific-review.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "e0ca0b9555fe5c21862933933d346be5e053aa545605867194b74f7f56babf9b",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "038fa14c0f5b1554db3e0eac12eda3f6c4c859ee37a69e1166d35b573e5eefe1"
+        },
+        {
+          "old": "doc/auto/legacy-floquet-array-audit-implementation-review-2026-10-14.md",
+          "new": "docs/October/2026-10-14/local/auto-research/legacy-floquet-array-audit-implementation-review-2026-10-14.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "94e7cd4d29500525f9dc1cec49d64172ba002acc5334676106efcf2af54a6900",
+          "legacy": "redirect",
+          "sha256_after": "94e7cd4d29500525f9dc1cec49d64172ba002acc5334676106efcf2af54a6900"
+        },
+        {
+          "old": "doc/auto/legacy-floquet-array-audit-results-2026-10-14.md",
+          "new": "docs/October/2026-10-14/local/auto-research/legacy-floquet-array-audit-results-2026-10-14.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "2ff01eb76276a33eb7b8da2f3acc1843dd5dfd9d317730cd1d39add412d7a1f7",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "ed31a60a645ed1e09d5961b1c4a5daab3a985cd5eade89f3e6a48894b6e70277"
+        },
+        {
+          "old": "doc/auto/legacy-floquet-array-audit-v1.md",
+          "new": "docs/October/2026-10-26/local/auto-research/legacy-floquet-array-audit-v1.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "9e201ec67ac2906abebbac38e4ad5f989e12db0bb583dd518cbb32dd1a4b4493",
+          "legacy": "redirect",
+          "sha256_after": "9e201ec67ac2906abebbac38e4ad5f989e12db0bb583dd518cbb32dd1a4b4493"
+        },
+        {
+          "old": "doc/auto/legacy-floquet-array-results-independent-review-2026-10-14.md",
+          "new": "docs/October/2026-10-14/local/auto-research/legacy-floquet-array-results-independent-review-2026-10-14.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "cc400fe226ade650863c494d1d910fbf459452faf165054a9078ec62cc902bd6",
+          "legacy": "redirect",
+          "sha256_after": "cc400fe226ade650863c494d1d910fbf459452faf165054a9078ec62cc902bd6"
+        },
+        {
+          "old": "doc/auto/local-autoresearch-continuation-2026-10-14.md",
+          "new": "docs/October/2026-10-14/local/auto-research/local-autoresearch-continuation-2026-10-14.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "248fed1948fa9e2b56140c652b24a994d4fa0844b00d2645bd5f62b8eba263ca",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "248fed1948fa9e2b56140c652b24a994d4fa0844b00d2645bd5f62b8eba263ca"
+        },
+        {
+          "old": "doc/auto/local-competence-feasibility-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/local-competence-feasibility-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "2ebffc37ebf755a89a8c468b6450d090b6027e91d66fd036fd620a6264cb233e",
+          "legacy": "redirect",
+          "sha256_after": "8e4d6a7b7cd9dd134840dac8213537c2584aacc3b634f9d967ced8184eec7444"
+        },
+        {
+          "old": "doc/auto/local-competence-grid-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/local-competence-grid-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "db89ad03c5ae489573c8372e7dcae1581f9bcd849a21946cdef2071c282251c4",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "c4827528922ae2dfb2db476372181004ae0cd372ba33691bbc1dfd9801b6fc45"
+        },
+        {
+          "old": "doc/auto/manuscript-review-2026-10-12.md",
+          "new": "docs/October/2026-10-12/local/auto-research/manuscript-review-2026-10-12.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "a9c73830d04c158bcae486843222767e37aafbdce6c3f4017509a07e2e0bf45a",
+          "legacy": "redirect",
+          "sha256_after": "dd72d6ecc5e768312b5d6b4519abdafc9a4b831167310b54c332ab2837aedccc"
+        },
+        {
+          "old": "doc/auto/matched-input-statistics-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/matched-input-statistics-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "645e46897a8d86d0534b24c218bc244085fa876e78f02301dc3d73e4b1a593cf",
+          "legacy": "redirect",
+          "sha256_after": "a158268e8d67cbf9c9482b650445cee691bfa6cc0470df14e929cfb18525a8c9"
+        },
+        {
+          "old": "doc/auto/matched-input-statistics-v1.md",
+          "new": "docs/October/2026-10-26/local/auto-research/matched-input-statistics-v1.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "31f47574974d8d7dad0c9f3722e74717e044d2bc0b569815b550f5e0dead62ee",
+          "legacy": "redirect",
+          "sha256_after": "31f47574974d8d7dad0c9f3722e74717e044d2bc0b569815b550f5e0dead62ee"
+        },
+        {
+          "old": "doc/auto/matrix-free-calibration-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/matrix-free-calibration-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "ff32292c772937ecf511f7391494db497100db3ed069ca517c0930e659a463da",
+          "legacy": "redirect",
+          "sha256_after": "1335c59ace3367baba3df6d05e67d5810eaafc7000747e8c59ee2d0558b5730f"
+        },
+        {
+          "old": "doc/auto/native-chronology-calibration-independent-review-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/native-chronology-calibration-independent-review-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "a3752d20041b1d3fe4df99a91c29496e2cee73093054858001ec0433e2c30431",
+          "legacy": "redirect",
+          "sha256_after": "a3752d20041b1d3fe4df99a91c29496e2cee73093054858001ec0433e2c30431"
+        },
+        {
+          "old": "doc/auto/native-chronology-calibration-proposal-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/native-chronology-calibration-proposal-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "9438ec2626b30b3f85aca2f784ed5d9d16bc7af18ccc6ad6216181d36cd83f32",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "c9817f11fa265e2f7c3696a5128e0c96c115d19ae6fbc5e949fb2b734bedbc25"
+        },
+        {
+          "old": "doc/auto/native-chronology-calibration-v1-independent-results-review-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/native-chronology-calibration-v1-independent-results-review-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "39e37c64e3fd62c0a775ae1dab079b8439959445c04de328608eb185fb9b66db",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "39e37c64e3fd62c0a775ae1dab079b8439959445c04de328608eb185fb9b66db"
+        },
+        {
+          "old": "doc/auto/native-chronology-calibration-v1-independent-review-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/native-chronology-calibration-v1-independent-review-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "490fb59c2236cb0e5e55336d25829f54e2ada548fd08071b08cde785168d37f4",
+          "legacy": "redirect",
+          "sha256_after": "490fb59c2236cb0e5e55336d25829f54e2ada548fd08071b08cde785168d37f4"
+        },
+        {
+          "old": "doc/auto/native-chronology-calibration-v1.md",
+          "new": "docs/October/2026-10-26/local/auto-research/native-chronology-calibration-v1.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "1ea1835836bf338abc0122a345e941c59b992b509d77fe82596237885c450950",
+          "legacy": "redirect",
+          "sha256_after": "7f57487ef93f20bfd625735086900e3c952681e501034bbba963ca91fd4ae6d4"
+        },
+        {
+          "old": "doc/auto/native-graph-calibration-failure-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-calibration-failure-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "775943eb198eefc23281257bba0be9e63438b1cbf52749b3419ff97a306ede5a",
+          "legacy": "redirect",
+          "sha256_after": "775943eb198eefc23281257bba0be9e63438b1cbf52749b3419ff97a306ede5a"
+        },
+        {
+          "old": "doc/auto/native-graph-calibration-independent-review-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-calibration-independent-review-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "41905b3a765a28205f2d6455787aa9864f6cdefd6de2ceab7e8d2dd6d7729a16",
+          "legacy": "redirect",
+          "sha256_after": "34a2a431b2a8407acec0d78f3beb6ac0a6ea254616e60abdd1b42077b5a1511f"
+        },
+        {
+          "old": "doc/auto/native-graph-calibration-result-verifier-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-calibration-result-verifier-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "808b5f46f1efedc8a30ad26e56b388a0b2d014fdde4d069b2626fa46a57571ba",
+          "legacy": "redirect",
+          "sha256_after": "808b5f46f1efedc8a30ad26e56b388a0b2d014fdde4d069b2626fa46a57571ba"
+        },
+        {
+          "old": "doc/auto/native-graph-calibration-v1.md",
+          "new": "docs/October/2026-10-26/local/auto-research/native-graph-calibration-v1.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "49010335090b22052b38ec153aa378b4f5aef8672cdfd5f97123581db0665a2e",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "49010335090b22052b38ec153aa378b4f5aef8672cdfd5f97123581db0665a2e"
+        },
+        {
+          "old": "doc/auto/native-graph-calibration-v2-independent-review-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-calibration-v2-independent-review-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "6fbe221c1a4c2fd2c0f2d8479d87682738bdc1cda01564a67d533ce7cd72a97c",
+          "legacy": "redirect",
+          "sha256_after": "6fbe221c1a4c2fd2c0f2d8479d87682738bdc1cda01564a67d533ce7cd72a97c"
+        },
+        {
+          "old": "doc/auto/native-graph-calibration-v2-launch-request-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-calibration-v2-launch-request-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "fa3ef5afba9dc6fcc2253769a03799c6d4d8a38b52f80eb4e03ebeea84427cf4",
+          "legacy": "redirect",
+          "sha256_after": "fa3ef5afba9dc6fcc2253769a03799c6d4d8a38b52f80eb4e03ebeea84427cf4"
+        },
+        {
+          "old": "doc/auto/native-graph-calibration-v2-result-verifier-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-calibration-v2-result-verifier-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "ad93f585d0bb376440702ad2b09bcfdce082a196146e09055c8f242f89c043cc",
+          "legacy": "redirect",
+          "sha256_after": "ad93f585d0bb376440702ad2b09bcfdce082a196146e09055c8f242f89c043cc"
+        },
+        {
+          "old": "doc/auto/native-graph-calibration-v2-results-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-calibration-v2-results-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "6c7bc407e99579a8675c724f50e2c1afdbf7cf0467a68a6f0d27e5dd6bfc0c4a",
+          "legacy": "redirect",
+          "sha256_after": "6c7bc407e99579a8675c724f50e2c1afdbf7cf0467a68a6f0d27e5dd6bfc0c4a"
+        },
+        {
+          "old": "doc/auto/native-graph-calibration-v2.md",
+          "new": "docs/October/2026-10-26/local/auto-research/native-graph-calibration-v2.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "49be571978111c2cd9ec7d42d25995e5a7ce8a98263e7cd77fe7193f285f5ddb",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "3959396696e4467843596fd6ea0323ccdccbc9285ab85b5c9eee4d6bf59841c5"
+        },
+        {
+          "old": "doc/auto/native-graph-environment-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-environment-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "264d6a6a98e65d9a5e401bbe7c160549812aeca318491f2b0e27b2e007bb65a6",
+          "legacy": "redirect",
+          "sha256_after": "264d6a6a98e65d9a5e401bbe7c160549812aeca318491f2b0e27b2e007bb65a6"
+        },
+        {
+          "old": "doc/auto/native-graph-environment-independent-review-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-environment-independent-review-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "15f61ece605671ae9619da73e79ae37ca9f1eb872b61ab3a8a7e2d42bf6097ca",
+          "legacy": "redirect",
+          "sha256_after": "cd66a4452da5ced77b0239d813719a78744c647ff5e98e289b4ca8de81a6d976"
+        },
+        {
+          "old": "doc/auto/native-graph-import-compatibility-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-import-compatibility-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "5b50b607baa59910aa30beaf13f51691a6119639e5d9ea8d141d5c48248af553",
+          "legacy": "redirect",
+          "sha256_after": "5b50b607baa59910aa30beaf13f51691a6119639e5d9ea8d141d5c48248af553"
+        },
+        {
+          "old": "doc/auto/native-graph-import-independent-review-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-import-independent-review-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "3de5786735f4617623b5da3c0d59ed44025c389deb4e5fece7f68aa704238508",
+          "legacy": "redirect",
+          "sha256_after": "3de5786735f4617623b5da3c0d59ed44025c389deb4e5fece7f68aa704238508"
+        },
+        {
+          "old": "doc/auto/native-graph-reporting-fix-allocation-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-reporting-fix-allocation-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "aba42ce76cc84e7d01cec502510ba4339c570ccc15ce79a78efc40a95e8ca494",
+          "legacy": "redirect",
+          "sha256_after": "aba42ce76cc84e7d01cec502510ba4339c570ccc15ce79a78efc40a95e8ca494"
+        },
+        {
+          "old": "doc/auto/native-graph-reporting-fix-independent-review-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-reporting-fix-independent-review-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "3a0ab5371a7de4ee2969fe7c742c2741b01bca1cff8ab983a7ff070f985b15e1",
+          "legacy": "redirect",
+          "sha256_after": "3a0ab5371a7de4ee2969fe7c742c2741b01bca1cff8ab983a7ff070f985b15e1"
+        },
+        {
+          "old": "doc/auto/native-graph-single-cpu-launch-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/native-graph-single-cpu-launch-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "26b073eeecd14a49279fef15fc61dea3da1f74b5b2fbeb3aeb570b843b7c563d",
+          "legacy": "redirect",
+          "sha256_after": "26b073eeecd14a49279fef15fc61dea3da1f74b5b2fbeb3aeb570b843b7c563d"
+        },
+        {
+          "old": "doc/auto/new-work-review-2026-10-12.md",
+          "new": "docs/October/2026-10-12/local/auto-research/new-work-review-2026-10-12.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "d0212a3642db93941c346ffed04bab419431f35efef84f1977c2c39d248c7daa",
+          "legacy": "redirect",
+          "sha256_after": "941f08de67d57136a67bcdd95d5e12258735a0a7607e442ca56e76de8b3f7f8a"
+        },
+        {
+          "old": "doc/auto/onebit-long-horizon-results-2026-10-23.md",
+          "new": "docs/October/2026-10-23/local/auto-research/onebit-long-horizon-results-2026-10-23.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "c6d0ef405614e4b3ec2a8c6a2c7b1fb54d0cae2d24b4c10d8d6f538c559b4d89",
+          "legacy": "redirect",
+          "sha256_after": "bdad02df0e7c34322e1ea5498022e02162014c14bf2c9dfed30b2b555043c6db"
+        },
+        {
+          "old": "doc/auto/onebit-long-horizon-review-2026-10-23.md",
+          "new": "docs/October/2026-10-23/local/auto-research/onebit-long-horizon-review-2026-10-23.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "801fccdb2af941cff8823bf38df127b505b78e8d847739135594c53d09d9646c",
+          "legacy": "redirect",
+          "sha256_after": "6b080cc9c344091fb18e596e5ebe6fc3aabda9ac7a10d0e7ab2f538fcb4a0cfe"
+        },
+        {
+          "old": "doc/auto/onebit-long-horizon-v1.md",
+          "new": "docs/October/2026-10-26/local/auto-research/onebit-long-horizon-v1.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "658bb06b4276b87d8d7ea63653ce2012c727728c11ae0d2fdda551ea12ceda1f",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "658bb06b4276b87d8d7ea63653ce2012c727728c11ae0d2fdda551ea12ceda1f"
+        },
+        {
+          "old": "doc/auto/onebit-memory-discovery-v1.md",
+          "new": "docs/October/2026-10-26/local/auto-research/onebit-memory-discovery-v1.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "1b97d6b019f835d9d27d533597adde75573deace21df29398be90df429a03baf",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "85dd1023803916c34ddfb77f0d22b8f517b8c60df2412f45039a42588366e80c"
+        },
+        {
+          "old": "doc/auto/onebit-memory-results-2026-10-23.md",
+          "new": "docs/October/2026-10-23/local/auto-research/onebit-memory-results-2026-10-23.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "26c86124268421f0e6d648609e71afcf8a0736e1d77f096699dc39e551158989",
+          "legacy": "redirect",
+          "sha256_after": "3986b82955b3c00e0f5bf9c0885525d31c2719a283bf1f9e025bee6a59b9cdaf"
+        },
+        {
+          "old": "doc/auto/onebit-memory-review-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/onebit-memory-review-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "2747214ed3edbfccbac6a77754a17db067161bd275c3c61f354c66b8ec45566d",
+          "legacy": "redirect",
+          "sha256_after": "4d06238c8be85cb15a5fc730185b3f87960b9f158cee256ef5fafed2661769fb"
+        },
+        {
+          "old": "doc/auto/ordering-mechanism-scope-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/ordering-mechanism-scope-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "db5a7e40a2c474ea0ea28add54f98db070eb39321c1c14cfaa416d16032f06fe",
+          "legacy": "redirect",
+          "sha256_after": "db5a7e40a2c474ea0ea28add54f98db070eb39321c1c14cfaa416d16032f06fe"
+        },
+        {
+          "old": "doc/auto/ordering-mechanism-scope-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/ordering-mechanism-scope-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "fd5526b173ccddf90bc3307eb4f99e1c4679332f3483dbf75b8d4b7214c4e777",
+          "legacy": "redirect",
+          "sha256_after": "fd5526b173ccddf90bc3307eb4f99e1c4679332f3483dbf75b8d4b7214c4e777"
+        },
+        {
+          "old": "doc/auto/overnight-research-2026-10-12.md",
+          "new": "docs/October/2026-10-12/local/auto-research/overnight-research-2026-10-12.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "454f1d29c13b927e3fa54474693feeaef1c854c028f8187281286d5884e9b699",
+          "legacy": "redirect",
+          "sha256_after": "7ca500f49a797471745023343d8a2690d368d025209350f0e1813ae69c4abcc6"
+        },
+        {
+          "old": "doc/auto/periodicity-analysis-v1.md",
+          "new": "docs/October/2026-10-26/local/auto-research/periodicity-analysis-v1.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "4e23a5407772ab56f7c29ffbe34c513ad05116d175b725bbe923db67adff5277",
+          "legacy": "redirect",
+          "sha256_after": "461b48b8877d7df7bf38a76b045f5a5383282e52f698378639f52e95a262e289"
+        },
+        {
+          "old": "doc/auto/periodicity-independent-reduction-v1.md",
+          "new": "docs/October/2026-10-26/local/auto-research/periodicity-independent-reduction-v1.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "f7604a5b2b413b282c6cc5f49448ad11fe897d93f0a1a2ec9931d377a1f32509",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "f7604a5b2b413b282c6cc5f49448ad11fe897d93f0a1a2ec9931d377a1f32509"
+        },
+        {
+          "old": "doc/auto/periodicity-independent-results.md",
+          "new": "docs/October/2026-10-26/local/auto-research/periodicity-independent-results.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "52381e4f3f10ee2183953a71b489fd4365e73bae0e2dc056eff3cf31c3d7e0be",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "559ea89d5fe65ace5452d6029bbe87dbbb9fc2d831191f139bec266126212ba6"
+        },
+        {
+          "old": "doc/auto/periodicity-research-plan.md",
+          "new": "docs/October/2026-10-26/local/auto-research/periodicity-research-plan.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "1f424cc40869c22abc11e435d6081627a42f8ba2e242aa40591b492eda88f254",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "52d0d18400b7c045acafff021252fccbea54e16659c621bee2ac4a31af8b3371"
+        },
+        {
+          "old": "doc/auto/post-calibration-contract-v2-independent-review-2026-10-14.md",
+          "new": "docs/October/2026-10-14/local/auto-research/post-calibration-contract-v2-independent-review-2026-10-14.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "7a78caa954c29283cd78d6b7bf9f44246b5dbd823f5e6053473117f85cfbf39b",
+          "legacy": "redirect",
+          "sha256_after": "7a78caa954c29283cd78d6b7bf9f44246b5dbd823f5e6053473117f85cfbf39b"
+        },
+        {
+          "old": "doc/auto/post-calibration-measurement-contract-independent-review-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/post-calibration-measurement-contract-independent-review-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "5d3a33f2588bbbae0119c1c15fc7f4747aaf63de1648b003be12b587e32a7f49",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "5d3a33f2588bbbae0119c1c15fc7f4747aaf63de1648b003be12b587e32a7f49"
+        },
+        {
+          "old": "doc/auto/post-calibration-measurement-contract-proposal-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/post-calibration-measurement-contract-proposal-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "48ca2e906329f37ade430c29beabcb96ce216a43bf477caf254351fdcf145eeb",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "48ca2e906329f37ade430c29beabcb96ce216a43bf477caf254351fdcf145eeb"
+        },
+        {
+          "old": "doc/auto/post-calibration-measurement-contract-v2-2026-10-14.md",
+          "new": "docs/October/2026-10-14/local/auto-research/post-calibration-measurement-contract-v2-2026-10-14.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "83c0b8c61fdefa9eb73e8386deab6c073d5ac04a82b13d251e1be699b25124d7",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "6631f5116a07e7346d88b3cd4014a19eed766bf587b044e6e58980b108b2e77f"
+        },
+        {
+          "old": "doc/auto/prefix-acquisition-discovery-v3.md",
+          "new": "docs/October/2026-10-26/local/auto-research/prefix-acquisition-discovery-v3.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "70d09598d2bf714c31503c5ada4d7befc6954b01274782d8694ff5cf451cba22",
+          "legacy": "redirect",
+          "sha256_after": "1ad3a1b29bc29409cdd33bb8143231aac7632860b1230ea56ca913dbf8cf0f92"
+        },
+        {
+          "old": "doc/auto/prefix-acquisition-v3-independent-review-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/prefix-acquisition-v3-independent-review-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "af783e21ee44c110df9aa426c5ad68b13c758b0462320c532d9c9f9fe6b5d0c4",
+          "legacy": "redirect",
+          "sha256_after": "af783e21ee44c110df9aa426c5ad68b13c758b0462320c532d9c9f9fe6b5d0c4"
+        },
+        {
+          "old": "doc/auto/prefix-acquisition-v3-results-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/prefix-acquisition-v3-results-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "ea8b0f62696dd45308f546c7270c1c6b81c39e082a524d7f4d8af30638361e81",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "2293d96fcf241178c57b1b7d3daafae505898529cce3a4713c63ea3a19547a76"
+        },
+        {
+          "old": "doc/auto/primary-conversion-cluv-controller-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/primary-conversion-cluv-controller-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "c915d5bdd62920296d4d1d6235fba569f59092724a0bc1196fc86bb9aa763b20",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "c915d5bdd62920296d4d1d6235fba569f59092724a0bc1196fc86bb9aa763b20"
+        },
+        {
+          "old": "doc/auto/primary-conversion-cluv-controller-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/primary-conversion-cluv-controller-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "5b0b6d4f79c532d0cbd5e2b0eb3a7577c81962dbb58346ef19027786dd591489",
+          "legacy": "redirect",
+          "sha256_after": "5b0b6d4f79c532d0cbd5e2b0eb3a7577c81962dbb58346ef19027786dd591489"
+        },
+        {
+          "old": "doc/auto/primary-conversion-execution-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/primary-conversion-execution-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "5afededaf28f7e12f14dcc3618eb683035002b9be2e536ee85891aa7adaf60ee",
+          "legacy": "redirect",
+          "sha256_after": "5afededaf28f7e12f14dcc3618eb683035002b9be2e536ee85891aa7adaf60ee"
+        },
+        {
+          "old": "doc/auto/primary-conversion-offline-closeout-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/primary-conversion-offline-closeout-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "707e66a057fb092597c9e063064bbc5bf8cbaa4fcc5eedbcb9aaa0a6bf549d53",
+          "legacy": "redirect",
+          "sha256_after": "8b32e7f447bd555b3b56609c1fef7c4047c8c7730a4b4483a1c4f8fa8329c218"
+        },
+        {
+          "old": "doc/auto/query-averaged-acquisition-proposal-v5.md",
+          "new": "docs/October/2026-10-26/local/auto-research/query-averaged-acquisition-proposal-v5.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "11bc97b548259b926f51103b827859d7055a137af98aa235cac90ef18eec5535",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "11ca05601b0df13a5c176cd956227724d9f58de708f0be35040e54ac171adf0f"
+        },
+        {
+          "old": "doc/auto/query-averaged-acquisition-v5-independent-results-review-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/query-averaged-acquisition-v5-independent-results-review-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "78aeb164ea633362794de133872c21e31d3d1a97fb5d2c4a6119fa32f7478f2f",
+          "legacy": "redirect",
+          "sha256_after": "78aeb164ea633362794de133872c21e31d3d1a97fb5d2c4a6119fa32f7478f2f"
+        },
+        {
+          "old": "doc/auto/query-averaged-acquisition-v5-independent-review-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/query-averaged-acquisition-v5-independent-review-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "214d29c86eb6fed725e76ca7628f82c72fab61de3cd22113038021607930b254",
+          "legacy": "redirect",
+          "sha256_after": "214d29c86eb6fed725e76ca7628f82c72fab61de3cd22113038021607930b254"
+        },
+        {
+          "old": "doc/auto/query-averaged-acquisition-v5-results-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/query-averaged-acquisition-v5-results-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "19e4cc72c8345af4d12825e54e8643e0b447285d90b401b35973f0065aca58bf",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "3c117214ee04e6362659b15a6e770b471afca0544f695a18345ef82804578eb4"
+        },
+        {
+          "old": "doc/auto/query-averaged-acquisition-v5.md",
+          "new": "docs/October/2026-10-26/local/auto-research/query-averaged-acquisition-v5.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "cc626ed99e3c5c38385fc1a3f7ba1594ed89b5526b57c6b05d77551a710707c5",
+          "legacy": "redirect",
+          "sha256_after": "cc626ed99e3c5c38385fc1a3f7ba1594ed89b5526b57c6b05d77551a710707c5"
+        },
+        {
+          "old": "doc/auto/qwen-continuous-implementation-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/qwen-continuous-implementation-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "b6dea5d7a3bdae049793d0674e63ba11eab98624a0fda1d4f4c30e6603267626",
+          "legacy": "redirect",
+          "sha256_after": "7db23a647b92a0136543deb1f55042b5fb58a82b6afd9b5ec644d6db82c7d5ec"
+        },
+        {
+          "old": "doc/auto/qwen-continuous-monitor-deployment-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/qwen-continuous-monitor-deployment-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "6cc92fd048335a535e50898bf36c160e575922ab2b21aa6a8d01e986a7eae1ec",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "6cc92fd048335a535e50898bf36c160e575922ab2b21aa6a8d01e986a7eae1ec"
+        },
+        {
+          "old": "doc/auto/qwen-proposal-quality-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/qwen-proposal-quality-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "555d260da834f9c3d8d59131e90d0726c7bc81ec40d4d8647aa990b67180ee2a",
+          "legacy": "redirect",
+          "sha256_after": "406bece1f75c462fa99d8c7969c3f5d28ab36e10c7abd4183f092db37e1b9d00"
+        },
+        {
+          "old": "doc/auto/qwen-task-binding-rollover-plan-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/qwen-task-binding-rollover-plan-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "45c016991beb1f672adff91ed5be9aa21433059ab11f4c45b2c3514bb610d57d",
+          "legacy": "redirect",
+          "sha256_after": "45c016991beb1f672adff91ed5be9aa21433059ab11f4c45b2c3514bb610d57d"
+        },
+        {
+          "old": "doc/auto/qwen-worker.md",
+          "new": "docs/October/2026-10-26/local/auto-research/qwen-worker.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "1e7bbc5195c5db9c59711ccfdde50bad3a7c461d5252eefff2b59cb32145fbcd",
+          "legacy": "redirect",
+          "sha256_after": "99ba266ef19e98c56bf929b0afa3a9e9ecb9a111fe2838c26962222ef2f6b694"
+        },
+        {
+          "old": "doc/auto/repetition-dwell-protocol-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/repetition-dwell-protocol-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "483f14d3a88558928d3c0b074789e3f31a253244c5b5d8dbfbbb7558ffeb966b",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "483f14d3a88558928d3c0b074789e3f31a253244c5b5d8dbfbbb7558ffeb966b"
+        },
+        {
+          "old": "doc/auto/repetition-dwell-results-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/repetition-dwell-results-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "3150c4f81226a0ba0a87aa2f9ec07ffcac06826471da778f92d30087298c91ac",
+          "legacy": "redirect",
+          "sha256_after": "a5dacf46063f99be3a563c08d58a3b658dc0ac83375e768692e3104a0b2f46f5"
+        },
+        {
+          "old": "doc/auto/repetition-dwell-review-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/repetition-dwell-review-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "2d1123a46b53e7e754726d7406b55ff8b11a3d445c7c6be7dc508461230883c5",
+          "legacy": "redirect",
+          "sha256_after": "2d1123a46b53e7e754726d7406b55ff8b11a3d445c7c6be7dc508461230883c5"
+        },
+        {
+          "old": "doc/auto/repetition-dwell-scientific-review-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/repetition-dwell-scientific-review-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "71fbb9604e478ffc553eb95e5ca50f8655adde028379b6d589b7e56f9130368c",
+          "legacy": "redirect",
+          "sha256_after": "71fbb9604e478ffc553eb95e5ca50f8655adde028379b6d589b7e56f9130368c"
+        },
+        {
+          "old": "doc/auto/repetition-memory-goal-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/repetition-memory-goal-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "7e199a4c00498383a11e4b84e717cc57b5fdf67cc3f6930855dc802e9501124d",
+          "legacy": "redirect",
+          "sha256_after": "7e199a4c00498383a11e4b84e717cc57b5fdf67cc3f6930855dc802e9501124d"
+        },
+        {
+          "old": "doc/auto/repetition-memory-next-experiment-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/repetition-memory-next-experiment-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "f6cd0832cbfd04959f9fd4fc65ceeff8fe31b9b51251f736e1add8c6ac1819a8",
+          "legacy": "redirect",
+          "sha256_after": "c965006bce0a99e5989250ebe8fc6cc0d88a33e2461988ff64e4f3d275a9f0e7"
+        },
+        {
+          "old": "doc/auto/research-charter.md",
+          "new": "docs/October/2026-10-26/local/auto-research/research-charter.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "6582d8e83d13c4cdd18e6df0fbdc812594e17db3eb11d790d6c11f0058de8b42",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "ae74d04784a1691536807518b7d8b1b3c45975f8f628cbb2fba20234dd9c462f"
+        },
+        {
+          "old": "doc/auto/research-program.md",
+          "new": "docs/October/2026-10-26/local/auto-research/research-program.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "91b0ea0f8f6fb7cd458f0db170f9c27bcfe858f9b6d12fbb6ffab86b151d1a6a",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "91b0ea0f8f6fb7cd458f0db170f9c27bcfe858f9b6d12fbb6ffab86b151d1a6a"
+        },
+        {
+          "old": "doc/auto/seed-statistics-implementation-2026-10-13.md",
+          "new": "docs/October/2026-10-13/local/auto-research/seed-statistics-implementation-2026-10-13.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "efa99e70d3f3193891d97eec0eef9c1d98f681fca179fde94e7ca8395054bfe8",
+          "legacy": "redirect",
+          "sha256_after": "336c2aaa290f1f2f3a9ad65d82759fd6b9cce17b7351d9cf381496ab90c6661b"
+        },
+        {
+          "old": "doc/auto/source-inventory.md",
+          "new": "docs/October/2026-10-26/local/auto-research/source-inventory.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "42f9fbf09589cc0ad5702397abfa77e899a088b0a0b1b7407626730e05cf7eaf",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "42f9fbf09589cc0ad5702397abfa77e899a088b0a0b1b7407626730e05cf7eaf"
+        },
+        {
+          "old": "doc/auto/statistics-freeze-proposal-v2.md",
+          "new": "docs/October/2026-10-26/local/auto-research/statistics-freeze-proposal-v2.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "e3d0e74438b051e8016f0edd7b1a8cbcb0b9e407feca0089cb09a2f823fe9eed",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "278944e0159822af56b230a895987e19c7ecca1d1c01688c623365ee9d481e4c"
+        },
+        {
+          "old": "doc/auto/tgcn-full-fit-readiness-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/tgcn-full-fit-readiness-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "80c295424c83fca8af30bb5abe5b12baabc07131422e2571ae9ae247dcb23918",
+          "legacy": "redirect",
+          "sha256_after": "80c295424c83fca8af30bb5abe5b12baabc07131422e2571ae9ae247dcb23918"
+        },
+        {
+          "old": "doc/auto/tgcn-native-calibration-protocol-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/tgcn-native-calibration-protocol-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "1767592c362d3d5113715d001cf54c70e52b4a4944788f2232a3c81520c33265",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "1767592c362d3d5113715d001cf54c70e52b4a4944788f2232a3c81520c33265"
+        },
+        {
+          "old": "doc/auto/tgcn-native-calibration-results-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/tgcn-native-calibration-results-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "e2312df57e64fdbe612852ade0cf62c3156a92ac73b62444f008369e7c3f5022",
+          "legacy": "redirect",
+          "sha256_after": "65f46da242a47c08a8e3d0258ef28ab5bed125bf7dfae5ce06aed1cb2b42624e"
+        },
+        {
+          "old": "doc/auto/tgcn-production-prefix-independent-review-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/tgcn-production-prefix-independent-review-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "1dd928e095f6cb20c79a81ef5b6e01d0fa0b51f5af0a1bc1f4d8161ae2204115",
+          "legacy": "redirect",
+          "sha256_after": "1dd928e095f6cb20c79a81ef5b6e01d0fa0b51f5af0a1bc1f4d8161ae2204115"
+        },
+        {
+          "old": "doc/auto/tgcn-production-prefix-protocol-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/tgcn-production-prefix-protocol-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "14c5b2755a835096d18681c651812bc44e595480fb090a36a3faaf4885a7b256",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "14c5b2755a835096d18681c651812bc44e595480fb090a36a3faaf4885a7b256"
+        },
+        {
+          "old": "doc/auto/tgcn-production-prefix-results-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/tgcn-production-prefix-results-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "98e74e480fc433ae3785938d30a7cd049666e3e2dafdd6e65291ba0892ecf94b",
+          "legacy": "redirect",
+          "sha256_after": "099f4339150b6bd98210855885e85480c28f1b5f53664d85f1fb3f718cde6e3c"
+        },
+        {
+          "old": "doc/auto/tgcn-reconstruction-readiness-2026-10-20.md",
+          "new": "docs/October/2026-10-20/local/auto-research/tgcn-reconstruction-readiness-2026-10-20.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "80b0f6b35ddc24e5d0ea0654b52469f5bffa6e0ff46b38a781f7ac9cfd4dbfd2",
+          "legacy": "redirect",
+          "sha256_after": "80b0f6b35ddc24e5d0ea0654b52469f5bffa6e0ff46b38a781f7ac9cfd4dbfd2"
+        },
+        {
+          "old": "doc/auto/tgrab-checkpoint-reconstruction-v1.md",
+          "new": "docs/October/2026-10-26/local/auto-research/tgrab-checkpoint-reconstruction-v1.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "698a3150566e47a1866308f7b9782ab2b2b1f4878b6592acb978972cb9f1107b",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "698a3150566e47a1866308f7b9782ab2b2b1f4878b6592acb978972cb9f1107b"
+        },
+        {
+          "old": "doc/auto/tgrab-node2a-job-preparation-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/tgrab-node2a-job-preparation-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "b95af9fbd4b62561e2aa7be6783dda6872d2826768a7c0120dabf787ea57c825",
+          "legacy": "redirect",
+          "sha256_after": "b95af9fbd4b62561e2aa7be6783dda6872d2826768a7c0120dabf787ea57c825"
+        },
+        {
+          "old": "doc/auto/tgrab-primary-data-conversion-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/tgrab-primary-data-conversion-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "ca98e3283302c32ed9340f6ec33ac72a8795fe2c895751aa5868035e93ae47e4",
+          "legacy": "redirect",
+          "sha256_after": "4224802ecd19d02653c345ae23cc871a449d36ddb66c8fb4a21100437dda29a0"
+        },
+        {
+          "old": "doc/auto/tgrab-primary-data-conversion-v1.md",
+          "new": "docs/October/2026-10-26/local/auto-research/tgrab-primary-data-conversion-v1.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "003e6b01d3b090841f623f75ed0648a397fe8afdaeb49dc382fb69a3f0e05584",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "c7cf65a99659925a24f7d08aca3a741708d4c9aa772210ec7687612633d41bcc"
+        },
+        {
+          "old": "doc/auto/tgrab-primary-data-verifier-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/tgrab-primary-data-verifier-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "54fd92c7e5fffc56b6e9b62c23f00ada6b13eb661ba1b6232636a40374e38075",
+          "legacy": "redirect",
+          "sha256_after": "19a28ebdb847f9afcec05229693bc8fdf9c9857d20c58debb259faa64eefaf74"
+        },
+        {
+          "old": "doc/auto/tgrab-primary-data-verifier-v1.md",
+          "new": "docs/October/2026-10-26/local/auto-research/tgrab-primary-data-verifier-v1.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "98433521eedf5dc86c30e54ab08d82b9bacb6fcdd3e37e94f1febfc099eff06c",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "98433521eedf5dc86c30e54ab08d82b9bacb6fcdd3e37e94f1febfc099eff06c"
+        },
+        {
+          "old": "doc/auto/tgrab-primary-payload-staging-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/tgrab-primary-payload-staging-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "1afd80cac3d06cda4dc2142367a9cc7ae3adfd01b49ba2967e6b4e7c111c8bad",
+          "legacy": "redirect",
+          "sha256_after": "1afd80cac3d06cda4dc2142367a9cc7ae3adfd01b49ba2967e6b4e7c111c8bad"
+        },
+        {
+          "old": "doc/auto/tgrab-reconstruction-implementation-2026-10-14.md",
+          "new": "docs/October/2026-10-14/local/auto-research/tgrab-reconstruction-implementation-2026-10-14.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "6436b1e9a4408fbbf829e2132a1ac18d83d1079c5ea38d3c3c1bd4451d678912",
+          "legacy": "redirect",
+          "sha256_after": "7a660f0adda49a90c738efbec0eabb396ac349ca174f5d0884eea2287d472f80"
+        },
+        {
+          "old": "doc/auto/tgrab-reconstruction-implementation-independent-review-2026-10-14.md",
+          "new": "docs/October/2026-10-14/local/auto-research/tgrab-reconstruction-implementation-independent-review-2026-10-14.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "9cc61e8a9436867ec118d74792b708219fadc05d53c532017bd7e0b8fb7f729b",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "9cc61e8a9436867ec118d74792b708219fadc05d53c532017bd7e0b8fb7f729b"
+        },
+        {
+          "old": "doc/auto/tgrab-reconstruction-runner-readiness-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/tgrab-reconstruction-runner-readiness-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "a81376c27044340b5c69068027191a26377a16c44ecc9c4862dc8f3d0063ff1d",
+          "legacy": "redirect",
+          "sha256_after": "112d082008c430a2eff149219937916408a3da5a990f229734ff203658dd364e"
+        },
+        {
+          "old": "doc/auto/tgrab-reproduction-audit-2026-10-14.md",
+          "new": "docs/October/2026-10-14/local/auto-research/tgrab-reproduction-audit-2026-10-14.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "96dc51d23d3345ab314649760e8a6337a6eb2d5c3e25427a01bb31b1ddc06741",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "48973eabc6c1b584ac4b5013bdf5265641ce3ab7c651818fb92b6d2883a358bb"
+        },
+        {
+          "old": "doc/auto/tgrab-selected-checkpoint-codec-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/tgrab-selected-checkpoint-codec-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "0e588c986ce84d48e0685c1c5530af6ad73d26a72bfd569fc1c707f93eedc0c3",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "0e588c986ce84d48e0685c1c5530af6ad73d26a72bfd569fc1c707f93eedc0c3"
+        },
+        {
+          "old": "doc/auto/tgrab-selected-checkpoint-codec-proposal-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/tgrab-selected-checkpoint-codec-proposal-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "bfa4548956c23ef6e3819ed015053ac68e939fa076b2ae1675cd582c61368f8f",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "f81ba6b0b2989c650a57ebd7f531b52b31687994080b6c36bd654dafceb7e6d1"
+        },
+        {
+          "old": "doc/auto/tgrab-selected-checkpoint-schema-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/tgrab-selected-checkpoint-schema-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "3a5e2a03f37b5f154df66f7bd55379824fafa0039bb435cf56a27cdc5b1f9203",
+          "legacy": "redirect",
+          "sha256_after": "c6d82f785bfdbf4f5797a1c65808ed43eab2225ae39831ce23dec34f38cfb052"
+        },
+        {
+          "old": "doc/auto/tgrab-selected-checkpoint-schema-revision002-confirmation-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/tgrab-selected-checkpoint-schema-revision002-confirmation-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "464850362d992d5e13f09c6dd24f64ff902a67eec6f8709c48f725c1539d6c35",
+          "legacy": "redirect",
+          "sha256_after": "1ed72d3b4fbd2275f503413737825299286151a63c8f8236acbcd9c1a3795042"
+        },
+        {
+          "old": "doc/auto/tgrab-selected-checkpoint-schema-v1.md",
+          "new": "docs/October/2026-10-26/local/auto-research/tgrab-selected-checkpoint-schema-v1.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "959287af66b18ae3796ef809b0e71071b576e912f2705920ef8db582c27084ee",
+          "legacy": "redirect",
+          "sha256_after": "dcbe04d203915daa67fb9e5a212b3abf2365dfafbf1eab86bd24a4dac569f678"
+        },
+        {
+          "old": "doc/auto/tgrab-selected-tensor-catalog-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/tgrab-selected-tensor-catalog-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "4a4690f2df7214628f3c5f05c72dfce9804661318a214acd0700a5361a8ab171",
+          "legacy": "redirect",
+          "sha256_after": "4a4690f2df7214628f3c5f05c72dfce9804661318a214acd0700a5361a8ab171"
+        },
+        {
+          "old": "doc/auto/tgrab-selected-tensor-catalog-independent-review-2026-10-16.md",
+          "new": "docs/October/2026-10-16/local/auto-research/tgrab-selected-tensor-catalog-independent-review-2026-10-16.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "e58beb149312cee4a31d977e9a471729d39e02b79c2c23576790a50b4d64e8bd",
+          "legacy": "redirect",
+          "sha256_after": "e58beb149312cee4a31d977e9a471729d39e02b79c2c23576790a50b4d64e8bd"
+        },
+        {
+          "old": "doc/auto/tgrab-training-runner-implementation-contract-2026-10-15.md",
+          "new": "docs/October/2026-10-15/local/auto-research/tgrab-training-runner-implementation-contract-2026-10-15.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "91745076bbcb4c963530980b6b58471a9f184835b72fc0cc4fcde82573a93d73",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "6a08ead898d35abf69f730c6ef3b26631c293c3b499087eb8bed5ae982c81751"
+        },
+        {
+          "old": "doc/auto/tgrab-upstream-pin-2026-10-12.md",
+          "new": "docs/October/2026-10-12/local/auto-research/tgrab-upstream-pin-2026-10-12.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "26491d44b573fdce2a69d7eccb433c8484c2ac1ad5bec7c7b3acd726c553a7dd",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "1d06d998321bd6049c562a8fcb87271a6c6c1af850f263fb81b415640f1a1ef7"
+        },
+        {
+          "old": "doc/auto/theory-propositions.md",
+          "new": "docs/October/2026-10-26/local/auto-research/theory-propositions.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "e6b618574a75c3da0e8a775ea8180c6ddfb2b484236a95e05534a9063579378b",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "831974b73c391a2cde9740fd3fa9680ca76b6389f2e1570652c9cef8bdccc79a"
+        },
+        {
+          "old": "doc/auto/wandb-reporting.md",
+          "new": "docs/October/2026-10-26/local/auto-research/wandb-reporting.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "e1413408705c54c179caf700c5f0b21df27ce72126e879ca91ec916cc1db1890",
+          "legacy": "redirect",
+          "sha256_after": "e1413408705c54c179caf700c5f0b21df27ce72126e879ca91ec916cc1db1890"
+        },
+        {
+          "old": "doc/auto/figures/repetition-dwell-2026-10-20/numbers.md",
+          "new": "docs/October/2026-10-20/local/auto-research/figures/repetition-dwell-2026-10-20/numbers.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "0e507a93097b7747367d3b5270dbbf8550e66517d2b3689135a4400ae1da9927",
+          "legacy": "redirect",
+          "sha256_after": "0e507a93097b7747367d3b5270dbbf8550e66517d2b3689135a4400ae1da9927"
+        },
+        {
+          "old": "doc/literature/README.md",
+          "new": "docs/October/2026-10-26/local/literature/README.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "267d7d679f098784b77256e493ea39d2097891404c1ad1617a92ecbc77ba4a68",
+          "legacy": "redirect",
+          "sha256_after": "df15a3f0891f9e20f163dff7a6e867a4643ebc563d04d3862b606cbe3fcd3850"
+        },
+        {
+          "old": "doc/literature/bibliography.md",
+          "new": "docs/October/2026-10-26/local/literature/bibliography.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "a86f693b377984bd477519ec41fdef6e813834ee6472801cc8304d51a9901436",
+          "legacy": "redirect",
+          "sha256_after": "c9b029f5dcbf7fa0046f573ed19da545e5636d10824b583d47df4acddc4b4085"
+        },
+        {
+          "old": "doc/literature/novelty-review.md",
+          "new": "docs/October/2026-10-26/local/literature/novelty-review.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "e32286609330d2e8f2c2af89edcaee2ebb0405cba9f2e0439cec9aa20b18f343",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "4f13dadb9181d3c50107ebf16245e8d84576de6d55b610337f05960d536ea880"
+        },
+        {
+          "old": "doc/literature/search-log.md",
+          "new": "docs/October/2026-10-26/local/literature/search-log.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "c3441cee74325eb497069cc2b238b34033d1aa1a011980b6ffbda2f0a5729613",
+          "legacy": "redirect",
+          "sha256_after": "55db00b77598d3a15cc15709ea9a9f7330f2e4b618f113cc31fc52649f4334f3"
+        },
+        {
+          "old": "doc/literature/evidence/architectures-review.md",
+          "new": "docs/October/2026-10-26/local/literature/evidence/architectures-review.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "ca6da3dcd01d3d36a337320b53e05b303ab65003970ed0db4bc04cf47b9087a9",
+          "legacy": "redirect",
+          "sha256_after": "0efa7ee3a90d4f86961d973fab024fbbbf39e17d7121182530ddf67be2a0b0b8"
+        },
+        {
+          "old": "doc/literature/evidence/graph-methods-review.md",
+          "new": "docs/October/2026-10-26/local/literature/evidence/graph-methods-review.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "1098ebb8dfe6a5cd8a1c26e98468ed9905fdd398f680c94ea03c1c86462e3bb4",
+          "legacy": "redirect",
+          "sha256_after": "76cb41b5c7ac19a7d54c1ced6406d0422224126de626f6839b25bb51fca5459a"
+        },
+        {
+          "old": "doc/literature/evidence/memory-review.md",
+          "new": "docs/October/2026-10-26/local/literature/evidence/memory-review.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "8d425ca9eddc8f49f8ea89784e9aeb32097dadb0cc4efbd02cde23e35c8fbd1d",
+          "legacy": "redirect",
+          "sha256_after": "fa1d0dc72010338e057e77bc063958bf84f8ecf370fd56e4af0be7c6cb6540ee"
+        },
+        {
+          "old": "doc/literature/evidence/theory-review.md",
+          "new": "docs/October/2026-10-26/local/theory/evidence/theory-review.md",
+          "date_basis": "migration date; original date not established",
+          "sha256_before": "ac6befd0b2e645dabbcb36e04a357dea72a22c316714970544c94d9197c7e516",
+          "legacy": "redirect",
+          "sha256_after": "b76b95b3a3c0c1b15d4939ac9679922e68393b2e20f463666dc9090a74739f45"
+        },
+        {
+          "old": "doc/october/october11/2026-10-11-progress-report.md",
+          "new": "docs/October/2026-10-11/local/report/2026-10-11-progress-report.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "5b801f54e8addc03e88b82e11612ee7a0d3cf7c52ec757fb682071925dc0faad",
+          "legacy": "redirect",
+          "sha256_after": "a5c3b6e89b8af370148d7cb2d5b8cc9b6f26fe85a8d028e978627346f44d12fc"
+        },
+        {
+          "old": "doc/october/october12/2026-10-12-progress-report.md",
+          "new": "docs/October/2026-10-12/local/report/2026-10-12-progress-report.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "6030dc948f1661c24922db574e5ead03601f53615d5f3564c95cfdbd828882da",
+          "legacy": "redirect",
+          "sha256_after": "6414f744086c1e8b1eb6a0ef3cad4e2fa47de06b0740061dc53ac7c5034d281b"
+        },
+        {
+          "old": "doc/october/october13/2026-10-13-progress-report.md",
+          "new": "docs/October/2026-10-13/local/report/2026-10-13-progress-report.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "8238edfbe25b265d56e0231a14fc45a07db7d63ab4943717597a6b743f00b5bd",
+          "legacy": "redirect",
+          "sha256_after": "c1613a62ce51d0ec64f48b4cf8bc4a38e5cc28011f43e1cabc03e156072b9112"
+        },
+        {
+          "old": "doc/october/october14/2026-10-14-progress-report.md",
+          "new": "docs/October/2026-10-14/local/report/2026-10-14-progress-report.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "1fa969d5225b821408d4748705cb463f153bcb3de6baef129eef358412ce4fc3",
+          "legacy": "frozen-runtime-copy",
+          "sha256_after": "7225864869b319d76f2d9c01198c1936c447d771335b1fcecab9b837b05072e2"
+        },
+        {
+          "old": "doc/october/october15/2026-10-15-progress-report.md",
+          "new": "docs/October/2026-10-15/local/report/2026-10-15-progress-report.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "cd716396477a51caa7915bb7d3bff2b84e10a6fd45e0f770f17f8f5882217262",
+          "legacy": "redirect",
+          "sha256_after": "49fb643fe4a1d8e2b563eabde14d59b8a3be61a759496b80110e7dcf83011bf3"
+        },
+        {
+          "old": "doc/october/october16/2026-10-16-progress-report.md",
+          "new": "docs/October/2026-10-16/local/report/2026-10-16-progress-report.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "a98d9a72c82a99d22c6c4605dc6a6b06411be664143f07e487941963fb11fe25",
+          "legacy": "redirect",
+          "sha256_after": "675a1449ff1b55fa0cf7da114d49077b657f06972c8fb77ba98428c350d52735"
+        },
+        {
+          "old": "doc/october/october17/2026-10-17-progress-report.md",
+          "new": "docs/October/2026-10-17/local/report/2026-10-17-progress-report.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "5f2358ea56e17a60be403ad28942180e8f2816bc988fe6db82828acd19115537",
+          "legacy": "redirect",
+          "sha256_after": "5f2358ea56e17a60be403ad28942180e8f2816bc988fe6db82828acd19115537"
+        },
+        {
+          "old": "doc/october/october19/2026-10-19-progress-report.md",
+          "new": "docs/October/2026-10-19/local/report/2026-10-19-progress-report.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "f80f269c4817f321d8b9fa250319b85d15660d4b6c8eee7868e0e083fdd106bd",
+          "legacy": "redirect",
+          "sha256_after": "b2328ef8ccb39963020506bc775c5e4213a9529b58ac67613e485131cd659a14"
+        },
+        {
+          "old": "doc/october/october20/2026-10-20-progress-report.md",
+          "new": "docs/October/2026-10-20/local/report/2026-10-20-progress-report.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "3a50c306a1110f3ef4fdd9bf756da4cd83c692fd7e8f7e8029c19a52bef09788",
+          "legacy": "redirect",
+          "sha256_after": "756ed4f4833f873bfec5f9b7bd734c1092000df8c9ab66c052c058a175e8d89a"
+        },
+        {
+          "old": "doc/october/october23/2026-10-23-progress-report.md",
+          "new": "docs/October/2026-10-23/local/report/2026-10-23-progress-report.md",
+          "date_basis": "explicit path date",
+          "sha256_before": "2e3400a597bdd31f2a66d647d4a8a8bda2e08c9a4871025d56b8ca0906f95722",
+          "legacy": "redirect",
+          "sha256_after": "1a71a9d56b11243e2c21cd33ffeb11eaecedf2f9c8bb55ae92485749cf961089"
+        }
+      ]
+    }
+  ]
+}

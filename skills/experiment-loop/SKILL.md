@@ -39,7 +39,7 @@ obtain a new concrete envelope for additional allocations, races or
 model-service fallback.
 
 The user requested subagent research management. For bounded parallel tasks,
-follow [the agent protocol](../../doc/auto/agent-protocol.md) and use
+follow [the agent protocol](../../docs/October/2026-10-26/local/auto-research/agent-protocol.md) and use
 `model-routing` for routes that the current session actually exposes. A worker
 gets one owner, explicit paths, evidence requirements, and acceptance checks.
 Never substitute a model's favorable verdict for a reproducible measurement.
@@ -47,3 +47,10 @@ Never substitute a model's favorable verdict for a reproducible measurement.
 Conclude each iteration with the node state, paths to verified evidence, any
 scientific decision, and the next unblocked action. Persist this under `doc/`
 before handing off; preserve failed attempts and unresolved questions.
+
+## Current documentation/reporting policy (2026-10-26)
+
+Follow root `AGENTS.md` and `docs/October/2026-10-26/cross-cluster/guidelines/documentation-layout.md`.
+That policy supersedes older notebook paths and W&B scope in this skill. Use dated
+cluster/subproject/type docs and Git synchronization. W&B covers monitored scientific
+result jobs; preprocessing, progress-only tasks and infrastructure checks are excluded.

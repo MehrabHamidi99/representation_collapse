@@ -1,53 +1,7 @@
-# T-GCN reconstruction readiness — 2026-10-20
+<!-- documentation-layout: redirect -->
+# Documentation moved
 
-## Decision and evidence boundary
+Read [the canonical document](../../docs/October/2026-10-20/local/auto-research/tgcn-reconstruction-readiness-2026-10-20.md).
 
-T-GCN is the next recurrent DTDG model to reconstruct after GC-LSTM. Its public wrapper, training hooks and launch settings are now recovered at the same T-GRAB commit **31293102b065feef7817ff86211427d7594edfdb**. This is source readiness, not a runnable implementation, recovered historical run, trained-model result or completed Figure 10 reproduction. No dataset, weights, state arrays, cluster or native model were accessed for this audit.
-
-The original retained directory `runs/graph/upstream-pin-20261012/source/` was a selected GC-LSTM subset. Five missing official public source files were fetched into the separate ignored `runs/graph/tgcn-source-31293102-20261020/` directory. For each, the Git blob SHA-1 was recomputed as `SHA1(b'blob '+decimal_byte_length+b'\0'+raw_bytes)` and matched against the previously cached upstream Git tree. Its `source-inventory.json` records byte sizes, SHA-256, Git blob identities and immutable URLs. The subset was not silently turned into a purported complete checkout.
-
-The active retained KDD draft is `ACM___TGRAB_KDD_2026/kdd/main.tex`, line 353, which includes `kdd/tex/100appendix.tex`. Appendix lines 313–338 define the two-panel per-timestep F1 figure on Pdet(2,32): DTDG and CTDG. The corresponding assets are `(2,32)DTDG_avg_f1.pdf` and `(2,32)CTDG_avg_f1.pdf`; the scientific target is behavioral decline between changes, not a directly measured dimension spectrum. T-GCN extends DTDG coverage only; it does not complete either panel or the CTDG comparison. The five-seed and training statements are at appendix lines 34–42, not inferred from rendered curves.
-
-## Recovered architecture and complete state
-
-The new source files below are relative to the T-GCN acquisition directory; shared sources are relative to the original upstream `source/` subset.
-
-- `model/tgcn.py:10–36`: `TGCNParams(in_channels, out_channels, improved=False, cached=False)`. `MultiLayerTGCN(num_units, base_args)` constructs temporal cells with **`add_self_loops=False`**, including subsequent layers. This overrides the dependency's default of `True` and must be explicit in a native adapter. `forward` at lines 43–53 passes each layer's persistent hidden state, stacks all resulting states, and returns both the stack and final-layer embeddings.
-- `train/DTDG/tgcn.py:19–31`: input width is the dataset node-feature width, not an assumed scalar argument. `train/DTDG/link_pred/tgcn.py:8–14` initializes zero hidden state of shape **[layers, nodes, hidden width]** and detaches it at every backpropagation-window start. Lines 21–32 extract graph edges/edge weights and update persistent `_h0`; the model has **no LSTM cell state**. `periodicity/tgcn.py:1–5` combines this trainer with the shared periodic task implementation.
-- The retained official dependency source is `runs/review/native-graph-environment-20261015/temporal-derived-wheel-attempt-001/source/torch_geometric_temporal-0.54.0/torch_geometric_temporal/nn/recurrent/temporalgcn.py`. Lines 18–75 define three `GCNConv` gates and three `Linear(2H,H)` maps. Lines 77–102 and 125–130 implement zero initialization, sigmoid update/reset, tanh candidate and `H_next = Z*H + (1-Z)*candidate`. This is `TGCN`, **not the separate batched `TGCN2` class beginning at line 133**.
-
-The fixed-periodicity launcher has one-hot node features (`slurm.sh:66–71`) and a DTDG branch specifying one unit and width 128 (`:224–254`). With the already pinned 100-node conversion, input width is 100 and complete persistent state is **1×100×128 = 12,800 coordinates**; the final-layer output is the same state only in this single-layer case. Node order must remain canonical 0–99 and match feature, adjacency and state axes. For multiple layers all hidden layers remain part of the state. With `cached=False`, no normalized-adjacency cache is intended to carry graph history; confirm this with native storage/state inspection before acceptance.
-
-The unchanged shared head (`model/link_predictor.py:5–23`) concatenates source/destination embeddings, applies two ReLU/Linear hidden stages, dropout 0.2, final Linear and sigmoid. It therefore has three Linear maps despite the manuscript's “two-layer MLP” shorthand. At width 128 the source-derived count is 137,472 recurrent parameters plus 49,537 head parameters = 187,009, consistent with the draft's rounded 187k T-GCN entry (`100appendix.tex:243`). This is algebra from source shapes, not native parameter enumeration or an execution test.
-
-## Training chronology and consequential deviations
-
-Confirmed shared source policy: chronological single-snapshot batches without shuffling (`link_pred/trainer.py:130–135`), Adam (`:62–69`) with default learning rate 1e-4 (`train/trainer.py:174`), and positive BCE plus equally sized sampled-negative BCE (`link_pred/trainer.py:269–301`). Periodic evaluation scores all ordered off-diagonal node pairs with threshold >=0.5 and zero-division=0 (`periodicity/trainer.py:27–59`), preserving per-timestep F1 rows (`:61–72`). Under the accepted 40/4/4 periods this implies training targets 1–2559, validation 2560–2815 and test 2816–3071 for the prospective corrected chronology.
-
-The recovered T-GCN shell script (`_tgcn.sh:33–47`) specifies patience 100, nominal 100,000 maximum epochs, backpropagation window 1 and last-loss-only backpropagation. This differs from the draft's statement of no fixed maximum. The retained top-level launch script currently activates only DyGFormer (`slurm.sh:19–20`), loops N=1 rather than 32 (`:38–40`) and seed 3457 (`:66`); its inactive DTDG branch documents architecture settings but **does not prove these exact commands generated Figure 10**. The draft says five seeds, but the historical seed list and Figure 10 run IDs are not recovered. New seeds 0–4 would be a declared new cohort, not recovered historical identities.
-
-Do not silently replay the legacy trainer as corrected science. It replaces the first predecessor with random noise or a saved prior snapshot (`link_pred/trainer.py:252–257`), carries a final forward result into evaluation (`:303–307`), scores before consuming each validation/test target (`:387–406`), uses a set for optimizer parameters (`:58–65`), and has a questionable decreasing-loss comparison (`utils/early_stopping.py:56–58`). The periodic early-stop override can also stop on perfect **test** performance (`periodicity/trainer.py:74–78`). Historical compatibility and corrected prospective reconstruction must have separate labels and contracts. The next corrected fit should preserve the existing zero-state prefix replay, deterministic parameter order, corrected training-loss patience and validation-only selection contract, recording every deliberate deviation. A 200-epoch or operational cap must be declared prospectively rather than called manuscript-uncapped training.
-
-## Minimum implementation and acceptance path
-
-1. Pin these wrapper bytes and the dependency TGCN/GCNConv source plus actual installed dependency identities. The derived-wheel source receipt includes `temporalgcn.py` with the SHA below, so dependency source is available locally; this audit does **not** verify a current remote installation or its native numerical equivalence. Package-name/version agreement alone is insufficient.
-2. Add a dedicated hidden-only state/backend adapter: zero initialization, detach, predecessor consume/target score, complete-state serialization, node ordering, train/eval dropout modes and dual recurrent/head weights. Keep GC-LSTM's existing H+C formats immutable. A new model-specific tensor catalog and bundle contract must encode T-GCN gate names/shapes and terminal H[2816], with no invented cell tensor or v1 identity coercion.
-3. Before a fit, require tiny native forward/loss/gradient/update parity, exact zero/carry chronology, edge weights and self-loop override, dynamic-graph no-cache behavior, deterministic fresh seeds, complete tensor inventory, finite FP32 bytes, strict dual-component load, storage nonaliasing and full-prefix terminal replay. Use synthetic fixtures and isolated reporting; passing source arithmetic alone does not satisfy these gates.
-4. Freeze the corrected T-GCN fit/selection/stopping protocol, seed cohort and reporting before examining its held-out curve. Start one seed with the accepted conversion, then separately admit a five-seed cohort and aggregation once engineering gates pass. Preserve persistence/phase-oracle controls, per-target confusion counts and fixed phases 1–8 versus 24–31. Hidden-state covariance, absolute variance, closure and task behavior remain distinct measurements; periodic input does not certify Floquet dynamics or useful-memory erasure.
-
-The source recovery removes the immediate wrapper-acquisition blocker. Historical checkpoints, exact Figure 10 seed/run correspondence, original plotting numeric inputs, wrapper/runtime equivalence and a reviewed T-GCN implementation remain unresolved **within this audit's scope**. No claim is made that historical artifacts do not exist elsewhere. Matched periodic-versus-nonperiodic ordering and causal retention interventions remain separate future experiments under the novelty charter; reproducing another F1 curve cannot establish that claim.
-
-## Immutable source inventory
-
-SHA-256 values (full acquisition URLs use `https://raw.githubusercontent.com/alirezadizaji/T-GRAB/31293102b065feef7817ff86211427d7594edfdb/` plus each path):
-
-- `model/tgcn.py`: `028a85f0527833a7e62099e8bb826ac144df29738ee120795d205d96a8c6f78c`; Git blob `6a5f57dd0319e155c39a7155b663da3019702328`.
-- `train/DTDG/tgcn.py`: `998f7ddd5f4fdfd62d25f4c74a7670633ba88da894c330fc76e1f0ded85b1cc8`; blob `fb26e053556d49849b73974523a7953fafa62d74`.
-- `train/DTDG/link_pred/tgcn.py`: `77aadf067076baabd906ddfaf39c0ee18b3e5f82431205be6084ac762cbc17e8`; blob `a3d69dc14ed6d1181972eba20efadcc4b9d19d26`.
-- `train/DTDG/link_pred/periodicity/tgcn.py`: `451c93f0882d4fadece6eb8f0dff6a59a46f4031503ee6c8f0de517d8719ad8d`; blob `94f59c80a7964195e2770aa82995c94b880fd039`.
-- `scripts/task/link_pred/periodicity/DTDG/_tgcn.sh`: `d18a554663fa268851d87e5e9fb84f5b2bfddea22eba3b7ab365611832d4c6d2`; blob `3144d86a29daffd1e5d1127fdd51c23fbd0a43c7`.
-- Dependency `temporalgcn.py`: `1f417ad10b1fb3ed6af24731efb0e80b614495a3e4df3fc16254e631c3c8819e` (9,638 bytes; matches retained derived-wheel source inventory).
-- Cached `github-tree.json`: `988078fa03ea98298dd20acdc9e214fa20841bb51c05af2711cbd8573dfe675f`; `github-commit.json`: `c2acbc9c2264ff96e035c30b55005c32477d825889a307bafd85b53d8b84b0bc`.
-- Shared `model/link_predictor.py`: `cca12cfc73b8660c92236f530504da08ba0b606ec13a1a681ffabcae43b7ca86`; `train/DTDG/link_pred/trainer.py`: `beada76c5761e771167247afed94ec273dba927ba1bd6167d081b394e14151a7`.
-- Shared periodic `trainer.py`: `e25be9b55f4e1f54535e6a4ca7f05232d0236f50c0c5ab3eed0bfdb501c575ec`; top-level periodic `slurm.sh`: `a650ff4e7b9316d76ad06fedf1c53ae0d4d8a728e2f43a97d9577cd3e7ca8dbd`.
-- Active KDD `main.tex`: `f9d50cfaa3061dad6fbf9732e5f4206d8220651f80548f8bf5bb45c772850327`; included `100appendix.tex`: `b75cea32e00a26b1e28fefdc845e3464f3c6111fac31c2a0d60e87a9349bfcce`.
+Canonical repository path: `docs/October/2026-10-20/local/auto-research/tgcn-reconstruction-readiness-2026-10-20.md`.
+This compatibility pointer is not a second documentation source.

@@ -5,10 +5,10 @@ description: Design, implement, or review Floquet, finite-time tangent, Lyapunov
 
 # Recurrent dynamics and representation dimension
 
-Read [the research program](../../doc/auto/research-program.md) for the
+Read [the research program](../../docs/October/2026-10-26/local/auto-research/research-program.md) for the
 measurement contract. For legacy graph experiments read
-[graph reproduction](../../doc/auto/graph-reproduction.md); for provenance or
-claims inherited from figures read [source inventory](../../doc/auto/source-inventory.md).
+[graph reproduction](../../docs/October/2026-10-26/local/auto-research/graph-reproduction.md); for provenance or
+claims inherited from figures read [source inventory](../../docs/October/2026-10-26/local/auto-research/source-inventory.md).
 
 Choose the complete persistent state and output chronology before writing
 derivatives. GC-LSTM graph states include coupled nodes, hidden/cell state and
@@ -55,3 +55,10 @@ review checks those artifacts before accepting a claim. Verified negative
 evidence is a valid outcome. Follow the repository's experiment and cluv workflow
 for compute; this skill neither grants cluster resources nor transfers quotas
 from the external template. Preserve inherited manuscripts and figures.
+
+## Current documentation/reporting policy (2026-10-26)
+
+Follow root `AGENTS.md` and `docs/October/2026-10-26/cross-cluster/guidelines/documentation-layout.md`.
+That policy supersedes older notebook paths and W&B scope in this skill. Use dated
+cluster/subproject/type docs and Git synchronization. W&B covers monitored scientific
+result jobs; preprocessing, progress-only tasks and infrastructure checks are excluded.

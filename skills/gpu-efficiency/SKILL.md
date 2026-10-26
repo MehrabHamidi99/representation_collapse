@@ -58,3 +58,10 @@ idle interactive allocation when authorized and its work is complete.
 Scientific settings and scheduler constraints belong to the adopting project.
 Do not import this package's originating project's job IDs, GPU limits,
 datasets, four-GPU topology, W&B permissions or cluster credentials.
+
+## Current documentation/reporting policy (2026-10-26)
+
+Follow root `AGENTS.md` and `docs/October/2026-10-26/cross-cluster/guidelines/documentation-layout.md`.
+That policy supersedes older notebook paths and W&B scope in this skill. Use dated
+cluster/subproject/type docs and Git synchronization. W&B covers monitored scientific
+result jobs; preprocessing, progress-only tasks and infrastructure checks are excluded.

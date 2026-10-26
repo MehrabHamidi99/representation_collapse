@@ -17,7 +17,7 @@ public T-GRAB benchmark) and currently runs on controlled vector memory tasks.
 **200 epochs / 511,800 updates**; validation selected epoch **160**. Its single
 held-out pass gives mean F1 **0.891900** and a frozen early-to-late decline
 **0.959297 → 0.818771** (14.05 percentage points) within repeated motifs.
-[Verified report, plots, compact spectra and provenance](doc/auto/figure10-gclstm-longfit-results-2026-10-20.md).
+[Verified report, plots, compact spectra and provenance](docs/October/2026-10-20/local/auto-research/figure10-gclstm-longfit-results-2026-10-20.md).
 
 Complete hidden-plus-cell variance falls sharply within both motifs, while
 participation ratio decreases modestly. Hidden-only dimension moves in different
@@ -26,7 +26,7 @@ while variance increases, so conditioning changes the interpretation. States
 are not exactly periodic; no Floquet mechanism or causal memory loss is established.
 This is one corrected model/graph, below Persistence F1 **0.968750**, rather than
 the full multi-method/five-seed Figure 10. The earlier
-[seven-epoch pilot](doc/auto/figure10-gclstm-pilot-results-2026-10-19.md)
+[seven-epoch pilot](docs/October/2026-10-19/local/auto-research/figure10-gclstm-pilot-results-2026-10-19.md)
 is preserved; the two budgets are not independent replications. Controlled-memory
 pilots still fail their joint competence gate.
 
@@ -36,35 +36,35 @@ source identities, exact selected complete-state replay, numerical summaries
 and actual offline W&B history; cloud delivery remains unverified. The previous
 monitor had an overnight connection-error gap despite training continuing.
 The local proposal-only Qwen worker is live with 44 completed reviews. Native agents implement and independently review changes.
-[Current tracker and stop controls](doc/TRACKER.md).
+[Current tracker and stop controls](docs/October/2026-10-26/local/report/TRACKER.md).
 
 The [manuscript](paper/README.md) separates the behavioral reconstruction from
 its geometric and causal limits. The
-[coverage plan](doc/auto/figure10-coverage-and-next-fit-2026-10-19.md) and
-[T-GCN readiness audit](doc/auto/tgcn-reconstruction-readiness-2026-10-20.md)
+[coverage plan](docs/October/2026-10-19/local/auto-research/figure10-coverage-and-next-fit-2026-10-19.md) and
+[T-GCN readiness audit](docs/October/2026-10-20/local/auto-research/tgcn-reconstruction-readiness-2026-10-20.md)
 identify remaining models, seeds and source-parity gates. T-GCN now has an accepted
-[native calibration](doc/auto/tgcn-native-calibration-results-2026-10-20.md) and
-a verified [256-update production training prefix](doc/auto/tgcn-production-prefix-results-2026-10-20.md).
+[native calibration](docs/October/2026-10-20/local/auto-research/tgcn-native-calibration-results-2026-10-20.md) and
+a verified [256-update production training prefix](docs/October/2026-10-20/local/auto-research/tgcn-production-prefix-results-2026-10-20.md).
 Its full fit, checkpoint selection/replay and held-out curve remain pending. Source snapshots remain
-preserved. Numerical runs follow the [reporting contract](doc/auto/wandb-reporting.md).
+preserved. Numerical runs follow the [reporting contract](docs/October/2026-10-26/local/auto-research/wandb-reporting.md).
 
 ## Start here
 
 | Topic | Canonical document |
 | --- | --- |
-| Question, hypotheses, claims, antecedent deltas, publication rule | [doc/auto/research-charter.md](doc/auto/research-charter.md) |
-| Theory: propositions P1–P12 with proofs, fixtures, limits, predictions; corrections to the inherited draft | [doc/auto/theory-propositions.md](doc/auto/theory-propositions.md) |
-| Experimental design: task, intervention, Gates A–D, measurement battery, statistics, evidence ledger | [doc/auto/experimental-design-v2.md](doc/auto/experimental-design-v2.md) |
-| Measurement contract | [doc/auto/research-program.md](doc/auto/research-program.md), [skills/floquet-analysis/SKILL.md](skills/floquet-analysis/SKILL.md) |
-| Evidence and current state | [doc/TRACKER.md](doc/TRACKER.md), [doc/auto/initial-phase-scientific-review.md](doc/auto/initial-phase-scientific-review.md), dated notebook under `doc/october/` |
-| Literature and novelty audit | [doc/literature/novelty-review.md](doc/literature/novelty-review.md), [doc/literature/README.md](doc/literature/README.md) |
-| Code status versus the contract | [doc/auto/implementation-audit.md](doc/auto/implementation-audit.md) |
+| Question, hypotheses, claims, antecedent deltas, publication rule | [docs/October/2026-10-26/local/auto-research/research-charter.md](docs/October/2026-10-26/local/auto-research/research-charter.md) |
+| Theory: propositions P1–P12 with proofs, fixtures, limits, predictions; corrections to the inherited draft | [docs/October/2026-10-26/local/auto-research/theory-propositions.md](docs/October/2026-10-26/local/auto-research/theory-propositions.md) |
+| Experimental design: task, intervention, Gates A–D, measurement battery, statistics, evidence ledger | [docs/October/2026-10-26/local/auto-research/experimental-design-v2.md](docs/October/2026-10-26/local/auto-research/experimental-design-v2.md) |
+| Measurement contract | [docs/October/2026-10-26/local/auto-research/research-program.md](docs/October/2026-10-26/local/auto-research/research-program.md), [skills/floquet-analysis/SKILL.md](skills/floquet-analysis/SKILL.md) |
+| Evidence and current state | [docs/October/2026-10-26/local/report/TRACKER.md](docs/October/2026-10-26/local/report/TRACKER.md), [docs/October/2026-10-26/local/auto-research/initial-phase-scientific-review.md](docs/October/2026-10-26/local/auto-research/initial-phase-scientific-review.md), dated notebook under `doc/october/` |
+| Literature and novelty audit | [docs/October/2026-10-26/local/literature/novelty-review.md](docs/October/2026-10-26/local/literature/novelty-review.md), [docs/October/2026-10-26/local/literature/README.md](docs/October/2026-10-26/local/literature/README.md) |
+| Code status versus the contract | [docs/October/2026-10-26/local/auto-research/implementation-audit.md](docs/October/2026-10-26/local/auto-research/implementation-audit.md) |
 | Diagnostic manuscript | [paper/README.md](paper/README.md) |
-| Operations and compute | [doc/auto/compute-plan.md](doc/auto/compute-plan.md), [skills/project-ops/SKILL.md](skills/project-ops/SKILL.md) |
+| Operations and compute | [docs/October/2026-10-26/local/auto-research/compute-plan.md](docs/October/2026-10-26/local/auto-research/compute-plan.md), [skills/project-ops/SKILL.md](skills/project-ops/SKILL.md) |
 
 Agents start at [AGENTS.md](AGENTS.md). The declarative dependency plan is
 [configs/research-plan.json](configs/research-plan.json); the
-[agent protocol](doc/auto/agent-protocol.md) defines bounded subagent handoffs.
+[agent protocol](docs/October/2026-10-26/local/auto-research/agent-protocol.md) defines bounded subagent handoffs.
 
 ## Repository layout
 
@@ -93,7 +93,7 @@ installs a torch-less environment in which model-dependent tests are skipped.
 If `uv run` cannot import the package (observed on one macOS checkout where `.venv` files
 carry the hidden flag and CPython skips hidden `.pth` files), use
 `PYTHONPATH="$PWD/src" .venv/bin/python` in place of `uv run --locked python`.
-The [diagnostic constructor/oracle guide](doc/auto/diagnostics-implementation.md)
+The [diagnostic constructor/oracle guide](docs/October/2026-10-26/local/auto-research/diagnostics-implementation.md)
 explains the additive R0, single-WRITE and corruption-control fixtures.
 
 The calibrations check participation ratio and entropy dimension on known
@@ -112,8 +112,8 @@ uv run --group ops cluv --help
 uv run --group ops python code/ops/preflight.py
 ```
 
-Follow the [compute plan](doc/auto/compute-plan.md) and
-[cluster access notes](doc/auto/cluster-access.md). Cluster jobs require a
+Follow the [compute plan](docs/October/2026-10-26/local/auto-research/compute-plan.md) and
+[cluster access notes](docs/October/2026-10-26/cross-cluster/auto-research/cluster-access.md). Cluster jobs require a
 concrete approved resource envelope recorded in ignored
 `configs/approval.local.json`; both envelopes used so far are exhausted and no
 new allocation is authorized by any document in this repository. Graph

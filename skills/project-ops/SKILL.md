@@ -5,7 +5,7 @@ description: Prepare and operate this Floquet research project's locked environm
 
 # Project operations
 
-Read root `AGENTS.md` and [compute plan](../../doc/auto/compute-plan.md) before
+Read root `AGENTS.md` and [compute plan](../../docs/October/2026-10-26/local/auto-research/compute-plan.md) before
 cluster work. This project studies representation dimension collapse in
 recurrent models; other projects' resource preferences do not apply.
 
@@ -104,3 +104,10 @@ phase timing and per-device telemetry within this project's resource envelope.
 Keep frozen batch/loss, precision and recurrence measurements fixed; a proposed
 scientific change follows its separate protocol. Missing measurements are
 unknown, and a low percentage alone does not authorize cancellation.
+
+## Current documentation/reporting policy (2026-10-26)
+
+Follow root `AGENTS.md` and `docs/October/2026-10-26/cross-cluster/guidelines/documentation-layout.md`.
+That policy supersedes older notebook paths and W&B scope in this skill. Use dated
+cluster/subproject/type docs and Git synchronization. W&B covers monitored scientific
+result jobs; preprocessing, progress-only tasks and infrastructure checks are excluded.

@@ -1,18 +1,39 @@
 # Representation Collapse — research operations
 
+<!-- research-layout-policy:2026-10-26 -->
+## Current documentation and reporting policy
+
+Read `docs/October/2026-10-26/cross-cluster/guidelines/documentation-layout.md`.
+This policy supersedes older documentation paths and broader W&B instructions below.
+- Write substantive docs at `docs/MONTH/YYYY-MM-DD/CLUSTER/[SUBPROJECT]/TYPE/...md`.
+  Use English MONTH; TYPE is theory, experiment, report, auto-research,
+  submitted-jobs, guidelines, literature or planning. Omit SUBPROJECT if inapplicable.
+  Root/skill entrypoints and immutable evidence retain their discovery/provenance paths.
+- Use Git as the main synchronization mechanism for source, configs, skills and all
+  current documentation between local and clusters. Preserve dirty work and run pins.
+- W&B is only for jobs requiring monitoring AND producing scientific benchmarks/results.
+  Qualifying baselines, comparisons and evaluations report interpretable values in the
+  relevant project/subproject. Preprocessing, progress-only tasks, infrastructure checks
+  and reporting/sync verification do not create W&B runs; retain local logs instead.
+  Record eligibility; verify qualifying uploads, or mark them pending. Preserve history.
+- Use `documentation-index.json` to resolve migrated paths. Do not write new notes to
+  legacy redirects or checksum-pinned compatibility copies.
+<!-- /research-layout-policy -->
+
+
 Study when recurrent models lose useful state dimension across modalities,
 starting with temporal graphs and discrete Floquet analysis. The owner is
 Mehrab Hamidi. Remote: `git@github.com:MehrabHamidi99/representation_collapse.git`.
 
 ## Start a session
 
-1. Read this file, `doc/TRACKER.md`, and the latest dated progress report.
+1. Read this file, `docs/October/2026-10-26/local/report/TRACKER.md`, and the latest dated progress report.
 2. For scientific work read `skills/floquet-analysis/SKILL.md` and the relevant
    protocol in `doc/auto/`.
 3. For delegated research read `skills/model-routing/SKILL.md` and
    `skills/experiment-loop/SKILL.md`.
 4. Before cluster operations read `skills/project-ops/SKILL.md` and
-   `doc/auto/compute-plan.md`; recheck the actual scheduler and cluv version.
+   `docs/October/2026-10-26/local/auto-research/compute-plan.md`; recheck the actual scheduler and cluv version.
 5. For shared compute-hosted coordination, read
    `skills/compute-autoresearch/SKILL.md` and its workflow, then verify the live
    allocation/SETUP and register ownership. The owner granted use of existing

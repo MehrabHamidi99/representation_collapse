@@ -1,69 +1,7 @@
-# T-GCN full-fit readiness audit — 2026-10-20
+<!-- documentation-layout: redirect -->
+# Documentation moved
 
-## Decision
+Read [the canonical document](../../docs/October/2026-10-20/local/auto-research/tgcn-full-fit-readiness-2026-10-20.md).
 
-The native T-GCN backend and a real, independently accepted **256-update production training prefix** are ready inputs to a full-fit implementation. A complete T-GCN fit, validation-selected checkpoint, selected-weight replay and held-out evaluation are **not implemented or admitted by this audit**. The next bounded engineering node is a dedicated hidden-only native fit adapter over the existing model-independent epoch engine. Preserve the already executed calibration/prefix sources and GC-LSTM formats.
-
-This audit inspected source and accepted execution metadata only. It performed no new model execution, numerical experiment, job submission or data/weight/state-payload read. Figure 10 remains a multi-model, two-panel/five-seed reproduction target; another seed-0 model is an incremental DTDG milestone. The novelty charter's matched-order causal-memory question remains separate.
-
-## Accepted inputs and exact first-prefix reference
-
-Native synthetic calibration **11332092** accepted 248 checks, source `e0e6c20a72a98134aa1f2a2450f9eeb011718ab2`; its accepted result SHA is `23b68f8c78e0f4b1fd00959c812463318cb687d8b9b95404c709c6ade5001619`. Calibration acceptance `45ef2dd57b60ed0746967f042eaf8574915b53b612434628736775974a0054e2` explicitly does not admit training. See [calibration](tgcn-native-calibration-protocol-2026-10-20.md) and [source audit](tgcn-reconstruction-readiness-2026-10-20.md).
-
-Production prefix **11332237**, run `tgcn-prefix-20261020T194503Z-371aba99`, source `371aba996af02826df5fee03abb8a5223b9849b5`, independently accepted 256 witnessed updates, 512 durable journal records and 256 actual offline W&B history rows. It has **zero complete epochs**, no validation/test access or checkpoint selection. Its accepted receipt is local `runs/ops/tgcn-prefix-20261020/<run>/acceptance.json`, kind `tgcn_training_prefix_compact_execution_acceptance_v1`, status `accepted_training_prefix_execution`, SHA **`2af9c71d82266c1a0d824a7e27eb594e5ae7557621007c3ab5f36933f253705a`**. Bind these exact accepted artifacts externally:
-
-- `prefix-result.json`: `279906f88d367802ff2c7161a82574e4685f0a54fb5a9ef467d2c5d96e4b6348`.
-- `updates.jsonl`: **`e47ecab681b82401213318ce8ff8a4bc09deb2cf161242376947067e44225023`**.
-- `optimizer-journal.jsonl`: `fb27fb733843159d6145bc0d52ee528cc98c7039cd79440ce9a9fee1051e4df9`.
-- Actual supervisor receipt: `9dc7bb54d6aed11f70e96ec03167484d0a49c2b9e731ab712d8a12e5a5d2bfc2`.
-
-A new full fit must construct a **fresh** production seed-0 model and Adam optimizer, with Python/NumPy/Torch seed 0 and a fresh `np.random.default_rng(1)` negative sampler. Apply no synthetic head fill, seed-73 dropout override, RNG restore or prefix-weight resume. Retain real pre-construction/post-construction RNG observations, initial dual-component semantic hashes and exact optimizer parameter order; compare them against the externally pinned prefix result and its authenticated observation references. Then require exact per-target loss equality against all 256 accepted prefix rows, with chronology and step outcomes matched, before permitting update 257. Stop on the first mismatch, publish failure evidence and never retry the same mutated model. This is an engineering equivalence gate, not an accuracy gate or GC-LSTM-loss comparison. The prefix's terminal H is mixed-training-weight carry; it cannot substitute for fixed-weight inference replay.
-
-Data remains the accepted primary Pdet(2,32) conversion, manifest **`a6ff50183de570ff17cfbe92b3f1976bac9d2d85557ecc11379e24b2c737d1ce`**, under scratch `runs/primary-conversion-verified-20261016/attempt001/worker/converted`. Its `22bef6bf781c5bfb5493dd5e03169ea0e658b2463ccaa9ba09189af454508f1f` identity is a **conversion/template identity**, not an executed T-GCN/GC-LSTM shared architecture contract. Freeze a new model-specific executed full-fit contract.
-
-## Reuse map and model-specific boundaries
-
-**Reuse unchanged:** `tgrab_figure10_fit.py:167–394`, `run_figure10_fit` and its `FitBackend` protocol. State is opaque to this engine; it does not require a cell tensor. It already enforces 2,559 predecessor-conditioned updates per complete epoch; fresh zero-state training-prefix replay in evaluation mode; all 256 validation scores before their target consumption; strict earliest-tie validation selection; corrected relative-loss improvement tolerance 1e-6/patience 100; and complete-epoch versus partial-attempt accounting. Its frozen production `FitPolicy` is 200 complete epochs, patience 100, 2,559 updates/epoch. Return handling must unpack the new adapter's actual result shape, not repeat the earlier GC-LSTM tuple mistake.
-
-**Reuse data mechanics:** `graph_data.read_manifest`, then `open_train_validation(manifest, guard, snapshot_factory=gr.Snapshot)` for a **full-fit** worker. Unlike the prefix, full fitting legitimately needs validation: this function eagerly verifies/loads both train and validation. Training graphs are [0,2560), validation [2560,2816). Pass only `.train()` and `.validation()` into the new adapter; never request `.sealed_test_opener()` or pass the store itself into training callbacks. This facade is cooperative capability isolation, not same-user security. The fit CLI must have no test opener or evaluation switch.
-
-**Reuse calibrated native model:** `tgrab_tgcn_backend.NativeTGCNBackend`, `construct_models`, `TGCNLayout(100,128)` and `HiddenOnlyState`. Constructor semantics remain one layer, one-hot input width 100, hidden width 128, CPU FP32; `improved=False`, `cached=False`, `add_self_loops=False`, normalization on and source-to-target flow. Keep exact wrapper/cell/head/GCN source and installed-runtime pins from the accepted prefix. Default graph weights remain unit weights. The optional weighted synthetic-calibration path does not change production conversion semantics.
-
-**Implement a dedicated native fit adapter:** `Figure10NativeFitAdapter` in `tgrab_figure10_native_fit.py` is not directly reusable. Its constructor explicitly requires `NativeGCLSTMBackend`; its catalog loader is GC-LSTM-specific; epoch evidence requires `gr.CompleteState`, clones H and C, and checks both. Port its actual construction/seed receipt, optimizer identity/order checks, active phase/thread guards, witnessed one-step update, negative sampling and retained validation-row logic into a T-GCN-specific adapter. Its epoch evidence must contain independent detached CPU clones of **H only**, both weight components and all validation rows. Do not subclass or fake the GC-LSTM `isinstance`/cell contract. The model-independent `witnessed_native_update` and complete-epoch scalar record arithmetic can be reused with explicit status preservation.
-
-**Reuse durability patterns, not GC identities:** the reviewed chunk journal in `tgrab_figure10_chunk_journal.py` supports 2,559 updates/epoch, 200 epochs, hash-chained fsynced intent/outcome records and per-epoch seals. Its context takes externally supplied run/attempt/contract/admission hashes without a GC-LSTM tensor dependency; reuse is possible after verifying its operational record labels are documented accurately under the new contract. Seal the current complete chunk before candidate publication and do a full final audit without rebuilding quadratic history scans. `PrefixJournal` is deliberately capped at 256 and is not a full-fit journal.
-
-The GC-LSTM `tgrab_figure10_long_fit.py` worker, `PrimitiveSelectionV2`, encoder and both selected-checkpoint codecs hard-code its executed contract, catalog and/or H+C terminal layout. They cannot be invoked as T-GCN by changing a model flag. Likewise, `tgrab_selection_transaction.SelectionContext` and its records are bound to the GC-LSTM schema. Reuse reviewed atomic publication/earliest-tie algorithms through newly versioned T-GCN records; never supply fictitious GC contract/catalog hashes to satisfy them.
-
-## Hidden-only primitive candidate and selection contract
-
-Freeze a new T-GCN catalog/manifest domain, for example `tgrab_tgcn_complete_epoch_candidate_v1` with a distinct executed full-fit contract and catalog SHA. It contains **two parameter components, 18 parameter tensors**: recurrent 12 tensors/137,472 float32 values and link head six tensors/49,537 values. These are not 18 separate model components. The source-derived catalog already describes native and serialization orders, shapes, offsets, byte counts and semantics; materialize and independently review it against the accepted actual native inventory before treating it as a frozen codec catalog.
-
-The three raw C-order finite little-endian FP32 files have exact sizes:
-
-- Recurrent weights: **549,888 bytes**.
-- Link-head weights: **198,148 bytes**.
-- Complete terminal **H[1,100,128]**, canonical node IDs 0–99: **51,200 bytes**.
-
-Total raw payload is **799,236 bytes** per complete candidate, plus compact manifest, provenance and validation JSON. There is no cell tensor, padding substitute, optimizer state or RNG-resume payload. Include tensor-level data/semantic hashes, dual-component hashes, actual source/runtime/data/initialization identity, epoch/seal/cumulative counters and terminal chronology. Validate all names/shapes/dtypes/offsets, finiteness, storage separation, exact bytes and file inventory before model mutation/publication. Distinguish a byte-inventory readback from an independently accepted semantic decoder.
-
-Each complete epoch evaluates final epoch weights under `eval()`/no-grad, resets H to positive zero, consumes training graphs 0–2559, then for each validation target 2560–2815 scores all 9,900 ordered off-diagonal pairs at threshold >=0.5 **before** consuming that graph. Store all 256 confusion/metric rows and unweighted temporal mean F1. The saved terminal H is s[2816] after consuming graph 2815 under those fixed weights. Only then publish a complete candidate, then commit a scalar decision receipt and atomic selected pointer. Select strict maximum validation mean F1, earliest epoch on ties. Partial epochs cannot replace a committed candidate. Preserve unknown optimizer mutation and unconfirmed fsync boundaries honestly; no automatic retry, requeue or model resume.
-
-A future, separately admitted selected evaluator must verify independent fit acceptance and the final selected pointer, decode both components before mutation, strictly load them with exact FP32 byte readback, reset fresh H to zero and consume **exactly 2,816 prefix graphs 0–2815** in evaluation/no-grad mode. Compare all 51,200 terminal H bytes, node order and timestamp against the selected candidate before opening test. The GC-LSTM loader/evaluator requires H+C and cannot be reused by adding a dummy C or relabeling the T-GCN bundle. A later state trajectory would be [256,1,100,128] H-only (13,107,200 bytes), with a new descriptor/analysis admission; the old two-component trajectory shape and titles are not valid for T-GCN.
-
-## Stopping, acceptance and next implementation node
-
-First full fit: **fresh seed 0**, same dataset/precision/dropout 0.2/Adam 1e-4 and sorted parameters; up to **200 complete epochs or corrected training-loss patience 100**, tolerance 1e-6. A distinct operational walltime/CPU/memory envelope must be prepared and source-pinned before submission. The accepted short prefix demonstrates execution, not a full-fit runtime estimate. The historical paper says uncapped patience and five seeds, whereas recovered scripts name 100,000 epochs and do not recover the exact historical Figure 10 seed/run correspondence. The proposed 200-epoch fit is explicitly a corrected capped reconstruction, not historical replay or full-cohort reproduction.
-
-Acceptance artifacts must include immutable source/config/catalog/input/admission pins; initialization observations and passed 256-loss parity; complete raw losses, durable intent/outcome chunks and seals; every validation row/epoch record; all complete candidate metadata; selection intents/receipts/final pointer; final partial-attempt accounting; scheduler `COMPLETED 0:0` or honestly reported interruption; and actual offline W&B history/result artifact plus completed reporter receipt. Independent verification checks counts, chronology, exact selection ties, raw/history agreement, candidate identities and source closure. Successful process exit alone admits neither selected inference nor a scientific claim. Dashboard delivery is separately unknown until verified.
-
-**Next small node:** implement only `TGCNNativeFitAdapter` and hidden-only complete-epoch evidence over the unchanged fit engine, with pure spy tests for seed-before-construction, sorted optimizer identity, predecessor chronology, validation-only rows, zero-state fixed-weight replay, independent H/dual-weight clones, complete-candidate-before-selection ordering, partial epoch exclusion and explicit failed-step status. Then independently review the model-specific codec/transaction layer, first-256 parity and supervised full-fit worker before any full-fit launch. Later seeds 1–4 and T-GCN/GC-LSTM aggregate plots require a prospective cohort/aggregation contract. None is authorized by merely passing this readiness audit.
-
-## Source identities inspected
-
-- Epoch engine `tgrab_figure10_fit.py`: `2c771a13eada794aecb14d740b8cc0dccffd0501db6fffa533f3170039e8cae0`.
-- GC-specific adapter `tgrab_figure10_native_fit.py`: `4c2a50c140d39f80c728b3c1e4bb277c511bd989d1956725cb604d08637d68d0`.
-- Graph store `graph_data.py`: `498e60f7be048411c253e4b8cb63e4b907973f969c397bfdfacde949389f057e`.
-- Accepted T-GCN backend: `0b03219543c0cce16e77c69cf7350a403e2d492134742bb1ec23aaf03dea512f`.
-- Accepted prefix worker: `de02784d2f61696eaa50161f246d50c164bfcad3d228423bdf7085ceaaae85b9`.
-- Reviewed chunk journal: `1c00365e9346c023be44a0899e58209820cc3fb218ab211baf1a2f3e2a436428`.
+Canonical repository path: `docs/October/2026-10-20/local/auto-research/tgcn-full-fit-readiness-2026-10-20.md`.
+This compatibility pointer is not a second documentation source.

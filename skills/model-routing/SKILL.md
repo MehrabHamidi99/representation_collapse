@@ -16,7 +16,7 @@ setup session exposed `gpt-6.1-sol`, `gpt-6-astra`, `gpt-6-sol`,
 `gpt-6-luna`, and `gpt-5.6-sol`; availability can differ later. Do not infer
 provider access from local caches or this list. The owner separately authorized
 a bounded Qwen cluster worker on 2026-10-11; its actual run and proposal-only
-contract are documented in `doc/auto/qwen-worker.md` and the tracker. The
+contract are documented in `docs/October/2026-10-26/local/auto-research/qwen-worker.md` and the tracker. The
 initial worker stopped at its consumed cap. On 2026-10-12 the owner explicitly
 approved a separate 24-hour/24-attempt Tamia continuation; its actual first
 response matched the requested Qwen identity. Read current heartbeat and
@@ -43,7 +43,7 @@ When an override is authorized and available, route by the work:
   (for example `gpt-6-astra`). Model choice does not certify correctness.
 
 The user requested subagents to manage research for this repository. Apply
-[the agent protocol](../../doc/auto/agent-protocol.md): send one bounded task,
+[the agent protocol](../../docs/October/2026-10-26/local/auto-research/agent-protocol.md): send one bounded task,
 exclusive paths, source evidence, acceptance checks, a stopping condition,
 and a durable output. Limit concurrency to the actual session's slots and avoid
 two workers modifying the same file. Review delegated edits and evidence before
@@ -56,3 +56,10 @@ Repeated route errors stop that route; choose a healthy exposed route only
 within existing authorization. A timeout hands back partial artifacts and a
 smaller continuation, not a restarted oversized prompt. Record unavailable
 usage as unknown, not zero; do not import budgets from the template project.
+
+## Current documentation/reporting policy (2026-10-26)
+
+Follow root `AGENTS.md` and `docs/October/2026-10-26/cross-cluster/guidelines/documentation-layout.md`.
+That policy supersedes older notebook paths and W&B scope in this skill. Use dated
+cluster/subproject/type docs and Git synchronization. W&B covers monitored scientific
+result jobs; preprocessing, progress-only tasks and infrastructure checks are excluded.

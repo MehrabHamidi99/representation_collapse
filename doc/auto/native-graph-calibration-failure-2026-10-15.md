@@ -1,35 +1,7 @@
-# Native graph calibration import failure — 2026-10-15
+<!-- documentation-layout: redirect -->
+# Documentation moved
 
-**No native graph calibration or training result was produced.** Mila job **11256293** failed during package import with `ModuleNotFoundError: No module named 'torch_geometric.utils.to_dense_adj'`. All eleven declared constructor, forward, dense-Jacobian, JVP, VJP, finite-difference and analytic-control counters remained zero. There is no numerical NPZ and no comparison result. This is an engineering execution failure, not a negative derivative finding or evidence about graph performance, Floquet dynamics, memory or harmful representation collapse.
+Read [the canonical document](../../docs/October/2026-10-15/local/auto-research/native-graph-calibration-failure-2026-10-15.md).
 
-## Execution and preserved lineage
-
-The terminal scheduler receipt explicitly uses UTC: the job ran from **2026-10-14 22:05:03 to 22:05:26 UTC** (October 15, 02:05:03–02:05:26 Yerevan), ending `FAILED`, exit `1:0`, after 23 seconds. The earlier observation at 22:05:20 UTC recorded `RUNNING` and 17 elapsed seconds; its scheduler timestamp formatting was not explicitly UTC, so the terminal UTC record supplies the times above. Both observations refer to the same job, source, plan and submission. The final queue query returned no entry.
-
-The saved allocation was Mila account `mila`, QOS `normal`, partition `main-cpu`, node `cn-f003`, one node/task/CPU, 2 GiB, ten minutes, zero GPUs and no requeue. Supervisor metadata records one-CPU affinity and an inherited physical cgroup limit of 2,147,483,648 bytes. Supervisor elapsed time was 22.272 seconds, worker elapsed time 21.063 seconds, and recorded worker peak RSS 326,639,616 bytes. The supervisor reports both retained PID/start identities—the worker and detached SDK core—as exited, with no cleanup errors. The preserved spawn journal also contains transient child records; this closeout does not substitute a fresh process or scheduler probe for the saved reconciliation.
-
-Published source was `15074fbbb1098fcad6954ff857f5e211a54d659c`. The immutable plan SHA-256 is `323aeeb8171d7114bae791c194a635837ddce699557e801620a22481897dcb70`; actual job admission SHA-256 is `346d222b6a7b5f092ed305b9aea56adaa177046d3648b8c5c90fc8b7988777dd`. Independent static checks verified that the actual admission differs from its frozen plan template only by job ID and plan identity, that the worker admission binds that parent, and that environment/review/reporting references, submitted command/resources, source/config/protocol/reporter identities and final snapshot hashes agree. The three public wrapper hashes match the staged source and frozen v1 configuration.
-
-The separate environment preparation receipt records 60 hash-checked wheels installed offline in 170.037 seconds, exact installed distribution/build versions, successful metadata/cell-source gating, and no main-project installation or native smoke acceptance. All sixty wheel receipt entries were independently reconciled with the frozen artifact manifest; this local closeout did not download or rehash the remote wheel bodies. The lock SHA-256 remains `ea2f58d2a12f5d8562b31d5fa7b5c646121784867c134afd4a5cf6a8108b8c06` and artifact-manifest SHA-256 `67e27963f2166f8a7e26dba301c9020d2bd7d4c012010fb859e6e43b15ce9842`. Plan staging recorded whole-project scratch usage **9,008,236,544 bytes**, below the initial 20 GiB cap. Installation/metadata success did not establish native import compatibility.
-
-## Failure evidence and reporting
-
-The coordinator's first whole-run transfer preflight stopped on an SDK debug symlink. The coordinator then selected regular receipts and the native offline transaction, copied them to a new project-owned failure-export path, and fetched that path through native cluv. The original failed run was preserved. Inspection of the saved transfer code confirms that the new export reads canonical regular source files and writes fresh targets; this reviewer performed no transfer or remote mutation.
-
-The returned selection contains **17 regular files totaling 34,828 bytes**. This review independently checked every exact byte size/SHA-256 against `remote-failure-bundle-manifest.json`, verified the complete local selected-file set, and reconciled it with `failure-bundle-fetch-receipt.json`. All hashes match. The original remote directory was not exhaustively retrieved; that selection boundary is preserved.
-
-Pinned offline W&B **0.30.0** initialized before the failed import and finished with terminal state `failed`, last completed step `-1`, and `ModuleNotFoundError` in its summary. Run ID is `5ff9fdbb91094cfc823a5cd28d40d6cd`. The 2,005-byte native transaction SHA-256 is `cfe8fa386200be349be187dec4eb291a1741a3b5638f0ee40cfa206e9cc52be3`. Its bytes were independently rehashed here. The coordinator's saved CRC/protobuf closeout reports one header, one run record, five telemetry records, three summary records, one exit, and **zero history records**; the failed summary and privacy checks passed. That existing decoder receipt and its verifier source hash were checked, without rerunning the decoder or initializing another SDK.
-
-The reporting receipt records `entity_requested=null`, `entity_actual=""`, no run URL, and `remote_delivery_verified=false`. Offline durability therefore establishes a local failed-run record only. Cloud synchronization and a verified destination entity remain pending; no cloud history or delivery is claimed.
-
-## Diagnosis and next authority
-
-The [independent import review](native-graph-import-independent-review-2026-10-15.md) reconstructs a source chain consistent with the saved error: the unchanged public wrapper imports Temporal recurrent GCLSTM; Temporal's umbrella initialization imports `nn`, whose attention initializer loads `tsagcn.py`; that file uses `from torch_geometric.utils.to_dense_adj import to_dense_adj`. This review checked the hashes of all six cited Temporal wheel source members and the PyG 2.6.1 metadata. It is a static source inference, not a captured full traceback or a complete PyG package-layout audit. Native libraries were partially imported; the calibration's declared model operations never began.
-
-With no `raw.npz`, the frozen [prospective 60-array/27-comparison reducer](native-graph-calibration-result-verifier-2026-10-15.md) **was not run and is inapplicable to this attempt**. No numerical comparison, native parity, trained checkpoint, dataset provenance, periodic closure, Floquet certification or graph-collapse claim is accepted.
-
-The initial four CPU slots are now consumed: Mila `11190579`, Tamia `536757`, Narval `5234514`, and Mila `11256293`. Remaining initial CPU submissions: **zero**. The failed 23-second run does not refund its submission or the requested-hour budget. Tamia `612745` belonged to its separate consumed continuation envelope. Any new execution requires a fresh exact resource/source/configuration admission and allocation authorization; no automatic retry, replacement job or GPU budget follows from this closeout.
-
-The [standalone exact-cell importer](native-graph-import-compatibility-2026-10-15.md) has passed independent component review only. It prepares a declared import-scope deviation while retaining cell/public-wrapper bytes and the same dependency versions; it does not verify full Temporal API compatibility or actual native runtime behavior. A separately reviewed immutable v2 engine/configuration/admission is the future integration path. V1 and this failed attempt remain unchanged.
-
-The independent machine-readable closeout is `runs/review/native-graph-failure-closeout-20261015/receipt.json`. This review used saved JSON/source/ZIP metadata and checksum/lineage checks only. It ran no numerical reducer, SDK, native model, provider, cluster query, installation or decoder campaign. Failure-evidence closeout is complete; numerical and scientific acceptance remain false.
+Canonical repository path: `docs/October/2026-10-15/local/auto-research/native-graph-calibration-failure-2026-10-15.md`.
+This compatibility pointer is not a second documentation source.
