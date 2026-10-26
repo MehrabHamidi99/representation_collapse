@@ -517,3 +517,18 @@ producing a file. Root verified no partial writes, preserved the error receipt,
 and resumed the same task once with twenty minutes remaining. The independent
 reviewer was informed. This recovery adds no experiment, model-service fallback
 or cluster operation; a second route failure must hand back partial work.
+
+
+## Shared template linkage — 2026-10-13T17:45:17.089527+00:00
+
+At the owner's request, this local workspace was inspected for reusable research
+operations and linked to `../template_project` with `.research-template.json` and
+`RESEARCH_TEMPLATE.md`. The template's local collector captures attributed skill
+and durable-document changes. Byte-identical shared GPU-efficiency files are
+registered for conflict-aware upstream updates; project-specific instructions,
+authorizations, scientific protocols, controllers, journals and active job source
+pins remain owned here. No cluster job was submitted or cancelled, and no existing
+scientific file was overwritten. New project generation and synchronization tests
+passed in the template repository; no scientific validation was needed for these
+additive documentation/link files. See `../template_project/README.md` for the
+workflow and `../template_project/docs/investigation.md` for the survey.

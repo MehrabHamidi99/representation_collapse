@@ -1,0 +1,13 @@
+{
+  "managed": {
+    "skills/gpu-efficiency/ADOPTION.md": "daf23fd54245fd17f676e313edb6631db21ce78db7127ec90c39a0c1b86172c8",
+    "skills/gpu-efficiency/GUIDELINES.md": "d0a97e7bd32b0fd6e75802230558ab0af434cc38bf33b7218d229df08c1c6cfd",
+    "skills/gpu-efficiency/SKILL.md": "4818fcc31c14a10349d6361fca8a223a9038a62ed079c717533bb7a2118a4f05",
+    "skills/gpu-efficiency/agents/openai.yaml": "aacedda34287072c42b6975dd023373bd61274065c82376a4848030c10d4bd00",
+    "skills/gpu-efficiency/references/commands.md": "65f0d6ff7fb87da4890da6d992aa5a8b7dec0754559d2b44732e84940e2f09e6",
+    "skills/gpu-efficiency/references/efficiency-report-template.md": "3da6695c83e3f508889bdcd291977fe779060cf31a835daa2e35237ed8f2f5b8"
+  },
+  "mode": "observe",
+  "schema_version": 1,
+  "template": "../template_project"
+}
