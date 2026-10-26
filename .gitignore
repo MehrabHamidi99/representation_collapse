@@ -39,3 +39,6 @@ __pycache__/
 /literature/papers/
 /literature/text/
 /literature/cache/
+
+# Local template collection and migration backups
+.template-sync/
