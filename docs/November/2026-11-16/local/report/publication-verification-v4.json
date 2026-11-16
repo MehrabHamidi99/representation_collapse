@@ -1,0 +1,60 @@
+{
+  "verified_at": "2026-11-16T23:03:35.406705+00:00",
+  "site_commit": "6fb935cb1d99e90a56b0eb71567d88db8b8c99ac",
+  "research_evidence_commit": "d1ad0790bda4b43f7f4bcebc7596e04d4b9a9ef4",
+  "checks": [
+    {
+      "route": "blog/repetition-and-memory/",
+      "http_status": 200,
+      "sha256": "93f4419de232b1d186092dd8b4a5298f331cc2db72936e3cee407c9ce77f6fc4",
+      "matches_local": true,
+      "largest_eigenvalue_section_present": true,
+      "citation_present": true,
+      "multibit_followup_present": true
+    },
+    {
+      "route": "assets/portfolio/repetition-multibit.png",
+      "http_status": 200,
+      "sha256": "b161487813af59ce3b2a5fa2a94a3b6b1c6f8c39ccbfc7ac4d3d190c50f2a2a0",
+      "matches_local": true
+    }
+  ],
+  "visual_checks": [
+    {
+      "viewport": 390,
+      "documentWidth": 390,
+      "images": [
+        {
+          "src": "/assets/portfolio/repetition-graph.png",
+          "loaded": true
+        },
+        {
+          "src": "/assets/portfolio/repetition-memory.png",
+          "loaded": true
+        },
+        {
+          "src": "/assets/portfolio/repetition-multibit.png",
+          "loaded": true
+        }
+      ]
+    },
+    {
+      "viewport": 1280,
+      "documentWidth": 1280,
+      "images": [
+        {
+          "src": "/assets/portfolio/repetition-graph.png",
+          "loaded": true
+        },
+        {
+          "src": "/assets/portfolio/repetition-memory.png",
+          "loaded": true
+        },
+        {
+          "src": "/assets/portfolio/repetition-multibit.png",
+          "loaded": true
+        }
+      ]
+    }
+  ]
+}

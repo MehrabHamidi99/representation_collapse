@@ -120,3 +120,41 @@ one-step singular gain4.154. These are measurement methods and a mathematical
 example, not a newly measured GC-LSTM spectrum. The served page includes this
 section and the citation and matches the local build exactly; see
 [third revision verification](publication-verification-v3.json).
+
+## Higher-dimensional follow-up completed in this continuation
+
+After the blog theory revision, native cluv first selected Mila job 11741707
+from five submitted candidates. It completed 0:0 in 314 seconds; the other four
+jobs are terminally cancelled. Six candidates received the exact final source;
+nine were reachable for initial staging, with Nibi's dependency installation
+still pending and the two Trillium routes excluded by allocation minima. Narval
+authentication was unavailable. See the
+[submission ledger](../../cross-cluster/submitted-jobs/multibit-race.md) for exact
+commands, resources, source pins, omissions and scheduler evidence.
+
+The new seed-0 fits at 1/4 bits retain the complete vector in both arms through
+1,536 body steps. Four-bit complete-state PR increases. The 16/64-bit fits fail
+stage 2 acquisition and do not open held-out tests. An independently implemented
+NumPy reducer passes 861 integrity/numerical checks, including all 20 condition
+arrays, with maximum numerical disagreement 2.3284e-9. Three corruption tests
+pass. Raw validation logits and explicit integer counts were omitted by the
+producer, despite the prospective protocol; competence remains summary-checked.
+This deviation and the negative acquisition outcomes are preserved in the
+[result report](../../mila/report/multibit-discovery-results.md), along with the
+new plot and source provenance. No trained-model Floquet spectrum was measured.
+
+The four original W&B offline histories were synced using existing Mila
+authentication. API verification confirms finished state, contiguous histories
+and selected summary agreement; no credentials, datasets, state arrays or
+weights were uploaded. This verification creates no new experiment or W&B run.
+Research commit `d1ad079` is pushed to public GitHub and contains the independent
+reducer, tests, result report, plot and scheduler/cloud receipts. No persistent
+Qwen worker or automatic goal service was started.
+
+Website commit `6fb935c` adds these exploratory November16 results, a third
+evidence-derived figure, and their limitations. It also clarifies that periodic
+input alone does not establish periodic hidden trajectories/Jacobians. The
+leading-mode methods section and citation remain. Build/link checks pass;
+390px and1280px previews have no document overflow and all three images load.
+The served article and new image return HTTP200 and exactly match the local
+build; see [fourth publication verification](publication-verification-v4.json).

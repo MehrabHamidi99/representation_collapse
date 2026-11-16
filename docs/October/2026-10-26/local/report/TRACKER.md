@@ -28,14 +28,14 @@ and [dependency plan](../../../../../configs/research-plan.json) (revision v2).
   The public article now explains complete-state monodromy, leading eigenvalue
   estimation, singular gains, nonnormality, orbit checks, theoretical memory
   distinctions and contrary evidence, and includes a citation/BibTeX section.
-  Native cluv0.1.5 synchronized six final-source candidates and submitted five
-  race jobs; Mila11741707 won and completed0:0 in314seconds. All four competitors
+  Native cluv 0.1.5 synchronized six final-source candidates and submitted five
+  race jobs; Mila 11741707 won and completed 0:0 in 314 seconds. All four competitors
   are cancelled; Tamia was skipped before submission. Nibi dependency staging
   remains pending, Narval authentication is unavailable, and Trillium CPU/GPU
   allocation minima exclude them from this one-CPU experiment.
-  Seed-0 fits at1/4bits retain the complete vector with100% held-out accuracy
-  in both arms through1,536steps, with primary paired error difference and DID
-  both zero. Four-bit complete-state PR rises. The16/64-bit fits fail stage2
+  Seed-0 fits at 1/4 bits retain the complete vector with 100% held-out accuracy
+  in both arms through 1,536 steps, with primary paired error difference and DID
+  both zero. Four-bit complete-state PR rises. The 16/64-bit fits fail stage 2
   acquisition and do not open held-out tests. Independent raw-array reduction
   passes; validation raw logits/counts are absent, a recorded protocol deviation
   limiting competence to summary verification. No collapse/Floquet claim follows.
@@ -500,7 +500,7 @@ and [dependency plan](../../../../../configs/research-plan.json) (revision v2).
 - **Conversion-job review and actual Qwen continuation — October 16 05:18 Yerevan.**
   The disabled launcher passes16author +16independent preparation fixtures;
   root rechecked final source hashes. Actual SDK/job execution and independent
-  primary reduction remain unverified. Nativecluv0.1.5 read-only Mila check at
+  primary reduction remain unverified. Nativecluv 0.1.5 read-only Mila check at
   01:17UTC found main-cpu UP, no project-name queue matches, existing
   Python3.10.19/W&B0.30.0 metadata,9,162,264,576bytes scratch used below20GiB.
   No allocation was submitted or approved. Qwen completed both newly assigned
@@ -587,7 +587,7 @@ and [dependency plan](../../../../../configs/research-plan.json) (revision v2).
   [reviewed correction](../../../2026-10-15/local/auto-research/native-graph-calibration-v2-independent-review-2026-10-15.md),
   [next exact allocation](../../../2026-10-15/local/auto-research/native-graph-calibration-v2-launch-request-2026-10-15.md).
 - **Native graph calibration submitted — October 15 02:05 Yerevan.**
-  Nativecluv0.1.5 submitted Mila job11256293 from published15074fb. Scheduler
+  Nativecluv 0.1.5 submitted Mila job11256293 from published15074fb. Scheduler
   confirmsRUNNING/cn-f003/accountmila/QOSnormal/main-cpu/CPU1/Mem2G/GPU0,
   tenminutes/no-requeue. Physicalcgroup2147483648bytes andoneCPU affinity
   verified; offlineSDK0.30 initialized before nativework. Exact60-wheel
