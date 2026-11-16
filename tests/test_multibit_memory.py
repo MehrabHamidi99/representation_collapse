@@ -280,6 +280,8 @@ class MultibitMemoryTests(unittest.TestCase):
             self.assertTrue((fit_dir / "evaluation-design.json").is_file())
             self.assertEqual(json.loads((fit_dir / "status.json").read_text())["status"],
                              "stopped_partial")
+            self.assertTrue(json.loads((fit_dir / "status.json").read_text())["validation_passed"])
+            self.assertEqual(FakeReporter.instances[-1].logs[-1][1]["result/competence_passed"], 1)
 
 
 if __name__ == "__main__":

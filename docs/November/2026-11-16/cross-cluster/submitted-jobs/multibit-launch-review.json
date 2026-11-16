@@ -5,8 +5,8 @@
   "test_torch_version": "2.6.0",
   "production_compatibility_check": "pending locked Torch 2.0.0 CPU",
   "hashes": {
-    "src/representation_collapse/multibit_memory.py": "16ee057cbcfe8cb1f0003581ee7bd64757f8caa9e00e44b4c375d73250d4f4dd",
-    "tests/test_multibit_memory.py": "fc723b32ced22154d43802e8432ac8981d7654f77fe38086f7594b57e1b4d8ad",
+    "src/representation_collapse/multibit_memory.py": "c3efc39c5d257cc1bbff90958f399cea6fa0e5b9ed9ef6a09ffc62225ad2b57b",
+    "tests/test_multibit_memory.py": "29fda57bfaa24d9b13a3969f34f4a03ae6b79b8c88fbc8c4d76a937d18e486ab",
     "configs/experiments/multibit-memory-v1.json": "76a5712728299c23c6aa924aadf68788fcbec78f4080f83f73c6beb9bdbd6df8",
     "docs/November/2026-11-16/cross-cluster/experiment/multibit-memory-v1.md": "bb76132d61c2a17634549a94a002a70c190490581c220b52d0a6beae50e2e735",
     "launch/multibit-20261116/job.sh": "9ee23471bf0d2d6b330bc0015feb3cee7da0a5b01498c0ab2284a398da2559fe",
@@ -15,5 +15,6 @@
   },
   "wandb_required": true,
   "cloud_delivery": "pending",
-  "scope": "seed0 D1/4/16/64, one cluv first race; independent result reduction remains required"
+  "scope": "seed0 D1/4/16/64, one cluv first race; independent result reduction remains required",
+  "review_note": "Final independent review of stable bytes supersedes preliminary worker/test hashes; interruption preserves competence and runtime failures record terminal status."
 }

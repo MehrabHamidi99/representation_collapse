@@ -781,16 +781,18 @@ def _fit_one(config: dict[str, Any], dimension: int, seed: int, args,
                       "limitations": (["held-out test remains sealed without all-stage competence"]
                                       if not passed else ["held-out evaluation stopped before all conditions completed"])}
             atomic_json(out / "result.json", result)
+        all_stages_competent = (len(stage_results) == len(config["stages"])
+                                and all(item["passed"] for item in stage_results))
         final_status = {"status": result["status"], "dimension": dimension, "seed": seed,
                         "updates": update, "stage": len(stage_results),
-                        "validation_passed": bool(passed and not stopped),
+                        "validation_passed": all_stages_competent,
                         "elapsed_seconds": time.monotonic() - started,
                         "checkpoint_sha256": result["checkpoint_sha256"]}
         atomic_json(out / "status.json", final_status)
         inventory = {p.name: {"sha256": file_sha256(p), "bytes": p.stat().st_size}
                      for p in sorted(out.iterdir()) if p.is_file()}
         atomic_json(out / "artifact-inventory.json", inventory)
-        reporter.log({"result/competence_passed": int(passed and not stopped),
+        reporter.log({"result/competence_passed": int(all_stages_competent),
                       "result/updates": update}, step=report_step)
         reporter.log_manifest("artifact-inventory", metadata={"files": len(inventory)},
                               identities={"inventory_sha256": file_sha256(out / "artifact-inventory.json")})
@@ -868,6 +870,12 @@ def run(*, config_path: Path, protocol_path: Path, output: Path, run_id: str,
                                                    "fits_completed": len(results),
                                                    "updated_at_utc": datetime.now(timezone.utc).isoformat()})
         return final
+    except Exception as exc:
+        atomic_json(output / "run-status.json", {
+            "status": "engineering_failed", "fits_completed": len(results),
+            "error_type": type(exc).__name__,
+            "updated_at_utc": datetime.now(timezone.utc).isoformat()})
+        raise
     finally:
         signal.signal(signal.SIGTERM, old_term)
 
