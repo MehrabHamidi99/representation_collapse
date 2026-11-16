@@ -1,0 +1,5678 @@
+{
+  "checks": [
+    {
+      "check": "all_four_seed0_fits_present",
+      "fit": "campaign",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R0-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R0-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R1-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R1-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R128-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R128-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R16-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R16-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R2-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R2-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R32-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R32-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R32-q4-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R32-q4.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R4-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R4-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R64-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R64-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R8-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R8-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:checkpoint.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:evaluation-design.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:identity.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:result.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:stage-1-validation.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:stage-2-validation.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:stage-3-validation.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:status.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:validation-design.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "reporting_metadata:result",
+      "detail": "receipt SHA verified",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "reporting_metadata:artifact-inventory",
+      "detail": "receipt SHA verified",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "reporting_metadata_receipt_hashes",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "validation_design_identity_and_balance",
+      "detail": "verified saved panel, seed, balance, schedule and result SHA",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_stage_1_summary_consistency",
+      "detail": "worker-reported gate passed",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_stage_2_summary_consistency",
+      "detail": "worker-reported gate passed",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_stage_3_summary_consistency",
+      "detail": "worker-reported gate passed",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_status_matches_saved_stage_gates",
+      "detail": "status=competence_passed; all_stage_gates_passed=True; validation logits not retained",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "evaluation_design_identity_and_balance",
+      "detail": "verified saved panel, seed, balance, schedule and result SHA",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:logit_shape",
+      "detail": "(4, 256, 2, 1)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:finite_raw",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:complete_marker",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:all_cues_completed",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:forcing_ids",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:fixed_arm_order",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:state_layout",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:state_dimension_128",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:balanced_cue_bits",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:prediction_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:label_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:error_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:design_cue_panel",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:oracle_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:logit_shape",
+      "detail": "(4, 256, 2, 1)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:finite_raw",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:complete_marker",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:all_cues_completed",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:forcing_ids",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:fixed_arm_order",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:state_layout",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:state_dimension_128",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:balanced_cue_bits",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:prediction_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:label_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:error_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:design_cue_panel",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:oracle_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:logit_shape",
+      "detail": "(4, 256, 2, 1)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:finite_raw",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:complete_marker",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:all_cues_completed",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:forcing_ids",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:fixed_arm_order",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:state_layout",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:state_dimension_128",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:balanced_cue_bits",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:prediction_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:label_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:error_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:design_cue_panel",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:oracle_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:logit_shape",
+      "detail": "(4, 256, 2, 1)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:finite_raw",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:complete_marker",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:all_cues_completed",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:forcing_ids",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:fixed_arm_order",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:state_layout",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:state_dimension_128",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:balanced_cue_bits",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:prediction_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:label_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:error_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:design_cue_panel",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:oracle_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:logit_shape",
+      "detail": "(4, 256, 2, 1)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:finite_raw",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:complete_marker",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:all_cues_completed",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:forcing_ids",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:fixed_arm_order",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:state_layout",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:state_dimension_128",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:balanced_cue_bits",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:prediction_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:label_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:error_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:design_cue_panel",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:oracle_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:logit_shape",
+      "detail": "(4, 256, 2, 1)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:finite_raw",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:complete_marker",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:all_cues_completed",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:forcing_ids",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:fixed_arm_order",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:state_layout",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:state_dimension_128",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:balanced_cue_bits",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:prediction_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:label_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:error_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:design_cue_panel",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:oracle_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:logit_shape",
+      "detail": "(4, 256, 2, 1)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:finite_raw",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:complete_marker",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:all_cues_completed",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:forcing_ids",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:fixed_arm_order",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:state_layout",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:state_dimension_128",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:balanced_cue_bits",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:prediction_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:label_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:error_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:design_cue_panel",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:oracle_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:logit_shape",
+      "detail": "(4, 256, 2, 1)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:finite_raw",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:complete_marker",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:all_cues_completed",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:forcing_ids",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:fixed_arm_order",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:state_layout",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:state_dimension_128",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:balanced_cue_bits",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:prediction_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:label_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:error_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:design_cue_panel",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:oracle_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:logit_shape",
+      "detail": "(4, 256, 2, 1)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:finite_raw",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:complete_marker",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:all_cues_completed",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:forcing_ids",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:fixed_arm_order",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:state_layout",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:state_dimension_128",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:balanced_cue_bits",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:prediction_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:label_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:error_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:design_cue_panel",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:oracle_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:logit_shape",
+      "detail": "(4, 256, 2, 1)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:finite_raw",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:complete_marker",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:all_cues_completed",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:forcing_ids",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:fixed_arm_order",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:state_layout",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:state_dimension_128",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:balanced_cue_bits",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:prediction_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:label_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:error_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:design_cue_panel",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:forcing_design_ids_and_arm_pairs",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:oracle_alignment",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "complete_frozen_evaluation_grid",
+      "detail": "observed=['R0-q1', 'R1-q1', 'R2-q1', 'R4-q1', 'R8-q1', 'R16-q1', 'R32-q1', 'R64-q1', 'R128-q1', 'R32-q4']",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "primary_R32q1_delta",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "anchor_R2q1_delta",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32q1_minus_R2q1_DID",
+      "detail": "max_abs_difference=0",
+      "fit": "D1-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:checkpoint.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:identity.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:result.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:stage-1-validation.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:stage-2-validation.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:status.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:validation-design.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "reporting_metadata:artifact-inventory",
+      "detail": "receipt SHA verified",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "reporting_metadata_receipt_hashes",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "validation_design_identity_and_balance",
+      "detail": "verified saved panel, seed, balance, schedule and result SHA",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_stage_1_summary_consistency",
+      "detail": "worker-reported gate passed",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_stage_2_summary_consistency",
+      "detail": "worker-reported gate failed; valid negative competence result",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_status_matches_saved_stage_gates",
+      "detail": "status=competence_failed; all_stage_gates_passed=False; validation logits not retained",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "heldout_absent_after_failed_gate",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "failed_fit_has_no_heldout_evaluation",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "primary_R32q1_delta_absence_matches",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "anchor_R2q1_delta_absence_matches",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32q1_minus_R2q1_DID_absence_matches",
+      "fit": "D16-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R0-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R0-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R1-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R1-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R128-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R128-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R16-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R16-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R2-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R2-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R32-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R32-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R32-q4-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R32-q4.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R4-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R4-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R64-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R64-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R8-q1-summary.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:R8-q1.npz",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:checkpoint.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:evaluation-design.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:identity.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:result.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:stage-1-validation.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:stage-2-validation.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:stage-3-validation.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:status.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:validation-design.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "reporting_metadata:result",
+      "detail": "receipt SHA verified",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "reporting_metadata:artifact-inventory",
+      "detail": "receipt SHA verified",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "reporting_metadata_receipt_hashes",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "validation_design_identity_and_balance",
+      "detail": "verified saved panel, seed, balance, schedule and result SHA",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_stage_1_summary_consistency",
+      "detail": "worker-reported gate passed",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_stage_2_summary_consistency",
+      "detail": "worker-reported gate passed",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_stage_3_summary_consistency",
+      "detail": "worker-reported gate passed",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_status_matches_saved_stage_gates",
+      "detail": "status=competence_passed; all_stage_gates_passed=True; validation logits not retained",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "evaluation_design_identity_and_balance",
+      "detail": "verified saved panel, seed, balance, schedule and result SHA",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:logit_shape",
+      "detail": "(4, 256, 2, 4)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:finite_raw",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:complete_marker",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:all_cues_completed",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:forcing_ids",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:fixed_arm_order",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:state_layout",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:state_dimension_128",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:balanced_cue_bits",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:prediction_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:label_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:error_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:design_cue_panel",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:oracle_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R0-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:logit_shape",
+      "detail": "(4, 256, 2, 4)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:finite_raw",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:complete_marker",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:all_cues_completed",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:forcing_ids",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:fixed_arm_order",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:state_layout",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:state_dimension_128",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:balanced_cue_bits",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:prediction_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:label_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:error_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:design_cue_panel",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:oracle_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R1-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:logit_shape",
+      "detail": "(4, 256, 2, 4)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:finite_raw",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:complete_marker",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:all_cues_completed",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:forcing_ids",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:fixed_arm_order",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:state_layout",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:state_dimension_128",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:balanced_cue_bits",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:prediction_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:label_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:error_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:design_cue_panel",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:oracle_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R2-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:logit_shape",
+      "detail": "(4, 256, 2, 4)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:finite_raw",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:complete_marker",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:all_cues_completed",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:forcing_ids",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:fixed_arm_order",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:state_layout",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:state_dimension_128",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:balanced_cue_bits",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:prediction_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:label_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:error_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:design_cue_panel",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:oracle_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R4-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:logit_shape",
+      "detail": "(4, 256, 2, 4)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:finite_raw",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:complete_marker",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:all_cues_completed",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:forcing_ids",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:fixed_arm_order",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:state_layout",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:state_dimension_128",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:balanced_cue_bits",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:prediction_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:label_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:error_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:design_cue_panel",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:oracle_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R8-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:logit_shape",
+      "detail": "(4, 256, 2, 4)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:finite_raw",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:complete_marker",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:all_cues_completed",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:forcing_ids",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:fixed_arm_order",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:state_layout",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:state_dimension_128",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:balanced_cue_bits",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:prediction_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:label_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:error_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:design_cue_panel",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:oracle_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R16-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:logit_shape",
+      "detail": "(4, 256, 2, 4)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:finite_raw",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:complete_marker",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:all_cues_completed",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:forcing_ids",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:fixed_arm_order",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:state_layout",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:state_dimension_128",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:balanced_cue_bits",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:prediction_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:label_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:error_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:design_cue_panel",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:oracle_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:logit_shape",
+      "detail": "(4, 256, 2, 4)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:finite_raw",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:complete_marker",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:all_cues_completed",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:forcing_ids",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:fixed_arm_order",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:state_layout",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:state_dimension_128",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:balanced_cue_bits",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:prediction_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:label_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:error_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:design_cue_panel",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:oracle_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R64-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:logit_shape",
+      "detail": "(4, 256, 2, 4)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:finite_raw",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:complete_marker",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:all_cues_completed",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:forcing_ids",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:fixed_arm_order",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:state_layout",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:state_dimension_128",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:balanced_cue_bits",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:prediction_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:label_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:error_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:design_cue_panel",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:forcing_design_ids_and_arm_pairs",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:oracle_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R128-q1:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:logit_shape",
+      "detail": "(4, 256, 2, 4)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:logits_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:labels_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:bit_errors_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:oracle_predictions_dtype",
+      "detail": "expected=uint8, observed=uint8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:before_query_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:after_write_dtype",
+      "detail": "expected=float32, observed=float32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:cue_bits_dtype",
+      "detail": "expected=int8, observed=int8",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:forcing_unit_ids_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:completed_cues_dtype",
+      "detail": "expected=int32, observed=int32",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:complete_dtype",
+      "detail": "expected=bool, observed=bool",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:before_query_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:after_write_shape",
+      "detail": "(4, 256, 2, 128)",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:finite_raw",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:complete_marker",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:all_cues_completed",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:forcing_ids",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:fixed_arm_order",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:state_layout",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:state_dimension_128",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:balanced_cue_bits",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:prediction_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:label_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:error_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:design_cue_panel",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:forcing_design_ids_and_arm_pairs",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:per_bit_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:mean_bit_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:whole_vector_exact_accuracy",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:paired_bit_error_by_bit",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:paired_error_difference",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:paired_error_by_forcing",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:per_forcing_arm_error",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:error_counts",
+      "detail": "recomputed={'periodic': 0, 'control': 0}",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:oracle_alignment",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32-q4:independent_covariance_spectra",
+      "detail": "FP64 within-forcing/arm centering; 1e-8 abs + 1e-6 relative comparison",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "complete_frozen_evaluation_grid",
+      "detail": "observed=['R0-q1', 'R1-q1', 'R2-q1', 'R4-q1', 'R8-q1', 'R16-q1', 'R32-q1', 'R64-q1', 'R128-q1', 'R32-q4']",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "primary_R32q1_delta",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "anchor_R2q1_delta",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32q1_minus_R2q1_DID",
+      "detail": "max_abs_difference=0",
+      "fit": "D4-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:checkpoint.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:identity.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:result.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:stage-1-validation.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:stage-2-validation.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:status.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "inventory:validation-design.json",
+      "detail": "downloaded scientific file matches producer inventory",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "reporting_metadata:artifact-inventory",
+      "detail": "receipt SHA verified",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "reporting_metadata_receipt_hashes",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "validation_design_identity_and_balance",
+      "detail": "verified saved panel, seed, balance, schedule and result SHA",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_stage_1_summary_consistency",
+      "detail": "worker-reported gate passed",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_stage_2_summary_consistency",
+      "detail": "worker-reported gate failed; valid negative competence result",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "competence_status_matches_saved_stage_gates",
+      "detail": "status=competence_failed; all_stage_gates_passed=False; validation logits not retained",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "heldout_absent_after_failed_gate",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "failed_fit_has_no_heldout_evaluation",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "primary_R32q1_delta_absence_matches",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "anchor_R2q1_delta_absence_matches",
+      "fit": "D64-seed0",
+      "status": "pass"
+    },
+    {
+      "check": "R32q1_minus_R2q1_DID_absence_matches",
+      "fit": "D64-seed0",
+      "status": "pass"
+    }
+  ],
+  "failed_checks": [],
+  "fit_status_counts": {
+    "partial": 0,
+    "terminal": 4
+  },
+  "fits": [
+    {
+      "R32q1_minus_R2q1_DID": 0.0,
+      "anchor_R2q1_delta": 0.0,
+      "competence": {
+        "fit_stopped_on_competence_failure": false,
+        "stages": [
+          {
+            "failures": [],
+            "float_rates_count_checked": true,
+            "stage": 1,
+            "updates": 2000,
+            "worker_reported_gate_passed": true
+          },
+          {
+            "failures": [],
+            "float_rates_count_checked": true,
+            "stage": 2,
+            "updates": 6000,
+            "worker_reported_gate_passed": true
+          },
+          {
+            "failures": [],
+            "float_rates_count_checked": true,
+            "stage": 3,
+            "updates": 10000,
+            "worker_reported_gate_passed": true
+          }
+        ],
+        "validation_deviation": "producer saved summary float rates, not raw logits or integer correct counts; infer numerator integrality from rates and known 256/128 denominators",
+        "validation_logits_retained": false,
+        "validation_numerators_retained": false,
+        "worker_reported_summary_threshold_checked": true
+      },
+      "evaluation": [
+        {
+          "condition": "R0-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000213,
+              "mean_trace": 1.83023743599379,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000213,
+              "mean_trace": 1.83023743599379,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R1-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000246,
+              "mean_trace": 1851.3808145421158,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000246,
+              "mean_trace": 1851.3808145421158,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R2-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.000000000000024,
+              "mean_trace": 5491.378276374286,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000246,
+              "mean_trace": 5491.292623308673,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R4-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000224,
+              "mean_trace": 15423.637845767784,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000238,
+              "mean_trace": 15423.809623655232,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R8-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000195,
+              "mean_trace": 40550.40378019414,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000207,
+              "mean_trace": 40551.24729803023,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R16-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.000000000000018,
+              "mean_trace": 99178.99799911694,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000164,
+              "mean_trace": 99175.96637777529,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R32-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000155,
+              "mean_trace": 215944.87961747777,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000162,
+              "mean_trace": 215937.0664765296,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R64-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000133,
+              "mean_trace": 415441.1364485101,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.000000000000013,
+              "mean_trace": 415437.00663942005,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R128-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000109,
+              "mean_trace": 778478.9228359734,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.00000000000001,
+              "mean_trace": 778479.5481873953,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R32-q4",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000115,
+              "mean_trace": 844524.421399659,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 1.0000000000000118,
+              "mean_trace": 844436.9033012249,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "fit": "D1-seed0",
+      "omitted_checkpoint_reporting": {
+        "checkpoint_pt_not_downloaded": true,
+        "offline_wandb_raw_files_note": "none present in this downloaded artifact subset; only offline-run directory structure was fetched",
+        "offline_wandb_raw_files_present": [],
+        "other_inventory_files_not_downloaded": [
+          "checkpoint.pt",
+          "training.jsonl"
+        ],
+        "reporting_metadata_files_present": [
+          "reporting/metadata-artifacts/artifact-inventory.json",
+          "reporting/metadata-artifacts/result.json"
+        ],
+        "reporting_metadata_receipt_hashes_verified": true,
+        "reporting_receipt_present": true
+      },
+      "omitted_inventory_files": [
+        "checkpoint.pt",
+        "training.jsonl"
+      ],
+      "primary_R32q1_delta": 0.0,
+      "status": "competence_passed",
+      "terminal": true,
+      "verified_files": [
+        "R0-q1-summary.json",
+        "R0-q1.npz",
+        "R1-q1-summary.json",
+        "R1-q1.npz",
+        "R128-q1-summary.json",
+        "R128-q1.npz",
+        "R16-q1-summary.json",
+        "R16-q1.npz",
+        "R2-q1-summary.json",
+        "R2-q1.npz",
+        "R32-q1-summary.json",
+        "R32-q1.npz",
+        "R32-q4-summary.json",
+        "R32-q4.npz",
+        "R4-q1-summary.json",
+        "R4-q1.npz",
+        "R64-q1-summary.json",
+        "R64-q1.npz",
+        "R8-q1-summary.json",
+        "R8-q1.npz",
+        "checkpoint.json",
+        "evaluation-design.json",
+        "identity.json",
+        "result.json",
+        "stage-1-validation.json",
+        "stage-2-validation.json",
+        "stage-3-validation.json",
+        "status.json",
+        "validation-design.json"
+      ]
+    },
+    {
+      "R32q1_minus_R2q1_DID": null,
+      "anchor_R2q1_delta": null,
+      "competence": {
+        "fit_stopped_on_competence_failure": true,
+        "stages": [
+          {
+            "failures": [],
+            "float_rates_count_checked": true,
+            "stage": 1,
+            "updates": 2000,
+            "worker_reported_gate_passed": true
+          },
+          {
+            "failures": [],
+            "float_rates_count_checked": true,
+            "stage": 2,
+            "updates": 6000,
+            "worker_reported_gate_passed": false
+          }
+        ],
+        "validation_deviation": "producer saved summary float rates, not raw logits or integer correct counts; infer numerator integrality from rates and known 256/128 denominators",
+        "validation_logits_retained": false,
+        "validation_numerators_retained": false,
+        "worker_reported_summary_threshold_checked": false
+      },
+      "evaluation": [],
+      "fit": "D16-seed0",
+      "omitted_checkpoint_reporting": {
+        "checkpoint_pt_not_downloaded": true,
+        "offline_wandb_raw_files_note": "none present in this downloaded artifact subset; only offline-run directory structure was fetched",
+        "offline_wandb_raw_files_present": [],
+        "other_inventory_files_not_downloaded": [
+          "checkpoint.pt",
+          "training.jsonl"
+        ],
+        "reporting_metadata_files_present": [
+          "reporting/metadata-artifacts/artifact-inventory.json"
+        ],
+        "reporting_metadata_receipt_hashes_verified": true,
+        "reporting_receipt_present": true
+      },
+      "omitted_inventory_files": [
+        "checkpoint.pt",
+        "training.jsonl"
+      ],
+      "primary_R32q1_delta": null,
+      "status": "competence_failed",
+      "terminal": true,
+      "verified_files": [
+        "checkpoint.json",
+        "identity.json",
+        "result.json",
+        "stage-1-validation.json",
+        "stage-2-validation.json",
+        "status.json",
+        "validation-design.json"
+      ]
+    },
+    {
+      "R32q1_minus_R2q1_DID": 0.0,
+      "anchor_R2q1_delta": 0.0,
+      "competence": {
+        "fit_stopped_on_competence_failure": false,
+        "stages": [
+          {
+            "failures": [],
+            "float_rates_count_checked": true,
+            "stage": 1,
+            "updates": 2000,
+            "worker_reported_gate_passed": true
+          },
+          {
+            "failures": [],
+            "float_rates_count_checked": true,
+            "stage": 2,
+            "updates": 6000,
+            "worker_reported_gate_passed": true
+          },
+          {
+            "failures": [],
+            "float_rates_count_checked": true,
+            "stage": 3,
+            "updates": 10000,
+            "worker_reported_gate_passed": true
+          }
+        ],
+        "validation_deviation": "producer saved summary float rates, not raw logits or integer correct counts; infer numerator integrality from rates and known 256/128 denominators",
+        "validation_logits_retained": false,
+        "validation_numerators_retained": false,
+        "worker_reported_summary_threshold_checked": true
+      },
+      "evaluation": [
+        {
+          "condition": "R0-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 4.069858955470558,
+              "mean_trace": 8.682739547698247,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 4.069858955470558,
+              "mean_trace": 8.682739547698247,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R1-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 5.976943090906456,
+              "mean_trace": 2272.166218424293,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 5.976943090906456,
+              "mean_trace": 2272.166218424293,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R2-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 6.317432653656541,
+              "mean_trace": 6243.815665505287,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 6.316481249668974,
+              "mean_trace": 6244.165293768276,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R4-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 6.544109268132138,
+              "mean_trace": 16895.37923036617,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 6.544351705855915,
+              "mean_trace": 16896.016655782623,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R8-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 6.65947878379534,
+              "mean_trace": 45676.73803826522,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 6.659358587937988,
+              "mean_trace": 45675.373693490976,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R16-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 6.715513096029553,
+              "mean_trace": 126338.18102777739,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 6.715686073882378,
+              "mean_trace": 126339.18497940758,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R32-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 6.902573334758214,
+              "mean_trace": 361112.74188570207,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 6.902567984140703,
+              "mean_trace": 361114.08416066796,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R64-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 7.375277162262281,
+              "mean_trace": 1058921.5310375094,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 7.3752684771265145,
+              "mean_trace": 1058902.5430615332,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R128-q1",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 7.930325294780712,
+              "mean_trace": 3150728.439524997,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 7.930338664198825,
+              "mean_trace": 3150658.0574342553,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "condition": "R32-q4",
+          "paired_error_delta": 0.0,
+          "per_arm": {
+            "control": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 7.795318513722515,
+              "mean_trace": 3288700.5302060037,
+              "whole_vector_exact_accuracy": 1.0
+            },
+            "periodic": {
+              "mean_bit_accuracy": 1.0,
+              "mean_participation_ratio": 7.79592102847424,
+              "mean_trace": 3288285.46239762,
+              "whole_vector_exact_accuracy": 1.0
+            }
+          },
+          "per_forcing_unit_delta": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "fit": "D4-seed0",
+      "omitted_checkpoint_reporting": {
+        "checkpoint_pt_not_downloaded": true,
+        "offline_wandb_raw_files_note": "none present in this downloaded artifact subset; only offline-run directory structure was fetched",
+        "offline_wandb_raw_files_present": [],
+        "other_inventory_files_not_downloaded": [
+          "checkpoint.pt",
+          "training.jsonl"
+        ],
+        "reporting_metadata_files_present": [
+          "reporting/metadata-artifacts/artifact-inventory.json",
+          "reporting/metadata-artifacts/result.json"
+        ],
+        "reporting_metadata_receipt_hashes_verified": true,
+        "reporting_receipt_present": true
+      },
+      "omitted_inventory_files": [
+        "checkpoint.pt",
+        "training.jsonl"
+      ],
+      "primary_R32q1_delta": 0.0,
+      "status": "competence_passed",
+      "terminal": true,
+      "verified_files": [
+        "R0-q1-summary.json",
+        "R0-q1.npz",
+        "R1-q1-summary.json",
+        "R1-q1.npz",
+        "R128-q1-summary.json",
+        "R128-q1.npz",
+        "R16-q1-summary.json",
+        "R16-q1.npz",
+        "R2-q1-summary.json",
+        "R2-q1.npz",
+        "R32-q1-summary.json",
+        "R32-q1.npz",
+        "R32-q4-summary.json",
+        "R32-q4.npz",
+        "R4-q1-summary.json",
+        "R4-q1.npz",
+        "R64-q1-summary.json",
+        "R64-q1.npz",
+        "R8-q1-summary.json",
+        "R8-q1.npz",
+        "checkpoint.json",
+        "evaluation-design.json",
+        "identity.json",
+        "result.json",
+        "stage-1-validation.json",
+        "stage-2-validation.json",
+        "stage-3-validation.json",
+        "status.json",
+        "validation-design.json"
+      ]
+    },
+    {
+      "R32q1_minus_R2q1_DID": null,
+      "anchor_R2q1_delta": null,
+      "competence": {
+        "fit_stopped_on_competence_failure": true,
+        "stages": [
+          {
+            "failures": [],
+            "float_rates_count_checked": true,
+            "stage": 1,
+            "updates": 2000,
+            "worker_reported_gate_passed": true
+          },
+          {
+            "failures": [],
+            "float_rates_count_checked": true,
+            "stage": 2,
+            "updates": 6000,
+            "worker_reported_gate_passed": false
+          }
+        ],
+        "validation_deviation": "producer saved summary float rates, not raw logits or integer correct counts; infer numerator integrality from rates and known 256/128 denominators",
+        "validation_logits_retained": false,
+        "validation_numerators_retained": false,
+        "worker_reported_summary_threshold_checked": false
+      },
+      "evaluation": [],
+      "fit": "D64-seed0",
+      "omitted_checkpoint_reporting": {
+        "checkpoint_pt_not_downloaded": true,
+        "offline_wandb_raw_files_note": "none present in this downloaded artifact subset; only offline-run directory structure was fetched",
+        "offline_wandb_raw_files_present": [],
+        "other_inventory_files_not_downloaded": [
+          "checkpoint.pt",
+          "training.jsonl"
+        ],
+        "reporting_metadata_files_present": [
+          "reporting/metadata-artifacts/artifact-inventory.json"
+        ],
+        "reporting_metadata_receipt_hashes_verified": true,
+        "reporting_receipt_present": true
+      },
+      "omitted_inventory_files": [
+        "checkpoint.pt",
+        "training.jsonl"
+      ],
+      "primary_R32q1_delta": null,
+      "status": "competence_failed",
+      "terminal": true,
+      "verified_files": [
+        "checkpoint.json",
+        "identity.json",
+        "result.json",
+        "stage-1-validation.json",
+        "stage-2-validation.json",
+        "status.json",
+        "validation-design.json"
+      ]
+    }
+  ],
+  "fits_found": 4,
+  "input_inventory_sha256": {
+    "D1-seed0": "74cb10f425f27b24e8ae42a5e4f0968b6b3cee78621f3e2481bdfff74097b757",
+    "D16-seed0": "98709d3cf0386512f331994eb56dd28588a71e131184e44a73209c1e2e3fa1af",
+    "D4-seed0": "30b50bfc0e0c54c84f162f5b86799b05173748e3c5004e4b0df22cae7dd5b28e",
+    "D64-seed0": "b9c030b3e4bda3e0d4538997fd1b925cefd8691c151122086306888b6c5bdd99"
+  },
+  "interpretation": "Raw held-out numerical integrity only; no harmful-collapse claim.",
+  "max_abs_difference": 2.3283064365386963e-09,
+  "run_path": "/Users/mehrabhamidi/Desktop/phd/paper/representation_collapse/runs/multibit-20261116/mila-artifacts",
+  "schema": "independent-multibit-memory-reduction-v1",
+  "scientific_acceptance": false,
+  "tolerances": {
+    "absolute": 1e-08,
+    "relative": 1e-06
+  },
+  "verified_at_utc": "2026-11-16T22:59:21.620331+00:00",
+  "verifier_sha256": "fe9073b76cc2fbcf5d349916ee7fb44256fd36b32e38f39ead977cdd2a049364"
+}

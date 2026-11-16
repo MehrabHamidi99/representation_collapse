@@ -1,0 +1,50 @@
+{
+  "verified_at": "2026-11-16T22:46:18.346017+00:00",
+  "rows": [
+    {
+      "cluster": "mila",
+      "returncode": 0,
+      "output": "5e432540731a2b1c6df82dad73da63bd110dc53e\ntorch_staged"
+    },
+    {
+      "cluster": "tamia",
+      "returncode": 0,
+      "output": "5e432540731a2b1c6df82dad73da63bd110dc53e\ntorch_staged"
+    },
+    {
+      "cluster": "rorqual",
+      "returncode": 0,
+      "output": "5e432540731a2b1c6df82dad73da63bd110dc53e\ntorch_staged"
+    },
+    {
+      "cluster": "fir",
+      "returncode": 0,
+      "output": "5e432540731a2b1c6df82dad73da63bd110dc53e\ntorch_staged"
+    },
+    {
+      "cluster": "nibi",
+      "returncode": 0,
+      "output": "6a7881422f0b705d11223003f0a76f176d6a7105\ntorch_pending"
+    },
+    {
+      "cluster": "trillium",
+      "returncode": 0,
+      "output": "6a7881422f0b705d11223003f0a76f176d6a7105\ntorch_staged"
+    },
+    {
+      "cluster": "trillium-gpu",
+      "returncode": 0,
+      "output": "6a7881422f0b705d11223003f0a76f176d6a7105\ntorch_staged"
+    },
+    {
+      "cluster": "killarney",
+      "returncode": 0,
+      "output": "5e432540731a2b1c6df82dad73da63bd110dc53e\ntorch_staged"
+    },
+    {
+      "cluster": "vulcan",
+      "returncode": 0,
+      "output": "5e432540731a2b1c6df82dad73da63bd110dc53e\ntorch_staged"
+    }
+  ]
+}

@@ -24,6 +24,28 @@ and [dependency plan](../../../../../configs/research-plan.json) (revision v2).
   Next scientific node remains competent multi-bit address-query retention,
   training-dwell controls and calibrated complete-state tangent analysis.
 
+- **2026-11-16 continuation — Floquet blog expanded; multibit discovery completed.**
+  The public article now explains complete-state monodromy, leading eigenvalue
+  estimation, singular gains, nonnormality, orbit checks, theoretical memory
+  distinctions and contrary evidence, and includes a citation/BibTeX section.
+  Native cluv0.1.5 synchronized six final-source candidates and submitted five
+  race jobs; Mila11741707 won and completed0:0 in314seconds. All four competitors
+  are cancelled; Tamia was skipped before submission. Nibi dependency staging
+  remains pending, Narval authentication is unavailable, and Trillium CPU/GPU
+  allocation minima exclude them from this one-CPU experiment.
+  Seed-0 fits at1/4bits retain the complete vector with100% held-out accuracy
+  in both arms through1,536steps, with primary paired error difference and DID
+  both zero. Four-bit complete-state PR rises. The16/64-bit fits fail stage2
+  acquisition and do not open held-out tests. Independent raw-array reduction
+  passes; validation raw logits/counts are absent, a recorded protocol deviation
+  limiting competence to summary verification. No collapse/Floquet claim follows.
+  All four original W&B histories and selected summary values are verified online.
+  [Results and next decision](../../../../../docs/November/2026-11-16/mila/report/multibit-discovery-results.md);
+  [exact launch and cluster coverage](../../../../../docs/November/2026-11-16/cross-cluster/submitted-jobs/multibit-race.md).
+  The deterministic Slurm worker is finished; no persistent Qwen or goal-service
+  restart occurred. Next: raw validation retention/replay and a prospective
+  validation-only higher-load acquisition study before new held-out comparisons.
+
 - **2026-10-23 — frozen one-bit checkpoint retains memory through 6,144 steps.**
   Cluv Tamia job **639080**, source **37f9952**, completed `0:0` in 55 seconds.
   Independent reduction verifies all six frozen conditions and 12,288 held-out

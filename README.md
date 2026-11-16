@@ -50,11 +50,21 @@ Mila jobs **11322268** (fit), **11330003** (selected replay/evaluation), and
 source identities, exact selected complete-state replay, numerical summaries
 and actual offline W&B history; cloud delivery remains unverified. The previous
 monitor had an overnight connection-error gap despite training continuing.
-The local Qwen worker was subsequently stopped at the owner's request. Current
-cluster queues and worker liveness were not inspected during the November16
-publication update; no new experiment was launched. The next scientific node
-is competent multi-bit address-query retention, followed by timing controls,
-independent training seeds and complete-state tangent analysis.
+The local Qwen worker was subsequently stopped at the owner's request; this
+session did not restart a persistent model service.
+
+On November16, a new **cluv first race completed on Mila, job11741707**.
+Separate seed-0 LSTMs at loads1/4/16/64 bits were attempted. The1/4-bit fits
+passed worker-reported competence and retained the full vector perfectly
+through1,536 body steps in both arms. Independent raw-array reduction verifies
+their test summaries; four-bit H+C participation ratio increases, rather than
+showing dimension loss. Loads16/64 failed acquisition gates and did not open
+held-out tests. Validation raw logits/counts were not retained, so those gates
+remain summary-checked. All four original W&B histories are now verified online.
+[Discovery report, limitations and next steps](docs/November/2026-11-16/mila/report/multibit-discovery-results.md).
+The next scientific node is reliable higher-load acquisition with raw validation
+retention and replay, then fresh retention tests, late addressed queries, timing
+controls, independent training seeds and complete-state tangent analysis.
 [Current tracker and stop controls](docs/October/2026-10-26/local/report/TRACKER.md).
 
 The [manuscript](paper/README.md) separates the behavioral reconstruction from

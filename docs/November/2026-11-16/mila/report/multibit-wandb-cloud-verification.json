@@ -1,0 +1,207 @@
+{
+  "verified_at": "2026-11-16T22:54:56.479574+00:00",
+  "entity": "mehrab-hamidi-milaquebec5431",
+  "project": "representation-collapse",
+  "rows": [
+    {
+      "dimension": 1,
+      "run_id": "multibit-20261116T2243Z-s0-D1-s0",
+      "url": "https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse/runs/multibit-20261116T2243Z-s0-D1-s0",
+      "state": "finished",
+      "config": {
+        "experiment": {
+          "seed": 0,
+          "schema": "multibit-memory-v1",
+          "dimension": 1,
+          "optimizer": "Adam(lr=0.001,weight_decay=0)",
+          "batch_cues": 32,
+          "hidden_size": 64,
+          "stage_count": 3,
+          "head_outputs": 64,
+          "total_updates": 10000,
+          "training_loss": "binary_cross_entropy_with_logits",
+          "active_outputs": 1,
+          "input_channels": 69,
+          "state_dimension": 128,
+          "gradient_clip_norm": 1,
+          "competence_threshold": 0.95
+        },
+        "identities": {
+          "config_sha256": "76a5712728299c23c6aa924aadf68788fcbec78f4080f83f73c6beb9bdbd6df8",
+          "source_sha256": "c3efc39c5d257cc1bbff90958f399cea6fa0e5b9ed9ef6a09ffc62225ad2b57b",
+          "protocol_sha256": "bb76132d61c2a17634549a94a002a70c190490581c220b52d0a6beae50e2e735",
+          "stage_schedule_sha256": "6449508d43419b70b5af2ce134669164935f777f846c81847250d74c9037b226"
+        }
+      },
+      "history_rows": 215,
+      "history_steps": [
+        0,
+        214
+      ],
+      "expected_last_step": 214,
+      "history_complete": true,
+      "expected_evaluation_metrics": 50,
+      "evaluation_metrics_match": true,
+      "mismatched_metrics": [],
+      "reporting_state": "completed",
+      "artifacts": [],
+      "validation_minima": {
+        "validation/R0/min_bit_polarity_arm_accuracy": 1,
+        "validation/R1/min_bit_polarity_arm_accuracy": 1,
+        "validation/R2/min_bit_polarity_arm_accuracy": 1,
+        "validation/R4/min_bit_polarity_arm_accuracy": 1,
+        "validation/R8/min_bit_polarity_arm_accuracy": 1
+      },
+      "scientific_fit_status": "competence_passed"
+    },
+    {
+      "dimension": 16,
+      "run_id": "multibit-20261116T2243Z-s0-D16-s0",
+      "url": "https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse/runs/multibit-20261116T2243Z-s0-D16-s0",
+      "state": "finished",
+      "config": {
+        "experiment": {
+          "seed": 0,
+          "schema": "multibit-memory-v1",
+          "dimension": 16,
+          "optimizer": "Adam(lr=0.001,weight_decay=0)",
+          "batch_cues": 32,
+          "hidden_size": 64,
+          "stage_count": 3,
+          "head_outputs": 64,
+          "total_updates": 10000,
+          "training_loss": "binary_cross_entropy_with_logits",
+          "active_outputs": 16,
+          "input_channels": 69,
+          "state_dimension": 128,
+          "gradient_clip_norm": 1,
+          "competence_threshold": 0.95
+        },
+        "identities": {
+          "config_sha256": "76a5712728299c23c6aa924aadf68788fcbec78f4080f83f73c6beb9bdbd6df8",
+          "source_sha256": "c3efc39c5d257cc1bbff90958f399cea6fa0e5b9ed9ef6a09ffc62225ad2b57b",
+          "protocol_sha256": "bb76132d61c2a17634549a94a002a70c190490581c220b52d0a6beae50e2e735",
+          "stage_schedule_sha256": "6449508d43419b70b5af2ce134669164935f777f846c81847250d74c9037b226"
+        }
+      },
+      "history_rows": 123,
+      "history_steps": [
+        0,
+        122
+      ],
+      "expected_last_step": 122,
+      "history_complete": true,
+      "expected_evaluation_metrics": 0,
+      "evaluation_metrics_match": true,
+      "mismatched_metrics": [],
+      "reporting_state": "completed",
+      "artifacts": [],
+      "validation_minima": {
+        "validation/R0/min_bit_polarity_arm_accuracy": 1,
+        "validation/R1/min_bit_polarity_arm_accuracy": 0.8984375,
+        "validation/R2/min_bit_polarity_arm_accuracy": 0.8984375
+      },
+      "scientific_fit_status": "competence_failed"
+    },
+    {
+      "dimension": 4,
+      "run_id": "multibit-20261116T2243Z-s0-D4-s0",
+      "url": "https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse/runs/multibit-20261116T2243Z-s0-D4-s0",
+      "state": "finished",
+      "config": {
+        "experiment": {
+          "seed": 0,
+          "schema": "multibit-memory-v1",
+          "dimension": 4,
+          "optimizer": "Adam(lr=0.001,weight_decay=0)",
+          "batch_cues": 32,
+          "hidden_size": 64,
+          "stage_count": 3,
+          "head_outputs": 64,
+          "total_updates": 10000,
+          "training_loss": "binary_cross_entropy_with_logits",
+          "active_outputs": 4,
+          "input_channels": 69,
+          "state_dimension": 128,
+          "gradient_clip_norm": 1,
+          "competence_threshold": 0.95
+        },
+        "identities": {
+          "config_sha256": "76a5712728299c23c6aa924aadf68788fcbec78f4080f83f73c6beb9bdbd6df8",
+          "source_sha256": "c3efc39c5d257cc1bbff90958f399cea6fa0e5b9ed9ef6a09ffc62225ad2b57b",
+          "protocol_sha256": "bb76132d61c2a17634549a94a002a70c190490581c220b52d0a6beae50e2e735",
+          "stage_schedule_sha256": "6449508d43419b70b5af2ce134669164935f777f846c81847250d74c9037b226"
+        }
+      },
+      "history_rows": 215,
+      "history_steps": [
+        0,
+        214
+      ],
+      "expected_last_step": 214,
+      "history_complete": true,
+      "expected_evaluation_metrics": 50,
+      "evaluation_metrics_match": true,
+      "mismatched_metrics": [],
+      "reporting_state": "completed",
+      "artifacts": [],
+      "validation_minima": {
+        "validation/R0/min_bit_polarity_arm_accuracy": 1,
+        "validation/R1/min_bit_polarity_arm_accuracy": 1,
+        "validation/R2/min_bit_polarity_arm_accuracy": 1,
+        "validation/R4/min_bit_polarity_arm_accuracy": 1,
+        "validation/R8/min_bit_polarity_arm_accuracy": 1
+      },
+      "scientific_fit_status": "competence_passed"
+    },
+    {
+      "dimension": 64,
+      "run_id": "multibit-20261116T2243Z-s0-D64-s0",
+      "url": "https://wandb.ai/mehrab-hamidi-milaquebec5431/representation-collapse/runs/multibit-20261116T2243Z-s0-D64-s0",
+      "state": "finished",
+      "config": {
+        "experiment": {
+          "seed": 0,
+          "schema": "multibit-memory-v1",
+          "dimension": 64,
+          "optimizer": "Adam(lr=0.001,weight_decay=0)",
+          "batch_cues": 32,
+          "hidden_size": 64,
+          "stage_count": 3,
+          "head_outputs": 64,
+          "total_updates": 10000,
+          "training_loss": "binary_cross_entropy_with_logits",
+          "active_outputs": 64,
+          "input_channels": 69,
+          "state_dimension": 128,
+          "gradient_clip_norm": 1,
+          "competence_threshold": 0.95
+        },
+        "identities": {
+          "config_sha256": "76a5712728299c23c6aa924aadf68788fcbec78f4080f83f73c6beb9bdbd6df8",
+          "source_sha256": "c3efc39c5d257cc1bbff90958f399cea6fa0e5b9ed9ef6a09ffc62225ad2b57b",
+          "protocol_sha256": "bb76132d61c2a17634549a94a002a70c190490581c220b52d0a6beae50e2e735",
+          "stage_schedule_sha256": "6449508d43419b70b5af2ce134669164935f777f846c81847250d74c9037b226"
+        }
+      },
+      "history_rows": 123,
+      "history_steps": [
+        0,
+        122
+      ],
+      "expected_last_step": 122,
+      "history_complete": true,
+      "expected_evaluation_metrics": 0,
+      "evaluation_metrics_match": true,
+      "mismatched_metrics": [],
+      "reporting_state": "completed",
+      "artifacts": [],
+      "validation_minima": {
+        "validation/R0/min_bit_polarity_arm_accuracy": 0.9453125,
+        "validation/R1/min_bit_polarity_arm_accuracy": 0.78125,
+        "validation/R2/min_bit_polarity_arm_accuracy": 0.765625
+      },
+      "scientific_fit_status": "competence_failed"
+    }
+  ]
+}

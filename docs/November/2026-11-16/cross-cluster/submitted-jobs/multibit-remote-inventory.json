@@ -1,0 +1,510 @@
+{
+  "verified_at": "2026-11-16T22:52:55.620979+00:00",
+  "run_root": "/network/scratch/m/mehrab.hamidi/representation-collapse/runs/multibit-memory/multibit-20261116T2243Z-s0",
+  "inventory_checks": [
+    {
+      "fit": "D1-seed0",
+      "files": [
+        {
+          "name": "R0-q1-summary.json",
+          "sha256": "872c63cdd639de2bf6af5c0aed4ef4b68eee340c91d807fdfccc35092b9e30d1",
+          "bytes": 18648,
+          "matches": true
+        },
+        {
+          "name": "R0-q1.npz",
+          "sha256": "ecd0e0aada431b09b48eca87807eab2499444bce4f34bfa7c6e08f530e949a1a",
+          "bytes": 17964,
+          "matches": true
+        },
+        {
+          "name": "R1-q1-summary.json",
+          "sha256": "2e41161fb0f0e1a8f20a72c21448323bd54079bf58cc589044e522a926d5cd6b",
+          "bytes": 18772,
+          "matches": true
+        },
+        {
+          "name": "R1-q1.npz",
+          "sha256": "a21eaadb2aeeec8e0526523963dd57cc0cdbdfc3e019e7da06108a70d15e15c8",
+          "bytes": 20284,
+          "matches": true
+        },
+        {
+          "name": "R128-q1-summary.json",
+          "sha256": "55f2e57de9f44c574ba41af0c5a6526a951b818b349183f00549e890e5c31da3",
+          "bytes": 18724,
+          "matches": true
+        },
+        {
+          "name": "R128-q1.npz",
+          "sha256": "a4423d674e9f14cdfa37a12780b26dc25c1a9b6bafdcc548e3c88e0c03e03d0d",
+          "bytes": 23290,
+          "matches": true
+        },
+        {
+          "name": "R16-q1-summary.json",
+          "sha256": "11f1a616f87536772a4926c1fa1db7ab4613ed057b3fd86777bf00530a67927a",
+          "bytes": 18843,
+          "matches": true
+        },
+        {
+          "name": "R16-q1.npz",
+          "sha256": "7f0c8ade92fba2170f0546e33c736c09069b78567292ff59db8806033137d178",
+          "bytes": 23408,
+          "matches": true
+        },
+        {
+          "name": "R2-q1-summary.json",
+          "sha256": "42bd2ab143c68034e1442b1397567c8c76003cf1a5494d7d7846ba43cece1c4f",
+          "bytes": 18801,
+          "matches": true
+        },
+        {
+          "name": "R2-q1.npz",
+          "sha256": "ba0e035e33bbd539575a24cb55ac6760c35ce899fa892d6664d2468c5e8f1fcf",
+          "bytes": 23237,
+          "matches": true
+        },
+        {
+          "name": "R32-q1-summary.json",
+          "sha256": "ee94c99851498e14b3fa9f76b5ac6f6906e0e4fb87099a56671118ed4afeeba0",
+          "bytes": 18727,
+          "matches": true
+        },
+        {
+          "name": "R32-q1.npz",
+          "sha256": "c87b4bce62df146373f257535de823cf107a5438c8d0e0def98a2f4367debea4",
+          "bytes": 23407,
+          "matches": true
+        },
+        {
+          "name": "R32-q4-summary.json",
+          "sha256": "b8cb4577530c4908fa5c344cf57a02364db270a4343c51318b5b049733841862",
+          "bytes": 18689,
+          "matches": true
+        },
+        {
+          "name": "R32-q4.npz",
+          "sha256": "6e319fdbd4276f83959778b76d23f878d20c81b1f6f1dd6139fe8d36b886ea9b",
+          "bytes": 23804,
+          "matches": true
+        },
+        {
+          "name": "R4-q1-summary.json",
+          "sha256": "9e46216b235792c770dd05f8b20f6b265d0f3af9f8384b5d528c08780a16dc96",
+          "bytes": 18729,
+          "matches": true
+        },
+        {
+          "name": "R4-q1.npz",
+          "sha256": "070a9570af245f5a380a78389de6ebd76dc8543594150a0c925b1ebb00d3bd0c",
+          "bytes": 24525,
+          "matches": true
+        },
+        {
+          "name": "R64-q1-summary.json",
+          "sha256": "e70d6377ba49bd1a664cb1ecdc6e8ab2168785a77849b74f87d8c86d7351181b",
+          "bytes": 18701,
+          "matches": true
+        },
+        {
+          "name": "R64-q1.npz",
+          "sha256": "eca3323635632d15a0feddb2553b4c8b77b63c7fb0dc15dacbb338359c45ffbe",
+          "bytes": 24836,
+          "matches": true
+        },
+        {
+          "name": "R8-q1-summary.json",
+          "sha256": "7bbff5c8c0829235b6a1b8ffe9e6bd67a951f395dad0984db55b25e6b7c14e8e",
+          "bytes": 18789,
+          "matches": true
+        },
+        {
+          "name": "R8-q1.npz",
+          "sha256": "b1745afbe6625e365bef064ef89ca3e095c64b1fda9f6b125f59d5e13a9843c1",
+          "bytes": 23287,
+          "matches": true
+        },
+        {
+          "name": "checkpoint.json",
+          "sha256": "98520228361802157f07e383a4864807a0bf02af2bdaeb52e6f52aff0b2852ee",
+          "bytes": 129,
+          "matches": true
+        },
+        {
+          "name": "checkpoint.pt",
+          "sha256": "5caeac4963f0319018d57c1ef580164b5ee6fe5c7a95f526b5d338507375fc76",
+          "bytes": 471965,
+          "matches": true
+        },
+        {
+          "name": "evaluation-design.json",
+          "sha256": "1089b2de5ef9cdf7c88b3f11f28082af92a76095658ef67a55eec9e57ae8fd4f",
+          "bytes": 38449,
+          "matches": true
+        },
+        {
+          "name": "identity.json",
+          "sha256": "ac0a925c706c7260a40b8df4ba78d56c2e163a43a97b2c7b5423d8838636f46d",
+          "bytes": 850,
+          "matches": true
+        },
+        {
+          "name": "result.json",
+          "sha256": "2c4ddc50bca6e4927611e010d5a8d7e9cf604b7e8f1363c6015c903c8da12f7d",
+          "bytes": 194545,
+          "matches": true
+        },
+        {
+          "name": "stage-1-validation.json",
+          "sha256": "71a1b0df878d6a5016504042666ac42dafb5d68fcc42888d1cc499d5f9827b4b",
+          "bytes": 733,
+          "matches": true
+        },
+        {
+          "name": "stage-2-validation.json",
+          "sha256": "a9491996878c8ab4de7356f52afe7847f74fbf8be0a2f5eb2e35e05bc3356c64",
+          "bytes": 2053,
+          "matches": true
+        },
+        {
+          "name": "stage-3-validation.json",
+          "sha256": "726df105fa74b10b71fa541bff1e7adbf929d2f79dc52ba36ca686097af1d2d1",
+          "bytes": 3374,
+          "matches": true
+        },
+        {
+          "name": "status.json",
+          "sha256": "2875298e807b253baf1592de9559fc248dc5d382fab1588412dd6b81830dee8d",
+          "bytes": 228,
+          "matches": true
+        },
+        {
+          "name": "training.jsonl",
+          "sha256": "c5966f67058be22bd058b17ceb6b26b44ae7f61e54cee4a8085b5d88bc10ebe2",
+          "bytes": 28912,
+          "matches": true
+        },
+        {
+          "name": "validation-design.json",
+          "sha256": "4b56bce9dc864bc722df4b0a42d66e20f83673d6c8aeec15ef136b10dd7551e7",
+          "bytes": 103662,
+          "matches": true
+        }
+      ],
+      "all_match": true
+    },
+    {
+      "fit": "D16-seed0",
+      "files": [
+        {
+          "name": "checkpoint.json",
+          "sha256": "83425208b3670e4431437cd677f7156e9c7503b5c5635032c041fe4df62ff992",
+          "bytes": 129,
+          "matches": true
+        },
+        {
+          "name": "checkpoint.pt",
+          "sha256": "b57bffb251353f4605e1e385235b48ec7f5f8a3a992f80fb8486d0361f7ef3dd",
+          "bytes": 471901,
+          "matches": true
+        },
+        {
+          "name": "identity.json",
+          "sha256": "b6eb4d0ff7be1cd1ba004f185916e4417fd98a7d9601b06503468bd2d7637f83",
+          "bytes": 850,
+          "matches": true
+        },
+        {
+          "name": "result.json",
+          "sha256": "758f6c8df1ff59b22f4d208f9bee93a1179b00b650e12e498dc9c9f0ba60d92d",
+          "bytes": 9963,
+          "matches": true
+        },
+        {
+          "name": "stage-1-validation.json",
+          "sha256": "3fdfb847af301c6ba6f6fc52f0993733809a2f7658cca2e0814e6fb125c8d264",
+          "bytes": 2005,
+          "matches": true
+        },
+        {
+          "name": "stage-2-validation.json",
+          "sha256": "e0225120bf69ff6453f0edd116f83b04676ab749992a27ee0d05029d27b308f3",
+          "bytes": 7118,
+          "matches": true
+        },
+        {
+          "name": "status.json",
+          "sha256": "b97fb37bf01eea0ddd2bc6cd56745343c9eb178fa5dce2dfd77d0d9f78af64c3",
+          "bytes": 228,
+          "matches": true
+        },
+        {
+          "name": "training.jsonl",
+          "sha256": "1f396f6efce1b0ef682bdb8d31f0db4226c1876e882f8f41091b9efa70ef090b",
+          "bytes": 17084,
+          "matches": true
+        },
+        {
+          "name": "validation-design.json",
+          "sha256": "6ce8bccedcb33ec4527c4789cf38a93cdb0af2b7fa8cfdabe5df48977094fba9",
+          "bytes": 113263,
+          "matches": true
+        }
+      ],
+      "all_match": true
+    },
+    {
+      "fit": "D4-seed0",
+      "files": [
+        {
+          "name": "R0-q1-summary.json",
+          "sha256": "92c9bf63da061725f0ec23aec7de35b4087ab26cf4c9760e37bcb5aa18d3a0f2",
+          "bytes": 19728,
+          "matches": true
+        },
+        {
+          "name": "R0-q1.npz",
+          "sha256": "5aa6255d8dd69d1f68e271df4e098d28cbe9c2ee23e4f25aee3b4be3c19722e7",
+          "bytes": 156948,
+          "matches": true
+        },
+        {
+          "name": "R1-q1-summary.json",
+          "sha256": "1a7fc0354ed05c7ab83d968e1ca181e0d53d332c50a30ce979bd000f2474024f",
+          "bytes": 19802,
+          "matches": true
+        },
+        {
+          "name": "R1-q1.npz",
+          "sha256": "4131ba71d336ceefbc443990f561a86f3ef81f586d83400e19d0cabd36991af3",
+          "bytes": 172406,
+          "matches": true
+        },
+        {
+          "name": "R128-q1-summary.json",
+          "sha256": "b9a71a4cbf11d0785c095205ca56e0b46defb4fd73239eb7735e786434716b0b",
+          "bytes": 19549,
+          "matches": true
+        },
+        {
+          "name": "R128-q1.npz",
+          "sha256": "857a351bc29e4822625f582952870477589f96dc6798b83942732d7c98635c86",
+          "bytes": 232743,
+          "matches": true
+        },
+        {
+          "name": "R16-q1-summary.json",
+          "sha256": "9c52362ab7223e1c7f524a5750cf08594f2c11675eaf131f3d5636da5f092e01",
+          "bytes": 19791,
+          "matches": true
+        },
+        {
+          "name": "R16-q1.npz",
+          "sha256": "0aa399379a064364653a5e56bf72b918fcd64b56177dd4ed87b83cfa14547a52",
+          "bytes": 242250,
+          "matches": true
+        },
+        {
+          "name": "R2-q1-summary.json",
+          "sha256": "0c4005b1449b3b6f959f82a404062ac759c90a528fd32414a1f7b4ac3e35a018",
+          "bytes": 19793,
+          "matches": true
+        },
+        {
+          "name": "R2-q1.npz",
+          "sha256": "34d1d44bf1154f488b061baf7b0349b87aa1b5ee766b5f0ef993036151760369",
+          "bytes": 252433,
+          "matches": true
+        },
+        {
+          "name": "R32-q1-summary.json",
+          "sha256": "8e79d8c99cffb04b11bb23c8044a804965282fdeafc6b128c03f2d229ec33132",
+          "bytes": 19730,
+          "matches": true
+        },
+        {
+          "name": "R32-q1.npz",
+          "sha256": "82f67908658ac67322d1da97bcef73d9d3578f1fb7c78c90a79e75be9cd782f3",
+          "bytes": 246201,
+          "matches": true
+        },
+        {
+          "name": "R32-q4-summary.json",
+          "sha256": "f61e11bb2b705bf0fcdf0006118662ed93afcb5e9b0d0c064a897748ad993174",
+          "bytes": 19717,
+          "matches": true
+        },
+        {
+          "name": "R32-q4.npz",
+          "sha256": "ad07720c5acd45c3ac169c62031208fb669c45a3bd246229339ceef2813c6cb3",
+          "bytes": 217908,
+          "matches": true
+        },
+        {
+          "name": "R4-q1-summary.json",
+          "sha256": "1f18edbeeb2a3d80d219f9a2eab9d001e87993bd1a7b562cfe8eaff76c005b2a",
+          "bytes": 19771,
+          "matches": true
+        },
+        {
+          "name": "R4-q1.npz",
+          "sha256": "c91321e449403b2087437a2b9443df510bd8dde8e1a2641b8c7f1cde9c25c631",
+          "bytes": 243217,
+          "matches": true
+        },
+        {
+          "name": "R64-q1-summary.json",
+          "sha256": "368256e831e2ad0bb8dfd3bda945176810f6eebd5af751a11992a268596777f9",
+          "bytes": 19764,
+          "matches": true
+        },
+        {
+          "name": "R64-q1.npz",
+          "sha256": "313eb402fa637ed25cca9aba9abbd73b215ced197b8059880913ce74b6251455",
+          "bytes": 235180,
+          "matches": true
+        },
+        {
+          "name": "R8-q1-summary.json",
+          "sha256": "65a3a5bba8e9e0b1c52ba5752f9a2ad20c175f7de38d4cc45836afa623e03bdf",
+          "bytes": 19458,
+          "matches": true
+        },
+        {
+          "name": "R8-q1.npz",
+          "sha256": "d59157e1b8927653ab7c4d6204843d43e7217d0005c6872f738cc070835e998c",
+          "bytes": 249678,
+          "matches": true
+        },
+        {
+          "name": "checkpoint.json",
+          "sha256": "2bfcdc6b3da1cfc0f63e888fce4c8527873669fdf89403b3b7b6869412276b9d",
+          "bytes": 129,
+          "matches": true
+        },
+        {
+          "name": "checkpoint.pt",
+          "sha256": "542a683ffbe9d04586a7754ab0fbec837d37015c447d107dab0ec6eb7c7d4a44",
+          "bytes": 471901,
+          "matches": true
+        },
+        {
+          "name": "evaluation-design.json",
+          "sha256": "1df6fcee92b4c2224c4cf858be7429153425e0bfa952089d4d3044d752e1f114",
+          "bytes": 40369,
+          "matches": true
+        },
+        {
+          "name": "identity.json",
+          "sha256": "18d805018cee47ae07d17a121067747523772603dc7d4038536753bc7bf24244",
+          "bytes": 849,
+          "matches": true
+        },
+        {
+          "name": "result.json",
+          "sha256": "a914c3c33a4d57369e3b5843cfb25a433a4bc573718f907c1fe8360e3a29009a",
+          "bytes": 206493,
+          "matches": true
+        },
+        {
+          "name": "stage-1-validation.json",
+          "sha256": "238ab92ddced72a8b0c0bd010a015e64167e3f2fcf245e82e56846cc8f88b82f",
+          "bytes": 985,
+          "matches": true
+        },
+        {
+          "name": "stage-2-validation.json",
+          "sha256": "7017d6175c92e238b6440d9b9dc7b069b4583a6c19218ccac46c73bf782c9aab",
+          "bytes": 2809,
+          "matches": true
+        },
+        {
+          "name": "stage-3-validation.json",
+          "sha256": "1e33ec24d978863a5b8501de8e5a1ed9d2f3b66d1c8ff341a7454c5f8b33fc8c",
+          "bytes": 4634,
+          "matches": true
+        },
+        {
+          "name": "status.json",
+          "sha256": "f226b3ea9ed51cf92b9583f9c3263216910035a2857e0a86b9aa6dbd8917a217",
+          "bytes": 229,
+          "matches": true
+        },
+        {
+          "name": "training.jsonl",
+          "sha256": "f28d3790c27f48974c04cf536fcf577ee99fe256d833c0a71c82257e2b8bb352",
+          "bytes": 29347,
+          "matches": true
+        },
+        {
+          "name": "validation-design.json",
+          "sha256": "43fa4806f6963ad4eb57c94c77aacc1837f403bcf7e3d61d6dfe972ad92849e0",
+          "bytes": 105582,
+          "matches": true
+        }
+      ],
+      "all_match": true
+    },
+    {
+      "fit": "D64-seed0",
+      "files": [
+        {
+          "name": "checkpoint.json",
+          "sha256": "2e72f1d60cb62fe2a0cd4b086aadc810ad28998acb04e977135cfcea17be7000",
+          "bytes": 129,
+          "matches": true
+        },
+        {
+          "name": "checkpoint.pt",
+          "sha256": "fb303165e91c8852e076e8789f2660287db310d18392b9f49f440d2664152301",
+          "bytes": 471901,
+          "matches": true
+        },
+        {
+          "name": "identity.json",
+          "sha256": "701e40a704e5c68d70188b6cc483d2c29ffeccbb966d4bd9b3eb8c9761663a52",
+          "bytes": 850,
+          "matches": true
+        },
+        {
+          "name": "result.json",
+          "sha256": "85b744535c55a56e1b7102ce5b6748d9930359f341c3700a35b71517415c7b13",
+          "bytes": 33622,
+          "matches": true
+        },
+        {
+          "name": "stage-1-validation.json",
+          "sha256": "de47d734c491a3abec207a7cf2af106fcb286662c05d836286b54ff6273be707",
+          "bytes": 7919,
+          "matches": true
+        },
+        {
+          "name": "stage-2-validation.json",
+          "sha256": "caf87cd358e442db97f9255d259f5d07df43af51f2dabce27182d0a82b6e2241",
+          "bytes": 24863,
+          "matches": true
+        },
+        {
+          "name": "status.json",
+          "sha256": "048b006db6223f379d1debc8c6a8f706d0569730b8b73d9518a83fdbb645bb62",
+          "bytes": 229,
+          "matches": true
+        },
+        {
+          "name": "training.jsonl",
+          "sha256": "afc86abecd12f918f1be2162579defafb5a5a8044c6c3dcad1a9cbf69173ba21",
+          "bytes": 17024,
+          "matches": true
+        },
+        {
+          "name": "validation-design.json",
+          "sha256": "ef7acd2487c3d50abfb282b0f780e3db4a8239a6ac4e95d9a0d4f0feaff749d7",
+          "bytes": 143983,
+          "matches": true
+        }
+      ],
+      "all_match": true
+    }
+  ]
+}

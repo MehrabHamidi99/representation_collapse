@@ -1,0 +1,15 @@
+{
+  "purpose": "Plot of independently reduced exploratory seed-0 outputs",
+  "wandb_required": false,
+  "wandb_reason": "Replotting existing results; no new scientific evaluation",
+  "input_sha256": "ef103d4f27728f4539bb664925c7a62d17b6b7f8e98965825ec32157d316a2a7",
+  "script_sha256": "94fc686de43615ba9ffee9af18dac1cb7c5d98f283d3db867418afd79a6ecc79",
+  "output_sha256": "b161487813af59ce3b2a5fa2a94a3b6b1c6f8c39ccbfc7ac4d3d190c50f2a2a0",
+  "aggregation": "Mean of four within-forcing/arm covariance summaries; H64 then C64",
+  "limitations": [
+    "one fit per load; no population confidence interval",
+    "validation gates checked from summaries, not raw replay",
+    "D16 and D64 failed competence and are absent from held-out curves",
+    "No tangent or Floquet spectrum measured"
+  ]
+}

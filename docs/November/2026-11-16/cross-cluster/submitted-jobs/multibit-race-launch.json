@@ -1,0 +1,83 @@
+{
+  "state": "completed",
+  "reserved_at": "2026-11-16T22:42:54.170069+00:00",
+  "source_commit": "5e432540731a2b1c6df82dad73da63bd110dc53e",
+  "run_id": "multibit-20261116T2243Z-s0",
+  "config_sha256": "76a5712728299c23c6aa924aadf68788fcbec78f4080f83f73c6beb9bdbd6df8",
+  "command": [
+    "cluv",
+    "submit",
+    "first",
+    "job.sh",
+    "--no-sync-datasets",
+    "--",
+    "5e432540731a2b1c6df82dad73da63bd110dc53e",
+    "multibit-20261116T2243Z-s0"
+  ],
+  "candidates": [
+    "mila",
+    "tamia",
+    "rorqual",
+    "fir",
+    "killarney",
+    "vulcan"
+  ],
+  "per_candidate": {
+    "cpus": 1,
+    "memory_gib": 8,
+    "gpus": 0,
+    "walltime": "03:00:00",
+    "requeue": false
+  },
+  "excluded": {
+    "narval": "authentication unavailable",
+    "nibi": "initial environment sync still in progress",
+    "trillium": "192-core minimum allocation",
+    "trillium-gpu": "mandatory GPU allocation"
+  },
+  "runtime_check": "11 focused tests pass in staged Rorqual CPU environment",
+  "wandb_required": true,
+  "cloud_delivery": "verified separate wandb-cloud-verification.json",
+  "retry": false,
+  "winner": {
+    "cluster": "mila",
+    "job_id": 11741707,
+    "node": "cn-h002",
+    "state": "COMPLETED",
+    "exit_code": "0:0",
+    "elapsed_seconds": 314
+  },
+  "actual_submissions": [
+    {
+      "cluster": "mila",
+      "job_id": 11741707
+    },
+    {
+      "cluster": "rorqual",
+      "job_id": 26966492
+    },
+    {
+      "cluster": "fir",
+      "job_id": 4458321
+    },
+    {
+      "cluster": "killarney",
+      "job_id": 7678414
+    },
+    {
+      "cluster": "vulcan",
+      "job_id": 2388345
+    }
+  ],
+  "tamia": "skipped by cluv after winner began; no submission",
+  "allocated_cpu_seconds_parent_rows": 328,
+  "allocated_gpu_seconds": 0,
+  "production_tests": {
+    "cluster": "rorqual",
+    "torch": "2.0.0+cpu",
+    "passed": 11,
+    "elapsed_seconds": 13.161
+  },
+  "cleanup_exception": "cluv bare scancel unavailable in Killarney nonlogin shell; login-shell scancel of owned job7678414 then independent terminal reconciliation",
+  "checked_at": "2026-11-16T22:53:08.439392+00:00"
+}
