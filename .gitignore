@@ -42,3 +42,4 @@ __pycache__/
 
 # Local template collection and migration backups
 .template-sync/
+/launch/*/logs
