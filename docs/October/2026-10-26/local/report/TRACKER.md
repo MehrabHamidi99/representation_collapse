@@ -1,6 +1,7 @@
 # Current research state
 
-Updated 2026-10-23 15:57 UTC. See the [latest notebook entry](../../../2026-10-23/local/report/2026-10-23-progress-report.md),
+Updated 2026-11-16. See the [publication/status report](../../../../../docs/November/2026-11-16/local/report/project-status-and-blog-publication.md),
+the [October 23 notebook](../../../2026-10-23/local/report/2026-10-23-progress-report.md),
 the [October 20 notebook](../../../2026-10-20/local/report/2026-10-20-progress-report.md),
 the [October 19 notebook](../../../2026-10-19/local/report/2026-10-19-progress-report.md),
 the [October 15 notebook](../../../2026-10-15/local/report/2026-10-15-progress-report.md),
@@ -9,6 +10,19 @@ the [October 13 notebook](../../../2026-10-13/local/report/2026-10-13-progress-r
 the [prior-day notebook](../../../2026-10-12/local/report/2026-10-12-progress-report.md),
 the [setup notebook](../../../2026-10-11/local/report/2026-10-11-progress-report.md)
 and [dependency plan](../../../../../configs/research-plan.json) (revision v2).
+
+- **2026-11-16 — GitHub reconciled; public research note published.**
+  GitHub main and local source both resolved to `b45b354` before this work.
+  No newer committed experimental result was found; the latest accepted
+  experiments remain those verified October 23. The blog summarizes the
+  single-seed graph failure, retained one-bit memory, elementary theoretical
+  nulls and open mechanistic questions. Website main commit `23f1707` contains
+  the post, two evidence-derived figures and a news link. The public page and
+  assets returned HTTP200 and matched the local build. See the dated report
+  for verification. No new compute job, model training or continuous
+  worker restart occurred; live cluster queues were not inspected.
+  Next scientific node remains competent multi-bit address-query retention,
+  training-dwell controls and calibrated complete-state tangent analysis.
 
 - **2026-10-23 — frozen one-bit checkpoint retains memory through 6,144 steps.**
   Cluv Tamia job **639080**, source **37f9952**, completed `0:0` in 55 seconds.

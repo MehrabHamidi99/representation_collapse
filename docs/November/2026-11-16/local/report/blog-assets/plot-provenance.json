@@ -1,0 +1,13 @@
+{
+  "purpose": "presentation of previously verified results; no new scientific measurements",
+  "wandb_required": false,
+  "wandb_reason": "replotting existing accepted results",
+  "inputs": {
+    "doc/auto/figures/repetition-dwell-2026-10-20/results.json": "7b9d0d432c8c50e627de12377c1852916eb54c23afdaf7b2c14ca9912a9bb8d5",
+    "doc/auto/figures/onebit-long-horizon-2026-10-23/reduction-results.json": "446eb034e24dac137a11579f70246e5ef949dd805a0d6b8879383958a9306231"
+  },
+  "outputs": {
+    "repetition-graph.png": "50d3e5743a771c49db1f92d05d5cb495954fff3346c725d5210c82dc3a9fdb68",
+    "repetition-memory.png": "cd9c592a849151f6095b22c45b6190bb295cde7a5308e2b10b8933053126d84b"
+  }
+}

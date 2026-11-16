@@ -1,0 +1,31 @@
+{
+  "website_commit": "23f1707c921f9da54299f94527c1adfb3aee34e9",
+  "verified_at_utc": "2026-11-16T22:07:42.281027+00:00",
+  "wandb_required": false,
+  "checks": [
+    {
+      "url": "https://mehrabhamidi99.github.io/blog/repetition-and-memory/",
+      "status": 200,
+      "sha256": "83b54df07fb7846ca3f9fbe1125bd941a8c529de1399650f5050a839c1e1ab33",
+      "matches_local_build": true
+    },
+    {
+      "url": "https://mehrabhamidi99.github.io/assets/portfolio/repetition-graph.png",
+      "status": 200,
+      "sha256": "50d3e5743a771c49db1f92d05d5cb495954fff3346c725d5210c82dc3a9fdb68",
+      "matches_local_build": true
+    },
+    {
+      "url": "https://mehrabhamidi99.github.io/assets/portfolio/repetition-memory.png",
+      "status": 200,
+      "sha256": "cd9c592a849151f6095b22c45b6190bb295cde7a5308e2b10b8933053126d84b",
+      "matches_local_build": true
+    },
+    {
+      "url": "https://mehrabhamidi99.github.io/news/",
+      "status": 200,
+      "sha256": "2217f4aff43da30a829ba88a6a30a7458f1af8e14587af100b3f85b6f9407623",
+      "matches_local_build": true
+    }
+  ]
+}
