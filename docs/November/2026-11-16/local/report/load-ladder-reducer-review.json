@@ -1,0 +1,28 @@
+{
+  "reviewed_at_utc": "2026-11-16T23:51:20.846707+00:00",
+  "reviewer": "native canary_launch_review agent; disjoint read-only review",
+  "coordinator_test": "python3 -m unittest tests.test_reduce_multibit_load_ladder -q",
+  "tests_passed": 8,
+  "review_status": "accepted for actual-artifact verification",
+  "files_sha256": {
+    "code/analysis/reduce_multibit_load_ladder.py": "b49051bb116e8c867f3248b9a83cf85913ef25603af5067763a13df0d295c578",
+    "tests/test_reduce_multibit_load_ladder.py": "e8443520ee9181f55fafdb1a3430255ab42306721e342534c051a08f21aa5131"
+  },
+  "material_findings_fixed": [
+    "producer BOOL labels",
+    "numerical tolerance comparison",
+    "universal held-out gate and allowed status checks",
+    "duplicate attempt accounting",
+    "independent saved body design contracts",
+    "condition/horizon binding",
+    "ordered partial evaluation prefix"
+  ],
+  "actual_experiment_payload_reviewed": false,
+  "scientific_acceptance": false,
+  "limitations": [
+    "Checkpoint weights are byte-hash checked, not deserialized/re-executed by this reducer.",
+    "Replay uses raw-logit hashes and worker receipts.",
+    "Zero-state oracle remains producer-reported.",
+    "Scientific interpretation needs complete run-lineage and raw-result review."
+  ]
+}

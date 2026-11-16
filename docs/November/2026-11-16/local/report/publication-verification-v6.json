@@ -1,0 +1,14 @@
+{
+  "verified_at_utc": "2026-11-16T23:50:25.835944+00:00",
+  "url": "https://mehrabhamidi99.github.io/blog/repetition-and-memory/",
+  "status": 200,
+  "source_commit": "2e866f78187dd1b9c1cdde4adbf17d60e79794f1",
+  "local_sha256": "dd6967ee4b6e084c485ea3aadf80a1e5dedfa55234ebfb14e0d7d3bd9a9a8d36",
+  "live_sha256": "dd6967ee4b6e084c485ea3aadf80a1e5dedfa55234ebfb14e0d7d3bd9a9a8d36",
+  "matches_local_build": true,
+  "old_heading_absent": true,
+  "replay_wording_present": true,
+  "citation_present": true,
+  "build_checks": "Python build and site link/asset/anchor/metadata/RSS/sitemap checker passed",
+  "change": "Clarify same-model saved-checkpoint replay; coherent narrative already published in e27f12c"
+}

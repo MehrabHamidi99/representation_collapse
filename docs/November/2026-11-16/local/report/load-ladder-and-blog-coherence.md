@@ -71,3 +71,33 @@ The autonomous work is the running, predetermined load ladder. A separate
 independent reducer is being reviewed; its completion and use on real output
 must be reported separately. No new collapse conclusion is accepted from
 these progress observations.
+
+## Final session checks at 23:50 UTC
+
+Both allocations remain RUNNING. Mila seed 1 has completed 34,000 updates at
+12 bits and entered held-out evaluation. Vulcan's two D4 workers are in stage
+3 beyond 25,000 updates. See the [fresh observation](../../cross-cluster/submitted-jobs/load-ladder-v2-progress-2350.json).
+These status files do not establish a new retention or collapse result.
+
+Website revision `2e866f7` changes “independently replay” to “reload and replay”
+to describe the actual same-model checkpoint integrity check precisely. It
+retains the coherent structure, theory, figures and citation. Build/site checks
+pass and the served article matches the local build byte-for-byte; see
+[publication verification](publication-verification-v6.json).
+
+The independent reducer in `code/analysis/reduce_multibit_load_ladder.py` and its
+focused tests now check saved raw validation counts/gates, checkpoint byte
+identity, endpoint replay receipts, held-out BOOL-label schema, independent
+conditional H+C spectra, saved treatment design, horizon/condition binding,
+ordered interrupted evaluations, and duplicate load/seed attempt lineage.
+Eight tests pass. It does not deserialize or independently execute checkpoint
+weights, and cannot verify the zero-state oracle without model reconstruction.
+Its result always has `scientific_acceptance=false`; use on real v2 payloads
+and scientific review remain outstanding. Do not treat a passing unit suite as
+an independent reduction of the running experiments.
+
+Next: let the frozen fits finish, reconcile the original Mila seed-1 lineage
+and Vulcan seed-0/2 lineage, run the independent reducer on the complete raw
+artifacts, sync/verify original W&B histories, then plot every load and failure
+status before interpreting the retention boundary. Do not resynchronize either
+active source checkout to a newer Git HEAD.
