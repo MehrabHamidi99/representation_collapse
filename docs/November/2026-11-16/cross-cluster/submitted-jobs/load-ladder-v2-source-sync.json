@@ -1,0 +1,48 @@
+{
+  "verified_at": "2026-11-16T23:25:43.480578+00:00",
+  "source_commit": "be71bd3df72aede3726b2696e28af1ecef2ce276",
+  "rows": [
+    {
+      "cluster": "mila",
+      "returncode": 0,
+      "output": "be71bd3df72aede3726b2696e28af1ecef2ce276\na800796299e2921dbd4be5b5dd6985449833ab6fec8edf85aed4c448fa9a16c7  src/representation_collapse/multibit_load_ladder.py\n0541e836ad7578c2ef5bd137062d692bd10db9e0d214059eab19866264029f9c  configs/experiments/multibit-load-ladder-v2.json\n66fe0999f65969d56162af454f97bbea32034345209e6b15f354d0104eb9e197  launch/multibit-load-v2-20261116/job.sh",
+      "errors": ""
+    },
+    {
+      "cluster": "tamia",
+      "returncode": 0,
+      "output": "be71bd3df72aede3726b2696e28af1ecef2ce276\na800796299e2921dbd4be5b5dd6985449833ab6fec8edf85aed4c448fa9a16c7  src/representation_collapse/multibit_load_ladder.py\n0541e836ad7578c2ef5bd137062d692bd10db9e0d214059eab19866264029f9c  configs/experiments/multibit-load-ladder-v2.json\n66fe0999f65969d56162af454f97bbea32034345209e6b15f354d0104eb9e197  launch/multibit-load-v2-20261116/job.sh",
+      "errors": ""
+    },
+    {
+      "cluster": "narval",
+      "returncode": 0,
+      "output": "be71bd3df72aede3726b2696e28af1ecef2ce276\na800796299e2921dbd4be5b5dd6985449833ab6fec8edf85aed4c448fa9a16c7  src/representation_collapse/multibit_load_ladder.py\n0541e836ad7578c2ef5bd137062d692bd10db9e0d214059eab19866264029f9c  configs/experiments/multibit-load-ladder-v2.json\n66fe0999f65969d56162af454f97bbea32034345209e6b15f354d0104eb9e197  launch/multibit-load-v2-20261116/job.sh",
+      "errors": ""
+    },
+    {
+      "cluster": "rorqual",
+      "returncode": 0,
+      "output": "be71bd3df72aede3726b2696e28af1ecef2ce276\na800796299e2921dbd4be5b5dd6985449833ab6fec8edf85aed4c448fa9a16c7  src/representation_collapse/multibit_load_ladder.py\n0541e836ad7578c2ef5bd137062d692bd10db9e0d214059eab19866264029f9c  configs/experiments/multibit-load-ladder-v2.json\n66fe0999f65969d56162af454f97bbea32034345209e6b15f354d0104eb9e197  launch/multibit-load-v2-20261116/job.sh",
+      "errors": ""
+    },
+    {
+      "cluster": "fir",
+      "returncode": 0,
+      "output": "be71bd3df72aede3726b2696e28af1ecef2ce276\na800796299e2921dbd4be5b5dd6985449833ab6fec8edf85aed4c448fa9a16c7  src/representation_collapse/multibit_load_ladder.py\n0541e836ad7578c2ef5bd137062d692bd10db9e0d214059eab19866264029f9c  configs/experiments/multibit-load-ladder-v2.json\n66fe0999f65969d56162af454f97bbea32034345209e6b15f354d0104eb9e197  launch/multibit-load-v2-20261116/job.sh",
+      "errors": ""
+    },
+    {
+      "cluster": "killarney",
+      "returncode": 0,
+      "output": "be71bd3df72aede3726b2696e28af1ecef2ce276\na800796299e2921dbd4be5b5dd6985449833ab6fec8edf85aed4c448fa9a16c7  src/representation_collapse/multibit_load_ladder.py\n0541e836ad7578c2ef5bd137062d692bd10db9e0d214059eab19866264029f9c  configs/experiments/multibit-load-ladder-v2.json\n66fe0999f65969d56162af454f97bbea32034345209e6b15f354d0104eb9e197  launch/multibit-load-v2-20261116/job.sh",
+      "errors": ""
+    },
+    {
+      "cluster": "vulcan",
+      "returncode": 0,
+      "output": "be71bd3df72aede3726b2696e28af1ecef2ce276\na800796299e2921dbd4be5b5dd6985449833ab6fec8edf85aed4c448fa9a16c7  src/representation_collapse/multibit_load_ladder.py\n0541e836ad7578c2ef5bd137062d692bd10db9e0d214059eab19866264029f9c  configs/experiments/multibit-load-ladder-v2.json\n66fe0999f65969d56162af454f97bbea32034345209e6b15f354d0104eb9e197  launch/multibit-load-v2-20261116/job.sh",
+      "errors": ""
+    }
+  ]
+}

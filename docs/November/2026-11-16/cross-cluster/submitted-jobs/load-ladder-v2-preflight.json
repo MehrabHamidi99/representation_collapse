@@ -1,0 +1,59 @@
+{
+  "checked_at": "2026-11-16T23:23:59.089998+00:00",
+  "cpus": 3,
+  "memory_gib": 12,
+  "gpus": 0,
+  "walltime": "03:00:00",
+  "candidates": [
+    {
+      "cluster": "mila",
+      "account": "mila",
+      "partition": "main-cpu",
+      "returncode": 0,
+      "scheduler": "sbatch: Job 11742149 to start at 2026-11-17T19:04:55 a using 3 processors on nodes cn-f001 in partition main-cpu"
+    },
+    {
+      "cluster": "tamia",
+      "account": "aip-ioannism",
+      "partition": "cpubase_bycore_b1",
+      "returncode": 0,
+      "scheduler": "sbatch: NOTE: Your memory request of 12288M was likely submitted as 12G. Please note that Slurm interprets memory requests denominated in G as multiples of 1024M, not 1000M.\nsbatch: Job 701000 to start at 2026-11-18T00:41:59 a using 3 processors on nodes tc11101 in partition cpubase_bycore_b1"
+    },
+    {
+      "cluster": "narval",
+      "account": "def-ioannism",
+      "partition": "cpubase_bycore_b1",
+      "returncode": 0,
+      "scheduler": "sbatch: NOTE: Your memory request of 12288.0M was likely submitted as 12.0G. Please note that Slurm interprets memory requests denominated in G as multiples of 1024M, not 1000M.\nsbatch: Job 9559043 to start at 2026-11-16T18:23:54 a using 3 processors on nodes nc11021 in partition cpubase_bycore_b1"
+    },
+    {
+      "cluster": "rorqual",
+      "account": "def-ioannism_cpu",
+      "partition": "cpubase_bycore_b1",
+      "returncode": 0,
+      "scheduler": "sbatch: NOTE: Your memory request of 12288.0M was likely submitted as 12.0G. Please note that Slurm interprets memory requests denominated in G as multiples of 1024M, not 1000M.\nsbatch: Job 26970144 to start at 2026-11-16T18:23:54 a using 3 processors on nodes rc32411 in partition cpubase_bycore_b1"
+    },
+    {
+      "cluster": "fir",
+      "account": "def-ioannism_cpu",
+      "partition": "cpubase_bycore_b1",
+      "returncode": 0,
+      "scheduler": "sbatch: NOTE: Your memory request of 12288.0M was likely submitted as 12.0G. Please note that Slurm interprets memory requests denominated in G as multiples of 1024M, not 1000M.\nsbatch: Job 4467314 to start at 2026-11-16T16:25:55 a using 3 processors on nodes fc30564 in partition cpubase_bycore_b1"
+    },
+    {
+      "cluster": "killarney",
+      "account": "aip-ioannism",
+      "partition": "gpubase_l40s_b1",
+      "returncode": 0,
+      "scheduler": "sbatch: Job 7679268 to start at 2026-11-16T19:10:54 a using 3 processors on nodes kn002 in partition gpubase_l40s_b1"
+    },
+    {
+      "cluster": "vulcan",
+      "account": "aip-ioannism",
+      "partition": null,
+      "returncode": 0,
+      "scheduler": "sbatch: Job 2389160 to start at 2026-11-17T03:15:35 a using 3 processors on nodes compute1 in partition cpubase_bycore_b1"
+    }
+  ],
+  "note": "sbatch --test-only numbers are estimates, not job submissions"
+}

@@ -1,0 +1,40 @@
+{
+  "utc": "2026-11-16T23:33:29.874038+00:00",
+  "cpus": 2,
+  "memory_gib": 8,
+  "gpus": 0,
+  "walltime": "03:00:00",
+  "candidates": [
+    {
+      "cluster": "tamia",
+      "returncode": 0,
+      "scheduler": "sbatch: NOTE: Your memory request of 8192M was likely submitted as 8G. Please note that Slurm interprets memory requests denominated in G as multiples of 1024M, not 1000M.\nsbatch: Job 701008 to start at 2026-11-17T21:52:29 a using 2 processors on nodes tc10704 in partition cpubase_bycore_b1"
+    },
+    {
+      "cluster": "narval",
+      "returncode": 0,
+      "scheduler": "sbatch: NOTE: Your memory request of 8192.0M was likely submitted as 8.0G. Please note that Slurm interprets memory requests denominated in G as multiples of 1024M, not 1000M.\nsbatch: Job 9559983 to start at 2026-11-16T18:33:28 a using 2 processors on nodes nc10506 in partition cpubase_bycore_b1"
+    },
+    {
+      "cluster": "rorqual",
+      "returncode": 0,
+      "scheduler": "sbatch: NOTE: Your memory request of 8192.0M was likely submitted as 8.0G. Please note that Slurm interprets memory requests denominated in G as multiples of 1024M, not 1000M.\nsbatch: Job 26970789 to start at 2026-11-16T18:33:28 a using 2 processors on nodes rc32607 in partition cpubase_bycore_b1"
+    },
+    {
+      "cluster": "fir",
+      "returncode": 0,
+      "scheduler": "sbatch: NOTE: Your memory request of 8192.0M was likely submitted as 8.0G. Please note that Slurm interprets memory requests denominated in G as multiples of 1024M, not 1000M.\nsbatch: Job 4469224 to start at 2026-11-16T16:35:27 a using 2 processors on nodes fc30556 in partition cpubase_bycore_b1"
+    },
+    {
+      "cluster": "killarney",
+      "returncode": 0,
+      "scheduler": "sbatch: Job 7679547 to start at 2026-11-16T19:20:27 a using 2 processors on nodes kn002 in partition gpubase_l40s_b1"
+    },
+    {
+      "cluster": "vulcan",
+      "returncode": 0,
+      "scheduler": "sbatch: Job 2389244 to start at 2026-11-17T03:10:27 a using 2 processors on nodes compute2 in partition cpubase_bycore_b1"
+    }
+  ],
+  "note": "Test only; printed numbers are not submitted jobs."
+}

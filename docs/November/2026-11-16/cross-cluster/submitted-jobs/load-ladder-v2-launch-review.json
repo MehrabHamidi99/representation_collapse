@@ -1,0 +1,24 @@
+{
+  "prepared_at": "2026-11-16T23:24:51.366518+00:00",
+  "local_tests": 8,
+  "independent_review": "accepted worker/tests/science and initial3CPU8GiB wrapper; coordinator raisedmemoryonly to12GiB/3GiBperstep after681348KiB priorpeakand4xlonger evaluation; all7schedulers freshlyadmitfinalrequest",
+  "production_tests": {
+    "passed": 8,
+    "cluster": "rorqual",
+    "source_commit": "be71bd3df72aede3726b2696e28af1ecef2ce276",
+    "torch": "2.0.0+cpu",
+    "numpy": "1.24.4",
+    "elapsed_seconds": 10.759
+  },
+  "hashes": {
+    "src/representation_collapse/multibit_load_ladder.py": "a800796299e2921dbd4be5b5dd6985449833ab6fec8edf85aed4c448fa9a16c7",
+    "tests/test_multibit_load_ladder.py": "a0c61bbc0c72079cdf211ac26cdb93d6c1563690ef010df5e5f0e0bd958ae90a",
+    "configs/experiments/multibit-load-ladder-v2.json": "0541e836ad7578c2ef5bd137062d692bd10db9e0d214059eab19866264029f9c",
+    "docs/November/2026-11-16/cross-cluster/experiment/multibit-load-ladder-v2.md": "038ef65010c8eaa891b5677d0e898c64dfcab6814d66c3cca93ab50527d6291e",
+    "launch/multibit-load-v2-20261116/job.sh": "66fe0999f65969d56162af454f97bbea32034345209e6b15f354d0104eb9e197",
+    "launch/multibit-load-v2-20261116/pyproject.toml": "46d6bc6c5e857590d523694437563f72212948e993506ed4de285eaf2275c55c",
+    "launch/multibit-load-v2-20261116/uv.lock": "c8869e880cc88c2ae6ebe0c4a903d93ef225adfb76e722697332e26f4b8b229a"
+  },
+  "wandb_required": true,
+  "scope": "eightloads4..64 xthreeseeds; competencebeforeheldout; no claimofcollapse"
+}

@@ -1,0 +1,85 @@
+[project]
+name = "representation-collapse-load-ladder-launch"
+version = "0.1.0"
+requires-python = ">=3.11,<3.12"
+dependencies = ["numpy==1.24.4", "torch==2.0.0+cpu", "wandb==0.30.0"]
+
+[tool.uv]
+package = false
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[tool.cluv]
+project_dir = "$SCRATCH/representation-collapse/sources/multibit-load-repair-20261116/launch/multibit-load-repair-20261116"
+results_path = "$SCRATCH/representation-collapse/logs/multibit-load-repair-20261116"
+results_symlink = "logs"
+job_script_path = "job.sh"
+
+[tool.cluv.env]
+WANDB_MODE = "offline"
+UV_CACHE_DIR = "$SCRATCH/representation-collapse/cache/uv"
+
+[tool.cluv.sbatch_args]
+nodes = 1
+ntasks = 2
+cpus-per-task = 1
+mem = "8G"
+time = "03:00:00"
+job-name = "rc-load-repair"
+no-requeue = true
+
+[tool.cluv.clusters.mila.sbatch_args]
+account = "mila"
+qos = "normal"
+partition = "main-cpu"
+
+[tool.cluv.clusters.tamia.sbatch_args]
+account = "aip-ioannism"
+qos = "normal"
+partition = "cpubase_bycore_b1"
+
+[tool.cluv.clusters.narval.sbatch_args]
+account = "def-ioannism"
+qos = "normal"
+partition = "cpubase_bycore_b1"
+
+[tool.cluv.clusters.rorqual.sbatch_args]
+account = "def-ioannism_cpu"
+qos = "normal"
+partition = "cpubase_bycore_b1"
+
+[tool.cluv.clusters.fir.sbatch_args]
+account = "def-ioannism_cpu"
+qos = "normal"
+partition = "cpubase_bycore_b1"
+
+[tool.cluv.clusters.nibi.sbatch_args]
+account = "def-ioannism_cpu"
+qos = "normal"
+partition = "cpubase_bycore_b1"
+
+[tool.cluv.clusters.trillium.sbatch_args]
+account = "def-ioannism"
+qos = "normal"
+partition = "compute"
+
+[tool.cluv.clusters.trillium-gpu.sbatch_args]
+account = "def-ioannism"
+qos = "normal"
+partition = "compute"
+
+[tool.cluv.clusters.killarney.sbatch_args]
+account = "aip-ioannism"
+qos = "normal"
+partition = "gpubase_l40s_b1"
+
+[tool.cluv.clusters.vulcan.sbatch_args]
+account = "aip-ioannism"
+qos = "normal"

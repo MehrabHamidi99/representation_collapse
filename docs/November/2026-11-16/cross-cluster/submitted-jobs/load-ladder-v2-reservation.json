@@ -1,0 +1,49 @@
+{
+  "state": "reserved_before_dispatch",
+  "reserved_at": "2026-11-16T23:26:00.058496+00:00",
+  "source_commit": "be71bd3df72aede3726b2696e28af1ecef2ce276",
+  "run_id": "load-v2-20261116T232600Z",
+  "candidates": [
+    "mila",
+    "tamia",
+    "narval",
+    "rorqual",
+    "fir",
+    "killarney",
+    "vulcan"
+  ],
+  "per_candidate": {
+    "nodes": 1,
+    "tasks": 3,
+    "cpus_per_task": 1,
+    "memory_gib": 12,
+    "gpus": 0,
+    "walltime": "03:00:00",
+    "requeue": false
+  },
+  "seed_steps": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "cpus_each": 1,
+    "memory_gib_each": 3,
+    "exclusive": true
+  },
+  "command": [
+    "cluv",
+    "submit",
+    "first",
+    "job.sh",
+    "--no-sync-datasets",
+    "--",
+    "be71bd3df72aede3726b2696e28af1ecef2ce276",
+    "load-v2-20261116T232600Z"
+  ],
+  "wandb_required": true,
+  "cloud_delivery": "pending",
+  "retry": false,
+  "stop_file": "$SCRATCH/representation-collapse/runs/multibit-load-ladder/load-v2-20261116T232600Z.STOP",
+  "production_runtime_tests": "8pass onRorqual Torch2.0.0+cpu NumPy1.24.4 in10.759seconds"
+}
