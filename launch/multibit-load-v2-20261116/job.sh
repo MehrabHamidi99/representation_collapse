@@ -57,7 +57,10 @@ result=0
 for child in "${pids[@]}"; do
   code=0
   wait "$child" || code="$?"
-  if kill -0 "$child" 2>/dev/null; then wait "$child" || code="$?"; fi
+  if kill -0 "$child" 2>/dev/null; then
+    code=0
+    wait "$child" || code="$?"
+  fi
   codes+=("$code")
   if [[ "$code" -ne 0 ]]; then result=1; fi
 done

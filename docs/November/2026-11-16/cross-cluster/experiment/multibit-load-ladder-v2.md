@@ -16,7 +16,7 @@ effects, perfect retention and failed acquisition as distinct outcomes.
 
 Loads are **4, 8, 12, 16, 24, 32, 48 and 64 binary coordinates**, each fitted
 separately with seeds **0, 1 and 2**. The fixed architecture is native LSTM,
-69 input channels, hidden64/cell64, and a 64-logit linear head. Only the first
+69 input channels, hidden 64/cell 64, and a 64-logit linear head. Only the first
 D outputs contribute to mean binary cross entropy. WRITE presents all D signed
 bits simultaneously; BODY and QUERY carry no payload. QUERY asks for the entire
 vector. This is finite categorical recall, not continuous D-dimensional memory,
@@ -35,9 +35,9 @@ statistics. R0 has no body; R1 arms are identical. The body length is H=12Rq.
 ## Acquisition, selection and raw evidence
 
 CPU FP32, deterministic algorithms and one thread per seed worker. Each update
-uses32 independently balanced cue vectors duplicated across arms (64 rows),
-Adam lr0.001, no weight decay, mean active-bit BCE, gradient norm clipping1,
-and complete-episode backpropagation. Initialize at7000+seed, identically
+uses 32 independently balanced cue vectors duplicated across arms (64 rows),
+Adam lr0.001, no weight decay, mean active-bit BCE, gradient norm clipping 1,
+and complete-episode backpropagation. Initialize at 7000+seed, identically
 across loads. Training, validation and test RNG streams are separated by a
 new `multibit-load-ladder-v2` namespace, dimension and seed. They do not reuse
 v1's held-out cue/body panels.
@@ -49,9 +49,9 @@ Fixed endpoints, without interim selection or rescue training:
 3. **16,000 further updates**, cycling R0/R1/R2/R4/R8; validate all five.
 
 Each gate requires >=0.95 accuracy for every active bit, each cue polarity,
-each forcing arm and each required validation horizon. Validation has256
-balanced cue vectors,128 per polarity. Whole-vector exact accuracy is reported
-separately; passing a bitwise gate does not imply95% full-vector recall at large
+each forcing arm and each required validation horizon. Validation has 256
+balanced cue vectors, 128 per polarity. Whole-vector exact accuracy is reported
+separately; passing a bitwise gate does not imply 95% full-vector recall at large
 D. A failed gate stops that fit without opening its held-out test. Other
 preregistered loads/seeds continue. All endpoints, including failures, remain.
 
@@ -67,13 +67,13 @@ historical and is not retrospectively upgraded.
 ## Frozen retention measurements
 
 Only fully competent, replay-verified endpoints see the fresh test panel.
-Use256 balanced cue vectors, four forcing draws shared across all cues,
+Use 256 balanced cue vectors, four forcing draws shared across all cues,
 and paired arms. The same panel is reused across test horizons:
 
 - R=0,1,2,4,8,16,32,64,128,256,512 with q1.
-- R128q4 and R256q2, matching R512q1 at6,144 body steps.
+- R128q4 and R256q2, matching R512q1 at 6,144 body steps.
 
-There are13 conditions and2,048 episode rows per fit/condition. Preserve logits,
+There are 13 conditions and 2,048 episode rows per fit/condition. Preserve logits,
 labels, errors, forcing/arm identities, complete H64+C64 state after WRITE and
 before QUERY, executed WRITE oracle and zero-state QUERY scores. Report per-bit
 and whole-vector accuracy, periodic-minus-control bit error, and per-forcing
@@ -99,21 +99,22 @@ decoder/intervention and tangent studies need their own frozen contracts.
 ## Resource and execution contract
 
 One native cluv first race; at most one candidate per currently ready CPU
-cluster. Target Mila, Tamia, Rorqual, Fir, Killarney and Vulcan after fresh
+cluster. Target Mila, Tamia, Narval, Rorqual, Fir, Killarney and Vulcan after fresh
 scheduler/access checks. Nibi joins only if its dependency staging finishes
 and the new source/environment can be verified; otherwise preserve pending
-status. Narval requires restored authentication. Trillium's192-core CPU
+status. Narval access and three-CPU scheduler admission were freshly verified
+at 23:12 UTC after the earlier authentication failure. Trillium's 192-core CPU
 minimum and Trillium-GPU's mandatory accelerator are unsuitable for this
 three-thread CPU experiment; neither is included merely to fill a cluster list.
 
-Each candidate requests one node, three tasks, one CPU per task,8GiB total,
+Each candidate requests one node, three tasks, one CPU per task, 8GiB total,
 zero GPUs and three hours, no requeue. The single winning allocation starts
 three exclusive one-CPU/2GiB srun steps, one per seed, with unique seed output
-directories. The previous four-fit CPU campaign completed in314seconds; its
+directories. The previous four-fit CPU campaign completed in 314 seconds; its
 measured performance supports CPU use. No GPU efficiency exemption is needed
 because no GPU is allocated. The final candidate set is recorded before dispatch;
-six candidates imply54 worst-case requested CPU-hours before cancellation
-(seven imply63). Actual race overlap and loser cleanup are reconciled separately.
+seven candidates imply 63 worst-case requested CPU-hours before cancellation
+(eight imply 72). Actual race overlap and loser cleanup are reconciled separately.
 
 All source/config/protocol/lock bytes are committed before `cluv sync`, and
 verified on admitted targets before `cluv submit first job.sh`. New source
@@ -121,7 +122,7 @@ paths preserve the earlier campaign's checkout and artifacts. No dependency
 download occurs inside the Slurm allocation. Every run gets a unique path
 under `$SCRATCH/representation-collapse/runs/multibit-load-ladder/RUN_ID`.
 The sibling `RUN_ID.STOP` stops all three seed workers. Internal deadline is
-10,500seconds, outer timeout10,620seconds, Slurm10,800seconds. Interruption
+10,500 seconds, outer timeout 10,620 seconds, Slurm 10,800 seconds. Interruption
 preserves checkpoints, partial results and truthful fit status; it is not
 competence failure. No job retry or automatic extension is part of this race.
 
