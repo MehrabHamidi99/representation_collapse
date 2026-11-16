@@ -29,7 +29,7 @@ record = {'source_commit': sys.argv[2], 'run_id': sys.argv[3],
           'slurm_job_id': os.environ['SLURM_JOB_ID'],
           'environment': actual, 'seeds': [0, 1, 2],
           'lock_sha256': hashlib.sha256(Path('uv.lock').read_bytes()).hexdigest(),
-          'cpus': 3, 'memory_gib': 8, 'gpus': 0}
+          'cpus': 3, 'memory_gib': 12, 'gpus': 0}
 (root / 'launch.json').write_text(json.dumps(record, indent=2) + '\n')
 print(json.dumps(record), flush=True)
 PY
@@ -43,7 +43,7 @@ request_stop() {
 trap request_stop TERM INT
 for seed in 0 1 2; do
   timeout --signal=TERM --kill-after=20 10620s \
-    srun --exclusive --exact --nodes=1 --ntasks=1 --cpus-per-task=1 --mem=2G \
+    srun --exclusive --exact --nodes=1 --ntasks=1 --cpus-per-task=1 --mem=3G \
     "$python" -B -m representation_collapse.multibit_load_ladder \
     --config "$source_dir/configs/experiments/multibit-load-ladder-v2.json" \
     --protocol "$source_dir/docs/November/2026-11-16/cross-cluster/experiment/multibit-load-ladder-v2.md" \

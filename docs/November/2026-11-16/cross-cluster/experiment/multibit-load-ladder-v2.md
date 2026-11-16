@@ -107,11 +107,14 @@ at 23:12 UTC after the earlier authentication failure. Trillium's 192-core CPU
 minimum and Trillium-GPU's mandatory accelerator are unsuitable for this
 three-thread CPU experiment; neither is included merely to fill a cluster list.
 
-Each candidate requests one node, three tasks, one CPU per task, 8GiB total,
+Each candidate requests one node, three tasks, one CPU per task, 12GiB total,
 zero GPUs and three hours, no requeue. The single winning allocation starts
-three exclusive one-CPU/2GiB srun steps, one per seed, with unique seed output
+three exclusive one-CPU/3GiB srun steps, one per seed, with unique seed output
 directories. The previous four-fit CPU campaign completed in 314 seconds; its
-measured performance supports CPU use. No GPU efficiency exemption is needed
+measured performance supports CPU use. Its maximum step RSS was681,348KiB.
+The new longest evaluation is four times longer; a conservative allowance of
+3GiB per seed step and12GiB per allocation provides memory headroom. This
+is a resource allowance, not a measured memory requirement for the new grid. No GPU efficiency exemption is needed
 because no GPU is allocated. The final candidate set is recorded before dispatch;
 seven candidates imply 63 worst-case requested CPU-hours before cancellation
 (eight imply 72). Actual race overlap and loser cleanup are reconciled separately.
