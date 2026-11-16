@@ -11,6 +11,21 @@ the [prior-day notebook](../../../2026-10-12/local/report/2026-10-12-progress-re
 the [setup notebook](../../../2026-10-11/local/report/2026-10-11-progress-report.md)
 and [dependency plan](../../../../../configs/research-plan.json) (revision v2).
 
+- **2026-11-16 23:44 UTC — higher-load campaign running on Mila and Vulcan.**
+  The blog's dated follow-up is integrated into the main narrative (website
+  `e27f12c`); theory, plots and citation remain. The frozen 4/8/12/16/24/32/48/64-bit,
+  three-seed ladder uses raw validation counts, saved-checkpoint replay and
+  fresh horizons through 6,144 steps. Eight focused tests pass locally and in
+  the production CPU runtime. Native `cluv sync` then `cluv submit first`
+  selected Mila **11742215**. Two pre-training package imports failed; seed 1
+  remains healthy and has moved past reported D4/D8 competence to D12 training.
+  A separate reviewed recovery preserves the science/source lineage and runs
+  seeds 0/2 on Vulcan **2389302**; both are past 12,000 D4 updates. Losing jobs
+  are terminally cancelled. Independent numerical reduction and v2 W&B cloud
+  delivery remain pending; no new collapse claim or persistent Qwen service.
+  [Progress report](../../../../../docs/November/2026-11-16/local/report/load-ladder-and-blog-coherence.md),
+  [exact submission/recovery ledger](../../../../../docs/November/2026-11-16/cross-cluster/submitted-jobs/load-ladder-v2-recovery.md).
+
 - **2026-11-16 — GitHub reconciled; public research note published.**
   GitHub main and local source both resolved to `b45b354` before this work.
   No newer committed experimental result was found; the latest accepted

@@ -1,0 +1,33 @@
+{
+  "utc": "2026-11-16T23:44:07.130466+00:00",
+  "rows": [
+    {
+      "cluster": "mila",
+      "job_id": 11742215,
+      "returncode": 0,
+      "observation": "11742215|RUNNING|0:0|00:17:49|3|cpu=3,mem=12G,node=1|cn-f001\n11742215.batch|RUNNING|0:0|00:17:49|3|cpu=3,mem=12G,node=1|cn-f001\n11742215.extern|RUNNING|0:0|00:17:49|3|cpu=3,mem=12G,node=1|cn-f001\n11742215.0|FAILED|1:0|00:00:00|1|cpu=1,mem=3G,node=1|cn-f001\n11742215.1|FAILED|1:0|00:00:02|1|cpu=1,mem=3G,node=1|cn-f001\n11742215.2|RUNNING|0:0|00:17:48|1|cpu=1,mem=3G,node=1|cn-f001\n/network/scratch/m/mehrab.hamidi/representation-collapse/runs/multibit-load-ladder/load-v2-20261116T232600Z/seed-1/D12/status.json {\"dimension\":12,\"elapsed_seconds\":15.15714487573132,\"seed\":1,\"stage\":1,\"status\":\"training\",\"update\":4700}\n/network/scratch/m/mehrab.hamidi/representation-collapse/runs/multibit-load-ladder/load-v2-20261116T232600Z/seed-1/D4/status.json {\"all_competence_gates_passed\":true,\"checkpoint_sha256\":\"10f38b3983ee7ddccc651da4b828763b2807940fdd731033beb4c99c1f662cd0\",\"dimension\":4,\"elapsed_seconds\":556.8767983890139,\"heldout_opened\":true,\"seed\":1,\"stage\":3,\"status\":\"competence_passed\",\"update\":34000}\n/network/scratch/m/mehrab.hamidi/representation-collapse/runs/multibit-load-ladder/load-v2-20261116T232600Z/seed-1/D8/status.json {\"all_competence_gates_passed\":true,\"checkpoint_sha256\":\"5d4727d67c6e1e25baa9f0f1fa4835567524b588cc2765d693517a0c8d2b4a70\",\"dimension\":8,\"elapsed_seconds\":489.64701286982745,\"heldout_opened\":true,\"seed\":1,\"stage\":3,\"status\":\"competence_passed\",\"update\":34000}\n",
+      "errors": ""
+    },
+    {
+      "cluster": "vulcan",
+      "job_id": 2389302,
+      "returncode": 0,
+      "observation": "2389302|RUNNING|0:0|00:03:04|2|billing=1287,cpu=2,mem=8G,node=1|compute1\n2389302.batch|RUNNING|0:0|00:03:04|2|cpu=2,mem=8G,node=1|compute1\n2389302.extern|RUNNING|0:0|00:03:04|2|billing=1287,cpu=2,mem=8G,node=1|compute1\n2389302.0|RUNNING|0:0|00:02:50|1|cpu=1,mem=3G,node=1|compute1\n2389302.1|RUNNING|0:0|00:02:50|1|cpu=1,mem=3G,node=1|compute1\n/scratch/mehrab/representation-collapse/runs/multibit-load-ladder/load-v2-repair-20261116T234042Z/seed-0/D4/status.json {\"dimension\":4,\"elapsed_seconds\":166.29066163802054,\"seed\":0,\"stage\":2,\"status\":\"training\",\"update\":12600}\n/scratch/mehrab/representation-collapse/runs/multibit-load-ladder/load-v2-repair-20261116T234042Z/seed-2/D4/status.json {\"dimension\":4,\"elapsed_seconds\":165.65991718799341,\"seed\":2,\"stage\":2,\"status\":\"training\",\"update\":12700}\n",
+      "errors": ""
+    },
+    {
+      "cluster": "fir",
+      "job_id": 4470814,
+      "returncode": 0,
+      "observation": "4470814|CANCELLED by 3115794|0:0|00:00:00|0||None assigned\n",
+      "errors": ""
+    },
+    {
+      "cluster": "killarney",
+      "job_id": 7679777,
+      "returncode": 0,
+      "observation": "7679777|CANCELLED by 3115794|0:0|00:00:00|0||None assigned\n",
+      "errors": ""
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "utc": "2026-11-16T23:44:36.038799+00:00",
+  "reason": "Stop timed-out owned preparation; neither target admitted to recovery race",
+  "rows": [
+    {
+      "cluster": "narval",
+      "returncode": 0,
+      "stdout": "{\"pid\": 2158665, \"observed\": \"2158665 bash -lc set -euo pipefail cd \\\"$SCRATCH/representation-collapse/sources/multibit-load-repair-20261116\\\" [[ \\\"$(git rev-parse HEAD)\\\" = 31dd7537e9d090697c133822b42d186314290547 ]] [[ -z \\\"$(git status --porcelain --untracked-files=no)\\\" ]] git rev-parse HEAD sha256sum src/representation_collapse/multibit_load_ladder.py configs/experiments/multibit-load-ladder-v2.json launch/multibit-load-repair-20261116/job.sh cd launch/multibit-load-repair-20261116 bash prepare_runtime.sh \\\"$SCRATCH/representation-collapse/envs/load-v2-repair-20261116/bin/python\\\" -c 'import numpy,torch,wandb; print(\\\"RUNTIME_IMPORT_OK\\\")'\", \"action\": \"SIGTERM_to_owned_preparation_group\"}\n",
+      "stderr": ""
+    },
+    {
+      "cluster": "rorqual",
+      "returncode": 0,
+      "stdout": "{\"pid\": 561083, \"observed\": \"561083 bash -lc set -euo pipefail cd \\\"$SCRATCH/representation-collapse/sources/multibit-load-repair-20261116\\\" [[ \\\"$(git rev-parse HEAD)\\\" = 31dd7537e9d090697c133822b42d186314290547 ]] [[ -z \\\"$(git status --porcelain --untracked-files=no)\\\" ]] git rev-parse HEAD sha256sum src/representation_collapse/multibit_load_ladder.py configs/experiments/multibit-load-ladder-v2.json launch/multibit-load-repair-20261116/job.sh cd launch/multibit-load-repair-20261116 bash prepare_runtime.sh \\\"$SCRATCH/representation-collapse/envs/load-v2-repair-20261116/bin/python\\\" -c 'import numpy,torch,wandb; print(\\\"RUNTIME_IMPORT_OK\\\")'\", \"action\": \"SIGTERM_to_owned_preparation_group\"}\n",
+      "stderr": ""
+    }
+  ]
+}

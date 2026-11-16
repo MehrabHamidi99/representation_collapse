@@ -1,0 +1,47 @@
+{
+  "reserved_at_utc": "2026-11-16T23:40:42.268982+00:00",
+  "source_commit": "31dd7537e9d090697c133822b42d186314290547",
+  "run_id": "load-v2-repair-20261116T234042Z",
+  "candidates": [
+    "tamia",
+    "fir",
+    "killarney",
+    "vulcan"
+  ],
+  "cpus_per_candidate": 2,
+  "memory_gib": 8,
+  "gpus": 0,
+  "walltime": "03:00:00",
+  "seeds": [
+    0,
+    2
+  ],
+  "max_submissions": 4,
+  "max_requested_cpu_hours_before_cancellation": 24,
+  "selected_max_cpu_hours": 6,
+  "wandb_required": true,
+  "wandb_reason": "monitored scientific training and retention evaluation; offline histories with pending cloud delivery",
+  "omissions": {
+    "mila": "preserve healthy seed 1; avoid observed startup failure",
+    "narval": "runtime snapshot still preparing after local verification timeout",
+    "rorqual": "runtime snapshot import check still pending after local timeout",
+    "nibi": "environment import verification timed out",
+    "trillium": "192-core minimum",
+    "trillium-gpu": "mandatory GPU"
+  },
+  "command": [
+    "cluv",
+    "submit",
+    "first",
+    "job.sh",
+    "--no-sync-datasets",
+    "--",
+    "31dd7537e9d090697c133822b42d186314290547",
+    "load-v2-repair-20261116T234042Z"
+  ],
+  "stop_file": "$SCRATCH/representation-collapse/runs/multibit-load-ladder/load-v2-repair-20261116T234042Z.STOP",
+  "job.sh_sha256": "279c2a8273987acd6cd436f87dc8826f7f56ae54e0fc5ceebbe3f57359943595",
+  "prepare_runtime.sh_sha256": "2bb6ddab4284cda115b3c4802152766d218a53367d0d3ab3a0d5c037f0146442",
+  "uv.lock_sha256": "c8869e880cc88c2ae6ebe0c4a903d93ef225adfb76e722697332e26f4b8b229a",
+  "pyproject.toml_sha256": "8a90e2716b7ae88bbe1170e74b08372cd7dfa6f9bf75aca0f41d8e742756b502"
+}

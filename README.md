@@ -13,7 +13,7 @@ and cannot explain. "Dimension collapse across modalities" is the motivating
 umbrella, not the claim. The program began with temporal graphs (GC-LSTM on the
 public T-GRAB benchmark) and currently runs on controlled vector memory tasks.
 
-**Status refreshed 2026-11-16; latest verified experiments: October 23.**
+**Status refreshed 2026-11-16; latest verified experiments: November 16.**
 Read the public research note:
 [Does repetition erase memory? A Floquet view](https://mehrabhamidi99.github.io/blog/repetition-and-memory/).
 
@@ -62,9 +62,17 @@ showing dimension loss. Loads 16/64 failed acquisition gates and did not open
 held-out tests. Validation raw logits/counts were not retained, so those gates
 remain summary-checked. All four original W&B histories are now verified online.
 [Discovery report, limitations and next steps](docs/November/2026-11-16/mila/report/multibit-discovery-results.md).
-The next scientific node is reliable higher-load acquisition with raw validation
-retention and replay, then fresh retention tests, late addressed queries, timing
-controls, independent training seeds and complete-state tangent analysis.
+A three-seed **4/8/12/16/24/32/48/64-bit** campaign is now running through native
+`cluv sync` and `cluv submit first`: Mila **11742215** retains seed 1, and Vulcan
+**2389302** runs seeds 0/2 after two pre-training environment failures. At 23:44
+UTC Mila had progressed to 12 bits; both Vulcan workers were training. The
+campaign saves raw competence evidence and tests accepted fits through 6,144
+body steps. It separates failed acquisition from retention loss; results and
+v2 W&B cloud delivery are still pending independent verification.
+[Protocol](docs/November/2026-11-16/cross-cluster/experiment/multibit-load-ladder-v2.md)
+and [progress/attempt lineage](docs/November/2026-11-16/local/report/load-ladder-and-blog-coherence.md).
+Later nodes remain late addressed queries, timing controls and complete-state
+tangent analysis.
 [Current tracker and stop controls](docs/October/2026-10-26/local/report/TRACKER.md).
 
 The [manuscript](paper/README.md) separates the behavioral reconstruction from

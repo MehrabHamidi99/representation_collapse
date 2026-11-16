@@ -1,0 +1,34 @@
+{
+  "utc": "2026-11-16T23:39:52.899958+00:00",
+  "source_commit": "31dd7537e9d090697c133822b42d186314290547",
+  "rows": [
+    {
+      "cluster": "tamia",
+      "returncode": 0,
+      "stdout": "31dd7537e9d090697c133822b42d186314290547\na800796299e2921dbd4be5b5dd6985449833ab6fec8edf85aed4c448fa9a16c7  src/representation_collapse/multibit_load_ladder.py\n0541e836ad7578c2ef5bd137062d692bd10db9e0d214059eab19866264029f9c  configs/experiments/multibit-load-ladder-v2.json\n279c2a8273987acd6cd436f87dc8826f7f56ae54e0fc5ceebbe3f57359943595  launch/multibit-load-repair-20261116/job.sh\n{\"prepared_at_utc\": \"2026-11-16T23:37:45.079765+00:00\", \"lock_sha256\": \"c8869e880cc88c2ae6ebe0c4a903d93ef225adfb76e722697332e26f4b8b229a\", \"versions\": {\"torch\": \"2.0.0+cpu\", \"numpy\": \"1.24.4\", \"wandb\": \"0.30.0\"}, \"snapshot\": \"/scratch/m/mehrab/representation-collapse/envs/load-v2-repair-20261116\", \"policy\": \"published runtime snapshot; do not reinstall or modify\"}\nRUNTIME_IMPORT_OK\n",
+      "stderr": ""
+    },
+    {
+      "cluster": "narval",
+      "returncode": null,
+      "error": "timeout; reconcile snapshot before retry"
+    },
+    {
+      "cluster": "rorqual",
+      "returncode": null,
+      "error": "timeout; reconcile snapshot before retry"
+    },
+    {
+      "cluster": "fir",
+      "returncode": 0,
+      "stdout": "31dd7537e9d090697c133822b42d186314290547\na800796299e2921dbd4be5b5dd6985449833ab6fec8edf85aed4c448fa9a16c7  src/representation_collapse/multibit_load_ladder.py\n0541e836ad7578c2ef5bd137062d692bd10db9e0d214059eab19866264029f9c  configs/experiments/multibit-load-ladder-v2.json\n279c2a8273987acd6cd436f87dc8826f7f56ae54e0fc5ceebbe3f57359943595  launch/multibit-load-repair-20261116/job.sh\n{\"prepared_at_utc\": \"2026-11-16T23:37:54.728287+00:00\", \"lock_sha256\": \"c8869e880cc88c2ae6ebe0c4a903d93ef225adfb76e722697332e26f4b8b229a\", \"versions\": {\"torch\": \"2.0.0+cpu\", \"numpy\": \"1.24.4\", \"wandb\": \"0.30.0\"}, \"snapshot\": \"/scratch/mehrab/representation-collapse/envs/load-v2-repair-20261116\", \"policy\": \"published runtime snapshot; do not reinstall or modify\"}\nRUNTIME_IMPORT_OK\n",
+      "stderr": ""
+    },
+    {
+      "cluster": "vulcan",
+      "returncode": 0,
+      "stdout": "31dd7537e9d090697c133822b42d186314290547\na800796299e2921dbd4be5b5dd6985449833ab6fec8edf85aed4c448fa9a16c7  src/representation_collapse/multibit_load_ladder.py\n0541e836ad7578c2ef5bd137062d692bd10db9e0d214059eab19866264029f9c  configs/experiments/multibit-load-ladder-v2.json\n279c2a8273987acd6cd436f87dc8826f7f56ae54e0fc5ceebbe3f57359943595  launch/multibit-load-repair-20261116/job.sh\n{\"prepared_at_utc\": \"2026-11-16T23:37:46.367402+00:00\", \"lock_sha256\": \"c8869e880cc88c2ae6ebe0c4a903d93ef225adfb76e722697332e26f4b8b229a\", \"versions\": {\"torch\": \"2.0.0+cpu\", \"numpy\": \"1.24.4\", \"wandb\": \"0.30.0\"}, \"snapshot\": \"/scratch/mehrab/representation-collapse/envs/load-v2-repair-20261116\", \"policy\": \"published runtime snapshot; do not reinstall or modify\"}\nRUNTIME_IMPORT_OK\n",
+      "stderr": ""
+    }
+  ]
+}

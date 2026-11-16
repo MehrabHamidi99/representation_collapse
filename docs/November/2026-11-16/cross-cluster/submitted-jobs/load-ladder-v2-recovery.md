@@ -74,3 +74,42 @@ retention loss and representation geometry.
 Actual source, run ID, submissions, winner and observations are appended in the
 recovery receipt after dispatch. This document records a prospective operational
 recovery, not a completed scientific result.
+
+## Dispatch and verified progress at 23:44 UTC
+
+Recovery source is `31dd7537e9d090697c133822b42d186314290547`; run ID is
+`load-v2-repair-20261116T234042Z`. Native Cluv sync completed successfully on
+all six intended candidates. Tamia, Fir, Killarney and Vulcan passed snapshot
+publication and import verification. Narval's snapshot copy and Rorqual's import
+check exceeded the 180-second local verification deadline; neither snapshot
+was published at reconciliation, so both were excluded from the recovery race.
+Their owned preparation process groups were identified and sent SIGTERM at
+23:44 UTC; no duplicate preparation or submission was started. Nibi's earlier
+Cluv staging command exited successfully, but a fresh import check timed out,
+so it remains unverified. These exclusions concern this recovery attempt;
+Narval and Rorqual participated in the original race.
+
+Actual candidate list was **Tamia, Fir, Killarney, Vulcan**. The exact reserved
+command and resources are in the [reservation](load-ladder-v2-recovery-reservation.json).
+`cluv submit first job.sh --no-sync-datasets -- SOURCE_SHA RUN_ID` exited zero.
+Vulcan **2389302** won on `compute1`; Fir **4470814** and Killarney **7679777**
+are independently confirmed CANCELLED. Tamia was skipped before submission.
+Killarney again required explicit owned-job cancellation through a login shell.
+Three actual submissions requested at most 18 CPU-hours before cancellation;
+only Vulcan received a recovery allocation, with two CPUs and 8 GiB.
+
+At 23:44 UTC, Vulcan's two seed workers were RUNNING, at D4 stage 2 updates
+12,600 and 12,700. Mila's preserved seed 1 had completed the 4- and 8-bit fits
+with worker-reported competence passes and moved to 12-bit training. These are
+execution observations, not independently accepted scientific results. The
+original Mila wrapper will eventually retain its failed-seed exit codes;
+scientific seed 1 artifacts must be reconciled separately from that aggregate
+launcher failure. Combine seed 1 from the original Mila lineage with seeds
+0/2 from this Vulcan lineage only after independent reduction. Preserve all
+cancelled and failed attempts, and never pool duplicate seed attempts.
+
+See [runtime verification](load-ladder-v2-recovery-runtime.json),
+[Killarney verification](load-ladder-v2-recovery-runtime-killarney.json),
+[first successful worker observations](load-ladder-v2-recovery-first-progress.json)
+and [scheduler/progress receipt](load-ladder-v2-recovery-accounting.json).
+W&B histories are initialized offline; cloud delivery for v2 remains pending.
