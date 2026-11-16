@@ -1,0 +1,120 @@
+{
+  "schema": "multibit-load-ladder-v2",
+  "dimensions": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "batch_cues": 32,
+  "stages": [
+    {
+      "updates": 6000,
+      "train_repeats": [
+        0
+      ],
+      "validate_repeats": [
+        0
+      ]
+    },
+    {
+      "updates": 12000,
+      "train_repeats": [
+        0,
+        1,
+        2
+      ],
+      "validate_repeats": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "updates": 16000,
+      "train_repeats": [
+        0,
+        1,
+        2,
+        4,
+        8
+      ],
+      "validate_repeats": [
+        0,
+        1,
+        2,
+        4,
+        8
+      ]
+    }
+  ],
+  "competence_threshold": 0.95,
+  "validation_cue_vectors": 256,
+  "test_cue_vectors": 256,
+  "test_forcing_units": 4,
+  "test_conditions": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      16,
+      1
+    ],
+    [
+      32,
+      1
+    ],
+    [
+      64,
+      1
+    ],
+    [
+      128,
+      1
+    ],
+    [
+      256,
+      1
+    ],
+    [
+      512,
+      1
+    ],
+    [
+      128,
+      4
+    ],
+    [
+      256,
+      2
+    ]
+  ],
+  "test_chunk": 64,
+  "learning_rate": 0.001
+}
