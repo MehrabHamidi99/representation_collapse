@@ -74,3 +74,49 @@ The project README and canonical tracker were updated to include the latest
 accepted memory results and this public note. The README's stale claim of a
 live Qwen worker was replaced with its recorded shutdown and an explicit
 statement that current cluster liveness was not checked in this publication task.
+
+## Floquet revision and citation — November16 continuation
+
+The owner requested stronger coverage of Floquet multipliers and both supportive
+and conflicting experiments. Website commit `28e0a78d1f36c8cb8fd3b86c79455e21bfa17d27`
+publishes **Does repetition erase memory? A Floquet view** at the same permanent URL.
+It now develops the discrete monodromy product, per-period versus per-update
+rates, forced rhythms with subunit multipliers, exact continuous-memory neutral
+directions, categorical attractors, ordering nulls and the analytic folding
+counterexample. These are established results and elementary deductions with
+explicit assumptions, not a new universal theorem.
+
+Added the recovered six subunit stored eigenvalues and repeated envelope-row
+audit, together with the failed-competence finite-time tangent pilots. Neither
+is promoted to certified trained-model Floquet evidence. The accepted graph
+and one-bit findings and their limitations remain. The post includes a plain
+citation and BibTeX with author, title, date and stable URL; no DOI or peer-review
+status is invented. A bounded writing agent prepared the revision; the
+coordinator checked its theory and quantitative claims against the linked
+sources and corrected the mobile citation link's overflow.
+
+The Python build and site checker passed. Desktop1280px and mobile390px render
+with loaded images and no document-wide horizontal overflow. Deploy site run
+43970086222 and Pages run43970165632 succeeded. The public article and news
+page returned HTTP200 and matched the local build byte-for-byte; the citation
+is present in the served HTML. See [revision verification](publication-verification-v2.json).
+
+An authenticated GitHub repository lookup and a separate anonymous lookup both
+confirmed `MehrabHamidi99/representation_collapse` already had public visibility.
+No visibility change was necessary; the owner subsequently confirmed it.
+
+The owner also requested higher-dimensional follow-up experiments in this
+continuation. Those have a separate prospective protocol and submission record;
+they do not change the completed October evidence reported in the blog. The
+goal tool refused a new goal because the thread has an unfinished earlier goal;
+no new automatic goal was armed or earlier scientific objective marked complete.
+
+The follow-up request about **largest eigenvalues** is published in website
+commit `ea3aefa`. A dedicated section distinguishes spectral radius from the
+largest singular value and covariance eigenvalues; explains chronological JVPs,
+Arnoldi, reverse VJPs, eigenpair residuals and partial-spectrum limitations; and
+uses an explicitly analytic nonnormal example with radius0.8 and maximum
+one-step singular gain4.154. These are measurement methods and a mathematical
+example, not a newly measured GC-LSTM spectrum. The served page includes this
+section and the citation and matches the local build exactly; see
+[third revision verification](publication-verification-v3.json).

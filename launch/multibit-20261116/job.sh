@@ -18,6 +18,15 @@ export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_TH
 export WANDB_MODE=offline UV_OFFLINE=1
 python="$launch_dir/.venv/bin/python"
 [[ -x "$python" ]] || exit 3
+"$python" - <<'PY'
+import hashlib, importlib.metadata, json
+from pathlib import Path
+expected = {'torch': '2.0.0+cpu', 'numpy': '1.24.4', 'wandb': '0.30.0'}
+actual = {name: importlib.metadata.version(name) for name in expected}
+if actual != expected:
+    raise SystemExit(f'Pinned scientific environment mismatch: {actual}')
+print(json.dumps({'environment': actual, 'lock_sha256': hashlib.sha256(Path('uv.lock').read_bytes()).hexdigest()}), flush=True)
+PY
 cd "$source_dir"
 deadline="$(( $(date +%s) + 10500 ))"
 exec srun --ntasks=1 --cpus-per-task=1 timeout --signal=TERM --kill-after=20 10620s \

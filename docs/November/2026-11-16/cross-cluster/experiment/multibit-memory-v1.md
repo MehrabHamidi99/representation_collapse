@@ -55,8 +55,8 @@ Fixed stages per fit:
 2. 4,000 updates cycling R0/R1/R2; validate all three.
 3. 4,000 updates cycling R0/R1/R2/R4/R8; validate all five.
 
-Each required bit and forcing arm must reach accuracy >=0.95 at every required
-validation horizon. Preserve correct counts and denominators; do not round
+Each required bit, cue polarity and forcing arm must reach accuracy >=0.95 at
+every required validation horizon. Preserve correct counts and denominators; do not round
 before comparison. Gate is bitwise, not whole-vector accuracy; report whole-vector
 accuracy separately, since these differ at large D. Validation uses256 balanced
 cue vectors per panel and a separate fixed RNG stream. Record actual stream

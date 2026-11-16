@@ -1,0 +1,20 @@
+{
+  "verified_at": "2026-11-16T22:28:24.681826+00:00",
+  "site_commit": "28e0a78d1f36c8cb8fd3b86c79455e21bfa17d27",
+  "checks": [
+    {
+      "url": "https://mehrabhamidi99.github.io/blog/repetition-and-memory/",
+      "status": 200,
+      "sha256": "4e63c755ba7a436812209594fea15505cb5b6e168e1a4a94164c0ae1eab92273",
+      "matches_local": true,
+      "citation_present": true
+    },
+    {
+      "url": "https://mehrabhamidi99.github.io/news/",
+      "status": 200,
+      "sha256": "4514f119b8c87c36a4724b6eb9b8480f1b9925fb533ec7c0aa11166961aa0186",
+      "matches_local": true,
+      "citation_present": null
+    }
+  ]
+}

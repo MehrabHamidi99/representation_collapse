@@ -33,6 +33,7 @@ cpus-per-task = 1
 mem = "8G"
 time = "03:00:00"
 job-name = "rc-multibit"
+no-requeue = true
 
 [tool.cluv.clusters.mila.sbatch_args]
 account = "mila"

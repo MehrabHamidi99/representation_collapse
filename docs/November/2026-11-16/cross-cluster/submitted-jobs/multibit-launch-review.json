@@ -1,0 +1,19 @@
+{
+  "status": "accepted_for_launch_not_scientific_result",
+  "reviewer": "native read-only scientific reviewer",
+  "checks": 11,
+  "test_torch_version": "2.6.0",
+  "production_compatibility_check": "pending locked Torch 2.0.0 CPU",
+  "hashes": {
+    "src/representation_collapse/multibit_memory.py": "16ee057cbcfe8cb1f0003581ee7bd64757f8caa9e00e44b4c375d73250d4f4dd",
+    "tests/test_multibit_memory.py": "fc723b32ced22154d43802e8432ac8981d7654f77fe38086f7594b57e1b4d8ad",
+    "configs/experiments/multibit-memory-v1.json": "76a5712728299c23c6aa924aadf68788fcbec78f4080f83f73c6beb9bdbd6df8",
+    "docs/November/2026-11-16/cross-cluster/experiment/multibit-memory-v1.md": "bb76132d61c2a17634549a94a002a70c190490581c220b52d0a6beae50e2e735",
+    "launch/multibit-20261116/job.sh": "9ee23471bf0d2d6b330bc0015feb3cee7da0a5b01498c0ab2284a398da2559fe",
+    "launch/multibit-20261116/pyproject.toml": "8be732fba613b1396807acdf6d47236af780973698e72d4117fd0333e4808eb2",
+    "launch/multibit-20261116/uv.lock": "98f4b5e99d4060db4136660f90bb91539155e1c0028b0dfde96c8ee537d3852e"
+  },
+  "wandb_required": true,
+  "cloud_delivery": "pending",
+  "scope": "seed0 D1/4/16/64, one cluv first race; independent result reduction remains required"
+}

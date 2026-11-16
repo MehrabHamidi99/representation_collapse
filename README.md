@@ -15,7 +15,7 @@ public T-GRAB benchmark) and currently runs on controlled vector memory tasks.
 
 **Status refreshed 2026-11-16; latest verified experiments: October 23.**
 Read the public research note:
-[Does repetition make a recurrent model forget?](https://mehrabhamidi99.github.io/blog/repetition-and-memory/).
+[Does repetition erase memory? A Floquet view](https://mehrabhamidi99.github.io/blog/repetition-and-memory/).
 
 The corrected seed-0 GC-LSTM long fit completed
 **200 epochs / 511,800 updates**; validation selected epoch **160**. Its single
